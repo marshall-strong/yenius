@@ -1,7 +1,6 @@
 # DESTROY existing seeds
   Upvote.destroy_all
-  Comment.destroy_all  
-  Annotation.destroy_all
+  Comment.destroy_all
   Verse.destroy_all
   SampleCredit.destroy_all
   SampleCreditType.destroy_all
