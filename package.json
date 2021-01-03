@@ -1,0 +1,14 @@
+{
+  "name": "yenius--rails6-api",
+  "license": "MIT",
+  "engines": {
+    "node": "15.2.0",
+    "yarn": "1.22.5"
+  },
+  "scripts": {
+    "start": "rails start",
+    "build": "yarn --cwd client install && yarn --cwd client build",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
+  }
+}
