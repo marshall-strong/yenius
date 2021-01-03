@@ -1,0 +1,116 @@
+.Comments {
+  background: #f7f7f7;
+}
+.Comments .grayContainer {
+  background-color: rgba(204,204,204,.35);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: .75rem;
+}
+.Comments .grayContainer .CommentForm {
+  margin-bottom: 1.313rem;
+  padding: 0;
+}
+
+.Comments .grayContainer .CommentForm .avatarBoxWithInputBox {
+  display: flex;
+  width: 100%;
+}
+
+.Comments .grayContainer .CommentForm .avatarBoxWithInputBox .avatarBox {
+  // background: green;
+  align-items: center;
+  display: flex;
+  padding-right: .75rem;
+}
+
+.Comments .grayContainer .CommentForm .avatarBoxWithInputBox .avatarBox .avatar {
+  background: #78909C;
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.Comments .grayContainer .CommentForm .avatarBoxWithInputBox .inputBox {
+  background: blue;
+  display: block;
+  position: relative;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+.Comments .grayContainer .CommentForm .avatarBoxWithInputBox .inputBox textarea {
+  display: block;
+  width: 100%;
+
+  height: 2.2em;
+  overflow: hidden;
+  resize: none;
+
+  background: #fff;
+  border: .15rem solid #ccc;
+
+}
+
+.Comments .grayContainer .CommentsList {
+}
+.Comments .grayContainer .Comment {
+  border-top: 1px solid #99a7ee;
+  display: block;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+}
+
+.Comment .userBadgeAndTimestamp {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Comment .userBadgeAndTimestamp .userBadge {
+  overflow: hidden;
+  margin-right: 1rem;
+
+  display: flex;
+  align-items: center;
+  color: inherit;
+  font-family: Programme,Arial,sans-serif;
+  line-height: 1;
+  position: relative;
+  text-decoration: none;
+}
+
+.Comment .userBadgeAndTimestamp .TimeAgo {
+  align-self: flex-start;
+  color: #9a9a9a;
+  font-family: Programme,Arial,sans-serif;
+  font-size: .75em;
+  min-width: 5em;
+  text-align: right;
+}
+
+.Comment .standard-rich-content {}
+
+.submitButton {
+  user-select: none;
+  border-color: #0ecb27;
+  color: #0ecb27;
+  word-break: break-word;
+  transition: background-color .3s,border-color .3s;
+  background-color: transparent;
+  border-width: .15rem;
+  border-style: solid;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Programme,Arial,sans-serif;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  margin: 0;
+  text-align: center;
+  padding: .25rem .5rem;
+  vertical-align: top;
+}

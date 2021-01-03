@@ -1,0 +1,40 @@
+
+// session_form.scss
+.SessionForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  form {
+    height: 300px;
+    width: 300px;
+    background: rgb(46, 41, 41);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  label {
+    padding: 10px;
+    display: block;
+  }
+  button {
+    display: block;
+    padding: 10px;
+    margin: 20px;
+  }
+}
+.finger button:hover {
+  cursor: pointer;
+}
+.finger link:hover {
+  cursor: pointer;
+}
+.session-heading span {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}

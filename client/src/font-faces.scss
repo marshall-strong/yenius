@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Programme-Regular";
+  src:  local('Programme-Regular'), url("./assets/fonts/Programme-Regular/Programme-Regular.eot"); /* IE9*/
+  src:  local('Programme-Regular'), url("./assets/fonts/Programme-Regular/Programme-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ 
+        local('Programme-Regular'), url("./assets/fonts/Programme-Regular/Programme-Regular.woff2") format("woff2"), /* chrome、firefox */ 
+        local('Programme-Regular'), url("./assets/fonts/Programme-Regular/Programme-Regular.woff") format("woff"), /* chrome、firefox */ 
+        local('Programme-Regular'), url("./assets/fonts/Programme-Regular/Programme-Regular.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        local('Programme-Regular'), url("./assets/fonts/Programme-Regular/Programme-Regular.svg#Programme-Regular") format("svg"); /* iOS 4.1- */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Programme-Bold";
+  src:  local('Programme-Bold'), url("./assets/fonts/Programme-Bold/Programme-Bold.eot"); /* IE9*/
+  src:  local('Programme-Bold'), url("./assets/fonts/Programme-Bold/Programme-Bold.eot?#iefix") format("embedded-opentype"),/* IE6-IE8 */ 
+        local('Programme-Bold'), url("./assets/fonts/Programme-Bold/Programme-Bold.woff2") format("woff2"),/* chrome、firefox */ 
+        local('Programme-Bold'), url("./assets/fonts/Programme-Bold/Programme-Bold.woff") format("woff"), /* chrome、firefox */ 
+        local('Programme-Bold'), url("./assets/fonts/Programme-Bold/Programme-Bold.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        local('Programme-Bold'), url("./assets/fonts/Programme-Bold/Programme-Bold.svg#Programme-Bold") format("svg"); /* iOS 4.1- */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Programme-Light";
+  src:  local('Programme-Light'), url("./assets/fonts/Programme-Light/Programme-Light.eot"); /* IE9*/
+  src:  local('Programme-Light'), url("./assets/fonts/Programme-Light/Programme-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+        local('Programme-Light'), url("./assets/fonts/Programme-Light/Programme-Light.woff2") format("woff2"), /* chrome、firefox */
+        local('Programme-Light'), url("./assets/fonts/Programme-Light/Programme-Light.woff") format("woff"), /* chrome、firefox */
+        local('Programme-Light'), url("./assets/fonts/Programme-Light/Programme-Light.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        local('Programme-Light'), url("./assets/fonts/Programme-Light/Programme-Light.svg#Programme-Light") format("svg"); /* iOS 4.1- */
+  font-weight: normal;
+  font-style: normal;
+}

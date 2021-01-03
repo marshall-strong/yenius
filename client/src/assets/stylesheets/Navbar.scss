@@ -1,0 +1,226 @@
+.Application .Navbar {
+  width: 100vw;
+}
+// HEADER - PRIMARY
+.yellowNavbar {
+  align-items: center;
+  background-color: #ffff64;
+  box-sizing: border-box;
+  color: black;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 41px;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.yellowNavbar .search-bar {
+  background-color: white;
+  justify-content: flex-start;
+}
+.yellowNavbar .logo_container {
+  animation: fade_in 1s backwards;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  // width: 135px;
+  z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+// LOGO
+.yellowNavbar .logo_container .logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffff64;
+  overflow: hidden;
+}
+.yellowNavbar .logo_container .logo-link img {
+  z-index: 10;
+  height: 30px;
+}
+.yellowNavbar .logo_container .logo-link svc {
+  z-index: 10;
+}
+.userButtons {
+  align-items: center;
+  display: flex;
+  font-family: Programme-Regular, sans-serif;
+  font-size: 15px;
+  height: 100%;
+  line-height: 140%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  justify-content: flex-end;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.userButtons .header-action {
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  font-family: Programme-Regular, sans-serif;
+  font-size: 0.75em;
+  height: 100%;
+  line-height: 140%;
+  padding-top: 0.75rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0px;
+  padding-left: 0.5rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-delay: 0s;
+  transition-duration: 0.1s;
+  transition-property: border-bottom;
+  transition-timing-function: ease;
+  &:hover {
+    border-bottom-width: 0.375rem;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(255, 20, 100);
+  }
+}
+//
+// Nav Menu
+.blackNavbar {
+  align-items: center;
+  display: flex;
+  position: static;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-height: 38px;
+  background-color: black;
+  color: white;
+  font-family: Programme-Regular, sans-serif;
+}
+
+/* NAVIGATION */
+.blackNavbar nav ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  padding-inline-start: 0px;
+  margin: 0;
+}
+.blackNavbar nav ul li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.blackNavbar nav ul li a,
+.blackNavbar nav ul li Link {
+  display: block;
+  // padding: 15px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 400;
+  text-transform: uppercase;
+  // margin: 0 10px;
+  text-transform: uppercase;
+}
+.blackNavbar nav ul li a,
+.blackNavbar nav ul li a:after,
+.blackNavbar nav ul li a:before,
+.blackNavbar nav ul li Link,
+.blackNavbar nav ul li Link:after,
+.blackNavbar nav ul li Link:before {
+  transition: all 0.5s;
+}
+.blackNavbar nav ul li a:hover,
+.blackNavbar nav ul li Link:hover {
+  cursor: pointer;
+  color: #ffff64;
+}
+// /* stroke */
+// .blackNavbar nav.stroke ul li a,
+// .blackNavbar nav.stroke ul li Link {
+//   position: relative;
+// }
+// .blackNavbar nav.stroke ul li a:after,
+// .blackNavbar nav.stroke ul li Link:after {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   width: 0%;
+//   content: '.';
+//   color: transparent;
+//   background: red;
+//   height: 4px;
+// }
+// .blackNavbar nav.stroke ul li a:hover:after,
+// .blackNavbar nav.stroke ul li Link:hover:after {
+//   width: 100%;
+// }
+
+
+
+// nav.scss
+/* NAVIGATION */
+nav {
+  margin: 0 auto;
+  // padding: 50px 0;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+  padding-inline-start: 0px;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a,
+nav ul li Link {
+  display: block;
+  // padding: 15px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 800;
+  text-transform: uppercase;
+  // margin: 0 10px;
+  text-transform: uppercase;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before,
+nav ul li Link,
+nav ul li Link:after,
+nav ul li Link:before {
+  transition: all 0.5s;
+}
+nav ul li a:hover,
+nav ul li Link:hover {
+  cursor: pointer;
+}
+/* stroke */
+nav.stroke ul li a,
+nav.stroke ul li Link {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.stroke ul li Link:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: red;
+  height: 4px;
+}
+nav.stroke ul li a:hover:after,
+nav.stroke ul li Link:hover:after {
+  width: 100%;
+}
