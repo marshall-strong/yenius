@@ -1,4 +1,4 @@
-class Api::V1::SampleCreditsController < ApplicationController
+class Api::V1::SampleCreditsController < ApiController
   # @route GET /api/v1/sample_credits (api_v1_sample_credits)
   def index
     @sample_credits = SampleCredit.all

@@ -1,4 +1,4 @@
-class Api::V1::SessionsController < ApplicationController
+class Api::V1::SessionsController < ApiController
   # @route POST /api/v1/session (api_v1_session)
   def create
     # Find user by credentials

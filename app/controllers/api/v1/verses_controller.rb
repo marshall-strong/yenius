@@ -1,4 +1,4 @@
-class Api::V1::VersesController < ApplicationController
+class Api::V1::VersesController < ApiController
   # @route GET /api/v1/verses (api_v1_verses)
   def index
     @verses = Verse.all

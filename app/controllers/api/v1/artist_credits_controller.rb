@@ -1,4 +1,4 @@
-class Api::V1::ArtistCreditsController < ApplicationController
+class Api::V1::ArtistCreditsController < ApiController
   # @route GET /api/v1/artist_credits (api_v1_artist_credits)
   def index
     @artist_credits = ArtistCredit.all

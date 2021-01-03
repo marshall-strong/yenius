@@ -1,4 +1,4 @@
-class Api::V1::CommentsController < ApplicationController
+class Api::V1::CommentsController < ApiController
   # @route GET /api/v1/albums/:commentableId/comments
   def album_comments
     @album = Album.find(params[:commentableId])

@@ -1,4 +1,4 @@
-class Api::V1::SongsController < ApplicationController
+class Api::V1::SongsController < ApiController
   # @route GET /api/v1/songs (api_v1_songs)
   def index
     @songs = Song.all
