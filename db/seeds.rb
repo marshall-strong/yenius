@@ -6617,3 +6617,4 @@
   ( Album.find_by! name: "Samples & Interpolations" ).banner_img.attach( io: File.open(Rails.root.join "db/seed_assets/albums/album_headers/header-samples_and_interpolations.jpg"), filename: "header-samples_and_interpolations.jpg" )
   
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
