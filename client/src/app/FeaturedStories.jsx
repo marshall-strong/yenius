@@ -10,8 +10,8 @@ const fetchNews = async (query) => {
     headers: {
       "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
       "x-rapidapi-key":
-        // "c5d27684femsh1c200532b6a790bp1f3d3bjsn62a51ac2d542",
-        process.env.REACT_APP_API_KEY,
+        "c5d27684femsh1c200532b6a790bp1f3d3bjsn62a51ac2d542",
+        // process.env.REACT_APP_API_KEY,
       "x-bingapis-sdk": "true",
     },
   })
