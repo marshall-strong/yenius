@@ -10,6 +10,10 @@
   Song.destroy_all  
   Artist.destroy_all
   User.destroy_all
+  AdminUser.destroy_all
+
+# ActiveAdmin database administrative user  
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') # if Rails.env.development?
 
 # USER seeds
   User.create!(username: "demo", email: "demo@aa.io", password: "demo1234")
@@ -6645,5 +6649,3 @@
   ( Album.find_by! name: "Watch the Throne" ).banner_img.attach( io: File.open(Rails.root.join "db/seed_assets/albums/album_headers/kanye/header-2011-watch_the_throne.jpg"), filename: "header-2011-watch_the_throne.jpg" )
   ( Album.find_by! name: "Samples & Interpolations" ).banner_img.attach( io: File.open(Rails.root.join "db/seed_assets/albums/album_headers/header-samples_and_interpolations.jpg"), filename: "header-samples_and_interpolations.jpg" )
   
-
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') # if Rails.env.development?
