@@ -27,6 +27,8 @@ import "./assets/fonts/Programme-Light/Programme-Light.woff2";
 
 import "./assets/stylesheets/Loader.scss";
 
+import NotFound from "./NotFound";
+
 import AuthorizedRoute from "./app/AuthorizedRoute";
 import ProtectedRoute from "./app/ProtectedRoute";
 
@@ -142,6 +144,7 @@ function App() {
           <Route exact path="/verses" component={VersesList} />
           <Route exact path="/verses/:verseId" component={VersePage} />
 
+          <Route component={NotFound}/>
           <Redirect to="/" />
         </Switch>
       </main>
