@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   # https://api.rubyonrails.org/classes/ActionController/RequestForgeryProtection.html
-  protect_from_forgery unless: -> { request.format.json? }
+  # protect_from_forgery unless: -> { request.format.json? }
+
+  protect_from_forgery with: :exception
+
+  def fallback_index_html
+    render :file => 'public/index.html'
+  end
 
   helper_method :current_user, :signed_in?
   private

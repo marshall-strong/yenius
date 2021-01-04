@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :artists, only: [:index, :show]
@@ -28,5 +29,9 @@ Rails.application.routes.draw do
       resources :song_roles
       resources :song_credits
     end
+  end
+
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
   end
 end
