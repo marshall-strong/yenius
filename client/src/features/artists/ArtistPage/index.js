@@ -6,7 +6,7 @@ import { selectArtistById } from "../artistsSlice";
 
 import ArtistBanner from "./ArtistBanner";
 import ArtistLayout from "./ArtistLayout";
-import ArtistBreadcrumbs from "./ArtistBreadcrumbs";
+// import ArtistBreadcrumbs from "./ArtistBreadcrumbs";
 
 import "../../../assets/stylesheets/show.scss";
 

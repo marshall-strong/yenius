@@ -12,7 +12,7 @@ const AlbumInfo = ({ songId }) => {
   return (
     <div className="song_album u-bottom_margin">
       <a href={`/albums/${album.id}`} className="song_album-album_art">
-        <img src={album.songAlbumCoverArt} />
+        <img src={album.songAlbumCoverArt} alt={album.name}/>
       </a>
       <div className="song_album-info">
         <a href={`/albums/${album.id}`} className="song_album-info-title">
