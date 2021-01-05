@@ -17,7 +17,7 @@ const SongBanner = ({ songId }) => {
     albumLink = <a href={`/albums/${album.id}`}>{album.name}</a>;
   }
 
-  const entityType = "song";
+  // const entityType = "song";
   const name = song.name;
   const artists = <InterspersedArtistLinks artistIds={song.artistsPrimary} />;
 
