@@ -79,68 +79,36 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingPage} />
 
-          <AuthorizedRoute exact path="/signup" component={SignupForm} />
-          <AuthorizedRoute exact path="/login" component={LoginForm} />
+          <Route exact path="/artists" component={ArtistsIndexPage} />
+          <Route exact path="/artists-index/" component={ArtistsIndexPage} />
+          <Route exact path="/artists-index/:char" component={ArtistsIndexList} />
+          <Route exact path="/artists/:artistId" component={ArtistPage} />
 
           <Route exact path="/albums" component={AlbumsList} />
           <Route exact path="/albums/:albumId" component={AlbumPage} />
 
-          <Route exact path="/artist_credits" component={ArtistCreditsList} />
-          <Route
-            exact
-            path="/artist_credits/:artistCreditId"
-            component={ArtistCreditPage}
-          />
-
-          <Route
-            exact
-            path="/artist_credit_types"
-            component={ArtistCreditTypesList}
-          />
-          <Route
-            exact
-            path="/artist_credit_types/:artistCreditTypeId"
-            component={ArtistCreditTypePage}
-          />
-
-          <Route exact path="/artists-index/" component={ArtistsIndexPage} />
-          <Route
-            exact
-            path="/artists-index/:char"
-            component={ArtistsIndexList}
-          />
-          <Route exact path="/artists" component={ArtistsIndexPage} />
-          <Route exact path="/artists/:artistId" component={ArtistPage} />
+          <Route exact path="/songs" component={SongsIndexPage} />
+          <Route exact path="/songs-index" component={SongsIndexPage} />
+          <Route exact path="/songs-index/:char" component={SongsIndexList} />
+          <Route exact path="/songs/:songId" component={SongPage} />
 
           <Route exact path="/comments" component={CommentsList} />
           <Route exact path="/comments/:commentId" component={CommentPage} />
 
-          <Route exact path="/sample_credits" component={SampleCreditsList} />
-          <Route
-            exact
-            path="/sample_credits/:sampleCreditId"
-            component={SampleCreditPage}
-          />
-
-          <Route
-            exact
-            path="/sample_credit_types"
-            component={SampleCreditTypesList}
-          />
-          <Route
-            exact
-            path="/sample_credit_types/:sampleCreditTypeId"
-            component={SampleCreditTypePage}
-          />
-
-          <Route exact path="/songs-index" component={SongsIndexPage} />
-          <Route exact path="/songs-index/:char" component={SongsIndexList} />
-          <Route exact path="/songs" component={SongsIndexPage} />
-          <Route exact path="/songs/:songId" component={SongPage} />
-
           <Route exact path="/users" component={UsersList} />
           <Route exact path="/users/:userId" component={UserPage} />
 
+          <AuthorizedRoute exact path="/signup" component={SignupForm} />
+          <AuthorizedRoute exact path="/login" component={LoginForm} />
+
+          <Route exact path="/artist_credits" component={ArtistCreditsList} />
+          <Route exact path="/artist_credits/:artistCreditId" component={ArtistCreditPage} />
+          <Route exact path="/artist_credit_types" component={ArtistCreditTypesList} />
+          <Route exact path="/artist_credit_types/:artistCreditTypeId" component={ArtistCreditTypePage} />
+          <Route exact path="/sample_credits" component={SampleCreditsList} />
+          <Route exact path="/sample_credits/:sampleCreditId" component={SampleCreditPage} />
+          <Route exact path="/sample_credit_types" component={SampleCreditTypesList} />
+          <Route exact path="/sample_credit_types/:sampleCreditTypeId" component={SampleCreditTypePage} />
           <Route exact path="/verses" component={VersesList} />
           <Route exact path="/verses/:verseId" component={VersePage} />
 
