@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../../assets/stylesheets/ArtistsIndex.scss";
 
 const ArtistsIndexPage = () => {
@@ -7,9 +8,9 @@ const ArtistsIndexPage = () => {
   const index = alphabet.split("");
   const links = index.map((char) => (
     <li key={char} className="character_index_list-element">
-      <a href={`/artists-index/${char}`} className="character_index_list-link">
+      <Link to={`/artists-index/${char}`} className="character_index_list-link">
         {char.toUpperCase()}
-      </a>
+      </Link>
     </li>
   ));
   const content = (
