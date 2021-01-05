@@ -6,7 +6,7 @@ import { selectAlbumById } from "../albumsSlice";
 
 import AlbumBanner from "./AlbumBanner";
 import AlbumLayout from "./AlbumLayout";
-import AlbumBreadcrumbs from "./AlbumBreadcrumbs";
+// import AlbumBreadcrumbs from "./AlbumBreadcrumbs";
 
 import "../../../assets/stylesheets/show.scss"
 
