@@ -63,13 +63,13 @@ const SongBanner = ({ songId }) => {
               {/* <div className="entityType">{entityType}</div> */}
               <div className="subjectName yellow">{name}</div>
               <div className="subjectArtist">{artists}</div>
-              <div className="songFeaturedArtists" className="metadata">
+              <div className="songFeaturedArtists metadata">
                 {featured}
               </div>
-              <div className="songProducers" className="metadata">
+              <div className="songProducers metadata">
                 {producers}
               </div>
-              <div className="songAlbum" className="metadata">
+              <div className="songAlbum metadata">
                 Album&nbsp;{albumLink}
               </div>
             </div>
