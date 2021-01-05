@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
 import { fetchArtistsIndex } from "../artistsAsyncThunks";
 import { selectArtistIds, selectArtistById } from "../artistsSlice";
-
 import "../../../assets/stylesheets/ArtistsIndex.scss";
 
 const ArtistsListItem = ({ artistId }) => {
@@ -18,7 +16,6 @@ const ArtistsListItem = ({ artistId }) => {
   );
 };
 
-
 const ArtistsList = ({ char, artistIds }) => {
   if (artistIds.length === 0) {
     return (
@@ -27,7 +24,6 @@ const ArtistsList = ({ char, artistIds }) => {
       </h1>
     );
   }
-
   const list = artistIds.map((artistId) => (
     <ArtistsListItem key={artistId} artistId={artistId} />
   ));

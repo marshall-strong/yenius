@@ -39,8 +39,8 @@ import ArtistsIndexCharArtists from "./features/artists/ArtistsIndex/ArtistsInde
 import ArtistPage from "./features/artists/ArtistPage";
 import AlbumsList from "./features/albums/AlbumsList";
 import AlbumPage from "./features/albums/AlbumPage";
-import SongsIndexList from "./features/songs/SongsIndex/SongsIndexList";
-import SongsIndexPage from "./features/songs/SongsIndex/SongsIndexPage";
+import SongsIndexCharIndex from "./features/songs/SongsIndex/SongsIndexCharIndex";
+import SongsIndexCharSongs from "./features/songs/SongsIndex/SongsIndexCharSongs";
 import SongPage from "./features/songs/SongPage";
 import CommentsList from "./features/comments/CommentsList";
 import CommentPage from "./features/comments/CommentPage";
@@ -77,9 +77,9 @@ function App() {
           <Route exact path="/albums" component={AlbumsList} />
           <Route exact path="/albums/:albumId" component={AlbumPage} />
 
-          <Route exact path="/songs" component={SongsIndexPage} />
-          <Route exact path="/songs-index" component={SongsIndexPage} />
-          <Route exact path="/songs-index/:char" component={SongsIndexList} />
+          <Route exact path="/songs" component={SongsIndexCharIndex} />
+          <Route exact path="/songs-index" component={SongsIndexCharIndex} />
+          <Route exact path="/songs-index/:char" component={SongsIndexCharSongs} />
           <Route exact path="/songs/:songId" component={SongPage} />
 
           <Route exact path="/comments" component={CommentsList} />

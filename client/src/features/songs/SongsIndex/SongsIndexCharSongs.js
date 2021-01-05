@@ -1,26 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { fetchSongsIndex } from "../songsAsyncThunks";
 import { selectSongIds, selectSongById } from "../songsSlice";
-
 import "../../../assets/stylesheets/SongsIndex.scss"
 
-const SongsIndexListItem = ({ songId }) => {
+const SongsListItem = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   return (
     <li>
-      <a
-        href={`/songs/${songId}`}
-        className="songs_index_list-song_name"
-      >
+      <Link to={`/songs/${songId}`} className="songs_index_list-song_name">
         {song.name} by {song.artist}
-      </a>
+      </Link>
     </li>
   );
 };
 
-const SongsIndexList = ({ char, songIds }) => {
+const SongsList = ({ char, songIds }) => {
   if (songIds.length === 0) {
     return (
       <h1 className="songs_index-header">
@@ -28,10 +24,7 @@ const SongsIndexList = ({ char, songIds }) => {
       </h1>
     );
   }
-
-  const list = songIds.map((songId) =>(
-    <SongsIndexListItem key={songId} songId={songId} />
-  ));
+  const list = songIds.map((songId) => (<SongsListItem key={songId} songId={songId}/>));
   return (
     <div>
       <h1 className="songs_index-header">
@@ -65,7 +58,7 @@ const SongsIndex = ({ match }) => {
   } else if (asyncRequestStatus === "rejected") {
     content = <div>{error}</div>;
   } else if (asyncRequestStatus === "fulfilled") {
-    content = <SongsIndexList char={char} songIds={orderedSongIds} />;
+    content = <SongsList char={char} songIds={orderedSongIds} />;
   }
 
   return <section className="SongsIndex">{content}</section>;
