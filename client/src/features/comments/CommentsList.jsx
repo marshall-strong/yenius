@@ -50,7 +50,7 @@ const CommentsList = ({ commentableType, commentableId }) => {
   return (
     <div className="Comments">
       <div className="grayContainer">
-        <AddCommentForm commentableType="Album" commentableId={commentableId} />
+        <AddCommentForm commentableType={commentableType} commentableId={commentableId} />
         <div className="CommentsList">{commentsList}</div>
         <div className="ShowMore"></div>
       </div>
