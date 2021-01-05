@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { selectAlbumBySongId } from "../albums/albumsSlice";
-import {
-  selectArtistById,
-  selectPrimaryArtistBySongId,
-} from "../artists/artistsSlice";
 import { selectSongById } from "./songsSlice";
-import intersperse from "../../lib/intersperse";
+// import { selectAlbumBySongId } from "../albums/albumsSlice";
+// import {
+//   selectArtistById,
+//   selectPrimaryArtistBySongId,
+// } from "../artists/artistsSlice";
+// import intersperse from "../../lib/intersperse";
 
 export const SongByArtistLink = ({ songId }) => {  
   const song = useSelector((state) => selectSongById(state, songId));
