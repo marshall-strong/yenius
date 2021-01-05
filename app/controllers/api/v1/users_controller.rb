@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApiController
+class Api::V1::UsersController < ApplicationController
   # @route POST /api/v1/users (api_v1_users)
   def create
     @user = User.new(user_params)
