@@ -30,7 +30,7 @@ import "./assets/stylesheets/Loader.scss";
 import NotFound from "./NotFound";
 
 import AuthorizedRoute from "./app/AuthorizedRoute";
-import ProtectedRoute from "./app/ProtectedRoute";
+// import ProtectedRoute from "./app/ProtectedRoute";
 
 import Navbar from "./app/Navbar";
 import LandingPage from "./app/LandingPage";
