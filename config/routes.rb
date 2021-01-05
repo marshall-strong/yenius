@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     end
   end
 
+  # if no routes match the request, fallback to returning client/public/index.html
+  # 
+  # This should fix the error that happen when the frontend route is somehow
+  #  sent to the backend, causing an error like "no route matches /albums/undefined"
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?
   end
