@@ -34,8 +34,8 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 
 import Navbar from "./app/Navbar";
 import LandingPage from "./app/LandingPage";
-import ArtistsIndexList from "./features/artists/ArtistsIndex/ArtistsIndexList";
 import ArtistsIndexCharIndex from "./features/artists/ArtistsIndex/ArtistsIndexCharIndex";
+import ArtistsIndexCharArtists from "./features/artists/ArtistsIndex/ArtistsIndexCharArtists";
 import ArtistPage from "./features/artists/ArtistPage";
 import AlbumsList from "./features/albums/AlbumsList";
 import AlbumPage from "./features/albums/AlbumPage";
@@ -71,7 +71,7 @@ function App() {
 
           <Route exact path="/artists" component={ArtistsIndexCharIndex} />
           <Route exact path="/artists-index/" component={ArtistsIndexCharIndex} />
-          <Route exact path="/artists-index/:char" component={ArtistsIndexList} />
+          <Route exact path="/artists-index/:char" component={ArtistsIndexCharArtists} />
           <Route exact path="/artists/:artistId" component={ArtistPage} />
 
           <Route exact path="/albums" component={AlbumsList} />
