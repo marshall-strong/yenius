@@ -95,3 +95,8 @@ export const selectCommentsByCommentable = createSelector(
         comment.commentableId === commentableId
     )
 );
+
+export const selectCommentsStatus = createSelector(
+  [(state) => state.comments.status],
+  (commentsStatus) => commentsStatus
+);

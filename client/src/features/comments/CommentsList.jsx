@@ -25,7 +25,7 @@ const Comment = ({ commentId }) => {
   );
 };
 
-const CommentsList = ({ commentableType, commentableId }) => {
+const CommentsList = ({ commentableId, commentableType }) => {
   let commentable;
   const album = useSelector((state) => selectAlbumById(state, commentableId));
   const artist = useSelector((state) => selectArtistById(state, commentableId));
