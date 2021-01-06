@@ -44,12 +44,12 @@ const commentsSlice = createSlice({
     },
     [fetchAlbumPage.fulfilled]: (state, action) => {
       if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
+        commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [fetchArtistPage.fulfilled]: (state, action) => {
       if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
+        commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [fetchSongPage.pending]: (state, action) => {
@@ -61,7 +61,7 @@ const commentsSlice = createSlice({
     [fetchSongPage.fulfilled]: (state, action) => {
       state.status = "fetchSongPage.fulfilled";
       if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
+        commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [fetchAlbumComments.fulfilled]: (state, action) => {
