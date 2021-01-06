@@ -29,7 +29,14 @@ const commentsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    [addNewComment.pending]: (state, action) => {
+      state.status = "addNewComment.pending";
+    },
+    [addNewComment.rejected]: (state, action) => {
+      state.status = "addNewComment.rejected";
+    },
     [addNewComment.fulfilled]: (state, action) => {
+      state.status = "addNewComment.fulfilled";
       commentsAdapter.upsertMany(state, action.payload.comments);
     },
     [fetchAllComments.fulfilled]: (state, action) => {
@@ -45,7 +52,14 @@ const commentsSlice = createSlice({
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
+    [fetchSongPage.pending]: (state, action) => {
+      state.status = "fetchSongPage.pending";
+    },
+    [fetchSongPage.rejected]: (state, action) => {
+      state.status = "fetchSongPage.rejected";
+    },
     [fetchSongPage.fulfilled]: (state, action) => {
+      state.status = "fetchSongPage.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
