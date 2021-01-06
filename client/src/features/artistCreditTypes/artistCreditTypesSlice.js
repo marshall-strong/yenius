@@ -21,7 +21,7 @@ const artistCreditTypesSlice = createSlice({
   extraReducers: {
     [fetchArtistCreditTypes.fulfilled]: (state, action) => {
       artistCreditTypesAdapter.setAll(state, action.payload.artistCreditTypes);
-    }
+    },
   },
 });
 

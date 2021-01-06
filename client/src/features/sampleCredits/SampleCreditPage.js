@@ -7,7 +7,9 @@ import { selectSampleCreditById } from "../sampleCredits/sampleCreditsSlice";
 const SampleCreditPage = ({ match }) => {
   const { sampleCreditId } = match.params;
 
-  const sampleCredit = useSelector((state) => selectSampleCreditById(state, sampleCreditId));
+  const sampleCredit = useSelector((state) =>
+    selectSampleCreditById(state, sampleCreditId)
+  );
 
   if (!sampleCredit) {
     return (

@@ -14,26 +14,26 @@
   background: #000000;
 
   margin: 0;
-  padding:0;
+  padding: 0;
   border: 0;
   box-sizing: border-box;
   display: block;
   color: #222;
   font-family: Programme-Regular, sans-serif;
-    line-height: 1.45;
+  line-height: 1.45;
 
   div: {
     display: block;
   }
 }
-  
+
 .footer {
   -webkit-font-smoothing: antialiased;
   z-index: 1;
   text-align: center;
   background: #000;
   color: #ccc;
-  padding: 2.25rem .75rem;
+  padding: 2.25rem 0.75rem;
   font-family: Programme-Regular, sans-serif;
   line-height: 1.65;
   position: relative;
@@ -41,7 +41,7 @@
 
 .footer a {
   white-space: nowrap;
-  padding: .5rem;
+  padding: 0.5rem;
   color: #ffff64;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;

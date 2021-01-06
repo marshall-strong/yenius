@@ -2,10 +2,10 @@
   background: #f7f7f7;
 }
 .Comments .grayContainer {
-  background-color: rgba(204,204,204,.35);
+  background-color: rgba(204, 204, 204, 0.35);
   margin-bottom: 1rem;
   margin-top: 1rem;
-  padding: .75rem;
+  padding: 0.75rem;
 }
 .Comments .grayContainer .CommentForm {
   margin-bottom: 1.313rem;
@@ -21,11 +21,16 @@
   // background: green;
   align-items: center;
   display: flex;
-  padding-right: .75rem;
+  padding-right: 0.75rem;
 }
 
-.Comments .grayContainer .CommentForm .avatarBoxWithInputBox .avatarBox .avatar {
-  background: #78909C;
+.Comments
+  .grayContainer
+  .CommentForm
+  .avatarBoxWithInputBox
+  .avatarBox
+  .avatar {
+  background: #78909c;
   height: 24px;
   width: 24px;
   min-width: 24px;
@@ -42,7 +47,12 @@
   flex: 1;
 }
 
-.Comments .grayContainer .CommentForm .avatarBoxWithInputBox .inputBox textarea {
+.Comments
+  .grayContainer
+  .CommentForm
+  .avatarBoxWithInputBox
+  .inputBox
+  textarea {
   display: block;
   width: 100%;
 
@@ -51,8 +61,7 @@
   resize: none;
 
   background: #fff;
-  border: .15rem solid #ccc;
-
+  border: 0.15rem solid #ccc;
 }
 
 .Comments .grayContainer .CommentsList {
@@ -77,7 +86,7 @@
   display: flex;
   align-items: center;
   color: inherit;
-  font-family: Programme,Arial,sans-serif;
+  font-family: Programme, Arial, sans-serif;
   line-height: 1;
   position: relative;
   text-decoration: none;
@@ -86,31 +95,32 @@
 .Comment .userBadgeAndTimestamp .TimeAgo {
   align-self: flex-start;
   color: #9a9a9a;
-  font-family: Programme,Arial,sans-serif;
-  font-size: .75em;
+  font-family: Programme, Arial, sans-serif;
+  font-size: 0.75em;
   min-width: 5em;
   text-align: right;
 }
 
-.Comment .standard-rich-content {}
+.Comment .standard-rich-content {
+}
 
 .submitButton {
   user-select: none;
   border-color: #0ecb27;
   color: #0ecb27;
   word-break: break-word;
-  transition: background-color .3s,border-color .3s;
+  transition: background-color 0.3s, border-color 0.3s;
   background-color: transparent;
-  border-width: .15rem;
+  border-width: 0.15rem;
   border-style: solid;
   border-radius: 0;
   cursor: pointer;
   display: inline-block;
-  font-family: Programme,Arial,sans-serif;
+  font-family: Programme, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4rem;
   margin: 0;
   text-align: center;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   vertical-align: top;
 }

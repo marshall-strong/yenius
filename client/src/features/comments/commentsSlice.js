@@ -1,19 +1,22 @@
-import { 
-  createEntityAdapter, 
+import {
+  createEntityAdapter,
   createSelector,
-  createSlice 
+  createSlice,
 } from "@reduxjs/toolkit";
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { addNewComment, fetchAllComments } from "../comments/commentsAsyncThunks";
+import {
+  addNewComment,
+  fetchAllComments,
+} from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 
 import { fetchAlbumComments } from "./commentsAsyncThunks";
 
 const commentsAdapter = createEntityAdapter({
-   selectId: (comment) => comment.id,
-   sortComparer: (a, b) => b.createdAt.localeCompare(a.createdAt)
+  selectId: (comment) => comment.id,
+  sortComparer: (a, b) => b.createdAt.localeCompare(a.createdAt),
 });
 
 const initialState = commentsAdapter.getInitialState({
@@ -51,7 +54,7 @@ const commentsSlice = createSlice({
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
       }
-    }
+    },
   },
 });
 
@@ -69,7 +72,12 @@ export const selectCommentsByCommentable = createSelector(
   [
     selectAllComments,
     (_state, commentableType) => commentableType,
-    (_state, _commentableType, commentableId) => commentableId
-  ], (comments, commentableType, commentableId) => comments.filter(comment =>
-    comment.commentableType === commentableType && comment.commentableId === commentableId)
+    (_state, _commentableType, commentableId) => commentableId,
+  ],
+  (comments, commentableType, commentableId) =>
+    comments.filter(
+      (comment) =>
+        comment.commentableType === commentableType &&
+        comment.commentableId === commentableId
+    )
 );

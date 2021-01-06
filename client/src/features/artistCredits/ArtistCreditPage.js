@@ -7,7 +7,9 @@ import { selectArtistCreditById } from "../artistCredits/artistCreditsSlice";
 const ArtistCreditPage = ({ match }) => {
   const { artistCreditId } = match.params;
 
-  const artistCredit = useSelector((state) => selectArtistCreditById(state, artistCreditId));
+  const artistCredit = useSelector((state) =>
+    selectArtistCreditById(state, artistCreditId)
+  );
 
   if (!artistCredit) {
     return (

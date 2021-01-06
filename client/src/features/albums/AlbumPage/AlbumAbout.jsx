@@ -12,6 +12,6 @@ const AlbumAbout = ({ albumId }) => {
       <span dangerouslySetInnerHTML={markup} />
     </div>
   );
-}
+};
 
 export default AlbumAbout;

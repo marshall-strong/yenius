@@ -27,6 +27,6 @@ export default configureStore({
     artistCreditTypes: artistCreditTypesReducer,
     sampleCredits: sampleCreditsReducer,
     sampleCreditTypes: sampleCreditTypesReducer,
-    session: sessionReducer
+    session: sessionReducer,
   },
 });

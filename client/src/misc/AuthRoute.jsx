@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 // only accessible if user is NOT logged in
-function Authorized ({ loggedIn, path, component: Component }) {
+function Authorized({ loggedIn, path, component: Component }) {
   return (
     <Route
       path={path}

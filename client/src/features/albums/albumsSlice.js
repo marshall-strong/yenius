@@ -1,7 +1,7 @@
-import { 
-  createEntityAdapter, 
-  createSelector, 
-  createSlice 
+import {
+  createEntityAdapter,
+  createSelector,
+  createSlice,
 } from "@reduxjs/toolkit";
 
 import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
@@ -13,7 +13,7 @@ import { selectSongById } from "../songs/songsSlice";
 
 const albumsAdapter = createEntityAdapter({
   selectId: (album) => album.id,
-  sortComparer: (a, b) => b.releaseDate.localeCompare(a.releaseDate)
+  sortComparer: (a, b) => b.releaseDate.localeCompare(a.releaseDate),
 });
 
 const initialState = albumsAdapter.getInitialState({});
@@ -43,7 +43,7 @@ const albumsSlice = createSlice({
       if (action.payload.albums) {
         albumsAdapter.upsertMany(state, action.payload.albums);
       }
-    }
+    },
   },
 });
 
@@ -60,7 +60,7 @@ export const {
 export const selectAlbumBySongId = createSelector(
   [
     (state) => selectAlbumEntities(state),
-    (state, songId) => selectSongById(state, songId)
+    (state, songId) => selectSongById(state, songId),
   ],
   (albumEntities, song) => albumEntities[song.albumId]
 );

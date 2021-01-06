@@ -2,24 +2,26 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { logoutUser } from "../features/session/sessionAsyncThunks"
+import { logoutUser } from "../features/session/sessionAsyncThunks";
 
 import GithubLogo from "../assets/images/logo-github-512-512.png";
 import LinkedInLogo from "../assets/images/logo-linkedin-512-512.png";
 import YeniusLogo from "../assets/images/logo-yenius-1482-207.png";
-import "../assets/stylesheets/Navbar.scss"
+import "../assets/stylesheets/Navbar.scss";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const [isCurrentUser, setIsCurrentUser] = useState("false");
   const [username, setUsername] = useState("user");
   const currentUserId = useSelector((state) => state.session.currentUserId);
-  const currentUser = useSelector((state) => state.users.entities[currentUserId]);
+  const currentUser = useSelector(
+    (state) => state.users.entities[currentUserId]
+  );
 
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logoutUser());
-  }
+  };
 
   useEffect(() => {
     if (currentUserId) {
@@ -77,7 +79,10 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/artists" className="textLabel"> ARTISTS </Link>
+            <Link to="/artists" className="textLabel">
+              {" "}
+              ARTISTS{" "}
+            </Link>
           </li>
           <li> | </li>
           <li>

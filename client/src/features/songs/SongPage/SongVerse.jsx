@@ -5,7 +5,7 @@ import { selectVerseById } from "../../verses/versesSlice";
 
 // https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
 const SongVerse = ({ verseId }) => {
-  const verse = useSelector((state) => selectVerseById(state, verseId))
+  const verse = useSelector((state) => selectVerseById(state, verseId));
   const markup = { __html: verse.body };
   return (
     <p>
@@ -14,6 +14,6 @@ const SongVerse = ({ verseId }) => {
       </a>
     </p>
   );
-}
+};
 
 export default SongVerse;

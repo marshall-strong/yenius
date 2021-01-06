@@ -26,12 +26,14 @@ const TrackListing = ({ trackId, songId }) => {
 const AlbumTracks = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumById(state, song.albumId));
-  if (!album || !album.songs) { return null }
-  const trackListings = album.songs.map((trackId) => <TrackListing trackId={trackId} songId={songId}/>);
+  if (!album || !album.songs) {
+    return null;
+  }
+  const trackListings = album.songs.map((trackId) => (
+    <TrackListing trackId={trackId} songId={songId} />
+  ));
   return (
-    <div className="track_listing track_listing--columns">
-      {trackListings}
-    </div>
+    <div className="track_listing track_listing--columns">{trackListings}</div>
   );
 };
 

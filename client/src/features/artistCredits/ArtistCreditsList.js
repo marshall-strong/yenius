@@ -9,7 +9,9 @@ import {
 } from "./artistCreditsSlice";
 
 const ArtistCreditsListItem = ({ artistCreditId }) => {
-  const artistCredit = useSelector((state) => selectArtistCreditById(state, artistCreditId));
+  const artistCredit = useSelector((state) =>
+    selectArtistCreditById(state, artistCreditId)
+  );
   return (
     <article className="list-item" key={artistCredit.id}>
       <h3>ArtistCredit {artistCredit.id}</h3>
@@ -31,7 +33,9 @@ const ArtistCreditsListItem = ({ artistCreditId }) => {
 const ArtistCreditsList = () => {
   const dispatch = useDispatch();
   const artistCreditIds = useSelector(selectArtistCreditIds);
-  const artistCreditsStatus = useSelector((state) => state.artistCredits.status);
+  const artistCreditsStatus = useSelector(
+    (state) => state.artistCredits.status
+  );
   const error = useSelector((state) => state.artistCredits.error);
 
   useEffect(() => {
@@ -46,7 +50,10 @@ const ArtistCreditsList = () => {
     content = <div className="loader">Loading...</div>;
   } else if (artistCreditsStatus === "succeeded") {
     content = artistCreditIds.map((artistCreditId) => (
-      <ArtistCreditsListItem key={artistCreditId} artistCreditId={artistCreditId} />
+      <ArtistCreditsListItem
+        key={artistCreditId}
+        artistCreditId={artistCreditId}
+      />
     ));
   } else if (artistCreditsStatus === "failed") {
     content = <div>{error}</div>;

@@ -7,7 +7,7 @@
 
 // SongLyrics
 .song_body-lyrics {
-  font-family: Programme-Light,Programme-Regular,Arial,sans-serif;
+  font-family: Programme-Light, Programme-Regular, Arial, sans-serif;
 }
 .text_label {
   -webkit-touch-callout: none;
@@ -19,16 +19,16 @@
   word-break: break-word;
   color: inherit;
   text-transform: uppercase;
-  margin-right: .1em;
-  letter-spacing: .04em;
-  font-size: .875rem;
-  font-family: Programme-Regular,Arial,sans-serif;
+  margin-right: 0.1em;
+  letter-spacing: 0.04em;
+  font-size: 0.875rem;
+  font-family: Programme-Regular, Arial, sans-serif;
 }
 .text_label--gray {
   color: #9a9a9a;
 }
 .text_label--x_small_text_size {
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 .u-top_margin {
   margin-top: 1rem;
@@ -45,14 +45,14 @@
   box-shadow: 0.01em 0 0 #ddd, -0.01em 0 0 #ddd;
   color: #000;
 
-  transition: background-color .1s,box-shadow .1s;
+  transition: background-color 0.1s, box-shadow 0.1s;
   position: relative;
 
   word-break: break-word;
   display: inline;
   font-family: inherit;
   line-height: 1.7em;
-  padding: .2em 0;
+  padding: 0.2em 0;
   text-decoration: none;
 }
 .referent--yellow:hover {
@@ -72,8 +72,8 @@
 // SongAbout
 .annotation_label {
   word-break: break-word;
-  font-family: Programme-Regular,Arial,sans-serif;
-  font-size: .875em;
+  font-family: Programme-Regular, Arial, sans-serif;
+  font-size: 0.875em;
   margin-bottom: 1rem;
 }
 .annotation_body {
@@ -97,28 +97,28 @@
 }
 
 .u-x_small_bottom_margin {
-  margin-bottom: .375rem;
+  margin-bottom: 0.375rem;
 }
 
 .metadata_unit--table_row {
   display: flex;
-  padding-top: .25rem;
+  padding-top: 0.25rem;
   border-top: 1px solid #e9e9e9;
-  margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 
 .metadata_unit {
   -webkit-font-smoothing: antialiased;
   line-height: 1.45;
   font-size: 1em;
-  font-family: Programme-Regular,Arial,sans-serif;
+  font-family: Programme-Regular, Arial, sans-serif;
   color: #9a9a9a;
 }
 
 .metadata_unit-label {
   -webkit-box-flex: 2;
   flex: 2;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 }
 
 .metadata_unit-info {
@@ -144,11 +144,11 @@
   display: flex;
   align-items: center;
   -webkit-font-smoothing: antialiased;
-  font-family: Programme-Regular,Arial,sans-serif;
+  font-family: Programme-Regular, Arial, sans-serif;
 }
 
 .song_album a {
-    color: #000;
+  color: #000;
 }
 
 .song_album-album_art {
@@ -171,12 +171,13 @@
   color: #9a9a9a;
 }
 
-.song_album-info-artist {}
+.song_album-info-artist {
+}
 
 .track_listing {
   font-feature-settings: "tnum";
   color: #000;
-  font-family: Programme-Regular,Arial,sans-serif;
+  font-family: Programme-Regular, Arial, sans-serif;
 }
 
 .track_listing a:hover {
@@ -193,5 +194,5 @@
 }
 
 .track_listing-track--current {
-    color: #9a9a9a;
+  color: #9a9a9a;
 }

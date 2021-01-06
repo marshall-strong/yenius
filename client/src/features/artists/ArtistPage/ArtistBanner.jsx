@@ -3,27 +3,29 @@ import { useSelector } from "react-redux";
 
 import { selectArtistById } from "../artistsSlice";
 
-import ThisIsFine from "../../../assets/images/this_is_fine.png"
+import ThisIsFine from "../../../assets/images/this_is_fine.png";
 import "../../../assets/stylesheets/Banner.scss";
 
 const ArtistBanner = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
   const entityType = "artist";
 
-  const subjectImage = artist.subjectImgUrl ? `url(${artist.subjectImgUrl})` : ThisIsFine;
+  const subjectImage = artist.subjectImgUrl
+    ? `url(${artist.subjectImgUrl})`
+    : ThisIsFine;
   const styleSubjectImage = {
     backgroundImage: subjectImage,
     // backgroundImage: `url(${artist.subjectImgUrl})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
-  
+
   const styleBannerImage = {
     backgroundImage: `url(${artist.bannerImgUrl})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
-  
+
   return (
     <header className="Banner" style={styleBannerImage}>
       <div className="bannerImgGradient">

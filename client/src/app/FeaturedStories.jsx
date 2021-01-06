@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../assets/stylesheets/FeaturedStories.scss"
+import "../assets/stylesheets/FeaturedStories.scss";
 
 const fetchNews = async (query) => {
   const url = `https://bing-news-search1.p.rapidapi.com/news/search?freshness=Day&textFormat=Raw&safeSearch=Strict&q=${encodeURIComponent(
@@ -9,9 +9,8 @@ const fetchNews = async (query) => {
     method: "GET",
     headers: {
       "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-      "x-rapidapi-key":
-        "c5d27684femsh1c200532b6a790bp1f3d3bjsn62a51ac2d542",
-        // process.env.REACT_APP_API_KEY,
+      "x-rapidapi-key": "c5d27684femsh1c200532b6a790bp1f3d3bjsn62a51ac2d542",
+      // process.env.REACT_APP_API_KEY,
       "x-bingapis-sdk": "true",
     },
   })
@@ -28,7 +27,6 @@ const fetchNews = async (query) => {
       console.log(e.message);
     });
 };
-
 
 const HeroStory = ({ article }) => {
   const formatDate = (s) =>
@@ -63,7 +61,6 @@ const HeroStory = ({ article }) => {
   );
 };
 
-
 const HeroImage = ({ article }) => {
   return (
     <a href={article.url} className="HeroImageLink">
@@ -78,7 +75,7 @@ const HeroImage = ({ article }) => {
       </div>
     </a>
   );
-}
+};
 
 const NewsStory = ({ article }) => {
   const formatDate = (s) =>
@@ -115,7 +112,7 @@ const NewsStory = ({ article }) => {
       </div>
     </div>
   );
-}
+};
 
 const FeaturedStories = () => {
   const [articles, setArticles] = useState(null);
@@ -125,7 +122,6 @@ const FeaturedStories = () => {
       .then((news) => setArticles(news))
       .catch((e) => console.log(e.message));
   }, []);
-
 
   return (
     <div>
@@ -154,8 +150,6 @@ const FeaturedStories = () => {
       )}
     </div>
   );
-  
-  
-}
+};
 
 export default FeaturedStories;

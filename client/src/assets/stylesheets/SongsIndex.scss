@@ -3,72 +3,73 @@
   font-family: Programme-Regular, sans-serif;
 }
 
-.songs_index-breadcrumbs, .songs_index-header, .songs_index_list, .characters_index_list {
-    margin-left: 20px;
+.songs_index-breadcrumbs,
+.songs_index-header,
+.songs_index_list,
+.characters_index_list {
+  margin-left: 20px;
 }
 
-.SongsIndex h1, .SongsIndex h2 {
-    font-size: 40px;
-    color: #fff;
-    font-weight: 700;
-    line-height: 100%;
-    padding-top: 1px;
-    margin-bottom: 10px;
+.SongsIndex h1,
+.SongsIndex h2 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 100%;
+  padding-top: 1px;
+  margin-bottom: 10px;
 }
 
 .SongsIndex .breadcrumbs {
   list-style-type: none;
 }
 
-
 .SongsIndex .breadcrumbs li {
-    display: inline;
-    margin: 0 5px 0 0;
+  display: inline;
+  margin: 0 5px 0 0;
 }
 
-
 .SongsIndex a {
-    color: #5ba7c2;
-    text-decoration: none;
+  color: #5ba7c2;
+  text-decoration: none;
 }
 
 .SongsIndex .songs_index_list {
-    list-style-type: none;
+  list-style-type: none;
 }
 .SongsIndex .songs_index_list li {
-    margin: 0;
+  margin: 0;
 }
 
 .SongsIndex .characters_index_list {
-    list-style-type: none;
+  list-style-type: none;
 }
 .SongsIndex .characters_index_list li {
-    margin: 0;
+  margin: 0;
 }
 
 .SongsIndex ul {
-    list-style: disc outside;
-        margin: 1em;
-    margin-top: 0;
+  list-style: disc outside;
+  margin: 1em;
+  margin-top: 0;
 }
 
-
 .AristsIndex .songs_index_list-song_name {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .SongsIndex .songs_index_characters_list {
-    font-size: 1.5em;
-    line-height: 1.1em;
-    margin-left: 20px;
+  font-size: 1.5em;
+  line-height: 1.1em;
+  margin-left: 20px;
 }
 
 .SongsIndex .characters_index_list {
-    font-size: 1.5em;
-    line-height: 1.1em;
-    margin-left: 20px;
+  font-size: 1.5em;
+  line-height: 1.1em;
+  margin-left: 20px;
 }
 
 .SongsIndex .character_index_list-link {
-  padding: .3rem;
+  padding: 0.3rem;
 }

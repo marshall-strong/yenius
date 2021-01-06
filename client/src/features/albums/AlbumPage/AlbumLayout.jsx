@@ -6,7 +6,7 @@ import AlbumTracklist from "./AlbumTracklist";
 import CommentsList from "../../comments/CommentsList";
 // import CommentsSection from "../../comments/CommentsSection";
 
-const AlbumLayout = ({ albumId }) => {  
+const AlbumLayout = ({ albumId }) => {
   return (
     <div className="Layout">
       <div className="LeftColumn">
@@ -20,6 +20,6 @@ const AlbumLayout = ({ albumId }) => {
       </div>
     </div>
   );
-}
+};
 
 export default AlbumLayout;

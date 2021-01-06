@@ -4,7 +4,7 @@ import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
 import {
   fetchArtistPage,
   fetchArtistsList,
-  fetchArtistsIndex
+  fetchArtistsIndex,
 } from "../artists/artistsAsyncThunks";
 import {
   fetchAlbumComments,
@@ -12,10 +12,10 @@ import {
   fetchSongComments,
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
-import { 
-  fetchSongPage, 
-  fetchSongsList, 
-  fetchSongsIndex
+import {
+  fetchSongPage,
+  fetchSongsList,
+  fetchSongsIndex,
 } from "../songs/songsAsyncThunks";
 import {
   signupUser,

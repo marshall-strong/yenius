@@ -27,11 +27,11 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(loginUser(userCredentials))
+    dispatch(loginUser(userCredentials));
   };
   const handleDemoLogin = (e) => {
     e.preventDefault();
-    dispatch(loginUser(demoUserCredentials))
+    dispatch(loginUser(demoUserCredentials));
   };
 
   const displayErrors = (
@@ -72,7 +72,7 @@ const LoginForm = () => {
       <br />
       {displayErrors}
       {usernameInput}
-      <br /> 
+      <br />
       {passwordInput}
       <br />
       <div className="finger">

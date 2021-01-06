@@ -55,12 +55,8 @@ const SongPage = ({ match }) => {
       </div>
     );
   }
-  
-  return (
-    <section>
-      {content}
-    </section>
-  );
+
+  return <section>{content}</section>;
 };
 
 export default SongPage;

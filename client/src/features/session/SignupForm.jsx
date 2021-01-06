@@ -14,7 +14,7 @@ const SignupForm = () => {
 
   const [password, setPassword] = useState("");
   const onPasswordChanged = (e) => setPassword(e.target.value);
-  
+
   const sessionErrors = useSelector((state) => state.session.errors);
 
   const userCredentials = {
@@ -25,14 +25,14 @@ const SignupForm = () => {
 
   const demoUserCredentials = {
     username: "demo",
-    password: "demo1234"
+    password: "demo1234",
   };
 
   const dispatch = useDispatch();
   const handleSignup = (e) => {
     e.preventDefault();
     dispatch(signupUser(userCredentials));
-  };  
+  };
   const handleDemoLogin = (e) => {
     e.preventDefault();
     dispatch(loginUser(demoUserCredentials));
