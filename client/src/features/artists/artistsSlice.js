@@ -1,13 +1,17 @@
-import { 
-  createEntityAdapter, 
-  createSelector, 
-  createSlice 
+import {
+  createEntityAdapter,
+  createSelector,
+  createSlice,
 } from "@reduxjs/toolkit";
 
 // import { useSelector } from "react-redux";
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
-import { fetchArtistPage, fetchArtistsList, fetchArtistsIndex } from "../artists/artistsAsyncThunks";
+import {
+  fetchArtistPage,
+  fetchArtistsList,
+  fetchArtistsIndex,
+} from "../artists/artistsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
@@ -15,7 +19,7 @@ import { selectSongById } from "../songs/songsSlice";
 
 const artistsAdapter = createEntityAdapter({
   selectId: (artist) => artist.id,
-  sortComparer: (a, b) => b.name.localeCompare(a.name)
+  sortComparer: (a, b) => b.name.localeCompare(a.name),
 });
 
 const initialState = artistsAdapter.getInitialState({});
@@ -61,10 +65,7 @@ export const {
 
 // given an array of ids, return an array of entities
 export const selectArtistsByIds = createSelector(
-  [
-    (state) => state.artists.entities, 
-    (_state, artistIds) => artistIds
-  ],
+  [(state) => state.artists.entities, (_state, artistIds) => artistIds],
   (artistEntities, artistIds) =>
     artistIds.map((artistId) => artistEntities[artistId])
 );
@@ -72,32 +73,33 @@ export const selectArtistsByIds = createSelector(
 export const selectSongPrimaryArtistsBySongId = createSelector(
   [
     (state) => selectArtistEntities(state),
-    (state, songId) => selectSongById(state, songId)
+    (state, songId) => selectSongById(state, songId),
   ],
   (artistEntities, song) => {
-    
-    return song.artistCredits["PRIMARY_ARTIST"].map(artistId => 
-      artistEntities[artistId]);
+    return song.artistCredits["PRIMARY_ARTIST"].map(
+      (artistId) => artistEntities[artistId]
+    );
   }
 );
 
 export const selectSongFeaturedArtistsBySongId = createSelector(
   [
     (state) => selectArtistEntities(state),
-    (state, songId) => selectSongById(state, songId)
+    (state, songId) => selectSongById(state, songId),
   ],
-  (artistEntities, song) => 
-    song.artistCredits["FEATURED_ARTIST"].map(artistId => 
-      artistEntities[artistId])
+  (artistEntities, song) =>
+    song.artistCredits["FEATURED_ARTIST"].map(
+      (artistId) => artistEntities[artistId]
+    )
 );
 
 export const selectSongProducersBySongId = createSelector(
   [
     (state) => selectArtistEntities(state),
-    (state, songId) => selectSongById(state, songId)
+    (state, songId) => selectSongById(state, songId),
   ],
-  (artistEntities, song) => 
-    song.artistCredits["PRODUCER"].map(artistId => artistEntities[artistId])
+  (artistEntities, song) =>
+    song.artistCredits["PRODUCER"].map((artistId) => artistEntities[artistId])
 );
 
 export const selectAlbumPrimaryArtistsBySongId = createSelector(
@@ -114,11 +116,12 @@ export const selectAlbumPrimaryArtistsBySongId = createSelector(
 export const selectAlbumPrimaryArtistsByAlbumId = createSelector(
   [
     (state) => selectArtistEntities(state),
-    (state, albumId) => selectAlbumById(state, albumId)
+    (state, albumId) => selectAlbumById(state, albumId),
   ],
-  (artistEntities, album) => 
-    album.artistCredits["PRIMARY_ARTIST"].map(artistId => 
-      artistEntities[artistId])
+  (artistEntities, album) =>
+    album.artistCredits["PRIMARY_ARTIST"].map(
+      (artistId) => artistEntities[artistId]
+    )
 );
 
 export const selectAlbumProducersByAlbumId = createSelector(
@@ -130,9 +133,8 @@ export const selectAlbumProducersByAlbumId = createSelector(
     album.artistCredits["PRODUCER"].map((artistId) => artistEntities[artistId])
 );
 
-
 // export const selectPrimaryArtistBySongId = (songId) => {
-  
+
 //   const song = useSelector((state) => selectSongById(state, songId));
 //   const songPrimaryArtists = useSelector((state) => selectSongPrimaryArtistsBySongId(state, songId));
 //   const albumPrimaryArtists = useSelector((state) => selectAlbumPrimaryArtistsByAlbumId(state, song.albumId));

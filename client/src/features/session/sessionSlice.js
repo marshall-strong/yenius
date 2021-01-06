@@ -16,7 +16,7 @@ export const sessionSlice = createSlice({
       state.currentUserId = null;
     },
     receiveSessionErrors: (state, action) => {
-      state.errors.push(action.error.message)
+      state.errors.push(action.error.message);
     },
     clearSessionErrors: (state) => {
       state.errors = [];
@@ -26,7 +26,7 @@ export const sessionSlice = createSlice({
     [signupUser.fulfilled]: (state, action) => {
       state.currentUserId = action.payload.session.currentUserId;
     },
-    [signupUser.rejected]: (state, action) => { 
+    [signupUser.rejected]: (state, action) => {
       state.errors.push(action.error.message);
     },
     [loginUser.fulfilled]: (state, action) => {

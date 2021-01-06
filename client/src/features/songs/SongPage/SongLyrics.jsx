@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectSongById } from "../songsSlice";
-import SongVerse from "./SongVerse"
+import SongVerse from "./SongVerse";
 
 const SongLyrics = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
@@ -16,7 +16,7 @@ const SongLyrics = ({ songId }) => {
     );
   }
 
-  const songVerses = song.verses.map(verseId => (
+  const songVerses = song.verses.map((verseId) => (
     <SongVerse key={verseId} verseId={verseId} />
   ));
   return (
@@ -29,6 +29,6 @@ const SongLyrics = ({ songId }) => {
       </div>
     </div>
   );
-}
+};
 
 export default SongLyrics;

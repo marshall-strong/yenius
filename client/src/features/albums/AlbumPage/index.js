@@ -8,7 +8,7 @@ import AlbumBanner from "./AlbumBanner";
 import AlbumLayout from "./AlbumLayout";
 // import AlbumBreadcrumbs from "./AlbumBreadcrumbs";
 
-import "../../../assets/stylesheets/show.scss"
+import "../../../assets/stylesheets/show.scss";
 
 const AlbumPage = ({ match }) => {
   const dispatch = useDispatch();
@@ -44,11 +44,7 @@ const AlbumPage = ({ match }) => {
     );
   }
 
-  return (
-    <section>
-      {content}
-    </section>
-  );
+  return <section>{content}</section>;
 };
 
 export default AlbumPage;

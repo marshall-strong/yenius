@@ -3,10 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { fetchArtistsList } from "./artistsAsyncThunks";
-import {
-  selectArtistIds,
-  selectArtistById,
-} from "./artistsSlice";
+import { selectArtistIds, selectArtistById } from "./artistsSlice";
 
 const ArtistIndexImage = ({ imgUrl }) => {
   const style = {

@@ -10,7 +10,7 @@ import "../../../assets/stylesheets/SongBanner.scss";
 const SongBanner = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumById(state, song.albumId));
-  let albumLink; 
+  let albumLink;
   if (album && album.name === "Samples & Interpolations") {
     albumLink = "Samples & Interpolations";
   } else if (album) {
@@ -52,7 +52,7 @@ const SongBanner = ({ songId }) => {
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
-  
+
   return (
     <header className="Banner" style={styleBannerImage}>
       <div className="bannerImgGradient">
@@ -63,15 +63,9 @@ const SongBanner = ({ songId }) => {
               {/* <div className="entityType">{entityType}</div> */}
               <div className="subjectName yellow">{name}</div>
               <div className="subjectArtist">{artists}</div>
-              <div className="songFeaturedArtists metadata">
-                {featured}
-              </div>
-              <div className="songProducers metadata">
-                {producers}
-              </div>
-              <div className="songAlbum metadata">
-                Album&nbsp;{albumLink}
-              </div>
+              <div className="songFeaturedArtists metadata">{featured}</div>
+              <div className="songProducers metadata">{producers}</div>
+              <div className="songAlbum metadata">Album&nbsp;{albumLink}</div>
             </div>
           </div>
         </div>

@@ -1,12 +1,16 @@
-import { 
-  createEntityAdapter, 
+import {
+  createEntityAdapter,
   createSelector,
-  createSlice
+  createSlice,
 } from "@reduxjs/toolkit";
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { fetchSongPage, fetchSongsList, fetchSongsIndex } from "../songs/songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongsList,
+  fetchSongsIndex,
+} from "../songs/songsAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
 
@@ -56,7 +60,6 @@ export const {
   selectById: selectSongById, // given the state and an entity ID, returns the entity with that ID or undefined.
 } = songsAdapter.getSelectors((state) => state.songs);
 
-
 export const selectTracksByAlbumId = createSelector(
   [
     (state) => selectAllSongs(state),
@@ -68,7 +71,7 @@ export const selectTracksByAlbumId = createSelector(
 export const selectAlbumTracksBySongId = createSelector(
   [
     (state) => selectSongEntities(state),
-    (state, songId) => selectAlbumBySongId(state, songId)
+    (state, songId) => selectAlbumBySongId(state, songId),
   ],
-  (songEntities, album) => album.songs.map(songId => songEntities[songId])
+  (songEntities, album) => album.songs.map((songId) => songEntities[songId])
 );

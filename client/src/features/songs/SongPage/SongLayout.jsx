@@ -7,7 +7,6 @@ import SongAlbum from "./SongAlbum";
 import CommentsList from "../../comments/CommentsList";
 
 const SongLayout = ({ songId }) => {
-
   return (
     <div className="song_body column_layout">
       <div className="column_layout-column_span column_layout-column_span--primary">
@@ -26,6 +25,6 @@ const SongLayout = ({ songId }) => {
       </div>
     </div>
   );
-}
+};
 
 export default SongLayout;

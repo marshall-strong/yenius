@@ -7,7 +7,9 @@ import { selectSampleCreditTypeById } from "../sampleCreditTypes/sampleCreditTyp
 const SampleCreditTypePage = ({ match }) => {
   const { sampleCreditTypeId } = match.params;
 
-  const sampleCreditType = useSelector((state) => selectSampleCreditTypeById(state, sampleCreditTypeId));
+  const sampleCreditType = useSelector((state) =>
+    selectSampleCreditTypeById(state, sampleCreditTypeId)
+  );
 
   if (!sampleCreditType) {
     return (

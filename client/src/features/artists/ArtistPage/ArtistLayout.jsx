@@ -19,6 +19,6 @@ const ArtistLayout = ({ artistId }) => {
       </div>
     </div>
   );
-}
+};
 
 export default ArtistLayout;

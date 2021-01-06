@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchSongsIndex } from "../songsAsyncThunks";
 import { selectSongIds, selectSongById } from "../songsSlice";
-import "../../../assets/stylesheets/SongsIndex.scss"
+import "../../../assets/stylesheets/SongsIndex.scss";
 
 const SongsListItem = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
@@ -24,7 +24,9 @@ const SongsList = ({ char, songIds }) => {
       </h1>
     );
   }
-  const list = songIds.map((songId) => (<SongsListItem key={songId} songId={songId}/>));
+  const list = songIds.map((songId) => (
+    <SongsListItem key={songId} songId={songId} />
+  ));
   return (
     <div>
       <h1 className="songs_index-header">

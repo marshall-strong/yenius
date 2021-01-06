@@ -4,7 +4,6 @@ function ArtistTopAlbums(props) {
   return (
     <div className="MockComponent">
       <h1>ArtistTopAlbums</h1>
-      
     </div>
   );
 }

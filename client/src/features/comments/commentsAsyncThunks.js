@@ -4,7 +4,9 @@ import axios from "axios";
 export const addNewComment = createAsyncThunk(
   "comments/addNewComment",
   async (initialComment) => {
-    const response = await axios.post(`/api/v1/comments`, { comment: initialComment });
+    const response = await axios.post(`/api/v1/comments`, {
+      comment: initialComment,
+    });
     return response.data;
   }
 );
@@ -48,7 +50,6 @@ export const fetchVerseComments = createAsyncThunk(
     return response.data;
   }
 );
-
 
 // export const fetchOneComment = createAsyncThunk('comments/fetchOneComment',
 //   async (commentId) => {

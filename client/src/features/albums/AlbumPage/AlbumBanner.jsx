@@ -7,7 +7,6 @@ import { printDate } from "../../../lib/printDate";
 
 import "../../../assets/stylesheets/Banner.scss";
 
-
 const AlbumBanner = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));
 
@@ -22,7 +21,7 @@ const AlbumBanner = ({ albumId }) => {
     artistLinks = "Various Artists";
     releaseDate = "Various Release Dates";
   } else if (album.artistsPrimary) {
-    artistLinks = (<InterspersedArtistLinks artistIds={album.artistsPrimary}/>);
+    artistLinks = <InterspersedArtistLinks artistIds={album.artistsPrimary} />;
     releaseDate = <div>Released {printDate(album.releaseDate)}</div>;
   }
 

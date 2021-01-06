@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { fetchArtistCreditTypes } from "../artistCreditTypes/artistCreditTypesAsyncThunks"
-import { selectArtistCreditTypeIds, selectArtistCreditTypeById } from "./artistCreditTypesSlice";
+import { fetchArtistCreditTypes } from "../artistCreditTypes/artistCreditTypesAsyncThunks";
+import {
+  selectArtistCreditTypeIds,
+  selectArtistCreditTypeById,
+} from "./artistCreditTypesSlice";
 
 const ArtistCreditTypesListItem = ({ artistCreditTypeId }) => {
   const artistCreditType = useSelector((state) =>

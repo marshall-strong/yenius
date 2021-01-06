@@ -8,7 +8,7 @@ function SongAbout({ songId }) {
   return (
     <div className="song-description_annotation">
       <div className="annotation_label">
-        <br/>
+        <br />
         <h3 className="u-inline">About "{song.name}"</h3>
       </div>
       <div className="annotation_body">

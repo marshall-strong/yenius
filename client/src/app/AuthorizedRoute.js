@@ -4,7 +4,7 @@ import { Redirect, Route, withRouter } from "react-router-dom";
 
 const AuthorizedRoute = ({ path, component: Component }) => {
   const currentUserId = useSelector((state) => state.session.currentUserId);
-  return(
+  return (
     <Route
       path={path}
       render={(props) => {
@@ -16,6 +16,6 @@ const AuthorizedRoute = ({ path, component: Component }) => {
       }}
     />
   );
-}
+};
 
 export default withRouter(AuthorizedRoute);

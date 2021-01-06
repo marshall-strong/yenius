@@ -10,9 +10,8 @@ import {
   SampleParents,
   SampleChildren,
   InterpolationParents,
-  InterpolationChildren
+  InterpolationChildren,
 } from "./SongMetadataUnits";
-
 
 const SongTrackInfo = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
@@ -26,18 +25,18 @@ const SongTrackInfo = ({ songId }) => {
         <h3 className="text_label u-x_small_bottom_margin">
           "{song.name}" Track Info
         </h3>
-        <PrimaryArtists songId={songId}/>
-        <FeaturedArtists songId={songId}/>
-        <ProductionArtists songId={songId}/>
-        <ReleaseDate songId={songId}/>
-        <SampleParents songId={songId}/>
-        <SampleChildren songId={songId}/>
-        <InterpolationParents songId={songId}/>
-        <InterpolationChildren songId={songId}/>
+        <PrimaryArtists songId={songId} />
+        <FeaturedArtists songId={songId} />
+        <ProductionArtists songId={songId} />
+        <ReleaseDate songId={songId} />
+        <SampleParents songId={songId} />
+        <SampleChildren songId={songId} />
+        <InterpolationParents songId={songId} />
+        <InterpolationChildren songId={songId} />
       </div>
     );
   }
   return <div>{content}</div>;
-}
+};
 
 export default SongTrackInfo;

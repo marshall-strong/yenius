@@ -49,8 +49,8 @@ const usersSlice = createSlice({
       usersAdapter.upsertMany(state, action.payload.users);
     },
     [fetchAlbumComments.fulfilled]: (state, action) => {
-      usersAdapter.upsertMany(state, action.payload.users)
-    }
+      usersAdapter.upsertMany(state, action.payload.users);
+    },
   },
 });
 

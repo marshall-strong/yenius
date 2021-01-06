@@ -9,7 +9,10 @@ const ArtistsListItem = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
   return (
     <li>
-      <Link to={`/artists/${artistId}`} className="artists_index_list-artist_name">
+      <Link
+        to={`/artists/${artistId}`}
+        className="artists_index_list-artist_name"
+      >
         {artist.name}
       </Link>
     </li>
@@ -36,7 +39,6 @@ const ArtistsList = ({ char, artistIds }) => {
     </div>
   );
 };
-
 
 const ArtistsIndexCharArtists = ({ match }) => {
   const dispatch = useDispatch();

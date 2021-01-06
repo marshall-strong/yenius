@@ -32,7 +32,7 @@ const TracklistRow = ({ songId }) => {
 
   let producers;
   if (song.artistsProducers && song.artistsProducers.length > 0) {
-    producers = (<InterspersedArtistLinks artistIds={song.artistsProducers} />);
+    producers = <InterspersedArtistLinks artistIds={song.artistsProducers} />;
   }
 
   return (
@@ -62,7 +62,6 @@ const TracklistRow = ({ songId }) => {
                     </span>
                   </div>
                 </div>
-                
               </div>
             </div>
           </div>

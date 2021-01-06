@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { 
+import {
   fetchAlbumComments,
   fetchArtistComments,
   fetchSongComments,
-  fetchVerseComments
+  fetchVerseComments,
 } from "./commentsAsyncThunks";
 
 import { selectAlbumById } from "../albums/albumsSlice";
@@ -41,32 +41,28 @@ const CommentsList = ({ commentable }) => {
     ));
   }
 
-  return (
-    <div className="CommentsList">
-      {commentsList}
-    </div>
-  );
+  return <div className="CommentsList">{commentsList}</div>;
 };
 
 const CommentsSection = ({ commentableType, commentableId }) => {
   const dispatch = useDispatch();
   const [componentStatus, setComponentStatus] = useState("idle");
-  
+
   useEffect(() => {
-    if (componentStatus === 'idle' || componentStatus === 'updated') {
-      if (commentableType === 'Album') {
+    if (componentStatus === "idle" || componentStatus === "updated") {
+      if (commentableType === "Album") {
         dispatch(fetchAlbumComments(commentableId));
         setComponentStatus("requestSent");
       }
-      if (commentableType === 'Artist') {
+      if (commentableType === "Artist") {
         dispatch(fetchArtistComments(commentableId));
         setComponentStatus("requestSent");
       }
-      if (commentableType === 'Song') {
+      if (commentableType === "Song") {
         dispatch(fetchSongComments(commentableId));
         setComponentStatus("requestSent");
       }
-      if (commentableType === 'Verse') {
+      if (commentableType === "Verse") {
         dispatch(fetchVerseComments(commentableId));
         setComponentStatus("requestSent");
       }
@@ -99,7 +95,10 @@ const CommentsSection = ({ commentableType, commentableId }) => {
     content = <div className="loader">Loading...</div>;
   } else if (asyncRequestStatus === "rejected") {
     content = <div>{error}</div>;
-  } else if (asyncRequestStatus === "fulfilled" && (!commentable || !commentable.comments)) {
+  } else if (
+    asyncRequestStatus === "fulfilled" &&
+    (!commentable || !commentable.comments)
+  ) {
     content = (
       <div className="grayContainer">
         <AddCommentForm
@@ -124,15 +123,12 @@ const CommentsSection = ({ commentableType, commentableId }) => {
     );
   }
 
-    return (
-      <div className="Comments">
-        <div className="grayContainer">
-          {content}
-        </div>
-        <br />
-      </div>
-    );
-
+  return (
+    <div className="Comments">
+      <div className="grayContainer">{content}</div>
+      <br />
+    </div>
+  );
 };
 
 export default CommentsSection;

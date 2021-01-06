@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./assets/stylesheets/App.scss";
-import "./font-faces.scss"
+import "./font-faces.scss";
 import "./assets/fonts/Programme-Regular/Programme-Regular.eot";
 import "./assets/fonts/Programme-Regular/Programme-Regular.svg";
 import "./assets/fonts/Programme-Regular/Programme-Regular.ttf";
@@ -70,8 +70,16 @@ function App() {
           <Route exact path="/" component={LandingPage} />
 
           <Route exact path="/artists" component={ArtistsIndexCharIndex} />
-          <Route exact path="/artists-index/" component={ArtistsIndexCharIndex} />
-          <Route exact path="/artists-index/:char" component={ArtistsIndexCharArtists} />
+          <Route
+            exact
+            path="/artists-index/"
+            component={ArtistsIndexCharIndex}
+          />
+          <Route
+            exact
+            path="/artists-index/:char"
+            component={ArtistsIndexCharArtists}
+          />
           <Route exact path="/artists/:artistId" component={ArtistPage} />
 
           <Route exact path="/albums" component={AlbumsList} />
@@ -79,7 +87,11 @@ function App() {
 
           <Route exact path="/songs" component={SongsIndexCharIndex} />
           <Route exact path="/songs-index" component={SongsIndexCharIndex} />
-          <Route exact path="/songs-index/:char" component={SongsIndexCharSongs} />
+          <Route
+            exact
+            path="/songs-index/:char"
+            component={SongsIndexCharSongs}
+          />
           <Route exact path="/songs/:songId" component={SongPage} />
 
           <Route exact path="/comments" component={CommentsList} />
@@ -91,9 +103,9 @@ function App() {
           <AuthorizedRoute exact path="/signup" component={SignupForm} />
           <AuthorizedRoute exact path="/login" component={LoginForm} />
 
-          <Route component={NotFound}/>
+          <Route component={NotFound} />
           <Redirect to="/" />
-          
+
           {/* <Route exact path="/artist_credits" component={ArtistCreditsList} />
           <Route exact path="/artist_credits/:artistCreditId" component={ArtistCreditPage} />
           <Route exact path="/artist_credit_types" component={ArtistCreditTypesList} />

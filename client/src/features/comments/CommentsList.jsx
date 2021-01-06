@@ -38,8 +38,6 @@ const CommentsList = ({ commentableType, commentableId }) => {
     commentable = song;
   }
 
-  
-
   let commentsList;
   if (commentable.comments) {
     commentsList = commentable.comments.map((commentId) => (
@@ -50,7 +48,10 @@ const CommentsList = ({ commentableType, commentableId }) => {
   return (
     <div className="Comments">
       <div className="grayContainer">
-        <AddCommentForm commentableType={commentableType} commentableId={commentableId} />
+        <AddCommentForm
+          commentableType={commentableType}
+          commentableId={commentableId}
+        />
         <div className="CommentsList">{commentsList}</div>
         <div className="ShowMore"></div>
       </div>

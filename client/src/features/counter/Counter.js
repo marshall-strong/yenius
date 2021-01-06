@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
   increment,
   incrementByAmount,
   incrementAsync,
   selectCount,
-} from './counterSlice';
+} from "./counterSlice";
 import logo from "./logo.svg";
-import styles from './Counter.module.css';
-import './Counter.css';
+import styles from "./Counter.module.css";
+import "./Counter.css";
 
 const Counter = () => {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  const [incrementAmount, setIncrementAmount] = useState("2");
 
   return (
     <div className="Counter">
@@ -107,6 +107,6 @@ const Counter = () => {
       </header>
     </div>
   );
-}
+};
 
-export default Counter
+export default Counter;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { selectSongById } from "./songsSlice";
 // import { selectAlbumBySongId } from "../albums/albumsSlice";
 // import {
@@ -9,7 +9,7 @@ import { selectSongById } from "./songsSlice";
 // } from "../artists/artistsSlice";
 // import intersperse from "../../lib/intersperse";
 
-export const SongByArtistLink = ({ songId }) => {  
+export const SongByArtistLink = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   // const primaryArtists = selectPrimaryArtistBySongId(songId);
   // const artistNames = primaryArtists.map((artist) => artist.name);
@@ -20,7 +20,5 @@ export const SongByArtistLink = ({ songId }) => {
   } else {
     content = <Link to={`/songs/${songId}`}>{song.displayName}</Link>;
   }
-  return (
-    <div>{content}</div>
-  );
+  return <div>{content}</div>;
 };

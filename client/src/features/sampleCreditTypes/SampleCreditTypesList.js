@@ -31,7 +31,9 @@ const SampleCreditTypesListItem = ({ sampleCreditTypeId }) => {
 const SampleCreditTypesList = () => {
   const dispatch = useDispatch();
   const sampleCreditTypeIds = useSelector(selectSampleCreditTypeIds);
-  const sampleCreditTypesStatus = useSelector((state) => state.sampleCreditTypes.status);
+  const sampleCreditTypesStatus = useSelector(
+    (state) => state.sampleCreditTypes.status
+  );
   const error = useSelector((state) => state.sampleCreditTypes.error);
 
   useEffect(() => {
@@ -46,7 +48,10 @@ const SampleCreditTypesList = () => {
     content = <div className="loader">Loading...</div>;
   } else if (sampleCreditTypesStatus === "succeeded") {
     content = sampleCreditTypeIds.map((sampleCreditTypeId) => (
-      <SampleCreditTypesListItem key={sampleCreditTypeId} sampleCreditTypeId={sampleCreditTypeId} />
+      <SampleCreditTypesListItem
+        key={sampleCreditTypeId}
+        sampleCreditTypeId={sampleCreditTypeId}
+      />
     ));
   } else if (sampleCreditTypesStatus === "failed") {
     content = <div>{error}</div>;
