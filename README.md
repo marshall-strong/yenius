@@ -24,5 +24,5 @@ heroku reads `Procfile.dev` and starts the tasks:
 ## Style
 
 Use _[pre-commit](https://pre-commit.com/)_ framework for managing and maintaining multi-language pre-commit hooks (Requires _[python](https://docs.python-guide.org/starting/install3/linux/)_)
-
-UPDATE: pre-commit should now only check the /client directory
+UPDATE: pre-commit should now only run Prettier the /client directory
+/client directory uses Prettier and ESLint to format code as a pre-commit hook
