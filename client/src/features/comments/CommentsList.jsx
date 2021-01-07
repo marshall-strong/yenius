@@ -18,13 +18,10 @@ const Comment = ({ commentId }) => {
   );
 };
 
-const CommentsList = ({ commentable }) => {
-  let content;
-  if (commentable.comments) {
-    content = commentable.comments.map((commentId) => (
-      <Comment key={commentId} commentId={commentId} />
-    ));
-  }
+const CommentsList = ({ commentIds }) => {
+  const content = commentIds.map((commentId) => (
+    <Comment key={commentId} commentId={commentId} />
+  ));
   return <div className="CommentsList">{content}</div>;
 };
 
