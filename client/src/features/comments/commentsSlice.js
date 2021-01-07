@@ -182,18 +182,13 @@ export const {
 export const selectCommentsByCommentable = createSelector(
   [
     selectAllComments,
-    (_state, commentableType) => commentableType,
-    (_state, _commentableType, commentableId) => commentableId,
+    (_state, commentableId) => commentableId,
+    (_state, _commentableId, commentableType) => commentableType,
   ],
-  (comments, commentableType, commentableId) =>
+  (comments, commentableId, commentableType) =>
     comments.filter(
       (comment) =>
         comment.commentableType === commentableType &&
         comment.commentableId === commentableId
     )
-);
-
-export const selectCommentsStatus = createSelector(
-  [(state) => state.comments.status],
-  (commentsStatus) => commentsStatus
 );
