@@ -1,5 +1,5 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-
+import { fetchVerseComments } from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 // import { fetchVerses } from "../verses/versesAsyncThunks";
 
@@ -20,6 +20,11 @@ const versesSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchSongPage.fulfilled]: (state, action) => {
+      if (action.payload.verses) {
+        versesAdapter.setAll(state, action.payload.verses);
+      }
+    },
+    [fetchVerseComments.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.setAll(state, action.payload.verses);
       }

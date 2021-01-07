@@ -12,6 +12,7 @@ import {
   fetchArtistsList,
   fetchArtistsIndex,
 } from "../artists/artistsAsyncThunks";
+import { fetchArtistComments } from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
@@ -46,6 +47,11 @@ const artistsSlice = createSlice({
       }
     },
     [fetchSongPage.fulfilled]: (state, action) => {
+      if (action.payload.artists) {
+        artistsAdapter.upsertMany(state, action.payload.artists);
+      }
+    },
+    [fetchArtistComments.fulfilled]: (state, action) => {
       if (action.payload.artists) {
         artistsAdapter.upsertMany(state, action.payload.artists);
       }
