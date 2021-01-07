@@ -11,14 +11,6 @@ export const addNewComment = createAsyncThunk(
   }
 );
 
-export const fetchAllComments = createAsyncThunk(
-  "comments/fetchAllComments",
-  async () => {
-    const response = await axios.get(`/api/v1/comments`);
-    return response.data;
-  }
-);
-
 export const fetchAlbumComments = createAsyncThunk(
   "comments/fetchAlbumComments",
   async (albumId) => {
@@ -50,6 +42,14 @@ export const fetchVerseComments = createAsyncThunk(
     return response.data;
   }
 );
+
+// export const fetchAllComments = createAsyncThunk(
+//   "comments/fetchAllComments",
+//   async () => {
+//     const response = await axios.get(`/api/v1/comments`);
+//     return response.data;
+//   }
+// );
 
 // export const fetchOneComment = createAsyncThunk('comments/fetchOneComment',
 //   async (commentId) => {

@@ -6,13 +6,10 @@ import {
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import {
-  addNewComment,
-  fetchAllComments,
-} from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 
 import {
+  addNewComment,
   fetchAlbumComments,
   fetchArtistComments,
   fetchSongComments,
@@ -43,9 +40,6 @@ const commentsSlice = createSlice({
     [addNewComment.fulfilled]: (state, action) => {
       state.status = "addNewComment.fulfilled";
       commentsAdapter.upsertMany(state, action.payload.comments);
-    },
-    [fetchAllComments.fulfilled]: (state, action) => {
-      commentsAdapter.setAll(state, action.payload.comments);
     },
     [fetchAlbumPage.fulfilled]: (state, action) => {
       if (action.payload.comments) {
