@@ -192,3 +192,20 @@ export const selectCommentsByCommentable = createSelector(
         c.commentableType === commentableType
     )
 );
+
+export const selectCommentIdsByCommentable = createSelector(
+  [
+    selectAllComments,
+    (_state, commentableId) => commentableId,
+    (_state, _commentableId, commentableType) => commentableType,
+  ],
+  (comments, commentableId, commentableType) => {
+    const selectedComments = comments.filter(
+      (c) =>
+        c.commentableId === parseInt(commentableId) &&
+        c.commentableType === commentableType
+    );
+    const selectedCommentIds = selectedComments.map((c) => c.id);
+    return selectedCommentIds;
+  }
+);
