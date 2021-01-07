@@ -32,6 +32,11 @@ const versesSlice = createSlice({
         versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
+    [addVerseComment.fulfilled]: (state, action) => {
+      if (action.payload.verses) {
+        versesAdapter.upsertMany(state, action.payload.verses);
+      }
+    },
   },
 });
 

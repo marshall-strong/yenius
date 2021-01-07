@@ -47,6 +47,11 @@ const albumsSlice = createSlice({
         albumsAdapter.upsertMany(state, action.payload.albums);
       }
     },
+    [addAlbumComment.fulfilled]: (state, action) => {
+      if (action.payload.albums) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
+    },
   },
 });
 

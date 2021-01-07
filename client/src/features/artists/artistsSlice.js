@@ -59,6 +59,11 @@ const artistsSlice = createSlice({
         artistsAdapter.upsertMany(state, action.payload.artists);
       }
     },
+    [addArtistComment.fulfilled]: (state, action) => {
+      if (action.payload.artists) {
+        artistsAdapter.upsertMany(state, action.payload.artists);
+      }
+    },
   },
 });
 
