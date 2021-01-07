@@ -187,8 +187,8 @@ export const selectCommentsByCommentable = createSelector(
   ],
   (comments, commentableId, commentableType) =>
     comments.filter(
-      (comment) =>
-        comment.commentableType === commentableType &&
-        comment.commentableId === commentableId
+      (c) =>
+        c.commentableId === parseInt(commentableId) &&
+        c.commentableType === commentableType
     )
 );
