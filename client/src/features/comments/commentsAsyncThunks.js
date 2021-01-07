@@ -19,20 +19,36 @@ export const fetchAlbumComments = createAsyncThunk(
   }
 );
 
+export const fetchArtistComments = createAsyncThunk(
+  "comments/fetchArtistComments",
+  async (artistId) => {
+    const response = await axios.get(`/api/v1/artists/${artistId}/comments`);
+    return response.data;
+  }
+);
+
+export const fetchSongComments = createAsyncThunk(
+  "comments/fetchSongComments",
+  async (songId) => {
+    const response = await axios.get(`/api/v1/songs/${songId}/comments`);
+    return response.data;
+  }
+);
+
+export const fetchVerseComments = createAsyncThunk(
+  "comments/fetchVerseComments",
+  async (verseId) => {
+    const response = await axios.get(`/api/v1/verses/${verseId}/comments`);
+    return response.data;
+  }
+);
+
 export const addAlbumComment = createAsyncThunk(
   "comments/addAlbumComment",
   async (albumId, newComment) => {
     const response = await axios.post(`/api/v1/albums/${albumId}/comments`, {
       comment: newComment,
     });
-    return response.data;
-  }
-);
-
-export const fetchArtistComments = createAsyncThunk(
-  "comments/fetchArtistComments",
-  async (artistId) => {
-    const response = await axios.get(`/api/v1/artists/${artistId}/comments`);
     return response.data;
   }
 );
@@ -47,28 +63,12 @@ export const addArtistComment = createAsyncThunk(
   }
 );
 
-export const fetchSongComments = createAsyncThunk(
-  "comments/fetchSongComments",
-  async (songId) => {
-    const response = await axios.get(`/api/v1/songs/${songId}/comments`);
-    return response.data;
-  }
-);
-
 export const addSongComment = createAsyncThunk(
   "comments/addSongComment",
   async (songId, newComment) => {
     const response = await axios.post(`/api/v1/songs/${songId}/comments`, {
       comment: newComment,
     });
-    return response.data;
-  }
-);
-
-export const fetchVerseComments = createAsyncThunk(
-  "comments/fetchVerseComments",
-  async (verseId) => {
-    const response = await axios.get(`/api/v1/verses/${verseId}/comments`);
     return response.data;
   }
 );
