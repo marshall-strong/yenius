@@ -13,15 +13,20 @@ Rails.application.routes.draw do
       get '/songs-index/:char', to: 'songs#songs_index'
 
       resources :verses, only: [:index, :show]
-      
+
       resources :comments
       get '/albums/:commentableId/comments', to: 'comments#album_comments'
       get '/artists/:commentableId/comments', to: 'comments#artist_comments'
       get '/songs/:commentableId/comments', to: 'comments#song_comments'
       get '/verses/:commentableId/comments', to: 'comments#verse_comments'
 
+      post '/albums/:commentableId/comments', to: 'comments#create_album_comment'
+      post '/artists/:commentableId/comments', to: 'comments#create_artist_comment'
+      post '/songs/:commentableId/comments', to: 'comments#create_song_comment'
+      post '/verses/:commentableId/comments', to: 'comments#create_verse_comment'
+
       resources :users
-      
+
       resource :session, only: [:create, :destroy]
 
       resources :artist_roles
@@ -32,7 +37,7 @@ Rails.application.routes.draw do
   end
 
   # if no routes match the request, fallback to returning client/public/index.html
-  # 
+  #
   # This should fix the error that happen when the frontend route is somehow
   #  sent to the backend, causing an error like "no route matches /albums/undefined"
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
