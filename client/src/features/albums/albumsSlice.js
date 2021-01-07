@@ -7,7 +7,10 @@ import {
 import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
-import { fetchAlbumComments } from "../comments/commentsAsyncThunks";
+import {
+  addAlbumComment,
+  fetchAlbumComments,
+} from "../comments/commentsAsyncThunks";
 
 import { selectSongById } from "../songs/songsSlice";
 
@@ -31,12 +34,12 @@ const albumsSlice = createSlice({
     },
     [fetchArtistPage.fulfilled]: (state, action) => {
       if (action.payload.albums) {
-        albumsAdapter.upsertMany(state, action.payload.albums);
+        albumsAdapter.setAll(state, action.payload.albums);
       }
     },
     [fetchSongPage.fulfilled]: (state, action) => {
       if (action.payload.albums) {
-        albumsAdapter.upsertMany(state, action.payload.albums);
+        albumsAdapter.setAll(state, action.payload.albums);
       }
     },
     [fetchAlbumComments.fulfilled]: (state, action) => {

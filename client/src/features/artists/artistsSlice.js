@@ -12,7 +12,10 @@ import {
   fetchArtistsList,
   fetchArtistsIndex,
 } from "../artists/artistsAsyncThunks";
-import { fetchArtistComments } from "../comments/commentsAsyncThunks";
+import {
+  addArtistComment,
+  fetchArtistComments,
+} from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
@@ -32,7 +35,7 @@ const artistsSlice = createSlice({
   extraReducers: {
     [fetchAlbumPage.fulfilled]: (state, action) => {
       if (action.payload.artists) {
-        artistsAdapter.upsertMany(state, action.payload.artists);
+        artistsAdapter.setAll(state, action.payload.artists);
       }
     },
     [fetchArtistPage.fulfilled]: (state, action) => {
@@ -48,7 +51,7 @@ const artistsSlice = createSlice({
     },
     [fetchSongPage.fulfilled]: (state, action) => {
       if (action.payload.artists) {
-        artistsAdapter.upsertMany(state, action.payload.artists);
+        artistsAdapter.setAll(state, action.payload.artists);
       }
     },
     [fetchArtistComments.fulfilled]: (state, action) => {

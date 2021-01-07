@@ -1,5 +1,8 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import { fetchVerseComments } from "../comments/commentsAsyncThunks";
+import {
+  addVerseComment,
+  fetchVerseComments,
+} from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 // import { fetchVerses } from "../verses/versesAsyncThunks";
 
@@ -26,7 +29,7 @@ const versesSlice = createSlice({
     },
     [fetchVerseComments.fulfilled]: (state, action) => {
       if (action.payload.verses) {
-        versesAdapter.setAll(state, action.payload.verses);
+        versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
   },
