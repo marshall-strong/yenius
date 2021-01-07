@@ -17,5 +17,6 @@ module.exports = {
     "no-unused-vars": "off",
     "react/jsx-key": "off",
     "react/no-unescaped-entities": "off",
+    "no-debugger": "off",
   },
 };
