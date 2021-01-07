@@ -7,6 +7,10 @@ import {
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
+  addSongComment,
+  fetchSongComments,
+} from "../comments/commentsAsyncThunks";
+import {
   fetchSongPage,
   fetchSongsList,
   fetchSongsIndex,
@@ -28,12 +32,12 @@ const songsSlice = createSlice({
   extraReducers: {
     [fetchAlbumPage.fulfilled]: (state, action) => {
       if (action.payload.songs) {
-        songsAdapter.upsertMany(state, action.payload.songs);
+        songsAdapter.setAll(state, action.payload.songs);
       }
     },
     [fetchArtistPage.fulfilled]: (state, action) => {
       if (action.payload.songs) {
-        songsAdapter.upsertMany(state, action.payload.songs);
+        songsAdapter.setAll(state, action.payload.songs);
       }
     },
     [fetchSongsIndex.fulfilled]: (state, action) => {
@@ -45,7 +49,17 @@ const songsSlice = createSlice({
       songsAdapter.setAll(state, action.payload.songs);
     },
     [fetchSongPage.fulfilled]: (state, action) => {
-      songsAdapter.upsertMany(state, action.payload.songs);
+      songsAdapter.setAll(state, action.payload.songs);
+    },
+    [fetchSongComments.fulfilled]: (state, action) => {
+      if (action.payload.songs) {
+        songsAdapter.upsertMany(state, action.payload.songs);
+      }
+    },
+    [addSongComment.fulfilled]: (state, action) => {
+      if (action.payload.songs) {
+        songsAdapter.upsertMany(state, action.payload.songs);
+      }
     },
   },
 });

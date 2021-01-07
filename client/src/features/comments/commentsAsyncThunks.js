@@ -11,14 +11,6 @@ export const addNewComment = createAsyncThunk(
   }
 );
 
-export const fetchAllComments = createAsyncThunk(
-  "comments/fetchAllComments",
-  async () => {
-    const response = await axios.get(`/api/v1/comments`);
-    return response.data;
-  }
-);
-
 export const fetchAlbumComments = createAsyncThunk(
   "comments/fetchAlbumComments",
   async (albumId) => {
@@ -50,6 +42,66 @@ export const fetchVerseComments = createAsyncThunk(
     return response.data;
   }
 );
+
+export const addAlbumComment = createAsyncThunk(
+  "comments/addAlbumComment",
+  async (newComment) => {
+    const response = await axios.post(
+      `/api/v1/albums/${newComment.commentable_id}/comments`,
+      {
+        comment: newComment,
+      }
+    );
+    return response.data;
+  }
+);
+
+export const addArtistComment = createAsyncThunk(
+  "comments/addArtistComment",
+  async (newComment) => {
+    const response = await axios.post(
+      `/api/v1/artists/${newComment.commentable_id}/comments`,
+      {
+        comment: newComment,
+      }
+    );
+    return response.data;
+  }
+);
+
+export const addSongComment = createAsyncThunk(
+  "comments/addSongComment",
+  async (newComment) => {
+    const response = await axios.post(
+      `/api/v1/songs/${newComment.commentable_id}/comments`,
+      {
+        comment: newComment,
+      }
+    );
+    return response.data;
+  }
+);
+
+export const addVerseComment = createAsyncThunk(
+  "comments/addVerseComment",
+  async (newComment) => {
+    const response = await axios.post(
+      `/api/v1/verses/${newComment.commentable_id}/comments`,
+      {
+        comment: newComment,
+      }
+    );
+    return response.data;
+  }
+);
+
+// export const fetchAllComments = createAsyncThunk(
+//   "comments/fetchAllComments",
+//   async () => {
+//     const response = await axios.get(`/api/v1/comments`);
+//     return response.data;
+//   }
+// );
 
 // export const fetchOneComment = createAsyncThunk('comments/fetchOneComment',
 //   async (commentId) => {

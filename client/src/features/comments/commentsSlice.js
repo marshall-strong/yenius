@@ -6,13 +6,19 @@ import {
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import {
-  addNewComment,
-  fetchAllComments,
-} from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 
-import { fetchAlbumComments } from "./commentsAsyncThunks";
+import {
+  addNewComment,
+  addAlbumComment,
+  addArtistComment,
+  addSongComment,
+  addVerseComment,
+  fetchAlbumComments,
+  fetchArtistComments,
+  fetchSongComments,
+  fetchVerseComments,
+} from "./commentsAsyncThunks";
 
 const commentsAdapter = createEntityAdapter({
   selectId: (comment) => comment.id,
@@ -29,28 +35,133 @@ const commentsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    [addNewComment.pending]: (state, action) => {
+      state.status = "addNewComment.pending";
+    },
+    [addNewComment.rejected]: (state, action) => {
+      state.status = "addNewComment.rejected";
+    },
     [addNewComment.fulfilled]: (state, action) => {
+      state.status = "addNewComment.fulfilled";
       commentsAdapter.upsertMany(state, action.payload.comments);
     },
-    [fetchAllComments.fulfilled]: (state, action) => {
-      commentsAdapter.setAll(state, action.payload.comments);
-    },
+
     [fetchAlbumPage.fulfilled]: (state, action) => {
       if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
+        commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [fetchArtistPage.fulfilled]: (state, action) => {
       if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
+        commentsAdapter.setAll(state, action.payload.comments);
       }
+    },
+    [fetchSongPage.pending]: (state, action) => {
+      state.status = "fetchSongPage.pending";
+    },
+    [fetchSongPage.rejected]: (state, action) => {
+      state.status = "fetchSongPage.rejected";
     },
     [fetchSongPage.fulfilled]: (state, action) => {
+      state.status = "fetchSongPage.fulfilled";
       if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
+        commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+
+    [fetchAlbumComments.pending]: (state, action) => {
+      state.status = "fetchAlbumComments.pending";
+    },
+    [fetchAlbumComments.rejected]: (state, action) => {
+      state.status = "fetchAlbumComments.rejected";
+    },
     [fetchAlbumComments.fulfilled]: (state, action) => {
+      state.status = "fetchAlbumComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchArtistComments.pending]: (state, action) => {
+      state.status = "fetchArtistComments.pending";
+    },
+    [fetchArtistComments.rejected]: (state, action) => {
+      state.status = "fetchArtistComments.rejected";
+    },
+    [fetchArtistComments.fulfilled]: (state, action) => {
+      state.status = "fetchArtistComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchSongComments.pending]: (state, action) => {
+      state.status = "fetchSongComments.pending";
+    },
+    [fetchSongComments.rejected]: (state, action) => {
+      state.status = "fetchSongComments.rejected";
+    },
+    [fetchSongComments.fulfilled]: (state, action) => {
+      state.status = "fetchSongComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchVerseComments.pending]: (state, action) => {
+      state.status = "fetchVerseComments.pending";
+    },
+    [fetchVerseComments.rejected]: (state, action) => {
+      state.status = "fetchVerseComments.rejected";
+    },
+    [fetchVerseComments.fulfilled]: (state, action) => {
+      state.status = "fetchVerseComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+
+    [addAlbumComment.pending]: (state, action) => {
+      state.status = "addAlbumComment.pending";
+    },
+    [addAlbumComment.rejected]: (state, action) => {
+      state.status = "addAlbumComment.rejected";
+    },
+    [addAlbumComment.fulfilled]: (state, action) => {
+      state.status = "addAlbumComment.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [addArtistComment.pending]: (state, action) => {
+      state.status = "addArtistComment.pending";
+    },
+    [addArtistComment.rejected]: (state, action) => {
+      state.status = "addArtistComment.rejected";
+    },
+    [addArtistComment.fulfilled]: (state, action) => {
+      state.status = "addArtistComment.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [addSongComment.pending]: (state, action) => {
+      state.status = "addSongComment.pending";
+    },
+    [addSongComment.rejected]: (state, action) => {
+      state.status = "addSongComment.rejected";
+    },
+    [addSongComment.fulfilled]: (state, action) => {
+      state.status = "addSongComment.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [addVerseComment.pending]: (state, action) => {
+      state.status = "addVerseComment.pending";
+    },
+    [addVerseComment.rejected]: (state, action) => {
+      state.status = "addVerseComment.rejected";
+    },
+    [addVerseComment.fulfilled]: (state, action) => {
+      state.status = "addVerseComment.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
       }
@@ -71,13 +182,30 @@ export const {
 export const selectCommentsByCommentable = createSelector(
   [
     selectAllComments,
-    (_state, commentableType) => commentableType,
-    (_state, _commentableType, commentableId) => commentableId,
+    (_state, commentableId) => commentableId,
+    (_state, _commentableId, commentableType) => commentableType,
   ],
-  (comments, commentableType, commentableId) =>
+  (comments, commentableId, commentableType) =>
     comments.filter(
-      (comment) =>
-        comment.commentableType === commentableType &&
-        comment.commentableId === commentableId
+      (c) =>
+        c.commentableId === parseInt(commentableId) &&
+        c.commentableType === commentableType
     )
+);
+
+export const selectCommentIdsByCommentable = createSelector(
+  [
+    selectAllComments,
+    (_state, commentableId) => commentableId,
+    (_state, _commentableId, commentableType) => commentableType,
+  ],
+  (comments, commentableId, commentableType) => {
+    const selectedComments = comments.filter(
+      (c) =>
+        c.commentableId === parseInt(commentableId) &&
+        c.commentableType === commentableType
+    );
+    const selectedCommentIds = selectedComments.map((c) => c.id);
+    return selectedCommentIds;
+  }
 );

@@ -6,6 +6,9 @@ import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
 
 const TrackListing = ({ trackId, songId }) => {
   const track = useSelector((state) => selectSongById(state, trackId));
+  if (!track) {
+    return null;
+  }
   let className = "track_listing-track";
   let trackName = <a href={`/songs/${track.id}`}>{track.name}</a>;
   // TrackListing for the SongPage song should be displayed differently
