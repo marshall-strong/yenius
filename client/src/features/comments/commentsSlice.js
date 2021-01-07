@@ -12,7 +12,12 @@ import {
 } from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
 
-import { fetchAlbumComments } from "./commentsAsyncThunks";
+import {
+  fetchAlbumComments,
+  fetchArtistComments,
+  fetchSongComments,
+  fetchVerseComments,
+} from "./commentsAsyncThunks";
 
 const commentsAdapter = createEntityAdapter({
   selectId: (comment) => comment.id,
@@ -64,7 +69,50 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    [fetchAlbumComments.pending]: (state, action) => {
+      state.status = "fetchAlbumComments.pending";
+    },
+    [fetchAlbumComments.rejected]: (state, action) => {
+      state.status = "fetchAlbumComments.rejected";
+    },
     [fetchAlbumComments.fulfilled]: (state, action) => {
+      state.status = "fetchAlbumComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchArtistComments.pending]: (state, action) => {
+      state.status = "fetchArtistComments.pending";
+    },
+    [fetchArtistComments.rejected]: (state, action) => {
+      state.status = "fetchArtistComments.rejected";
+    },
+    [fetchArtistComments.fulfilled]: (state, action) => {
+      state.status = "fetchArtistComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchSongComments.pending]: (state, action) => {
+      state.status = "fetchSongComments.pending";
+    },
+    [fetchSongComments.rejected]: (state, action) => {
+      state.status = "fetchSongComments.rejected";
+    },
+    [fetchSongComments.fulfilled]: (state, action) => {
+      state.status = "fetchSongComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchVerseComments.pending]: (state, action) => {
+      state.status = "fetchVerseComments.pending";
+    },
+    [fetchVerseComments.rejected]: (state, action) => {
+      state.status = "fetchVerseComments.rejected";
+    },
+    [fetchVerseComments.fulfilled]: (state, action) => {
+      state.status = "fetchVerseComments.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
       }
