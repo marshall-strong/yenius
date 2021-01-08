@@ -7,6 +7,7 @@ import {
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
+import { fetchVersePage } from "../verses/versesAsyncThunks";
 
 import {
   addNewComment,
@@ -65,7 +66,19 @@ const commentsSlice = createSlice({
     [fetchSongPage.fulfilled]: (state, action) => {
       state.status = "fetchSongPage.fulfilled";
       if (action.payload.comments) {
-        commentsAdapter.setAll(state, action.payload.comments);
+        commentsAdapter.upsertMany(state, action.payload.comments);
+      }
+    },
+    [fetchVersePage.pending]: (state, action) => {
+      state.status = "fetchVersePage.pending";
+    },
+    [fetchVersePage.rejected]: (state, action) => {
+      state.status = "fetchVersePage.rejected";
+    },
+    [fetchVersePage.fulfilled]: (state, action) => {
+      state.status = "fetchVersePage.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
 
@@ -102,7 +115,7 @@ const commentsSlice = createSlice({
     [fetchSongComments.fulfilled]: (state, action) => {
       state.status = "fetchSongComments.fulfilled";
       if (action.payload.comments) {
-        commentsAdapter.setAll(state, action.payload.comments);
+        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
     [fetchVerseComments.pending]: (state, action) => {
@@ -114,7 +127,7 @@ const commentsSlice = createSlice({
     [fetchVerseComments.fulfilled]: (state, action) => {
       state.status = "fetchVerseComments.fulfilled";
       if (action.payload.comments) {
-        commentsAdapter.setAll(state, action.payload.comments);
+        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
 
