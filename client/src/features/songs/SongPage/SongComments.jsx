@@ -12,7 +12,6 @@ const SongComments = ({ songId }) => {
     return (
       <CommentsContainer
         addComment={addSongComment}
-        commentable={song}
         commentableId={songId}
         commentableType={"Song"}
       />

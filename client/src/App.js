@@ -42,6 +42,7 @@ import AlbumPage from "./features/albums/AlbumPage";
 import SongsIndexCharIndex from "./features/songs/SongsIndex/SongsIndexCharIndex";
 import SongsIndexCharSongs from "./features/songs/SongsIndex/SongsIndexCharSongs";
 import SongPage from "./features/songs/SongPage";
+import VersePage from "./features/verses/VersePage";
 import UsersList from "./features/users/UsersList";
 import UserPage from "./features/users/UserPage";
 import SignupForm from "./features/session/SignupForm";
@@ -57,7 +58,6 @@ import PageFooter from "./app/PageFooter";
 // import SampleCreditTypesList from "./features/sampleCreditTypes/SampleCreditTypesList";
 // import SampleCreditTypePage from "./features/sampleCreditTypes/SampleCreditTypePage";
 // import VersesList from "./features/verses/VersesList";
-// import VersePage from "./features/verses/VersePage";
 
 function App() {
   return (
@@ -90,7 +90,14 @@ function App() {
             path="/songs-index/:char"
             component={SongsIndexCharSongs}
           />
+
           <Route exact path="/songs/:songId" component={SongPage} />
+          <Route exact path="/songs/:songId/verses" component={SongPage} />
+          <Route
+            exact
+            path="/songs/:songId/verses/:verseId"
+            component={VersePage}
+          />
 
           <Route exact path="/users" component={UsersList} />
           <Route exact path="/users/:userId" component={UserPage} />

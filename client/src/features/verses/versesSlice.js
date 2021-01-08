@@ -4,7 +4,7 @@ import {
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 import { fetchSongPage } from "../songs/songsAsyncThunks";
-// import { fetchVerses } from "../verses/versesAsyncThunks";
+import { fetchVersePage } from "../verses/versesAsyncThunks";
 
 const versesAdapter = createEntityAdapter({
   // selectId is only necessary if entity's unique key is NOT entity.id
@@ -24,7 +24,7 @@ const versesSlice = createSlice({
   extraReducers: {
     [fetchSongPage.fulfilled]: (state, action) => {
       if (action.payload.verses) {
-        versesAdapter.setAll(state, action.payload.verses);
+        versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
     [fetchVerseComments.fulfilled]: (state, action) => {
@@ -33,6 +33,11 @@ const versesSlice = createSlice({
       }
     },
     [addVerseComment.fulfilled]: (state, action) => {
+      if (action.payload.verses) {
+        versesAdapter.upsertMany(state, action.payload.verses);
+      }
+    },
+    [fetchVersePage.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);
       }
