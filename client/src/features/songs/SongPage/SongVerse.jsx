@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { selectVerseById } from "../../verses/versesSlice";
@@ -9,9 +10,12 @@ const SongVerse = ({ verseId }) => {
   const markup = { __html: verse.body };
   return (
     <p>
-      <a href={`/songs/${verse.songId}`} className="referent referent--yellow">
+      <Link
+        to={`/songs/${verse.songId}/verses/${verseId}`}
+        className="referent referent--yellow"
+      >
         <span className="SongVerse" dangerouslySetInnerHTML={markup} />
-      </a>
+      </Link>
     </p>
   );
 };
