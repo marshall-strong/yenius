@@ -1,6 +1,5 @@
 import React from "react";
 import SongAbout from "./SongAbout";
-import SongAnnotations from "./SongAnnotations";
 import SongLyrics from "./SongLyrics";
 import SongTrackInfo from "./SongTrackInfo";
 import SongAlbum from "./SongAlbum";
@@ -19,9 +18,7 @@ const SongLayout = ({ songId }) => {
           <SongTrackInfo songId={songId} />
           <SongAlbum songId={songId} />
         </div>
-        <div className="column_layout-flex_column-fill_column">
-          <SongAnnotations songId={songId} />
-        </div>
+        <div className="column_layout-flex_column-fill_column"></div>
       </div>
     </div>
   );
