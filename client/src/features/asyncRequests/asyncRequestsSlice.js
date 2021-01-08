@@ -17,6 +17,7 @@ import {
   fetchSongsList,
   fetchSongsIndex,
 } from "../songs/songsAsyncThunks";
+import { fetchVersePage } from "../verses/versesAsyncThunks";
 import {
   signupUser,
   loginUser,
@@ -171,6 +172,16 @@ const asyncRequestsSlice = createSlice({
       handleFulfilled(state);
     },
     [fetchSongsIndex.rejected]: (state, action) => {
+      handleRejected(state);
+      handleErrors(state, action);
+    },
+    [fetchVersePage.pending]: (state) => {
+      handlePending(state);
+    },
+    [fetchVersePage.fulfilled]: (state) => {
+      handleFulfilled(state);
+    },
+    [fetchVersePage.rejected]: (state, action) => {
       handleRejected(state);
       handleErrors(state, action);
     },
