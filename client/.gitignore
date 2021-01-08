@@ -1,4 +1,5 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# This gitignore is only for the React frontend.
+# A separate gitignore for the Rails backend can be found at ../.gitignore
 
 # dependencies
 /node_modules
