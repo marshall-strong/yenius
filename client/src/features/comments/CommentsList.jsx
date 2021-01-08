@@ -7,6 +7,9 @@ import TimeAgo from "./TimeAgo";
 const Comment = ({ commentId }) => {
   const comment = useSelector((state) => selectCommentById(state, commentId));
   const user = useSelector((state) => selectUserById(state, comment.authorId));
+  if (!comment || !user) {
+    return null;
+  }
   return (
     <article className="Comment" key={comment.id}>
       <div className="userBadgeAndTimestamp">
