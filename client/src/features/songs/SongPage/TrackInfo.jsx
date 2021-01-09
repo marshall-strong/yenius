@@ -6,14 +6,15 @@ import {
   PrimaryArtists,
   FeaturedArtists,
   ProductionArtists,
+  AlbumName,
   ReleaseDate,
   SampleParents,
   SampleChildren,
   InterpolationParents,
   InterpolationChildren,
-} from "./SongMetadataUnits";
+} from "./TrackMetadata";
 
-const SongTrackInfo = ({ songId }) => {
+const TrackInfo = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumById(state, song.albumId));
   const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
@@ -28,6 +29,7 @@ const SongTrackInfo = ({ songId }) => {
         <PrimaryArtists songId={songId} />
         <FeaturedArtists songId={songId} />
         <ProductionArtists songId={songId} />
+        <AlbumName songId={songId} />
         <ReleaseDate songId={songId} />
         <SampleParents songId={songId} />
         <SampleChildren songId={songId} />
@@ -39,4 +41,4 @@ const SongTrackInfo = ({ songId }) => {
   return <div>{content}</div>;
 };
 
-export default SongTrackInfo;
+export default TrackInfo;

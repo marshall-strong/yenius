@@ -3,7 +3,7 @@ import React from "react";
 // import SongAlbum from "../../songs/SongPage/SongAlbum";
 // import SongTrackInfo from "../../songs/SongPage/SongTrackInfo";
 import SongComments from "../../songs/SongPage/SongComments";
-import SongLyrics from "../../songs/SongPage/SongLyrics";
+import SongLyrics from "../../songs/SongPage/Lyrics";
 import VerseAnnotations from "./VerseAnnotations";
 import VerseShow from "./VerseShow";
 import VerseComments from "./VerseComments";

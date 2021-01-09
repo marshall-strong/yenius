@@ -1,15 +1,23 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { selectAlbumById } from "../../albums/albumsSlice";
 import { selectSongById } from "../songsSlice";
 import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
-
+import { mergeArrays } from "../../../lib";
 import "../../../assets/stylesheets/SongBanner.scss";
 
-const SongBanner = ({ songId }) => {
+const Banner = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumById(state, song.albumId));
+
+  if (!song || !album) {
+    return null;
+  }
+  if (!song.artistCredits || !album.artistCredits) {
+    return null;
+  }
+
   let albumLink;
   if (album && album.name === "Samples & Interpolations") {
     albumLink = "Samples & Interpolations";
@@ -17,26 +25,41 @@ const SongBanner = ({ songId }) => {
     albumLink = <a href={`/albums/${album.id}`}>{album.name}</a>;
   }
 
-  // const entityType = "song";
   const name = song.name;
-  const artists = <InterspersedArtistLinks artistIds={song.artistsPrimary} />;
 
-  let featured;
-  if (song.artistsFeatured && song.artistsFeatured.length > 0) {
-    featured = (
+  let primaryArtists;
+  const primaryArtistIds = mergeArrays(
+    song.artistCredits["PRIMARY_ARTIST"],
+    album.artistCredits["PRIMARY_ARTIST"]
+  );
+  if (primaryArtistIds.length > 0) {
+    primaryArtists = <InterspersedArtistLinks artistIds={primaryArtistIds} />;
+  }
+
+  let featuredArtists;
+  const featuredArtistIds = mergeArrays(
+    song.artistCredits["FEATURED_ARTIST"],
+    album.artistCredits["FEATURED_ARTIST"]
+  );
+  if (featuredArtistIds.length > 0) {
+    featuredArtists = (
       <span>
         {"Featuring "}
-        <InterspersedArtistLinks artistIds={song.artistsFeatured} />
+        <InterspersedArtistLinks artistIds={featuredArtistIds} />
       </span>
     );
   }
 
   let producers;
-  if (song.artistsProducers && song.artistsProducers.length > 0) {
+  const producerArtistIds = mergeArrays(
+    song.artistCredits["PRODUCER"],
+    album.artistCredits["PRODUCER"]
+  );
+  if (producerArtistIds.length > 0) {
     producers = (
       <span>
         {"Produced by "}
-        <InterspersedArtistLinks artistIds={song.artistsProducers} />
+        <InterspersedArtistLinks artistIds={producerArtistIds} />
       </span>
     );
   }
@@ -62,8 +85,10 @@ const SongBanner = ({ songId }) => {
             <div className="bannerText">
               {/* <div className="entityType">{entityType}</div> */}
               <div className="subjectName yellow">{name}</div>
-              <div className="subjectArtist">{artists}</div>
-              <div className="songFeaturedArtists metadata">{featured}</div>
+              <div className="subjectArtist">{primaryArtists}</div>
+              <div className="songFeaturedArtists metadata">
+                {featuredArtists}
+              </div>
               <div className="songProducers metadata">{producers}</div>
               <div className="songAlbum metadata">Album&nbsp;{albumLink}</div>
             </div>
@@ -74,4 +99,4 @@ const SongBanner = ({ songId }) => {
   );
 };
 
-export default SongBanner;
+export default Banner;

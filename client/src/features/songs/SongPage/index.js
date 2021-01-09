@@ -1,38 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { fetchSongPage } from "../songsAsyncThunks";
 import { selectSongById } from "../songsSlice";
-
-import SongBanner from "./SongBanner";
-import SongLayout from "./SongLayout";
-// import SongBreadcrumbs from "./SongBreadcrumbs";
-
+import Banner from "./Banner";
+import ColumnLayout from "./ColumnLayout";
+import Breadcrumbs from "./Breadcrumbs";
 import "../../../assets/stylesheets/SongShow.scss";
-import "../../../assets/stylesheets/column_layout.scss";
 
-const SongPage = ({ match }) => {
+const ShowSong = ({ match }) => {
   const dispatch = useDispatch();
   const [componentStatus, setComponentStatus] = useState("idle");
   const { songId } = match.params;
-  const [lastSongId, setLastSongId] = useState(null);
+  const [lastSongFetched, setLastSongFetched] = useState(null);
 
   // fetch data from API when SongPage loads
   useEffect(() => {
     if (componentStatus === "idle") {
       dispatch(fetchSongPage(songId));
       setComponentStatus("requestSent");
-      setLastSongId(songId);
+      setLastSongFetched(songId);
     }
   }, [componentStatus, songId, dispatch]);
 
   // fetch data from API when arriving from another SongPage
   useEffect(() => {
-    if (lastSongId !== songId) {
+    if (lastSongFetched !== songId) {
       dispatch(fetchSongPage(songId));
-      setLastSongId(songId);
+      setLastSongFetched(songId);
     }
-  }, [lastSongId, songId, dispatch]);
+  }, [lastSongFetched, songId, dispatch]);
 
   const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
   const error = useSelector((state) => state.asyncRequests.errors[-1]);
@@ -49,9 +45,9 @@ const SongPage = ({ match }) => {
   } else if (asyncRequestStatus === "fulfilled" && song) {
     content = (
       <div>
-        <SongBanner songId={songId} />
-        <SongLayout songId={songId} />
-        {/* <SongBreadcrumbs songId={songId} /> */}
+        <Banner songId={songId} />
+        <ColumnLayout songId={songId} />
+        <Breadcrumbs match={match} />
       </div>
     );
   }
@@ -59,4 +55,4 @@ const SongPage = ({ match }) => {
   return <section>{content}</section>;
 };
 
-export default SongPage;
+export default ShowSong;

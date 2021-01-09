@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
 import { selectSongById } from "../songsSlice";
 
-function SongAbout({ songId }) {
+const Description = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   return (
     <div className="song-description_annotation">
@@ -16,6 +15,6 @@ function SongAbout({ songId }) {
       </div>
     </div>
   );
-}
+};
 
-export default SongAbout;
+export default Description;

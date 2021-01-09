@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { selectAlbumById } from "../albumsSlice";
 import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
-import { printDate } from "../../../lib/printDate";
+import { printDate } from "../../../lib";
 
 import "../../../assets/stylesheets/Banner.scss";
 
