@@ -6,8 +6,8 @@ import { selectSongById } from "../../songs/songsSlice";
 import { fetchVersePage } from "../versesAsyncThunks";
 import { selectVerseById } from "../versesSlice";
 
-import SongBanner from "../../songs/SongPage/SongBanner";
-import SongLayout from "../../songs/SongPage/SongLayout";
+import SongBanner from "../../songs/SongPage/Banner";
+import SongLayout from "../../songs/SongPage/ColumnLayout";
 import VerseLayout from "./VerseLayout";
 // import SongBreadcrumbs from "../../songs/SongPage/SongBreadcrumbs";
 
