@@ -6,15 +6,26 @@ import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
 import { SongByArtistLink } from "../SongLinks";
 import { printDate } from "../../../lib/printDate";
 
+const arrMerge = (array1, array2) => {
+  let merge = array1.concat(array2);
+  merge.filter((ele, idx) => merge.indexOf(ele) == idx);
+  return merge;
+};
+
 export const PrimaryArtists = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  if (!song.artistCredits) {
+  const album = useSelector((state) => selectAlbumBySongId(state, songId));
+  if (!song.artistCredits || !album.artistCredits) {
     return null;
   }
-  const primaryArtistIds = song.artistCredits["PRIMARY_ARTIST"];
+
+  const songArtistCredits = song.artistCredits["PRIMARY_ARTIST"];
+  const albumArtistCredits = album.artistCredits["PRIMARY_ARTIST"];
+  const primaryArtistIds = arrMerge(songArtistCredits, albumArtistCredits);
   if (primaryArtistIds.length === 0) {
     return null;
   }
+
   const linksToPrimaryArtists = (
     <InterspersedArtistLinks artistIds={primaryArtistIds} />
   );
