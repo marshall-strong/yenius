@@ -6,12 +6,7 @@ import { selectSongById } from "../songsSlice";
 import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
 import { SongByArtistLink } from "../SongLinks";
 import { printDate } from "../../../lib/printDate";
-
-const arrMerge = (array1, array2) => {
-  let merge = array1.concat(array2);
-  merge.filter((ele, idx) => merge.indexOf(ele) == idx);
-  return merge;
-};
+import { mergeArrays } from "../../../lib/mergeArrays";
 
 export const PrimaryArtists = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
@@ -22,7 +17,7 @@ export const PrimaryArtists = ({ songId }) => {
 
   const songArtistCredits = song.artistCredits["PRIMARY_ARTIST"];
   const albumArtistCredits = album.artistCredits["PRIMARY_ARTIST"];
-  const primaryArtistIds = arrMerge(songArtistCredits, albumArtistCredits);
+  const primaryArtistIds = mergeArrays(songArtistCredits, albumArtistCredits);
   if (primaryArtistIds.length === 0) {
     return null;
   }
