@@ -6,7 +6,7 @@ json.albums do
     json.subjectImgUrl url_for(@song.album.cover_img)
     json.songAlbumCoverArt url_for(@song.album.cover_img.variant(resize_to_fit: [64, 64], quality: 80))
     json.releaseDate @song.album.release_date
-    json.year @song.album.str_release_year 
+    json.year @song.album.str_release_year
     json.artistsPrimary do
       json.array! @song.album.artistsPrimary.map { |artist| artist.id }
     end
@@ -115,15 +115,15 @@ json.songs do
     json.subjectImgUrl url_for(@song.album.cover_img)
     json.bannerImgUrl url_for(@song.album.banner_img)
     # legacy artistCredit methods
-    json.artistsPrimary do 
-      json.array! @song.artistsPrimary.map { |artist| artist.id }
-    end
-    json.artistsFeatured do 
-      json.array! @song.featured_artists.map { |artist| artist.id }
-    end
-    json.artistsProducers do 
-      json.array! @song.producers.map { |artist| artist.id }
-    end
+    # json.artistsPrimary do
+    #   json.array! @song.artistsPrimary.map { |artist| artist.id }
+    # end
+    # json.artistsFeatured do
+    #   json.array! @song.featured_artists.map { |artist| artist.id }
+    # end
+    # json.artistsProducers do
+    #   json.array! @song.producers.map { |artist| artist.id }
+    # end
     # verses
     json.verses do
       json.array! @song.verses.ids
@@ -148,9 +148,9 @@ json.verses do
   end
 end
 
-json.comments do 
+json.comments do
   @song.comments.each do |comment|
-    json.set! comment.id do 
+    json.set! comment.id do
       json.id comment.id
       json.authorId comment.commenting_user_id
       json.commentableType comment.commentable_type
@@ -164,7 +164,7 @@ end
 
 json.users do
   @song.comments.each do |comment|
-    json.set! comment.author.id do 
+    json.set! comment.author.id do
       json.id comment.author.id
       json.username comment.author.username
       json.email comment.author.email
