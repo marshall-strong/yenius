@@ -11,24 +11,25 @@ const ShowSong = ({ match }) => {
   const dispatch = useDispatch();
   const [componentStatus, setComponentStatus] = useState("idle");
   const { songId } = match.params;
-  const [lastSongId, setLastSongId] = useState(null);
+  const [lastSongFetched, setLastSongFetched] = useState(null);
 
   // fetch data from API when SongPage loads
   useEffect(() => {
     if (componentStatus === "idle") {
       dispatch(fetchSongPage(songId));
       setComponentStatus("requestSent");
-      setLastSongId(songId);
+      setLastSongFetched(songId);
+      g;
     }
   }, [componentStatus, songId, dispatch]);
 
   // fetch data from API when arriving from another SongPage
   useEffect(() => {
-    if (lastSongId !== songId) {
+    if (lastSongFetched !== songId) {
       dispatch(fetchSongPage(songId));
-      setLastSongId(songId);
+      setLastSongFetched(songId);
     }
-  }, [lastSongId, songId, dispatch]);
+  }, [lastSongFetched, songId, dispatch]);
 
   const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
   const error = useSelector((state) => state.asyncRequests.errors[-1]);
