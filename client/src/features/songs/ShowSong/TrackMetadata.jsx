@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { selectAlbumBySongId } from "../../albums/albumsSlice";
 import { selectSongById } from "../songsSlice";
 import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
@@ -75,6 +76,21 @@ export const ProductionArtists = ({ songId }) => {
       <span className="metadata_unit-info">{linksToProductionArtists}</span>
     </div>
   );
+};
+
+export const AlbumName = ({ songId }) => {
+  const album = useSelector((state) => selectAlbumBySongId(state, songId));
+  if (!album || album.name === "Samples & Interpolations") {
+    return null;
+  } else {
+    const linkToAlbum = <Link to={`/albums/${album.id}`}>{album.name}</Link>;
+    return (
+      <div className="metadata_unit metadata_unit--table_row">
+        <span className="metadata_unit-label">Album</span>
+        <span className="metadata_unit-info">{linkToAlbum}</span>
+      </div>
+    );
+  }
 };
 
 export const ReleaseDate = ({ songId }) => {

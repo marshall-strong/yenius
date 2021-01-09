@@ -6,6 +6,7 @@ import {
   PrimaryArtists,
   FeaturedArtists,
   ProductionArtists,
+  AlbumName,
   ReleaseDate,
   SampleParents,
   SampleChildren,
@@ -28,6 +29,7 @@ const TrackInfo = ({ songId }) => {
         <PrimaryArtists songId={songId} />
         <FeaturedArtists songId={songId} />
         <ProductionArtists songId={songId} />
+        <AlbumName songId={songId} />
         <ReleaseDate songId={songId} />
         <SampleParents songId={songId} />
         <SampleChildren songId={songId} />

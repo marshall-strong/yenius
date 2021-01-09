@@ -19,7 +19,6 @@ const ShowSong = ({ match }) => {
       dispatch(fetchSongPage(songId));
       setComponentStatus("requestSent");
       setLastSongFetched(songId);
-      g;
     }
   }, [componentStatus, songId, dispatch]);
 
