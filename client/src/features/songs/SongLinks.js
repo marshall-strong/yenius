@@ -7,7 +7,7 @@ import { selectSongById } from "./songsSlice";
 //   selectArtistById,
 //   selectPrimaryArtistBySongId,
 // } from "../artists/artistsSlice";
-// import intersperse from "../../lib/intersperse";
+// import intersperse from "../../lib";
 
 export const SongByArtistLink = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

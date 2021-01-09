@@ -10,6 +10,11 @@ import "../../../assets/stylesheets/SongBanner.scss";
 const Banner = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumById(state, song.albumId));
+
+  if (!song || !album) {
+    return null;
+  }
+
   let albumLink;
   if (album && album.name === "Samples & Interpolations") {
     albumLink = "Samples & Interpolations";
@@ -17,7 +22,6 @@ const Banner = ({ songId }) => {
     albumLink = <a href={`/albums/${album.id}`}>{album.name}</a>;
   }
 
-  // const entityType = "song";
   const name = song.name;
   const artists = <InterspersedArtistLinks artistIds={song.artistsPrimary} />;
 
