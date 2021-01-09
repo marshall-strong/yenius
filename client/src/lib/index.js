@@ -1,12 +1,26 @@
+export const basicIntersperse = (arr, sep) => {
+  if (arr.length === 0) {
+    return [];
+  } else {
+    const reducer = (acc, x) => acc.concat([sep, x]);
+    return arr.slice(1).reduce(reducer, [arr[0]]);
+  }
+};
+
 export const intersperse = (arr, separator, lastSeparator) => {
   if (arr.length === 0) {
     return [];
   }
-  const reducer = (acc, cur, idx, src) => {
+
+  // default separator values
+  const sep = separator ? separator : ", ";
+  const sepLast = lastSeparator ? lastSeparator : " & ";
+
+  const reducer = (acc, ele, idx, src) => {
     // determines whether to use separator or lastSeparator
-    const sep = idx === src.length - 1 ? lastSeparator : separator;
+    const insert = idx === src.length - 1 ? sepLast : sep;
     // add the separator and the current element to the accumulator
-    return acc.concat([sep, cur]);
+    return acc.concat([insert, ele]);
   };
   // pass the first element of arr to the reducer function
   return arr.slice(1).reduce(reducer, [arr[0]]);
