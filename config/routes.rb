@@ -12,6 +12,15 @@ Rails.application.routes.draw do
       resources :songs, only: [:index, :show]
       get '/songs-index/:char', to: 'songs#songs_index'
 
+      get '/songs/:songId/album', to: 'songs#show_song_album'
+      get '/songs/:songId/annotations', to: 'songs#show_song_annotations'
+      get '/songs/:songId/artist_credits', to: 'songs#show_song_artist_credits'
+      get '/songs/:songId/banner', to: 'songs#show_song_banner'
+      get '/songs/:songId/comments', to: 'songs#show_song_comments'
+      get '/songs/:songId/description', to: 'songs#show_song_description'
+      get '/songs/:songId/lyrics', to: 'songs#show_song_lyrics'
+      get '/songs/:songId/sample_credits', to: 'songs#show_song_sample_credits'
+
       resources :verses, only: [:index, :show]
 
       resources :comments
