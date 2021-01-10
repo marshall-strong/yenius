@@ -13,10 +13,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [isCurrentUser, setIsCurrentUser] = useState("false");
   const [username, setUsername] = useState("user");
-  const currentUserId = useSelector((state) => state.session.currentUserId);
-  const currentUser = useSelector(
-    (state) => state.users.entities[currentUserId]
-  );
+  const currentUser = useSelector((state) => state.session.currentUser);
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -24,13 +21,13 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (currentUserId) {
+    if (currentUser) {
       setIsCurrentUser("true");
       setUsername(currentUser.username);
-    } else if (!currentUserId) {
+    } else if (!currentUser) {
       setIsCurrentUser("false");
     }
-  }, [currentUserId, currentUser, dispatch]);
+  }, [currentUser, dispatch]);
 
   let userButtons;
 

@@ -5,15 +5,15 @@ import { signupUser, loginUser, logoutUser } from "./sessionAsyncThunks";
 export const sessionSlice = createSlice({
   name: "session",
   initialState: {
-    currentUserId: null,
+    currentUser: null,
     errors: [],
   },
   reducers: {
-    setCurrentUserId: (state, action) => {
-      state.currentUserId = action.payload.session.currentUserId;
+    setCurrentUser: (state, action) => {
+      state.currentUser = action.payload.session.currentUser;
     },
-    clearCurrentUserId: (state) => {
-      state.currentUserId = null;
+    clearCurrentUser: (state) => {
+      state.currentUser = null;
     },
     receiveSessionErrors: (state, action) => {
       state.errors.push(action.error.message);
@@ -24,28 +24,28 @@ export const sessionSlice = createSlice({
   },
   extraReducers: {
     [signupUser.fulfilled]: (state, action) => {
-      state.currentUserId = action.payload.session.currentUserId;
+      state.currentUser = action.payload.session.currentUser;
     },
     [signupUser.rejected]: (state, action) => {
       state.errors.push(action.error.message);
     },
     [loginUser.fulfilled]: (state, action) => {
-      state.currentUserId = action.payload.session.currentUserId;
+      state.currentUser = action.payload.session.currentUser;
     },
     [loginUser.rejected]: (state, action) => {
       state.errors.push(action.error.message);
     },
     [logoutUser.fulfilled]: (state, action) => {
-      state.currentUserId = null;
+      state.currentUser = null;
     },
   },
 });
 
-export const {
-  setCurrentUserId,
-  clearCurrentUserId,
-  receiveSessionErrors,
-  clearSessionErrors,
-} = sessionSlice.actions;
+// export const {
+// setCurrentUser,
+// clearCurrentUser,
+// receiveSessionErrors,
+// clearSessionErrors,
+// } = sessionSlice.actions;
 
 export default sessionSlice.reducer;
