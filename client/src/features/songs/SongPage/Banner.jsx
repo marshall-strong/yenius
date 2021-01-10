@@ -65,13 +65,13 @@ const Banner = ({ songId }) => {
   }
 
   const styleBannerImage = {
-    backgroundImage: `url(${song.bannerImgUrl})`,
+    backgroundImage: `url(${song.urlAlbumBanner})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
   const styleSubjectImage = {
-    backgroundImage: `url(${song.subjectImgUrl})`,
+    backgroundImage: `url(${song.urlAlbumCover})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
