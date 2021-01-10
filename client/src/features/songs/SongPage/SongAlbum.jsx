@@ -55,7 +55,9 @@ const AlbumInfo = ({ songId }) => {
           {album.name}
           <span className="song_album-info-release_year"> ({album.year})</span>
         </a>
-        <InterspersedArtistLinks artistIds={album.artistsPrimary} />
+        <InterspersedArtistLinks
+          artistIds={album.artistCredits["PRIMARY_ARTIST"]}
+        />
       </div>
     </div>
   );
