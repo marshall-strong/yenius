@@ -20,6 +20,7 @@ import {
   fetchSongPage,
   fetchSongAlbum,
   fetchSongArtistCredits,
+  fetchSongBanner,
 } from "../songs/songsAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
@@ -65,6 +66,9 @@ const artistsSlice = createSlice({
       artistsAdapter.upsertMany(state, action.payload.artists);
     },
     [fetchSongArtistCredits.fulfilled]: (state, action) => {
+      artistsAdapter.upsertMany(state, action.payload.artists);
+    },
+    [fetchSongBanner.fulfilled]: (state, action) => {
       artistsAdapter.upsertMany(state, action.payload.artists);
     },
     [fetchArtistComments.fulfilled]: (state, action) => {
