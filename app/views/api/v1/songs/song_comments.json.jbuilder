@@ -14,8 +14,8 @@ end
 
 json.songs do
   json.set! @song.id do
-    json.id song.id
-    json.name song.name
+    json.id @song.id
+    json.name @song.name
     json.comments do
       json.array! @song.comments.ids
     end
