@@ -37,6 +37,9 @@ const usersSlice = createSlice({
         usersAdapter.upsertMany(state, action.payload.users);
       }
     },
+    [fetchSongPage.pending]: (state) => {
+      usersAdapter.removeAll(state);
+    },
     [fetchSongPage.fulfilled]: (state, action) => {
       if (action.payload.users) {
         usersAdapter.upsertMany(state, action.payload.users);

@@ -22,6 +22,9 @@ const versesSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    [fetchSongPage.pending]: (state) => {
+      versesAdapter.removeAll(state);
+    },
     [fetchSongPage.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);

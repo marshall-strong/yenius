@@ -57,8 +57,9 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
-    [fetchSongPage.pending]: (state, action) => {
+    [fetchSongPage.pending]: (state) => {
       state.status = "fetchSongPage.pending";
+      commentsAdapter.removeAll(state);
     },
     [fetchSongPage.rejected]: (state, action) => {
       state.status = "fetchSongPage.rejected";

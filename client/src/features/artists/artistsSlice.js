@@ -49,6 +49,9 @@ const artistsSlice = createSlice({
         artistsAdapter.setAll(state, action.payload.artists);
       }
     },
+    [fetchSongPage.pending]: (state) => {
+      artistsAdapter.removeAll(state);
+    },
     [fetchSongPage.fulfilled]: (state, action) => {
       if (action.payload.artists) {
         artistsAdapter.setAll(state, action.payload.artists);

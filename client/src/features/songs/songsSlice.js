@@ -14,6 +14,14 @@ import {
   fetchSongPage,
   fetchSongsList,
   fetchSongsIndex,
+  fetchSongAlbum,
+  fetchSongAnnotations,
+  fetchSongArtistCredits,
+  fetchSongBanner,
+  // fetchSongComments,
+  fetchSongDescription,
+  fetchSongLyrics,
+  fetchSongSampleCredits,
 } from "../songs/songsAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
@@ -47,6 +55,9 @@ const songsSlice = createSlice({
     },
     [fetchSongsList.fulfilled]: (state, action) => {
       songsAdapter.setAll(state, action.payload.songs);
+    },
+    [fetchSongPage.pending]: (state) => {
+      songsAdapter.removeAll(state);
     },
     [fetchSongPage.fulfilled]: (state, action) => {
       songsAdapter.setAll(state, action.payload.songs);
