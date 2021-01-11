@@ -41,20 +41,21 @@ const usersSlice = createSlice({
         usersAdapter.upsertMany(state, action.payload.users);
       }
     },
+    // SongPage
     [fetchSongPage.pending]: (state) => {
       usersAdapter.removeAll(state);
     },
-    [fetchSongPage.fulfilled]: (state, action) => {
+    [fetchSongAnnotations.fulfilled]: (state, action) => {
       if (action.payload.users) {
         usersAdapter.upsertMany(state, action.payload.users);
       }
     },
-    [fetchSongAnnotations.fulfilled]: (state, action) => {
-      usersAdapter.upsertMany(state, action.payload.users);
-    },
     [fetchSongComments.fulfilled]: (state, action) => {
-      usersAdapter.upsertMany(state, action.payload.users);
+      if (action.payload.users) {
+        usersAdapter.upsertMany(state, action.payload.users);
+      }
     },
+    //
     [signupUser.fulfilled]: (state, action) => {
       usersAdapter.upsertMany(state, action.payload.users);
     },

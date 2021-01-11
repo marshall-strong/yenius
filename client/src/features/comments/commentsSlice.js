@@ -61,21 +61,15 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    // SongPage
     [fetchSongPage.pending]: (state) => {
       state.status = "fetchSongPage.pending";
       commentsAdapter.removeAll(state);
     },
-    [fetchSongPage.rejected]: (state, action) => {
-      state.status = "fetchSongPage.rejected";
-    },
-    [fetchSongPage.fulfilled]: (state, action) => {
-      state.status = "fetchSongPage.fulfilled";
+    [fetchSongAnnotations.fulfilled]: (state, action) => {
       if (action.payload.comments) {
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
-    },
-    [fetchSongAnnotations.fulfilled]: (state, action) => {
-      commentsAdapter.upsertMany(state, action.payload.comments);
     },
     [fetchSongComments.pending]: (state, action) => {
       state.status = "fetchSongComments.pending";
@@ -89,7 +83,7 @@ const commentsSlice = createSlice({
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
-
+    //
     [fetchVersePage.pending]: (state, action) => {
       state.status = "fetchVersePage.pending";
     },
@@ -127,7 +121,6 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
-
     [fetchVerseComments.pending]: (state, action) => {
       state.status = "fetchVerseComments.pending";
     },

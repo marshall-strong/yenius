@@ -26,20 +26,21 @@ const versesSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    // SongPage
     [fetchSongPage.pending]: (state) => {
       versesAdapter.removeAll(state);
     },
-    [fetchSongPage.fulfilled]: (state, action) => {
+    [fetchSongAnnotations.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
-    [fetchSongAnnotations.fulfilled]: (state, action) => {
-      versesAdapter.upsertMany(state, action.payload.verses);
-    },
     [fetchSongLyrics.fulfilled]: (state, action) => {
-      versesAdapter.upsertMany(state, action.payload.verses);
+      if (action.payload.verses) {
+        versesAdapter.upsertMany(state, action.payload.verses);
+      }
     },
+    //
     [fetchVerseComments.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);

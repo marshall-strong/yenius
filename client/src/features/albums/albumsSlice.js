@@ -42,23 +42,26 @@ const albumsSlice = createSlice({
         albumsAdapter.setAll(state, action.payload.albums);
       }
     },
+    // SongPage
     [fetchSongPage.pending]: (state) => {
       albumsAdapter.removeAll(state);
     },
-    [fetchSongPage.fulfilled]: (state, action) => {
+    [fetchSongAlbum.fulfilled]: (state, action) => {
       if (action.payload.albums) {
-        albumsAdapter.setAll(state, action.payload.albums);
+        albumsAdapter.upsertMany(state, action.payload.albums);
       }
     },
-    [fetchSongAlbum.fulfilled]: (state, action) => {
-      albumsAdapter.upsertMany(state, action.payload.albums);
-    },
     [fetchSongArtistCredits.fulfilled]: (state, action) => {
-      albumsAdapter.upsertMany(state, action.payload.albums);
+      if (action.payload.albums) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
     },
     [fetchSongBanner.fulfilled]: (state, action) => {
-      albumsAdapter.upsertMany(state, action.payload.albums);
+      if (action.payload.albums) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
     },
+    //
     [fetchAlbumComments.fulfilled]: (state, action) => {
       if (action.payload.albums) {
         albumsAdapter.upsertMany(state, action.payload.albums);
