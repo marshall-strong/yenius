@@ -6,7 +6,11 @@ import {
 
 import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { fetchSongPage, fetchSongAlbum } from "../songs/songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongAlbum,
+  fetchSongArtistCredits,
+} from "../songs/songsAsyncThunks";
 import {
   addAlbumComment,
   fetchAlbumComments,
@@ -46,6 +50,9 @@ const albumsSlice = createSlice({
       }
     },
     [fetchSongAlbum.fulfilled]: (state, action) => {
+      albumsAdapter.upsertMany(state, action.payload.albums);
+    },
+    [fetchSongArtistCredits.fulfilled]: (state, action) => {
       albumsAdapter.upsertMany(state, action.payload.albums);
     },
     [fetchAlbumComments.fulfilled]: (state, action) => {
