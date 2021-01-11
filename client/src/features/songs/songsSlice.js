@@ -82,6 +82,9 @@ const songsSlice = createSlice({
     [fetchSongDescription.fulfilled]: (state, action) => {
       songsAdapter.upsertMany(state, action.payload.songs);
     },
+    [fetchSongLyrics.fulfilled]: (state, action) => {
+      songsAdapter.upsertMany(state, action.payload.songs);
+    },
     [addSongComment.fulfilled]: (state, action) => {
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);

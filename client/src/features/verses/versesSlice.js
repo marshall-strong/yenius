@@ -3,7 +3,11 @@ import {
   addVerseComment,
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
-import { fetchSongPage, fetchSongAnnotations } from "../songs/songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongAnnotations,
+  fetchSongLyrics,
+} from "../songs/songsAsyncThunks";
 import { fetchVersePage } from "../verses/versesAsyncThunks";
 
 const versesAdapter = createEntityAdapter({
@@ -31,6 +35,9 @@ const versesSlice = createSlice({
       }
     },
     [fetchSongAnnotations.fulfilled]: (state, action) => {
+      versesAdapter.upsertMany(state, action.payload.verses);
+    },
+    [fetchSongLyrics.fulfilled]: (state, action) => {
       versesAdapter.upsertMany(state, action.payload.verses);
     },
     [fetchVerseComments.fulfilled]: (state, action) => {
