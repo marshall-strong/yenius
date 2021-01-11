@@ -31,7 +31,16 @@ const songsAdapter = createEntityAdapter({
   sortComparer: (a, b) => a.name.localeCompare(b.name),
 });
 
-const initialState = songsAdapter.getInitialState({});
+const initialState = songsAdapter.getInitialState({
+  fetchSongAlbum: null,
+  fetchSongAnnotations: null,
+  fetchSongArtistsCredits: null,
+  fetchSongBanner: null,
+  fetchSongComments: null,
+  fetchSongDescription: null,
+  fetchSongLyrics: null,
+  fetchSongSampleCredits: null,
+});
 
 const songsSlice = createSlice({
   name: "songs",
@@ -62,30 +71,62 @@ const songsSlice = createSlice({
     [fetchSongPage.fulfilled]: (state, action) => {
       songsAdapter.setAll(state, action.payload.songs);
     },
+    [fetchSongAlbum.pending]: (state) => {
+      state.fetchSongAlbum = "pending";
+    },
     [fetchSongAlbum.fulfilled]: (state, action) => {
+      state.fetchSongAlbum = "fulfilled";
       songsAdapter.upsertMany(state, action.payload.songs);
+    },
+    [fetchSongAnnotations.pending]: (state) => {
+      state.fetchSongAnnotations = "pending";
     },
     [fetchSongAnnotations.fulfilled]: (state, action) => {
+      state.fetchSongAnnotations = "fulfilled";
       songsAdapter.upsertMany(state, action.payload.songs);
+    },
+    [fetchSongArtistCredits.pending]: (state) => {
+      state.fetchSongArtistsCredits = "pending";
     },
     [fetchSongArtistCredits.fulfilled]: (state, action) => {
+      state.fetchSongArtistCredits = "fulfilled";
       songsAdapter.upsertMany(state, action.payload.songs);
+    },
+    [fetchSongBanner.pending]: (state) => {
+      state.fetchSongBanner = "pending";
     },
     [fetchSongBanner.fulfilled]: (state, action) => {
+      state.fetchSongBanner = "fulfilled";
       songsAdapter.upsertMany(state, action.payload.songs);
     },
+    [fetchSongComments.pending]: (state) => {
+      state.fetchSongComments = "pending";
+    },
     [fetchSongComments.fulfilled]: (state, action) => {
+      state.fetchSongComments = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
+    [fetchSongDescription.pending]: (state) => {
+      state.fetchSongDescription = "pending";
+    },
     [fetchSongDescription.fulfilled]: (state, action) => {
+      state.fetchSongDescription = "fulfilled";
       songsAdapter.upsertMany(state, action.payload.songs);
+    },
+    [fetchSongLyrics.pending]: (state) => {
+      state.fetchSongLyrics = "pending";
     },
     [fetchSongLyrics.fulfilled]: (state, action) => {
+      state.fetchSongLyrics = "fulfilled";
       songsAdapter.upsertMany(state, action.payload.songs);
     },
+    [fetchSongSampleCredits.pending]: (state) => {
+      state.fetchSongSampleCredits = "pending";
+    },
     [fetchSongSampleCredits.fulfilled]: (state, action) => {
+      state.fetchSongSampleCredits = "fulfilled";
       songsAdapter.upsertMany(state, action.payload.songs);
     },
     [addSongComment.fulfilled]: (state, action) => {
