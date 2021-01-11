@@ -2,7 +2,7 @@ import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { fetchSongPage } from "../songs/songsAsyncThunks";
+import { fetchSongPage, fetchSongAnnotations } from "../songs/songsAsyncThunks";
 import { fetchUsers } from "../users/usersAsyncThunks";
 import { signupUser, loginUser } from "../session/sessionAsyncThunks";
 import { fetchAlbumComments } from "../comments/commentsAsyncThunks";
@@ -44,6 +44,9 @@ const usersSlice = createSlice({
       if (action.payload.users) {
         usersAdapter.upsertMany(state, action.payload.users);
       }
+    },
+    [fetchSongAnnotations.fulfilled]: (state, action) => {
+      usersAdapter.upsertMany(state, action.payload.users);
     },
     [signupUser.fulfilled]: (state, action) => {
       usersAdapter.upsertMany(state, action.payload.users);
