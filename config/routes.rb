@@ -9,24 +9,25 @@ Rails.application.routes.draw do
 
       resources :albums, only: [:index, :show]
 
-      resources :songs, only: [:index, :show]
+      # resources :songs, only: [:index, :show]
       get '/songs-index/:char', to: 'songs#songs_index'
 
-      get '/songs/:songId/album', to: 'songs#show_song_album'
-      get '/songs/:songId/annotations', to: 'songs#show_song_annotations'
-      get '/songs/:songId/artist_credits', to: 'songs#show_song_artist_credits'
-      get '/songs/:songId/banner', to: 'songs#show_song_banner'
-      get '/songs/:songId/comments', to: 'songs#show_song_comments'
-      get '/songs/:songId/description', to: 'songs#show_song_description'
-      get '/songs/:songId/lyrics', to: 'songs#show_song_lyrics'
-      get '/songs/:songId/sample_credits', to: 'songs#show_song_sample_credits'
+      get '/songs/:songId', to: 'songs#show'
+      get '/songs/album/:songId', to: 'songs#song_album', format: :json
+      get '/songs/annotations/:songId', to: 'songs#song_annotations', format: :json
+      get '/songs/artist_credits/:songId', to: 'songs#song_artist_credits', format: :json
+      get '/songs/banner/:songId', to: 'songs#song_banner', format: :json
+      get '/songs/comments/:songId', to: 'songs#song_comments', format: :json
+      get '/songs/description/:songId', to: 'songs#song_description', format: :json
+      get '/songs/lyrics/:songId', to: 'songs#song_lyrics', format: :json
+      get '/songs/sample_credits/:songId', to: 'songs#song_sample_credits', format: :json
 
       resources :verses, only: [:index, :show]
 
       resources :comments
       get '/albums/:commentableId/comments', to: 'comments#album_comments'
       get '/artists/:commentableId/comments', to: 'comments#artist_comments'
-      get '/songs/:commentableId/comments', to: 'comments#song_comments'
+      # get '/songs/:commentableId/comments', to: 'comments#song_comments'
       get '/verses/:commentableId/comments', to: 'comments#verse_comments'
 
       post '/albums/:commentableId/comments', to: 'comments#create_album_comment'
