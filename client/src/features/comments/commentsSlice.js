@@ -6,7 +6,11 @@ import {
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { fetchSongPage, fetchSongAnnotations } from "../songs/songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongAnnotations,
+  // fetchSongComments,
+} from "../songs/songsAsyncThunks";
 import { fetchVersePage } from "../verses/versesAsyncThunks";
 
 import {
@@ -73,6 +77,18 @@ const commentsSlice = createSlice({
     [fetchSongAnnotations.fulfilled]: (state, action) => {
       commentsAdapter.upsertMany(state, action.payload.comments);
     },
+    [fetchSongComments.pending]: (state, action) => {
+      state.status = "fetchSongComments.pending";
+    },
+    [fetchSongComments.rejected]: (state, action) => {
+      state.status = "fetchSongComments.rejected";
+    },
+    [fetchSongComments.fulfilled]: (state, action) => {
+      state.status = "fetchSongComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.upsertMany(state, action.payload.comments);
+      }
+    },
     [fetchVersePage.pending]: (state, action) => {
       state.status = "fetchVersePage.pending";
     },
@@ -108,18 +124,6 @@ const commentsSlice = createSlice({
       state.status = "fetchArtistComments.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
-      }
-    },
-    [fetchSongComments.pending]: (state, action) => {
-      state.status = "fetchSongComments.pending";
-    },
-    [fetchSongComments.rejected]: (state, action) => {
-      state.status = "fetchSongComments.rejected";
-    },
-    [fetchSongComments.fulfilled]: (state, action) => {
-      state.status = "fetchSongComments.fulfilled";
-      if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
     [fetchVerseComments.pending]: (state, action) => {
