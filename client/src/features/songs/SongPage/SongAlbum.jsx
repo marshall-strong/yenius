@@ -28,7 +28,7 @@ const TrackListing = ({ trackId, songId }) => {
 
 const AlbumTracks = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  const album = useSelector((state) => selectAlbumById(state, song.albumId));
+  const album = useSelector((state) => selectAlbumBySongId(state, songId));
   if (!album || !album.songs) {
     return null;
   }

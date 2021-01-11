@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectAlbumById } from "../../albums/albumsSlice";
+import { selectAlbumBySongId } from "../../albums/albumsSlice";
 import { selectSongById } from "../songsSlice";
 import {
   PrimaryArtists,
@@ -16,7 +16,7 @@ import {
 
 const TrackInfo = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  const album = useSelector((state) => selectAlbumById(state, song.albumId));
+  const album = useSelector((state) => selectAlbumBySongId(state, songId));
   const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
 
   let content;
