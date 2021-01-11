@@ -9,7 +9,7 @@ import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
   fetchSongPage,
   fetchSongAnnotations,
-  // fetchSongComments,
+  fetchSongComments,
 } from "../songs/songsAsyncThunks";
 import { fetchVersePage } from "../verses/versesAsyncThunks";
 
@@ -21,7 +21,7 @@ import {
   addVerseComment,
   fetchAlbumComments,
   fetchArtistComments,
-  fetchSongComments,
+  // fetchSongComments,
   fetchVerseComments,
 } from "./commentsAsyncThunks";
 
@@ -89,6 +89,7 @@ const commentsSlice = createSlice({
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
+
     [fetchVersePage.pending]: (state, action) => {
       state.status = "fetchVersePage.pending";
     },
@@ -126,6 +127,7 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+
     [fetchVerseComments.pending]: (state, action) => {
       state.status = "fetchVerseComments.pending";
     },
