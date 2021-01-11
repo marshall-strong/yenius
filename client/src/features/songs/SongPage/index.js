@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSongPage } from "../songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongAlbum,
+  fetchSongAnnotations,
+  fetchSongArtistCredits,
+  fetchSongBanner,
+  fetchSongComments,
+  fetchSongDescription,
+  fetchSongLyrics,
+  fetchSongSampleCredits,
+} from "../songsAsyncThunks";
 import { selectSongById } from "../songsSlice";
 import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
@@ -9,24 +19,22 @@ import "../../../assets/stylesheets/SongShow.scss";
 
 const ShowSong = ({ match }) => {
   const dispatch = useDispatch();
-  const [componentStatus, setComponentStatus] = useState("idle");
   const { songId } = match.params;
   const [lastSongFetched, setLastSongFetched] = useState(null);
 
-  // fetch data from API when SongPage loads
-  useEffect(() => {
-    if (componentStatus === "idle") {
-      dispatch(fetchSongPage(songId));
-      setComponentStatus("requestSent");
-      setLastSongFetched(songId);
-    }
-  }, [componentStatus, songId, dispatch]);
-
-  // fetch data from API when arriving from another SongPage
+  // fetch data from API
   useEffect(() => {
     if (lastSongFetched !== songId) {
       dispatch(fetchSongPage(songId));
       setLastSongFetched(songId);
+      dispatch(fetchSongAlbum(songId));
+      dispatch(fetchSongAnnotations(songId));
+      dispatch(fetchSongArtistCredits(songId));
+      dispatch(fetchSongBanner(songId));
+      dispatch(fetchSongComments(songId));
+      dispatch(fetchSongDescription(songId));
+      dispatch(fetchSongLyrics(songId));
+      dispatch(fetchSongSampleCredits(songId));
     }
   }, [lastSongFetched, songId, dispatch]);
 
