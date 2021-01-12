@@ -11,7 +11,7 @@ export const PrimaryArtists = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumBySongId(state, songId));
 
-  if (!song.artistCredits || !album.artistCredits) {
+  if (!song || !album || !song.artistCredits || !album.artistCredits) {
     return null;
   }
 
