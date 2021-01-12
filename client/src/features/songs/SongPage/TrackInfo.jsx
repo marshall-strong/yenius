@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectAlbumBySongId } from "../../albums/albumsSlice";
 import { selectSongById } from "../songsSlice";
 import {
   PrimaryArtists,
@@ -16,29 +15,59 @@ import {
 
 const TrackInfo = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  const album = useSelector((state) => selectAlbumBySongId(state, songId));
-  const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
+  const status = useSelector((state) => state.songs.status);
+  const {
+    fetchSongAlbum,
+    fetchSongArtistCredits,
+    fetchSongSampleCredits,
+  } = status;
+  const isFulfilled = (request) => request === "fulfilled";
 
-  let content;
-  if (asyncRequestStatus === "fulfilled" && song && album) {
-    content = (
+  const albumCreditsRequests = [fetchSongAlbum];
+  const albumCredits = albumCreditsRequests.every(isFulfilled) ? (
+    <div className="albumCredits">
+      <AlbumName songId={songId} />
+      <ReleaseDate songId={songId} />
+    </div>
+  ) : (
+    <div className="loader" />
+  );
+
+  const artistCreditsRequests = [fetchSongArtistCredits];
+  const artistCredits = artistCreditsRequests.every(isFulfilled) ? (
+    <div className="artistCredits">
+      <PrimaryArtists songId={songId} />
+      <FeaturedArtists songId={songId} />
+      <ProductionArtists songId={songId} />
+    </div>
+  ) : (
+    <div className="loader" />
+  );
+
+  const sampleCreditsRequests = [fetchSongSampleCredits];
+  const sampleCredits = sampleCreditsRequests.every(isFulfilled) ? (
+    <div className="sampleCredits">
+      <SampleParents songId={songId} />
+      <SampleChildren songId={songId} />
+      <InterpolationParents songId={songId} />
+      <InterpolationChildren songId={songId} />
+    </div>
+  ) : (
+    <div className="loader" />
+  );
+
+  return (
+    <div className="TrackInfo">
       <div className="u-xx_large_vertical_margins">
         <h3 className="text_label u-x_small_bottom_margin">
           "{song.name}" Track Info
         </h3>
-        <PrimaryArtists songId={songId} />
-        <FeaturedArtists songId={songId} />
-        <ProductionArtists songId={songId} />
-        <AlbumName songId={songId} />
-        <ReleaseDate songId={songId} />
-        <SampleParents songId={songId} />
-        <SampleChildren songId={songId} />
-        <InterpolationParents songId={songId} />
-        <InterpolationChildren songId={songId} />
+        {artistCredits}
+        {albumCredits}
+        {sampleCredits}
       </div>
-    );
-  }
-  return <div>{content}</div>;
+    </div>
+  );
 };
 
 export default TrackInfo;
