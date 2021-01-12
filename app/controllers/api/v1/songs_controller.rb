@@ -1,5 +1,5 @@
 class Api::V1::SongsController < ApiController
-  # @route GET /api/v1/songs (api_v1_songs)
+  # @route GET /api/v1/songs
   def index
     @songs = Song.all
     render 'api/v1/songs/index'
@@ -13,12 +13,17 @@ class Api::V1::SongsController < ApiController
     render 'api/v1/songs/index'
   end
 
-  # @route GET /api/v1/songs/:songId (api_v1_song)
   def show
     @song = Song.find(params[:songId])
     @artist_credit_types = ArtistCreditType.all
     @sample_credit_types = SampleCreditType.all
     render 'api/v1/songs/show'
+  end
+
+  # @route GET /api/v1/songs/:songId
+  def song
+    @song = Song.find(params[:songId])
+    render 'api/v1/songs/song'
   end
 
   # @route GET /api/v1/songs/album/:songId

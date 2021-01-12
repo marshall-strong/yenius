@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       # resources :songs, only: [:index, :show]
       get '/songs-index/:char', to: 'songs#songs_index'
 
-      get '/songs/:songId', to: 'songs#show'
+      get '/songs/song/:songId', to: 'songs#song', format: :json
       get '/songs/album/:songId', to: 'songs#song_album', format: :json
       get '/songs/annotations/:songId', to: 'songs#song_annotations', format: :json
       get '/songs/artist_credits/:songId', to: 'songs#song_artist_credits', format: :json
