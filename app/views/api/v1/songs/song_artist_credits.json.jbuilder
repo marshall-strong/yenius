@@ -1,5 +1,6 @@
 json.albums do
   json.set! @song.album.id do
+    json.id @song.album.id
     json.releaseDate @song.album.release_date
     json.set! 'artistCredits' do
       @artist_credit_types.each do |artist_credit_type|

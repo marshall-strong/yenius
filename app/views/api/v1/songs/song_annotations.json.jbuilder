@@ -36,6 +36,7 @@ end
 json.verses do
   @song.verses.each do |verse|
     json.set! verse.id do
+      json.id verse.id
       json.comments do
         json.array! verse.comments.ids
       end
