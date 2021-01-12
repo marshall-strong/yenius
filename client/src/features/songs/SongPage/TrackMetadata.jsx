@@ -10,7 +10,8 @@ import { mergeArrays, printDate } from "../../../lib";
 export const PrimaryArtists = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumBySongId(state, songId));
-  if (!song.artistCredits || !album.artistCredits) {
+
+  if (!song || !album || !song.artistCredits || !album.artistCredits) {
     return null;
   }
 
@@ -110,7 +111,7 @@ export const SampleParents = ({ songId }) => {
     return null;
   }
   const linksToSampleParents = parentSongIds.map((songId) => (
-    <SongByArtistLink songId={songId} />
+    <SongByArtistLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">
@@ -130,7 +131,7 @@ export const SampleChildren = ({ songId }) => {
     return null;
   }
   const linksToSampleChildren = childSongIds.map((songId) => (
-    <SongByArtistLink songId={songId} />
+    <SongByArtistLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">
@@ -150,7 +151,7 @@ export const InterpolationParents = ({ songId }) => {
     return null;
   }
   const linksToInterpolationParents = parentSongIds.map((songId) => (
-    <SongByArtistLink songId={songId} />
+    <SongByArtistLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">
@@ -170,7 +171,7 @@ export const InterpolationChildren = ({ songId }) => {
     return null;
   }
   const linksToInterpolationChildren = childSongIds.map((songId) => (
-    <SongByArtistLink songId={songId} />
+    <SongByArtistLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">

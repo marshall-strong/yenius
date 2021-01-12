@@ -26,13 +26,13 @@ const AlbumBanner = ({ albumId }) => {
   }
 
   const styleBannerImage = {
-    backgroundImage: `url(${album.bannerImgUrl})`,
+    backgroundImage: `url(${album.urlAlbumBanner})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
   const styleSubjectImage = {
-    backgroundImage: `url(${album.subjectImgUrl})`,
+    backgroundImage: `url(${album.urlAlbumCover})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };

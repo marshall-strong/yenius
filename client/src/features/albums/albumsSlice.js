@@ -6,7 +6,12 @@ import {
 
 import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { fetchSongPage } from "../songs/songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongAlbum,
+  fetchSongArtistCredits,
+  fetchSongBanner,
+} from "../songs/songsAsyncThunks";
 import {
   addAlbumComment,
   fetchAlbumComments,
@@ -37,11 +42,26 @@ const albumsSlice = createSlice({
         albumsAdapter.setAll(state, action.payload.albums);
       }
     },
-    [fetchSongPage.fulfilled]: (state, action) => {
+    // SongPage
+    [fetchSongPage.pending]: (state) => {
+      albumsAdapter.removeAll(state);
+    },
+    [fetchSongAlbum.fulfilled]: (state, action) => {
       if (action.payload.albums) {
-        albumsAdapter.setAll(state, action.payload.albums);
+        albumsAdapter.upsertMany(state, action.payload.albums);
       }
     },
+    [fetchSongArtistCredits.fulfilled]: (state, action) => {
+      if (action.payload.albums) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
+    },
+    [fetchSongBanner.fulfilled]: (state, action) => {
+      if (action.payload.albums) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
+    },
+    //
     [fetchAlbumComments.fulfilled]: (state, action) => {
       if (action.payload.albums) {
         albumsAdapter.upsertMany(state, action.payload.albums);

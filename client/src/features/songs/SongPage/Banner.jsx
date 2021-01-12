@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectAlbumById } from "../../albums/albumsSlice";
+import { selectAlbumBySongId } from "../../albums/albumsSlice";
 import { selectSongById } from "../songsSlice";
 import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
 import { mergeArrays } from "../../../lib";
@@ -9,7 +9,7 @@ import "../../../assets/stylesheets/SongBanner.scss";
 
 const Banner = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  const album = useSelector((state) => selectAlbumById(state, song.albumId));
+  const album = useSelector((state) => selectAlbumBySongId(state, songId));
 
   if (!song || !album) {
     return null;
@@ -65,13 +65,13 @@ const Banner = ({ songId }) => {
   }
 
   const styleBannerImage = {
-    backgroundImage: `url(${song.bannerImgUrl})`,
+    backgroundImage: `url(${song.urlAlbumBanner})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
   const styleSubjectImage = {
-    backgroundImage: `url(${song.subjectImgUrl})`,
+    backgroundImage: `url(${song.urlAlbumCover})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };

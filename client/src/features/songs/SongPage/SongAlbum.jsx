@@ -28,12 +28,12 @@ const TrackListing = ({ trackId, songId }) => {
 
 const AlbumTracks = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  const album = useSelector((state) => selectAlbumById(state, song.albumId));
+  const album = useSelector((state) => selectAlbumBySongId(state, songId));
   if (!album || !album.songs) {
     return null;
   }
   const trackListings = album.songs.map((trackId) => (
-    <TrackListing trackId={trackId} songId={songId} />
+    <TrackListing key={trackId} trackId={trackId} songId={songId} />
   ));
   return (
     <div className="track_listing track_listing--columns">{trackListings}</div>
@@ -48,14 +48,16 @@ const AlbumInfo = ({ songId }) => {
   return (
     <div className="song_album u-bottom_margin">
       <a href={`/albums/${album.id}`} className="song_album-album_art">
-        <img src={album.songAlbumCoverArt} alt={album.name} />
+        <img src={album.urlAlbumCover64px} alt={album.name} />
       </a>
       <div className="song_album-info">
         <a href={`/albums/${album.id}`} className="song_album-info-title">
           {album.name}
           <span className="song_album-info-release_year"> ({album.year})</span>
         </a>
-        <InterspersedArtistLinks artistIds={album.artistsPrimary} />
+        <InterspersedArtistLinks
+          artistIds={album.artistCredits["PRIMARY_ARTIST"]}
+        />
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const AlbumsListItem = ({ albumId }) => {
       <p>title: {album.title}</p>
       <p>name: {album.name}</p>
       <p>releaseDate: {album.releaseDate}</p>
-      {/* <p>subjectImgUrl: {album.subjectImgUrl}</p> */}
+      {/* <p>urlAlbumCover: {album.urlAlbumCover}</p> */}
       <Link to={`/albums/${album.id}`} className="button muted-button">
         View Album
       </Link>

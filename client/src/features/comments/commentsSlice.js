@@ -6,7 +6,11 @@ import {
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { fetchSongPage } from "../songs/songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongAnnotations,
+  fetchSongComments,
+} from "../songs/songsAsyncThunks";
 import { fetchVersePage } from "../verses/versesAsyncThunks";
 
 import {
@@ -17,7 +21,7 @@ import {
   addVerseComment,
   fetchAlbumComments,
   fetchArtistComments,
-  fetchSongComments,
+  // fetchSongComments,
   fetchVerseComments,
 } from "./commentsAsyncThunks";
 
@@ -57,18 +61,29 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
-    [fetchSongPage.pending]: (state, action) => {
+    // SongPage
+    [fetchSongPage.pending]: (state) => {
       state.status = "fetchSongPage.pending";
+      commentsAdapter.removeAll(state);
     },
-    [fetchSongPage.rejected]: (state, action) => {
-      state.status = "fetchSongPage.rejected";
-    },
-    [fetchSongPage.fulfilled]: (state, action) => {
-      state.status = "fetchSongPage.fulfilled";
+    [fetchSongAnnotations.fulfilled]: (state, action) => {
       if (action.payload.comments) {
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
+    [fetchSongComments.pending]: (state, action) => {
+      state.status = "fetchSongComments.pending";
+    },
+    [fetchSongComments.rejected]: (state, action) => {
+      state.status = "fetchSongComments.rejected";
+    },
+    [fetchSongComments.fulfilled]: (state, action) => {
+      state.status = "fetchSongComments.fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.upsertMany(state, action.payload.comments);
+      }
+    },
+    //
     [fetchVersePage.pending]: (state, action) => {
       state.status = "fetchVersePage.pending";
     },
@@ -104,18 +119,6 @@ const commentsSlice = createSlice({
       state.status = "fetchArtistComments.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
-      }
-    },
-    [fetchSongComments.pending]: (state, action) => {
-      state.status = "fetchSongComments.pending";
-    },
-    [fetchSongComments.rejected]: (state, action) => {
-      state.status = "fetchSongComments.rejected";
-    },
-    [fetchSongComments.fulfilled]: (state, action) => {
-      state.status = "fetchSongComments.fulfilled";
-      if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
     [fetchVerseComments.pending]: (state, action) => {

@@ -9,15 +9,25 @@ Rails.application.routes.draw do
 
       resources :albums, only: [:index, :show]
 
-      resources :songs, only: [:index, :show]
+      # resources :songs, only: [:index, :show]
       get '/songs-index/:char', to: 'songs#songs_index'
+
+      get '/songs/song/:songId', to: 'songs#song', format: :json
+      get '/songs/album/:songId', to: 'songs#song_album', format: :json
+      get '/songs/annotations/:songId', to: 'songs#song_annotations', format: :json
+      get '/songs/artist_credits/:songId', to: 'songs#song_artist_credits', format: :json
+      get '/songs/banner/:songId', to: 'songs#song_banner', format: :json
+      get '/songs/comments/:songId', to: 'songs#song_comments', format: :json
+      get '/songs/description/:songId', to: 'songs#song_description', format: :json
+      get '/songs/lyrics/:songId', to: 'songs#song_lyrics', format: :json
+      get '/songs/sample_credits/:songId', to: 'songs#song_sample_credits', format: :json
 
       resources :verses, only: [:index, :show]
 
       resources :comments
       get '/albums/:commentableId/comments', to: 'comments#album_comments'
       get '/artists/:commentableId/comments', to: 'comments#artist_comments'
-      get '/songs/:commentableId/comments', to: 'comments#song_comments'
+      # get '/songs/:commentableId/comments', to: 'comments#song_comments'
       get '/verses/:commentableId/comments', to: 'comments#verse_comments'
 
       post '/albums/:commentableId/comments', to: 'comments#create_album_comment'

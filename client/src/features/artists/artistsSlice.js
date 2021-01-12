@@ -16,7 +16,13 @@ import {
   addArtistComment,
   fetchArtistComments,
 } from "../comments/commentsAsyncThunks";
-import { fetchSongPage } from "../songs/songsAsyncThunks";
+import {
+  fetchSongPage,
+  fetchSongAlbum,
+  fetchSongArtistCredits,
+  fetchSongBanner,
+  fetchSongSampleCredits,
+} from "../songs/songsAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
 import { selectSongById } from "../songs/songsSlice";
@@ -49,11 +55,31 @@ const artistsSlice = createSlice({
         artistsAdapter.setAll(state, action.payload.artists);
       }
     },
-    [fetchSongPage.fulfilled]: (state, action) => {
+    // SongPage
+    [fetchSongPage.pending]: (state) => {
+      artistsAdapter.removeAll(state);
+    },
+    [fetchSongAlbum.fulfilled]: (state, action) => {
       if (action.payload.artists) {
-        artistsAdapter.setAll(state, action.payload.artists);
+        artistsAdapter.upsertMany(state, action.payload.artists);
       }
     },
+    [fetchSongArtistCredits.fulfilled]: (state, action) => {
+      if (action.payload.artists) {
+        artistsAdapter.upsertMany(state, action.payload.artists);
+      }
+    },
+    [fetchSongBanner.fulfilled]: (state, action) => {
+      if (action.payload.artists) {
+        artistsAdapter.upsertMany(state, action.payload.artists);
+      }
+    },
+    [fetchSongSampleCredits.fulfilled]: (state, action) => {
+      if (action.payload.artists) {
+        artistsAdapter.upsertMany(state, action.payload.artists);
+      }
+    },
+    //
     [fetchArtistComments.fulfilled]: (state, action) => {
       if (action.payload.artists) {
         artistsAdapter.upsertMany(state, action.payload.artists);

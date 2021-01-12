@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
 const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
-  const currentUserId = useSelector((state) => state.session.currentUserId);
-  const authorId = currentUserId;
+  const currentUser = useSelector((state) => state.session.currentUser);
+  const authorId = currentUser ? currentUser.id : null;
 
   const [body, setBody] = useState("");
   const onBodyChanged = (e) => setBody(e.target.value);

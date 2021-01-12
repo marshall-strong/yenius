@@ -10,18 +10,18 @@ const ArtistBanner = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
   const entityType = "artist";
 
-  const subjectImage = artist.subjectImgUrl
-    ? `url(${artist.subjectImgUrl})`
+  const subjectImage = artist.urlArtist
+    ? `url(${artist.urlArtist})`
     : ThisIsFine;
   const styleSubjectImage = {
     backgroundImage: subjectImage,
-    // backgroundImage: `url(${artist.subjectImgUrl})`,
+    // backgroundImage: `url(${artist.urlArtist})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
   const styleBannerImage = {
-    backgroundImage: `url(${artist.bannerImgUrl})`,
+    backgroundImage: `url(${artist.urlAlbumBanner})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
