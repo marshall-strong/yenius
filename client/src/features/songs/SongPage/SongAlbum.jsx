@@ -33,7 +33,7 @@ const AlbumTracks = ({ songId }) => {
     return null;
   }
   const trackListings = album.songs.map((trackId) => (
-    <TrackListing trackId={trackId} songId={songId} />
+    <TrackListing key={trackId} trackId={trackId} songId={songId} />
   ));
   return (
     <div className="track_listing track_listing--columns">{trackListings}</div>

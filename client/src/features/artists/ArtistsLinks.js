@@ -14,7 +14,7 @@ export const InterspersedArtistLinks = ({ artistIds }) => {
     return null;
   }
   const artistLinks = artistIds.map((artistId) => (
-    <ArtistLink id={artistId} artistId={artistId} />
+    <ArtistLink key={artistId} artistId={artistId} />
   ));
   return intersperse(artistLinks, ", ", " & ");
 };
