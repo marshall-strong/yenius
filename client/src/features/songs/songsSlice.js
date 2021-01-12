@@ -11,9 +11,10 @@ import {
   // fetchSongComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongsList,
   fetchSongsIndex,
+  fetchSong,
   fetchSongAlbum,
   fetchSongAnnotations,
   fetchSongArtistCredits,
@@ -32,14 +33,17 @@ const songsAdapter = createEntityAdapter({
 });
 
 const initialState = songsAdapter.getInitialState({
-  fetchSongAlbum: null,
-  fetchSongAnnotations: null,
-  fetchSongArtistsCredits: null,
-  fetchSongBanner: null,
-  fetchSongComments: null,
-  fetchSongDescription: null,
-  fetchSongLyrics: null,
-  fetchSongSampleCredits: null,
+  status: {
+    fetchSong: null,
+    fetchSongAlbum: null,
+    fetchSongAnnotations: null,
+    fetchSongArtistCredits: null,
+    fetchSongBanner: null,
+    fetchSongComments: null,
+    fetchSongDescription: null,
+    fetchSongLyrics: null,
+    fetchSongSampleCredits: null,
+  },
 });
 
 const songsSlice = createSlice({
@@ -66,77 +70,87 @@ const songsSlice = createSlice({
       songsAdapter.setAll(state, action.payload.songs);
     },
     // SongPage
-    [fetchSongPage.pending]: (state) => {
+    [fetchSong.pending]: (state) => {
+      state.status.fetchSong = "pending";
       songsAdapter.removeAll(state);
     },
+    [fetchSong.fulfilled]: (state, action) => {
+      state.status.fetchSong = "fulfilled";
+      if (action.payload.songs) {
+        songsAdapter.upsertMany(state, action.payload.songs);
+      }
+    },
+    [fetchSong.rejected]: (state) => {
+      state.status.fetchSong = "rejected";
+    },
     [fetchSongAlbum.pending]: (state) => {
-      state.fetchSongAlbum = "pending";
+      state.status.fetchSongAlbum = "pending";
     },
     [fetchSongAlbum.fulfilled]: (state, action) => {
-      state.fetchSongAlbum = "fulfilled";
+      state.status.fetchSongAlbum = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
     [fetchSongAnnotations.pending]: (state) => {
-      state.fetchSongAnnotations = "pending";
+      state.status.fetchSongAnnotations = "pending";
     },
     [fetchSongAnnotations.fulfilled]: (state, action) => {
-      state.fetchSongAnnotations = "fulfilled";
+      state.status.fetchSongAnnotations = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
     [fetchSongArtistCredits.pending]: (state) => {
-      state.fetchSongArtistsCredits = "pending";
+      state.status.fetchSongArtistCredits = "pending";
     },
     [fetchSongArtistCredits.fulfilled]: (state, action) => {
-      state.fetchSongArtistCredits = "fulfilled";
+      state.status.fetchSongArtistCredits = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
     [fetchSongBanner.pending]: (state) => {
-      state.fetchSongBanner = "pending";
+      state.status.fetchSongBanner = "pending";
     },
     [fetchSongBanner.fulfilled]: (state, action) => {
-      state.fetchSongBanner = "fulfilled";
+      state.status.fetchSongBanner = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
     [fetchSongComments.pending]: (state) => {
-      state.fetchSongComments = "pending";
+      state.status.fetchSongComments = "pending";
     },
     [fetchSongComments.fulfilled]: (state, action) => {
-      state.fetchSongComments = "fulfilled";
+      state.status.fetchSongComments = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
     [fetchSongDescription.pending]: (state) => {
-      state.fetchSongDescription = "pending";
+      state.status.fetchSongDescription = "pending";
     },
     [fetchSongDescription.fulfilled]: (state, action) => {
-      state.fetchSongDescription = "fulfilled";
+      state.status.fetchSongDescription = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
     [fetchSongLyrics.pending]: (state) => {
-      state.fetchSongLyrics = "pending";
+      state.status.fetchLyrics = "pending";
     },
     [fetchSongLyrics.fulfilled]: (state, action) => {
-      state.fetchSongLyrics = "fulfilled";
+      state.status.fetchSongLyrics = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
     [fetchSongSampleCredits.pending]: (state) => {
-      state.fetchSongSampleCredits = "pending";
+      state.status.fetchSongSampleCredits = "pending";
     },
     [fetchSongSampleCredits.fulfilled]: (state, action) => {
-      state.fetchSongSampleCredits = "fulfilled";
+      state.status.fetchSongSampleCredits = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }
