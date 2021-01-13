@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchSong,
   fetchSongAlbum,
-  fetchSongAnnotations,
   fetchSongArtistCredits,
   fetchSongBanner,
   fetchSongComments,
@@ -11,24 +10,30 @@ import {
   fetchSongLyrics,
   fetchSongSampleCredits,
 } from "../songsAsyncThunks";
+import { fetchVerseAnnotations } from "../../verses/versesAsyncThunks";
 import { selectSongById } from "../songsSlice";
+import { selectVerseById } from "../../verses/versesSlice";
 import PageLayout from "./PageLayout";
 import NotFound from "../../../NotFound";
 import "../../../assets/stylesheets/SongShow.scss";
 
 const ShowSong = ({ match }) => {
-  let content;
-  const dispatch = useDispatch();
-  const { songId } = match.params;
-  const [lastSongFetched, setLastSongFetched] = useState(null);
+  const songId = parseInt(match.params.songId);
+  const verseId = parseInt(match.params.verseId);
 
   const song = useSelector((state) => selectSongById(state, songId));
-  const status_fetchSong = useSelector((state) => state.songs.status.fetchSong);
+  const verse = useSelector((state) => selectVerseById(state, verseId));
 
-  if (!status_fetchSong || status_fetchSong === "pending") {
+  const fetchSongStatus = useSelector((state) => state.songs.status.fetchSong);
+
+  const [lastSongFetched, setLastSongFetched] = useState(null);
+  const [lastVerseFetched, setLastVerseFetched] = useState(null);
+
+  let content;
+  if (!song || fetchSongStatus === "pending") {
     content = <div className="loader" />;
   }
-  if (!song || status_fetchSong === "rejected") {
+  if (!song || fetchSongStatus === "rejected") {
     content = (
       <div>
         <h2>Song not found!</h2>
@@ -36,17 +41,22 @@ const ShowSong = ({ match }) => {
       </div>
     );
   }
-  if (song && status_fetchSong === "fulfilled") {
-    content = <PageLayout match={match} />;
+  if (song && fetchSongStatus === "fulfilled" && !verse) {
+    content = <PageLayout match={match} showVerse={false} />;
   }
 
+  if (song && fetchSongStatus === "fulfilled" && verse) {
+    content = <PageLayout match={match} showVerse={true} />;
+  }
+
+  const dispatch = useDispatch();
   // fetch data from API
   useEffect(() => {
     if (lastSongFetched !== songId) {
       dispatch(fetchSong(songId));
       setLastSongFetched(songId);
+
       dispatch(fetchSongAlbum(songId));
-      dispatch(fetchSongAnnotations(songId));
       dispatch(fetchSongArtistCredits(songId));
       dispatch(fetchSongBanner(songId));
       dispatch(fetchSongComments(songId));
@@ -56,28 +66,14 @@ const ShowSong = ({ match }) => {
     }
   }, [lastSongFetched, songId, dispatch]);
 
+  useEffect(() => {
+    if (verseId && lastVerseFetched !== verseId) {
+      dispatch(fetchVerseAnnotations(verseId));
+      setLastVerseFetched(verseId);
+    }
+  }, [songId, lastVerseFetched, verseId, dispatch]);
+
   return content;
 };
 
 export default ShowSong;
-
-// const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
-// const error = useSelector((state) => state.asyncRequests.errors[-1]);
-// const song = useSelector((state) => selectSongById(state, songId));
-// let content;
-// if (asyncRequestStatus === "pending") {
-//   content = <div className="loader">Loading...</div>;
-// } else if (asyncRequestStatus === "rejected") {
-//   content = <div>{error}</div>;
-// } else if (asyncRequestStatus === "fulfilled" && !song) {
-//   content = <h2>Song not found!</h2>;
-// } else if (asyncRequestStatus === "fulfilled" && song) {
-//   content = (
-//     <div>
-//       <Banner songId={songId} />
-//       <ColumnLayout songId={songId} />
-//       <Breadcrumbs match={match} />
-//     </div>
-//   );
-// }
-// return <section>{content}</section>;

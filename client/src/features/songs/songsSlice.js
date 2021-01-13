@@ -15,6 +15,7 @@ import {
   fetchSongsList,
   fetchSongsIndex,
   fetchSong,
+  fetchSongVerse,
   fetchSongAlbum,
   fetchSongAnnotations,
   fetchSongArtistCredits,
@@ -23,7 +24,8 @@ import {
   fetchSongDescription,
   fetchSongLyrics,
   fetchSongSampleCredits,
-} from "../songs/songsAsyncThunks";
+} from "./songsAsyncThunks";
+import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
 
@@ -35,14 +37,15 @@ const songsAdapter = createEntityAdapter({
 const initialState = songsAdapter.getInitialState({
   status: {
     fetchSong: null,
+    fetchSongVerse: null,
     fetchSongAlbum: null,
-    fetchSongAnnotations: null,
     fetchSongArtistCredits: null,
     fetchSongBanner: null,
     fetchSongComments: null,
     fetchSongDescription: null,
     fetchSongLyrics: null,
     fetchSongSampleCredits: null,
+    fetchVerseAnnotations: null,
   },
 });
 
@@ -83,6 +86,18 @@ const songsSlice = createSlice({
     [fetchSong.rejected]: (state) => {
       state.status.fetchSong = "rejected";
     },
+    [fetchSongVerse.pending]: (state) => {
+      state.status.fetchSongVerse = "pending";
+    },
+    [fetchSongVerse.fulfilled]: (state, action) => {
+      state.status.fetchSongVerse = "fulfilled";
+      if (action.payload.songs) {
+        songsAdapter.upsertMany(state, action.payload.songs);
+      }
+    },
+    [fetchSongVerse.rejected]: (state) => {
+      state.status.fetchSongVerse = "rejected";
+    },
     [fetchSongAlbum.pending]: (state) => {
       state.status.fetchSongAlbum = "pending";
     },
@@ -92,11 +107,14 @@ const songsSlice = createSlice({
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
-    [fetchSongAnnotations.pending]: (state) => {
-      state.status.fetchSongAnnotations = "pending";
+    [fetchSongAlbum.rejected]: (state, action) => {
+      state.status.fetchSongAlbum = "rejected";
     },
-    [fetchSongAnnotations.fulfilled]: (state, action) => {
-      state.status.fetchSongAnnotations = "fulfilled";
+    [fetchVerseAnnotations.pending]: (state) => {
+      state.status.fetchVerseAnnotations = "pending";
+    },
+    [fetchVerseAnnotations.fulfilled]: (state, action) => {
+      state.status.fetchVerseAnnotations = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }

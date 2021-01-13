@@ -7,8 +7,9 @@ import {
   fetchSongPage,
   fetchSongAnnotations,
   fetchSongLyrics,
+  fetchSongVerse,
 } from "../songs/songsAsyncThunks";
-import { fetchVersePage } from "../verses/versesAsyncThunks";
+import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
 
 const versesAdapter = createEntityAdapter({
   // selectId is only necessary if entity's unique key is NOT entity.id
@@ -40,6 +41,11 @@ const versesSlice = createSlice({
         versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
+    [fetchSongVerse.fulfilled]: (state, action) => {
+      if (action.payload.verses) {
+        versesAdapter.upsertMany(state, action.payload.verses);
+      }
+    },
     //
     [fetchVerseComments.fulfilled]: (state, action) => {
       if (action.payload.verses) {
@@ -51,7 +57,7 @@ const versesSlice = createSlice({
         versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
-    [fetchVersePage.fulfilled]: (state, action) => {
+    [fetchVerseAnnotations.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);
       }
