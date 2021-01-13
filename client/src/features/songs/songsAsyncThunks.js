@@ -20,20 +20,28 @@ export const fetchSongsList = createAsyncThunk(
 export const fetchSongsIndex = createAsyncThunk(
   "songs/fetchSongsIndex",
   async (char) => {
-    const response = await axios.get(`/api/v1/songs-index/${char}`);
+    const response = await axios.get(`/api/v1/songs/index/${char}`);
     return response.data;
   }
 );
 
 export const fetchSong = createAsyncThunk("songs/fetchSong", async (songId) => {
-  const response = await axios.get(`/api/v1/songs/song/${songId}`);
+  const response = await axios.get(`/api/v1/songs/${songId}`);
   return response.data;
 });
+
+export const fetchSongVerse = createAsyncThunk(
+  "songs/fetchSongVerse",
+  async (verseId) => {
+    const response = await axios.get(`/api/v1/verses/${verseId}`);
+    return response.data;
+  }
+);
 
 export const fetchSongAlbum = createAsyncThunk(
   "songs/fetchSongAlbum",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/album/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/album`);
     return response.data;
   }
 );
@@ -41,7 +49,7 @@ export const fetchSongAlbum = createAsyncThunk(
 export const fetchSongAnnotations = createAsyncThunk(
   "songs/fetchSongAnnotations",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/annotations/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/annotations`);
     return response.data;
   }
 );
@@ -49,7 +57,7 @@ export const fetchSongAnnotations = createAsyncThunk(
 export const fetchSongArtistCredits = createAsyncThunk(
   "songs/fetchSongArtistCredits",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/artist_credits/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/artist_credits`);
     return response.data;
   }
 );
@@ -57,7 +65,7 @@ export const fetchSongArtistCredits = createAsyncThunk(
 export const fetchSongBanner = createAsyncThunk(
   "songs/fetchSongBanner",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/banner/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/banner`);
     return response.data;
   }
 );
@@ -65,7 +73,7 @@ export const fetchSongBanner = createAsyncThunk(
 export const fetchSongComments = createAsyncThunk(
   "songs/fetchSongComments",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/comments/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/comments`);
     return response.data;
   }
 );
@@ -73,7 +81,7 @@ export const fetchSongComments = createAsyncThunk(
 export const fetchSongDescription = createAsyncThunk(
   "songs/fetchSongDescription",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/description/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/description`);
     return response.data;
   }
 );
@@ -81,7 +89,7 @@ export const fetchSongDescription = createAsyncThunk(
 export const fetchSongLyrics = createAsyncThunk(
   "songs/fetchSongLyrics",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/lyrics/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/lyrics`);
     return response.data;
   }
 );
@@ -89,7 +97,7 @@ export const fetchSongLyrics = createAsyncThunk(
 export const fetchSongSampleCredits = createAsyncThunk(
   "songs/fetchSongSampleCredits",
   async (songId) => {
-    const response = await axios.get(`/api/v1/songs/sample_credits/${songId}`);
+    const response = await axios.get(`/api/v1/songs/${songId}/sample_credits`);
     return response.data;
   }
 );

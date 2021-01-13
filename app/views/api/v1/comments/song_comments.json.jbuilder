@@ -12,21 +12,22 @@ json.comments do
   end
 end
 
+json.songs do
+  json.set! @song.id do
+    json.id @song.id
+    json.name @song.name
+    json.comments do
+      json.array! @comments.map { |comment| comment.id }
+    end
+  end
+end
+
 json.users do
   @comments.each do |comment|
     json.set! comment.author.id do
       json.id comment.author.id
       json.username comment.author.username
       json.email comment.author.email
-    end
-  end
-end
-
-json.songs do
-  json.set! @song.id do
-    json.id @song.id
-    json.comments do
-      json.array! @comments.map { |comment| comment.id }
     end
   end
 end

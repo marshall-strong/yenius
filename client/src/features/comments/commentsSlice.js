@@ -11,7 +11,6 @@ import {
   fetchSongAnnotations,
   fetchSongComments,
 } from "../songs/songsAsyncThunks";
-import { fetchVersePage } from "../verses/versesAsyncThunks";
 
 import {
   addNewComment,
@@ -24,6 +23,8 @@ import {
   // fetchSongComments,
   fetchVerseComments,
 } from "./commentsAsyncThunks";
+
+import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
 
 const commentsAdapter = createEntityAdapter({
   selectId: (comment) => comment.id,
@@ -84,14 +85,14 @@ const commentsSlice = createSlice({
       }
     },
     //
-    [fetchVersePage.pending]: (state, action) => {
-      state.status = "fetchVersePage.pending";
+    [fetchVerseAnnotations.pending]: (state, action) => {
+      state.status = "fetchVerseAnnotations.pending";
     },
-    [fetchVersePage.rejected]: (state, action) => {
-      state.status = "fetchVersePage.rejected";
+    [fetchVerseAnnotations.rejected]: (state, action) => {
+      state.status = "fetchVerseAnnotations.rejected";
     },
-    [fetchVersePage.fulfilled]: (state, action) => {
-      state.status = "fetchVersePage.fulfilled";
+    [fetchVerseAnnotations.fulfilled]: (state, action) => {
+      state.status = "fetchVerseAnnotations.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.upsertMany(state, action.payload.comments);
       }

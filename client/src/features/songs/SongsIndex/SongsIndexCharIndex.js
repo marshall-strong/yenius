@@ -4,7 +4,7 @@ import "../../../assets/stylesheets/SongsIndex.scss";
 
 const LinkToCharSongs = ({ char }) => (
   <li key={char} className="character_index_list-element">
-    <Link to={`/songs-index/${char}`} className="character_index_list-link">
+    <Link to={`/songs/index/${char}`} className="character_index_list-link">
       {char.toUpperCase()}
     </Link>
   </li>

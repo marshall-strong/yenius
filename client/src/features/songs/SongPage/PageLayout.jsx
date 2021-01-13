@@ -4,10 +4,10 @@ import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
 import Breadcrumbs from "./Breadcrumbs";
 
-const PageLayout = ({ match }) => {
-  const { songId } = match.params;
+const PageLayout = ({ match, showVerse }) => {
+  const { songId, verseId } = match.params;
   const status = useSelector((state) => state.songs.status);
-  const { fetchSongArtistCredits, fetchSongBanner } = status;
+  const { fetchSongVerse, fetchSongArtistCredits, fetchSongBanner } = status;
   const isFulfilled = (request) => request === "fulfilled";
 
   const bannerRequests = [fetchSongArtistCredits, fetchSongBanner];
@@ -21,7 +21,7 @@ const PageLayout = ({ match }) => {
     <section className="PageLayout">
       <div>
         {banner}
-        <ColumnLayout songId={songId} />
+        <ColumnLayout match={match} showVerse={showVerse} songId={songId} />
         <Breadcrumbs match={match} />
       </div>
     </section>

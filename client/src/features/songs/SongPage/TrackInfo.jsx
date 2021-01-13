@@ -23,7 +23,7 @@ const TrackInfo = ({ songId }) => {
   } = status;
   const isFulfilled = (request) => request === "fulfilled";
 
-  const albumCreditsRequests = [fetchSongAlbum];
+  const albumCreditsRequests = [fetchSongArtistCredits];
   const albumCredits = albumCreditsRequests.every(isFulfilled) ? (
     <div className="albumCredits">
       <AlbumName songId={songId} />

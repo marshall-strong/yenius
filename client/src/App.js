@@ -87,7 +87,7 @@ function App() {
           <Route exact path="/songs-index" component={SongsIndexCharIndex} />
           <Route
             exact
-            path="/songs-index/:char"
+            path="/songs/index/:char"
             component={SongsIndexCharSongs}
           />
 
@@ -96,7 +96,7 @@ function App() {
           <Route
             exact
             path="/songs/:songId/verses/:verseId"
-            component={VersePage}
+            component={SongPage}
           />
 
           <Route exact path="/users" component={UsersList} />

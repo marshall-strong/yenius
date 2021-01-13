@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { fetchSongPage } from "../../songs/songsAsyncThunks";
 import { selectSongById } from "../../songs/songsSlice";
-import { fetchVersePage } from "../versesAsyncThunks";
+import { fetchVerseAnnotations } from "../versesAsyncThunks";
 import { selectVerseById } from "../versesSlice";
 
 import SongBanner from "../../songs/SongPage/Banner";
@@ -36,7 +36,7 @@ const VersePage = ({ match }) => {
     if (componentStatus === "idle" && verseId) {
       dispatch(fetchSongPage(songId));
       setLastSongId(songId);
-      dispatch(fetchVersePage(verseId));
+      dispatch(fetchVerseAnnotations(verseId));
       setLastVerseId(verseId);
       setComponentStatus("requestSent");
     }
@@ -53,7 +53,7 @@ const VersePage = ({ match }) => {
   // fetch data from API when arriving at a VersePage from another VersePage for the same song
   useEffect(() => {
     if (lastSongId === songId && lastVerseId !== verseId) {
-      dispatch(fetchVersePage(verseId));
+      dispatch(fetchVerseAnnotations(verseId));
       setLastVerseId(verseId);
     }
   }, [lastSongId, songId, verseId, dispatch]);
@@ -63,7 +63,7 @@ const VersePage = ({ match }) => {
     if (lastSongId !== songId && verseId) {
       dispatch(fetchSongPage(songId));
       setLastSongId(songId);
-      dispatch(fetchVersePage(verseId));
+      dispatch(fetchVerseAnnotations(verseId));
       setLastVerseId(verseId);
       setComponentStatus("requestSent");
     }
