@@ -11,7 +11,7 @@ const AlbumLayout = ({ albumId }) => {
     <div className="Layout">
       <div className="LeftColumn">
         <AlbumTracklist albumId={albumId} />
-        <CommentsList commentableType="Album" commentableId={albumId} />
+        {/* <CommentsList commentableType="Album" commentableId={albumId} /> */}
       </div>
       <div className="RightColumn">
         <AlbumAbout albumId={albumId} />

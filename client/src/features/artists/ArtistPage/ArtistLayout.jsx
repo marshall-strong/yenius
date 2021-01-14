@@ -11,7 +11,7 @@ const ArtistLayout = ({ artistId }) => {
       <div className="LeftColumn">
         <ArtistAbout artistId={artistId} />
         <ArtistTopCollaborators artistId={artistId} />
-        <CommentsList commentableType="Artist" commentableId={artistId} />
+        {/* <CommentsList commentableType="Artist" commentableId={artistId} /> */}
       </div>
       <div className="RightColumn">
         <ArtistTopSongs artistId={artistId} />

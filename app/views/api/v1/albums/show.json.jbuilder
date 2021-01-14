@@ -11,8 +11,8 @@ json.albums do
   json.set! @album.id do
     json.extract! @album, :id, :name, :release_date, :bio
     json.releaseDate @album.release_date
-    json.urlAlbumCover url_for(@album.cover_img)
-    json.urlAlbumBanner url_for(@album.banner_img)
+    json.urlAlbumCover url_for(@album.cover)
+    json.urlAlbumBanner url_for(@album.banner)
     json.artistsPrimary do
       json.array! @album.artistsPrimary.map { |artist| artist.id }
     end

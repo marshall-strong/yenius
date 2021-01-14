@@ -29,7 +29,7 @@ const ShowSong = ({ match }) => {
   const [lastSongFetched, setLastSongFetched] = useState(null);
   const [lastVerseFetched, setLastVerseFetched] = useState(null);
 
-  let content;
+  let content = <div>ShowSong component</div>;
   if (!song || fetchSongStatus === "pending") {
     content = <div className="loader" />;
   }

@@ -13,7 +13,9 @@ const LinkToCharArtists = ({ char }) => (
 const ArtistsIndexCharIndex = () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const characters = alphabet.split("");
-  const links = characters.map((char) => <LinkToCharArtists char={char} />);
+  const links = characters.map((char) => (
+    <LinkToCharArtists key={char} char={char} />
+  ));
   return (
     <div className="CharacterIndexList ArtistsIndex">
       <h1>All Artists on Yenius</h1>

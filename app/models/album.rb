@@ -12,26 +12,26 @@
 class Album < ApplicationRecord
   validates :name, presence: true
 
-  has_many :artist_credits, 
+  has_many :artist_credits,
     as: :creditable
     #class_name: :ArtistCredit
 
-  has_many :artists, 
+  has_many :artists,
     through: :artist_credits,
     source: :credited_artist
 
-  has_many :songs_on_album, 
-    class_name: :Song, 
+  has_many :songs_on_album,
+    class_name: :Song,
     foreign_key: :album_id
 
-  has_many :comments, 
+  has_many :comments,
     as: :commentable
 
-  has_many :album_annotations, 
+  has_many :album_annotations,
     as: :annotatable
 
-  has_one_attached :cover_img
-  has_one_attached :banner_img
+  has_one_attached :cover
+  has_one_attached :banner
 
   def credited_artist_ids_by_artist_credit_type(credit_type)
     artist_credit_type = ArtistCreditType.find_by credit_type: credit_type

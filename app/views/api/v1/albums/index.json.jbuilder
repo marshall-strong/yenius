@@ -6,7 +6,7 @@ json.albums do
       json.name album.name #necessary?
       json.releaseDate album.release_date
       json.extract! album, :release_date #necessary?
-      json.urlAlbumCover url_for(album.cover_img)
+      json.urlAlbumCover url_for(album.cover)
     end
   end
 end

@@ -13,7 +13,9 @@ const LinkToCharSongs = ({ char }) => (
 const SongsIndexPage = () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const characters = alphabet.split("");
-  const links = characters.map((char) => <LinkToCharSongs char={char} />);
+  const links = characters.map((char) => (
+    <LinkToCharSongs key={char} char={char} />
+  ));
   return (
     <div className="CharacterIndexList SongsIndex">
       <h1>All Songs on Yenius</h1>
