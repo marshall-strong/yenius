@@ -11,24 +11,24 @@
 class Artist < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
-  has_many :artist_credits, 
-    class_name: :ArtistCredit, 
+  has_many :artist_credits,
+    class_name: :ArtistCredit,
     foreign_key: :artist_id
 
   has_many :albums,
     through: :artist_credits,
     source: :creditable,
     source_type: 'Album'
-  
+
   has_many :songs,
     through: :artist_credits,
     source: :creditable,
     source_type: 'Song'
-  
-  has_many :comments, 
+
+  has_many :comments,
     as: :commentable
 
-  has_one_attached :artist_img
+  has_one_attached :headshot
 
   def artist_credits_by_type(credit_type)
     artist_credit_type = ArtistCreditType.find_by credit_type: credit_type
@@ -48,11 +48,11 @@ class Artist < ApplicationRecord
   end
 
 
-  def banner_img
+  def banner
     if self.albums.length > 0
-      self.albums[0].banner_img
+      self.albums[0].banner
     else
-      self.artist_credits[0].creditable.album.banner_img
+      self.artist_credits[0].creditable.album.banner
     end
   end
 
