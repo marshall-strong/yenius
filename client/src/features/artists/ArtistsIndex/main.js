@@ -8,7 +8,7 @@ const main = () => {
           </a>
         </li>
         <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="https://genius.com/artists-index/j" itemprop="url">
+          <a href="https://genius.com/artists/index/j" itemprop="url">
             <span itemprop="title">J</span>
           </a>
         </li>
@@ -61,7 +61,7 @@ const main = () => {
       </ul>
 
       <div class="all_artists_link">
-        <a href="https://genius.com/artists-index/j/all">
+        <a href="https://genius.com/artists/index/j/all">
           All J Artists on Genius
         </a>
       </div>

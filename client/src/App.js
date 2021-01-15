@@ -70,12 +70,12 @@ function App() {
           <Route exact path="/artists" component={ArtistsIndexCharIndex} />
           <Route
             exact
-            path="/artists-index/"
+            path="/artists/index/"
             component={ArtistsIndexCharIndex}
           />
           <Route
             exact
-            path="/artists-index/:char"
+            path="/artists/index/:char"
             component={ArtistsIndexCharArtists}
           />
           <Route exact path="/artists/:artistId" component={ArtistPage} />
@@ -84,7 +84,7 @@ function App() {
           <Route exact path="/albums/:albumId" component={AlbumPage} />
 
           <Route exact path="/songs" component={SongsIndexCharIndex} />
-          <Route exact path="/songs-index" component={SongsIndexCharIndex} />
+          <Route exact path="/songs/index" component={SongsIndexCharIndex} />
           <Route
             exact
             path="/songs/index/:char"
