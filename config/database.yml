@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: yenius_api_production
-  username: yenius_api
-  password: <%= ENV['YENIUS_API_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+  # database: yenius_api_production
+  # username: yenius_api
+  # password: <%= ENV['YENIUS_API_DATABASE_PASSWORD'] %>

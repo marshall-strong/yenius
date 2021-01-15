@@ -28,5 +28,9 @@
 # Place files for /public in /client/public
 /public
 
+# environmental variables
+.env
+.env.prod
+
 # constants.rb is only used for testing in the rails console
 constants.rb

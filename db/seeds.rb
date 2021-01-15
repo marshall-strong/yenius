@@ -2,13 +2,12 @@ require 'aws-sdk'
 require 'open-uri'
 
 # The db/seeds directory has been uploaded to the s3 bucket listed below:
-bucket_name = "yenius--rails6-api--s3-bucket-dev"
+bucket_name = ENV['S3_BUCKET']
 # All objects have been made publicly accessible
 client = Aws::S3::Client.new(
   region: 'us-east-2',
-  credentials: Aws::Credentials.new('AKIASJN64TJ7J5WL3YNP', '8y1zromM4wLr3wxY5GJPsJO/VD5R60uncLBeGPDV')
+  credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),
 )
-# (committing AWS credentials for now -- will reset them later)
 
 
 # DESTROY existing seeds
