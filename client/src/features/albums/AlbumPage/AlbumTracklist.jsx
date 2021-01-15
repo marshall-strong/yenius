@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { selectAlbumById } from "../../albums/albumsSlice";
 import { selectSongById } from "../../songs/songsSlice";
-import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
+import InterspersedArtistLinks from "../../artists/ArtistsLinks";
 
 import DownChevron from "../../../assets/images/icon-chevron_down.png";
 import UpChevron from "../../../assets/images/icon-chevron_up.png";

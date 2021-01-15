@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../../assets/stylesheets/ArtistsIndex.scss";
+import "../../assets/stylesheets/ArtistsIndex.scss";
 
 const LinkToCharArtists = ({ char }) => (
   <li key={char} className="character_index_list-element">
@@ -10,7 +10,7 @@ const LinkToCharArtists = ({ char }) => (
   </li>
 );
 
-const ArtistsIndexCharIndex = () => {
+const ArtistsIndex = () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const characters = alphabet.split("");
   const links = characters.map((char) => (
@@ -24,4 +24,4 @@ const ArtistsIndexCharIndex = () => {
   );
 };
 
-export default ArtistsIndexCharIndex;
+export default ArtistsIndex;

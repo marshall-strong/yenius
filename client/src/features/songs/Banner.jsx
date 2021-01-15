@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectAlbumBySongId } from "../albums/albumsSlice";
 import { selectSongById } from "./songsSlice";
-import { InterspersedArtistLinks } from "../artists/ArtistsLinks";
+import InterspersedArtistLinks from "../artists/ArtistsLinks";
 import { mergeArrays } from "../../lib";
 import "../../assets/stylesheets/SongBanner.scss";
 

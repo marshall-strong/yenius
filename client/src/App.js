@@ -35,8 +35,8 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 import Navbar from "./app/Navbar";
 import LandingPage from "./app/LandingPage";
 
-import ArtistsIndexCharIndex from "./features/artists/ArtistsIndex";
-import ArtistsIndexCharArtists from "./features/artists/ArtistsList";
+import ArtistsIndex from "./features/artists/ArtistsIndex";
+import ArtistsList from "./features/artists/ArtistsList";
 import ArtistPage from "./features/artists/ArtistPage";
 
 import AlbumsList from "./features/albums/AlbumsList";
@@ -59,13 +59,9 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={LandingPage} />
 
-        <Route exact path="/artists" component={ArtistsIndexCharIndex} />
-        <Route exact path="/artists/index/" component={ArtistsIndexCharIndex} />
-        <Route
-          exact
-          path="/artists/index/:char"
-          component={ArtistsIndexCharArtists}
-        />
+        <Route exact path="/artists" component={ArtistsIndex} />
+        <Route exact path="/artists/index/" component={ArtistsIndex} />
+        <Route exact path="/artists/index/:char" component={ArtistsList} />
         <Route exact path="/artists/:artistId" component={ArtistPage} />
 
         <Route exact path="/albums" component={AlbumsList} />

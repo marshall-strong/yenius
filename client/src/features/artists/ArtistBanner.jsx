@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectArtistById } from "../artistsSlice";
+import { selectArtistById } from "./artistsSlice";
 
-import ThisIsFine from "../../../assets/images/this_is_fine.png";
-import "../../../assets/stylesheets/Banner.scss";
+import ThisIsFine from "../../assets/images/this_is_fine.png";
+import "../../assets/stylesheets/Banner.scss";
 
 const ArtistBanner = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
