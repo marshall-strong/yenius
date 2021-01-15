@@ -1,11 +1,21 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectAlbumBySongId } from "../../albums/albumsSlice";
-import { selectSongById } from "../songsSlice";
-import { InterspersedArtistLinks } from "../../artists/ArtistsLinks";
-import { SongByArtistLink } from "../SongLinks";
-import { mergeArrays, printDate } from "../../../lib";
+import { selectAlbumBySongId } from "../albums/albumsSlice";
+import { selectSongById } from "./songsSlice";
+import { InterspersedArtistLinks } from "../artists/ArtistsLinks";
+import { mergeArrays, printDate } from "../../lib";
+
+const SongLink = ({ songId }) => {
+  const song = useSelector((state) => selectSongById(state, songId));
+  let content;
+  if (!song) {
+    content = null;
+  } else {
+    content = <Link to={`/songs/${songId}`}>{song.displayName}</Link>;
+  }
+  return <div>{content}</div>;
+};
 
 export const PrimaryArtists = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
@@ -111,7 +121,7 @@ export const SampleParents = ({ songId }) => {
     return null;
   }
   const linksToSampleParents = parentSongIds.map((songId) => (
-    <SongByArtistLink key={songId} songId={songId} />
+    <SongLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">
@@ -131,7 +141,7 @@ export const SampleChildren = ({ songId }) => {
     return null;
   }
   const linksToSampleChildren = childSongIds.map((songId) => (
-    <SongByArtistLink key={songId} songId={songId} />
+    <SongLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">
@@ -151,7 +161,7 @@ export const InterpolationParents = ({ songId }) => {
     return null;
   }
   const linksToInterpolationParents = parentSongIds.map((songId) => (
-    <SongByArtistLink key={songId} songId={songId} />
+    <SongLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">
@@ -171,7 +181,7 @@ export const InterpolationChildren = ({ songId }) => {
     return null;
   }
   const linksToInterpolationChildren = childSongIds.map((songId) => (
-    <SongByArtistLink key={songId} songId={songId} />
+    <SongLink key={songId} songId={songId} />
   ));
   return (
     <div className="metadata_unit metadata_unit--table_row">

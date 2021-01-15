@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchSongsIndex } from "../songsAsyncThunks";
-import { selectSongIds, selectSongById } from "../songsSlice";
-import "../../../assets/stylesheets/SongsIndex.scss";
+import { fetchSongsIndex } from "./songsAsyncThunks";
+import { selectSongIds, selectSongById } from "./songsSlice";
+import "../../assets/stylesheets/SongsIndex.scss";
 
-const SongsListItem = ({ songId }) => {
+const ListItem = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   return (
     <li>
@@ -16,7 +16,7 @@ const SongsListItem = ({ songId }) => {
   );
 };
 
-const SongsList = ({ char, songIds }) => {
+const List = ({ char, songIds }) => {
   if (songIds.length === 0) {
     return (
       <h1 className="songs_index-header">
@@ -25,7 +25,7 @@ const SongsList = ({ char, songIds }) => {
     );
   }
   const list = songIds.map((songId) => (
-    <SongsListItem key={songId} songId={songId} />
+    <ListItem key={songId} songId={songId} />
   ));
   return (
     <div>
@@ -37,7 +37,7 @@ const SongsList = ({ char, songIds }) => {
   );
 };
 
-const SongsIndex = ({ match }) => {
+const SongsList = ({ match }) => {
   const dispatch = useDispatch();
   const [componentStatus, setComponentStatus] = useState("idle");
   const { char } = match.params;
@@ -60,10 +60,10 @@ const SongsIndex = ({ match }) => {
   } else if (asyncRequestStatus === "rejected") {
     content = <div>{error}</div>;
   } else if (asyncRequestStatus === "fulfilled") {
-    content = <SongsList char={char} songIds={orderedSongIds} />;
+    content = <List char={char} songIds={orderedSongIds} />;
   }
 
   return <section className="SongsIndex">{content}</section>;
 };
 
-export default SongsIndex;
+export default SongsList;

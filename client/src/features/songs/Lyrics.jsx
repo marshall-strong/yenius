@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectSongById } from "../songsSlice";
-import { selectVerseById } from "../../verses/versesSlice";
+import { selectSongById } from "./songsSlice";
+import { selectVerseById } from "../verses/versesSlice";
 
 const LyricsVerse = ({ verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));

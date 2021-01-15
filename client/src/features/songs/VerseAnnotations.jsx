@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectVerseById } from "../../verses/versesSlice";
-import VerseComments from "../../verses/VerseComments";
+import { selectVerseById } from "../verses/versesSlice";
+import VerseComments from "../verses/VerseComments";
 
 const VerseAnnotations = ({ verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));

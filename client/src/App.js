@@ -34,14 +34,18 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 
 import Navbar from "./app/Navbar";
 import LandingPage from "./app/LandingPage";
+
 import ArtistsIndexCharIndex from "./features/artists/ArtistsIndex/ArtistsIndexCharIndex";
 import ArtistsIndexCharArtists from "./features/artists/ArtistsIndex/ArtistsIndexCharArtists";
 import ArtistPage from "./features/artists/ArtistPage";
+
 import AlbumsList from "./features/albums/AlbumsList";
 import AlbumPage from "./features/albums/AlbumPage";
-import SongsIndexCharIndex from "./features/songs/SongsIndex/SongsIndexCharIndex";
-import SongsIndexCharSongs from "./features/songs/SongsIndex/SongsIndexCharSongs";
-import SongPage from "./features/songs/SongPage";
+
+import SongsIndexCharIndex from "./features/songs/SongsIndex";
+import SongsIndexCharSongs from "./features/songs/SongsList";
+import SongPage from "./features/songs/SongShow";
+
 import UsersList from "./features/users/UsersList";
 import UserPage from "./features/users/UserPage";
 import SignupForm from "./features/session/SignupForm";

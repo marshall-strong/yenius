@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../../assets/stylesheets/SongsIndex.scss";
+import "../../assets/stylesheets/SongsIndex.scss";
 
 const LinkToCharSongs = ({ char }) => (
   <li key={char} className="character_index_list-element">
@@ -10,7 +10,7 @@ const LinkToCharSongs = ({ char }) => (
   </li>
 );
 
-const SongsIndexPage = () => {
+const SongsIndex = () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const characters = alphabet.split("");
   const links = characters.map((char) => (
@@ -24,4 +24,4 @@ const SongsIndexPage = () => {
   );
 };
 
-export default SongsIndexPage;
+export default SongsIndex;
