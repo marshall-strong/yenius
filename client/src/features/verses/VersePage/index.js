@@ -11,7 +11,7 @@ import SongLayout from "../../songs/SongPage/ColumnLayout";
 import VerseLayout from "./VerseLayout";
 // import SongBreadcrumbs from "../../songs/SongPage/SongBreadcrumbs";
 
-import "../../../assets/stylesheets/SongShow.scss";
+import "../../../assets/stylesheets/SongPage.scss";
 import "../../../assets/stylesheets/column_layout.scss";
 
 const VersePage = ({ match }) => {

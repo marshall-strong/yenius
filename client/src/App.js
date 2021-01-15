@@ -35,8 +35,8 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 import Navbar from "./app/Navbar";
 import LandingPage from "./app/LandingPage";
 
-import ArtistsIndexCharIndex from "./features/artists/ArtistsIndex/ArtistsIndexCharIndex";
-import ArtistsIndexCharArtists from "./features/artists/ArtistsIndex/ArtistsIndexCharArtists";
+import ArtistsIndexCharIndex from "./features/artists/ArtistsIndex";
+import ArtistsIndexCharArtists from "./features/artists/ArtistsList";
 import ArtistPage from "./features/artists/ArtistPage";
 
 import AlbumsList from "./features/albums/AlbumsList";
@@ -44,7 +44,7 @@ import AlbumPage from "./features/albums/AlbumPage";
 
 import SongsIndex from "./features/songs/SongsIndex";
 import SongsList from "./features/songs/SongsList";
-import SongShow from "./features/songs/SongShow";
+import SongPage from "./features/songs/SongPage";
 
 import UsersList from "./features/users/UsersList";
 import UserPage from "./features/users/UserPage";
@@ -74,12 +74,12 @@ const App = () => (
         <Route exact path="/songs" component={SongsIndex} />
         <Route exact path="/songs/index" component={SongsIndex} />
         <Route exact path="/songs/index/:char" component={SongsList} />
-        <Route exact path="/songs/:songId" component={SongShow} />
-        <Route exact path="/songs/:songId/verses" component={SongShow} />
+        <Route exact path="/songs/:songId" component={SongPage} />
+        <Route exact path="/songs/:songId/verses" component={SongPage} />
         <Route
           exact
           path="/songs/:songId/verses/:verseId"
-          component={SongShow}
+          component={SongPage}
         />
 
         <Route exact path="/users" component={UsersList} />

@@ -15,9 +15,9 @@ import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 import PageLayout from "./PageLayout";
 import NotFound from "../../NotFound";
-import "../../assets/stylesheets/SongShow.scss";
+import "../../assets/stylesheets/SongPage.scss";
 
-const SongShow = ({ match }) => {
+const SongPage = ({ match }) => {
   const songId = parseInt(match.params.songId);
   const verseId = parseInt(match.params.verseId);
 
@@ -29,7 +29,7 @@ const SongShow = ({ match }) => {
   const [lastSongFetched, setLastSongFetched] = useState(null);
   const [lastVerseFetched, setLastVerseFetched] = useState(null);
 
-  let content = <div>SongShow component</div>;
+  let content = <div>SongPage component</div>;
   if (!song || fetchSongStatus === "pending") {
     content = <div className="loader" />;
   }
@@ -76,4 +76,4 @@ const SongShow = ({ match }) => {
   return content;
 };
 
-export default SongShow;
+export default SongPage;
