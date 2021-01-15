@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectAlbumById } from "../albumsSlice";
-import InterspersedArtistLinks from "../../artists/ArtistsLinks";
-import { printDate } from "../../../lib";
+import { selectAlbumById } from "./albumsSlice";
+import InterspersedArtistLinks from "../artists/ArtistsLinks";
+import { printDate } from "../../lib";
 
-import "../../../assets/stylesheets/Banner.scss";
+import "../../assets/stylesheets/Banner.scss";
 
 const AlbumBanner = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));

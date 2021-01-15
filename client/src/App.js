@@ -59,13 +59,13 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={LandingPage} />
 
+        <Route exact path="/albums" component={AlbumsList} />
+        <Route exact path="/albums/:albumId" component={AlbumPage} />
+
         <Route exact path="/artists" component={ArtistsIndex} />
         <Route exact path="/artists/index/" component={ArtistsIndex} />
         <Route exact path="/artists/index/:char" component={ArtistsList} />
         <Route exact path="/artists/:artistId" component={ArtistPage} />
-
-        <Route exact path="/albums" component={AlbumsList} />
-        <Route exact path="/albums/:albumId" component={AlbumPage} />
 
         <Route exact path="/songs" component={SongsIndex} />
         <Route exact path="/songs/index" component={SongsIndex} />
