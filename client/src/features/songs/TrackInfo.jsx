@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectSongById } from "../songsSlice";
+import { selectSongById } from "./songsSlice";
 import {
   PrimaryArtists,
   FeaturedArtists,

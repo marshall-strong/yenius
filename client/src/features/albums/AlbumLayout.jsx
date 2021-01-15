@@ -3,8 +3,7 @@ import AlbumAbout from "./AlbumAbout";
 import AlbumAllSongCredits from "./AlbumAllSongCredits";
 import AlbumCredits from "./AlbumCredits";
 import AlbumTracklist from "./AlbumTracklist";
-import CommentsList from "../../comments/CommentsList";
-// import CommentsSection from "../../comments/CommentsSection";
+import CommentsList from "../comments/CommentsList";
 
 const AlbumLayout = ({ albumId }) => {
   return (

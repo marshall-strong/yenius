@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { intersperse } from "../../lib";
 import { selectArtistById } from "./artistsSlice";
 
-export const ArtistLink = ({ artistId }) => {
+const ArtistLink = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
   return <Link to={`/artists/${artist.id}`}>{artist.name}</Link>;
 };
 
-export const InterspersedArtistLinks = ({ artistIds }) => {
+const ArtistLinks = ({ artistIds }) => {
   if (!artistIds) {
     return null;
   }
@@ -18,3 +18,5 @@ export const InterspersedArtistLinks = ({ artistIds }) => {
   ));
   return intersperse(artistLinks, ", ", " & ");
 };
+
+export default ArtistLinks;

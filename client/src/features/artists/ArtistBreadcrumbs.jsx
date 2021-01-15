@@ -1,7 +1,7 @@
 import React from "react";
-import "../../../assets/stylesheets/Breadcrumbs.scss";
+import "../../assets/stylesheets/Breadcrumbs.scss";
 
-const Breadcrumbs = ({ match }) => {
+const Breadcrumbs = () => {
   return (
     <footer className="Breadcrumbs">
       <br />

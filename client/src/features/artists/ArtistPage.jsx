@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchArtistPage } from "../artistsAsyncThunks";
-import { selectArtistById } from "../artistsSlice";
+import { fetchArtistPage } from "./artistsAsyncThunks";
+import { selectArtistById } from "./artistsSlice";
 
 import ArtistBanner from "./ArtistBanner";
 import ArtistLayout from "./ArtistLayout";
 // import ArtistBreadcrumbs from "./ArtistBreadcrumbs";
 
-import "../../../assets/stylesheets/show.scss";
+import "../../assets/stylesheets/show.scss";
 
 const ArtistPage = ({ match }) => {
   const dispatch = useDispatch();

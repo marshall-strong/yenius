@@ -3,7 +3,7 @@ import ArtistAbout from "./ArtistAbout";
 import ArtistTopAlbums from "./ArtistTopAlbums";
 import ArtistTopCollaborators from "./ArtistTopCollaborators";
 import ArtistTopSongs from "./ArtistTopSongs";
-import CommentsList from "../../comments/CommentsList";
+import CommentsList from "../comments/CommentsList";
 
 const ArtistLayout = ({ artistId }) => {
   return (

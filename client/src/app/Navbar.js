@@ -91,7 +91,7 @@ const Navbar = () => {
           </li>
           <li> | </li>
           <li>
-            <a href="https://github.com/marstrong/yenius">
+            <a href="https://github.com/marstrong/yenius--rails6-api">
               <img height="14px" src={GithubLogo} alt="GitHub repository" />
             </a>
           </li>

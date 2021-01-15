@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { fetchAlbumsList } from "../albums/albumsAsyncThunks";
-import { selectAlbumIds, selectAlbumById } from "../albums/albumsSlice";
+import { fetchAlbumsList } from "./albumsAsyncThunks";
+import { selectAlbumIds, selectAlbumById } from "./albumsSlice";
 
 const AlbumsListItem = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));

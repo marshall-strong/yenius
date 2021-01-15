@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
       # artists
       resources :artists, only: [:index, :show]
-      get '/artists-index/:char', to: 'artists#artists_index'
+      get '/artists/index/:char', to: 'artists#artists_index'
 
       # comments
       resources :comments

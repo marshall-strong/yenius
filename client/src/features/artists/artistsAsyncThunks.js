@@ -20,7 +20,7 @@ export const fetchArtistsList = createAsyncThunk(
 export const fetchArtistsIndex = createAsyncThunk(
   "artists/fetchArtistsIndex",
   async (char) => {
-    const response = await axios.get(`/api/v1/artists-index/${char}`);
+    const response = await axios.get(`/api/v1/artists/index/${char}`);
     return response.data;
   }
 );

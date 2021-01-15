@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchArtistsIndex } from "../artistsAsyncThunks";
-import { selectArtistIds, selectArtistById } from "../artistsSlice";
-import "../../../assets/stylesheets/ArtistsIndex.scss";
+import { fetchArtistsIndex } from "./artistsAsyncThunks";
+import { selectArtistIds, selectArtistById } from "./artistsSlice";
+import "../../assets/stylesheets/ArtistsIndex.scss";
 
 const ArtistsListItem = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));

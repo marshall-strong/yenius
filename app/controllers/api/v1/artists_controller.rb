@@ -11,7 +11,7 @@ class Api::V1::ArtistsController < ApiController
     render 'api/v1/artists/show'
   end
 
-  # @route GET /api/v1/artists-index/:char
+  # @route GET /api/v1/artists/index/:char
   def artists_index
     @upper = params[:char].upcase
     @lower = params[:char].downcase

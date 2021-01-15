@@ -9,15 +9,15 @@ import {
   fetchSongDescription,
   fetchSongLyrics,
   fetchSongSampleCredits,
-} from "../songsAsyncThunks";
-import { fetchVerseAnnotations } from "../../verses/versesAsyncThunks";
-import { selectSongById } from "../songsSlice";
-import { selectVerseById } from "../../verses/versesSlice";
+} from "./songsAsyncThunks";
+import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
+import { selectSongById } from "./songsSlice";
+import { selectVerseById } from "../verses/versesSlice";
 import PageLayout from "./PageLayout";
-import NotFound from "../../../NotFound";
-import "../../../assets/stylesheets/SongShow.scss";
+import NotFound from "../../NotFound";
+import "../../assets/stylesheets/SongPage.scss";
 
-const ShowSong = ({ match }) => {
+const SongPage = ({ match }) => {
   const songId = parseInt(match.params.songId);
   const verseId = parseInt(match.params.verseId);
 
@@ -29,7 +29,7 @@ const ShowSong = ({ match }) => {
   const [lastSongFetched, setLastSongFetched] = useState(null);
   const [lastVerseFetched, setLastVerseFetched] = useState(null);
 
-  let content = <div>ShowSong component</div>;
+  let content = <div>SongPage component</div>;
   if (!song || fetchSongStatus === "pending") {
     content = <div className="loader" />;
   }
@@ -76,4 +76,4 @@ const ShowSong = ({ match }) => {
   return content;
 };
 
-export default ShowSong;
+export default SongPage;
