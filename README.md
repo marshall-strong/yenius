@@ -1,5 +1,7 @@
 # yenius--rails-api--create-react-app
 
+Production: https://yenius--rails6-api.herokuapp.com/
+
 Guide for deployment:
 _[A Rock Solid, Modern Web Stack—Rails 5 API + ActiveAdmin + Create React App on Heroku](https://blog.heroku.com/a-rock-solid-modern-web-stack)_
 https://devcenter.heroku.com/articles/heroku-postgresql
@@ -32,6 +34,10 @@ UPDATE: pre-commit should now only run Prettier the /client directory
 
 ## AWS S3 configuration
 [AWS Management Console](https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2#)
+_[AWS: Installing the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-install.html)_
+_[AWS: Configuring the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-config.html)_
+_[Heroku: Using AWS S3 to Store Static Assets and File Uploads](https://devcenter.heroku.com/articles/s3)_
+_[Heroku: Directo to S3 Image Uploads in Rails](https://devcenter.heroku.com/articles/direct-to-s3-image-uploads-in-rails)_
 Possible improvement? (https://www.mmbyte.com/article/40111.html)
 DEV.bucket_name: yenius--rails6-api--s3-bucket-dev
 DEV.region: us-east-2
@@ -136,7 +142,7 @@ IAM Policy:
 
 
 
-Since this app will ultimately be deployed to Heroku, we should use Heroku local for development so that our dev environment more closely resembles our production environment.
+Since this app will ultimately be deployed to Heroku, we should use [Heroku local](https://devcenter.heroku.com/articles/heroku-local) for development so that our dev environment more closely resembles our production environment.
 
 # credentials
 PROD: Heroku stores environmental variables in the config vars. For reference, these values have been locally exported to .env.prod
