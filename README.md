@@ -2,6 +2,7 @@
 
 Guide for deployment:
 _[A Rock Solid, Modern Web Stack—Rails 5 API + ActiveAdmin + Create React App on Heroku](https://blog.heroku.com/a-rock-solid-modern-web-stack)_
+https://devcenter.heroku.com/articles/heroku-postgresql
 
 _[ActiveAdmin](https://activeadmin.info/0-installation.html#setting-up-active-admin)_
 
@@ -30,6 +31,8 @@ UPDATE: pre-commit should now only run Prettier the /client directory
 /client directory uses Prettier and ESLint to format code as a pre-commit hook
 
 ## AWS S3 configuration
+[AWS Management Console](https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2#)
+Possible improvement? (https://www.mmbyte.com/article/40111.html)
 DEV.bucket_name: yenius--rails6-api--s3-bucket-dev
 DEV.region: us-east-2
 DEV.access: Objects can be public
@@ -144,5 +147,5 @@ PROD: `heroku run rake db:migrate db:seed`
 DEV: `heroku local:run rails db:seed`
 
 # deploying
-PROD:
+PROD: `git push heroku main`, `heroku run rake db:migrate`, `heroku run rails db:seed`
 DEV: `heroku local -f Procfile.dev -e .env`
