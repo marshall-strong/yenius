@@ -12,11 +12,12 @@ Rails.application.routes.draw do
       get '/artists/index/:char', to: 'artists#artists_index'
 
       # comments
-      resources :comments
+      # resources :comments
       get '/albums/:commentableId/comments', to: 'comments#album_comments'
       get '/artists/:commentableId/comments', to: 'comments#artist_comments'
       get '/songs/:commentableId/comments', to: 'comments#song_comments'
       get '/verses/:commentableId/comments', to: 'comments#verse_comments'
+
       post '/albums/:commentableId/comments', to: 'comments#create_album_comment'
       post '/artists/:commentableId/comments', to: 'comments#create_artist_comment'
       post '/songs/:commentableId/comments', to: 'comments#create_song_comment'
