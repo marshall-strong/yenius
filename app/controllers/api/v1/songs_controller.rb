@@ -26,12 +26,6 @@ class Api::V1::SongsController < ApiController
     render 'api/v1/songs/album'
   end
 
-  # @route GET /api/v1/songs/:song_id/annotations
-  def annotations
-    @song = Song.find(params[:song_id])
-    render 'api/v1/songs/annotations'
-  end
-
   # @route GET /api/v1/songs/:song_id/artist_credits
   def artist_credits
     @song = Song.find(params[:song_id])

@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       get  '/songs/index/:char',             to: 'songs#index'
       get  '/songs/:song_id',                to: 'songs#show'
       get  '/songs/:song_id/album',          to: 'songs#album'
-      get  '/songs/:song_id/annotations',    to: 'songs#annotations'
       get  '/songs/:song_id/artist_credits', to: 'songs#artist_credits'
       get  '/songs/:song_id/banner',         to: 'songs#banner'
       get  '/songs/:song_id/description',    to: 'songs#description'

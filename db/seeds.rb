@@ -6262,7 +6262,7 @@ client = Aws::S3::Client.new(
   Verse.create!( song_id: (Song.find_by! name:"The Joy", album: watch_the_throne).id, verse_number:34, body:"They said, \"You raised that boy too fast\"<br>But you was raising a warrior (<i>One-two, okay</i>)" )
 
 
-# Comments and Annotations
+# Comments
   comment_hashes = []
   comment_hashes.push( Hash["username" => "MaxB", "body" => "Yeezy, Yeezy, what's good? It's your boy Max B, what's going on? Just checking in on you..."] )
   comment_hashes.push( Hash["username" => "MaxB", "body" => "owww WAVEY, baby, YEAH"] )
