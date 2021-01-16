@@ -25,6 +25,7 @@ end
 json.verses do
   json.set! @verse.id do
     json.id @verse.id
+    json.songId verse.song_id
     json.body @verse.body
     json.comments do
       json.array! @verse.comments.ids

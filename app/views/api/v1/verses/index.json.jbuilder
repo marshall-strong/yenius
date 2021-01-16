@@ -3,7 +3,6 @@ json.verses do
     json.set! verse.id do
       json.id verse.id
       json.songId verse.song_id
-      json.verseNumber verse.verse_number
       json.body verse.body
     end
   end
