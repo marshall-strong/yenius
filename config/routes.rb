@@ -5,14 +5,14 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       # albums
-      resources :albums, only: [:index, :show]
+      get '/albums', to: 'albums#index'
+      get '/albums/:albumId', to: 'albums#show'
 
       # artists
       resources :artists, only: [:index, :show]
       get '/artists/index/:char', to: 'artists#artists_index'
 
       # comments
-      # resources :comments
       get '/albums/:commentableId/comments', to: 'comments#album_comments'
       get '/artists/:commentableId/comments', to: 'comments#artist_comments'
       get '/songs/:commentableId/comments', to: 'comments#song_comments'

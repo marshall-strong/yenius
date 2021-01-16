@@ -12,7 +12,7 @@ class Api::V1::AlbumsController < ApiController
 
   # @route GET /api/v1/albums/:id (api_v1_album)
   def show
-    @album = Album.find(params[:id])
+    @album = Album.find(params[:albumId])
     render :show
   end
 
