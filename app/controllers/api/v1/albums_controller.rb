@@ -1,5 +1,5 @@
 class Api::V1::AlbumsController < ApiController
-  # @route GET /api/v1/albums (api_v1_albums)
+  # @route GET /api/v1/albums
   def index
     @albums = Album.all
     render 'api/v1/albums/index'
