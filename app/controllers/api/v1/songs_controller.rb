@@ -65,12 +65,4 @@ class Api::V1::SongsController < ApiController
     @sample_credit_types = SampleCreditType.all
     render 'api/v1/songs/sample_credits'
   end
-
-
-  private
-
-    # only need if creating new songs
-    # def song_params
-    #   params.require(:song).permit(:name)
-    # end
 end

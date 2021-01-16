@@ -9,8 +9,10 @@ Rails.application.routes.draw do
       get '/albums/:albumId', to: 'albums#show'
 
       # artists
-      resources :artists, only: [:index, :show]
-      get '/artists/index/:char', to: 'artists#artists_index'
+      # resources :artists, only: [:index, :show]
+      get '/artists/index/:char', to: 'artists#index'
+      get '/artists/:artistId', to: 'artists#show'
+
 
       # comments
       get '/albums/:commentableId/comments', to: 'comments#album_comments'

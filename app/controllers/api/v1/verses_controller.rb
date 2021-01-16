@@ -10,12 +10,4 @@ class Api::V1::VersesController < ApiController
     @verse = Verse.find(params[:id])
     render 'api/v1/verses/show'
   end
-
-
-  private
-
-    # only need if creating new verses
-    # def verse_params
-    #   params.require(:verse).permit(:name)
-    # end
 end
