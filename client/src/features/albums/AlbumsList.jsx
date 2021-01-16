@@ -11,7 +11,6 @@ const AlbumsListItem = ({ albumId }) => {
     <article className="list-item" key={album.id}>
       <h3>Album {album.id}</h3>
       <p>id: {album.id}</p>
-      <p>title: {album.title}</p>
       <p>name: {album.name}</p>
       <p>releaseDate: {album.releaseDate}</p>
       {/* <p>urlAlbumCover: {album.urlAlbumCover}</p> */}
