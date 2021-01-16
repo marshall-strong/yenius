@@ -41,11 +41,6 @@ Rails.application.routes.draw do
 
       # session
       resource :session, only: [:create, :destroy]
-
-      resources :artist_roles
-      resources :artist_credits
-      resources :song_roles
-      resources :song_credits
     end
   end
 
