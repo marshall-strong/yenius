@@ -46,14 +46,6 @@ export const fetchSongAlbum = createAsyncThunk(
   }
 );
 
-// export const fetchSongAnnotations = createAsyncThunk(
-//   "songs/fetchSongAnnotations",
-//   async (songId) => {
-//     const response = await axios.get(`/api/v1/songs/${songId}/annotations`);
-//     return response.data;
-//   }
-// );
-
 export const fetchSongArtistCredits = createAsyncThunk(
   "songs/fetchSongArtistCredits",
   async (songId) => {
