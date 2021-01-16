@@ -70,14 +70,6 @@ export const fetchSongBanner = createAsyncThunk(
   }
 );
 
-export const fetchSongComments = createAsyncThunk(
-  "songs/fetchSongComments",
-  async (songId) => {
-    const response = await axios.get(`/api/v1/songs/${songId}/comments`);
-    return response.data;
-  }
-);
-
 export const fetchSongDescription = createAsyncThunk(
   "songs/fetchSongDescription",
   async (songId) => {

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchSongComments } from "../comments/commentsAsyncThunks";
 import {
   fetchSong,
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
-  fetchSongComments,
   fetchSongDescription,
   fetchSongLyrics,
   fetchSongSampleCredits,

@@ -9,7 +9,6 @@ import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
   // fetchSongPage,
   fetchSongAnnotations,
-  fetchSongComments,
 } from "../songs/songsAsyncThunks";
 
 import {
@@ -20,7 +19,7 @@ import {
   addVerseComment,
   fetchAlbumComments,
   fetchArtistComments,
-  // fetchSongComments,
+  fetchSongComments,
   fetchVerseComments,
 } from "./commentsAsyncThunks";
 

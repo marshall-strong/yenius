@@ -8,7 +8,7 @@ import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
   addSongComment,
-  // fetchSongComments,
+  fetchSongComments,
 } from "../comments/commentsAsyncThunks";
 import {
   // fetchSongPage,
@@ -20,7 +20,6 @@ import {
   fetchSongAnnotations,
   fetchSongArtistCredits,
   fetchSongBanner,
-  fetchSongComments,
   fetchSongDescription,
   fetchSongLyrics,
   fetchSongSampleCredits,

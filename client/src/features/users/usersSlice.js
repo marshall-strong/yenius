@@ -2,10 +2,10 @@ import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
+import { fetchSongComments } from "../comments/commentsAsyncThunks";
 import {
   // fetchSongPage,
   fetchSongAnnotations,
-  fetchSongComments,
 } from "../songs/songsAsyncThunks";
 import { fetchUsers } from "../users/usersAsyncThunks";
 import { signupUser, loginUser } from "../session/sessionAsyncThunks";
