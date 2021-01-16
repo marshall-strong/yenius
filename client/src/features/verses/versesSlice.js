@@ -4,7 +4,7 @@ import {
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongAnnotations,
   fetchSongLyrics,
   fetchSongVerse,
@@ -28,9 +28,9 @@ const versesSlice = createSlice({
   reducers: {},
   extraReducers: {
     // SongPage
-    [fetchSongPage.pending]: (state) => {
-      versesAdapter.removeAll(state);
-    },
+    // [fetchSongPage.pending]: (state) => {
+    //   versesAdapter.removeAll(state);
+    // },
     [fetchSongAnnotations.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);

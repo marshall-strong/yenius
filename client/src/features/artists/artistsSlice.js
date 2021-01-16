@@ -17,7 +17,7 @@ import {
   fetchArtistComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
@@ -56,9 +56,9 @@ const artistsSlice = createSlice({
       }
     },
     // SongPage
-    [fetchSongPage.pending]: (state) => {
-      artistsAdapter.removeAll(state);
-    },
+    // [fetchSongPage.pending]: (state) => {
+    //   artistsAdapter.removeAll(state);
+    // },
     [fetchSongAlbum.fulfilled]: (state, action) => {
       if (action.payload.artists) {
         artistsAdapter.upsertMany(state, action.payload.artists);

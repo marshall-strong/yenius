@@ -7,7 +7,7 @@ import {
 import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
@@ -43,9 +43,9 @@ const albumsSlice = createSlice({
       }
     },
     // SongPage
-    [fetchSongPage.pending]: (state) => {
-      albumsAdapter.removeAll(state);
-    },
+    // [fetchSongPage.pending]: (state) => {
+    //   albumsAdapter.removeAll(state);
+    // },
     [fetchSongAlbum.fulfilled]: (state, action) => {
       if (action.payload.albums) {
         albumsAdapter.upsertMany(state, action.payload.albums);

@@ -13,7 +13,7 @@ import {
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongsList,
   fetchSongsIndex,
 } from "../songs/songsAsyncThunks";
@@ -135,16 +135,16 @@ const asyncRequestsSlice = createSlice({
       handleRejected(state);
       handleErrors(state, action);
     },
-    [fetchSongPage.pending]: (state) => {
-      handlePending(state);
-    },
-    [fetchSongPage.fulfilled]: (state) => {
-      handleFulfilled(state);
-    },
-    [fetchSongPage.rejected]: (state, action) => {
-      handleRejected(state);
-      handleErrors(state, action);
-    },
+    // [fetchSongPage.pending]: (state) => {
+    //   handlePending(state);
+    // },
+    // [fetchSongPage.fulfilled]: (state) => {
+    //   handleFulfilled(state);
+    // },
+    // [fetchSongPage.rejected]: (state, action) => {
+    //   handleRejected(state);
+    //   handleErrors(state, action);
+    // },
     [fetchSongComments.pending]: (state) => {
       handlePending(state);
     },

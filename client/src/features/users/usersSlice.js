@@ -3,7 +3,7 @@ import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongAnnotations,
   fetchSongComments,
 } from "../songs/songsAsyncThunks";
@@ -42,9 +42,9 @@ const usersSlice = createSlice({
       }
     },
     // SongPage
-    [fetchSongPage.pending]: (state) => {
-      usersAdapter.removeAll(state);
-    },
+    // [fetchSongPage.pending]: (state) => {
+    //   usersAdapter.removeAll(state);
+    // },
     [fetchSongAnnotations.fulfilled]: (state, action) => {
       if (action.payload.users) {
         usersAdapter.upsertMany(state, action.payload.users);
