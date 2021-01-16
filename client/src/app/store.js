@@ -7,8 +7,6 @@ import albumsReducer from "../features/albums/albumsSlice";
 import songsReducer from "../features/songs/songsSlice";
 import versesReducer from "../features/verses/versesSlice";
 import commentsReducer from "../features/comments/commentsSlice";
-import sampleCreditsReducer from "../features/sampleCredits/sampleCreditsSlice";
-import sampleCreditTypesReducer from "../features/sampleCreditTypes/sampleCreditTypesSlice";
 import sessionReducer from "../features/session/sessionSlice";
 
 export default configureStore({
@@ -21,8 +19,6 @@ export default configureStore({
     songs: songsReducer,
     verses: versesReducer,
     comments: commentsReducer,
-    sampleCredits: sampleCreditsReducer,
-    sampleCreditTypes: sampleCreditTypesReducer,
     session: sessionReducer,
   },
 });
