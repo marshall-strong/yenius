@@ -9,6 +9,7 @@ import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
   addSongComment,
   fetchSongComments,
+  fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 import {
   // fetchSongPage,
@@ -23,7 +24,7 @@ import {
   fetchSongLyrics,
   fetchSongSampleCredits,
 } from "./songsAsyncThunks";
-import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
+import {} from "../verses/versesAsyncThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
 
@@ -43,7 +44,7 @@ const initialState = songsAdapter.getInitialState({
     fetchSongDescription: null,
     fetchSongLyrics: null,
     fetchSongSampleCredits: null,
-    fetchVerseAnnotations: null,
+    fetchVerseComments: null,
   },
 });
 
@@ -108,11 +109,11 @@ const songsSlice = createSlice({
     [fetchSongAlbum.rejected]: (state, action) => {
       state.status.fetchSongAlbum = "rejected";
     },
-    [fetchVerseAnnotations.pending]: (state) => {
-      state.status.fetchVerseAnnotations = "pending";
+    [fetchVerseComments.pending]: (state) => {
+      state.status.fetchVerseComments = "pending";
     },
-    [fetchVerseAnnotations.fulfilled]: (state, action) => {
-      state.status.fetchVerseAnnotations = "fulfilled";
+    [fetchVerseComments.fulfilled]: (state, action) => {
+      state.status.fetchVerseComments = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.upsertMany(state, action.payload.songs);
       }

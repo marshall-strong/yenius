@@ -13,7 +13,7 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
     fetchSongArtistCredits,
     fetchSongDescription,
     fetchSongSampleCredits,
-    fetchVerseAnnotations,
+    fetchVerseComments,
   } = status;
   const isFulfilled = (request) => request === "fulfilled";
 
@@ -38,7 +38,7 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
     <div className="loader" />
   );
 
-  const verseRequests = [fetchVerseAnnotations];
+  const verseRequests = [fetchVerseComments];
   const verseAnnotations = verseRequests.every(isFulfilled) ? (
     <VerseAnnotations verseId={verseId} />
   ) : null;

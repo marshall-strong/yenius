@@ -6,7 +6,6 @@ import {
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-
 import {
   addNewComment,
   addAlbumComment,
@@ -18,8 +17,6 @@ import {
   fetchSongComments,
   fetchVerseComments,
 } from "./commentsAsyncThunks";
-
-import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
 
 const commentsAdapter = createEntityAdapter({
   selectId: (comment) => comment.id,
@@ -71,14 +68,14 @@ const commentsSlice = createSlice({
       }
     },
 
-    [fetchVerseAnnotations.pending]: (state, action) => {
-      state.status = "fetchVerseAnnotations.pending";
+    [fetchVerseComments.pending]: (state, action) => {
+      state.status = "fetchVerseComments.pending";
     },
-    [fetchVerseAnnotations.rejected]: (state, action) => {
-      state.status = "fetchVerseAnnotations.rejected";
+    [fetchVerseComments.rejected]: (state, action) => {
+      state.status = "fetchVerseComments.rejected";
     },
-    [fetchVerseAnnotations.fulfilled]: (state, action) => {
-      state.status = "fetchVerseAnnotations.fulfilled";
+    [fetchVerseComments.fulfilled]: (state, action) => {
+      state.status = "fetchVerseComments.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
@@ -106,18 +103,6 @@ const commentsSlice = createSlice({
       state.status = "fetchArtistComments.fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
-      }
-    },
-    [fetchVerseComments.pending]: (state, action) => {
-      state.status = "fetchVerseComments.pending";
-    },
-    [fetchVerseComments.rejected]: (state, action) => {
-      state.status = "fetchVerseComments.rejected";
-    },
-    [fetchVerseComments.fulfilled]: (state, action) => {
-      state.status = "fetchVerseComments.fulfilled";
-      if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
 

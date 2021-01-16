@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSongComments } from "../comments/commentsAsyncThunks";
+import {
+  fetchSongComments,
+  fetchVerseComments,
+} from "../comments/commentsAsyncThunks";
+
 import {
   fetchSong,
   fetchSongAlbum,
@@ -10,7 +14,7 @@ import {
   fetchSongLyrics,
   fetchSongSampleCredits,
 } from "./songsAsyncThunks";
-import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
+
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 import PageLayout from "./PageLayout";
@@ -68,7 +72,7 @@ const SongPage = ({ match }) => {
 
   useEffect(() => {
     if (verseId && lastVerseFetched !== verseId) {
-      dispatch(fetchVerseAnnotations(verseId));
+      dispatch(fetchVerseComments(verseId));
       setLastVerseFetched(verseId);
     }
   }, [songId, lastVerseFetched, verseId, dispatch]);
