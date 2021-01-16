@@ -5,7 +5,7 @@ import {
 } from "../comments/commentsAsyncThunks";
 import {
   // fetchSongPage,
-  fetchSongAnnotations,
+  // fetchSongAnnotations,
   fetchSongLyrics,
   fetchSongVerse,
 } from "../songs/songsAsyncThunks";
@@ -31,11 +31,11 @@ const versesSlice = createSlice({
     // [fetchSongPage.pending]: (state) => {
     //   versesAdapter.removeAll(state);
     // },
-    [fetchSongAnnotations.fulfilled]: (state, action) => {
-      if (action.payload.verses) {
-        versesAdapter.upsertMany(state, action.payload.verses);
-      }
-    },
+    // [fetchSongAnnotations.fulfilled]: (state, action) => {
+    //   if (action.payload.verses) {
+    //     versesAdapter.upsertMany(state, action.payload.verses);
+    //   }
+    // },
     [fetchSongLyrics.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);

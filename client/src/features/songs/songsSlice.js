@@ -17,7 +17,7 @@ import {
   fetchSong,
   fetchSongVerse,
   fetchSongAlbum,
-  fetchSongAnnotations,
+  // fetchSongAnnotations,
   fetchSongArtistCredits,
   fetchSongBanner,
   fetchSongDescription,

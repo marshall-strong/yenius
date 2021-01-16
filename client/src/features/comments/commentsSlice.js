@@ -6,10 +6,9 @@ import {
 
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import {
-  // fetchSongPage,
-  fetchSongAnnotations,
-} from "../songs/songsAsyncThunks";
+// import // fetchSongPage,
+// // fetchSongAnnotations,
+// "../songs/songsAsyncThunks";
 
 import {
   addNewComment,
@@ -66,11 +65,11 @@ const commentsSlice = createSlice({
     //   state.status = "fetchSongPage.pending";
     //   commentsAdapter.removeAll(state);
     // },
-    [fetchSongAnnotations.fulfilled]: (state, action) => {
-      if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
-      }
-    },
+    // [fetchSongAnnotations.fulfilled]: (state, action) => {
+    //   if (action.payload.comments) {
+    //     commentsAdapter.upsertMany(state, action.payload.comments);
+    //   }
+    // },
     [fetchSongComments.pending]: (state, action) => {
       state.status = "fetchSongComments.pending";
     },
