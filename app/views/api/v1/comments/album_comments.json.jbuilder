@@ -25,6 +25,8 @@ end
 json.albums do
   json.set! @album.id do
     json.id @album.id
+    json.name @album.name
+    json.releaseDate @album.release_date
     json.comments do
       json.array! @comments.map { |comment| comment.id }
     end
