@@ -7,7 +7,6 @@ import {
 import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
-  // fetchSongPage,
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
@@ -24,18 +23,40 @@ const albumsAdapter = createEntityAdapter({
   sortComparer: (a, b) => b.releaseDate.localeCompare(a.releaseDate),
 });
 
-const initialState = albumsAdapter.getInitialState({});
+const initialState = albumsAdapter.getInitialState({
+  status: {
+    fetchAlbumPage: null,
+    fetchAlbumsList: null,
+  },
+});
 
 const albumsSlice = createSlice({
   name: "albums",
   initialState,
   reducers: {},
   extraReducers: {
+    [fetchAlbumsList.pending]: (state, action) => {
+      state.status.fetchAlbumsList = "pending";
+    },
     [fetchAlbumsList.fulfilled]: (state, action) => {
+      state.status.fetchAlbumsList = "fulfilled";
       albumsAdapter.setAll(state, action.payload.albums);
     },
+    [fetchAlbumsList.rejected]: (state, action) => {
+      state.status.fetchAlbumsList = "rejected";
+    },
+    [fetchAlbumPage.pending]: (state) => {
+      state.status.fetchAlbumPage = "pending";
+      albumsAdapter.removeAll(state);
+    },
     [fetchAlbumPage.fulfilled]: (state, action) => {
-      albumsAdapter.setAll(state, action.payload.albums);
+      state.status.fetchAlbumPage = "fulfilled";
+      if (action.payload.artists) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
+    },
+    [fetchAlbumPage.rejected]: (state, action) => {
+      state.status.fetchAlbumPage = "rejected";
     },
     [fetchArtistPage.fulfilled]: (state, action) => {
       if (action.payload.albums) {

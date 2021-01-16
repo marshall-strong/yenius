@@ -4,10 +4,7 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 
-import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
-import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
-  addNewComment,
   addAlbumComment,
   addArtistComment,
   addSongComment,
@@ -24,8 +21,16 @@ const commentsAdapter = createEntityAdapter({
 });
 
 const initialState = commentsAdapter.getInitialState({
-  status: "idle",
-  error: null,
+  status: {
+    addAlbumComment: null,
+    addArtistComment: null,
+    addSongComment: null,
+    addVerseComment: null,
+    fetchAlbumComments: null,
+    fetchArtistComments: null,
+    fetchSongComments: null,
+    fetchVerseComments: null,
+  },
 });
 
 const commentsSlice = createSlice({
@@ -33,125 +38,100 @@ const commentsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [addNewComment.pending]: (state, action) => {
-      state.status = "addNewComment.pending";
-    },
-    [addNewComment.rejected]: (state, action) => {
-      state.status = "addNewComment.rejected";
-    },
-    [addNewComment.fulfilled]: (state, action) => {
-      state.status = "addNewComment.fulfilled";
-      commentsAdapter.upsertMany(state, action.payload.comments);
-    },
-
-    [fetchAlbumPage.fulfilled]: (state, action) => {
-      if (action.payload.comments) {
-        commentsAdapter.setAll(state, action.payload.comments);
-      }
-    },
-    [fetchArtistPage.fulfilled]: (state, action) => {
-      if (action.payload.comments) {
-        commentsAdapter.setAll(state, action.payload.comments);
-      }
-    },
-
-    [fetchSongComments.pending]: (state, action) => {
-      state.status = "fetchSongComments.pending";
-    },
-    [fetchSongComments.rejected]: (state, action) => {
-      state.status = "fetchSongComments.rejected";
-    },
-    [fetchSongComments.fulfilled]: (state, action) => {
-      state.status = "fetchSongComments.fulfilled";
-      if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
-      }
-    },
-
-    [fetchVerseComments.pending]: (state, action) => {
-      state.status = "fetchVerseComments.pending";
-    },
-    [fetchVerseComments.rejected]: (state, action) => {
-      state.status = "fetchVerseComments.rejected";
-    },
-    [fetchVerseComments.fulfilled]: (state, action) => {
-      state.status = "fetchVerseComments.fulfilled";
-      if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
-      }
-    },
-
-    [fetchAlbumComments.pending]: (state, action) => {
-      state.status = "fetchAlbumComments.pending";
-    },
-    [fetchAlbumComments.rejected]: (state, action) => {
-      state.status = "fetchAlbumComments.rejected";
-    },
-    [fetchAlbumComments.fulfilled]: (state, action) => {
-      state.status = "fetchAlbumComments.fulfilled";
-      if (action.payload.comments) {
-        commentsAdapter.setAll(state, action.payload.comments);
-      }
-    },
-    [fetchArtistComments.pending]: (state, action) => {
-      state.status = "fetchArtistComments.pending";
-    },
-    [fetchArtistComments.rejected]: (state, action) => {
-      state.status = "fetchArtistComments.rejected";
-    },
-    [fetchArtistComments.fulfilled]: (state, action) => {
-      state.status = "fetchArtistComments.fulfilled";
-      if (action.payload.comments) {
-        commentsAdapter.setAll(state, action.payload.comments);
-      }
-    },
-
     [addAlbumComment.pending]: (state, action) => {
-      state.status = "addAlbumComment.pending";
+      state.status.addAlbumComment = "pending";
     },
     [addAlbumComment.rejected]: (state, action) => {
-      state.status = "addAlbumComment.rejected";
+      state.status.addAlbumComment = "rejected";
     },
     [addAlbumComment.fulfilled]: (state, action) => {
-      state.status = "addAlbumComment.fulfilled";
+      state.status.addAlbumComment = "fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [addArtistComment.pending]: (state, action) => {
-      state.status = "addArtistComment.pending";
+      state.status.addArtistComment = "pending";
     },
     [addArtistComment.rejected]: (state, action) => {
-      state.status = "addArtistComment.rejected";
+      state.status.addArtistComment = "rejected";
     },
     [addArtistComment.fulfilled]: (state, action) => {
-      state.status = "addArtistComment.fulfilled";
+      state.status.addArtistComment = "fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [addSongComment.pending]: (state, action) => {
-      state.status = "addSongComment.pending";
+      state.status.addSongComment = "pending";
     },
     [addSongComment.rejected]: (state, action) => {
-      state.status = "addSongComment.rejected";
+      state.status.addSongComment = "rejected";
     },
     [addSongComment.fulfilled]: (state, action) => {
-      state.status = "addSongComment.fulfilled";
+      state.status.addSongComment = "fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [addVerseComment.pending]: (state, action) => {
-      state.status = "addVerseComment.pending";
+      state.status.addVerseComment = "pending";
     },
     [addVerseComment.rejected]: (state, action) => {
-      state.status = "addVerseComment.rejected";
+      state.status.addVerseComment = "rejected";
     },
     [addVerseComment.fulfilled]: (state, action) => {
-      state.status = "addVerseComment.fulfilled";
+      state.status.addVerseComment = "fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchAlbumComments.pending]: (state, action) => {
+      state.status.fetchAlbumComments = "pending";
+    },
+    [fetchAlbumComments.rejected]: (state, action) => {
+      state.status.fetchAlbumComments = "rejected";
+    },
+    [fetchAlbumComments.fulfilled]: (state, action) => {
+      state.status.fetchAlbumComments = "fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchArtistComments.pending]: (state, action) => {
+      state.status.fetchArtistComments = "pending";
+    },
+    [fetchArtistComments.rejected]: (state, action) => {
+      state.status.fetchArtistComments = "rejected";
+    },
+    [fetchArtistComments.fulfilled]: (state, action) => {
+      state.status.fetchArtistComments = "fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [fetchSongComments.pending]: (state, action) => {
+      state.status.fetchSongComments = "pending";
+    },
+    [fetchSongComments.rejected]: (state, action) => {
+      state.status.fetchSongComments = "rejected";
+    },
+    [fetchSongComments.fulfilled]: (state, action) => {
+      state.status.fetchSongComments = "fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.upsertMany(state, action.payload.comments);
+      }
+    },
+    [fetchVerseComments.pending]: (state, action) => {
+      state.status.fetchVerseComments = "pending";
+    },
+    [fetchVerseComments.rejected]: (state, action) => {
+      state.status.fetchVerseComments = "rejected";
+    },
+    [fetchVerseComments.fulfilled]: (state, action) => {
+      state.status.fetchVerseComments = "fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
   },

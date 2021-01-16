@@ -4,8 +4,12 @@ import Lyrics from "./Lyrics";
 import SongComments from "./SongComments";
 
 const ColumnPrimary = ({ songId }) => {
-  const status = useSelector((state) => state.songs.status);
-  const { fetchSongComments, fetchSongLyrics } = status;
+  const fetchSongLyrics = useSelector(
+    (state) => state.songs.status.fetchSongLyrics
+  );
+  const fetchSongComments = useSelector(
+    (state) => state.comments.status.fetchSongComments
+  );
   const isFulfilled = (request) => request === "fulfilled";
 
   const lyricsRequests = [fetchSongLyrics];

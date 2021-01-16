@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchAlbumPage } from "./albumsAsyncThunks";
+import { fetchAlbumComments } from "../comments/commentsAsyncThunks";
 import { selectAlbumById } from "./albumsSlice";
 
 import AlbumBanner from "./AlbumBanner";
@@ -11,9 +12,10 @@ import AlbumLayout from "./AlbumLayout";
 import "../../assets/stylesheets/show.scss";
 
 const AlbumPage = ({ match }) => {
+  const albumId = parseInt(match.params.albumId);
+  const album = useSelector((state) => selectAlbumById(state, albumId));
   const dispatch = useDispatch();
   const [componentStatus, setComponentStatus] = useState("idle");
-  const { albumId } = match.params;
 
   useEffect(() => {
     if (componentStatus === "idle") {
@@ -24,7 +26,6 @@ const AlbumPage = ({ match }) => {
 
   const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
   const error = useSelector((state) => state.asyncRequests.errors[-1]);
-  const album = useSelector((state) => selectAlbumById(state, albumId));
 
   let content;
 

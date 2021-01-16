@@ -1,16 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const addNewComment = createAsyncThunk(
-  "comments/addNewComment",
-  async (initialComment) => {
-    const response = await axios.post(`/api/v1/comments`, {
-      comment: initialComment,
-    });
-    return response.data;
-  }
-);
-
 export const fetchAlbumComments = createAsyncThunk(
   "comments/fetchAlbumComments",
   async (albumId) => {
@@ -106,10 +96,6 @@ export const addVerseComment = createAsyncThunk(
 // export const fetchOneComment = createAsyncThunk('comments/fetchOneComment',
 //   async (commentId) => {
 //   }
-// );
-
-// export const addNewComment = createAsyncThunk('comments/addNewComment',
-//   async (initialComment) => {}
 // );
 
 // export const editComment = createAsyncThunk("comments/editComment",

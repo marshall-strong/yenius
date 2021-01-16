@@ -12,17 +12,16 @@ import {
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  // fetchSongPage,
-  fetchSongsList,
   fetchSongsIndex,
+  fetchSongsList,
   fetchSong,
-  fetchSongVerse,
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
   fetchSongDescription,
   fetchSongLyrics,
   fetchSongSampleCredits,
+  fetchSongVerse,
 } from "./songsAsyncThunks";
 import {} from "../verses/versesAsyncThunks";
 
@@ -35,6 +34,8 @@ const songsAdapter = createEntityAdapter({
 
 const initialState = songsAdapter.getInitialState({
   status: {
+    fetchSongsIndex: null,
+    fetchSongsList: null,
     fetchSong: null,
     fetchSongVerse: null,
     fetchSongAlbum: null,
@@ -53,23 +54,26 @@ const songsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchAlbumPage.fulfilled]: (state, action) => {
-      if (action.payload.songs) {
-        songsAdapter.setAll(state, action.payload.songs);
-      }
-    },
-    [fetchArtistPage.fulfilled]: (state, action) => {
-      if (action.payload.songs) {
-        songsAdapter.setAll(state, action.payload.songs);
-      }
+    [fetchSongsIndex.pending]: (state) => {
+      state.status.fetchSongsIndex = "pending";
     },
     [fetchSongsIndex.fulfilled]: (state, action) => {
+      state.status.fetchSongsIndex = "fulfilled";
       if (action.payload.songs) {
         songsAdapter.setAll(state, action.payload.songs);
       }
+    },
+    [fetchSongsIndex.rejected]: (state) => {
+      state.status.fetchSongsIndex = "rejected";
+    },
+    [fetchSongsList.pending]: (state) => {
+      state.status.fetchSongsList = "pending";
     },
     [fetchSongsList.fulfilled]: (state, action) => {
       songsAdapter.setAll(state, action.payload.songs);
+    },
+    [fetchSongsList.rejected]: (state) => {
+      state.status.fetchSongsList = "rejected";
     },
     // SongPage
     [fetchSong.pending]: (state) => {
@@ -172,6 +176,18 @@ const songsSlice = createSlice({
         songsAdapter.upsertMany(state, action.payload.songs);
       }
     },
+
+    [fetchAlbumPage.fulfilled]: (state, action) => {
+      if (action.payload.songs) {
+        songsAdapter.setAll(state, action.payload.songs);
+      }
+    },
+    [fetchArtistPage.fulfilled]: (state, action) => {
+      if (action.payload.songs) {
+        songsAdapter.setAll(state, action.payload.songs);
+      }
+    },
+
     //
     [addSongComment.fulfilled]: (state, action) => {
       if (action.payload.songs) {
