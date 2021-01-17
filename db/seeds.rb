@@ -6398,7 +6398,7 @@ client = Aws::S3::Client.new(
     end
   end
 
-  seedComments(Artist.all, "Artist", comment_hashes, 6)
-  seedComments(Album.all, "Album", comment_hashes, 5)
-  seedComments(Song.all, "Song", comment_hashes, 4)
-  seedComments(Verse.all, "Verse", comment_hashes, 3)
+  seedComments(Artist.all, "Artist", comment_hashes, 3)
+  seedComments(Album.all, "Album", comment_hashes, 3)
+  seedComments(Song.all, "Song", comment_hashes, 3)
+  seedComments(Verse.all, "Verse", comment_hashes, 2)
