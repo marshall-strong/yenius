@@ -2,47 +2,45 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchArtistPage } from "./artistsAsyncThunks";
+import { fetchArtistComments } from "../comments/commentsAsyncThunks";
+
 import { selectArtistById } from "./artistsSlice";
 
-import ArtistBanner from "./ArtistBanner";
-import ArtistLayout from "./ArtistLayout";
-// import ArtistBreadcrumbs from "./ArtistBreadcrumbs";
+import PageLayout from "./PageLayout";
+import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/show.scss";
 
 const ArtistPage = ({ match }) => {
-  const dispatch = useDispatch();
-  const [componentStatus, setComponentStatus] = useState("idle");
-  const { artistId } = match.params;
-
-  useEffect(() => {
-    if (componentStatus === "idle") {
-      dispatch(fetchArtistPage(artistId));
-      setComponentStatus("requestSent");
-    }
-  }, [componentStatus, artistId, dispatch]);
-
-  const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
-  const error = useSelector((state) => state.asyncRequests.errors[-1]);
+  const artistId = parseInt(match.params.artistId);
   const artist = useSelector((state) => selectArtistById(state, artistId));
+  const fetchArtistPageStatus = useSelector(
+    (state) => state.artists.status.fetchArtistPage
+  );
+  const [lastArtistFetched, setLastArtistFetched] = useState(null);
 
-  let content;
-
-  if (asyncRequestStatus === "pending") {
-    content = <div className="loader">Loading...</div>;
-  } else if (asyncRequestStatus === "rejected") {
-    content = <div>{error}</div>;
-  } else if (asyncRequestStatus === "fulfilled" && !artist) {
-    content = <h2>Artist not found!</h2>;
-  } else if (asyncRequestStatus === "fulfilled" && artist) {
+  let content = <div>ArtistPage component</div>;
+  if (!artist && fetchArtistPageStatus === "pending") {
+    content = <div className="loader" />;
+  } else if (!artist && fetchArtistPageStatus === "rejected") {
     content = (
       <div>
-        <ArtistBanner artistId={artistId} />
-        <ArtistLayout artistId={artistId} />
-        {/* <ArtistBreadcrumbs artistId={artistId} /> */}
+        <h2>Artist not found!</h2>
+        <NotFound />
       </div>
     );
+  } else if (artist && fetchArtistPageStatus === "fulfilled") {
+    content = <PageLayout artistId={artistId} />;
   }
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (artistId && lastArtistFetched !== artistId) {
+      dispatch(fetchArtistPage(artistId));
+      setLastArtistFetched(artistId);
+      dispatch(fetchArtistComments(artistId));
+    }
+  }, [lastArtistFetched, artistId, dispatch]);
 
   return <section>{content}</section>;
 };

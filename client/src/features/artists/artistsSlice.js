@@ -9,15 +9,15 @@ import {
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import {
   fetchArtistPage,
-  fetchArtistsList,
   fetchArtistsIndex,
+  fetchArtistsList,
 } from "../artists/artistsAsyncThunks";
 import {
   addArtistComment,
   fetchArtistComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
@@ -32,33 +32,64 @@ const artistsAdapter = createEntityAdapter({
   sortComparer: (a, b) => b.name.localeCompare(a.name),
 });
 
-const initialState = artistsAdapter.getInitialState({});
+const initialState = artistsAdapter.getInitialState({
+  status: {
+    fetchArtistPage: null,
+    fetchArtistsIndex: null,
+    fetchArtistsList: null,
+  },
+});
 
 const artistsSlice = createSlice({
   name: "artists",
   initialState,
   reducers: {},
   extraReducers: {
+    [fetchArtistPage.pending]: (state) => {
+      state.status.fetchArtistPage = "pending";
+    },
+    [fetchArtistPage.fulfilled]: (state, action) => {
+      state.status.fetchArtistPage = "fulfilled";
+      artistsAdapter.setAll(state, action.payload.artists);
+    },
+    [fetchArtistPage.rejected]: (state) => {
+      state.status.fetchArtistPage = "rejected";
+    },
+    [fetchArtistsIndex.pending]: (state) => {
+      state.status.fetchArtistsIndex = "pending";
+    },
+    [fetchArtistsIndex.fulfilled]: (state, action) => {
+      state.status.fetchArtistsIndex = "fulfilled";
+      if (action.payload.artists) {
+        artistsAdapter.setAll(state, action.payload.artists);
+      }
+    },
+    [fetchArtistsIndex.rejected]: (state) => {
+      state.status.fetchArtistsIndex = "rejected";
+    },
+    [fetchArtistsList.pending]: (state) => {
+      state.status.fetchArtistsList = "pending";
+    },
+    [fetchArtistsList.fulfilled]: (state, action) => {
+      state.status.fetchArtistsList = "fulfilled";
+      if (action.payload.artists) {
+        artistsAdapter.setAll(state, action.payload.artists);
+      }
+    },
+    [fetchArtistsList.rejected]: (state) => {
+      state.status.fetchArtistsList = "rejected";
+    },
+
     [fetchAlbumPage.fulfilled]: (state, action) => {
       if (action.payload.artists) {
         artistsAdapter.setAll(state, action.payload.artists);
       }
     },
-    [fetchArtistPage.fulfilled]: (state, action) => {
-      artistsAdapter.setAll(state, action.payload.artists);
-    },
-    [fetchArtistsList.fulfilled]: (state, action) => {
-      artistsAdapter.setAll(state, action.payload.artists);
-    },
-    [fetchArtistsIndex.fulfilled]: (state, action) => {
-      if (action.payload.artists) {
-        artistsAdapter.setAll(state, action.payload.artists);
-      }
-    },
+
     // SongPage
-    [fetchSongPage.pending]: (state) => {
-      artistsAdapter.removeAll(state);
-    },
+    // [fetchSongPage.pending]: (state) => {
+    //   artistsAdapter.removeAll(state);
+    // },
     [fetchSongAlbum.fulfilled]: (state, action) => {
       if (action.payload.artists) {
         artistsAdapter.upsertMany(state, action.payload.artists);

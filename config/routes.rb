@@ -4,48 +4,34 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      # albums
-      resources :albums, only: [:index, :show]
+      get  '/albums',                        to: 'albums#index'
+      get  '/albums/:album_id',              to: 'albums#show'
+      get  '/albums/:album_id/comments',     to: 'comments#album_comments'
+      post '/albums/:album_id/comments',     to: 'comments#create_album_comment'
 
-      # artists
-      resources :artists, only: [:index, :show]
-      get '/artists/index/:char', to: 'artists#artists_index'
+      get  '/artists/index/:char',           to: 'artists#index'
+      get  '/artists/:artist_id',            to: 'artists#show'
+      get  '/artists/:artist_id/comments',   to: 'comments#artist_comments'
+      post '/artists/:artist_id/comments',   to: 'comments#create_artist_comment'
 
-      # comments
-      resources :comments
-      get '/albums/:commentableId/comments', to: 'comments#album_comments'
-      get '/artists/:commentableId/comments', to: 'comments#artist_comments'
-      get '/songs/:commentableId/comments', to: 'comments#song_comments'
-      get '/verses/:commentableId/comments', to: 'comments#verse_comments'
-      post '/albums/:commentableId/comments', to: 'comments#create_album_comment'
-      post '/artists/:commentableId/comments', to: 'comments#create_artist_comment'
-      post '/songs/:commentableId/comments', to: 'comments#create_song_comment'
-      post '/verses/:commentableId/comments', to: 'comments#create_verse_comment'
+      get  '/songs/index/:char',             to: 'songs#index'
+      get  '/songs/:song_id',                to: 'songs#show'
+      get  '/songs/:song_id/album',          to: 'songs#album'
+      get  '/songs/:song_id/artist_credits', to: 'songs#artist_credits'
+      get  '/songs/:song_id/banner',         to: 'songs#banner'
+      get  '/songs/:song_id/description',    to: 'songs#description'
+      get  '/songs/:song_id/lyrics',         to: 'songs#lyrics'
+      get  '/songs/:song_id/sample_credits', to: 'songs#sample_credits'
+      get  '/songs/:song_id/comments',       to: 'comments#song_comments'
+      post '/songs/:song_id/comments',       to: 'comments#create_song_comment'
 
-      # songs
-      get '/songs/index/:char', to: 'songs#index'
-      get '/songs/:songId', to: 'songs#show', format: :json
-      get '/songs/:songId/album', to: 'songs#album', format: :json
-      get '/songs/:songId/annotations', to: 'songs#annotations', format: :json
-      get '/songs/:songId/artist_credits', to: 'songs#artist_credits', format: :json
-      get '/songs/:songId/banner', to: 'songs#banner', format: :json
-      get '/songs/:songId/description', to: 'songs#description', format: :json
-      get '/songs/:songId/lyrics', to: 'songs#lyrics', format: :json
-      get '/songs/:songId/sample_credits', to: 'songs#sample_credits', format: :json
+      get  '/verses/:verse_id',              to: 'verses#show'
+      get  '/verses/:verse_id/comments',     to: 'comments#verse_comments'
+      post '/verses/:verse_id/comments',     to: 'comments#create_verse_comment'
 
-      # users
       resources :users
 
-      # verses
-      resources :verses, only: [:index, :show]
-
-      # session
       resource :session, only: [:create, :destroy]
-
-      resources :artist_roles
-      resources :artist_credits
-      resources :song_roles
-      resources :song_credits
     end
   end
 

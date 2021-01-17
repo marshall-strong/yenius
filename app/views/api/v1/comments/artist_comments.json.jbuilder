@@ -1,3 +1,13 @@
+json.artists do
+  json.set! @artist.id do
+    json.id @artist.id
+    json.name @artist.name
+    json.comments do
+      json.array! @comments.map { |comment| comment.id }
+    end
+  end
+end
+
 json.comments do
   @comments.each do |comment|
     json.set! comment.id do
@@ -18,15 +28,6 @@ json.users do
       json.id comment.author.id
       json.username comment.author.username
       json.email comment.author.email
-    end
-  end
-end
-
-json.artists do
-  json.set! @artist.id do
-    json.id @artist.id
-    json.comments do
-      json.array! @comments.map { |comment| comment.id }
     end
   end
 end

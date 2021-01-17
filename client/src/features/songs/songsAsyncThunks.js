@@ -1,14 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchSongPage = createAsyncThunk(
-  "songs/fetchSongPage",
-  async (songId) => {
-    const response = await axios.get(`/api/v1/songs/${songId}`);
-    return response.data;
-  }
-);
-
 export const fetchSongsList = createAsyncThunk(
   "songs/fetchSongsList",
   async () => {
@@ -46,14 +38,6 @@ export const fetchSongAlbum = createAsyncThunk(
   }
 );
 
-export const fetchSongAnnotations = createAsyncThunk(
-  "songs/fetchSongAnnotations",
-  async (songId) => {
-    const response = await axios.get(`/api/v1/songs/${songId}/annotations`);
-    return response.data;
-  }
-);
-
 export const fetchSongArtistCredits = createAsyncThunk(
   "songs/fetchSongArtistCredits",
   async (songId) => {
@@ -66,14 +50,6 @@ export const fetchSongBanner = createAsyncThunk(
   "songs/fetchSongBanner",
   async (songId) => {
     const response = await axios.get(`/api/v1/songs/${songId}/banner`);
-    return response.data;
-  }
-);
-
-export const fetchSongComments = createAsyncThunk(
-  "songs/fetchSongComments",
-  async (songId) => {
-    const response = await axios.get(`/api/v1/songs/${songId}/comments`);
     return response.data;
   }
 );

@@ -13,11 +13,10 @@ import {
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  fetchSongPage,
+  // fetchSongPage,
   fetchSongsList,
   fetchSongsIndex,
 } from "../songs/songsAsyncThunks";
-import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
 import {
   signupUser,
   loginUser,
@@ -135,16 +134,16 @@ const asyncRequestsSlice = createSlice({
       handleRejected(state);
       handleErrors(state, action);
     },
-    [fetchSongPage.pending]: (state) => {
-      handlePending(state);
-    },
-    [fetchSongPage.fulfilled]: (state) => {
-      handleFulfilled(state);
-    },
-    [fetchSongPage.rejected]: (state, action) => {
-      handleRejected(state);
-      handleErrors(state, action);
-    },
+    // [fetchSongPage.pending]: (state) => {
+    //   handlePending(state);
+    // },
+    // [fetchSongPage.fulfilled]: (state) => {
+    //   handleFulfilled(state);
+    // },
+    // [fetchSongPage.rejected]: (state, action) => {
+    //   handleRejected(state);
+    //   handleErrors(state, action);
+    // },
     [fetchSongComments.pending]: (state) => {
       handlePending(state);
     },
@@ -172,16 +171,6 @@ const asyncRequestsSlice = createSlice({
       handleFulfilled(state);
     },
     [fetchSongsIndex.rejected]: (state, action) => {
-      handleRejected(state);
-      handleErrors(state, action);
-    },
-    [fetchVerseAnnotations.pending]: (state) => {
-      handlePending(state);
-    },
-    [fetchVerseAnnotations.fulfilled]: (state) => {
-      handleFulfilled(state);
-    },
-    [fetchVerseAnnotations.rejected]: (state, action) => {
       handleRejected(state);
       handleErrors(state, action);
     },

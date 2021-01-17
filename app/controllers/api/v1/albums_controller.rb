@@ -1,25 +1,13 @@
 class Api::V1::AlbumsController < ApiController
-  # @route GET /api/v1/albums (api_v1_albums)
+  # @route GET /api/v1/albums
   def index
     @albums = Album.all
     render 'api/v1/albums/index'
   end
 
-  # def show
-  #   @album = Album.find(params[:id])
-  #   render 'api/v1/albums/show'
-  # end
-
-  # @route GET /api/v1/albums/:id (api_v1_album)
+  # @route GET /api/v1/albums/:album_id
   def show
-    @album = Album.find(params[:id])
+    @album = Album.find(params[:album_id])
     render :show
   end
-
-  private
-
-  # only need if creating new albums
-  # def album_params
-  #   params.require(:album).permit(:name)
-  # end
 end

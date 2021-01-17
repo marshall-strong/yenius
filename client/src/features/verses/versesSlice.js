@@ -3,13 +3,7 @@ import {
   addVerseComment,
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
-import {
-  fetchSongPage,
-  fetchSongAnnotations,
-  fetchSongLyrics,
-  fetchSongVerse,
-} from "../songs/songsAsyncThunks";
-import { fetchVerseAnnotations } from "../verses/versesAsyncThunks";
+import { fetchSongLyrics, fetchSongVerse } from "../songs/songsAsyncThunks";
 
 const versesAdapter = createEntityAdapter({
   // selectId is only necessary if entity's unique key is NOT entity.id
@@ -27,15 +21,6 @@ const versesSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    // SongPage
-    [fetchSongPage.pending]: (state) => {
-      versesAdapter.removeAll(state);
-    },
-    [fetchSongAnnotations.fulfilled]: (state, action) => {
-      if (action.payload.verses) {
-        versesAdapter.upsertMany(state, action.payload.verses);
-      }
-    },
     [fetchSongLyrics.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);
@@ -46,18 +31,12 @@ const versesSlice = createSlice({
         versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
-    //
     [fetchVerseComments.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);
       }
     },
     [addVerseComment.fulfilled]: (state, action) => {
-      if (action.payload.verses) {
-        versesAdapter.upsertMany(state, action.payload.verses);
-      }
-    },
-    [fetchVerseAnnotations.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);
       }

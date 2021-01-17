@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectSongById } from "./songsSlice";
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
-import InterspersedArtistLinks from "../artists/ArtistsLinks";
+import InterspersedArtistLinks from "../artists/ArtistLinks";
 
 const TrackListing = ({ trackId, songId }) => {
   const track = useSelector((state) => selectSongById(state, trackId));

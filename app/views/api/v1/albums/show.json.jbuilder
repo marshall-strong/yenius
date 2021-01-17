@@ -9,7 +9,9 @@ end
 
 json.albums do
   json.set! @album.id do
-    json.extract! @album, :id, :name, :release_date, :bio
+    json.id @album.id
+    json.name @album.name
+    json.bio @album.bio
     json.releaseDate @album.release_date
     json.urlAlbumCover url_for(@album.cover)
     json.urlAlbumBanner url_for(@album.banner)
@@ -37,30 +39,6 @@ json.songs do
       json.artistsProducers do
         json.array! song.producers.map { |artist| artist.id }
       end
-    end
-  end
-end
-
-json.comments do
-  @album.comments.each do |comment|
-    json.set! comment.id do
-      json.id comment.id
-      json.authorId comment.commenting_user_id
-      json.commentableType comment.commentable_type
-      json.commentableId comment.commentable_id
-      json.body comment.body
-      json.createdAt comment.created_at
-      json.updatedAt comment.updated_at
-    end
-  end
-end
-
-json.users do
-  @album.comments.each do |comment|
-    json.set! comment.author.id do
-      json.id comment.author.id
-      json.username comment.author.username
-      json.email comment.author.email
     end
   end
 end

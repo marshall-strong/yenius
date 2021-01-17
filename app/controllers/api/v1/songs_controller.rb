@@ -7,70 +7,56 @@ class Api::V1::SongsController < ApiController
     render 'api/v1/songs/index'
   end
 
-  # @route GET /api/v1/songs/:songId
+  # @route GET /api/v1/songs/:song_id
   def show
-    @song = Song.find(params[:songId])
+    @song = Song.find(params[:song_id])
     render 'api/v1/songs/show'
   end
 
-  # @route GET /api/v1/songs/:songId/verses/:verseId
+  # @route GET /api/v1/songs/:song_id/verses/:verseId
   def verse
     @verse = Verse.find(params[:verseId])
     render 'api/v1/verses/show'
   end
 
-  # @route GET /api/v1/songs/:songId/album
+  # @route GET /api/v1/songs/:song_id/album
   def album
-    @song = Song.find(params[:songId])
+    @song = Song.find(params[:song_id])
     @artist_credit_types = ArtistCreditType.all
     render 'api/v1/songs/album'
   end
 
-  # @route GET /api/v1/songs/:songId/annotations
-  def annotations
-    @song = Song.find(params[:songId])
-    render 'api/v1/songs/annotations'
-  end
-
-  # @route GET /api/v1/songs/:songId/artist_credits
+  # @route GET /api/v1/songs/:song_id/artist_credits
   def artist_credits
-    @song = Song.find(params[:songId])
+    @song = Song.find(params[:song_id])
     @artist_credit_types = ArtistCreditType.all
     render 'api/v1/songs/artist_credits'
   end
 
-  # @route GET /api/v1/songs/:songId/banner
+  # @route GET /api/v1/songs/:song_id/banner
   def banner
-    @song = Song.find(params[:songId])
+    @song = Song.find(params[:song_id])
     @artist_credit_types = ArtistCreditType.all
     render 'api/v1/songs/banner'
   end
 
-  # @route GET /api/v1/songs/:songId/description
+  # @route GET /api/v1/songs/:song_id/description
   def description
-    @song = Song.find(params[:songId])
+    @song = Song.find(params[:song_id])
     render 'api/v1/songs/description'
   end
 
-  # @route GET /api/v1/songs/:songId/lyrics
+  # @route GET /api/v1/songs/:song_id/lyrics
   def lyrics
-    @song = Song.find(params[:songId])
+    @song = Song.find(params[:song_id])
     render 'api/v1/songs/lyrics'
   end
 
-  # @route GET /api/v1/songs/:songId/sample_credits
+  # @route GET /api/v1/songs/:song_id/sample_credits
   def sample_credits
-    @song = Song.find(params[:songId])
+    @song = Song.find(params[:song_id])
     @artist_credit_types = ArtistCreditType.all
     @sample_credit_types = SampleCreditType.all
     render 'api/v1/songs/sample_credits'
   end
-
-
-  private
-
-    # only need if creating new songs
-    # def song_params
-    #   params.require(:song).permit(:name)
-    # end
 end
