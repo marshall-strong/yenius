@@ -6,7 +6,7 @@ import { selectArtistById } from "./artistsSlice";
 import ThisIsFine from "../../assets/images/this_is_fine.png";
 import "../../assets/stylesheets/Banner.scss";
 
-const ArtistBanner = ({ artistId }) => {
+const Banner = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
   const entityType = "artist";
 
@@ -30,9 +30,8 @@ const ArtistBanner = ({ artistId }) => {
     <header className="Banner" style={styleBannerImage}>
       <div className="bannerImgGradient">
         <div className="bannerContent">
-          <div className="subjectImg" style={styleSubjectImage}>
-            <img src={subjectImage} alt={artist.name} />
-          </div>
+          <div className="subjectImg" style={styleSubjectImage} />
+
           <div className="textContainer">
             <div className="bannerText">
               <div className="entityType">{entityType}</div>
@@ -45,4 +44,4 @@ const ArtistBanner = ({ artistId }) => {
   );
 };
 
-export default ArtistBanner;
+export default Banner;

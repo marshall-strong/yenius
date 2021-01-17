@@ -1,15 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import { selectArtistById } from "./artistsSlice";
 
-const ArtistAbout = ({ artistId }) => {
+const Description = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
+  const markup = artist ? { __html: artist.bio } : null;
   return (
     <div className="MockComponent">
-      <h1>ArtistAbout</h1>
-      {artist.description}
+      <h1>Description</h1>
+      <span dangerouslySetInnerHTML={markup} />
     </div>
   );
 };
 
-export default ArtistAbout;
+export default Description;

@@ -34,7 +34,7 @@ const AlbumPage = ({ match }) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (lastAlbumFetched !== albumId) {
+    if (albumId && lastAlbumFetched !== albumId) {
       dispatch(fetchAlbumPage(albumId));
       setLastAlbumFetched(albumId);
       dispatch(fetchAlbumComments(albumId));

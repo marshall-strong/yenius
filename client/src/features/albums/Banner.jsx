@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { selectAlbumById } from "./albumsSlice";
-import InterspersedArtistLinks from "../artists/ArtistsLinks";
+import InterspersedArtistLinks from "../artists/ArtistLinks";
 import { printDate } from "../../lib";
 
 import "../../assets/stylesheets/Banner.scss";

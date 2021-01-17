@@ -55,7 +55,7 @@ const SongPage = ({ match }) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (lastSongFetched !== songId) {
+    if (songId && lastSongFetched !== songId) {
       dispatch(fetchSong(songId));
       setLastSongFetched(songId);
       dispatch(fetchSongAlbum(songId));

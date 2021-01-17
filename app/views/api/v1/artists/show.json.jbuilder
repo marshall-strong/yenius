@@ -2,6 +2,7 @@ json.artists do
   json.set! @artist.id do
     json.extract! @artist, :id
     json.extract! @artist, :name
+    json.extract! @artist, :bio
     json.urlArtist @artist.headshot.attached? ? url_for(@artist.headshot) : nil
     json.urlAlbumBanner url_for(@artist.banner)
     json.description @artist.description
