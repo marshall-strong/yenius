@@ -590,7 +590,7 @@ client = Aws::S3::Client.new(
 
 
 # Songs
-  # NOTE!!!  Artists assigned to a variable if they are linked in the bio of an album or another artist.
+  # NOTE!!!  Songs assigned to a variable if they are linked in the bio of an album or another artist.
   Song.create!(album_id: the_college_dropout.id, name: "Intro (Skit)", track_number: 1)
   Song.create!(album_id: the_college_dropout.id, name: "We Don't Care", track_number: 2)
   Song.create!(album_id: the_college_dropout.id, name: "Graduation Day", track_number: 3)
