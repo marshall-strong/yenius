@@ -5,45 +5,41 @@ import { fetchAlbumPage } from "./albumsAsyncThunks";
 import { fetchAlbumComments } from "../comments/commentsAsyncThunks";
 import { selectAlbumById } from "./albumsSlice";
 
-import AlbumBanner from "./AlbumBanner";
-import AlbumLayout from "./AlbumLayout";
-// import AlbumBreadcrumbs from "./AlbumBreadcrumbs";
+import PageLayout from "./PageLayout";
+import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/show.scss";
 
 const AlbumPage = ({ match }) => {
   const albumId = parseInt(match.params.albumId);
   const album = useSelector((state) => selectAlbumById(state, albumId));
-  const dispatch = useDispatch();
-  const [componentStatus, setComponentStatus] = useState("idle");
+  const fetchAlbumPageStatus = useSelector(
+    (state) => state.albums.status.fetchAlbumPage
+  );
+  const [lastAlbumFetched, setLastAlbumFetched] = useState(null);
 
-  useEffect(() => {
-    if (componentStatus === "idle") {
-      dispatch(fetchAlbumPage(albumId));
-      setComponentStatus("requestSent");
-    }
-  }, [componentStatus, albumId, dispatch]);
-
-  const asyncRequestStatus = useSelector((state) => state.asyncRequests.status);
-  const error = useSelector((state) => state.asyncRequests.errors[-1]);
-
-  let content;
-
-  if (asyncRequestStatus === "pending") {
-    content = <div className="loader">Loading...</div>;
-  } else if (asyncRequestStatus === "rejected") {
-    content = <div>{error}</div>;
-  } else if (asyncRequestStatus === "fulfilled" && !album) {
-    content = <h2>Album not found!</h2>;
-  } else if (asyncRequestStatus === "fulfilled" && album) {
+  let content = <div>AlbumPage component</div>;
+  if (!album && fetchAlbumPageStatus === "pending") {
+    content = <div className="loader" />;
+  } else if (!album && fetchAlbumPageStatus === "rejected") {
     content = (
       <div>
-        <AlbumBanner albumId={albumId} />
-        <AlbumLayout albumId={albumId} />
-        {/* <AlbumBreadcrumbs albumId={albumId} /> */}
+        <h2>Album not found!</h2>
+        <NotFound />
       </div>
     );
+  } else if (album && fetchAlbumPageStatus === "fulfilled") {
+    content = <PageLayout albumId={albumId} />;
   }
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (lastAlbumFetched !== albumId) {
+      dispatch(fetchAlbumPage(albumId));
+      setLastAlbumFetched(albumId);
+      dispatch(fetchAlbumComments(albumId));
+    }
+  }, [lastAlbumFetched, albumId, dispatch]);
 
   return <section>{content}</section>;
 };

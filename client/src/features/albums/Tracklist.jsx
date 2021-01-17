@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { selectAlbumById } from "./albumsSlice";
 import { selectSongById } from "../songs/songsSlice";
+
 import InterspersedArtistLinks from "../artists/ArtistsLinks";
 
 import DownChevron from "../../assets/images/icon-chevron_down.png";
@@ -77,7 +78,7 @@ const TracklistRow = ({ songId }) => {
   );
 };
 
-const AlbumTracklist = ({ albumId }) => {
+const Tracklist = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));
   let tracks;
   if (album.songs) {
@@ -94,4 +95,4 @@ const AlbumTracklist = ({ albumId }) => {
   );
 };
 
-export default AlbumTracklist;
+export default Tracklist;
