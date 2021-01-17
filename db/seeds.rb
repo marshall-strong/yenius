@@ -11,15 +11,14 @@ client = Aws::S3::Client.new(
 
 
 # DESTROY existing seeds
-  Upvote.destroy_all
   Comment.destroy_all
   Verse.destroy_all
   SampleCredit.destroy_all
   SampleCreditType.destroy_all
   ArtistCredit.destroy_all
   ArtistCreditType.destroy_all
-  Album.destroy_all
   Song.destroy_all
+  Album.destroy_all
   Artist.destroy_all
   User.destroy_all
   AdminUser.destroy_all
