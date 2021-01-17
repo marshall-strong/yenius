@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 
 import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "../../app/Breadcrumbs";
 
-const PageLayout = ({ albumId }) => {
+const PageLayout = ({ albumId, match }) => {
   const isFulfilled = (request) => request === "fulfilled";
 
   const fetchAlbumPageStatus = useSelector(
@@ -23,7 +23,7 @@ const PageLayout = ({ albumId }) => {
       <div>
         {banner}
         <ColumnLayout albumId={albumId} />
-        <Breadcrumbs />
+        <Breadcrumbs match={match} />
       </div>
     </section>
   );

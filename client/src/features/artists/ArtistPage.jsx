@@ -30,7 +30,7 @@ const ArtistPage = ({ match }) => {
       </div>
     );
   } else if (artist && fetchArtistPageStatus === "fulfilled") {
-    content = <PageLayout artistId={artistId} />;
+    content = <PageLayout match={match} artistId={artistId} />;
   }
 
   const dispatch = useDispatch();

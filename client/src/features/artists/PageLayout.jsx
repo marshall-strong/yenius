@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 
 import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "../../app/Breadcrumbs";
 
-const PageLayout = ({ artistId }) => {
+const PageLayout = ({ artistId, match }) => {
   const isFulfilled = (request) => request === "fulfilled";
 
   const fetchArtistPageStatus = useSelector(
@@ -23,7 +23,7 @@ const PageLayout = ({ artistId }) => {
       <div>
         {banner}
         <ColumnLayout artistId={artistId} />
-        <Breadcrumbs />
+        <Breadcrumbs match={match} />
       </div>
     </section>
   );

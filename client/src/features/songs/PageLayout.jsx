@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "../../app/Breadcrumbs";
 
 const PageLayout = ({ match, showVerse }) => {
   const { songId, verseId } = match.params;

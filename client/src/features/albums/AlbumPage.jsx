@@ -29,7 +29,7 @@ const AlbumPage = ({ match }) => {
       </div>
     );
   } else if (album && fetchAlbumPageStatus === "fulfilled") {
-    content = <PageLayout albumId={albumId} />;
+    content = <PageLayout match={match} albumId={albumId} />;
   }
 
   const dispatch = useDispatch();
