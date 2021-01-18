@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
@@ -21,12 +21,11 @@ const SongShowLayout = ({ match, showVerse, songId }) => {
   //   <div className="loader" />
   // );
 
-  const banner = <Banner songId={songId} />;
-
   return (
     <section className="PageLayout">
       <div>
-        {banner}
+        {/* {banner} */}
+        <Banner songId={songId} />
         <ColumnLayout match={match} showVerse={showVerse} songId={songId} />
         <Breadcrumbs match={match} />
       </div>

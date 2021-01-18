@@ -21,4 +21,16 @@ const SongComments = ({ songId }) => {
   }
 };
 
-export default SongComments;
+const Loader = ({ songId }) => {
+  const fetchSongComments = useSelector(
+    (state) => state.comments.status.fetchSongComments
+  );
+  const asyncRequests = [fetchSongComments];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <SongComments songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

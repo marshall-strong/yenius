@@ -16,20 +16,21 @@ const ColumnPrimary = ({ songId }) => {
     <div className="loader" />
   );
 
-  const fetchSongCommentsStatus = useSelector(
-    (state) => state.comments.status.fetchSongComments
-  );
-  const songCommentsRequests = [fetchSongCommentsStatus];
-  const songComments = songCommentsRequests.every(isFulfilled) ? (
-    <SongComments songId={songId} />
-  ) : (
-    <div className="loader" />
-  );
+  // const fetchSongCommentsStatus = useSelector(
+  //   (state) => state.comments.status.fetchSongComments
+  // );
+  // const songCommentsRequests = [fetchSongCommentsStatus];
+  // const songComments = songCommentsRequests.every(isFulfilled) ? (
+  //   <SongComments songId={songId} />
+  // ) : (
+  //   <div className="loader" />
+  // );
 
   return (
     <div className="column_layout-column_span column_layout-column_span--primary">
       {lyrics}
-      {songComments}
+      {/* {songComments} */}
+      <SongComments songId={songId} />
     </div>
   );
 };
