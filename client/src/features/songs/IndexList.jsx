@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { selectSongIds, selectSongById } from "./songsSlice";
 
-const SongsListItem = ({ songId }) => {
+const IndexListItem = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   return (
     <li>
@@ -15,7 +15,7 @@ const SongsListItem = ({ songId }) => {
   );
 };
 
-const SongsList = ({ char }) => {
+const IndexList = ({ char }) => {
   const songIds = useSelector((state) => selectSongIds(state));
   if (songIds.length === 0) {
     return (
@@ -25,7 +25,7 @@ const SongsList = ({ char }) => {
     );
   }
   const list = songIds.map((songId) => (
-    <SongsListItem key={songId} songId={songId} />
+    <IndexListItem key={songId} songId={songId} />
   ));
   return (
     <div>
@@ -37,4 +37,4 @@ const SongsList = ({ char }) => {
   );
 };
 
-export default SongsList;
+export default IndexList;

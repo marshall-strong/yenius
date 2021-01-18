@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import IndexChars from "./IndexChars";
-import IndexSongsList from "./IndexSongsList";
+import IndexList from "./IndexList";
 import Suggestions from "./Suggestions";
 import Breadcrumbs from "../../app/Breadcrumbs";
 
@@ -12,7 +12,7 @@ const IndexLayout = ({ char, match }) => {
   );
   const songsListRequests = [fetchSongsIndexStatus];
   const songsList = songsListRequests.every(isFulfilled) ? (
-    <IndexSongsList char={char} />
+    <IndexList char={char} />
   ) : (
     <div className="loader" />
   );
