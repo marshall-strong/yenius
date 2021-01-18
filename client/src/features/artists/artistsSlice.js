@@ -29,7 +29,7 @@ import { selectSongById } from "../songs/songsSlice";
 
 const artistsAdapter = createEntityAdapter({
   selectId: (artist) => artist.id,
-  sortComparer: (a, b) => b.name.localeCompare(a.name),
+  sortComparer: (a, b) => a.name.localeCompare(b.name),
 });
 
 const initialState = artistsAdapter.getInitialState({
