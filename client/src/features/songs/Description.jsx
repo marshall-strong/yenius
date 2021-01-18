@@ -4,6 +4,10 @@ import { selectSongById } from "./songsSlice";
 
 const Description = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
+  if (!song) {
+    return null;
+  }
+
   return (
     <div className="song-description_annotation">
       <div className="annotation_label">

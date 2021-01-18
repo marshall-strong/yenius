@@ -21,6 +21,9 @@ const LyricsVerse = ({ verseId }) => {
 
 const Lyrics = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
+  if (!song) {
+    return null;
+  }
 
   if (!(song.verses && song.verses.length > 0)) {
     return (

@@ -15,6 +15,10 @@ import {
 
 const TrackInfo = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
+  if (!song) {
+    return null;
+  }
+
   const status = useSelector((state) => state.songs.status);
   const {
     fetchSongAlbum,
