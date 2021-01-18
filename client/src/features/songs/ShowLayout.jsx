@@ -6,20 +6,22 @@ import ColumnLayout from "./ColumnLayout";
 import Breadcrumbs from "../../app/Breadcrumbs";
 
 const SongShowLayout = ({ match, showVerse, songId }) => {
-  const isFulfilled = (request) => request === "fulfilled";
-  const fetchSongArtistCreditsStatus = useSelector(
-    (state) => state.songs.status.fetchSongArtistCredits
-  );
-  const fetchSongBannerStatus = useSelector(
-    (state) => state.songs.status.fetchSongBanner
-  );
+  // const isFulfilled = (request) => request === "fulfilled";
+  // const fetchSongArtistCreditsStatus = useSelector(
+  //   (state) => state.songs.status.fetchSongArtistCredits
+  // );
+  // const fetchSongBannerStatus = useSelector(
+  //   (state) => state.songs.status.fetchSongBanner
+  // );
 
-  const bannerRequests = [fetchSongArtistCreditsStatus, fetchSongBannerStatus];
-  const banner = bannerRequests.every(isFulfilled) ? (
-    <Banner songId={songId} />
-  ) : (
-    <div className="loader" />
-  );
+  // const bannerRequests = [fetchSongArtistCreditsStatus, fetchSongBannerStatus];
+  // const banner = bannerRequests.every(isFulfilled) ? (
+  //   <Banner songId={songId} />
+  // ) : (
+  //   <div className="loader" />
+  // );
+
+  const banner = <Banner songId={songId} />;
 
   return (
     <section className="PageLayout">

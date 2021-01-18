@@ -99,4 +99,20 @@ const Banner = ({ songId }) => {
   );
 };
 
-export default Banner;
+const Loader = ({ songId }) => {
+  const fetchSongArtistCredits = useSelector(
+    (state) => state.songs.status.fetchSongArtistCredits
+  );
+  const fetchSongBannerStatus = useSelector(
+    (state) => state.songs.status.fetchSongBanner
+  );
+  const asyncRequests = [fetchSongArtistCredits, fetchSongBannerStatus];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Banner songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+// export default Banner;
+export default Loader;
