@@ -1,16 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
 import Breadcrumbs from "../../app/Breadcrumbs";
 
-const ShowLayout = ({ match, showVerse }) => {
-  const { songId, verseId } = match.params;
-  const status = useSelector((state) => state.songs.status);
-  const { fetchSongVerse, fetchSongArtistCredits, fetchSongBanner } = status;
+const SongShowLayout = ({ match, showVerse, songId }) => {
   const isFulfilled = (request) => request === "fulfilled";
+  const fetchSongArtistCreditsStatus = useSelector(
+    (state) => state.songs.status.fetchSongArtistCredits
+  );
+  const fetchSongBannerStatus = useSelector(
+    (state) => state.songs.status.fetchSongBanner
+  );
 
-  const bannerRequests = [fetchSongArtistCredits, fetchSongBanner];
+  const bannerRequests = [fetchSongArtistCreditsStatus, fetchSongBannerStatus];
   const banner = bannerRequests.every(isFulfilled) ? (
     <Banner songId={songId} />
   ) : (
@@ -28,4 +32,4 @@ const ShowLayout = ({ match, showVerse }) => {
   );
 };
 
-export default ShowLayout;
+export default SongShowLayout;

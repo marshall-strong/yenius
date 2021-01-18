@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { fetchSongsIndex } from "./songsAsyncThunks";
-import { selectSongIds, selectSongById } from "./songsSlice";
 
-import IndexLayout from "./IndexLayout";
-import NotFound from "../../NotFound";
+import SongsIndexLayout from "./IndexLayout";
 
 import "../../assets/stylesheets/SongsIndex.scss";
 
@@ -22,7 +19,7 @@ const IndexContainer = ({ match }) => {
     }
   }, [selectedChar, lastCharFetched, dispatch]);
 
-  return <IndexLayout char={selectedChar} match={match} />;
+  return <SongsIndexLayout char={selectedChar} match={match} />;
 };
 
 export default IndexContainer;

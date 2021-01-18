@@ -18,7 +18,7 @@ import {
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 
-import ShowLayout from "./ShowLayout";
+import SongShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/SongPage.scss";
@@ -46,11 +46,13 @@ const ShowContainer = ({ match }) => {
     );
   }
   if (song && fetchSongStatus === "fulfilled" && !verse) {
-    content = <ShowLayout match={match} showVerse={false} />;
+    content = (
+      <SongShowLayout match={match} showVerse={false} songId={songId} />
+    );
   }
 
   if (song && fetchSongStatus === "fulfilled" && verse) {
-    content = <ShowLayout match={match} showVerse={true} />;
+    content = <SongShowLayout match={match} showVerse={true} songId={songId} />;
   }
 
   const dispatch = useDispatch();
