@@ -10,6 +10,7 @@ json.songs do
   json.set! @song.id do
     json.id @song.id
     json.name @song.name
+    json.albumId @song.album_id
     json.urlAlbumCover url_for(@song.album.cover)
     json.urlAlbumBanner url_for(@song.album.banner)
   end

@@ -32,6 +32,7 @@ json.songs do
   json.set! @song.id do
     json.id @song.id
     json.name @song.name
+    json.albumId @song.album_id
     json.artistCredits do
       @artist_credit_types.each do |artist_credit_type|
         json.set! artist_credit_type.credit_type do
