@@ -4,7 +4,7 @@ import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
 import Breadcrumbs from "../../app/Breadcrumbs";
 
-const PageLayout = ({ match, showVerse }) => {
+const ShowLayout = ({ match, showVerse }) => {
   const { songId, verseId } = match.params;
   const status = useSelector((state) => state.songs.status);
   const { fetchSongVerse, fetchSongArtistCredits, fetchSongBanner } = status;
@@ -28,4 +28,4 @@ const PageLayout = ({ match, showVerse }) => {
   );
 };
 
-export default PageLayout;
+export default ShowLayout;

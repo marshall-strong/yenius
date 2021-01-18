@@ -42,9 +42,9 @@ import ArtistPage from "./features/artists/ArtistPage";
 import AlbumsList from "./features/albums/AlbumsList";
 import AlbumPage from "./features/albums/AlbumPage";
 
-import SongsIndex from "./features/songs/SongsIndex";
-import SongsList from "./features/songs/SongsList";
-import SongPage from "./features/songs/SongPage";
+import SongsIndex from "./features/songs/IndexContainer";
+// import SongsList from "./features/songs/SongsList";
+import SongShow from "./features/songs/ShowContainer";
 
 import UsersList from "./features/users/UsersList";
 import UserPage from "./features/users/UserPage";
@@ -69,13 +69,13 @@ const App = () => (
 
         <Route exact path="/songs" component={SongsIndex} />
         <Route exact path="/songs/index" component={SongsIndex} />
-        <Route exact path="/songs/index/:char" component={SongsList} />
-        <Route exact path="/songs/:songId" component={SongPage} />
-        <Route exact path="/songs/:songId/verses" component={SongPage} />
+        <Route exact path="/songs/index/:char" component={SongsIndex} />
+        <Route exact path="/songs/:songId" component={SongShow} />
+        <Route exact path="/songs/:songId/verses" component={SongShow} />
         <Route
           exact
           path="/songs/:songId/verses/:verseId"
-          component={SongPage}
+          component={SongShow}
         />
 
         <Route exact path="/users" component={UsersList} />

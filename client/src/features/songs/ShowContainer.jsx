@@ -18,12 +18,12 @@ import {
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 
-import PageLayout from "./PageLayout";
+import ShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/SongPage.scss";
 
-const SongPage = ({ match }) => {
+const ShowContainer = ({ match }) => {
   const songId = parseInt(match.params.songId);
   const song = useSelector((state) => selectSongById(state, songId));
   const [lastSongFetched, setLastSongFetched] = useState(null);
@@ -46,11 +46,11 @@ const SongPage = ({ match }) => {
     );
   }
   if (song && fetchSongStatus === "fulfilled" && !verse) {
-    content = <PageLayout match={match} showVerse={false} />;
+    content = <ShowLayout match={match} showVerse={false} />;
   }
 
   if (song && fetchSongStatus === "fulfilled" && verse) {
-    content = <PageLayout match={match} showVerse={true} />;
+    content = <ShowLayout match={match} showVerse={true} />;
   }
 
   const dispatch = useDispatch();
@@ -66,7 +66,7 @@ const SongPage = ({ match }) => {
       dispatch(fetchSongLyrics(songId));
       dispatch(fetchSongSampleCredits(songId));
     }
-  }, [lastSongFetched, songId, dispatch]);
+  }, [songId, lastSongFetched, dispatch]);
 
   useEffect(() => {
     if (verseId && lastVerseFetched !== verseId) {
@@ -78,4 +78,4 @@ const SongPage = ({ match }) => {
   return <section>{content}</section>;
 };
 
-export default SongPage;
+export default ShowContainer;

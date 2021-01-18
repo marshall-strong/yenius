@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../assets/stylesheets/SongsIndex.scss";
 
-const LinkToCharSongs = ({ char }) => (
+const IndexCharListItem = ({ char }) => (
   <li key={char} className="character_index_list-element">
     <Link to={`/songs/index/${char}`} className="character_index_list-link">
       {char.toUpperCase()}
@@ -10,11 +9,11 @@ const LinkToCharSongs = ({ char }) => (
   </li>
 );
 
-const SongsIndex = () => {
+const IndexChars = () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const characters = alphabet.split("");
   const links = characters.map((char) => (
-    <LinkToCharSongs key={char} char={char} />
+    <IndexCharListItem key={char} char={char} />
   ));
   return (
     <div className="CharacterIndexList SongsIndex">
@@ -24,4 +23,4 @@ const SongsIndex = () => {
   );
 };
 
-export default SongsIndex;
+export default IndexChars;
