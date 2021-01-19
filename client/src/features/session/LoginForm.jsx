@@ -78,17 +78,13 @@ const LoginForm = () => {
       <div className="finger">
         <button type="submit">LOG IN</button>
       </div>
-    </form>
-  );
-
-  return (
-    <div className="SessionForm">
-      {loginForm}
       <div className="sess-links finger">
         <button onClick={handleDemoLogin}>Login as Demo user</button>
       </div>
-    </div>
+    </form>
   );
+
+  return <div className="SessionForm">{loginForm}</div>;
 };
 
 export default LoginForm;
