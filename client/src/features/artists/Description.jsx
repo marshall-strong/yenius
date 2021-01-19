@@ -14,4 +14,16 @@ const Description = ({ artistId }) => {
   );
 };
 
-export default Description;
+const Loader = ({ artistId }) => {
+  const fetchArtistPage = useSelector(
+    (state) => state.artists.status.fetchArtistPage
+  );
+  const asyncRequests = [fetchArtistPage];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Description artistId={artistId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;
