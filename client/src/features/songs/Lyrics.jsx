@@ -50,4 +50,16 @@ const Lyrics = ({ songId }) => {
   );
 };
 
-export default Lyrics;
+const Loader = ({ songId }) => {
+  const fetchSongLyrics = useSelector(
+    (state) => state.songs.status.fetchSongLyrics
+  );
+  const asyncRequests = [fetchSongLyrics];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Lyrics songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;
