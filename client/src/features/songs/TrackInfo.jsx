@@ -74,4 +74,21 @@ const TrackInfo = ({ songId }) => {
   );
 };
 
-export default TrackInfo;
+// export default TrackInfo;
+
+const Loader = ({ songId }) => {
+  const fetchSongArtistCredits = useSelector(
+    (state) => state.songs.status.fetchSongArtistCredits
+  );
+  const fetchSongSampleCredits = useSelector(
+    (state) => state.songs.status.fetchSongSampleCredits
+  );
+  const asyncRequests = [fetchSongArtistCredits, fetchSongSampleCredits];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <TrackInfo songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

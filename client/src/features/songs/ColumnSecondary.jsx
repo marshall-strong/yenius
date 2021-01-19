@@ -10,9 +10,9 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
   const status = useSelector((state) => state.songs.status);
   const {
     fetchSongAlbum,
-    fetchSongArtistCredits,
+    // fetchSongArtistCredits,
     // fetchSongDescription,
-    fetchSongSampleCredits,
+    // fetchSongSampleCredits,
     fetchVerseComments,
   } = status;
   const isFulfilled = (request) => request === "fulfilled";
@@ -24,12 +24,12 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
   //   <div className="loader" />
   // );
 
-  const trackInfoRequests = [fetchSongArtistCredits, fetchSongSampleCredits];
-  const trackInfo = trackInfoRequests.every(isFulfilled) ? (
-    <TrackInfo songId={songId} />
-  ) : (
-    <div className="loader" />
-  );
+  // const trackInfoRequests = [fetchSongArtistCredits, fetchSongSampleCredits];
+  // const trackInfo = trackInfoRequests.every(isFulfilled) ? (
+  //   <TrackInfo songId={songId} />
+  // ) : (
+  //   <div className="loader" />
+  // );
 
   const songAlbumRequests = [fetchSongAlbum];
   const songAlbum = songAlbumRequests.every(isFulfilled) ? (
@@ -52,7 +52,8 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
       <div className={klassName}>
         {/* {description} */}
         <Description songId={songId} />
-        {trackInfo}
+        {/* {trackInfo} */}
+        <TrackInfo songId={songId} />
         {songAlbum}
       </div>
       <div className="column_layout-flex_column-fill_column">
