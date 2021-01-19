@@ -1,9 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import { selectSongById } from "./songsSlice";
 
 const Description = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
+  if (!song) {
+    return null;
+  }
   return (
     <div className="song-description_annotation">
       <div className="annotation_label">
@@ -17,4 +21,16 @@ const Description = ({ songId }) => {
   );
 };
 
-export default Description;
+const Loader = ({ songId }) => {
+  const fetchSongDescription = useSelector(
+    (state) => state.songs.status.fetchSongDescription
+  );
+  const asyncRequests = [fetchSongDescription];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Description songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

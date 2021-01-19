@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { selectAlbumById } from "./albumsSlice";
-import InterspersedArtistLinks from "../artists/ArtistLinks";
+import ArtistLinks from "../artists/ArtistLinks";
 import { printDate } from "../../lib";
 
 import "../../assets/stylesheets/Banner.scss";
 
-const AlbumBanner = ({ albumId }) => {
+const Banner = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));
 
   const entityType = "album";
@@ -21,7 +21,7 @@ const AlbumBanner = ({ albumId }) => {
     artistLinks = "Various Artists";
     releaseDate = "Various Release Dates";
   } else if (album.artistsPrimary) {
-    artistLinks = <InterspersedArtistLinks artistIds={album.artistsPrimary} />;
+    artistLinks = <ArtistLinks artistIds={album.artistsPrimary} />;
     releaseDate = <div>Released {printDate(album.releaseDate)}</div>;
   }
 
@@ -56,4 +56,16 @@ const AlbumBanner = ({ albumId }) => {
   );
 };
 
-export default AlbumBanner;
+const Loader = ({ albumId }) => {
+  const fetchAlbumPage = useSelector(
+    (state) => state.albums.status.fetchAlbumPage
+  );
+  const asyncRequests = [fetchAlbumPage];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Banner albumId={albumId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

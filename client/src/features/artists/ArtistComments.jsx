@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectArtistById } from "./artistsSlice";
 import { addArtistComment } from "../comments/commentsAsyncThunks";
+
+import { selectArtistById } from "./artistsSlice";
 
 import CommentsContainer from "../comments/CommentsContainer";
 
@@ -19,4 +20,16 @@ const ArtistComments = ({ artistId }) => {
   return content;
 };
 
-export default ArtistComments;
+const Loader = ({ artistId }) => {
+  const fetchArtistComments = useSelector(
+    (state) => state.comments.status.fetchArtistComments
+  );
+  const asyncRequests = [fetchArtistComments];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <ArtistComments artistId={artistId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

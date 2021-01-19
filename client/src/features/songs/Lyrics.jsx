@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 
@@ -21,6 +22,9 @@ const LyricsVerse = ({ verseId }) => {
 
 const Lyrics = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
+  if (!song) {
+    return null;
+  }
 
   if (!(song.verses && song.verses.length > 0)) {
     return (
@@ -47,4 +51,16 @@ const Lyrics = ({ songId }) => {
   );
 };
 
-export default Lyrics;
+const Loader = ({ songId }) => {
+  const fetchSongLyrics = useSelector(
+    (state) => state.songs.status.fetchSongLyrics
+  );
+  const asyncRequests = [fetchSongLyrics];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Lyrics songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

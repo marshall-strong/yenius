@@ -35,16 +35,14 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 import Navbar from "./app/Navbar";
 import LandingPage from "./app/LandingPage";
 
-import ArtistsIndex from "./features/artists/ArtistsIndex";
-import ArtistsList from "./features/artists/ArtistsList";
-import ArtistPage from "./features/artists/ArtistPage";
+import ArtistsIndex from "./features/artists/IndexContainer";
+import ArtistShow from "./features/artists/ShowContainer";
 
-import AlbumsList from "./features/albums/AlbumsList";
-import AlbumPage from "./features/albums/AlbumPage";
+import AlbumsIndex from "./features/albums/IndexContainer";
+import AlbumShow from "./features/albums/ShowContainer";
 
-import SongsIndex from "./features/songs/SongsIndex";
-import SongsList from "./features/songs/SongsList";
-import SongPage from "./features/songs/SongPage";
+import SongsIndex from "./features/songs/IndexContainer";
+import SongShow from "./features/songs/ShowContainer";
 
 import UsersList from "./features/users/UsersList";
 import UserPage from "./features/users/UserPage";
@@ -59,23 +57,23 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={LandingPage} />
 
-        <Route exact path="/albums" component={AlbumsList} />
-        <Route exact path="/albums/:albumId" component={AlbumPage} />
+        <Route exact path="/albums" component={AlbumsIndex} />
+        <Route exact path="/albums/:albumId" component={AlbumShow} />
 
         <Route exact path="/artists" component={ArtistsIndex} />
         <Route exact path="/artists/index/" component={ArtistsIndex} />
-        <Route exact path="/artists/index/:char" component={ArtistsList} />
-        <Route exact path="/artists/:artistId" component={ArtistPage} />
+        <Route exact path="/artists/index/:char" component={ArtistsIndex} />
+        <Route exact path="/artists/:artistId" component={ArtistShow} />
 
         <Route exact path="/songs" component={SongsIndex} />
         <Route exact path="/songs/index" component={SongsIndex} />
-        <Route exact path="/songs/index/:char" component={SongsList} />
-        <Route exact path="/songs/:songId" component={SongPage} />
-        <Route exact path="/songs/:songId/verses" component={SongPage} />
+        <Route exact path="/songs/index/:char" component={SongsIndex} />
+        <Route exact path="/songs/:songId" component={SongShow} />
+        <Route exact path="/songs/:songId/verses" component={SongShow} />
         <Route
           exact
           path="/songs/:songId/verses/:verseId"
-          component={SongPage}
+          component={SongShow}
         />
 
         <Route exact path="/users" component={UsersList} />

@@ -44,4 +44,16 @@ const Banner = ({ artistId }) => {
   );
 };
 
-export default Banner;
+const Loader = ({ artistId }) => {
+  const fetchArtistPage = useSelector(
+    (state) => state.artists.status.fetchArtistPage
+  );
+  const asyncRequests = [fetchArtistPage];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Banner artistId={artistId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

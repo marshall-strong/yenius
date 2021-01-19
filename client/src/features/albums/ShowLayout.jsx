@@ -3,17 +3,17 @@ import { useSelector } from "react-redux";
 
 import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "../../app/Breadcrumbs";
 
-const PageLayout = ({ artistId }) => {
+const ShowLayout = ({ albumId, match }) => {
   const isFulfilled = (request) => request === "fulfilled";
 
-  const fetchArtistPageStatus = useSelector(
-    (state) => state.artists.status.fetchArtistPage
+  const fetchAlbumPageStatus = useSelector(
+    (state) => state.albums.status.fetchAlbumPage
   );
-  const bannerRequests = [fetchArtistPageStatus];
+  const bannerRequests = [fetchAlbumPageStatus];
   const banner = bannerRequests.every(isFulfilled) ? (
-    <Banner artistId={artistId} />
+    <Banner albumId={albumId} />
   ) : (
     <div className="loader" />
   );
@@ -22,11 +22,11 @@ const PageLayout = ({ artistId }) => {
     <section className="PageLayout">
       <div>
         {banner}
-        <ColumnLayout artistId={artistId} />
-        <Breadcrumbs />
+        <ColumnLayout albumId={albumId} />
+        <Breadcrumbs match={match} />
       </div>
     </section>
   );
 };
 
-export default PageLayout;
+export default ShowLayout;

@@ -1,10 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { selectVerseById } from "../verses/versesSlice";
+
 import VerseComments from "../verses/VerseComments";
 
-const VerseAnnotations = ({ verseId }) => {
+const AnnotationsContainer = ({ verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));
   if (!verse) {
     return null;
@@ -22,4 +24,4 @@ const VerseAnnotations = ({ verseId }) => {
   );
 };
 
-export default VerseAnnotations;
+export default AnnotationsContainer;

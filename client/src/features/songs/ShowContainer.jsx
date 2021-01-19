@@ -10,27 +10,26 @@ import {
   fetchSongLyrics,
   fetchSongSampleCredits,
 } from "./songsAsyncThunks";
+
 import {
   fetchSongComments,
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 
 import { selectSongById } from "./songsSlice";
-import { selectVerseById } from "../verses/versesSlice";
 
-import PageLayout from "./PageLayout";
+import SongShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/SongPage.scss";
 
-const SongPage = ({ match }) => {
+const ShowContainer = ({ match }) => {
   const songId = parseInt(match.params.songId);
   const song = useSelector((state) => selectSongById(state, songId));
   const [lastSongFetched, setLastSongFetched] = useState(null);
   const fetchSongStatus = useSelector((state) => state.songs.status.fetchSong);
 
   const verseId = parseInt(match.params.verseId);
-  const verse = useSelector((state) => selectVerseById(state, verseId));
   const [lastVerseFetched, setLastVerseFetched] = useState(null);
 
   let content = <div>SongPage component</div>;
@@ -45,12 +44,8 @@ const SongPage = ({ match }) => {
       </div>
     );
   }
-  if (song && fetchSongStatus === "fulfilled" && !verse) {
-    content = <PageLayout match={match} showVerse={false} />;
-  }
-
-  if (song && fetchSongStatus === "fulfilled" && verse) {
-    content = <PageLayout match={match} showVerse={true} />;
+  if (song && fetchSongStatus === "fulfilled") {
+    content = <SongShowLayout match={match} />;
   }
 
   const dispatch = useDispatch();
@@ -66,7 +61,7 @@ const SongPage = ({ match }) => {
       dispatch(fetchSongLyrics(songId));
       dispatch(fetchSongSampleCredits(songId));
     }
-  }, [lastSongFetched, songId, dispatch]);
+  }, [songId, lastSongFetched, dispatch]);
 
   useEffect(() => {
     if (verseId && lastVerseFetched !== verseId) {
@@ -78,4 +73,4 @@ const SongPage = ({ match }) => {
   return <section>{content}</section>;
 };
 
-export default SongPage;
+export default ShowContainer;

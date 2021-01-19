@@ -14,4 +14,16 @@ const Description = ({ albumId }) => {
   );
 };
 
-export default Description;
+const Loader = ({ albumId }) => {
+  const fetchAlbumPage = useSelector(
+    (state) => state.albums.status.fetchAlbumPage
+  );
+  const asyncRequests = [fetchAlbumPage];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Description albumId={albumId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import { selectSongById } from "./songsSlice";
-import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
-import InterspersedArtistLinks from "../artists/ArtistLinks";
+import { selectAlbumBySongId } from "../albums/albumsSlice";
+
+import ArtistLinks from "../artists/ArtistLinks";
 
 const TrackListing = ({ trackId, songId }) => {
   const track = useSelector((state) => selectSongById(state, trackId));
@@ -55,9 +57,7 @@ const AlbumInfo = ({ songId }) => {
           {album.name}
           <span className="song_album-info-release_year"> ({album.year})</span>
         </a>
-        <InterspersedArtistLinks
-          artistIds={album.artistCredits["PRIMARY_ARTIST"]}
-        />
+        <ArtistLinks artistIds={album.artistCredits["PRIMARY_ARTIST"]} />
       </div>
     </div>
   );
@@ -72,4 +72,16 @@ const SongAlbum = ({ songId }) => (
   </div>
 );
 
-export default SongAlbum;
+const Loader = ({ songId }) => {
+  const fetchSongAlbum = useSelector(
+    (state) => state.songs.status.fetchSongAlbum
+  );
+  const asyncRequests = [fetchSongAlbum];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <SongAlbum songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

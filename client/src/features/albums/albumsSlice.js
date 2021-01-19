@@ -20,7 +20,7 @@ import { selectSongById } from "../songs/songsSlice";
 
 const albumsAdapter = createEntityAdapter({
   selectId: (album) => album.id,
-  sortComparer: (a, b) => b.releaseDate.localeCompare(a.releaseDate),
+  sortComparer: (a, b) => a.releaseDate.localeCompare(b.releaseDate),
 });
 
 const initialState = albumsAdapter.getInitialState({
@@ -111,5 +111,8 @@ export const selectAlbumBySongId = createSelector(
     (state) => selectAlbumEntities(state),
     (state, songId) => selectSongById(state, songId),
   ],
-  (albumEntities, song) => albumEntities[song.albumId]
+  (albumEntities, song) => {
+    const album = song ? albumEntities[song.albumId] : null;
+    return album;
+  }
 );

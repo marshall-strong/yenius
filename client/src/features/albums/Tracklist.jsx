@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { selectAlbumById } from "./albumsSlice";
 import { selectSongById } from "../songs/songsSlice";
 
-import InterspersedArtistLinks from "../artists/ArtistLinks";
+import ArtistLinks from "../artists/ArtistLinks";
 
 import DownChevron from "../../assets/images/icon-chevron_down.png";
 import UpChevron from "../../assets/images/icon-chevron_up.png";
@@ -26,14 +26,12 @@ const TracklistRow = ({ songId }) => {
 
   let featuredArtists;
   if (song.artistsFeatured && song.artistsFeatured.length > 0) {
-    featuredArtists = (
-      <InterspersedArtistLinks artistIds={song.artistsFeatured} />
-    );
+    featuredArtists = <ArtistLinks artistIds={song.artistsFeatured} />;
   }
 
   let producers;
   if (song.artistsProducers && song.artistsProducers.length > 0) {
-    producers = <InterspersedArtistLinks artistIds={song.artistsProducers} />;
+    producers = <ArtistLinks artistIds={song.artistsProducers} />;
   }
 
   return (
@@ -95,4 +93,16 @@ const Tracklist = ({ albumId }) => {
   );
 };
 
-export default Tracklist;
+const Loader = ({ albumId }) => {
+  const fetchAlbumPage = useSelector(
+    (state) => state.albums.status.fetchAlbumPage
+  );
+  const asyncRequests = [fetchAlbumPage];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Tracklist albumId={albumId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

@@ -19,4 +19,16 @@ const AlbumComments = ({ albumId }) => {
   return content;
 };
 
-export default AlbumComments;
+const Loader = ({ albumId }) => {
+  const fetchAlbumComments = useSelector(
+    (state) => state.comments.status.fetchAlbumComments
+  );
+  const asyncRequests = [fetchAlbumComments];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <AlbumComments albumId={albumId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

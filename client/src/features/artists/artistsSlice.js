@@ -4,8 +4,6 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 
-// import { useSelector } from "react-redux";
-
 import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
 import {
   fetchArtistPage,
@@ -17,7 +15,6 @@ import {
   fetchArtistComments,
 } from "../comments/commentsAsyncThunks";
 import {
-  // fetchSongPage,
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
@@ -29,7 +26,7 @@ import { selectSongById } from "../songs/songsSlice";
 
 const artistsAdapter = createEntityAdapter({
   selectId: (artist) => artist.id,
-  sortComparer: (a, b) => b.name.localeCompare(a.name),
+  sortComparer: (a, b) => a.name.localeCompare(b.name),
 });
 
 const initialState = artistsAdapter.getInitialState({

@@ -6,31 +6,33 @@ import { fetchArtistComments } from "../comments/commentsAsyncThunks";
 
 import { selectArtistById } from "./artistsSlice";
 
-import PageLayout from "./PageLayout";
+import ArtistShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/show.scss";
 
-const ArtistPage = ({ match }) => {
+const ArtistShowContainer = ({ match }) => {
   const artistId = parseInt(match.params.artistId);
   const artist = useSelector((state) => selectArtistById(state, artistId));
+  const [lastArtistFetched, setLastArtistFetched] = useState(null);
   const fetchArtistPageStatus = useSelector(
     (state) => state.artists.status.fetchArtistPage
   );
-  const [lastArtistFetched, setLastArtistFetched] = useState(null);
 
   let content = <div>ArtistPage component</div>;
   if (!artist && fetchArtistPageStatus === "pending") {
     content = <div className="loader" />;
-  } else if (!artist && fetchArtistPageStatus === "rejected") {
+  }
+  if (!artist && fetchArtistPageStatus === "rejected") {
     content = (
       <div>
         <h2>Artist not found!</h2>
         <NotFound />
       </div>
     );
-  } else if (artist && fetchArtistPageStatus === "fulfilled") {
-    content = <PageLayout artistId={artistId} />;
+  }
+  if (artist && fetchArtistPageStatus === "fulfilled") {
+    content = <ArtistShowLayout match={match} artistId={artistId} />;
   }
 
   const dispatch = useDispatch();
@@ -45,4 +47,4 @@ const ArtistPage = ({ match }) => {
   return <section>{content}</section>;
 };
 
-export default ArtistPage;
+export default ArtistShowContainer;

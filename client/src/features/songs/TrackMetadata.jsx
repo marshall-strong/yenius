@@ -1,10 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { selectAlbumBySongId } from "../albums/albumsSlice";
 import { selectSongById } from "./songsSlice";
-import InterspersedArtistLinks from "../artists/ArtistLinks";
+
 import { mergeArrays, printDate } from "../../lib";
+
+import ArtistLinks from "../artists/ArtistLinks";
 
 const SongLink = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
@@ -32,9 +35,7 @@ export const PrimaryArtists = ({ songId }) => {
     return null;
   }
 
-  const linksToPrimaryArtists = (
-    <InterspersedArtistLinks artistIds={primaryArtistIds} />
-  );
+  const linksToPrimaryArtists = <ArtistLinks artistIds={primaryArtistIds} />;
   return (
     <div className="metadata_unit metadata_unit--table_row">
       <span className="metadata_unit-label">Primary Artists</span>
@@ -52,9 +53,7 @@ export const FeaturedArtists = ({ songId }) => {
   if (featuredArtistIds.length === 0) {
     return null;
   }
-  const linksToFeaturedArtists = (
-    <InterspersedArtistLinks artistIds={featuredArtistIds} />
-  );
+  const linksToFeaturedArtists = <ArtistLinks artistIds={featuredArtistIds} />;
   return (
     <div className="metadata_unit metadata_unit--table_row">
       <span className="metadata_unit-label">Featured Artists</span>
@@ -73,7 +72,7 @@ export const ProductionArtists = ({ songId }) => {
     return null;
   }
   const linksToProductionArtists = (
-    <InterspersedArtistLinks artistIds={productionArtistIds} />
+    <ArtistLinks artistIds={productionArtistIds} />
   );
   return (
     <div className="metadata_unit metadata_unit--table_row">
