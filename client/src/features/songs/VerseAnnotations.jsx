@@ -23,3 +23,17 @@ const VerseAnnotations = ({ verseId }) => {
 };
 
 export default VerseAnnotations;
+
+// const Loader = ({ verseId }) => {
+//   const fetchVerseComments = useSelector(
+//     (state) => state.comments.status.fetchVerseComments
+//   );
+//   const asyncRequests = [fetchVerseComments];
+//   if (asyncRequests.every((status) => status === "fulfilled")) {
+//     return <SongComments songId={songId} />;
+//   } else {
+//     return <div className="loader" />;
+//   }
+// };
+
+// export default Loader;

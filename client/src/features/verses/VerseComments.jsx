@@ -20,4 +20,18 @@ const VerseComments = ({ verseId }) => {
   }
 };
 
-export default VerseComments;
+// export default VerseComments;
+
+const Loader = ({ verseId }) => {
+  const fetchVerseComments = useSelector(
+    (state) => state.comments.status.fetchVerseComments
+  );
+  const asyncRequests = [fetchVerseComments];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <VerseComments verseId={verseId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

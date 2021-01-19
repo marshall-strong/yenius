@@ -45,14 +45,8 @@ const ShowContainer = ({ match }) => {
       </div>
     );
   }
-  if (song && fetchSongStatus === "fulfilled" && !verse) {
-    content = (
-      <SongShowLayout match={match} showVerse={false} songId={songId} />
-    );
-  }
-
-  if (song && fetchSongStatus === "fulfilled" && verse) {
-    content = <SongShowLayout match={match} showVerse={true} songId={songId} />;
+  if (song && fetchSongStatus === "fulfilled") {
+    content = <SongShowLayout match={match} />;
   }
 
   const dispatch = useDispatch();
