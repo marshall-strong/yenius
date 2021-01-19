@@ -11,18 +11,18 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
   const {
     fetchSongAlbum,
     fetchSongArtistCredits,
-    fetchSongDescription,
+    // fetchSongDescription,
     fetchSongSampleCredits,
     fetchVerseComments,
   } = status;
   const isFulfilled = (request) => request === "fulfilled";
 
-  const descriptionRequests = [fetchSongDescription];
-  const description = descriptionRequests.every(isFulfilled) ? (
-    <Description songId={songId} />
-  ) : (
-    <div className="loader" />
-  );
+  // const descriptionRequests = [fetchSongDescription];
+  // const description = descriptionRequests.every(isFulfilled) ? (
+  //   <Description songId={songId} />
+  // ) : (
+  //   <div className="loader" />
+  // );
 
   const trackInfoRequests = [fetchSongArtistCredits, fetchSongSampleCredits];
   const trackInfo = trackInfoRequests.every(isFulfilled) ? (
@@ -50,7 +50,8 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
   return (
     <div className="column_layout-column_span column_layout-column_span--secondary u-top_margin column_layout-flex_column">
       <div className={klassName}>
-        {description}
+        {/* {description} */}
+        <Description songId={songId} />
         {trackInfo}
         {songAlbum}
       </div>

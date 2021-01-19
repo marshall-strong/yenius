@@ -99,6 +99,8 @@ const Banner = ({ songId }) => {
   );
 };
 
+// export default Banner;
+
 const Loader = ({ songId }) => {
   const fetchSongArtistCredits = useSelector(
     (state) => state.songs.status.fetchSongArtistCredits
@@ -114,5 +116,4 @@ const Loader = ({ songId }) => {
   }
 };
 
-// export default Banner;
 export default Loader;

@@ -21,4 +21,18 @@ const Description = ({ songId }) => {
   );
 };
 
-export default Description;
+// export default Description;
+
+const Loader = ({ songId }) => {
+  const fetchSongDescription = useSelector(
+    (state) => state.songs.status.fetchSongDescription
+  );
+  const asyncRequests = [fetchSongDescription];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <Description songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

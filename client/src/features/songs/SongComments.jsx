@@ -21,6 +21,8 @@ const SongComments = ({ songId }) => {
   }
 };
 
+// export default SongComments;
+
 const Loader = ({ songId }) => {
   const fetchSongComments = useSelector(
     (state) => state.comments.status.fetchSongComments
