@@ -6,18 +6,7 @@ import Suggestions from "./Suggestions";
 import Breadcrumbs from "../../app/Breadcrumbs";
 
 const IndexLayout = ({ char, match }) => {
-  const isFulfilled = (request) => request === "fulfilled";
-  const fetchArtistsIndexStatus = useSelector(
-    (state) => state.artists.status.fetchArtistsIndex
-  );
-  const artistsListRequests = [fetchArtistsIndexStatus];
-  const artistsList = artistsListRequests.every(isFulfilled) ? (
-    <IndexList char={char} />
-  ) : (
-    <div className="loader" />
-  );
-
-  const content = char ? artistsList : <Suggestions />;
+  const content = char ? <IndexList char={char} /> : <Suggestions />;
 
   return (
     <section className="IndexLayout">

@@ -37,4 +37,16 @@ const IndexList = ({ char }) => {
   );
 };
 
-export default IndexList;
+const Loader = ({ char }) => {
+  const fetchSongsIndex = useSelector(
+    (state) => state.songs.status.fetchSongsIndex
+  );
+  const asyncRequests = [fetchSongsIndex];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <IndexList char={char} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;
