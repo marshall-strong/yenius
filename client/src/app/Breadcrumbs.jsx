@@ -116,11 +116,11 @@ const Breadcrumbs = ({ match }) => {
       {crumbs}
       <br />
       <br />
-      <h3>Breadcrumbs Examples:</h3>
+      {/*<h3>Breadcrumbs Examples:</h3>
       <h2> {"[Home] [Albums] [Watch the Throne]"} </h2>
       <h2> {"[Home] [Artists] [K] [Kanye West]"} </h2>
       <h2> {"[Home] [Songs] [N] [No Church in the Wild]"} </h2>
-      <br />
+      <br /> */}
     </footer>
   );
 };

@@ -5,7 +5,7 @@ import { fetchAlbumPage } from "./albumsAsyncThunks";
 import { fetchAlbumComments } from "../comments/commentsAsyncThunks";
 import { selectAlbumById } from "./albumsSlice";
 
-import PageLayout from "./PageLayout";
+import AlbumShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/show.scss";
@@ -29,7 +29,7 @@ const AlbumPage = ({ match }) => {
       </div>
     );
   } else if (album && fetchAlbumPageStatus === "fulfilled") {
-    content = <PageLayout match={match} albumId={albumId} />;
+    content = <AlbumShowLayout match={match} albumId={albumId} />;
   }
 
   const dispatch = useDispatch();

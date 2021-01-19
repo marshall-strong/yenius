@@ -5,7 +5,7 @@ import Banner from "./Banner";
 import ColumnLayout from "./ColumnLayout";
 import Breadcrumbs from "../../app/Breadcrumbs";
 
-const PageLayout = ({ albumId, match }) => {
+const ShowLayout = ({ albumId, match }) => {
   const isFulfilled = (request) => request === "fulfilled";
 
   const fetchAlbumPageStatus = useSelector(
@@ -29,4 +29,4 @@ const PageLayout = ({ albumId, match }) => {
   );
 };
 
-export default PageLayout;
+export default ShowLayout;

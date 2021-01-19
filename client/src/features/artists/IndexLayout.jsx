@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+
 import IndexChars from "./IndexChars";
 import IndexList from "./IndexList";
 import Suggestions from "./Suggestions";

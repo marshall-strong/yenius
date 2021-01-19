@@ -38,8 +38,8 @@ import LandingPage from "./app/LandingPage";
 import ArtistsIndex from "./features/artists/IndexContainer";
 import ArtistShow from "./features/artists/ShowContainer";
 
-import AlbumsList from "./features/albums/AlbumsList";
-import AlbumPage from "./features/albums/AlbumPage";
+import AlbumsIndex from "./features/albums/IndexContainer";
+import AlbumShow from "./features/albums/ShowContainer";
 
 import SongsIndex from "./features/songs/IndexContainer";
 import SongShow from "./features/songs/ShowContainer";
@@ -57,8 +57,8 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={LandingPage} />
 
-        <Route exact path="/albums" component={AlbumsList} />
-        <Route exact path="/albums/:albumId" component={AlbumPage} />
+        <Route exact path="/albums" component={AlbumsIndex} />
+        <Route exact path="/albums/:albumId" component={AlbumShow} />
 
         <Route exact path="/artists" component={ArtistsIndex} />
         <Route exact path="/artists/index/" component={ArtistsIndex} />
