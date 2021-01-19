@@ -29,9 +29,11 @@ const TrackListing = ({ trackId, songId }) => {
 };
 
 const AlbumTracks = ({ songId }) => {
-  const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumBySongId(state, songId));
   if (!album || !album.songs) {
+    return null;
+  }
+  if (album.name === "Samples & Interpolations") {
     return null;
   }
   const trackListings = album.songs.map((trackId) => (
@@ -46,6 +48,20 @@ const AlbumInfo = ({ songId }) => {
   const album = useSelector((state) => selectAlbumBySongId(state, songId));
   if (!album) {
     return null;
+  }
+  if (album.name === "Samples & Interpolations") {
+    return (
+      <div className="song_album u-bottom_margin">
+        <img src={album.urlAlbumCover64px} alt={album.name} />
+        <div className="song_album-info">
+          {album.name}
+          <br />
+          <span className="song_album-info-release_year">
+            {"Various Artists"}
+          </span>
+        </div>
+      </div>
+    );
   }
   return (
     <div className="song_album u-bottom_margin">
@@ -63,14 +79,16 @@ const AlbumInfo = ({ songId }) => {
   );
 };
 
-const SongAlbum = ({ songId }) => (
-  <div className="SongAlbum">
-    <div className="u-xx_large_vertical_margins">
-      <AlbumInfo songId={songId} />
-      <AlbumTracks songId={songId} />
+const SongAlbum = ({ songId }) => {
+  return (
+    <div className="SongAlbum">
+      <div className="u-xx_large_vertical_margins">
+        <AlbumInfo songId={songId} />
+        <AlbumTracks songId={songId} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Loader = ({ songId }) => {
   const fetchSongAlbum = useSelector(
