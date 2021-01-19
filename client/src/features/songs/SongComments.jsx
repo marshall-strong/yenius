@@ -9,17 +9,15 @@ import CommentsContainer from "../comments/CommentsContainer";
 
 const SongComments = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  if (!song || !song.comments) {
-    return null;
-  } else {
-    return (
+  const content =
+    !song || !song.comments ? null : (
       <CommentsContainer
         addComment={addSongComment}
         commentableId={songId}
         commentableType={"Song"}
       />
     );
-  }
+  return content;
 };
 
 const Loader = ({ songId }) => {
