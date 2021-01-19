@@ -1,28 +1,22 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { selectAlbumBySongId } from "../albums/albumsSlice";
 import { selectSongById } from "./songsSlice";
-import InterspersedArtistLinks from "../artists/ArtistLinks";
+
 import { mergeArrays } from "../../lib";
+
+import ArtistLinks from "../artists/ArtistLinks";
+
 import "../../assets/stylesheets/SongBanner.scss";
 
 const Banner = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const album = useSelector((state) => selectAlbumBySongId(state, songId));
 
-  if (!song || !album) {
+  if (!song || !song.artistCredits || !album || !album.artistCredits) {
     return null;
-  }
-  if (!song.artistCredits || !album.artistCredits) {
-    return null;
-  }
-
-  let albumLink;
-  if (album && album.name === "Samples & Interpolations") {
-    albumLink = "Samples & Interpolations";
-  } else if (album) {
-    albumLink = <a href={`/albums/${album.id}`}>{album.name}</a>;
   }
 
   const name = song.name;
@@ -33,7 +27,7 @@ const Banner = ({ songId }) => {
     album.artistCredits["PRIMARY_ARTIST"]
   );
   if (primaryArtistIds.length > 0) {
-    primaryArtists = <InterspersedArtistLinks artistIds={primaryArtistIds} />;
+    primaryArtists = <ArtistLinks artistIds={primaryArtistIds} />;
   }
 
   let featuredArtists;
@@ -45,7 +39,7 @@ const Banner = ({ songId }) => {
     featuredArtists = (
       <span>
         {"Featuring "}
-        <InterspersedArtistLinks artistIds={featuredArtistIds} />
+        <ArtistLinks artistIds={featuredArtistIds} />
       </span>
     );
   }
@@ -59,10 +53,17 @@ const Banner = ({ songId }) => {
     producers = (
       <span>
         {"Produced by "}
-        <InterspersedArtistLinks artistIds={producerArtistIds} />
+        <ArtistLinks artistIds={producerArtistIds} />
       </span>
     );
   }
+
+  const albumLink =
+    album.name === "Samples & Interpolations" ? (
+      <span>{"Samples & Interpolations"}</span>
+    ) : (
+      <Link to={`/albums/${album.id}`}>{album.name}</Link>
+    );
 
   const styleBannerImage = {
     backgroundImage: `url(${song.urlAlbumBanner})`,
@@ -83,7 +84,6 @@ const Banner = ({ songId }) => {
           <div className="subjectImg" style={styleSubjectImage} />
           <div className="textContainer">
             <div className="bannerText">
-              {/* <div className="entityType">{entityType}</div> */}
               <div className="subjectName yellow">{name}</div>
               <div className="subjectArtist">{primaryArtists}</div>
               <div className="songFeaturedArtists metadata">
@@ -98,8 +98,6 @@ const Banner = ({ songId }) => {
     </header>
   );
 };
-
-// export default Banner;
 
 const Loader = ({ songId }) => {
   const fetchSongArtistCredits = useSelector(

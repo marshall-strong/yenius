@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import { selectSongById } from "./songsSlice";
+
 import {
   PrimaryArtists,
   FeaturedArtists,
@@ -73,8 +75,6 @@ const TrackInfo = ({ songId }) => {
     </div>
   );
 };
-
-// export default TrackInfo;
 
 const Loader = ({ songId }) => {
   const fetchSongArtistCredits = useSelector(

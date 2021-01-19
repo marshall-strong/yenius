@@ -1,6 +1,8 @@
 import React from "react";
+
 import ColumnPrimary from "./ColumnPrimary";
 import ColumnSecondary from "./ColumnSecondary";
+
 import "../../assets/stylesheets/column_layout.scss";
 
 const ColumnLayout = ({ match }) => {

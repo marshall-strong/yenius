@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectSongById } from "./songsSlice";
 import { addSongComment } from "../comments/commentsAsyncThunks";
+
+import { selectSongById } from "./songsSlice";
 
 import CommentsContainer from "../comments/CommentsContainer";
 
@@ -20,8 +21,6 @@ const SongComments = ({ songId }) => {
     );
   }
 };
-
-// export default SongComments;
 
 const Loader = ({ songId }) => {
   const fetchSongComments = useSelector(

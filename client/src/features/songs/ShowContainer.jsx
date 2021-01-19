@@ -30,7 +30,6 @@ const ShowContainer = ({ match }) => {
   const fetchSongStatus = useSelector((state) => state.songs.status.fetchSong);
 
   const verseId = parseInt(match.params.verseId);
-  const verse = useSelector((state) => selectVerseById(state, verseId));
   const [lastVerseFetched, setLastVerseFetched] = useState(null);
 
   let content = <div>SongPage component</div>;

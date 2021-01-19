@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import { selectSongById } from "./songsSlice";
 
 const Description = ({ songId }) => {
@@ -7,7 +8,6 @@ const Description = ({ songId }) => {
   if (!song) {
     return null;
   }
-
   return (
     <div className="song-description_annotation">
       <div className="annotation_label">
@@ -20,8 +20,6 @@ const Description = ({ songId }) => {
     </div>
   );
 };
-
-// export default Description;
 
 const Loader = ({ songId }) => {
   const fetchSongDescription = useSelector(
