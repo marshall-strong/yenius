@@ -72,4 +72,18 @@ const SongAlbum = ({ songId }) => (
   </div>
 );
 
-export default SongAlbum;
+// export default SongAlbum;
+
+const Loader = ({ songId }) => {
+  const fetchSongAlbum = useSelector(
+    (state) => state.songs.status.fetchSongAlbum
+  );
+  const asyncRequests = [fetchSongAlbum];
+  if (asyncRequests.every((status) => status === "fulfilled")) {
+    return <SongAlbum songId={songId} />;
+  } else {
+    return <div className="loader" />;
+  }
+};
+
+export default Loader;

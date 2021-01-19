@@ -31,12 +31,12 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
   //   <div className="loader" />
   // );
 
-  const songAlbumRequests = [fetchSongAlbum];
-  const songAlbum = songAlbumRequests.every(isFulfilled) ? (
-    <SongAlbum songId={songId} />
-  ) : (
-    <div className="loader" />
-  );
+  // const songAlbumRequests = [fetchSongAlbum];
+  // const songAlbum = songAlbumRequests.every(isFulfilled) ? (
+  //   <SongAlbum songId={songId} />
+  // ) : (
+  //   <div className="loader" />
+  // );
 
   const verseRequests = [fetchVerseComments];
   const verseAnnotations = verseRequests.every(isFulfilled) ? (
@@ -54,7 +54,8 @@ const ColumnSecondary = ({ match, showVerse, songId }) => {
         <Description songId={songId} />
         {/* {trackInfo} */}
         <TrackInfo songId={songId} />
-        {songAlbum}
+        {/* {songAlbum} */}
+        <SongAlbum songId={songId} />
       </div>
       <div className="column_layout-flex_column-fill_column">
         {verseAnnotations}
