@@ -10,13 +10,13 @@ import {
   fetchSongLyrics,
   fetchSongSampleCredits,
 } from "./songsAsyncThunks";
+
 import {
   fetchSongComments,
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 
 import { selectSongById } from "./songsSlice";
-import { selectVerseById } from "../verses/versesSlice";
 
 import SongShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
