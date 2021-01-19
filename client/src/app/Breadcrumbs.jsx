@@ -104,7 +104,7 @@ const Breadcrumbs = ({ match }) => {
     crumbs.push(songsIndexLink());
     crumbs.push(songsListLink(match.params.char));
   }
-  if (path === "/songs/:songId") {
+  if (path === "/songs/:songId" || path === "/songs/:songId/verses/:verseId") {
     crumbs.push(songsIndexLink());
     crumbs.push(songPageCharLink(match.params.songId));
     crumbs.push(songPageLink(match.params.songId));
