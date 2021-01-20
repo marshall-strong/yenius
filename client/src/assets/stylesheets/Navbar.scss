@@ -1,6 +1,7 @@
 .App .Navbar {
   width: 100%;
 }
+
 // HEADER - PRIMARY
 .yellowNavbar {
   align-items: center;
@@ -15,10 +16,12 @@
   width: 100%;
   z-index: 1;
 }
+
 .yellowNavbar .search-bar {
   background-color: white;
   justify-content: flex-start;
 }
+
 .yellowNavbar .logo_container {
   animation: fade_in 1s backwards;
   box-sizing: border-box;
@@ -32,6 +35,7 @@
     cursor: pointer;
   }
 }
+
 // LOGO
 .yellowNavbar .logo_container .logo-link {
   display: flex;
@@ -40,13 +44,16 @@
   background: #ffff64;
   overflow: hidden;
 }
+
 .yellowNavbar .logo_container .logo-link img {
   z-index: 10;
   height: 30px;
 }
+
 .yellowNavbar .logo_container .logo-link svc {
   z-index: 10;
 }
+
 .userButtons {
   align-items: center;
   display: flex;
@@ -62,6 +69,7 @@
   flex-wrap: nowrap;
   overflow: hidden;
 }
+
 .userButtons .header-action {
   box-sizing: border-box;
   color: #000000;
@@ -88,7 +96,7 @@
     border-bottom-color: rgb(255, 20, 100);
   }
 }
-//
+
 // Nav Menu
 .blackNavbar {
   align-items: center;
@@ -111,11 +119,13 @@
   padding-inline-start: 0px;
   margin: 0;
 }
+
 .blackNavbar nav ul li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
 }
+
 .blackNavbar nav ul li a,
 .blackNavbar nav ul li Link {
   display: block;
@@ -127,6 +137,7 @@
   // margin: 0 10px;
   text-transform: uppercase;
 }
+
 .blackNavbar nav ul li a,
 .blackNavbar nav ul li a:after,
 .blackNavbar nav ul li a:before,
@@ -135,48 +146,29 @@
 .blackNavbar nav ul li Link:before {
   transition: all 0.5s;
 }
+
 .blackNavbar nav ul li a:hover,
 .blackNavbar nav ul li Link:hover {
   cursor: pointer;
   color: #ffff64;
 }
-// /* stroke */
-// .blackNavbar nav.stroke ul li a,
-// .blackNavbar nav.stroke ul li Link {
-//   position: relative;
-// }
-// .blackNavbar nav.stroke ul li a:after,
-// .blackNavbar nav.stroke ul li Link:after {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   margin: auto;
-//   width: 0%;
-//   content: '.';
-//   color: transparent;
-//   background: red;
-//   height: 4px;
-// }
-// .blackNavbar nav.stroke ul li a:hover:after,
-// .blackNavbar nav.stroke ul li Link:hover:after {
-//   width: 100%;
-// }
 
-// nav.scss
 /* NAVIGATION */
 nav {
   margin: 0 auto;
   // padding: 50px 0;
 }
+
 nav ul {
   list-style: none;
   text-align: center;
   padding-inline-start: 0px;
 }
+
 nav ul li {
   display: inline-block;
 }
+
 nav ul li a,
 nav ul li Link {
   display: block;
@@ -188,6 +180,7 @@ nav ul li Link {
   // margin: 0 10px;
   text-transform: uppercase;
 }
+
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before,
@@ -196,15 +189,18 @@ nav ul li Link:after,
 nav ul li Link:before {
   transition: all 0.5s;
 }
+
 nav ul li a:hover,
 nav ul li Link:hover {
   cursor: pointer;
 }
+
 /* stroke */
 nav.stroke ul li a,
 nav.stroke ul li Link {
   position: relative;
 }
+
 nav.stroke ul li a:after,
 nav.stroke ul li Link:after {
   position: absolute;
@@ -218,6 +214,7 @@ nav.stroke ul li Link:after {
   background: red;
   height: 4px;
 }
+
 nav.stroke ul li a:hover:after,
 nav.stroke ul li Link:hover:after {
   width: 100%;

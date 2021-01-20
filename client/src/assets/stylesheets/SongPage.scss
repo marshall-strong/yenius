@@ -9,6 +9,7 @@
 .song_body-lyrics {
   font-family: Programme-Light, Programme-Regular, Arial, sans-serif;
 }
+
 .text_label {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -24,15 +25,19 @@
   font-size: 0.875rem;
   font-family: Programme-Regular, Arial, sans-serif;
 }
+
 .text_label--gray {
   color: #9a9a9a;
 }
+
 .text_label--x_small_text_size {
   font-size: 0.75rem;
 }
+
 .u-top_margin {
   margin-top: 1rem;
 }
+
 .lyrics {
   margin-top: 1.5rem;
   font-size: 1.125em;
@@ -40,6 +45,7 @@
   line-height: 1.7em;
   font-weight: 100;
 }
+
 .referent {
   background-color: #ddd;
   box-shadow: 0.01em 0 0 #ddd, -0.01em 0 0 #ddd;
@@ -55,10 +61,12 @@
   padding: 0.2em 0;
   text-decoration: none;
 }
+
 .referent--yellow:hover {
   background-color: #ffff64;
   box-shadow: 0.01em 0 0 #ffff64, -0.01em 0 0 #ffff64;
 }
+
 .referent--highlighted {
   background-color: #ffff64;
   box-shadow: 0.01em 0 0 #ffff64, -0.01em 0 0 #ffff64;
@@ -76,6 +84,7 @@
   font-size: 0.875em;
   margin-bottom: 1rem;
 }
+
 .annotation_body {
   font-style: normal;
   font-variant-ligatures: normal;
@@ -90,7 +99,6 @@
 }
 
 // SongTrackInfo
-
 .u-xx_large_vertical_margins {
   margin-bottom: 2.25rem;
   margin-top: 2.25rem;

@@ -51,9 +51,11 @@ body {
 .HeroStory .Container .Link .Header {
   margin-bottom: 1rem;
 }
+
 .HeroStory .Container .Link .Header .Label {
   display: flex;
 }
+
 .HeroStory .Container .Link .Header .Label::after {
   content: "";
   border-bottom: 0.15rem solid rgb(0, 0, 0);
@@ -62,6 +64,7 @@ body {
   position: relative;
   top: calc(-0.375rem);
 }
+
 .HeroStory .Container .Link .Header .Label .TextLabel {
   font-size: 0.75rem;
   font-weight: 400;
@@ -70,23 +73,29 @@ body {
   text-transform: uppercase;
   color: rgb(0, 0, 0);
 }
+
 .HeroStory .Container .Link .Header .Title {
   margin-top: 1rem;
   font-size: 2.25rem;
 }
+
 .HeroStory .Container .Link .Header .Title h2 {
   display: inline;
   font-size: 100%;
   font-weight: inherit;
 }
+
 .HeroStory .Container .Link .Header .Body {
   margin-top: 0.5rem;
 }
+
 .HeroStory .Container .Link .Byline {
 }
+
 .HeroStory .Container .Link .Byline .Author {
   font-size: 0.75rem;
 }
+
 .HeroStory .Container .Link .Byline .PublishedAt {
   font-size: 0.75rem;
   color: rgb(154, 154, 154);
@@ -172,9 +181,11 @@ body {
 
 .NewsStory .Container .Link .Byline {
 }
+
 .NewsStory .Container .Link .Byline .Author {
   font-size: 0.75rem;
 }
+
 .NewsStory .Container .Link .Byline .PublishedAt {
   font-size: 0.75rem;
   color: rgb(154, 154, 154);
