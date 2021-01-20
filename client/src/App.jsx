@@ -27,13 +27,15 @@ import "./assets/fonts/Programme-Light/Programme-Light.woff2";
 
 import "./assets/stylesheets/Loader.scss";
 
+import Counter from "./features/counter/Counter";
+
 import NotFound from "./NotFound";
 
 import AuthorizedRoute from "./app/AuthorizedRoute";
 // import ProtectedRoute from "./app/ProtectedRoute";
 
 import Navbar from "./app/Navbar";
-import LandingPage from "./app/LandingPage";
+import LandingPage from "./app/HomeLayout";
 
 import ArtistsIndex from "./features/artists/IndexContainer";
 import ArtistShow from "./features/artists/ShowContainer";
@@ -83,6 +85,8 @@ const App = () => (
 
         <Route exact path="/users" component={UsersList} />
         <Route exact path="/users/:userId" component={UserPage} />
+
+        <Route exact path="/counter" component={Counter} />
 
         {/* <Route exact path="/fancy_signup" component={FancySignUp} /> */}
         <AuthorizedRoute exact path="/signup" component={SignupForm} />
