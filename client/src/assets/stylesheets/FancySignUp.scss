@@ -1,0 +1,367 @@
+.inherit {
+  margin-top: 20px;
+
+  background: #000;
+  box-sizing: border-box;
+  color: #ccc;
+  font-size: 15px;
+  line-height: 140%;
+  padding-bottom: 68px;
+  position: relative;
+  text-align: left;
+}
+
+.sign_up_unit {
+  font-family: Programme-Regular, sans-serif;
+  padding: 20px 20px 50px;
+}
+
+.sign_up_unit h1 {
+  text-align: center;
+}
+
+.show_sign_up_form {
+}
+
+.sign-up-header {
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.h1,
+.h2 {
+  font-family: DinCondensed, Programme-Regular, sans-serif;
+  line-height: 100%;
+  padding-top: 1px;
+}
+
+.sign-up-header h1 {
+  color: #ffff64;
+  font-size: 62px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sign-up-header h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffff64;
+  -webkit-font-smoothing: antialiased;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+a {
+  color: #5ba7c2;
+  text-decoration: none;
+}
+
+a:link {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.15);
+}
+.identity_connect_button {
+  font-size: 16px;
+  max-width: 370px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.edx_button,
+.facebook_button,
+.google_button,
+.sign_in_with_email,
+.twitter_button {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  font: normal 15px/1.2rem Programme-Bold, Arial, sans-serif;
+  display: block;
+  padding: 7px 12px 5px 16px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+.edx_button:before,
+.facebook_button:before,
+.google_button:before,
+.sign_in_with_email:before,
+.twitter_button:before {
+  display: inline-block;
+  position: relative;
+  float: none;
+  vertical-align: text-bottom;
+}
+.identity_connect_button.facebook_button:before,
+.identity_connect_button.google_button:before,
+.identity_connect_button.sign_in_with_email:before,
+.identity_connect_button.twitter_button:before {
+  float: none;
+  left: -7px;
+}
+
+.facebook_button,
+.facebook_button:hover {
+  color: #eee;
+}
+.facebook_button {
+  background-color: #4c70ba;
+  border: 1px solid #4c70ba;
+}
+.facebook_button:before {
+  background: url(https://assets.genius.com/images/site-sprites-b2498dd….png)
+    no-repeat;
+  background-position: -1018px -907px;
+  height: 20px;
+  width: 20px;
+  content: "";
+  float: left;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: 0;
+  top: -1px;
+}
+
+.twitter_button,
+.twitter_button:hover {
+  color: #eee;
+}
+.twitter_button {
+  background-color: #1e9ed5;
+  border: 1px solid #1e9ed5;
+}
+
+.google_button,
+.google_button:hover {
+  color: #eee;
+}
+.google_button {
+  background-color: #e47365;
+  border: 1px solid #e47365;
+}
+
+.sign_in_with_email,
+.sign_in_with_email:hover {
+  color: #eee;
+}
+.sign_in_with_email {
+  background-color: #444;
+  border: 1px solid #444;
+}
+
+.toggle_target {
+  cursor: pointer;
+}
+
+// use pressed to toggle
+// .pressed {}
+// .sign_up_unit.show_sign_up_form .sign_up_form_unit {
+//   display: block;
+// }
+// .sign_up_unit .sign_up_form_unit {
+//     display: none;
+// }
+
+form {
+  display: block;
+}
+// #facebox .edit_user, .new_user, .new_user_session, .post_comment_message .new_user {
+//     -webkit-border-radius: 2px;
+//     -moz-border-radius: 2px;
+//     -ms-border-radius: 2px;
+//     -o-border-radius: 2px;
+//     border-radius: 2px;
+//     -moz-box-sizing: border-box;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     color: #ede8e9;
+//     background-color: rgba(153,153,153,.09);
+//     padding: 10px;
+//     margin: 10px auto;
+//     max-width: 370px;
+//     font-family: Programme,Arial,sans-serif;
+//     border-top: 1px solid rgba(153,153,153,.18);
+// }
+.new_user {
+  // -webkit-border-radius: 2px;
+  // -moz-border-radius: 2px;
+  // -ms-border-radius: 2px;
+  // -o-border-radius: 2px;
+  border-radius: 2px;
+  // -moz-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ede8e9;
+  background-color: rgba(153, 153, 153, 0.09);
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 370px;
+  font-family: Programme-Regular, Arial, sans-serif;
+  border-top: 1px solid rgba(153, 153, 153, 0.18);
+}
+
+// #facebox .edit_user label, .new_user label, .new_user_session label, .post_comment_message .new_user label
+.new_user label {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#facebox .edit_user input[type="password"],
+#facebox .edit_user input[type="text"],
+.new_user input[type="password"],
+.new_user input[type="text"],
+.new_user_session input[type="password"],
+.new_user_session input[type="text"],
+.post_comment_message .new_user input[type="password"],
+.post_comment_message .new_user input[type="text"] {
+  background-color: #363636;
+  border-color: #555;
+  color: #ccc;
+}
+
+.mecha--deprecated input[type="password"],
+.mecha--deprecated input[type="text"],
+.mecha--deprecated textarea {
+  border: 1px solid #bbb;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  padding: 5px;
+  min-width: 120px;
+  max-width: 100%;
+  font-size: 15px;
+  -webkit-background-clip: padding-box;
+}
+
+#facebox .edit_user input,
+.new_user input,
+.new_user_session input,
+.post_comment_message .new_user input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 13px;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: 99% sans-serif;
+}
+
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: textfield;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font-family: Programme-Regular, sans-serif;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+}
+
+#user_email {
+  word-break: break-word;
+  // -webkit-hyphens: auto;
+  // -moz-hyphens: auto;
+  // hyphens: auto;
+}
+
+#facebox .edit_user .message,
+#facebox .edit_user p,
+.new_user .message,
+.new_user p,
+.new_user_session .message,
+.new_user_session p,
+.post_comment_message .new_user .message,
+.post_comment_message .new_user p {
+  font-size: 13px;
+}
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+#facebox .edit_user #user_submit,
+.new_user #user_submit,
+.new_user_session #user_submit,
+.post_comment_message .new_user #user_submit {
+  margin-bottom: 8px;
+}
+
+.button,
+button,
+input[type="submit"] {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #262626;
+  color: #ccc;
+  cursor: pointer;
+  padding: 6px 15px 7px 15px;
+  font-size: 13px;
+  margin-right: 10px;
+  border: 1px solid #444;
+  display: inline-block;
+  font: normal 13px/1rem Programme-Regular, Arial, sans-serif;
+  position: relative;
+  border-radius: 2px;
+  padding: 5px 9px;
+  margin: 3px 4px 5px 0;
+}
+
+//callout
+.login_unit .callout,
+.sign_up_log_in_unit .callout,
+.sign_up_unit .callout {
+  margin-top: 1rem;
+  text-align: center;
+}
+p {
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+p:last-child {
+  margin-bottom: 0;
+}
