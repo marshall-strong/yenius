@@ -174,7 +174,7 @@ export const ArtistIndexFooter = () => {
 
 const PageFooter = () => {
   return (
-    <footer className="page_footer">
+    <footer className="page_footer PageFooter">
       <div className="footer">
         <div>
           <a href="/">About Genius</a>
