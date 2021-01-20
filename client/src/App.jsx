@@ -46,8 +46,12 @@ import SongShow from "./features/songs/ShowContainer";
 
 import UsersList from "./features/users/UsersList";
 import UserPage from "./features/users/UserPage";
-import SignupForm from "./features/session/SignupForm";
-import LoginForm from "./features/session/LoginForm";
+
+// import FancySignUp from "./features/session/FancySignUp";
+import SignupForm from "./features/session/FancySignUp";
+import LoginForm from "./features/session/FancyLogin";
+// import SignupForm from "./features/session/SignupForm";
+// import LoginForm from "./features/session/LoginForm";
 import PageFooter from "./app/PageFooter";
 
 const App = () => (
@@ -79,6 +83,7 @@ const App = () => (
         <Route exact path="/users" component={UsersList} />
         <Route exact path="/users/:userId" component={UserPage} />
 
+        {/* <Route exact path="/fancy_signup" component={FancySignUp} /> */}
         <AuthorizedRoute exact path="/signup" component={SignupForm} />
         <AuthorizedRoute exact path="/login" component={LoginForm} />
 
