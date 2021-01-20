@@ -1,43 +1,43 @@
 // ShowPage.scss
 .grid {
+  background-color: rgba(255, 0, 0, 0.7);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-  background-color: rgba(255, 0, 0, 0.7);
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .column {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
   font-family: "Output Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
-  color: white;
-  text-transform: uppercase;
   font-size: 12px;
-  background-color: rgba(0, 0, 0, 0.2);
   justify-content: center;
-  align-items: center;
-  display: flex;
   padding: 0;
   margin: 0;
+  text-transform: uppercase;
 }
 
 // albums_show.scss
 .ShowPage {
-  width: 100%;
   background-color: #f7f7f7;
-  word-wrap: break-word;
+  width: 100%;
   word-break: break-word;
+  word-wrap: break-word;
 }
 
 .LayoutContainer {
   box-sizing: border-box;
   display: flex;
-  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
   max-width: 970px;
   position: relative;
   width: 100%;
@@ -46,36 +46,36 @@
 .Layout {
   box-sizing: border-box;
   display: flex;
-  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
   max-width: 970px;
   position: relative;
   width: 100%;
 }
 
 .LeftColumn {
-  width: 58%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  // display: block;
+  box-sizing: border-box;
+  border-color: magenta;
   border-style: dotted;
   border-width: 2px;
-  border-color: magenta;
-  box-sizing: border-box;
+  // display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 58%;
 }
 
 .RightColumn {
-  z-index: 1;
-  width: 42%;
-  // display: inline-flex;
-  position: relative;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  box-sizing: border-box;
+  border-color: orangered;
   border-style: dotted;
   border-width: 2px;
-  border-color: orangered;
-  box-sizing: border-box;
+  // display: inline-flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  width: 42%;
+  z-index: 1;
 }
 
 .Tracklist {
@@ -84,13 +84,13 @@
 
 .tracklist-header {
   color: #9a9a9a;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  margin-right: 0.1em;
-  letter-spacing: 0.04em;
+  font-family: Programme-Regular, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  font-family: Programme-Regular, sans-serif;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  margin-right: 0.1em;
+  text-transform: uppercase;
 }
 
 .TracklistRow {
@@ -111,15 +111,15 @@
 }
 
 .track-container {
-  line-height: 1.45;
-  font-size: 1.125em;
-  font-family: Programme-Bold, sans-serif;
-  width: 100%;
   cursor: pointer;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  font-family: Programme-Bold, sans-serif;
+  font-size: 1.125em;
   justify-content: space-between;
+  line-height: 1.45;
+  width: 100%;
 }
 
 .track-align-left {
@@ -129,35 +129,33 @@
 
 .track-track_number {
   color: #9a9a9a;
-  font-weight: 700;
   display: flex;
+  font-weight: 700;
   justify-content: flex-start;
-  min-width: 2em;
   margin-right: 0.5rem;
+  min-width: 2em;
 }
 
 .track-content_ft {
-  display: block;
-  word-wrap: break-word;
-  word-break: break-word;
-  font-weight: 700;
-  font-size: 1.125em;
   color: #222;
+  display: block;
   font-family: Programme-Bold, sans-serif;
+  font-size: 1.125em;
+  font-weight: 700;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
 .track-text-gray {
+  color: #9a9a9a;
   display: inline;
   font-family: Programme-Bold, sans-serif;
-  color: #9a9a9a;
   font-weight: 400;
 }
 
 .track-expand_arrow {
   display: flex;
   justify-content: flex-end;
-  // display: block;
-  // text-align: right;
 }
 
 .track-details .track-expanded-true {

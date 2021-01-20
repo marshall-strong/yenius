@@ -38,16 +38,16 @@
 
 // LOGO
 .yellowNavbar .logo_container .logo-link {
-  display: flex;
-  justify-content: center;
   align-items: center;
   background: #ffff64;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
 .yellowNavbar .logo_container .logo-link img {
-  z-index: 10;
   height: 30px;
+  z-index: 10;
 }
 
 .yellowNavbar .logo_container .logo-link svc {
@@ -57,17 +57,17 @@
 .userButtons {
   align-items: center;
   display: flex;
+  flex-wrap: nowrap;
   font-family: Programme-Regular, sans-serif;
   font-size: 15px;
   height: 100%;
+  justify-content: flex-end;
+  justify-content: space-around;
   line-height: 140%;
+  overflow: hidden;
   position: absolute;
   right: 0px;
   top: 0px;
-  justify-content: flex-end;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  overflow: hidden;
 }
 
 .userButtons .header-action {
@@ -79,10 +79,10 @@
   font-size: 0.75em;
   height: 100%;
   line-height: 140%;
-  padding-top: 0.75rem;
-  padding-right: 0.5rem;
   padding-bottom: 0px;
   padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.75rem;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -100,24 +100,24 @@
 // Nav Menu
 .blackNavbar {
   align-items: center;
-  display: flex;
-  position: static;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  width: 100%;
-  min-height: 38px;
   background-color: black;
   color: white;
+  display: flex;
+  flex-wrap: nowrap;
   font-family: Programme-Regular, sans-serif;
+  justify-content: space-between;
+  position: static;
+  min-height: 38px;
+  width: 100%;
 }
 
 /* NAVIGATION */
 .blackNavbar nav ul {
   display: flex;
   list-style: none;
-  text-align: center;
-  padding-inline-start: 0px;
   margin: 0;
+  padding-inline-start: 0px;
+  text-align: center;
 }
 
 .blackNavbar nav ul li {
@@ -128,13 +128,12 @@
 
 .blackNavbar nav ul li a,
 .blackNavbar nav ul li Link {
+  color: inherit;
   display: block;
+  font-weight: 400;
+  // margin: 0 10px;
   // padding: 15px;
   text-decoration: none;
-  color: inherit;
-  font-weight: 400;
-  text-transform: uppercase;
-  // margin: 0 10px;
   text-transform: uppercase;
 }
 
@@ -149,8 +148,8 @@
 
 .blackNavbar nav ul li a:hover,
 .blackNavbar nav ul li Link:hover {
-  cursor: pointer;
   color: #ffff64;
+  cursor: pointer;
 }
 
 /* NAVIGATION */
@@ -161,8 +160,8 @@ nav {
 
 nav ul {
   list-style: none;
-  text-align: center;
   padding-inline-start: 0px;
+  text-align: center;
 }
 
 nav ul li {
@@ -171,13 +170,10 @@ nav ul li {
 
 nav ul li a,
 nav ul li Link {
-  display: block;
-  // padding: 15px;
-  text-decoration: none;
   color: inherit;
+  display: block;
   font-weight: 800;
-  text-transform: uppercase;
-  // margin: 0 10px;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -203,16 +199,16 @@ nav.stroke ul li Link {
 
 nav.stroke ul li a:after,
 nav.stroke ul li Link:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0%;
-  content: ".";
-  color: transparent;
   background: red;
+  bottom: 0;
+  color: transparent;
+  content: ".";
   height: 4px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 0%;
 }
 
 nav.stroke ul li a:hover:after,

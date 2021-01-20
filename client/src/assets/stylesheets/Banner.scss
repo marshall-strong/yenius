@@ -74,7 +74,6 @@
 .bannerText .subjectArtist {
   color: inherit;
   display: block;
-  // display: inline-block;
   font-family: Programme-Bold, sans-serif;
   font-size: 1.5em;
   font-weight: 700;
@@ -109,8 +108,8 @@
   }
   .subjectImg {
     height: 20vw;
-    width: 20vw;
     margin-left: 0;
+    width: 20vw;
   }
   .bannerText .subjectName {
     font-size: 1.5em;

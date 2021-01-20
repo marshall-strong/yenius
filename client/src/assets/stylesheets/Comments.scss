@@ -20,8 +20,8 @@
 }
 
 .Comments .grayContainer .CommentForm .avatarBoxWithInputBox .avatarBox {
-  // background: green;
   align-items: center;
+  // background: green;
   display: flex;
   padding-right: 0.75rem;
 }
@@ -33,20 +33,20 @@
   .avatarBox
   .avatar {
   background: #78909c;
-  height: 24px;
-  width: 24px;
-  min-width: 24px;
-  border-radius: 100%;
   background-position: center;
   background-size: cover;
+  border-radius: 100%;
+  height: 24px;
+  min-width: 24px;
+  width: 24px;
 }
 
 .Comments .grayContainer .CommentForm .avatarBoxWithInputBox .inputBox {
   background: blue;
   display: block;
+  flex: 1;
   position: relative;
   -webkit-box-flex: 1;
-  flex: 1;
 }
 
 .Comments
@@ -55,15 +55,13 @@
   .avatarBoxWithInputBox
   .inputBox
   textarea {
+  background: #fff;
+  border: 0.15rem solid #ccc;
   display: block;
-  width: 100%;
-
   height: 2.2em;
   overflow: hidden;
   resize: none;
-
-  background: #fff;
-  border: 0.15rem solid #ccc;
+  width: 100%;
 }
 
 .Comments .grayContainer .CommentsList {
@@ -83,14 +81,13 @@
 }
 
 .Comment .userBadgeAndTimestamp .userBadge {
-  overflow: hidden;
-  margin-right: 1rem;
-
-  display: flex;
   align-items: center;
   color: inherit;
+  display: flex;
   font-family: Programme, Arial, sans-serif;
   line-height: 1;
+  margin-right: 1rem;
+  overflow: hidden;
   position: relative;
   text-decoration: none;
 }
@@ -108,22 +105,22 @@
 }
 
 .submitButton {
-  user-select: none;
-  border-color: #0ecb27;
   color: #0ecb27;
-  word-break: break-word;
-  transition: background-color 0.3s, border-color 0.3s;
   background-color: transparent;
-  border-width: 0.15rem;
-  border-style: solid;
+  border-color: #0ecb27;
   border-radius: 0;
+  border-style: solid;
+  border-width: 0.15rem;
   cursor: pointer;
   display: inline-block;
   font-family: Programme, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4rem;
   margin: 0;
-  text-align: center;
   padding: 0.25rem 0.5rem;
+  text-align: center;
+  transition: background-color 0.3s, border-color 0.3s;
+  user-select: none;
   vertical-align: top;
+  word-break: break-word;
 }
