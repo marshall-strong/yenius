@@ -9,7 +9,7 @@ body {
 body {
   background-color: #f7f7f7;
   color: #222;
-  font-family: Programme, Arial, sans-serif;
+  font-family: Programme-Regular, Arial, sans-serif;
   line-height: 1.45;
 }
 
@@ -18,20 +18,21 @@ ul {
   list-style: none;
 }
 
-main {
-  min-height: 70vh;
+.App {
+  background-color: #f94960;
 }
 
-// app.scss
-.Application {
+main {
+  //
+}
+
+.App {
+  background-color: #f94960;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-  font-family: "Montserrat", sans-serif;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
 }
 Link {
   text-decoration: none;
@@ -47,7 +48,7 @@ a:-webkit-any-link {
 a:-webkit-any-link:hover {
   cursor: pointer;
 }
-// .Application * {
+// .App * {
 //   border: 1px solid red;
 //   box-sizing: border-box;
 // }

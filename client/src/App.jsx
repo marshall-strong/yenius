@@ -27,13 +27,15 @@ import "./assets/fonts/Programme-Light/Programme-Light.woff2";
 
 import "./assets/stylesheets/Loader.scss";
 
+import Counter from "./features/counter/Counter";
+
 import NotFound from "./NotFound";
 
 import AuthorizedRoute from "./app/AuthorizedRoute";
 // import ProtectedRoute from "./app/ProtectedRoute";
 
 import Navbar from "./app/Navbar";
-import LandingPage from "./app/LandingPage";
+import LandingPage from "./app/HomeLayout";
 
 import ArtistsIndex from "./features/artists/IndexContainer";
 import ArtistShow from "./features/artists/ShowContainer";
@@ -55,9 +57,10 @@ import LoginForm from "./features/session/FancyLogin";
 import PageFooter from "./app/PageFooter";
 
 const App = () => (
-  <Router>
-    <Navbar />
-    <main className="App">
+  <main className="App">
+    <Router>
+      <Navbar />
+
       <Switch>
         <Route exact path="/" component={LandingPage} />
 
@@ -83,6 +86,8 @@ const App = () => (
         <Route exact path="/users" component={UsersList} />
         <Route exact path="/users/:userId" component={UserPage} />
 
+        <Route exact path="/counter" component={Counter} />
+
         {/* <Route exact path="/fancy_signup" component={FancySignUp} /> */}
         <AuthorizedRoute exact path="/signup" component={SignupForm} />
         <AuthorizedRoute exact path="/login" component={LoginForm} />
@@ -90,9 +95,10 @@ const App = () => (
         <Route component={NotFound} />
         <Redirect to="/" />
       </Switch>
-    </main>
-    <PageFooter />
-  </Router>
+
+      <PageFooter />
+    </Router>
+  </main>
 );
 
 export default App;

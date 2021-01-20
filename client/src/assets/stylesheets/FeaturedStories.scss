@@ -16,10 +16,11 @@ body {
   display: grid;
   -webkit-box-pack: center;
   justify-content: center;
-  grid-template-columns: [grid-start] repeat(3, minmax(14px, 44px)) [center-start] repeat(
-      6,
-      minmax(14px, 44px)
-    ) [center-end] repeat(3, minmax(14px, 44px)) [grid-end];
+  grid-template-columns:
+    [grid-start] repeat(3, minmax(14px, 44px))
+    [center-start] repeat(6, minmax(14px, 44px))
+    [center-end] repeat(3, minmax(14px, 44px))
+    [grid-end];
   gap: 40px 60px;
 }
 
