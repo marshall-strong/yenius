@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { signupUser, loginUser } from "./sessionAsyncThunks";
 
 import "../../assets/stylesheets/FancySignUp.scss";
 
 const FancySignUp = () => {
+  const [username, setUsername] = useState("");
+  const onUsernameChanged = (e) => setUsername(e.target.value);
+
+  const [email, setEmail] = useState("");
+  const onEmailChanged = (e) => setEmail(e.target.value);
+
+  const [password, setPassword] = useState("");
+  const onPasswordChanged = (e) => setPassword(e.target.value);
+
+  const sessionErrors = useSelector((state) => state.session.errors);
+
+  const userCredentials = {
+    username: username,
+    email: email,
+    password: password,
+  };
+
+  const demoUserCredentials = {
+    username: "demo",
+    password: "demo1234",
+  };
+
+  const dispatch = useDispatch();
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    dispatch(signupUser(userCredentials));
+  };
+
+  const handleDemoLogin = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(demoUserCredentials));
+  };
+
   return (
     <div className="inherit">
       <div className="sign_up_unit  show_sign_up_form">
@@ -48,13 +85,25 @@ const FancySignUp = () => {
           Sign up with email
         </a>
 
+        <button
+          href="#"
+          className="sign_in_with_email toggle_target identity_connect_button pressed"
+          data-focus="#user_login"
+          data-show-with-class="show_sign_up_form"
+          data-target=".sign_up_unit"
+          onClick={handleDemoLogin}
+        >
+          Sign in as Demo user
+        </button>
+
         <div className="sign_up_form_unit">
           <form
+            onSubmit={handleSignup}
             acceptCharset="UTF-8"
-            action="/account"
+            // action="/account"
             className="new_user"
             id="new_user"
-            method="post"
+            // method="post"
           >
             {/* <div style="margin:0;padding:0;display:inline">
               <input
@@ -74,6 +123,7 @@ const FancySignUp = () => {
               className="required"
               id="user_login"
               name="user[login]"
+              onChange={onUsernameChanged}
               size="30"
               tabIndex="1"
               title="Enter a nickname"
@@ -85,6 +135,7 @@ const FancySignUp = () => {
               className="required email"
               id="user_email"
               name="user[email]"
+              onChange={onEmailChanged}
               size="30"
               tabIndex="2"
               title="Enter your email address"
@@ -96,6 +147,7 @@ const FancySignUp = () => {
               className="required"
               id="user_password"
               name="user[password]"
+              onChange={onPasswordChanged}
               size="30"
               tabIndex="3"
               title="Enter a password"
