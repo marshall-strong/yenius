@@ -55,44 +55,46 @@ import LoginForm from "./features/session/FancyLogin";
 import PageFooter from "./app/PageFooter";
 
 const App = () => (
-  <Router>
-    <Navbar />
-    <main className="App">
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
+  <main className="App">
+    <Router>
+      <Navbar />
+      <div className="Routed">
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
 
-        <Route exact path="/albums" component={AlbumsIndex} />
-        <Route exact path="/albums/:albumId" component={AlbumShow} />
+          <Route exact path="/albums" component={AlbumsIndex} />
+          <Route exact path="/albums/:albumId" component={AlbumShow} />
 
-        <Route exact path="/artists" component={ArtistsIndex} />
-        <Route exact path="/artists/index/" component={ArtistsIndex} />
-        <Route exact path="/artists/index/:char" component={ArtistsIndex} />
-        <Route exact path="/artists/:artistId" component={ArtistShow} />
+          <Route exact path="/artists" component={ArtistsIndex} />
+          <Route exact path="/artists/index/" component={ArtistsIndex} />
+          <Route exact path="/artists/index/:char" component={ArtistsIndex} />
+          <Route exact path="/artists/:artistId" component={ArtistShow} />
 
-        <Route exact path="/songs" component={SongsIndex} />
-        <Route exact path="/songs/index" component={SongsIndex} />
-        <Route exact path="/songs/index/:char" component={SongsIndex} />
-        <Route exact path="/songs/:songId" component={SongShow} />
-        <Route exact path="/songs/:songId/verses" component={SongShow} />
-        <Route
-          exact
-          path="/songs/:songId/verses/:verseId"
-          component={SongShow}
-        />
+          <Route exact path="/songs" component={SongsIndex} />
+          <Route exact path="/songs/index" component={SongsIndex} />
+          <Route exact path="/songs/index/:char" component={SongsIndex} />
+          <Route exact path="/songs/:songId" component={SongShow} />
+          <Route exact path="/songs/:songId/verses" component={SongShow} />
+          <Route
+            exact
+            path="/songs/:songId/verses/:verseId"
+            component={SongShow}
+          />
 
-        <Route exact path="/users" component={UsersList} />
-        <Route exact path="/users/:userId" component={UserPage} />
+          <Route exact path="/users" component={UsersList} />
+          <Route exact path="/users/:userId" component={UserPage} />
 
-        {/* <Route exact path="/fancy_signup" component={FancySignUp} /> */}
-        <AuthorizedRoute exact path="/signup" component={SignupForm} />
-        <AuthorizedRoute exact path="/login" component={LoginForm} />
+          {/* <Route exact path="/fancy_signup" component={FancySignUp} /> */}
+          <AuthorizedRoute exact path="/signup" component={SignupForm} />
+          <AuthorizedRoute exact path="/login" component={LoginForm} />
 
-        <Route component={NotFound} />
-        <Redirect to="/" />
-      </Switch>
-    </main>
-    <PageFooter />
-  </Router>
+          <Route component={NotFound} />
+          <Redirect to="/" />
+        </Switch>
+      </div>
+      <PageFooter />
+    </Router>
+  </main>
 );
 
 export default App;
