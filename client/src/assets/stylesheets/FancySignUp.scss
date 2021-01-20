@@ -160,18 +160,14 @@ a:link {
   cursor: pointer;
 }
 
-// use pressed to toggle
-// .pressed {}
-// .sign_up_unit.show_sign_up_form .sign_up_form_unit {
-//   display: block;
-// }
-// .sign_up_unit .sign_up_form_unit {
-//     display: none;
-// }
-
-form {
+// toggle display of the sign up form
+.sign_up_unit .show_sign_up_form .sign_up_form_unit {
   display: block;
 }
+.sign_up_unit .hide_sign_up_form .sign_up_form_unit {
+  display: none;
+}
+
 // #facebox .edit_user, .new_user, .new_user_session, .post_comment_message .new_user {
 //     -webkit-border-radius: 2px;
 //     -moz-border-radius: 2px;
@@ -321,6 +317,17 @@ p {
   margin-inline-end: 0px;
 }
 
+#facebox .edit_user input[type="checkbox"],
+#facebox .edit_user input[type="submit"],
+.new_user input[type="checkbox"],
+.new_user input[type="submit"],
+.new_user_session input[type="checkbox"],
+.new_user_session input[type="submit"],
+.post_comment_message .new_user input[type="checkbox"],
+.post_comment_message .new_user input[type="submit"] {
+  width: auto;
+}
+
 #facebox .edit_user #user_submit,
 .new_user #user_submit,
 .new_user_session #user_submit,
@@ -364,4 +371,12 @@ p {
 }
 p:last-child {
   margin-bottom: 0;
+}
+
+.callout .link {
+  color: #5ba7c2;
+  text-decoration: none;
+}
+.callout .link:hover {
+  color: #a5cfde;
 }
