@@ -27,7 +27,7 @@ json.users do
     json.set! comment.author.id do
       json.id comment.author.id
       json.username comment.author.username
-      json.email comment.author.email
+      json.myColor comment.author.my_color
     end
   end
 end
