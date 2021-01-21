@@ -1,11 +1,13 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
-import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
-import { fetchArtistPage } from "../artists/artistsAsyncThunks";
-import { fetchSongComments } from "../comments/commentsAsyncThunks";
-import { fetchUsers } from "../users/usersAsyncThunks";
+import {
+  fetchAlbumComments,
+  fetchArtistComments,
+  fetchSongComments,
+  fetchVerseComments,
+} from "../comments/commentsAsyncThunks";
+import { fetchTopScholars, fetchUserProfile } from "../users/usersAsyncThunks";
 import { signupUser, loginUser } from "../session/sessionAsyncThunks";
-import { fetchAlbumComments } from "../comments/commentsAsyncThunks";
 
 const usersAdapter = createEntityAdapter({
   // selectId is only necessary if entity's unique key is NOT entity.id
@@ -17,42 +19,71 @@ const usersAdapter = createEntityAdapter({
   sortComparer: (a, b) => a.username.localeCompare(b.username),
 });
 
-const initialState = usersAdapter.getInitialState({});
+const initialState = usersAdapter.getInitialState({
+  status: {
+    fetchTopScholars: null,
+    fetchUserProfile: null,
+  },
+});
 
 const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchUsers.fulfilled]: (state, action) => {
-      usersAdapter.setAll(state, action.payload.users);
+    [fetchTopScholars.pending]: (state) => {
+      state.status.fetchTopScholars = "pending";
     },
-    [fetchAlbumPage.fulfilled]: (state, action) => {
+    [fetchTopScholars.fulfilled]: (state, action) => {
+      state.status.fetchTopScholars = "fulfilled";
       if (action.payload.users) {
-        usersAdapter.upsertMany(state, action.payload.users);
+        usersAdapter.setAll(state, action.payload.users);
       }
     },
-    [fetchArtistPage.fulfilled]: (state, action) => {
-      if (action.payload.users) {
-        usersAdapter.upsertMany(state, action.payload.users);
-      }
+    [fetchTopScholars.rejected]: (state, action) => {
+      state.status.fetchTopScholars = "rejected";
     },
 
+    [fetchUserProfile.pending]: (state) => {
+      state.status.fetchUserProfile = "pending";
+    },
+    [fetchUserProfile.fulfilled]: (state, action) => {
+      state.status.fetchUserProfile = "fulfilled";
+      if (action.payload.users) {
+        usersAdapter.setAll(state, action.payload.users);
+      }
+    },
+    [fetchUserProfile.rejected]: (state, action) => {
+      state.status.fetchUserProfile = "rejected";
+    },
+
+    [fetchAlbumComments.fulfilled]: (state, action) => {
+      if (action.payload.users) {
+        usersAdapter.setAll(state, action.payload.users);
+      }
+    },
+    [fetchArtistComments.fulfilled]: (state, action) => {
+      if (action.payload.users) {
+        usersAdapter.setAll(state, action.payload.users);
+      }
+    },
     [fetchSongComments.fulfilled]: (state, action) => {
       if (action.payload.users) {
         usersAdapter.upsertMany(state, action.payload.users);
       }
     },
+    [fetchVerseComments.fulfilled]: (state, action) => {
+      if (action.payload.users) {
+        usersAdapter.upsertMany(state, action.payload.users);
+      }
+    },
 
-    [signupUser.fulfilled]: (state, action) => {
-      usersAdapter.upsertMany(state, action.payload.users);
-    },
-    [loginUser.fulfilled]: (state, action) => {
-      usersAdapter.upsertMany(state, action.payload.users);
-    },
-    [fetchAlbumComments.fulfilled]: (state, action) => {
-      usersAdapter.upsertMany(state, action.payload.users);
-    },
+    // [signupUser.fulfilled]: (state, action) => {
+    //   usersAdapter.upsertMany(state, action.payload.users);
+    // },
+    // [loginUser.fulfilled]: (state, action) => {
+    //   usersAdapter.upsertMany(state, action.payload.users);
+    // },
   },
 });
 
