@@ -160,3 +160,4 @@ DEV: `heroku local -f Procfile.dev -e .env`
 # Counter Cache
 https://blog.appsignal.com/2018/06/19/activerecords-counter-cache.html
 using a counter cache in the Rails API to count each User's authored comments
+`rails g migration AddAuthoredCommentsCountToUsers authored_comments_count:integer`
