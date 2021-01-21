@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className="userButtons">
         <Link to={`/users/${currentUser.id}`} className="header-action">
           LOGGED IN:
-          {currentUser.username}
+          {username}
         </Link>
         <button onClick={handleLogout} className="header-action">
           LOG OUT
@@ -58,9 +58,9 @@ const Navbar = () => {
 
   const logo = (
     <div className="logo_container">
-      <a href="/" className="logo-link">
+      <Link to="/" className="logo-link">
         <img src={YeniusLogo} alt="yenius" />
-      </a>
+      </Link>
     </div>
   );
 
