@@ -5,6 +5,7 @@ import { fetchUserProfile } from "./usersAsyncThunks";
 
 import { selectUserById } from "./usersSlice";
 
+import CurrentUserProfile from "./CurrentUserProfile";
 import Profile from "./Profile";
 import NotFound from "../../NotFound";
 
@@ -12,11 +13,13 @@ import "../../assets/stylesheets/UserProfile.scss";
 
 const ProfileContainer = ({ match }) => {
   const userId = parseInt(match.params.userId);
-  const user = useSelector((state) => selectUserById(state, userId));
   const [lastUserFetched, setLastUserFetched] = useState(null);
+
   const fetchUserProfileStatus = useSelector(
     (state) => state.users.status.fetchUserProfile
   );
+  const user = useSelector((state) => selectUserById(state, userId));
+  const currentUser = useSelector((state) => state.session.currentUser);
 
   let content = <div>User Profile component</div>;
   if (!user && fetchUserProfileStatus === "pending") {
@@ -31,7 +34,11 @@ const ProfileContainer = ({ match }) => {
     );
   }
   if (user && fetchUserProfileStatus === "fulfilled") {
-    content = <Profile match={match} />;
+    if (currentUser && currentUser.id === user.id) {
+      content = <CurrentUserProfile match={match} />;
+    } else {
+      content = <Profile match={match} />;
+    }
   }
 
   const dispatch = useDispatch();
