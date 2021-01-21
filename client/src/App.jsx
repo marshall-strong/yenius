@@ -35,7 +35,7 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 // import ProtectedRoute from "./app/ProtectedRoute";
 
 import Navbar from "./app/Navbar";
-import LandingPage from "./app/HomeLayout";
+import HomeLayout from "./app/HomeLayout";
 
 import ArtistsIndex from "./features/artists/IndexContainer";
 import ArtistShow from "./features/artists/ShowContainer";
@@ -46,14 +46,12 @@ import AlbumShow from "./features/albums/ShowContainer";
 import SongsIndex from "./features/songs/IndexContainer";
 import SongShow from "./features/songs/ShowContainer";
 
-import UsersList from "./features/users/UsersList";
-import UserPage from "./features/users/UserPage";
+// import UsersList from "./features/users/UsersList";
+// import UserPage from "./features/users/UserPage";
 
-// import FancySignUp from "./features/session/FancySignUp";
 import SignupForm from "./features/session/FancySignUp";
 import LoginForm from "./features/session/FancyLogin";
-// import SignupForm from "./features/session/SignupForm";
-// import LoginForm from "./features/session/LoginForm";
+
 import PageFooter from "./app/PageFooter";
 
 const App = () => (
@@ -62,7 +60,7 @@ const App = () => (
       <Navbar />
 
       <Switch>
-        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/" component={HomeLayout} />
 
         <Route exact path="/albums" component={AlbumsIndex} />
         <Route exact path="/albums/:albumId" component={AlbumShow} />
@@ -83,12 +81,11 @@ const App = () => (
           component={SongShow}
         />
 
-        <Route exact path="/users" component={UsersList} />
-        <Route exact path="/users/:userId" component={UserPage} />
+        {/* <Route exact path="/users" component={UsersList} />
+        <Route exact path="/users/:userId" component={UserPage} /> */}
 
         <Route exact path="/counter" component={Counter} />
 
-        {/* <Route exact path="/fancy_signup" component={FancySignUp} /> */}
         <AuthorizedRoute exact path="/signup" component={SignupForm} />
         <AuthorizedRoute exact path="/login" component={LoginForm} />
 
