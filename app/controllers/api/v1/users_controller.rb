@@ -13,7 +13,7 @@ class Api::V1::UsersController < ApplicationController
   # @route PATCH /api/v1/users/:id (api_v1_user)
   # @route PUT /api/v1/users/:id (api_v1_user)
   def update
-    @user = selected_user
+    @user = User.find(params[:user_id])
     if @user && @user.update_attributes(user_params)
       render 'api/v1/session/current_user';
     elsif !@user
@@ -25,7 +25,8 @@ class Api::V1::UsersController < ApplicationController
 
   # @route GET /api/v1/users/:id (api_v1_user)
   def show
-    @user = selected_user
+    @user = User.find(params[:user_id])
+    render 'api/v1/users/show'
   end
 
   # @route GET /api/v1/users (api_v1_users)
@@ -35,7 +36,7 @@ class Api::V1::UsersController < ApplicationController
 
   # @route DELETE /api/v1/users/:id (api_v1_user)
   def destroy
-    @user = selected_user
+    @user = User.find(params[:user_id])
     if @user
       @user.destroy
       render :show
@@ -50,10 +51,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
-
-  def selected_user
-    User.find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
