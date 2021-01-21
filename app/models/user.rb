@@ -10,10 +10,13 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+require 'ms_palette'
 class User < ApplicationRecord
   # after_initialize runs before validations
   # Ensure that a session token is generated when a new user is created
   after_initialize :ensure_session_token
+  # Ensure that each new user is randomly assigned a color
+  after_initialize :ensure_my_color
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
@@ -74,6 +77,10 @@ class User < ApplicationRecord
     # Generates the initial session_token so that we pass the validation
     # This method runs right after the model is initialized, before any validations are run
     self.session_token ||= SecureRandom.urlsafe_base64(16)
+  end
+
+  def ensure_my_color
+    self.my_color ||= MS_PALETTE.sample
   end
 
 end
