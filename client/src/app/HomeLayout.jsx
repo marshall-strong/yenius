@@ -7,7 +7,6 @@ const HomeLayout = () => {
     <div className="HomeLayout">
       <TopNews />
       <br />
-      test
     </div>
   );
 };
