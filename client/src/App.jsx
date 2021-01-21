@@ -52,6 +52,8 @@ import SongShow from "./features/songs/ShowContainer";
 import SignupForm from "./features/session/FancySignUp";
 import LoginForm from "./features/session/FancyLogin";
 
+import UserProfile from "./features/users/ProfileContainer";
+
 import PageFooter from "./app/PageFooter";
 
 const App = () => (
@@ -88,6 +90,8 @@ const App = () => (
 
         <AuthorizedRoute exact path="/signup" component={SignupForm} />
         <AuthorizedRoute exact path="/login" component={LoginForm} />
+
+        <Route exact path="/users/:userId" component={UserProfile} />
 
         <Route component={NotFound} />
         <Redirect to="/" />
