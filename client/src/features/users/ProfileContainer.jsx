@@ -36,9 +36,7 @@ const ProfileContainer = ({ match }) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    debugger;
     if (userId && lastUserFetched !== userId) {
-      debugger;
       dispatch(fetchUserProfile(userId));
       setLastUserFetched(userId);
     }
