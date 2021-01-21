@@ -167,3 +167,4 @@ Generate migration to add a column to the Users table
 Generate migration to update the existing records (avoids having to re-seed the database)
 `rails g migration ResetUserAuthoredCommentsCount --force`
 Run migrations (development)
+`heroku local:run rails db:migrate`
