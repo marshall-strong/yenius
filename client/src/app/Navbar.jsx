@@ -45,10 +45,10 @@ const Navbar = () => {
   } else if (isCurrentUser === "true") {
     userButtons = (
       <div className="userButtons">
-        <a href="/" className="header-action">
+        <Link to={`/users/${currentUser.id}`} className="header-action">
           LOGGED IN:
-          {username}
-        </a>
+          {currentUser.username}
+        </Link>
         <button onClick={handleLogout} className="header-action">
           LOG OUT
         </button>
