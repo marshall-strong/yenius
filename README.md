@@ -155,3 +155,8 @@ DEV: `heroku local:run rails db:seed`
 # deploying
 PROD: `git push heroku main`, `heroku run rake db:migrate`, `heroku run rails db:seed`
 DEV: `heroku local -f Procfile.dev -e .env`
+
+
+# Counter Cache
+https://blog.appsignal.com/2018/06/19/activerecords-counter-cache.html
+using a counter cache in the Rails API to count each User's authored comments
