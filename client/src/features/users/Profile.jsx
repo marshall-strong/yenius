@@ -9,13 +9,18 @@ const UserProfile = ({ match }) => {
 
   let profile;
   if (user) {
+    const authoredComments = user.authoredCommentsCount || "0";
     profile = (
       <section>
         <h2>User {user.id}</h2>
         <p>id: {user.id}</p>
         <p>username: {user.username}</p>
-        <p>email: {user.email}</p>
-        <p>authored_comments_count: {user.authoredCommentsCount}</p>
+        <p>authored_comments_count: {authoredComments}</p>
+        <div style={{ backgroundColor: `${user.myColor}` }}>
+          <br />
+          <p>myColor: {user.myColor}</p>
+          <br />
+        </div>
       </section>
     );
   } else {
