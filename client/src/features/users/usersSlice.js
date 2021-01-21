@@ -7,7 +7,6 @@ import {
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
 import { fetchTopScholars, fetchUserProfile } from "../users/usersAsyncThunks";
-import { signupUser, loginUser } from "../session/sessionAsyncThunks";
 
 const usersAdapter = createEntityAdapter({
   // selectId is only necessary if entity's unique key is NOT entity.id
@@ -77,13 +76,6 @@ const usersSlice = createSlice({
         usersAdapter.upsertMany(state, action.payload.users);
       }
     },
-
-    // [signupUser.fulfilled]: (state, action) => {
-    //   usersAdapter.upsertMany(state, action.payload.users);
-    // },
-    // [loginUser.fulfilled]: (state, action) => {
-    //   usersAdapter.upsertMany(state, action.payload.users);
-    // },
   },
 });
 
