@@ -10,8 +10,8 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  # @route PATCH /api/v1/users/:id (api_v1_user)
-  # @route PUT /api/v1/users/:id (api_v1_user)
+  # @route PATCH /api/v1/users/:user_id
+  # @route PUT /api/v1/users/:user_id
   def update
     @user = User.find(params[:user_id])
     if @user && @user.update_attributes(user_params)
@@ -23,18 +23,13 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  # @route GET /api/v1/users/:id (api_v1_user)
+  # @route GET /api/v1/users/:user_id
   def show
     @user = User.find(params[:user_id])
     render 'api/v1/users/show'
   end
 
-  # @route GET /api/v1/users (api_v1_users)
-  def index
-    @users = User.all
-  end
-
-  # @route DELETE /api/v1/users/:id (api_v1_user)
+  # @route DELETE /api/v1/users/:user_id
   def destroy
     @user = User.find(params[:user_id])
     if @user
@@ -45,6 +40,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  # @route GET /api/v1/users/top_scholars
   def top_scholars
     @users = User.order("authored_comments_count desc").limit(10).all
     render 'api/v1/users/top_scholars'
