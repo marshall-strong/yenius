@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
       </div>
     );
-  } else if (isCurrentUser === "true") {
+  } else if (currentUser) {
     userButtons = (
       <div className="userButtons">
         <Link to={`/users/${currentUser.id}`} className="header-action">
