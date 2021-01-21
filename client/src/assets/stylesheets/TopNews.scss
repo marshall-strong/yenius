@@ -7,21 +7,21 @@ body {
   padding: 0;
 }
 
-.FeaturedStories {
-  padding: 4.5rem 60px 0px;
+.TopNews {
   background-color: rgb(255, 255, 255);
+  padding: 4.5rem 60px 0px;
 }
 
 .PageGrid {
   display: grid;
-  -webkit-box-pack: center;
-  justify-content: center;
+  gap: 40px 60px;
   grid-template-columns:
     [grid-start] repeat(3, minmax(14px, 44px))
     [center-start] repeat(6, minmax(14px, 44px))
     [center-end] repeat(3, minmax(14px, 44px))
     [grid-end];
-  gap: 40px 60px;
+  justify-content: center;
+  -webkit-box-pack: center;
 }
 
 .HeroStory {
@@ -31,8 +31,8 @@ body {
 .HeroStory .Container {
   color: rgb(0, 0, 0);
   font-weight: 100;
-  line-height: 1.125;
   height: 100%;
+  line-height: 1.125;
   min-height: inherit;
 }
 
@@ -51,49 +51,59 @@ body {
 .HeroStory .Container .Link .Header {
   margin-bottom: 1rem;
 }
+
 .HeroStory .Container .Link .Header .Label {
   display: flex;
 }
+
 .HeroStory .Container .Link .Header .Label::after {
-  content: "";
   border-bottom: 0.15rem solid rgb(0, 0, 0);
+  content: "";
   flex: 1 1 0%;
   margin-left: 0.5rem;
   position: relative;
   top: calc(-0.375rem);
 }
+
 .HeroStory .Container .Link .Header .Label .TextLabel {
+  color: rgb(0, 0, 0);
   font-size: 0.75rem;
   font-weight: 400;
-  line-height: 1;
   letter-spacing: 1px;
+  line-height: 1;
   text-transform: uppercase;
-  color: rgb(0, 0, 0);
 }
+
 .HeroStory .Container .Link .Header .Title {
-  margin-top: 1rem;
   font-size: 2.25rem;
+  margin-top: 1rem;
 }
+
 .HeroStory .Container .Link .Header .Title h2 {
   display: inline;
   font-size: 100%;
   font-weight: inherit;
 }
+
 .HeroStory .Container .Link .Header .Body {
   margin-top: 0.5rem;
 }
+
 .HeroStory .Container .Link .Byline {
 }
+
 .HeroStory .Container .Link .Byline .Author {
   font-size: 0.75rem;
 }
+
 .HeroStory .Container .Link .Byline .PublishedAt {
-  font-size: 0.75rem;
   color: rgb(154, 154, 154);
+  font-size: 0.75rem;
 }
 
 .HeroImageLink {
   grid-column: span 7 / auto;
+
   a {
     color: rgb(125, 143, 232);
     text-decoration: none;
@@ -102,10 +112,10 @@ body {
 }
 
 .HeroImageLink .SizedImageContainer {
-  // background-image: url(https://t2.genius.com/unsafe/338x338/https%3A%2F%2Fimages.genius.com%2F8e81582….1000x1000x1.jpg);
-  position: relative;
-  // padding-bottom: 56.25%;
   background: center center / auto calc(100% + 1px) repeat-x rgb(255, 255, 255);
+  position: relative;
+  // background-image: url(https://t2.genius.com/unsafe/338x338/https%3A%2F%2Fimages.genius.com%2F8e81582….1000x1000x1.jpg);
+  // padding-bottom: 56.25%;
 }
 
 .NewsStory {
@@ -115,20 +125,20 @@ body {
 }
 
 .NewsStory::before {
+  border-right: 0.15rem solid rgb(0, 0, 0);
   content: "";
-  position: absolute;
-  top: calc(0.075rem);
-  right: calc(-30px - 0.075rem);
   height: 100%;
   min-height: inherit;
-  border-right: 0.15rem solid rgb(0, 0, 0);
+  position: absolute;
+  right: calc(-30px - 0.075rem);
+  top: calc(0.075rem);
 }
 
 .NewsStory .Container {
   color: rgb(0, 0, 0);
   font-weight: 100;
-  line-height: 1.125;
   height: 100%;
+  line-height: 1.125;
   min-height: inherit;
 }
 
@@ -137,9 +147,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  justify-content: space-between;
   min-height: inherit;
   -webkit-box-pack: justify;
-  justify-content: space-between;
 }
 
 .NewsStory .Container .Link .Header {
@@ -151,17 +161,17 @@ body {
 }
 
 .NewsStory .Container .Link .Header .Label .TextLabel {
+  color: rgb(0, 0, 0);
   font-size: 0.75rem;
   font-weight: 400;
-  line-height: 1;
   letter-spacing: 1px;
+  line-height: 1;
   text-transform: uppercase;
-  color: rgb(0, 0, 0);
 }
 
 .NewsStory .Container .Link .Header .Title {
-  margin-top: 0.75rem;
   font-size: 1.5rem;
+  margin-top: 0.75rem;
 }
 
 .NewsStory .Container .Link .Header .Title h2 {
@@ -172,12 +182,14 @@ body {
 
 .NewsStory .Container .Link .Byline {
 }
+
 .NewsStory .Container .Link .Byline .Author {
   font-size: 0.75rem;
 }
+
 .NewsStory .Container .Link .Byline .PublishedAt {
-  font-size: 0.75rem;
   color: rgb(154, 154, 154);
+  font-size: 0.75rem;
 }
 
 .NewsStory .Container .Link .Image {
@@ -186,19 +198,19 @@ body {
 }
 
 .NewsStory .Container .Link .Image .SizedImageContainer {
-  background-image: url(https://t2.genius.com/unsafe/338x338/https%3A%2F%2Fimages.genius.com%2F8e81582….1000x1000x1.jpg);
-  position: relative;
-  padding-bottom: 56.25%;
   background: center center / auto calc(100% + 1px) repeat-x rgb(165, 22, 22);
+  background-image: url(https://t2.genius.com/unsafe/338x338/https%3A%2F%2Fimages.genius.com%2F8e81582….1000x1000x1.jpg);
+  padding-bottom: 56.25%;
+  position: relative;
 }
 
 .NewsFeedItem {
-  padding: 1em;
-  list-style-type: none;
-  border-radius: 6px;
-  margin-bottom: 1em;
   background: #fff;
+  border-radius: 6px;
   box-shadow: 0px 2px 6px 2px #0002;
+  list-style-type: none;
+  margin-bottom: 1em;
+  padding: 1em;
 }
 
 .NewsFeedItem .title {
@@ -210,17 +222,17 @@ body {
 }
 
 .NewsFeedItem .thumbnail {
-  float: right;
-  box-shadow: 0px 1px 1px 1px #0002;
   border-radius: 12px;
-  margin-left: 1em;
+  box-shadow: 0px 1px 1px 1px #0002;
+  float: right;
   margin-bottom: 1em;
+  margin-left: 1em;
 }
 
 .NewsFeedItem .meta {
+  color: #555;
   font-size: 80%;
   font-weight: bold;
-  color: #555;
 }
 
 .NewsFeedItem .provider-thumbnail {

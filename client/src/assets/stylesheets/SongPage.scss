@@ -1,64 +1,70 @@
 // SongPage
 .song_body {
-  z-index: 3;
   background-color: #fff;
   position: relative;
+  z-index: 3;
 }
 
 // SongLyrics
 .song_body-lyrics {
   font-family: Programme-Light, Programme-Regular, Arial, sans-serif;
 }
+
 .text_label {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
+  color: inherit;
+  font-family: Programme-Regular, Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  margin-right: 0.1em;
+  text-transform: uppercase;
+  user-select: none;
+  word-break: break-word;
+  word-wrap: break-word;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
-  word-wrap: break-word;
-  word-break: break-word;
-  color: inherit;
-  text-transform: uppercase;
-  margin-right: 0.1em;
-  letter-spacing: 0.04em;
-  font-size: 0.875rem;
-  font-family: Programme-Regular, Arial, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
+
 .text_label--gray {
   color: #9a9a9a;
 }
+
 .text_label--x_small_text_size {
   font-size: 0.75rem;
 }
+
 .u-top_margin {
   margin-top: 1rem;
 }
+
 .lyrics {
-  margin-top: 1.5rem;
   font-size: 1.125em;
-  word-break: break-word;
-  line-height: 1.7em;
   font-weight: 100;
+  line-height: 1.7em;
+  margin-top: 1.5rem;
+  word-break: break-word;
 }
+
 .referent {
   background-color: #ddd;
   box-shadow: 0.01em 0 0 #ddd, -0.01em 0 0 #ddd;
   color: #000;
-
-  transition: background-color 0.1s, box-shadow 0.1s;
-  position: relative;
-
-  word-break: break-word;
   display: inline;
   font-family: inherit;
   line-height: 1.7em;
   padding: 0.2em 0;
+  position: relative;
   text-decoration: none;
+  transition: background-color 0.1s, box-shadow 0.1s;
+  word-break: break-word;
 }
+
 .referent--yellow:hover {
   background-color: #ffff64;
   box-shadow: 0.01em 0 0 #ffff64, -0.01em 0 0 #ffff64;
 }
+
 .referent--highlighted {
   background-color: #ffff64;
   box-shadow: 0.01em 0 0 #ffff64, -0.01em 0 0 #ffff64;
@@ -71,26 +77,26 @@
 
 // SongAbout
 .annotation_label {
-  word-break: break-word;
   font-family: Programme-Regular, Arial, sans-serif;
   font-size: 0.875em;
   margin-bottom: 1rem;
+  word-break: break-word;
 }
+
 .annotation_body {
+  font-family: Programme-Light, Arial, sans-serif;
+  font-size: 1em;
+  font-stretch: normal;
   font-style: normal;
   font-variant-ligatures: normal;
   font-variant-caps: normal;
   font-variant-numeric: normal;
   font-variant-east-asian: normal;
   font-weight: 100;
-  font-stretch: normal;
-  font-size: 1em;
   line-height: 1.45;
-  font-family: Programme-Light, Arial, sans-serif;
 }
 
 // SongTrackInfo
-
 .u-xx_large_vertical_margins {
   margin-bottom: 2.25rem;
   margin-top: 2.25rem;
@@ -101,29 +107,29 @@
 }
 
 .metadata_unit--table_row {
-  display: flex;
-  padding-top: 0.25rem;
   border-top: 1px solid #e9e9e9;
+  display: flex;
   margin-top: 0.25rem;
+  padding-top: 0.25rem;
 }
 
 .metadata_unit {
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.45;
-  font-size: 1em;
-  font-family: Programme-Regular, Arial, sans-serif;
   color: #9a9a9a;
+  font-family: Programme-Regular, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
 }
 
 .metadata_unit-label {
-  -webkit-box-flex: 2;
   flex: 2;
   padding-right: 0.5rem;
+  -webkit-box-flex: 2;
 }
 
 .metadata_unit-info {
-  -webkit-box-flex: 5;
   flex: 5;
+  -webkit-box-flex: 5;
 }
 
 .metadata_unit-info a {
@@ -141,10 +147,10 @@
 }
 
 .song_album {
-  display: flex;
   align-items: center;
-  -webkit-font-smoothing: antialiased;
+  display: flex;
   font-family: Programme-Regular, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .song_album a {
@@ -175,9 +181,9 @@
 }
 
 .track_listing {
-  font-feature-settings: "tnum";
   color: #000;
   font-family: Programme-Regular, Arial, sans-serif;
+  font-feature-settings: "tnum";
 }
 
 .track_listing a:hover {
@@ -189,8 +195,8 @@
 }
 
 .track_listing-track {
-  word-break: break-word;
   line-height: 1.65;
+  word-break: break-word;
 }
 
 .track_listing-track--current {

@@ -1,13 +1,12 @@
 import React from "react";
-import FeaturedStories from "./FeaturedStories";
+import TopNews from "./TopNews";
 import "../assets/stylesheets/HomeLayout.scss";
 
 const HomeLayout = () => {
   return (
     <div className="HomeLayout">
-      <FeaturedStories />
+      <TopNews />
       <br />
-      test
     </div>
   );
 };

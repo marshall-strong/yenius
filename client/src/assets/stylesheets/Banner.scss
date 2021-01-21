@@ -1,90 +1,98 @@
 .Banner {
-  display: flex;
-  position: relative;
   background-color: #000000;
   color: #ffffff;
-  height: 360px;
-}
-.bannerImgGradient {
   display: flex;
+  height: 360px;
   position: relative;
+}
+
+.bannerImgGradient {
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.4) 0,
     rgba(0, 0, 0, 0.65) 70%
   );
+  display: flex;
   height: 100%;
+  position: relative;
   width: 100%;
 }
-.bannerContent {
-  display: flex;
-  position: relative;
-  background-color: #000000bb;
 
-  width: 970px;
+.bannerContent {
+  background-color: #000000bb;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 36px;
   padding-bottom: 36px;
+  padding-top: 36px;
+  position: relative;
+  width: 970px;
 }
-.subjectImg {
-  display: flex;
-  height: 300px;
-  width: 300px;
-  float: left;
-  margin-left: -2.25rem;
-  margin-right: 1rem;
 
+.subjectImg {
+  border-color: #9a9a9a;
   border-style: solid;
   border-width: 2px;
-  border-color: #9a9a9a;
+  display: flex;
+  float: left;
+  height: 300px;
+  margin-left: -2.25rem;
+  margin-right: 1rem;
+  width: 300px;
 }
+
 .textContainer {
   display: flex;
   padding-bottom: 24px;
   padding-top: 24px;
 }
+
 .bannerText {
   display: block;
 }
+
 .bannerText .entityType {
-  font-family: Programme-Regular, sans-serif;
-  margin-bottom: 0.75rem;
   color: #ffff64;
+  display: block;
+  font-family: Programme-Regular, sans-serif;
   font-size: 0.75rem;
-  text-transform: uppercase;
   letter-spacing: 0.04em;
-  display: block;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
 }
+
 .bannerText .subjectName {
-  font-family: Programme-Bold, sans-serif;
-  display: block;
   color: inherit;
+  display: block;
+  font-family: Programme-Bold, sans-serif;
   font-size: 2.25em;
-  line-height: 1.125;
   font-weight: 700;
+  line-height: 1.125;
   margin-top: -0.2em;
 }
+
 .bannerText .subjectArtist {
-  font-family: Programme-Bold, sans-serif;
-  display: block;
-  font-size: 1.5em;
-  line-height: 1.45;
-  font-weight: 700;
-  display: inline-block;
   color: inherit;
+  display: block;
+  font-family: Programme-Bold, sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.45;
   margin-bottom: 0.25rem;
 }
+
 .bannerText .metadata {
-  display: block;
-  line-height: 1.45;
-  font-size: 1em;
-  font-family: Programme-Regular, sans-serif;
   color: #9a9a9a;
+  display: block;
+  font-family: Programme-Regular, sans-serif;
+  font-size: 1em;
+  line-height: 1.45;
 }
+
 .bannerText .metadata a:-webkit-any-link {
   color: #7d8fe8;
 }
+
 .bannerText a:-webkit-any-link:hover {
   color: #ffff64;
 }
@@ -100,8 +108,8 @@
   }
   .subjectImg {
     height: 20vw;
-    width: 20vw;
     margin-left: 0;
+    width: 20vw;
   }
   .bannerText .subjectName {
     font-size: 1.5em;
