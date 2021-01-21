@@ -44,6 +44,11 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def top_scholars
+    @users = User.order("authored_comments_count desc").limit(10).all
+    render 'api/v1/users/top_scholars'
+  end
+
   private
 
   def selected_user

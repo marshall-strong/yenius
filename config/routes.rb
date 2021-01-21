@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       post '/verses/:verse_id/comments',     to: 'comments#create_verse_comment'
 
       resources :users
+      get  '/users/top_scholars',            to: 'users#top_scholars'
 
       resource :session, only: [:create, :destroy]
     end
