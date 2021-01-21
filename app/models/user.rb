@@ -21,11 +21,9 @@ class User < ApplicationRecord
     # In this case, we need to have a session_token when a user is first created
     after_initialize :ensure_session_token
 
-    has_many :authored_annotations, 
-        class_name: :Annotation, foreign_key: :annotating_user_id 
-    has_many :authored_comments, 
+    has_many :authored_comments,
         class_name: :Comment, foreign_key: :commenting_user_id
-    has_many :authored_upvotes, 
+    has_many :authored_upvotes,
         class_name: :Upvote, foreign_key: :upvoting_user_id
 
 
@@ -36,7 +34,7 @@ class User < ApplicationRecord
     def self.find_by_credentials(username, password_entered)
         user = User.find_by(username: username)
         return nil if user.nil?
-        
+
         if user.is_password?(password_entered)
             return user
         else
@@ -56,9 +54,9 @@ class User < ApplicationRecord
         # Creates a password_digest so that we do not have to store the plain-text password in our DB
         self.password_digest = BCrypt::Password.create(new_password)
     end
-    
+
     def is_password?(password_entered)
-        str_password_digest = self.password_digest 
+        str_password_digest = self.password_digest
         bcrypt_password_digest = BCrypt::Password.new(str_password_digest)
         # Use BCrypt's built-in is_password? method for checking if the password entered is the user's password
         bcrypt_password_digest.is_password?(password_entered)
@@ -66,7 +64,7 @@ class User < ApplicationRecord
 
     def reset_session_token!
         # When a user logs out, we want to scramble their session_token so that bad people cannot use the old one
-        self.session_token = SecureRandom.urlsafe_base64(16) 
+        self.session_token = SecureRandom.urlsafe_base64(16)
         self.save!
         self.session_token
     end
