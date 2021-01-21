@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../assets/stylesheets/FeaturedStories.scss";
+import "../assets/stylesheets/TopNews.scss";
 
 const fetchNews = async (query) => {
   const url = `https://bing-news-search1.p.rapidapi.com/news/search?freshness=Day&textFormat=Raw&safeSearch=Strict&q=${encodeURIComponent(
@@ -113,7 +113,7 @@ const NewsStory = ({ article }) => {
   );
 };
 
-const FeaturedStories = () => {
+const TopNews = () => {
   const [articles, setArticles] = useState(null);
 
   useEffect(() => {
@@ -131,7 +131,7 @@ const FeaturedStories = () => {
           <i>No results</i>
         </p>
       ) : (
-        <div className="FeaturedStories">
+        <div className="TopNews">
           <div className="PageGrid">
             <HeroStory article={articles[0]} />
             <HeroImage article={articles[0]} />
@@ -151,4 +151,4 @@ const FeaturedStories = () => {
   );
 };
 
-export default FeaturedStories;
+export default TopNews;
