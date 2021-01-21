@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_152546) do
+ActiveRecord::Schema.define(version: 2021_01_21_193933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_152546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "authored_comments_count"
+    t.string "my_color"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
