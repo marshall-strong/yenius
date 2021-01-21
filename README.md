@@ -158,6 +158,12 @@ DEV: `heroku local -f Procfile.dev -e .env`
 
 
 # Counter Cache
+The Rails API uses a counter cache to store each User's authored comments.
 https://blog.appsignal.com/2018/06/19/activerecords-counter-cache.html
-using a counter cache in the Rails API to count each User's authored comments
+The counter_cache: option is specified on the belongs_to side of the association (Comment), and the symbol passed (:authored_comments_count) is the name of the field that will be added to the has_many model (User).
+`belongs_to :author, class_name: :User, foreign_key: :commenting_user_id, counter_cache: :authored_comments_count`
+Generate migration to add a column to the Users table
 `rails g migration AddAuthoredCommentsCountToUsers authored_comments_count:integer`
+Generate migration to update the existing records (avoids having to re-seed the database)
+`rails g migration ResetUserAuthoredCommentsCount --force`
+Run migrations (development)
