@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { fetchTopScholars } from "./usersAsyncThunks";
 
@@ -11,12 +12,19 @@ import "../../assets/stylesheets/TopScholars.scss";
 
 const TopScholars = () => {
   const users = useSelector((state) => selectTopScholars(state));
-  const scholar = (user) => (
-    <div>
-      <span>{`Username: ${user.username} `}</span>
-      <span>{`YeniusIQ: ${user.authoredCommentsCount} `}</span>
-    </div>
-  );
+  const scholar = (user) => {
+    const profileLink = <Link to={`/users/${user.id}`}>{user.username}</Link>;
+    return (
+      <div>
+        <span>
+          {`Username: `}
+          {profileLink}
+          {"......"}
+        </span>
+        <span>{`YeniusIQ: ${user.authoredCommentsCount}`}</span>
+      </div>
+    );
+  };
   const topScholars = users.map((user) => scholar(user));
   return (
     <div className="TopScholars">
