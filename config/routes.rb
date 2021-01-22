@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
+      get    '/albums/top_albums',             to: 'albums#top_albums'
       get    '/albums',                        to: 'albums#index'
       get    '/albums/:album_id',              to: 'albums#show'
       get    '/albums/:album_id/comments',     to: 'comments#album_comments'
       post   '/albums/:album_id/comments',     to: 'comments#create_album_comment'
 
+      get    '/artists/top_artists',           to: 'artists#top_artists'
       get    '/artists/index/:char',           to: 'artists#index'
       get    '/artists/:artist_id',            to: 'artists#show'
       get    '/artists/:artist_id/comments',   to: 'comments#artist_comments'

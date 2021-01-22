@@ -1,6 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+export const fetchTopArtists = createAsyncThunk(
+  "albums/fetchTopArtists",
+  async () => {
+    const response = await axios.get(`/api/v1/artists/top_artists`);
+    return response.data;
+  }
+);
+
 export const fetchArtistPage = createAsyncThunk(
   "artists/fetchArtistPage",
   async (artistId) => {
