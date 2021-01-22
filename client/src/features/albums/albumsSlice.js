@@ -134,3 +134,8 @@ export const selectAlbumBySongId = createSelector(
     return album;
   }
 );
+
+export const selectTopAlbums = createSelector(
+  [(state) => selectAllAlbums(state)],
+  (albums) => albums.sort((a, b) => b.topAlbumNumber - a.topAlbumNumber)
+);

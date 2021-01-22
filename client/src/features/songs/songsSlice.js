@@ -271,3 +271,8 @@ export const selectAlbumTracksBySongId = createSelector(
   ],
   (songEntities, album) => album.songs.map((songId) => songEntities[songId])
 );
+
+export const selectTopSongs = createSelector(
+  [(state) => selectAllSongs(state)],
+  (songs) => songs.sort((a, b) => b.topSongNumber - a.topSongNumber)
+);
