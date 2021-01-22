@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get    '/artists/:artist_id/comments',   to: 'comments#artist_comments'
       post   '/artists/:artist_id/comments',   to: 'comments#create_artist_comment'
 
+      get    '/songs/top_songs',               to: 'songs#top_songs'
       get    '/songs/index/:char',             to: 'songs#index'
       get    '/songs/:song_id',                to: 'songs#show'
       get    '/songs/:song_id/album',          to: 'songs#album'
