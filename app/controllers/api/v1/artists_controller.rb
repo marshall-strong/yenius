@@ -2,7 +2,7 @@ class Api::V1::ArtistsController < ApiController
   # @route GET /api/v1/artists/top_artists
   def top_artists
     @artists = Artist.where("top_artist_number IS NOT NULL")
-    render 'api/v1/artists/index'
+    render 'api/v1/artists/top_artists'
   end
 
   # @route GET /api/v1/artists/index/:char
