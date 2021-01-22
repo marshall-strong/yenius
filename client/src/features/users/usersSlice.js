@@ -1,4 +1,8 @@
-import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import {
+  createEntityAdapter,
+  createSelector,
+  createSlice,
+} from "@reduxjs/toolkit";
 
 import {
   fetchAlbumComments,
@@ -88,3 +92,9 @@ export const {
   selectTotal: selectTotalUsers, // returns the total number of entities being stored in this state.
   selectById: selectUserById, // given the state and an entity ID, returns the entity with that ID or undefined.
 } = usersAdapter.getSelectors((state) => state.users);
+
+export const selectTopScholars = createSelector(
+  [(state) => selectAllUsers(state)],
+  (users) =>
+    users.sort((a, b) => b.authoredCommentsCount - a.authoredCommentsCount)
+);
