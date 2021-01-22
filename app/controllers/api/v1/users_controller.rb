@@ -1,4 +1,10 @@
 class Api::V1::UsersController < ApplicationController
+  # @route GET /api/v1/users/top_scholars
+  def top_scholars
+    @users = User.where("authored_comments_count IS NOT NULL").order("authored_comments_count desc").limit(10)
+    render 'api/v1/users/index'
+  end
+
   # @route POST /api/v1/users (api_v1_users)
   def create
     @user = User.new(user_params)
@@ -38,12 +44,6 @@ class Api::V1::UsersController < ApplicationController
     else
       render ['Could not find user']
     end
-  end
-
-  # @route GET /api/v1/users/top_scholars
-  def top_scholars
-    @users = User.where("authored_comments_count IS NOT NULL").order("authored_comments_count desc").limit(10)
-    render 'api/v1/users/index'
   end
 
   private
