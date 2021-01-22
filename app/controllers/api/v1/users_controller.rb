@@ -42,7 +42,7 @@ class Api::V1::UsersController < ApplicationController
 
   # @route GET /api/v1/users/top_scholars
   def top_scholars
-    @users = User.order("authored_comments_count desc").limit(10).all
+    @users = User.where("authored_comments_count IS NOT NULL").order("authored_comments_count desc").limit(10)
     render 'api/v1/users/index'
   end
 
