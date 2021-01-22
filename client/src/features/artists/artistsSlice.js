@@ -56,6 +56,7 @@ const artistsSlice = createSlice({
     [fetchArtistPage.rejected]: (state) => {
       state.status.fetchArtistPage = "rejected";
     },
+
     // fetchArtistsIndex
     [fetchArtistsIndex.pending]: (state) => {
       state.status.fetchArtistsIndex = "pending";
@@ -69,6 +70,7 @@ const artistsSlice = createSlice({
     [fetchArtistsIndex.rejected]: (state) => {
       state.status.fetchArtistsIndex = "rejected";
     },
+
     // fetchArtistsList
     [fetchArtistsList.pending]: (state) => {
       state.status.fetchArtistsList = "pending";
@@ -82,6 +84,7 @@ const artistsSlice = createSlice({
     [fetchArtistsList.rejected]: (state) => {
       state.status.fetchArtistsList = "rejected";
     },
+
     // fetchTopArtists
     [fetchTopArtists.pending]: (state, action) => {
       state.status.fetchTopArtists = "pending";

@@ -55,6 +55,7 @@ const albumsSlice = createSlice({
     [fetchAlbumPage.rejected]: (state, action) => {
       state.status.fetchAlbumPage = "rejected";
     },
+
     // fetchAlbumsList
     [fetchAlbumsList.pending]: (state, action) => {
       state.status.fetchAlbumsList = "pending";
@@ -66,6 +67,7 @@ const albumsSlice = createSlice({
     [fetchAlbumsList.rejected]: (state, action) => {
       state.status.fetchAlbumsList = "rejected";
     },
+
     // fetchTopAlbums
     [fetchTopAlbums.pending]: (state, action) => {
       state.status.fetchTopAlbums = "pending";
