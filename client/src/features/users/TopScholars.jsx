@@ -3,14 +3,25 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { fetchTopScholars } from "./usersAsyncThunks";
 
+import { selectTopScholars } from "./usersSlice";
+
 import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/TopScholars.scss";
 
 const TopScholars = () => {
+  const users = useSelector((state) => selectTopScholars(state));
+  const scholar = (user) => (
+    <div>
+      <span>{`Username: ${user.username} `}</span>
+      <span>{`YeniusIQ: ${user.authoredCommentsCount} `}</span>
+    </div>
+  );
+  const topScholars = users.map((user) => scholar(user));
   return (
     <div className="TopScholars">
       <h1>SUCCESS!!</h1>
+      {topScholars}
     </div>
   );
 };
