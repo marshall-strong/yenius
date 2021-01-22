@@ -77,3 +77,11 @@ export const fetchSongSampleCredits = createAsyncThunk(
     return response.data;
   }
 );
+
+export const fetchTopSongs = createAsyncThunk(
+  "songs/fetchTopSongs",
+  async () => {
+    const response = await axios.get(`/api/v1/songs/top_songs`);
+    return response.data;
+  }
+);
