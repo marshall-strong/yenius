@@ -12,7 +12,7 @@ import "../../assets/stylesheets/TopScholars.scss";
 
 const TopScholars = () => {
   const users = useSelector((state) => selectTopScholars(state));
-  const scholar = (user) => {
+  const row = (user) => {
     const profileLink = <Link to={`/users/${user.id}`}>{user.username}</Link>;
     return (
       <div>
@@ -25,7 +25,7 @@ const TopScholars = () => {
       </div>
     );
   };
-  const topScholars = users.map((user) => scholar(user));
+  const topScholars = users.map((user) => row(user));
   return (
     <div className="TopScholars">
       <h1>SUCCESS!!</h1>
@@ -48,24 +48,22 @@ const TopScholarsContainer = () => {
   const fetchTopScholarsStatus = useSelector(
     (state) => state.users.status.fetchTopScholars
   );
-  let content = <div>TopScholars</div>;
 
+  let content;
   if (!fetchTopScholarsStatus || fetchTopScholarsStatus === "pending") {
     content = <div className="loader" />;
-  }
-
-  if (fetchTopScholarsStatus === "fulfilled") {
+  } else if (fetchTopScholarsStatus === "fulfilled") {
     content = <TopScholars />;
-  }
-
-  if (fetchTopScholarsStatus === "rejected") {
+  } else if (fetchTopScholarsStatus === "rejected") {
     content = (
       <div>
-        Error fetching TopScholars!!!
+        fetchTopScholars was rejected!
         <br />
         <NotFound />
       </div>
     );
+  } else {
+    content = <div>Something unexpected happened in TopScholars...</div>;
   }
 
   return (
