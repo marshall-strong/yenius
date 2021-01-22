@@ -5,7 +5,7 @@ import { fetchUserProfile } from "./usersAsyncThunks";
 
 import { selectUserById } from "./usersSlice";
 
-import CurrentUserProfile from "./CurrentUserProfile";
+import ProfileEdit from "./ProfileEdit";
 import Profile from "./Profile";
 import NotFound from "../../NotFound";
 
@@ -35,7 +35,7 @@ const ProfileContainer = ({ match }) => {
   }
   if (user && fetchUserProfileStatus === "fulfilled") {
     if (currentUser && currentUser.id === user.id) {
-      content = <CurrentUserProfile match={match} />;
+      content = <ProfileEdit match={match} />;
     } else {
       content = <Profile match={match} />;
     }

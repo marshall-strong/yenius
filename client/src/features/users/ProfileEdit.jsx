@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { selectUserById } from "./usersSlice";
 
-const CurrentUserProfile = ({ match }) => {
+const ProfileEdit = ({ match }) => {
   const { userId } = match.params;
   const user = useSelector((state) => selectUserById(state, userId));
   const currentUser = useSelector((state) => state.session.currentUser);
@@ -40,4 +40,4 @@ const CurrentUserProfile = ({ match }) => {
   return profile;
 };
 
-export default CurrentUserProfile;
+export default ProfileEdit;
