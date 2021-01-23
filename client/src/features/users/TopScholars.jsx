@@ -10,31 +10,22 @@ import NotFound from "../../NotFound";
 
 import "../../assets/stylesheets/TopScholars.scss";
 
-const TopScholars = () => {
+const TableRow = (user) => (
+  <tr>
+    <th>
+      <Link to={`/users/${user.id}`}>{user.username}</Link>
+    </th>
+    <th>{`YeniusIQ: ${user.authoredCommentsCount}`}</th>
+  </tr>
+);
+
+const Table = () => {
   const users = useSelector((state) => selectTopScholars(state));
-  const row = (user) => {
-    const profileLink = <Link to={`/users/${user.id}`}>{user.username}</Link>;
-    return (
-      <div>
-        <span>
-          {`Username: `}
-          {profileLink}
-          {"......"}
-        </span>
-        <span>{`YeniusIQ: ${user.authoredCommentsCount}`}</span>
-      </div>
-    );
-  };
-  const topScholars = users.map((user) => row(user));
-  return (
-    <div className="TopScholars">
-      <h1>SUCCESS!!</h1>
-      {topScholars}
-    </div>
-  );
+  const table = <table>{users.map((user) => TableRow(user))}</table>;
+  return <div className="Table">{table}</div>;
 };
 
-const TopScholarsContainer = () => {
+const TopScholars = () => {
   const [requestSent, setRequestSent] = useState(false);
 
   const dispatch = useDispatch();
@@ -53,7 +44,7 @@ const TopScholarsContainer = () => {
   if (!fetchTopScholarsStatus || fetchTopScholarsStatus === "pending") {
     content = <div className="loader" />;
   } else if (fetchTopScholarsStatus === "fulfilled") {
-    content = <TopScholars />;
+    content = <Table />;
   } else if (fetchTopScholarsStatus === "rejected") {
     content = (
       <div>
@@ -67,7 +58,7 @@ const TopScholarsContainer = () => {
   }
 
   return (
-    <div className="TopScholarsContainer">
+    <div className="TopScholars">
       <h1>TopScholars</h1>
       <br />
       {content}
@@ -75,4 +66,4 @@ const TopScholarsContainer = () => {
   );
 };
 
-export default TopScholarsContainer;
+export default TopScholars;
