@@ -246,5 +246,5 @@ export const selectPrimaryArtistBySongId = createSelector(
 
 export const selectTopArtists = createSelector(
   [(state) => selectAllArtists(state)],
-  (artists) => artists.sort((a, b) => b.topArtistNumber - a.topArtistNumber)
+  (artists) => artists.sort((a, b) => a.topArtistNumber - b.topArtistNumber)
 );
