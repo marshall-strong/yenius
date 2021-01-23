@@ -1,8 +1,9 @@
 import React from "react";
-import TopNews from "./TopNews";
-import TopScholars from "../features/users/TopScholars";
+import TopAlbums from "../features/albums/TopAlbums";
 import TopArtists from "../features/artists/TopArtists";
+import TopNews from "./TopNews";
 import TopSongs from "../features/songs/TopSongs";
+import TopScholars from "../features/users/TopScholars";
 import "../assets/stylesheets/HomeLayout.scss";
 
 const HomeLayout = () => {
@@ -11,6 +12,8 @@ const HomeLayout = () => {
       <TopNews />
       <br />
       <TopScholars />
+      <br />
+      <TopAlbums />
       <br />
       <TopArtists />
       <br />
