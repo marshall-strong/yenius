@@ -168,3 +168,18 @@ Generate migration to update the existing records (avoids having to re-seed the 
 `rails g migration ResetUserAuthoredCommentsCount --force`
 Run migrations (development)
 `heroku local:run rails db:migrate`
+
+
+User Colors
+https://colorswall.com/palette/73/
+Color		HEX			RGB
+msYellow	#fff100		rgb(255, 241, 0)
+msOrange	#ff8c00		rgb(255, 140, 0)
+msRed		#e81123		rgb(232, 17, 35)
+msMagenta	#ec008c		rgb(236, 0, 140)
+msPurple	#68217a		rgb(104, 33, 122)
+msBlue		#00188f		rgb(0, 24, 143)
+msCyan		#00bcf2		rgb(0, 188, 242)
+msTeal		#00b294		rgb(0, 178, 148)
+msGreen		#009e49		rgb(0, 158, 73)
+msLime		#bad80a		rgb(186, 216, 10)
