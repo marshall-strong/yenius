@@ -1,6 +1,5 @@
 import React from "react";
 
-import JaJanKen from "./JaJanKen";
 import TopAlbums from "../features/albums/TopAlbums";
 import TopArtists from "../features/artists/TopArtists";
 import TopCharts from "./TopCharts";
