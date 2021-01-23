@@ -13,9 +13,6 @@ import "../assets/stylesheets/HomeLayout.scss";
 const HomeLayout = () => {
   return (
     <div className="HomeLayout">
-      <br />
-      <JaJanKen />
-      <br />
       <TopCharts />
       <br />
       <TopNews />
