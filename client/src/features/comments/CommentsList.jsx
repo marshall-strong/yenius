@@ -7,9 +7,17 @@ import TimeAgo from "./TimeAgo";
 const Comment = ({ commentId }) => {
   const comment = useSelector((state) => selectCommentById(state, commentId));
   const user = useSelector((state) => selectUserById(state, comment.authorId));
+  const currentUser = useSelector((state) => state.session.currentUser);
+
   if (!comment || !user) {
     return null;
   }
+
+  const editButton =
+    currentUser && comment.authorId === currentUser.id ? (
+      <div>EDIT COMMENT</div>
+    ) : null;
+
   return (
     <article className="Comment" key={comment.id}>
       <div className="userBadgeAndTimestamp">
@@ -17,6 +25,7 @@ const Comment = ({ commentId }) => {
         <TimeAgo timestamp={comment.createdAt} />
       </div>
       <div className="standard-rich-content">{comment.body}</div>
+      {editButton}
     </article>
   );
 };
