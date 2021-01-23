@@ -15,11 +15,12 @@ class Comment < ApplicationRecord
   validates :commentable_type, presence: true
   validates :commentable_id, presence: true
 
-  belongs_to :author, 
-    class_name: :User, 
-    foreign_key: :commenting_user_id
-  belongs_to :commentable, 
+  belongs_to :author,
+    class_name: :User,
+    foreign_key: :commenting_user_id,
+    counter_cache: :authored_comments_count
+  belongs_to :commentable,
     polymorphic: true #Artist, Album, Song, Verse
-  has_many :upvotes, 
+  has_many :upvotes,
     as: :upvotable
 end

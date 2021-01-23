@@ -1,4 +1,10 @@
 class Api::V1::UsersController < ApplicationController
+  # @route GET /api/v1/users/top_scholars
+  def top_scholars
+    @users = User.where("authored_comments_count IS NOT NULL").order("authored_comments_count desc").limit(10)
+    render 'api/v1/users/index'
+  end
+
   # @route POST /api/v1/users (api_v1_users)
   def create
     @user = User.new(user_params)
@@ -10,10 +16,10 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  # @route PATCH /api/v1/users/:id (api_v1_user)
-  # @route PUT /api/v1/users/:id (api_v1_user)
+  # @route PATCH /api/v1/users/:user_id
+  # @route PUT /api/v1/users/:user_id
   def update
-    @user = selected_user
+    @user = User.find(params[:user_id])
     if @user && @user.update_attributes(user_params)
       render 'api/v1/session/current_user';
     elsif !@user
@@ -23,19 +29,15 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  # @route GET /api/v1/users/:id (api_v1_user)
+  # @route GET /api/v1/users/:user_id
   def show
-    @user = selected_user
+    @user = User.find(params[:user_id])
+    render 'api/v1/users/show'
   end
 
-  # @route GET /api/v1/users (api_v1_users)
-  def index
-    @users = User.all
-  end
-
-  # @route DELETE /api/v1/users/:id (api_v1_user)
+  # @route DELETE /api/v1/users/:user_id
   def destroy
-    @user = selected_user
+    @user = User.find(params[:user_id])
     if @user
       @user.destroy
       render :show
@@ -45,10 +47,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
-
-  def selected_user
-    User.find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)

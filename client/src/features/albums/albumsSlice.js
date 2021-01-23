@@ -4,7 +4,11 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 
-import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
+import {
+  fetchAlbumPage,
+  fetchAlbumsList,
+  fetchTopAlbums,
+} from "../albums/albumsAsyncThunks";
 import { fetchArtistPage } from "../artists/artistsAsyncThunks";
 import {
   fetchSongAlbum,
@@ -27,6 +31,7 @@ const initialState = albumsAdapter.getInitialState({
   status: {
     fetchAlbumPage: null,
     fetchAlbumsList: null,
+    fetchTopAlbums: null,
   },
 });
 
@@ -35,16 +40,8 @@ const albumsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchAlbumsList.pending]: (state, action) => {
-      state.status.fetchAlbumsList = "pending";
-    },
-    [fetchAlbumsList.fulfilled]: (state, action) => {
-      state.status.fetchAlbumsList = "fulfilled";
-      albumsAdapter.setAll(state, action.payload.albums);
-    },
-    [fetchAlbumsList.rejected]: (state, action) => {
-      state.status.fetchAlbumsList = "rejected";
-    },
+    // albums asyncThunks
+    // fetchAlbumPage
     [fetchAlbumPage.pending]: (state) => {
       state.status.fetchAlbumPage = "pending";
       albumsAdapter.removeAll(state);
@@ -58,15 +55,47 @@ const albumsSlice = createSlice({
     [fetchAlbumPage.rejected]: (state, action) => {
       state.status.fetchAlbumPage = "rejected";
     },
+
+    // fetchAlbumsList
+    [fetchAlbumsList.pending]: (state, action) => {
+      state.status.fetchAlbumsList = "pending";
+    },
+    [fetchAlbumsList.fulfilled]: (state, action) => {
+      state.status.fetchAlbumsList = "fulfilled";
+      albumsAdapter.setAll(state, action.payload.albums);
+    },
+    [fetchAlbumsList.rejected]: (state, action) => {
+      state.status.fetchAlbumsList = "rejected";
+    },
+
+    // fetchTopAlbums
+    [fetchTopAlbums.pending]: (state, action) => {
+      state.status.fetchTopAlbums = "pending";
+    },
+    [fetchTopAlbums.fulfilled]: (state, action) => {
+      albumsAdapter.setAll(state, action.payload.albums);
+      state.status.fetchTopAlbums = "fulfilled";
+    },
+    [fetchTopAlbums.rejected]: (state, action) => {
+      state.status.fetchTopAlbums = "rejected";
+    },
+
+    // other asyncThunks
+    [addAlbumComment.fulfilled]: (state, action) => {
+      if (action.payload.albums) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
+    },
+    [fetchAlbumComments.fulfilled]: (state, action) => {
+      if (action.payload.albums) {
+        albumsAdapter.upsertMany(state, action.payload.albums);
+      }
+    },
     [fetchArtistPage.fulfilled]: (state, action) => {
       if (action.payload.albums) {
         albumsAdapter.setAll(state, action.payload.albums);
       }
     },
-    // SongPage
-    // [fetchSongPage.pending]: (state) => {
-    //   albumsAdapter.removeAll(state);
-    // },
     [fetchSongAlbum.fulfilled]: (state, action) => {
       if (action.payload.albums) {
         albumsAdapter.upsertMany(state, action.payload.albums);
@@ -78,17 +107,6 @@ const albumsSlice = createSlice({
       }
     },
     [fetchSongBanner.fulfilled]: (state, action) => {
-      if (action.payload.albums) {
-        albumsAdapter.upsertMany(state, action.payload.albums);
-      }
-    },
-    //
-    [fetchAlbumComments.fulfilled]: (state, action) => {
-      if (action.payload.albums) {
-        albumsAdapter.upsertMany(state, action.payload.albums);
-      }
-    },
-    [addAlbumComment.fulfilled]: (state, action) => {
       if (action.payload.albums) {
         albumsAdapter.upsertMany(state, action.payload.albums);
       }
@@ -115,4 +133,9 @@ export const selectAlbumBySongId = createSelector(
     const album = song ? albumEntities[song.albumId] : null;
     return album;
   }
+);
+
+export const selectTopAlbums = createSelector(
+  [(state) => selectAllAlbums(state)],
+  (albums) => albums.sort((a, b) => a.topAlbumNumber - b.topAlbumNumber)
 );

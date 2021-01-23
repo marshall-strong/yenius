@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_03_165649) do
+ActiveRecord::Schema.define(version: 2021_01_22_185402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_165649) do
     t.string "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "top_album_number"
     t.index ["name"], name: "index_albums_on_name", unique: true
   end
 
@@ -108,6 +109,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_165649) do
     t.string "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "top_artist_number"
     t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
@@ -147,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_165649) do
     t.integer "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "top_song_number"
     t.index ["album_id"], name: "index_songs_on_album_id"
     t.index ["name"], name: "index_songs_on_name"
   end
@@ -169,6 +172,8 @@ ActiveRecord::Schema.define(version: 2021_01_03_165649) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "authored_comments_count"
+    t.string "my_color"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

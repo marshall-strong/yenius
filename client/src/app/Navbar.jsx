@@ -42,13 +42,13 @@ const Navbar = () => {
         </Link>
       </div>
     );
-  } else if (isCurrentUser === "true") {
+  } else if (currentUser) {
     userButtons = (
       <div className="userButtons">
-        <a href="/" className="header-action">
+        <Link to={`/users/${currentUser.id}`} className="header-action">
           LOGGED IN:
           {username}
-        </a>
+        </Link>
         <button onClick={handleLogout} className="header-action">
           LOG OUT
         </button>
@@ -58,9 +58,9 @@ const Navbar = () => {
 
   const logo = (
     <div className="logo_container">
-      <a href="/" className="logo-link">
+      <Link to="/" className="logo-link">
         <img src={YeniusLogo} alt="yenius" />
-      </a>
+      </Link>
     </div>
   );
 
