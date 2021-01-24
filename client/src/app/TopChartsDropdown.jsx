@@ -39,12 +39,13 @@ const ChartOptions = ({
   let chartOptions = <div className="SquareManySelects__Selects hvGVqr"></div>;
 
   if (isExpanded) {
-    const options = values.map((value) => (
+    const options = values.map((value, idx) => (
       <Option
         value={value}
         chartType={chartType}
         setChartType={setChartType}
         hideDropdown={hideDropdown}
+        key={idx}
       />
     ));
     chartOptions = (
