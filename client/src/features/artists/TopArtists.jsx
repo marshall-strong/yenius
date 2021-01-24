@@ -18,7 +18,15 @@ const TableRow = (artist) => (
 
 const Table = () => {
   const artists = useSelector((state) => selectTopArtists(state));
-  const table = <table>{artists.map((artist) => TableRow(artist))}</table>;
+  const table = (
+    <table>
+      <tbody>
+        {artists.map((artist) => (
+          <TableRow artist={artist} key={artist.id} />
+        ))}
+      </tbody>
+    </table>
+  );
   return <div className="Table">{table}</div>;
 };
 
