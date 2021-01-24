@@ -7,7 +7,7 @@ import TopNews from "./TopNews";
 import TopSongs from "../features/songs/TopSongs";
 import TopScholars from "../features/users/TopScholars";
 
-import "../../assets/stylesheets/HomeLayout.scss";
+import ".././stylesheets/HomeLayout.scss";
 
 const HomeLayout = () => {
   return (

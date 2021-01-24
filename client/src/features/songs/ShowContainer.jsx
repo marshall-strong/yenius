@@ -21,7 +21,7 @@ import { selectSongById } from "./songsSlice";
 import SongShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
-import "../../../assets/stylesheets/SongPage.scss";
+import "../.././stylesheets/SongPage.scss";
 
 const ShowContainer = ({ match }) => {
   const songId = parseInt(match.params.songId);

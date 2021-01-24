@@ -5,7 +5,7 @@ import TopAlbums from "../features/albums/TopAlbums";
 import TopArtists from "../features/artists/TopArtists";
 import TopSongs from "../features/songs/TopSongs";
 
-import "../../assets/stylesheets/TopCharts.scss";
+import ".././stylesheets/TopCharts.scss";
 
 const TopChartsTitle = () => (
   <div className="PageGriddesktop-a6v82w-0 SectionTitle__Container-sc-10idewm-0 SectionTitle__Container">

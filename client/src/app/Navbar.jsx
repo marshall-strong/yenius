@@ -7,7 +7,7 @@ import { logoutUser } from "../features/session/sessionAsyncThunks";
 import GithubLogo from "../images/logo-github-512-512.png";
 import LinkedInLogo from "../images/logo-linkedin-512-512.png";
 import YeniusLogo from "../images/logo-yenius-1482-207.png";
-import "../../assets/stylesheets/Navbar.scss";
+import ".././stylesheets/Navbar.scss";
 
 const Navbar = () => {
   const dispatch = useDispatch();

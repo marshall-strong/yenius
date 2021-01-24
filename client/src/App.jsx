@@ -5,7 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import "../assets/stylesheets/App.scss";
+import "./stylesheets/App.scss";
 import "./font-faces.scss";
 import "./fonts/Programme-Regular/Programme-Regular.eot";
 import "./fonts/Programme-Regular/Programme-Regular.svg";
@@ -25,7 +25,7 @@ import "./fonts/Programme-Light/Programme-Light.ttf";
 import "./fonts/Programme-Light/Programme-Light.woff";
 import "./fonts/Programme-Light/Programme-Light.woff2";
 
-import "../assets/stylesheets/Loader.scss";
+import "./stylesheets/Loader.scss";
 
 import Counter from "./features/counter/Counter";
 

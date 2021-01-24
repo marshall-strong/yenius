@@ -6,7 +6,7 @@ import { fetchSongsIndex } from "./songsAsyncThunks";
 
 import { selectSongIds, selectSongById } from "./songsSlice";
 
-import "../../assets/stylesheets/SongsIndex.scss";
+import ".././stylesheets/SongsIndex.scss";
 
 const ListItem = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

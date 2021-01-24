@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { loginUser } from "./sessionAsyncThunks";
 
-import "../../../assets/stylesheets/FancySignUp.scss";
+import "../.././stylesheets/FancySignUp.scss";
 
 const FancyLogin = () => {
   // const [showForm, setShowForm] = useState(false);

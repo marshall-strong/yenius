@@ -3,7 +3,7 @@ import React from "react";
 import ColumnPrimary from "./ColumnPrimary";
 import ColumnSecondary from "./ColumnSecondary";
 
-import "../../../assets/stylesheets/ColumnLayout.scss";
+import "../.././stylesheets/ColumnLayout.scss";
 
 const ColumnLayout = ({ artistId }) => {
   return (

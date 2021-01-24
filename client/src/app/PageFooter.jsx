@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/stylesheets/PageFooter.scss";
+import ".././stylesheets/PageFooter.scss";
 
 export const ArtistIndexFooter = () => {
   return (

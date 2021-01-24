@@ -9,7 +9,7 @@ import { mergeArrays } from "../../lib";
 
 import ArtistLinks from "../artists/ArtistLinks";
 
-import "../../../assets/stylesheets/SongBanner.scss";
+import "../.././stylesheets/SongBanner.scss";
 
 const Banner = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

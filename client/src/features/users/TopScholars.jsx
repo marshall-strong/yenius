@@ -8,7 +8,7 @@ import { selectTopScholars } from "./usersSlice";
 
 import NotFound from "../../NotFound";
 
-import "../../../assets/stylesheets/TopScholars.scss";
+import "../.././stylesheets/TopScholars.scss";
 
 const TableRow = (user) => (
   <tr>
