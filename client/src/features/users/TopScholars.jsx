@@ -21,7 +21,15 @@ const TableRow = (user) => (
 
 const Table = () => {
   const users = useSelector((state) => selectTopScholars(state));
-  const table = <table>{users.map((user) => TableRow(user))}</table>;
+  const table = (
+    <table>
+      <tbody>
+        {users.map((user) => (
+          <TableRow user={user} key={user.id} />
+        ))}
+      </tbody>
+    </table>
+  );
   return <div className="Table">{table}</div>;
 };
 
