@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import TopAlbums from "../features/albums/TopAlbums";
 import TopArtists from "../features/artists/TopArtists";
+import TopChartsTitle from "./TopChartsTitle";
 import TopSongs from "../features/songs/TopSongs";
 
 import "../assets/stylesheets/TopCharts.scss";
@@ -78,7 +79,7 @@ const TopCharts = () => {
 
   return (
     <div className="TopCharts">
-      {`Chart: ${chart}`}
+      <TopChartsTitle />
       <Dropdown setChart={setChart} />
       {content}
     </div>
