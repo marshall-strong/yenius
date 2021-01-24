@@ -1,0 +1,87 @@
+.TopChartsDropdown {
+  grid-column: grid-start / grid-end;
+  text-align: center;
+}
+
+.SquareManySelects__Wrapper {
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  height: 44px;
+}
+
+// element.style {
+//     width: 278.672px;
+//     height: 44px;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px;
+// }
+.SquareManySelects__Container {
+  position: relative;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  overflow: hidden;
+}
+.isOpen {
+  width: 320.969px;
+  height: 326px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+}
+.isClosed {
+  width: 278.672px;
+  height: 44px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px;
+}
+
+.SquareSelectTitle__Container {
+  position: relative;
+  padding: 0.75rem calc(2.5rem) 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.SquareSelectTitle__Container_TextLabel {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+// element.style {
+//     transform: rotateX(0deg);
+// }
+.SquareSelectTitle__Arrow {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.arrow_up {
+  transform: rotateX(180deg);
+}
+.arrow_down {
+  transform: rotateX(0deg);
+}
+.SquareSelectTitle__Arrow svg {
+  position: relative;
+  top: 1px;
+  fill: rgb(0, 0, 0);
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+// the part that drops down
+// when it isn't visible
+.hvGVqr {
+  display: flex;
+  border-top: 2px solid rgb(233, 233, 233);
+  position: absolute;
+}
+
+.gIwQZZ {
+  flex: 1 1 0%;
+}
