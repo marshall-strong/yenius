@@ -18,7 +18,15 @@ const TableRow = (album) => (
 
 const Table = () => {
   const albums = useSelector((state) => selectTopAlbums(state));
-  const table = <table>{albums.map((album) => TableRow(album))}</table>;
+  const table = (
+    <table>
+      <tbody>
+        {albums.map((album) => (
+          <TableRow album={album} key={album.id} />
+        ))}
+      </tbody>
+    </table>
+  );
   return <div className="Table">{table}</div>;
 };
 
