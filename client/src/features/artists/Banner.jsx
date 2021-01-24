@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { selectArtistById } from "./artistsSlice";
 
-import ThisIsFine from "../../../assets/images/this_is_fine.png";
+import ThisIsFine from "../../images/this_is_fine.png";
 import "../../../assets/stylesheets/Banner.scss";
 
 const Banner = ({ artistId }) => {
