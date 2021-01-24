@@ -274,5 +274,5 @@ export const selectAlbumTracksBySongId = createSelector(
 
 export const selectTopSongs = createSelector(
   [(state) => selectAllSongs(state)],
-  (songs) => songs.sort((a, b) => a.topSongNumber - b.topSongNumber)
+  (songs) => songs.sort((a, b) => a.rank - b.rank)
 );
