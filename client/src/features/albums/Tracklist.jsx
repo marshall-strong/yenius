@@ -7,8 +7,8 @@ import { selectSongById } from "../songs/songsSlice";
 
 import ArtistLinks from "../artists/ArtistLinks";
 
-import DownChevron from "../../assets/images/icon-chevron_down.png";
-import UpChevron from "../../assets/images/icon-chevron_up.png";
+import DownChevron from "../../../assets/images/icon-chevron_down.png";
+import UpChevron from "../../../assets/images/icon-chevron_up.png";
 
 const TracklistRow = ({ songId }) => {
   const [expanded, setExpanded] = useState(false);

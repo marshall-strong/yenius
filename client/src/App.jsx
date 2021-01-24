@@ -5,27 +5,27 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import "./assets/stylesheets/App.scss";
+import "../assets/stylesheets/App.scss";
 import "./font-faces.scss";
-import "./assets/fonts/Programme-Regular/Programme-Regular.eot";
-import "./assets/fonts/Programme-Regular/Programme-Regular.svg";
-import "./assets/fonts/Programme-Regular/Programme-Regular.ttf";
-import "./assets/fonts/Programme-Regular/Programme-Regular.woff";
-import "./assets/fonts/Programme-Regular/Programme-Regular.woff2";
+import "../assets/fonts/Programme-Regular/Programme-Regular.eot";
+import "../assets/fonts/Programme-Regular/Programme-Regular.svg";
+import "../assets/fonts/Programme-Regular/Programme-Regular.ttf";
+import "../assets/fonts/Programme-Regular/Programme-Regular.woff";
+import "../assets/fonts/Programme-Regular/Programme-Regular.woff2";
 
-import "./assets/fonts/Programme-Bold/Programme-Bold.eot";
-import "./assets/fonts/Programme-Bold/Programme-Bold.svg";
-import "./assets/fonts/Programme-Bold/Programme-Bold.ttf";
-import "./assets/fonts/Programme-Bold/Programme-Bold.woff";
-import "./assets/fonts/Programme-Bold/Programme-Bold.woff2";
+import "../assets/fonts/Programme-Bold/Programme-Bold.eot";
+import "../assets/fonts/Programme-Bold/Programme-Bold.svg";
+import "../assets/fonts/Programme-Bold/Programme-Bold.ttf";
+import "../assets/fonts/Programme-Bold/Programme-Bold.woff";
+import "../assets/fonts/Programme-Bold/Programme-Bold.woff2";
 
-import "./assets/fonts/Programme-Light/Programme-Light.eot";
-import "./assets/fonts/Programme-Light/Programme-Light.svg";
-import "./assets/fonts/Programme-Light/Programme-Light.ttf";
-import "./assets/fonts/Programme-Light/Programme-Light.woff";
-import "./assets/fonts/Programme-Light/Programme-Light.woff2";
+import "../assets/fonts/Programme-Light/Programme-Light.eot";
+import "../assets/fonts/Programme-Light/Programme-Light.svg";
+import "../assets/fonts/Programme-Light/Programme-Light.ttf";
+import "../assets/fonts/Programme-Light/Programme-Light.woff";
+import "../assets/fonts/Programme-Light/Programme-Light.woff2";
 
-import "./assets/stylesheets/Loader.scss";
+import "../assets/stylesheets/Loader.scss";
 
 import Counter from "./features/counter/Counter";
 

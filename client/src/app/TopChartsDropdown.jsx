@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "../assets/stylesheets/TopChartsDropdown.scss";
+import "../../assets/stylesheets/TopChartsDropdown.scss";
 
 const checkmark = (
   <svg viewBox="0 0 22 16.2">

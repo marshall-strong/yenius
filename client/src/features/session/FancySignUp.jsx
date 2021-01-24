@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { signupUser, loginUser } from "./sessionAsyncThunks";
 
-import "../../assets/stylesheets/FancySignUp.scss";
+import "../../../assets/stylesheets/FancySignUp.scss";
 
 const FancySignUp = () => {
   const [showForm, setShowForm] = useState(false);

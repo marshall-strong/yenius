@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectCommentIdsByCommentable } from "./commentsSlice";
 import CommentsList from "./CommentsList";
 import AddCommentForm from "./AddCommentForm";
-import "../../assets/stylesheets/Comments.scss";
+import "../../../assets/stylesheets/Comments.scss";
 
 const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
   const commentIds = useSelector((state) =>

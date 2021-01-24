@@ -3,7 +3,7 @@ import React from "react";
 import ColumnPrimary from "./ColumnPrimary";
 import ColumnSecondary from "./ColumnSecondary";
 
-import "../../assets/stylesheets/ColumnLayout.scss";
+import "../../../assets/stylesheets/ColumnLayout.scss";
 
 const ColumnLayout = ({ match }) => {
   const songId = parseInt(match.params.songId);

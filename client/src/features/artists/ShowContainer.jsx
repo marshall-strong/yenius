@@ -9,7 +9,7 @@ import { selectArtistById } from "./artistsSlice";
 import ArtistShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
-import "../../assets/stylesheets/show.scss";
+import "../../../assets/stylesheets/show.scss";
 
 const ArtistShowContainer = ({ match }) => {
   const artistId = parseInt(match.params.artistId);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../../assets/stylesheets/TopSongsRow.scss";
+import "../../../assets/stylesheets/TopSongsRow.scss";
 
 const TopSongsRow = ({ song }) => {
   const songId = song.id;
