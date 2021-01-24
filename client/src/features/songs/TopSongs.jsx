@@ -1,28 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { fetchTopSongs } from "./songsAsyncThunks";
 
 import { selectTopSongs } from "./songsSlice";
 
 import NotFound from "../../NotFound";
+import TopSongsRow from "./TopSongsRow";
 
-const TableRow = (song) => (
-  <tr>
-    <th>
-      <Link to={`/songs/${song.id}`}>{song.name}</Link>
-    </th>
-  </tr>
-);
-
-const Table = () => {
+const TopSongsContent = () => {
   const songs = useSelector((state) => selectTopSongs(state));
-  const table = <table>{songs.map((song) => TableRow(song))}</table>;
-  return <div className="Table">{table}</div>;
+  const rows = songs.map((song) => <TopSongsRow song={song} />);
+  return <div>{rows}</div>;
 };
 
-const TopSongs = () => {
+const TopSongsContainer = () => {
   const [requestSent, setRequestSent] = useState(false);
 
   const dispatch = useDispatch();
@@ -41,7 +33,7 @@ const TopSongs = () => {
   if (!fetchTopSongsStatus || fetchTopSongsStatus === "pending") {
     content = <div className="loader" />;
   } else if (fetchTopSongsStatus === "fulfilled") {
-    content = <Table />;
+    content = <TopSongsContent />;
   } else if (fetchTopSongsStatus === "rejected") {
     content = (
       <div>
@@ -63,4 +55,4 @@ const TopSongs = () => {
   );
 };
 
-export default TopSongs;
+export default TopSongsContainer;
