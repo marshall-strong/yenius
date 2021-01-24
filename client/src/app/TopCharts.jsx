@@ -63,7 +63,7 @@ const Dropdown = ({ setChart }) => {
 };
 
 const TopCharts = () => {
-  const [chart, setChart] = useState("artists");
+  const [chart, setChart] = useState("songs");
 
   let content;
   if (chart === "albums") {
