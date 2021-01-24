@@ -10,7 +10,7 @@ import TopSongsRow from "./TopSongsRow";
 
 const TopSongsContent = () => {
   const songs = useSelector((state) => selectTopSongs(state));
-  const rows = songs.map((song) => <TopSongsRow song={song} />);
+  const rows = songs.map((song) => <TopSongsRow song={song} key={song.id} />);
   return <div>{rows}</div>;
 };
 
