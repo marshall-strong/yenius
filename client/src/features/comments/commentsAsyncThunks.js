@@ -85,19 +85,6 @@ export const addVerseComment = createAsyncThunk(
   }
 );
 
-// export const fetchAllComments = createAsyncThunk(
-//   "comments/fetchAllComments",
-//   async () => {
-//     const response = await axios.get(`/api/v1/comments`);
-//     return response.data;
-//   }
-// );
-
-// export const fetchOneComment = createAsyncThunk('comments/fetchOneComment',
-//   async (commentId) => {
-//   }
-// );
-
 export const editComment = createAsyncThunk(
   "comments/editComment",
   async (commentId) => {
