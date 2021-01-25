@@ -4,8 +4,7 @@ import TopAlbums from "../features/albums/TopAlbums";
 import TopArtists from "../features/artists/TopArtists";
 import TopSongs from "../features/songs/TopSongs";
 
-import ".././stylesheets/TopCharts.scss";
-import ".././stylesheets/TopChartsDropdown.scss";
+import ".././stylesheets/Charts.scss";
 
 const chevron = (
   <svg viewBox="0 0 21.32 10.91">
