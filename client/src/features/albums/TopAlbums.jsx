@@ -7,6 +7,15 @@ import { fetchTopAlbums } from "./albumsAsyncThunks";
 import { selectTopAlbums } from "./albumsSlice";
 
 import NotFound from "../../NotFound";
+import TopAlbumsRow from "./TopAlbumsRow";
+
+const TopAlbumsContent = () => {
+  const albums = useSelector((state) => selectTopAlbums(state));
+  const rows = albums.map((album) => (
+    <TopAlbumsRow album={album} key={album.rank} />
+  ));
+  return <div>{rows}</div>;
+};
 
 const TableRow = (album) => (
   <tr>
@@ -30,7 +39,7 @@ const Table = () => {
   return <div className="Table">{table}</div>;
 };
 
-const TopAlbums = () => {
+const TopAlbumsContainer = () => {
   const [requestSent, setRequestSent] = useState(false);
 
   const dispatch = useDispatch();
@@ -49,7 +58,7 @@ const TopAlbums = () => {
   if (!fetchTopAlbumsStatus || fetchTopAlbumsStatus === "pending") {
     content = <div className="loader" />;
   } else if (fetchTopAlbumsStatus === "fulfilled") {
-    content = <Table />;
+    content = <TopAlbumsContent />;
   } else if (fetchTopAlbumsStatus === "rejected") {
     content = (
       <div>
@@ -71,4 +80,4 @@ const TopAlbums = () => {
   );
 };
 
-export default TopAlbums;
+export default TopAlbumsContainer;

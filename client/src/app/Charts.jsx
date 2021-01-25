@@ -6,13 +6,13 @@ import TopSongs from "../features/songs/TopSongs";
 
 import ".././stylesheets/Charts.scss";
 
-const chevron = (
+const svgChevron = (
   <svg viewBox="0 0 21.32 10.91">
     <path d="M10.66 10.91L0 1.5 1.32 0l9.34 8.24L20 0l1.32 1.5-10.66 9.41"></path>
   </svg>
 );
 
-const checkmark = (
+const svgCheckmark = (
   <svg viewBox="0 0 22 16.2">
     <path d="M8.83 16.2L0 7.97l2.06-2.21 6.62 6.17L19.79 0 22 2.06 8.83 16.2"></path>
   </svg>
@@ -151,7 +151,7 @@ const Dropdown = ({ setContainerState }) => {
         <div className={dropdownContainerStyle}>
           <div className="SquareSelectTitle__Container">
             {display}
-            <div className={arrowStyle}>{chevron}</div>
+            <div className={arrowStyle}>{svgChevron}</div>
           </div>
         </div>
         {/* <h2>Dropdown</h2>

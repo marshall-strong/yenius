@@ -10,7 +10,7 @@ import TopSongsRow from "./TopSongsRow";
 
 const TopSongsContent = () => {
   const songs = useSelector((state) => selectTopSongs(state));
-  const rows = songs.map((song) => <TopSongsRow song={song} key={song.id} />);
+  const rows = songs.map((song) => <TopSongsRow song={song} key={song.rank} />);
   return <div>{rows}</div>;
 };
 
@@ -46,13 +46,7 @@ const TopSongsContainer = () => {
     content = <div>Something unexpected happened in TopSongs...</div>;
   }
 
-  return (
-    <div className="TopSongs">
-      <h1>TopSongs</h1>
-      <br />
-      {content}
-    </div>
-  );
+  return <div className="TopSongs">{content}</div>;
 };
 
 export default TopSongsContainer;
