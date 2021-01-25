@@ -1,4 +1,5 @@
 import React from "react";
+import Charts from "./Charts";
 import JaJanKen from "./JaJanKen";
 import DropdownContainer from "./DropdownContainer";
 import TopAlbums from "../features/albums/TopAlbums";
@@ -13,6 +14,8 @@ import ".././stylesheets/HomeLayout.scss";
 const HomeLayout = () => {
   return (
     <div className="HomeLayout">
+      <Charts />
+      <br />
       <DropdownContainer />
       <br />
       <JaJanKen />
