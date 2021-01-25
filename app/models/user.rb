@@ -12,6 +12,7 @@
 #
 require 'ms_palette'
 class User < ApplicationRecord
+  attr_accessor :my_color
   # after_initialize runs before validations
   # Ensure that a session token is generated when a new user is created
   after_initialize :ensure_session_token
@@ -28,7 +29,6 @@ class User < ApplicationRecord
     class_name: :Comment, foreign_key: :commenting_user_id
   has_many :authored_upvotes,
     class_name: :Upvote, foreign_key: :upvoting_user_id
-
 
 
   # User Authentication
