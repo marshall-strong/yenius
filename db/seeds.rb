@@ -1,5 +1,6 @@
 require 'aws-sdk'
 require 'open-uri'
+require 'ms_palette'
 
 AWS_ACCESS_KEY_ID = ENV['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = ENV['AWS_SECRET_ACCESS_KEY']
@@ -27,7 +28,7 @@ def attach_banner(s3_client, album, key)
   public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
   url = URI.parse(public_url)
   filename = File.basename(url.path)
-  file = URI.open(url)
+  file = URI.open("#{url}")
   album.banner.attach(io: file, filename: key)
 end
 
@@ -111,25 +112,25 @@ end
 
 
 # Users
-  User.create!(username: "demo", email: "demo@aa.io", my_color: User.random_color, password: "demo1234")
-  User.create!(username: "WrightStuff", email: "awright@aa.io", my_color: User.random_color, password: "password")
-  User.create!(username: "BiddyChips", email: "jmccallum@aa.io", my_color: User.random_color, password: "password")
-  User.create!(username: "BernieMac", email: "bernie.mac@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "MaxB", email: "max.b@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "FrenchMontana", email: "french.montana@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "KanyeWest", email: "kanye.west@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "IsaacHayes", email: "isaac.hayes@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "El-P", email: "el.producto@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "KillerMike", email: "killer.mike@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "ZackDeLaRocha", email: "zack.delarocha@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "2Chainz", email: "2chainz@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "MavisStaples", email: "mavis.staples@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "RHCP", email: "rhcp@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "JeffTweedy", email: "jeff.tweedy@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "KendrickLamar", email: "kendrick.lamar@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "BradleyNowell", email: "bradley.nowell@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "Charlie2na", email: "charlie2na@yenius.com", my_color: User.random_color, password: "password")
-  User.create!(username: "Eminem", email: "marshall.mathers@yenius.com", my_color: User.random_color, password: "password")
+  User.create!(username: "demo", email: "demo@aa.io", my_color: MS_PALETTE.sample, password: "demo1234")
+  User.create!(username: "WrightStuff", email: "awright@aa.io", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "BiddyChips", email: "jmccallum@aa.io", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "BernieMac", email: "bernie.mac@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "MaxB", email: "max.b@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "FrenchMontana", email: "french.montana@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "KanyeWest", email: "kanye.west@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "IsaacHayes", email: "isaac.hayes@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "El-P", email: "el.producto@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "KillerMike", email: "killer.mike@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "ZackDeLaRocha", email: "zack.delarocha@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "2Chainz", email: "2chainz@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "MavisStaples", email: "mavis.staples@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "RHCP", email: "rhcp@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "JeffTweedy", email: "jeff.tweedy@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "KendrickLamar", email: "kendrick.lamar@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "BradleyNowell", email: "bradley.nowell@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "Charlie2na", email: "charlie2na@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+  User.create!(username: "Eminem", email: "marshall.mathers@yenius.com", my_color: MS_PALETTE.sample, password: "password")
 
 
 
