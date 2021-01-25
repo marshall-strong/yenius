@@ -21,7 +21,7 @@ const svgEye = (
 const TopAlbumsRow = ({ album }) => {
   const albumId = album.id;
   const albumName = album.name;
-  // const songArtist = song.artist; // song.list_artistsPrimary
+  const albumArtist = album.artist; // album.artists_string
   const albumRank = album.rank;
   const albumCoverUrl = album.urlAlbumCover;
 
@@ -61,7 +61,7 @@ const TopAlbumsRow = ({ album }) => {
               </div> */}
             </h3>
           </div>
-          <h4 className="ChartSong__Artist">{"album artist"}</h4>
+          <h4 className="ChartSong__Artist">{albumArtist}</h4>
           <div className="ChartSong__Metadata">
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">

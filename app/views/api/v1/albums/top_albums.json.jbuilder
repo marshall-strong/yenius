@@ -3,6 +3,7 @@ json.albums do
     json.set! album.id do
       json.id album.id
       json.name album.name
+      json.artist album.artists_string
       json.releaseDate album.release_date
       json.urlAlbumCover url_for(album.cover)
       json.rank album.top_album_number
