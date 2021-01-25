@@ -99,7 +99,7 @@ const commentsSlice = createSlice({
     [deleteComment.fulfilled]: (state, action) => {
       state.status.deleteComment = "fulfilled";
       if (action.payload.comments) {
-        commentsAdapter.removeOne(state, action.payload.deleted_comment_id);
+        commentsAdapter.removeOne(state, action.payload.comments.id);
       }
     },
     [editComment.pending]: (state, action) => {
