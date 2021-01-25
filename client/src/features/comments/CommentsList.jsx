@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { deleteComment, editComment } from "../comments/commentsAsyncThunks";
 
-import { selectCommentById } from "../comments/commentsSlice";
+import {
+  selectCommentById,
+  selectCommentIdsByCommentable,
+} from "../comments/commentsSlice";
 import { selectUserById } from "../users/usersSlice";
 
 import TimeAgo from "./TimeAgo";
@@ -55,8 +58,11 @@ const Comment = ({ commentId }) => {
   );
 };
 
-const CommentsList = ({ commentIds }) => {
-  const content = commentIds.map((commentId) => (
+const CommentsList = ({ commentableId, commentableType }) => {
+  const commentableIds = useSelector((state) =>
+    selectCommentIdsByCommentable(state, commentableId, commentableType)
+  );
+  const content = commentableIds.map((commentId) => (
     <Comment key={commentId} commentId={commentId} />
   ));
   return <div className="CommentsList">{content}</div>;
