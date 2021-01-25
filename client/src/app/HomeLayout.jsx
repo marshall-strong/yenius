@@ -1,9 +1,5 @@
 import React from "react";
 
-import TopAlbums from "../features/albums/TopAlbums";
-import TopArtists from "../features/artists/TopArtists";
-import TopSongs from "../features/songs/TopSongs";
-
 import Charts from "./Charts";
 import TopNews from "./TopNews";
 import TopScholars from "../features/users/TopScholars";
@@ -18,12 +14,6 @@ const HomeLayout = () => {
       <TopNews />
       <br />
       <TopScholars />
-      <br />
-      <TopAlbums />
-      <br />
-      <TopArtists />
-      <br />
-      <TopSongs />
     </div>
   );
 };
