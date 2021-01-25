@@ -10,12 +10,17 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+
 require 'ms_palette'
+
 class User < ApplicationRecord
-  attr_accessor :my_color
   # after_initialize runs before validations
+
   # Ensure that a session token is generated when a new user is created
   after_initialize :ensure_session_token
+
+  # When a new user is created, pick a random color from MS_PALETTE for user.my_color
+  after_initialize :ensure_my_color
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
@@ -28,9 +33,13 @@ class User < ApplicationRecord
   has_many :authored_upvotes,
     class_name: :Upvote, foreign_key: :upvoting_user_id
 
-  def self.random_color
-    MS_PALETTE.sample
-  end
+  # def self.random_color
+  #   return MS_PALETTE.sample
+  # end
+
+  # def randomly_set_my_color
+  #   @my_color = MS_PALETTE.sample
+  # end
 
   # User Authentication
 
@@ -78,5 +87,11 @@ class User < ApplicationRecord
     # Generates the initial session_token so that we pass the validation
     # This method runs right after the model is initialized, before any validations are run
     self.session_token ||= SecureRandom.urlsafe_base64(16)
+  end
+
+  def ensure_my_color
+    if self.my_color.nil?
+      self.my_color = MS_PALETTE.sample
+    end
   end
 end
