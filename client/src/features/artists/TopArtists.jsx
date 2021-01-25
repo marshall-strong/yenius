@@ -17,29 +17,7 @@ const TopArtistsContent = () => {
   return <div>{rows}</div>;
 };
 
-// const TableRow = (artist) => (
-//   <tr>
-//     <th>
-//       <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
-//     </th>
-//   </tr>
-// );
-
-// const Table = () => {
-//   const artists = useSelector((state) => selectTopArtists(state));
-//   const table = (
-//     <table>
-//       <tbody>
-//         {artists.map((artist) => (
-//           <TableRow artist={artist} key={artist.id} />
-//         ))}
-//       </tbody>
-//     </table>
-//   );
-//   return <div className="Table">{table}</div>;
-// };
-
-const TopArtists = () => {
+const TopArtistsContainer = () => {
   const [requestSent, setRequestSent] = useState(false);
 
   const dispatch = useDispatch();
@@ -71,13 +49,7 @@ const TopArtists = () => {
     content = <div>Something unexpected happened in TopArtists...</div>;
   }
 
-  return (
-    <div className="TopArtists">
-      <h1>TopArtists</h1>
-      <br />
-      {content}
-    </div>
-  );
+  return <div className="TopArtists">{content}</div>;
 };
 
-export default TopArtists;
+export default TopArtistsContainer;
