@@ -13,8 +13,8 @@ import "../.././stylesheets/TopScholars.scss";
 
 const TopScholarsContent = () => {
   const users = useSelector((state) => selectTopScholars(state));
-  const rows = users.map((user) => (
-    <TopScholarsRow user={user} key={user.rank} />
+  const rows = users.map((user, idx) => (
+    <TopScholarsRow user={user} rank={idx + 1} key={idx} />
   ));
   return <div>{rows}</div>;
 };
