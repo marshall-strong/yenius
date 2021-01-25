@@ -7,28 +7,37 @@ import { fetchTopArtists } from "./artistsAsyncThunks";
 import { selectTopArtists } from "./artistsSlice";
 
 import NotFound from "../../NotFound";
+import TopArtistsRow from "./TopArtistsRow";
 
-const TableRow = (artist) => (
-  <tr>
-    <th>
-      <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
-    </th>
-  </tr>
-);
-
-const Table = () => {
+const TopArtistsContent = () => {
   const artists = useSelector((state) => selectTopArtists(state));
-  const table = (
-    <table>
-      <tbody>
-        {artists.map((artist) => (
-          <TableRow artist={artist} key={artist.id} />
-        ))}
-      </tbody>
-    </table>
-  );
-  return <div className="Table">{table}</div>;
+  const rows = artists.map((artist) => (
+    <TopArtistsRow artist={artist} key={artist.rank} />
+  ));
+  return <div>{rows}</div>;
 };
+
+// const TableRow = (artist) => (
+//   <tr>
+//     <th>
+//       <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
+//     </th>
+//   </tr>
+// );
+
+// const Table = () => {
+//   const artists = useSelector((state) => selectTopArtists(state));
+//   const table = (
+//     <table>
+//       <tbody>
+//         {artists.map((artist) => (
+//           <TableRow artist={artist} key={artist.id} />
+//         ))}
+//       </tbody>
+//     </table>
+//   );
+//   return <div className="Table">{table}</div>;
+// };
 
 const TopArtists = () => {
   const [requestSent, setRequestSent] = useState(false);
@@ -49,7 +58,7 @@ const TopArtists = () => {
   if (!fetchTopArtistsStatus || fetchTopArtistsStatus === "pending") {
     content = <div className="loader" />;
   } else if (fetchTopArtistsStatus === "fulfilled") {
-    content = <Table />;
+    content = <TopArtistsContent />;
   } else if (fetchTopArtistsStatus === "rejected") {
     content = (
       <div>

@@ -71,13 +71,7 @@ const TopAlbumsContainer = () => {
     content = <div>Something unexpected happened in TopAlbums...</div>;
   }
 
-  return (
-    <div className="TopAlbums">
-      <h1>TopAlbums</h1>
-      <br />
-      {content}
-    </div>
-  );
+  return <div className="TopAlbums">{content}</div>;
 };
 
 export default TopAlbumsContainer;

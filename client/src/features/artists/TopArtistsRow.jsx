@@ -18,39 +18,38 @@ const svgEye = (
   </svg>
 );
 
-const TopSongsRow = ({ song }) => {
-  const songId = song.id;
-  const songName = song.name;
-  const songArtist = song.artist; // song.list_artistsPrimary
-  const songRank = song.rank;
-  const songCoverUrl = song.urlAlbumCover;
+const TopArtistsRow = ({ artist }) => {
+  const artistId = artist.id;
+  const artistName = artist.name;
+  const artistRank = artist.rank;
+  const artistHeadshotUrl = artist.urlHeadshot;
 
-  const styleCoverImage = {
-    backgroundImage: `url(${songCoverUrl})`,
+  const styleHeadshotImage = {
+    backgroundImage: `url(${artistHeadshotUrl})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
   let content;
-  if (song) {
+  if (artist) {
     content = (
       <div className="TopSongRow">
-        <Link to={`/songs/${songId}`} className="ChartItem__Row">
-          <div className="ChartItem__Rank">{songRank}</div>
+        <Link to={`/artists/${artistId}`} className="ChartItem__Row">
+          <div className="ChartItem__Rank">{artistRank}</div>
           <div className="ChartSong__CoverAndTitle">
             <div className="ChartSong__Cover">
-              <div className="SizedImage__Container" style={styleCoverImage}>
+              <div className="SizedImage__Container" style={styleHeadshotImage}>
                 <noscript>
                   <img
-                    src={`url(${songCoverUrl})`}
+                    src={`url(${artistHeadshotUrl})`}
                     className="SizedImage__NoScript"
                   />
                 </noscript>
               </div>
             </div>
             <h3 className="ChartSong__TitleAndLyrics">
-              <div className="ChartSong__Title">{songName}</div>
-              <div className="ChartSong__Lyrics">
+              <div className="ChartSong__Title">{artistName}</div>
+              {/* <div className="ChartSong__Lyrics">
                 <span
                   color="background.onVariant"
                   fontWeight="normal"
@@ -58,10 +57,10 @@ const TopSongsRow = ({ song }) => {
                 >
                   Lyrics
                 </span>
-              </div>
+              </div> */}
             </h3>
           </div>
-          <h4 className="ChartSong__Artist">{songArtist}</h4>
+          <h4 className="ChartSong__Artist">{"other metadata"}</h4>
           <div className="ChartSong__Metadata">
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">
@@ -100,4 +99,4 @@ const TopSongsRow = ({ song }) => {
   return content;
 };
 
-export default TopSongsRow;
+export default TopArtistsRow;
