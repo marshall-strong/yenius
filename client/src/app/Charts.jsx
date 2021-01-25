@@ -5,6 +5,7 @@ import TopArtists from "../features/artists/TopArtists";
 import TopSongs from "../features/songs/TopSongs";
 
 import ".././stylesheets/TopCharts.scss";
+import ".././stylesheets/TopChartsDropdown.scss";
 
 const chevron = (
   <svg viewBox="0 0 21.32 10.91">
@@ -50,7 +51,7 @@ const TopChartsItems = ({ chartType }) => {
 };
 
 const Dropdown = ({ setContainerState }) => {
-  const [display, setDisplay] = useState("Choose your weapon!!");
+  const [display, setDisplay] = useState("TOP SONGS");
   const [showDropdown, setShowDropdown] = useState(false);
 
   const openDropdown = (e) => {
@@ -72,41 +73,92 @@ const Dropdown = ({ setContainerState }) => {
 
   const handleAlbums = (e) => {
     e.preventDefault();
-    setDisplay("album!!");
+    setDisplay("TOP ALBUMS");
     setContainerState("albums");
     closeDropdown(e);
   };
   const handleArtists = (e) => {
     e.preventDefault();
-    setDisplay("artists!!");
+    setDisplay("TOP ARTISTS");
     setContainerState("artists");
     closeDropdown(e);
   };
   const handleSongs = (e) => {
     e.preventDefault();
-    setDisplay("songs!!");
+    setDisplay("TOP SONGS");
     setContainerState("songs");
     closeDropdown(e);
   };
 
   //
+  const arrowStyle = showDropdown
+    ? "SquareSelectTitle__Arrow arrow_up"
+    : "SquareSelectTitle__Arrow arrow_down";
 
-  //
-  const dropdown = showDropdown ? (
-    <div className="dropdown">
-      <button onClick={handleAlbums}>{"pick albums"}</button>
-      <button onClick={handleArtists}>{"pick artists"}</button>
-      <button onClick={handleSongs}>{"pick songs"}</button>
+  const dropdownContainerStyle = showDropdown
+    ? "SquareManySelects__Container isOpen"
+    : "SquareManySelects__Container isClosed";
+
+  const dropdownContent = showDropdown ? (
+    <div className="SquareManySelects__Selects-sc-1kktot3-4 hvGVqr">
+      <div className="SquareManySelects__Select-sc-1kktot3-3 gIwQZZ">
+        <div className="SquareManySelects__Option-sc-1kktot3-5 eLlkRP">
+          <div className="SquareSelectOption__Container-h4rr3o-0 gMvRPT">
+            <div onClick={handleAlbums}>
+              {"albums".toUpperCase()}
+              {/* {icon} */}
+            </div>
+          </div>
+        </div>
+
+        <div className="SquareManySelects__Option-sc-1kktot3-5 eLlkRP">
+          <div className="SquareSelectOption__Container-h4rr3o-0 gMvRPT">
+            <div onClick={handleArtists}>
+              {"artists".toUpperCase()}
+              {/* {icon} */}
+            </div>
+          </div>
+        </div>
+
+        <div className="SquareManySelects__Option-sc-1kktot3-5 eLlkRP">
+          <div className="SquareSelectOption__Container-h4rr3o-0 gMvRPT">
+            <div onClick={handleSongs}>
+              {"songs".toUpperCase()}
+              {/* {icon} */}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   ) : (
-    <div className="dropdown">{"!!!"}</div>
+    <div className="SquareManySelects__Selects-sc-1kktot3-4 hvGVqr">
+      <div className="SquareManySelects__Select-sc-1kktot3-3 gIwQZZ"></div>
+    </div>
   );
+  //
+  // const dropdown = showDropdown ? (
+  //   <div className="dropdown">
+  //     <button onClick={handleAlbums}>{"pick albums"}</button>
+  //     <button onClick={handleArtists}>{"pick artists"}</button>
+  //     <button onClick={handleSongs}>{"pick songs"}</button>
+  //   </div>
+  // ) : (
+  //   <div className="dropdown">{"!!!"}</div>
+  // );
 
   return (
-    <div className="dropdown">
-      <h2>Dropdown</h2>
-      <button onClick={openDropdown}>{"FIGHT"}</button> {display}
-      {dropdown}
+    <div className="Dropdown">
+      <div className="SquareManySelects__Wrapper" onClick={openDropdown}>
+        <div className={dropdownContainerStyle}>
+          <div className="SquareSelectTitle__Container">
+            {display}
+            <div className={arrowStyle}>{chevron}</div>
+          </div>
+        </div>
+        {/* <h2>Dropdown</h2>
+        <button onClick={openDropdown}>{display}</button> */}
+      </div>
+      {dropdownContent}
     </div>
   );
 };
@@ -116,9 +168,9 @@ const Charts = () => {
   return (
     <div>
       <TopChartsTitle />
-      <h3>Chart Type: {chartType}</h3>
-      <br />
       <Dropdown setContainerState={setChartType} />
+      <br />
+      <br />
       <TopChartsItems chartType={chartType} />
     </div>
   );

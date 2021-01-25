@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.Dropdown {
+  grid-column: grid-start / grid-end;
+  text-align: center;
+}
+
 .SquareManySelects__Wrapper {
   z-index: 1;
   position: relative;
@@ -74,14 +79,30 @@
   height: 0.875rem;
 }
 
-// the part that drops down
-// when it isn't visible
+// not renamed yet
 .hvGVqr {
   display: flex;
   border-top: 2px solid rgb(233, 233, 233);
-  position: absolute;
+  position: relative;
+  z-index: 2;
 }
 
 .gIwQZZ {
   flex: 1 1 0%;
+}
+
+.eLlkRP {
+  border-bottom: 2px solid rgb(233, 233, 233);
+}
+
+.gMvRPT {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 100;
+  position: relative;
+  padding: 0.75rem calc(2.5rem) 0.75rem 1rem;
 }
