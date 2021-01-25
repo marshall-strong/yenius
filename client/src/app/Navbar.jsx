@@ -49,9 +49,9 @@ const Navbar = () => {
           LOGGED IN:
           {username}
         </Link>
-        <button onClick={handleLogout} className="header-action">
+        <div onClick={handleLogout} className="header-action">
           LOG OUT
-        </button>
+        </div>
       </div>
     );
   }
