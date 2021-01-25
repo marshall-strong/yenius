@@ -3,6 +3,7 @@ import React from "react";
 import TopScholars from "../features/users/TopScholars";
 
 import "../stylesheets/Charts.scss";
+import "../stylesheets/Community.scss";
 import "../stylesheets/TopSongsRow.scss";
 
 const CommunityTitle = () => (
@@ -67,7 +68,7 @@ const TopScholarsHeader = () => (
 
 const Community = () => {
   return (
-    <div>
+    <div className="Community">
       <CommunityTitle />
       <TopScholarsHeader />
       <TopScholars />

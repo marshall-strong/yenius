@@ -10,13 +10,11 @@ import ".././stylesheets/HomeLayout.scss";
 const HomeLayout = () => {
   return (
     <div className="HomeLayout">
-      <Community />
-      <br />
       <Charts />
       <br />
       <TopNews />
       <br />
-      <TopScholars />
+      <Community />
     </div>
   );
 };

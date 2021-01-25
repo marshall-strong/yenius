@@ -145,7 +145,7 @@ const Dropdown = ({ setContainerState }) => {
 const Charts = () => {
   const [chartType, setChartType] = useState("songs");
   return (
-    <div>
+    <div className="Charts">
       <TopChartsTitle />
       <Dropdown setContainerState={setChartType} />
       <br />
