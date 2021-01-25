@@ -8,7 +8,7 @@ import { selectAlbumById } from "./albumsSlice";
 import AlbumShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
-import "../../assets/stylesheets/show.scss";
+import "../.././stylesheets/show.scss";
 
 const AlbumPage = ({ match }) => {
   const albumId = parseInt(match.params.albumId);

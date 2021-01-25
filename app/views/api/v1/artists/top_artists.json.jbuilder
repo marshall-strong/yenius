@@ -3,7 +3,8 @@ json.artists do
     json.set! artist.id do
       json.id artist.id
       json.name artist.name
-      json.topArtistNumber artist.top_artist_number
+      json.rank artist.top_artist_number
+      json.urlHeadshot artist.headshot.attached? ? url_for(artist.headshot) : nil
     end
   end
 end

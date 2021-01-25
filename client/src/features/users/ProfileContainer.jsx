@@ -9,7 +9,7 @@ import ProfileEdit from "./ProfileEdit";
 import Profile from "./Profile";
 import NotFound from "../../NotFound";
 
-import "../../assets/stylesheets/UserProfile.scss";
+import "../.././stylesheets/UserProfile.scss";
 
 const ProfileContainer = ({ match }) => {
   const userId = parseInt(match.params.userId);

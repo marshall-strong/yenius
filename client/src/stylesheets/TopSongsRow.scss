@@ -1,0 +1,186 @@
+.TopSongRow {
+  grid-column: grid-start / grid-end;
+}
+
+.ChartItem__Row {
+  display: grid;
+  -webkit-box-pack: center;
+  justify-content: center;
+  grid-template-columns:
+    [grid-start] repeat(3, minmax(14px, 44px)) [center-start] repeat(
+      6,
+      minmax(14px, 44px)
+    )
+    [center-end] repeat(3, minmax(14px, 44px)) [grid-end];
+  gap: 40px 60px;
+  color: inherit;
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  grid-auto-rows: minmax(75px, auto);
+  border-bottom: 0.15rem solid rgb(233, 233, 233);
+  font-size: 1.5rem;
+  transition: background-color 0.1s ease 0s;
+}
+Link {
+  color: rgb(125, 143, 232);
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.ChartItem__Rank {
+  grid-column: span 1 / auto;
+  font-size: 1.5rem;
+  font-weight: 100;
+  align-self: flex-start;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ChartSong__CoverAndTitle {
+  grid-column: span 5 / auto;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.ChartSong__Cover {
+  flex-shrink: 0;
+}
+
+.SizedImage__Container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: 0% 0% / cover rgb(233, 233, 233);
+}
+
+.ChartSong__TitleAndLyrics {
+  margin-left: 30px;
+  display: flex;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: inherit;
+}
+
+.ChartSong__Title {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+}
+
+.ChartSong__Lyrics {
+  position: relative;
+  top: -2px;
+}
+
+.TextLabel {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgb(154, 154, 154);
+}
+
+.ChartSong__Artist {
+  grid-column: span 3 / auto;
+  font-weight: 100;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ChartSong__Metadata {
+  grid-column: span 3 / auto;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.ChartSong__Metadatum {
+  flex: 1 1 0%;
+  max-width: 50%;
+}
+
+.IconWithLabel__Container {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.IconWithLabel__Icon {
+  width: 1rem;
+  margin-right: 0.5rem;
+  position: relative;
+  top: -2px;
+  flex-shrink: 0;
+}
+
+.IconWithLabel__Icon svg {
+  display: block;
+  height: 100%;
+  overflow: visible;
+  fill: rgb(255, 20, 100);
+}
+
+.TextLabel_2 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgb(255, 20, 100);
+}
+
+.ChartSong__Metadatum {
+  flex: 1 1 0%;
+  max-width: 50%;
+}
+
+.IconWithLabel__Container {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.IconWithLabel__Icon_2 {
+  width: 1rem;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 0px;
+  flex-shrink: 0;
+}
+
+.IconWithLabel__Icon_2 svg {
+  display: block;
+  height: 100%;
+  overflow: visible;
+  fill: rgb(0, 0, 0);
+}
+
+.TextLabel_3 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}

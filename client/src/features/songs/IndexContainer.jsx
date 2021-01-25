@@ -5,7 +5,7 @@ import { fetchSongsIndex } from "./songsAsyncThunks";
 
 import SongsIndexLayout from "./IndexLayout";
 
-import "../../assets/stylesheets/SongsIndex.scss";
+import "../.././stylesheets/SongsIndex.scss";
 
 const IndexContainer = ({ match }) => {
   const [lastCharFetched, setLastCharFetched] = useState(null);

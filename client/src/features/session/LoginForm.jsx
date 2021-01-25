@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { loginUser } from "./sessionAsyncThunks";
 
-import "../../assets/stylesheets/SessionForms.scss";
+import ".././stylesheets/SessionForms.scss";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");

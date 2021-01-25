@@ -57,6 +57,37 @@ def attach_headshot(s3_client, artist, key)
   artist.headshot.attach(io: file, filename: filename)
 end
 
+# Top Charts (seeded below, included here for quick reference)
+
+# Top Albums
+# 1 - The Life Of Pablo
+# 2 - The College Dropout
+# 3 - My Beautiful Dark Twisted Fantasy
+# 4 - Watch The Throne
+# 5 - Late Registration
+# 6 - Yeezus
+# 7 - Graduation
+# 8 - 808s & Heartbreak
+
+# Top Artists
+# 1 - Kanye West
+# 2 - Jay-Z
+# 3 - Kid Cudi
+# 4 - Nas
+# 5 - Gil Scott-Heron
+# 6 - Rihanna
+# 7 - Talib Kweli
+# 8 - Curtis Mayfield
+
+# Top Songs
+# 1 - Famous - The Life of Pablo
+# 2 - No Church in the Wild - Watch the Throne
+# 3 - Monster - My Beautiful Dark Twisted Fantasy
+# 4 - Bound 2 - Yeezus
+# 5 - The New Workout Plan - The College Dropout
+# 6 - Champion - Graduation
+# 7 - No More Parties in LA - The Life of Pablo
+# 8 - Gold Digger - Late Registration
 
 
 # DESTROY existing seeds
