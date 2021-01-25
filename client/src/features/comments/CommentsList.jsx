@@ -1,7 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { deleteComment, editComment } from "../comments/commentsAsyncThunks";
+
 import { selectCommentById } from "../comments/commentsSlice";
 import { selectUserById } from "../users/usersSlice";
+
 import TimeAgo from "./TimeAgo";
 
 const Comment = ({ commentId }) => {
@@ -13,10 +17,30 @@ const Comment = ({ commentId }) => {
     return null;
   }
 
-  const editButton =
-    currentUser && comment.authorId === currentUser.id ? (
-      <div>EDIT COMMENT</div>
-    ) : null;
+  const dispatch = useDispatch();
+  const handleDeleteComment = (e) => {
+    e.preventDefault();
+    dispatch(deleteComment(commentId));
+  };
+  const handleEditComment = (e) => {
+    e.preventDefault();
+    // dispatch(editComment(editedComment));
+  };
+
+  let deleteButton;
+  let editButton;
+  if (currentUser && comment.authorId === currentUser.id) {
+    deleteButton = (
+      <button className="deleteCommentButton" onClick={handleDeleteComment}>
+        delete
+      </button>
+    );
+    editButton = (
+      <button className="editCommentButton" onClick={handleEditComment}>
+        edit
+      </button>
+    );
+  }
 
   return (
     <article className="Comment" key={comment.id}>
@@ -25,7 +49,8 @@ const Comment = ({ commentId }) => {
         <TimeAgo timestamp={comment.createdAt} />
       </div>
       <div className="standard-rich-content">{comment.body}</div>
-      {editButton}
+      {deleteButton}
+      {/* {editButton} */}
     </article>
   );
 };

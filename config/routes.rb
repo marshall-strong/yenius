@@ -32,9 +32,9 @@ Rails.application.routes.draw do
       get    '/verses/:verse_id/comments',     to: 'comments#verse_comments'
       post   '/verses/:verse_id/comments',     to: 'comments#create_verse_comment'
 
-      patch  '/comments/:comment_id',          to: 'comments#edit_comment'
-      put    '/comments/:comment_id',          to: 'comments#edit_comment'
-      delete '/comments/:comment_id',          to: 'comments#destroy_comment'
+      patch  '/comments/:comment_id',          to: 'comments#update'
+      put    '/comments/:comment_id',          to: 'comments#update'
+      delete '/comments/:comment_id',          to: 'comments#destroy'
 
       get    '/users/top_scholars',            to: 'users#top_scholars'
       get    '/users/:user_id',                to: 'users#show'

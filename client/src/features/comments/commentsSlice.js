@@ -9,6 +9,8 @@ import {
   addArtistComment,
   addSongComment,
   addVerseComment,
+  deleteComment,
+  editComment,
   fetchAlbumComments,
   fetchArtistComments,
   fetchSongComments,
@@ -26,6 +28,8 @@ const initialState = commentsAdapter.getInitialState({
     addArtistComment: null,
     addSongComment: null,
     addVerseComment: null,
+    deleteComment: null,
+    editComment: null,
     fetchAlbumComments: null,
     fetchArtistComments: null,
     fetchSongComments: null,
@@ -84,6 +88,30 @@ const commentsSlice = createSlice({
       state.status.addVerseComment = "fulfilled";
       if (action.payload.comments) {
         commentsAdapter.setAll(state, action.payload.comments);
+      }
+    },
+    [deleteComment.pending]: (state, action) => {
+      state.status.deleteComment = "pending";
+    },
+    [deleteComment.rejected]: (state, action) => {
+      state.status.deleteComment = "rejected";
+    },
+    [deleteComment.fulfilled]: (state, action) => {
+      state.status.deleteComment = "fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.removeOne(state, action.payload.deleted_comment_id);
+      }
+    },
+    [editComment.pending]: (state, action) => {
+      state.status.editComment = "pending";
+    },
+    [editComment.rejected]: (state, action) => {
+      state.status.editComment = "rejected";
+    },
+    [editComment.fulfilled]: (state, action) => {
+      state.status.editComment = "fulfilled";
+      if (action.payload.comments) {
+        commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
     [fetchAlbumComments.pending]: (state, action) => {

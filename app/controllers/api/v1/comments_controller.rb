@@ -97,7 +97,7 @@ class Api::V1::CommentsController < ApiController
     @comment = Comment.find(params[:comment_id])
     if @comment
       @comment.destroy
-      render :show
+      render :destroy
     else
       render ['Could not find comment']
     end
