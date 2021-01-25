@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest, null: false
       t.string :session_token, null: false
       t.string :my_color, null: false
+      t.integer :authored_comments_count, null: false, default: 0
 
       t.timestamps
     end

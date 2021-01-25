@@ -3,6 +3,7 @@ class CreateArtists < ActiveRecord::Migration[5.2]
     create_table :artists do |t|
       t.string :name, null: false
       t.string :bio
+      t.integer :rank, default: nil
 
       t.timestamps
     end

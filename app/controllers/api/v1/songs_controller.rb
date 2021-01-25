@@ -1,7 +1,7 @@
 class Api::V1::SongsController < ApiController
   # @route GET /api/v1/songs/top_songs
   def top_songs
-    @songs = Song.where("top_song_number IS NOT NULL")
+    @songs = Song.where("rank IS NOT NULL")
     render 'api/v1/songs/top_songs'
   end
 
