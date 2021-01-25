@@ -60,33 +60,33 @@ const TopArtistsRow = ({ artist }) => {
               </div> */}
             </h3>
           </div>
-          <h4 className="ChartSong__Artist">{"other metadata"}</h4>
+          <h4 className="ChartSong__Artist">{/* {"other metadata"} */}</h4>
           <div className="ChartSong__Metadata">
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">
                 <div color="accent.main" className="IconWithLabel__Icon">
-                  {svgFlame}
+                  {/* {svgFlame} */}
                 </div>
                 <span
                   color="accent.main"
                   fontWeight="normal"
                   className="TextLabel_2"
                 >
-                  363
+                  {/* 363 */}
                 </span>
               </div>
             </div>
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">
                 <div color="background.on" className="IconWithLabel__Icon_2">
-                  {svgEye}
+                  {/* {svgEye} */}
                 </div>
                 <span
                   color="background.on"
                   fontWeight="normal"
                   className="TextLabel_3"
                 >
-                  722.7K
+                  {/* 722.7K */}
                 </span>
               </div>
             </div>

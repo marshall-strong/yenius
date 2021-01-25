@@ -4,7 +4,7 @@ import TopAlbums from "../features/albums/TopAlbums";
 import TopArtists from "../features/artists/TopArtists";
 import TopSongs from "../features/songs/TopSongs";
 
-import ".././stylesheets/Charts.scss";
+import "../stylesheets/Charts.scss";
 
 const svgChevron = (
   <svg viewBox="0 0 21.32 10.91">
@@ -145,7 +145,7 @@ const Dropdown = ({ setContainerState }) => {
 const Charts = () => {
   const [chartType, setChartType] = useState("songs");
   return (
-    <div>
+    <div className="Charts">
       <TopChartsTitle />
       <Dropdown setContainerState={setChartType} />
       <br />

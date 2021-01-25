@@ -18,7 +18,7 @@ const svgEye = (
   </svg>
 );
 
-const TopScholarsRow = ({ user }) => {
+const TopScholarsRow = ({ user, rank }) => {
   const userId = user.id;
   const username = user.username;
   const userIQ = user.authoredCommentsCount;
@@ -35,7 +35,7 @@ const TopScholarsRow = ({ user }) => {
     content = (
       <div className="TopSongRow">
         <Link to={`/users/${userId}`} className="ChartItem__Row">
-          <div className="ChartItem__Rank">{userIQ}</div>
+          <div className="ChartItem__Rank">{rank}</div>
           <div className="ChartSong__CoverAndTitle">
             <div className="ChartSong__Cover">
               <div className="SizedImage__Container" style={styleUserImage}>
@@ -60,33 +60,36 @@ const TopScholarsRow = ({ user }) => {
               </div> */}
             </h3>
           </div>
-          <h4 className="ChartSong__Artist">{"other metadata"}</h4>
+          <h4 className="ChartSong__Artist">
+            {/* {"YeniusIQ: "}
+            {userIQ} */}
+          </h4>
           <div className="ChartSong__Metadata">
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">
                 <div color="accent.main" className="IconWithLabel__Icon">
-                  {svgFlame}
+                  {/* {svgFlame} */}
                 </div>
                 <span
                   color="accent.main"
                   fontWeight="normal"
                   className="TextLabel_2"
                 >
-                  363
+                  {/* 363 */}
                 </span>
               </div>
             </div>
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">
                 <div color="background.on" className="IconWithLabel__Icon_2">
-                  {svgEye}
+                  {/* {svgEye} */}
                 </div>
                 <span
                   color="background.on"
                   fontWeight="normal"
                   className="TextLabel_3"
                 >
-                  722.7K
+                  {userIQ}
                 </span>
               </div>
             </div>
