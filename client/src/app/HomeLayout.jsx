@@ -10,9 +10,11 @@ import ".././stylesheets/HomeLayout.scss";
 const HomeLayout = () => {
   return (
     <div className="HomeLayout">
+      <TopNews />
+      <br />
+      <br />
       <Charts />
       <br />
-      <TopNews />
       <br />
       <Community />
     </div>
