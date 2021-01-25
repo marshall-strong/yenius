@@ -28,7 +28,7 @@ def attach_banner(s3_client, album, key)
   public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
   url = URI.parse(public_url)
   filename = File.basename(url.path)
-  file = URI.open("#{url}")
+  file = URI.open(url)
   album.banner.attach(io: file, filename: key)
 end
 
