@@ -19,18 +19,10 @@ const svgCheckmark = (
 );
 
 const TopChartsTitle = () => (
-  <div className="PageGriddesktop-a6v82w-0 SectionTitle__Container-sc-10idewm-0 SectionTitle__Container">
-    <h2 className="PageGridFull-idpot7-0 SectionTitle__Title-sc-10idewm-1 SectionTitle__Title">
-      Charts
-    </h2>
-    <div className="PageGridCenter-q0ues6-0 SectionTitle__Subtitle-sc-10idewm-2 SectionTitle__Subtitle">
-      <h3
-        color="accent.main"
-        fontWeight="normal"
-        className="TextLabel__TopChartsTitle"
-      >
-        Trending on Yenius
-      </h3>
+  <div className="SectionTitle__Container">
+    <h2 className="SectionTitle__Title">Charts</h2>
+    <div className="SectionTitle__Subtitle">
+      <h3 className="TextLabel__TopChartsTitle">Trending on Yenius</h3>
     </div>
   </div>
 );
@@ -98,11 +90,11 @@ const Dropdown = ({ setContainerState }) => {
     ? "SquareManySelects__Container isOpen"
     : "SquareManySelects__Container isClosed";
 
-  const dropdownContent = showDropdown ? (
-    <div className="SquareManySelects__Selects-sc-1kktot3-4 hvGVqr">
-      <div className="SquareManySelects__Select-sc-1kktot3-3 gIwQZZ">
-        <div className="SquareManySelects__Option-sc-1kktot3-5 eLlkRP">
-          <div className="SquareSelectOption__Container-h4rr3o-0 gMvRPT">
+  const dropdownExpandedContent = showDropdown ? (
+    <div className="DropdownExpansionContainer">
+      <div className="DropdownOptionsContainer">
+        <div className="SquareManySelects__Option">
+          <div className="SquareSelectOption__Container">
             <div onClick={handleAlbums}>
               {"albums".toUpperCase()}
               {/* {icon} */}
@@ -110,8 +102,8 @@ const Dropdown = ({ setContainerState }) => {
           </div>
         </div>
 
-        <div className="SquareManySelects__Option-sc-1kktot3-5 eLlkRP">
-          <div className="SquareSelectOption__Container-h4rr3o-0 gMvRPT">
+        <div className="SquareManySelects__Option">
+          <div className="SquareSelectOption__Container">
             <div onClick={handleArtists}>
               {"artists".toUpperCase()}
               {/* {icon} */}
@@ -119,8 +111,8 @@ const Dropdown = ({ setContainerState }) => {
           </div>
         </div>
 
-        <div className="SquareManySelects__Option-sc-1kktot3-5 eLlkRP">
-          <div className="SquareSelectOption__Container-h4rr3o-0 gMvRPT">
+        <div className="SquareManySelects__Option">
+          <div className="SquareSelectOption__Container">
             <div onClick={handleSongs}>
               {"songs".toUpperCase()}
               {/* {icon} */}
@@ -130,20 +122,10 @@ const Dropdown = ({ setContainerState }) => {
       </div>
     </div>
   ) : (
-    <div className="SquareManySelects__Selects-sc-1kktot3-4 hvGVqr">
-      <div className="SquareManySelects__Select-sc-1kktot3-3 gIwQZZ"></div>
+    <div className="DropdownExpansionContainer">
+      <div className="DropdownOptionsContainer"></div>
     </div>
   );
-  //
-  // const dropdown = showDropdown ? (
-  //   <div className="dropdown">
-  //     <button onClick={handleAlbums}>{"pick albums"}</button>
-  //     <button onClick={handleArtists}>{"pick artists"}</button>
-  //     <button onClick={handleSongs}>{"pick songs"}</button>
-  //   </div>
-  // ) : (
-  //   <div className="dropdown">{"!!!"}</div>
-  // );
 
   return (
     <div className="Dropdown">
@@ -154,10 +136,8 @@ const Dropdown = ({ setContainerState }) => {
             <div className={arrowStyle}>{svgChevron}</div>
           </div>
         </div>
-        {/* <h2>Dropdown</h2>
-        <button onClick={openDropdown}>{display}</button> */}
       </div>
-      {dropdownContent}
+      {dropdownExpandedContent}
     </div>
   );
 };
@@ -168,7 +148,6 @@ const Charts = () => {
     <div>
       <TopChartsTitle />
       <Dropdown setContainerState={setChartType} />
-      <br />
       <br />
       <TopChartsItems chartType={chartType} />
     </div>

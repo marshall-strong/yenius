@@ -137,22 +137,22 @@ h3 {
 }
 
 // not renamed yet
-.hvGVqr {
+.DropdownExpansionContainer {
   display: flex;
-  border-top: 2px solid rgb(233, 233, 233);
+  // border-top: 2px solid rgb(233, 233, 233);
   position: relative;
   z-index: 2;
 }
 
-.gIwQZZ {
+.DropdownOptionsContainer {
   flex: 1 1 0%;
 }
 
-.eLlkRP {
-  border-bottom: 2px solid rgb(233, 233, 233);
+.SquareManySelects__Option {
+  // border-bottom: 2px solid rgb(233, 233, 233);
 }
 
-.gMvRPT {
+.SquareSelectOption__Container {
   overflow-wrap: break-word;
   word-break: break-word;
   overflow: hidden;
