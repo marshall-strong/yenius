@@ -6,6 +6,18 @@ import TopSongs from "../features/songs/TopSongs";
 
 import ".././stylesheets/TopCharts.scss";
 
+const chevron = (
+  <svg viewBox="0 0 21.32 10.91">
+    <path d="M10.66 10.91L0 1.5 1.32 0l9.34 8.24L20 0l1.32 1.5-10.66 9.41"></path>
+  </svg>
+);
+
+const checkmark = (
+  <svg viewBox="0 0 22 16.2">
+    <path d="M8.83 16.2L0 7.97l2.06-2.21 6.62 6.17L19.79 0 22 2.06 8.83 16.2"></path>
+  </svg>
+);
+
 const TopChartsTitle = () => (
   <div className="PageGriddesktop-a6v82w-0 SectionTitle__Container-sc-10idewm-0 SectionTitle__Container">
     <h2 className="PageGridFull-idpot7-0 SectionTitle__Title-sc-10idewm-1 SectionTitle__Title">
@@ -39,59 +51,62 @@ const TopChartsItems = ({ chartType }) => {
 
 const Dropdown = ({ setContainerState }) => {
   const [display, setDisplay] = useState("Choose your weapon!!");
-  const [showMenu, setShowMenu] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  const openMenu = (e) => {
+  const openDropdown = (e) => {
     e.preventDefault();
-    setShowMenu(true);
+    setShowDropdown(true);
   };
 
-  const closeMenu = (e) => {
+  const closeDropdown = (e) => {
     e.preventDefault();
-    setShowMenu(false);
-    document.removeEventListener("click", closeMenu);
+    setShowDropdown(false);
+    document.removeEventListener("click", closeDropdown);
   };
 
   useEffect(() => {
-    if (showMenu) {
-      document.addEventListener("click", closeMenu);
+    if (showDropdown) {
+      document.addEventListener("click", closeDropdown);
     }
-  }, [showMenu]);
+  }, [showDropdown]);
 
   const handleAlbums = (e) => {
     e.preventDefault();
     setDisplay("album!!");
     setContainerState("albums");
-    closeMenu(e);
+    closeDropdown(e);
   };
   const handleArtists = (e) => {
     e.preventDefault();
     setDisplay("artists!!");
     setContainerState("artists");
-    closeMenu(e);
+    closeDropdown(e);
   };
   const handleSongs = (e) => {
     e.preventDefault();
     setDisplay("songs!!");
     setContainerState("songs");
-    closeMenu(e);
+    closeDropdown(e);
   };
 
-  const menu = showMenu ? (
-    <div className="menu">
+  //
+
+  //
+  const dropdown = showDropdown ? (
+    <div className="dropdown">
       <button onClick={handleAlbums}>{"pick albums"}</button>
       <button onClick={handleArtists}>{"pick artists"}</button>
       <button onClick={handleSongs}>{"pick songs"}</button>
     </div>
   ) : (
-    <div className="menu">{"!!!"}</div>
+    <div className="dropdown">{"!!!"}</div>
   );
 
   return (
-    <div className="menu">
+    <div className="dropdown">
       <h2>Dropdown</h2>
-      <button onClick={openMenu}>{"FIGHT"}</button> {display}
-      {menu}
+      <button onClick={openDropdown}>{"FIGHT"}</button> {display}
+      {dropdown}
     </div>
   );
 };
