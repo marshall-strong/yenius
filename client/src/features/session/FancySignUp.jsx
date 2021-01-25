@@ -165,6 +165,7 @@ const FancySignUp = () => {
                 tabIndex="4"
                 type="submit"
                 value="Create Account"
+                onClick={handleSignup}
               />
             </form>
           </div>
