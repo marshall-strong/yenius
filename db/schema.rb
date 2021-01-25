@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_185402) do
+ActiveRecord::Schema.define(version: 2021_01_03_165649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,22 +66,10 @@ ActiveRecord::Schema.define(version: 2021_01_22_185402) do
     t.string "name", null: false
     t.date "release_date"
     t.string "bio"
+    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "top_album_number"
     t.index ["name"], name: "index_albums_on_name", unique: true
-  end
-
-  create_table "annotations", force: :cascade do |t|
-    t.integer "annotating_user_id", null: false
-    t.string "annotatable_type", null: false
-    t.bigint "annotatable_id", null: false
-    t.boolean "is_current", default: false, null: false
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["annotatable_type", "annotatable_id"], name: "index_annotations_on_annotatable_type_and_annotatable_id"
-    t.index ["annotating_user_id"], name: "index_annotations_on_annotating_user_id"
   end
 
   create_table "artist_credit_types", force: :cascade do |t|
@@ -107,9 +95,9 @@ ActiveRecord::Schema.define(version: 2021_01_22_185402) do
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
     t.string "bio"
+    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "top_artist_number"
     t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
@@ -147,22 +135,11 @@ ActiveRecord::Schema.define(version: 2021_01_22_185402) do
     t.string "name", null: false
     t.integer "track_number"
     t.integer "album_id", null: false
+    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "top_song_number"
     t.index ["album_id"], name: "index_songs_on_album_id"
     t.index ["name"], name: "index_songs_on_name"
-  end
-
-  create_table "upvotes", force: :cascade do |t|
-    t.integer "upvoting_user_id", null: false
-    t.string "upvotable_type", null: false
-    t.bigint "upvotable_id", null: false
-    t.boolean "is_downvote", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["upvotable_type", "upvotable_id"], name: "index_upvotes_on_upvotable_type_and_upvotable_id"
-    t.index ["upvoting_user_id"], name: "index_upvotes_on_upvoting_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -170,10 +147,10 @@ ActiveRecord::Schema.define(version: 2021_01_22_185402) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
+    t.string "my_color", null: false
+    t.integer "authored_comments_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "authored_comments_count"
-    t.string "my_color"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -183,6 +160,7 @@ ActiveRecord::Schema.define(version: 2021_01_22_185402) do
     t.integer "song_id", null: false
     t.integer "verse_number", null: false
     t.string "body"
+    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["song_id"], name: "index_verses_on_song_id"

@@ -4,6 +4,7 @@ class CreateVerses < ActiveRecord::Migration[5.2]
       t.integer :song_id, null: false
       t.integer :verse_number, null: false
       t.string :body
+      t.integer :rank, default: nil
 
       t.timestamps
     end

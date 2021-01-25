@@ -4,6 +4,7 @@ class CreateAlbums < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.date :release_date
       t.string :bio
+      t.integer :rank, default: nil
 
       t.timestamps
     end

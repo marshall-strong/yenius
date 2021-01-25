@@ -6,7 +6,7 @@ json.albums do
       json.artist album.artists_string
       json.releaseDate album.release_date
       json.urlAlbumCover url_for(album.cover)
-      json.rank album.top_album_number
+      json.rank album.rank
     end
   end
 end
