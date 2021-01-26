@@ -5,42 +5,45 @@ import { selectArtistById } from "./artistsSlice";
 
 const Description = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
+
   if (!artist || !artist.bio) {
     return null;
   }
 
-  let bio;
-  const needButton = artist.bio.length > 700;
-
-  const [isExpanded, setExpanded] = useState(false);
-  const handleClick = (e) => {
-    e.preventDefault();
-    setExpanded(true);
-  };
-
-  if (needButton) {
-    const markupInitial = { __html: artist.bio.slice(0, 655) };
-    const markup = { __html: artist.bio };
-    bio = isExpanded ? (
-      <div className="bio">
-        <span dangerouslySetInnerHTML={markup} />
-      </div>
-    ) : (
-      <div className="bio">
-        <span dangerouslySetInnerHTML={markupInitial} />
-        <button onClick={handleClick}>show full description</button>
-      </div>
-    );
-  } else {
-    const markup = { __html: artist.bio };
-    bio = (
-      <div className="bio">
-        <span dangerouslySetInnerHTML={markup} />
+  if (artist.bio.length < 700) {
+    return (
+      <div className="Description">
+        <div className="bio">
+          <span dangerouslySetInnerHTML={{ __html: artist.bio }} />
+        </div>
       </div>
     );
   }
 
-  return <div className="Description">{bio}</div>;
+  const [isExpanded, setExpanded] = useState(false);
+  const bio = isExpanded ? artist.bio : artist.bio.slice(0, 655);
+  const handleShowMore = (e) => {
+    e.preventDefault();
+    setExpanded(true);
+  };
+  const handleShowLess = (e) => {
+    e.preventDefault();
+    setExpanded(false);
+  };
+  const button = isExpanded ? (
+    <button onClick={handleShowLess}>show less</button>
+  ) : (
+    <button onClick={handleShowMore}>show more</button>
+  );
+
+  return (
+    <div className="Description">
+      <div className="bio">
+        <span dangerouslySetInnerHTML={{ __html: bio }} />
+        {button}
+      </div>
+    </div>
+  );
 };
 
 const Loader = ({ artistId }) => {
