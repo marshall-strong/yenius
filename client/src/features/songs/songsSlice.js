@@ -39,7 +39,6 @@ const initialState = songsAdapter.getInitialState({
     fetchSongAlbum: null,
     fetchSongArtistCredits: null,
     fetchSongBanner: null,
-
     fetchSongDescription: null,
     fetchSongLyrics: null,
     fetchSongSampleCredits: null,
