@@ -85,21 +85,20 @@ export const addVerseComment = createAsyncThunk(
   }
 );
 
-// export const fetchAllComments = createAsyncThunk(
-//   "comments/fetchAllComments",
-//   async () => {
-//     const response = await axios.get(`/api/v1/comments`);
-//     return response.data;
-//   }
-// );
+export const editComment = createAsyncThunk(
+  "comments/editComment",
+  async (editedComment) => {
+    const response = await axios.patch(`/api/v1/comments/${editedComment.id}`, {
+      comment: editedComment,
+    });
+    return response.data;
+  }
+);
 
-// export const fetchOneComment = createAsyncThunk('comments/fetchOneComment',
-//   async (commentId) => {
-//   }
-// );
-
-// export const editComment = createAsyncThunk("comments/editComment",
-//   async () => {}
-// );
-
-// export const deleteComment = createAsyncThunk('comments/deleteComment');
+export const deleteComment = createAsyncThunk(
+  "comments/deleteComment",
+  async (commentId) => {
+    const response = await axios.delete(`/api/v1/comments/${commentId}`);
+    return response.data;
+  }
+);

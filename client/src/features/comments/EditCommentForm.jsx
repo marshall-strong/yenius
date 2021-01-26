@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
-const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
+import { editComment } from "./commentsAsyncThunks";
+
+const EditCommentForm = ({ comment, setShowEditForm }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
   const authorId = currentUser ? currentUser.id : null;
 
-  const [body, setBody] = useState("");
+  const [body, setBody] = useState(comment.body);
   const onBodyChanged = (e) => setBody(e.target.value);
 
-  const [addRequestStatus, setAddRequestStatus] = useState("idle");
+  const [editRequestStatus, setEditRequestStatus] = useState("idle");
 
   const [expanded, setExpanded] = useState(false);
   const toggleExpanded = () =>
@@ -18,27 +20,28 @@ const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
   const dispatch = useDispatch();
 
   const canSave =
-    [authorId, commentableType, commentableId, body].every(Boolean) &&
-    addRequestStatus === "idle";
+    [authorId, body].every(Boolean) && editRequestStatus === "idle";
 
   const handleSubmit = async () => {
     if (canSave) {
       try {
-        setAddRequestStatus("pending");
+        setEditRequestStatus("pending");
         const response = await dispatch(
-          addComment({
+          editComment({
+            id: comment.id,
             commenting_user_id: authorId,
-            commentable_type: commentableType,
-            commentable_id: commentableId,
+            commentable_type: comment.commentable_type,
+            commentable_id: comment.commentable_id,
             body: body,
           })
         );
         unwrapResult(response);
         setBody("");
+        setShowEditForm(false);
       } catch (error) {
-        console.error("Failed to save the comment: ", error);
+        console.error("Failed to save the updated comment: ", error);
       } finally {
-        setAddRequestStatus("idle");
+        setEditRequestStatus("idle");
       }
     }
   };
@@ -56,7 +59,7 @@ const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
               name="commentBody"
               value={body}
               onChange={onBodyChanged}
-              placeholder="Add a comment"
+              placeholder="edit your comment"
               onClick={toggleExpanded}
             />
           </div>
@@ -75,4 +78,4 @@ const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
   );
 };
 
-export default AddCommentForm;
+export default EditCommentForm;

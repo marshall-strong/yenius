@@ -1,14 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectCommentIdsByCommentable } from "./commentsSlice";
-import CommentsList from "./CommentsList";
+
 import AddCommentForm from "./AddCommentForm";
+import CommentsList from "./CommentsList";
+
 import "../.././stylesheets/Comments.scss";
 
 const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
-  const commentIds = useSelector((state) =>
-    selectCommentIdsByCommentable(state, commentableId, commentableType)
-  );
   return (
     <div className="Comments">
       <div className="grayContainer">
@@ -17,7 +14,10 @@ const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
           commentableId={commentableId}
           commentableType={commentableType}
         />
-        <CommentsList commentIds={commentIds} />
+        <CommentsList
+          commentableId={commentableId}
+          commentableType={commentableType}
+        />
         <div className="ShowMore"></div>
       </div>
       <br />
