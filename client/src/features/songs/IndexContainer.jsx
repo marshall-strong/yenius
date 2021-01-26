@@ -5,7 +5,8 @@ import { fetchSongsIndex } from "./songsAsyncThunks";
 
 import SongsIndexLayout from "./IndexLayout";
 
-import "../.././stylesheets/SongsIndex.scss";
+import "../../stylesheets/IndexContainer.scss";
+import "../../stylesheets/SongsIndex.scss";
 
 const IndexContainer = ({ match }) => {
   const [lastCharFetched, setLastCharFetched] = useState(null);
@@ -19,7 +20,11 @@ const IndexContainer = ({ match }) => {
     }
   }, [selectedChar, lastCharFetched, dispatch]);
 
-  return <SongsIndexLayout char={selectedChar} match={match} />;
+  return (
+    <div className="IndexContainer">
+      <SongsIndexLayout char={selectedChar} match={match} />
+    </div>
+  );
 };
 
 export default IndexContainer;

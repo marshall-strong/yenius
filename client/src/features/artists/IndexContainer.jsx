@@ -7,6 +7,7 @@ import ArtistsIndexLayout from "./IndexLayout";
 import NotFound from "../../NotFound";
 
 import "../.././stylesheets/ArtistsIndex.scss";
+import "../../stylesheets/IndexContainer.scss";
 
 const IndexContainer = ({ match }) => {
   const [lastCharFetched, setLastCharFetched] = useState(null);
@@ -20,7 +21,11 @@ const IndexContainer = ({ match }) => {
     }
   }, [selectedChar, lastCharFetched, dispatch]);
 
-  return <ArtistsIndexLayout char={selectedChar} match={match} />;
+  return (
+    <div className="IndexContainer">
+      <ArtistsIndexLayout char={selectedChar} match={match} />
+    </div>
+  );
 };
 
 export default IndexContainer;
