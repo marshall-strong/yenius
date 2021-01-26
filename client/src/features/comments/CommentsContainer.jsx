@@ -20,7 +20,6 @@ const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
         />
         <div className="ShowMore"></div>
       </div>
-      <br />
     </div>
   );
 };
