@@ -9,7 +9,8 @@ import { selectArtistById } from "./artistsSlice";
 import ArtistShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
-import "../.././stylesheets/show.scss";
+import "../../stylesheets/show.scss";
+import "../../stylesheets/ShowContainer.scss";
 
 const ArtistShowContainer = ({ match }) => {
   const artistId = parseInt(match.params.artistId);
@@ -44,7 +45,7 @@ const ArtistShowContainer = ({ match }) => {
     }
   }, [lastArtistFetched, artistId, dispatch]);
 
-  return <section>{content}</section>;
+  return <section className="ShowContainer">{content}</section>;
 };
 
 export default ArtistShowContainer;
