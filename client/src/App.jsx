@@ -35,7 +35,7 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 // import ProtectedRoute from "./app/ProtectedRoute";
 
 import Navbar from "./app/Navbar";
-import HomeLayout from "./app/HomeLayout";
+import HomeContainer from "./app/HomeContainer";
 
 import ArtistsIndex from "./features/artists/IndexContainer";
 import ArtistShow from "./features/artists/ShowContainer";
@@ -62,7 +62,7 @@ const App = () => (
       <Navbar />
 
       <Switch>
-        <Route exact path="/" component={HomeLayout} />
+        <Route exact path="/" component={HomeContainer} />
 
         <Route exact path="/albums" component={AlbumsIndex} />
         <Route exact path="/albums/:albumId" component={AlbumShow} />
