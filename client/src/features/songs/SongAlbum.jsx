@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { selectSongById } from "./songsSlice";
 import { selectAlbumBySongId } from "../albums/albumsSlice";
+import { selectSongById } from "./songsSlice";
 
 import ArtistLinks from "../artists/ArtistLinks";
 
@@ -65,14 +66,14 @@ const AlbumInfo = ({ songId }) => {
   }
   return (
     <div className="song_album u-bottom_margin">
-      <a href={`/albums/${album.id}`} className="song_album-album_art">
+      <Link to={`/albums/${album.id}`} className="song_album-album_art">
         <img src={album.urlAlbumCover64px} alt={album.name} />
-      </a>
+      </Link>
       <div className="song_album-info">
-        <a href={`/albums/${album.id}`} className="song_album-info-title">
+        <Link to={`/albums/${album.id}`} className="song_album-info-title">
           {album.name}
           <span className="song_album-info-release_year"> ({album.year})</span>
-        </a>
+        </Link>
         <ArtistLinks artistIds={album.artistCredits["PRIMARY_ARTIST"]} />
       </div>
     </div>

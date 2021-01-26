@@ -21,7 +21,8 @@ import { selectSongById } from "./songsSlice";
 import SongShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
-import "../.././stylesheets/SongPage.scss";
+import "../../stylesheets/ShowContainer.scss";
+import "../../stylesheets/SongPage.scss";
 
 const ShowContainer = ({ match }) => {
   const songId = parseInt(match.params.songId);
@@ -70,7 +71,7 @@ const ShowContainer = ({ match }) => {
     }
   }, [songId, lastVerseFetched, verseId, dispatch]);
 
-  return <section>{content}</section>;
+  return <section className="ShowContainer">{content}</section>;
 };
 
 export default ShowContainer;

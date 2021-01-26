@@ -8,7 +8,8 @@ import { selectAlbumById } from "./albumsSlice";
 import AlbumShowLayout from "./ShowLayout";
 import NotFound from "../../NotFound";
 
-import "../.././stylesheets/show.scss";
+import "../../stylesheets/show.scss";
+import "../../stylesheets/ShowContainer.scss";
 
 const AlbumPage = ({ match }) => {
   const albumId = parseInt(match.params.albumId);
@@ -41,7 +42,7 @@ const AlbumPage = ({ match }) => {
     }
   }, [lastAlbumFetched, albumId, dispatch]);
 
-  return <section>{content}</section>;
+  return <section className="ShowContainer">{content}</section>;
 };
 
 export default AlbumPage;

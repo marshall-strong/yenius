@@ -1,6 +1,6 @@
 import React from "react";
 
-import AddCommentForm from "./AddCommentForm";
+import AddCommentContainer from "./AddCommentContainer";
 import CommentsList from "./CommentsList";
 
 import "../.././stylesheets/Comments.scss";
@@ -9,7 +9,7 @@ const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
   return (
     <div className="Comments">
       <div className="grayContainer">
-        <AddCommentForm
+        <AddCommentContainer
           addComment={addComment}
           commentableId={commentableId}
           commentableType={commentableType}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signupUser, loginUser } from "./sessionAsyncThunks";
 
 import "../.././stylesheets/FancySignUp.scss";
+import "../../stylesheets/SessionContainer.scss";
 
 const FancySignUp = () => {
   const [showForm, setShowForm] = useState(false);
@@ -46,7 +47,7 @@ const FancySignUp = () => {
   };
 
   return (
-    <div className="inherit">
+    <div className="SessionContainer inherit">
       <div className="sign_up_unit">
         <div className={showFormKlass}>
           <div className="sign-up-header">

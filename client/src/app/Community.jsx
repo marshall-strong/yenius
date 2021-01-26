@@ -1,5 +1,6 @@
 import React from "react";
 
+import CommunityButtons from "./CommunityButtons";
 import TopScholars from "../features/users/TopScholars";
 
 import "../stylesheets/Charts.scss";
@@ -70,6 +71,7 @@ const Community = () => {
   return (
     <div className="Community">
       <CommunityTitle />
+      <CommunityButtons />
       <TopScholarsHeader />
       <TopScholars />
     </div>
