@@ -185,9 +185,9 @@ msGreen		#009e49		rgb(0, 158, 73)
 msLime		#bad80a		rgb(186, 216, 10)
 
 
-To Do Items:
+ToDo STILL
 
-DONE - Get rid of dummy links in PageFooter.
+
 
 ArtistIndex, SongIndex -- remove Rank numbers from Suggestions
 
@@ -212,3 +212,18 @@ Add Login with Google, Facebook, Twitter
 Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
 
 Need more content on ArtistPages
+
+ToDo COMPLETED
+[DONE (1/26)] - Get rid of dummy links in PageFooter.
+[DONE (1/26)] - Fix broken styling on AlbumsIndex
+[DONE (1/26)] - Center all page content
+
+[DONE (1/25)] - CommentsList responds immediately if a comment is added/edited/deleted
+[DONE (1/25)] - Authenticated Users can edit/update their own comments
+[DONE (1/25)] - Authenticated Users can delete their own comments
+
+[DONE (1/24)] - Add Community widget to HomeContainer
+[DONE (1/24)] - Add Charts widget to HomeContainer
+
+[DONE (1/23)] - Add 'Suggested Artists/Songs' to Artists/Songs index page
+[DONE (1/23)] - All flavors of UserAuth work (Signup new user, Login existing user, Login as demo user)
