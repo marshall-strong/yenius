@@ -183,3 +183,32 @@ msCyan		#00bcf2		rgb(0, 188, 242)
 msTeal		#00b294		rgb(0, 178, 148)
 msGreen		#009e49		rgb(0, 158, 73)
 msLime		#bad80a		rgb(186, 216, 10)
+
+
+To Do Items:
+
+DONE - Get rid of dummy links in PageFooter.
+
+ArtistIndex, SongIndex -- remove Rank numbers from Suggestions
+
+AlbumsIndex -- do not show Samples & Interpolations
+
+Style User Profile and allow authenticated users to update their email and my_color.
+
+Add links to all usernames so that clicking on a user's username will redirect to the user's Profile Page.
+
+When adding a comment, show an "avatar" square filled with user.my_color (currently just a gray circle).
+
+VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
+
+If Lyrics are unavailable for a song, provide a link to the relevent Kanye song
+
+Style ArtistDescription, AlbumDescription -- needs Header, link styling
+
+On SnI Songs TrackInfo, do not display Release Date
+
+Add Login with Google, Facebook, Twitter
+
+Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
+
+Need more content on ArtistPages
