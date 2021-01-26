@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 
 import { selectArtistById } from "./artistsSlice";
 
+import "../../stylesheets/Description.scss";
+
 const Description = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
 
@@ -13,6 +15,7 @@ const Description = ({ artistId }) => {
   if (artist.bio.length < 700) {
     return (
       <div className="Description">
+        <h3>{`About “${artist.name}”`}</h3>
         <div className="bio">
           <span dangerouslySetInnerHTML={{ __html: artist.bio }} />
         </div>
@@ -38,6 +41,7 @@ const Description = ({ artistId }) => {
 
   return (
     <div className="Description">
+      <h3>{`About “${artist.name}”`}</h3>
       <div className="bio">
         <span dangerouslySetInnerHTML={{ __html: bio }} />
         {button}
