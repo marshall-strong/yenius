@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { deleteComment, editComment } from "../comments/commentsAsyncThunks";
+import { deleteComment } from "../comments/commentsAsyncThunks";
 
 import {
   selectCommentById,
@@ -9,12 +9,18 @@ import {
 } from "../comments/commentsSlice";
 import { selectUserById } from "../users/usersSlice";
 
+import EditCommentForm from "./EditCommentForm";
 import TimeAgo from "./TimeAgo";
 
 const Comment = ({ commentId }) => {
   const comment = useSelector((state) => selectCommentById(state, commentId));
   const user = useSelector((state) => selectUserById(state, comment.authorId));
   const currentUser = useSelector((state) => state.session.currentUser);
+
+  const [showEditForm, setShowEditForm] = useState(false);
+  const editForm = showEditForm ? (
+    <EditCommentForm comment={comment} setShowEditForm={setShowEditForm} />
+  ) : null;
 
   if (!comment || !user) {
     return null;
@@ -27,7 +33,7 @@ const Comment = ({ commentId }) => {
   };
   const handleEditComment = (e) => {
     e.preventDefault();
-    // dispatch(editComment(editedComment));
+    setShowEditForm(true);
   };
 
   let deleteButton;
@@ -53,7 +59,8 @@ const Comment = ({ commentId }) => {
       </div>
       <div className="standard-rich-content">{comment.body}</div>
       {deleteButton}
-      {/* {editButton} */}
+      {editButton}
+      {editForm}
     </article>
   );
 };
