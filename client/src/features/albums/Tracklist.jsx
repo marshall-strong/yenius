@@ -68,7 +68,7 @@ const TracklistRow = ({ songId }) => {
 
         <div className="track-align-right">
           <div className="track-expand_arrow">
-            <button onClick={toggleExpanded}>{arrow}</button>
+            <div onClick={toggleExpanded}>{arrow}</div>
           </div>
         </div>
       </div>
