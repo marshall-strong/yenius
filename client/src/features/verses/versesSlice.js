@@ -1,4 +1,5 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+
 import {
   addVerseComment,
   fetchVerseComments,
@@ -21,6 +22,9 @@ const versesSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    // no verses asyncThunks
+
+    // other asyncThunks
     [fetchSongLyrics.fulfilled]: (state, action) => {
       if (action.payload.verses) {
         versesAdapter.upsertMany(state, action.payload.verses);
