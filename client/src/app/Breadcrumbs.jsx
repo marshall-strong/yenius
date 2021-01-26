@@ -10,17 +10,31 @@ import ".././stylesheets/Breadcrumbs.scss";
 
 const homeLink = () => <Link to="/" key="0">{` Home `}</Link>;
 
-const albumsIndexLink = () => <Link to="/albums" key="1">{` Albums `}</Link>;
+const albumsIndexLink = () => (
+  <Link to="/albums" className="breadcrumb" key="1">{` Albums `}</Link>
+);
 
 const albumPageLink = (albumId) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));
-  return <Link to={`/albums/${albumId}`} key="2">{` ${album.name} `}</Link>;
+  return (
+    <Link
+      to={`/albums/${albumId}`}
+      className="breadcrumb"
+      key="2"
+    >{` ${album.name} `}</Link>
+  );
 };
 
-const artistsIndexLink = () => <Link to="/artists" key="1">{` Artists `}</Link>;
+const artistsIndexLink = () => (
+  <Link to="/artists" className="breadcrumb" key="1">{` Artists `}</Link>
+);
 
 const artistsListLink = (char) => (
-  <Link to={`/artists/index/${char}`} key="2">{` ${char.toUpperCase()} `}</Link>
+  <Link
+    to={`/artists/index/${char}`}
+    className="breadcrumb"
+    key="2"
+  >{` ${char.toUpperCase()} `}</Link>
 );
 
 const artistPageCharLink = (artistId) => {
@@ -29,6 +43,7 @@ const artistPageCharLink = (artistId) => {
   return (
     <Link
       to={`/artists/index/${char}`}
+      className="breadcrumb"
       key="2"
     >{` ${char.toUpperCase()} `}</Link>
   );
@@ -36,15 +51,24 @@ const artistPageCharLink = (artistId) => {
 
 const artistPageLink = (artistId) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));
-  return <Link to={`/artists/${artistId}`} key="3">{` ${artist.name} `}</Link>;
+  return (
+    <Link
+      to={`/artists/${artistId}`}
+      className="breadcrumb"
+      key="3"
+    >{` ${artist.name} `}</Link>
+  );
 };
 
-const songsIndexLink = () => <Link to="/songs" key="1">{` Songs `}</Link>;
+const songsIndexLink = () => (
+  <Link to="/songs" className="breadcrumb" key="1">{` Songs `}</Link>
+);
 
 const songsListLink = (char) => {
   return (
     <Link
       to={`/songs/index/${char}`}
+      className="breadcrumb"
       key="2"
     >{` [${char.toUpperCase()}] `}</Link>
   );
@@ -54,13 +78,23 @@ const songPageCharLink = (songId) => {
   const song = useSelector((state) => selectSongById(state, songId));
   const char = song.name.toLowerCase().slice(0, 1);
   return (
-    <Link to={`/songs/index/${char}`} key="2">{` ${char.toUpperCase()} `}</Link>
+    <Link
+      to={`/songs/index/${char}`}
+      className="breadcrumb"
+      key="2"
+    >{` ${char.toUpperCase()} `}</Link>
   );
 };
 
 const songPageLink = (songId) => {
   const song = useSelector((state) => selectSongById(state, songId));
-  return <Link to={`/songs/${songId}`} key="3">{` ${song.name} `}</Link>;
+  return (
+    <Link
+      to={`/songs/${songId}`}
+      className="breadcrumb"
+      key="3"
+    >{` ${song.name} `}</Link>
+  );
 };
 
 const Breadcrumbs = ({ match }) => {
