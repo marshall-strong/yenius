@@ -1,11 +1,4 @@
 .Breadcrumbs {
-  // align-items: center;
-  // background-color: rgba(204, 204, 204, 0.35);
-  // display: block;
-  // margin-top: 2.25rem;
-  // padding: 0.75rem;
-  // text-align: center;
-
   font-family: Programme-Regular, sans-serif;
   z-index: 1;
   word-break: break-word;
@@ -14,4 +7,9 @@
   margin: 1rem 0.5rem;
   position: relative;
   text-align: center;
+}
+
+.breadcrumb:before {
+  content: "\00a0>\00a0";
+  color: #ccc;
 }
