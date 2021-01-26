@@ -189,8 +189,6 @@ msLime		#bad80a		rgb(186, 216, 10)
 
 Style Links WITHIN Artist/Album Descriptions
 
-Style AlbumDescription
-
 VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
 
 Need more content on ArtistPages
@@ -215,6 +213,7 @@ Seed a bunch of Demo user comments so that users have something they can delete 
 
 
 # ToDo COMPLETED
+[DONE (1/26)] - Style Album Description -- label, showMore/Less button
 [DONE (1/26)] - Style Artist Description -- label, showMore/Less button
 [DONE (1/26)] - Get rid of dummy links in PageFooter.
 [DONE (1/26)] - Fix broken styling on AlbumsIndex
