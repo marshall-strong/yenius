@@ -170,7 +170,7 @@ Run migrations (development)
 `heroku local:run rails db:migrate`
 
 
-User Colors
+# User Colors
 https://colorswall.com/palette/73/
 Color		HEX			RGB
 msYellow	#fff100		rgb(255, 241, 0)
@@ -187,9 +187,9 @@ msLime		#bad80a		rgb(186, 216, 10)
 
 # ToDo STILL
 
-Style Links WITHIN Artist/Album Descriptions
-
 VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
+
+Style Links WITHIN Artist/Album Descriptions
 
 Need more content on ArtistPages
 
@@ -205,14 +205,13 @@ When adding a comment, show an "avatar" square filled with user.my_color (curren
 
 If Lyrics are unavailable for a song, provide a link to the relevent Kanye song
 
-On SnI Songs TrackInfo, do not display Release Date
-
 Add Login with Google, Facebook, Twitter
 
 Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
 
 
 # ToDo COMPLETED
+[DONE (1/26)] - Do not include ReleaseDate in Song TrackInfo if song.album.name === 'Samples & Interpolations'
 [DONE (1/26)] - Style Album Description -- label, showMore/Less button
 [DONE (1/26)] - Style Artist Description -- label, showMore/Less button
 [DONE (1/26)] - Get rid of dummy links in PageFooter.
