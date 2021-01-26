@@ -42,11 +42,10 @@ const commentsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    // comments asyncThunks
+    // addAlbumComment
     [addAlbumComment.pending]: (state, action) => {
       state.status.addAlbumComment = "pending";
-    },
-    [addAlbumComment.rejected]: (state, action) => {
-      state.status.addAlbumComment = "rejected";
     },
     [addAlbumComment.fulfilled]: (state, action) => {
       state.status.addAlbumComment = "fulfilled";
@@ -54,11 +53,13 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    [addAlbumComment.rejected]: (state, action) => {
+      state.status.addAlbumComment = "rejected";
+    },
+
+    // addArtistComment
     [addArtistComment.pending]: (state, action) => {
       state.status.addArtistComment = "pending";
-    },
-    [addArtistComment.rejected]: (state, action) => {
-      state.status.addArtistComment = "rejected";
     },
     [addArtistComment.fulfilled]: (state, action) => {
       state.status.addArtistComment = "fulfilled";
@@ -66,11 +67,13 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    [addArtistComment.rejected]: (state, action) => {
+      state.status.addArtistComment = "rejected";
+    },
+
+    // addSongComment
     [addSongComment.pending]: (state, action) => {
       state.status.addSongComment = "pending";
-    },
-    [addSongComment.rejected]: (state, action) => {
-      state.status.addSongComment = "rejected";
     },
     [addSongComment.fulfilled]: (state, action) => {
       state.status.addSongComment = "fulfilled";
@@ -78,11 +81,13 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    [addSongComment.rejected]: (state, action) => {
+      state.status.addSongComment = "rejected";
+    },
+
+    // addVerseComment
     [addVerseComment.pending]: (state, action) => {
       state.status.addVerseComment = "pending";
-    },
-    [addVerseComment.rejected]: (state, action) => {
-      state.status.addVerseComment = "rejected";
     },
     [addVerseComment.fulfilled]: (state, action) => {
       state.status.addVerseComment = "fulfilled";
@@ -90,11 +95,13 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    [addVerseComment.rejected]: (state, action) => {
+      state.status.addVerseComment = "rejected";
+    },
+
+    // deleteComment
     [deleteComment.pending]: (state, action) => {
       state.status.deleteComment = "pending";
-    },
-    [deleteComment.rejected]: (state, action) => {
-      state.status.deleteComment = "rejected";
     },
     [deleteComment.fulfilled]: (state, action) => {
       state.status.deleteComment = "fulfilled";
@@ -102,11 +109,13 @@ const commentsSlice = createSlice({
         commentsAdapter.removeOne(state, action.payload.comments.id);
       }
     },
+    [deleteComment.rejected]: (state, action) => {
+      state.status.deleteComment = "rejected";
+    },
+
+    // editComment
     [editComment.pending]: (state, action) => {
       state.status.editComment = "pending";
-    },
-    [editComment.rejected]: (state, action) => {
-      state.status.editComment = "rejected";
     },
     [editComment.fulfilled]: (state, action) => {
       state.status.editComment = "fulfilled";
@@ -114,11 +123,13 @@ const commentsSlice = createSlice({
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
+    [editComment.rejected]: (state, action) => {
+      state.status.editComment = "rejected";
+    },
+
+    // fetchAlbumComments
     [fetchAlbumComments.pending]: (state, action) => {
       state.status.fetchAlbumComments = "pending";
-    },
-    [fetchAlbumComments.rejected]: (state, action) => {
-      state.status.fetchAlbumComments = "rejected";
     },
     [fetchAlbumComments.fulfilled]: (state, action) => {
       state.status.fetchAlbumComments = "fulfilled";
@@ -126,11 +137,13 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    [fetchAlbumComments.rejected]: (state, action) => {
+      state.status.fetchAlbumComments = "rejected";
+    },
+
+    // fetchArtistComments
     [fetchArtistComments.pending]: (state, action) => {
       state.status.fetchArtistComments = "pending";
-    },
-    [fetchArtistComments.rejected]: (state, action) => {
-      state.status.fetchArtistComments = "rejected";
     },
     [fetchArtistComments.fulfilled]: (state, action) => {
       state.status.fetchArtistComments = "fulfilled";
@@ -138,11 +151,13 @@ const commentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload.comments);
       }
     },
+    [fetchArtistComments.rejected]: (state, action) => {
+      state.status.fetchArtistComments = "rejected";
+    },
+
+    // fetchSongComments
     [fetchSongComments.pending]: (state, action) => {
       state.status.fetchSongComments = "pending";
-    },
-    [fetchSongComments.rejected]: (state, action) => {
-      state.status.fetchSongComments = "rejected";
     },
     [fetchSongComments.fulfilled]: (state, action) => {
       state.status.fetchSongComments = "fulfilled";
@@ -150,17 +165,22 @@ const commentsSlice = createSlice({
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
     },
+    [fetchSongComments.rejected]: (state, action) => {
+      state.status.fetchSongComments = "rejected";
+    },
+
+    // fetchVerseComments
     [fetchVerseComments.pending]: (state, action) => {
       state.status.fetchVerseComments = "pending";
-    },
-    [fetchVerseComments.rejected]: (state, action) => {
-      state.status.fetchVerseComments = "rejected";
     },
     [fetchVerseComments.fulfilled]: (state, action) => {
       state.status.fetchVerseComments = "fulfilled";
       if (action.payload.comments) {
         commentsAdapter.upsertMany(state, action.payload.comments);
       }
+    },
+    [fetchVerseComments.rejected]: (state, action) => {
+      state.status.fetchVerseComments = "rejected";
     },
   },
 });
