@@ -185,9 +185,15 @@ msGreen		#009e49		rgb(0, 158, 73)
 msLime		#bad80a		rgb(186, 216, 10)
 
 
-ToDo STILL
+# ToDo STILL
 
+Style ArtistDescription -- needs Header, link styling
 
+Style AlbumDescription -- needs Header, link styling
+
+VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
+
+Need more content on ArtistPages
 
 ArtistIndex, SongIndex -- remove Rank numbers from Suggestions
 
@@ -199,11 +205,7 @@ Add links to all usernames so that clicking on a user's username will redirect t
 
 When adding a comment, show an "avatar" square filled with user.my_color (currently just a gray circle).
 
-VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
-
 If Lyrics are unavailable for a song, provide a link to the relevent Kanye song
-
-Style ArtistDescription, AlbumDescription -- needs Header, link styling
 
 On SnI Songs TrackInfo, do not display Release Date
 
@@ -211,9 +213,9 @@ Add Login with Google, Facebook, Twitter
 
 Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
 
-Need more content on ArtistPages
 
-ToDo COMPLETED
+# ToDo COMPLETED
+
 [DONE (1/26)] - Get rid of dummy links in PageFooter.
 [DONE (1/26)] - Fix broken styling on AlbumsIndex
 [DONE (1/26)] - Center all page content
