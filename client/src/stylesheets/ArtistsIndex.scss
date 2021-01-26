@@ -1,5 +1,5 @@
 .ArtistsIndex {
-  background-color: black;
+  // background-color: black;
   font-family: Programme-Regular, sans-serif;
 }
 
@@ -12,12 +12,20 @@
 
 .ArtistsIndex h1,
 .ArtistsIndex h2 {
-  color: #fff;
+  // color: #fff;
   font-size: 40px;
   font-weight: 700;
   line-height: 100%;
   margin-bottom: 10px;
   padding-top: 1px;
+}
+
+.ArtistsIndex h1,
+.ArtistsIndex h3,
+.ArtistsIndex .IndexCharsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ArtistsIndex .breadcrumbs {

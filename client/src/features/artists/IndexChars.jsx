@@ -17,8 +17,11 @@ const IndexChars = () => {
   ));
   return (
     <div className="CharacterIndexList ArtistsIndex">
-      <h1>All Artists on Yenius</h1>
-      <ul className="characters_index_list">{links}</ul>
+      <h1>Artists Index</h1>
+      <h3>SELECT A LETTER</h3>
+      <div className="IndexCharsContainer">
+        <ul className="characters_index_list">{links}</ul>
+      </div>
     </div>
   );
 };

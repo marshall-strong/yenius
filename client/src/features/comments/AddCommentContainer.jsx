@@ -9,9 +9,6 @@ const AddCommentInitial = ({ handleClick }) => {
     <section className="CommentForm">
       <form>
         <div className="avatarBoxWithInputBox">
-          {/* <div className="avatarBox">
-            <div className="avatar"></div>
-          </div> */}
           <div className="inputBox">
             <textarea
               id="commentBody"

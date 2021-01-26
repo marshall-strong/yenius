@@ -5,6 +5,8 @@ import { fetchAlbumsList } from "./albumsAsyncThunks";
 
 import AlbumsIndexLayout from "./IndexLayout";
 
+import "../../stylesheets/IndexContainer.scss";
+
 const IndexContainer = ({ match }) => {
   const [asyncRequestSent, setAsyncRequestSent] = useState(false);
   const dispatch = useDispatch();
@@ -15,7 +17,11 @@ const IndexContainer = ({ match }) => {
     }
   }, [asyncRequestSent, dispatch]);
 
-  return <AlbumsIndexLayout match={match} />;
+  return (
+    <div className="IndexContainer">
+      <AlbumsIndexLayout match={match} />
+    </div>
+  );
 };
 
 export default IndexContainer;
