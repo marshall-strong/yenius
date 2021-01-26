@@ -5,6 +5,10 @@ import {
 } from "@reduxjs/toolkit";
 
 import {
+  addAlbumComment,
+  addArtistComment,
+  addSongComment,
+  addVerseComment,
   fetchAlbumComments,
   fetchArtistComments,
   fetchSongComments,
@@ -13,12 +17,7 @@ import {
 import { fetchTopScholars, fetchUserProfile } from "../users/usersAsyncThunks";
 
 const usersAdapter = createEntityAdapter({
-  // selectId is only necessary if entity's unique key is NOT entity.id
   selectId: (user) => user.id,
-  // sortComparer is necessary if you want state.ids to be sorted
-  // if sortComparer(foo, bar) returns -1, sort foo to lower index than bar (state.ids = [foo, bar])
-  // if sortComparer(foo, bar) returns  0, don't sort foo with respect to bar
-  // if sortComparer(foo, bar) returns +1, sort foo to higher index than bar (state.ids = [bar, foo])
   sortComparer: (a, b) => a.username.localeCompare(b.username),
 });
 
@@ -34,6 +33,8 @@ const usersSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    // users asyncThunks
+    // fetchTopScholars
     [fetchTopScholars.pending]: (state) => {
       state.status.fetchTopScholars = "pending";
     },
@@ -47,6 +48,7 @@ const usersSlice = createSlice({
       state.status.fetchTopScholars = "rejected";
     },
 
+    // fetchUserProfile
     [fetchUserProfile.pending]: (state) => {
       state.status.fetchUserProfile = "pending";
     },
@@ -60,6 +62,27 @@ const usersSlice = createSlice({
       state.status.fetchUserProfile = "rejected";
     },
 
+    // other asyncThunks
+    [addAlbumComment.fulfilled]: (state, action) => {
+      if (action.payload.users) {
+        usersAdapter.setAll(state, action.payload.users);
+      }
+    },
+    [addArtistComment.fulfilled]: (state, action) => {
+      if (action.payload.users) {
+        usersAdapter.setAll(state, action.payload.users);
+      }
+    },
+    [addSongComment.fulfilled]: (state, action) => {
+      if (action.payload.users) {
+        usersAdapter.setAll(state, action.payload.users);
+      }
+    },
+    [addVerseComment.fulfilled]: (state, action) => {
+      if (action.payload.users) {
+        usersAdapter.upsertMany(state, action.payload.users);
+      }
+    },
     [fetchAlbumComments.fulfilled]: (state, action) => {
       if (action.payload.users) {
         usersAdapter.setAll(state, action.payload.users);
