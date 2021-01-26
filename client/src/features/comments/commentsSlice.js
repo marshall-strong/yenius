@@ -162,7 +162,7 @@ const commentsSlice = createSlice({
     [fetchSongComments.fulfilled]: (state, action) => {
       state.status.fetchSongComments = "fulfilled";
       if (action.payload.comments) {
-        commentsAdapter.upsertMany(state, action.payload.comments);
+        commentsAdapter.setAll(state, action.payload.comments);
       }
     },
     [fetchSongComments.rejected]: (state, action) => {
