@@ -24,7 +24,7 @@ const Description = ({ artistId }) => {
   }
 
   const [isExpanded, setExpanded] = useState(false);
-  const bio = isExpanded ? artist.bio : artist.bio.slice(0, 655);
+  const bio = isExpanded ? artist.bio : artist.bio.slice(0, 658);
   const handleShowMore = (e) => {
     e.preventDefault();
     setExpanded(true);
@@ -33,10 +33,14 @@ const Description = ({ artistId }) => {
     e.preventDefault();
     setExpanded(false);
   };
-  const button = isExpanded ? (
-    <button onClick={handleShowLess}>show less</button>
+  const showMore = isExpanded ? (
+    <span className="showMore" onClick={handleShowLess}>
+      {"(collapse)"}
+    </span>
   ) : (
-    <button onClick={handleShowMore}>show more</button>
+    <span className="showMore" onClick={handleShowMore}>
+      {"read more »"}
+    </span>
   );
 
   return (
@@ -44,7 +48,7 @@ const Description = ({ artistId }) => {
       <h3>{`About “${artist.name}”`}</h3>
       <div className="bio">
         <span dangerouslySetInnerHTML={{ __html: bio }} />
-        {button}
+        {showMore}
       </div>
     </div>
   );
