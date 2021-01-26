@@ -2,6 +2,49 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
+import CommunityButtons from "../../app/CommunityButtons";
+
+const AddCommentInitial = ({ handleClick }) => {
+  return (
+    <section className="CommentForm">
+      <form>
+        <div className="avatarBoxWithInputBox">
+          {/* <div className="avatarBox">
+            <div className="avatar"></div>
+          </div> */}
+          <div className="inputBox">
+            <textarea
+              id="commentBody"
+              name="commentBody"
+              placeholder="Add a comment"
+              onClick={handleClick}
+            />
+          </div>
+        </div>
+      </form>
+    </section>
+  );
+};
+
+const NotSignedIn = () => (
+  <section className="CommentForm">
+    <form>
+      <div className="avatarBoxWithInputBox">
+        <div className="inputBox">
+          <textarea
+            id="commentBody"
+            name="commentBody"
+            placeholder="Sign up to add a comment"
+            onClick={null}
+          />
+        </div>
+      </div>
+      <br />
+      <CommunityButtons />
+    </form>
+  </section>
+);
+
 const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
   const authorId = currentUser ? currentUser.id : null;
@@ -75,4 +118,34 @@ const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
   );
 };
 
-export default AddCommentForm;
+const AddCommentContainer = ({
+  addComment,
+  commentableType,
+  commentableId,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const currentUser = useSelector((state) => state.session.currentUser);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsExpanded(true);
+  };
+
+  const content = isExpanded ? (
+    currentUser ? (
+      <AddCommentForm
+        addComment={addComment}
+        commentableId={commentableId}
+        commentableType={commentableType}
+      />
+    ) : (
+      <NotSignedIn />
+    )
+  ) : (
+    <AddCommentInitial handleClick={handleClick} />
+  );
+
+  return content;
+};
+
+export default AddCommentContainer;
