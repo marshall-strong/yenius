@@ -187,6 +187,8 @@ msLime		#bad80a		rgb(186, 216, 10)
 
 # ToDo STILL
 
+Lyrics shows "Lyrics not available, sorry" while still loading
+
 VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
 
 Style Links WITHIN Artist/Album Descriptions
