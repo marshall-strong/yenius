@@ -187,6 +187,8 @@ msLime		#bad80a		rgb(186, 216, 10)
 
 # ToDo STILL
 
+Clicking on a song in the SongAlbum component breaks app in Production
+
 Lyrics shows "Lyrics not available, sorry" while still loading
 
 VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
