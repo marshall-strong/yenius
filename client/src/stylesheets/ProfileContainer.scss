@@ -1,0 +1,13 @@
+.ProfileContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+
+  background-color: #f7f7f7;
+  width: 100%;
+  min-height: calc(100vh - 79px - 212px);
+  // Navbar height: 79px
+  // PageFooter height: 212px
+}
