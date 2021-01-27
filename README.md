@@ -187,8 +187,6 @@ msLime		#bad80a		rgb(186, 216, 10)
 
 # ToDo STILL
 
-Clicking on a song in the SongAlbum component breaks app in Production
-
 Lyrics shows "Lyrics not available, sorry" while still loading
 
 VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
@@ -213,6 +211,7 @@ Add Login with Google, Facebook, Twitter
 
 
 # ToDo COMPLETED
+[DONE (1/27)] - Replace <a> with <Link> in SongAlbum component -- clicking on a track was breaking app in Production
 [DONE (1/27)] - Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
 [DONE (1/27)] - Authenticated users can update their color from the user profile page
 

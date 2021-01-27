@@ -12,13 +12,16 @@ const TrackListing = ({ trackId, songId }) => {
   if (!track) {
     return null;
   }
+
   let className = "track_listing-track";
-  let trackName = <a href={`/songs/${track.id}`}>{track.name}</a>;
+  let trackName = <Link to={`/songs/${track.id}`}>{track.name}</Link>;
+
   // TrackListing for the SongPage song should be displayed differently
   if (track.id === parseInt(songId)) {
     className = className.concat(" track_listing-track--current");
     trackName = <span>{track.name}</span>;
   }
+
   return (
     <div className={className}>
       <span className="track_listing-track_number">
