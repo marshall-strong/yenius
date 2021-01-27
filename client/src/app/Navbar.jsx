@@ -91,12 +91,20 @@ const Navbar = () => {
           </li>
           <li> | </li>
           <li>
-            <a href="https://github.com/marstrong/yenius--rails6-api">
+            <a
+              href="https://github.com/marstrong/yenius--rails6-api"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img height="14px" src={GithubLogo} alt="GitHub repository" />
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/marshall-strong/">
+            <a
+              href="https://www.linkedin.com/in/marshall-strong/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img height="14px" src={LinkedInLogo} alt="LinkedIn Profile" />
             </a>
           </li>
