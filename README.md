@@ -197,7 +197,7 @@ ArtistIndex, SongIndex -- remove Rank numbers from Suggestions
 
 AlbumsIndex -- do not show Samples & Interpolations
 
-Style User Profile and allow authenticated users to update their email and my_color.
+Style User Profile.
 
 Add links to all usernames so that clicking on a user's username will redirect to the user's Profile Page.
 
@@ -211,6 +211,8 @@ Seed a bunch of Demo user comments so that users have something they can delete 
 
 
 # ToDo COMPLETED
+[DONE (1/27)] - Authenticated users can update their color from the user profile page
+
 [DONE (1/26)] - Do not include ReleaseDate in Song TrackInfo if song.album.name === 'Samples & Interpolations'
 [DONE (1/26)] - Style Album Description -- label, showMore/Less button
 [DONE (1/26)] - Style Artist Description -- label, showMore/Less button
