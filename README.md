@@ -207,10 +207,9 @@ If Lyrics are unavailable for a song, provide a link to the relevent Kanye song
 
 Add Login with Google, Facebook, Twitter
 
-Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
-
 
 # ToDo COMPLETED
+[DONE (1/27)] - Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
 [DONE (1/27)] - Authenticated users can update their color from the user profile page
 
 [DONE (1/26)] - Do not include ReleaseDate in Song TrackInfo if song.album.name === 'Samples & Interpolations'
