@@ -101,15 +101,15 @@ const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
             />
           </div>
         </div>
-
-        <button
+        <br />
+        <span
           type="button"
           onClick={handleSubmit}
           disabled={!canSave}
           className="submitButton"
         >
           Submit
-        </button>
+        </span>
       </form>
     </section>
   );
