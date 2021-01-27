@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { loginUser, logoutUser, signupUser } from "./sessionAsyncThunks";
+import { updateUserProfile } from "../users/usersAsyncThunks";
 
 export const sessionSlice = createSlice({
   name: "session",
@@ -66,14 +67,12 @@ export const sessionSlice = createSlice({
       state.status.signupUser = "rejected";
       state.errors.push(action.error.message);
     },
+
+    // other asyncThunks
+    [updateUserProfile.fulfilled]: (state, action) => {
+      state.currentUser = action.payload.session.currentUser;
+    },
   },
 });
-
-// export const {
-// setCurrentUser,
-// clearCurrentUser,
-// receiveSessionErrors,
-// clearSessionErrors,
-// } = sessionSlice.actions;
 
 export default sessionSlice.reducer;

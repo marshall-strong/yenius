@@ -20,7 +20,7 @@ class Api::V1::UsersController < ApplicationController
   # @route PUT /api/v1/users/:user_id
   def update
     @user = User.find(params[:user_id])
-    if @user && @user.update_attributes(user_params)
+    if @user && @user.update(user_params)
       render 'api/v1/session/current_user';
     elsif !@user
       render json: ['Could not locate user'], status: 400
@@ -49,6 +49,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:id, :username, :email, :password, :my_color)
   end
 end

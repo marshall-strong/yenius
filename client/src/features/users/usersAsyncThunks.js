@@ -16,3 +16,13 @@ export const fetchUserProfile = createAsyncThunk(
     return response.data;
   }
 );
+
+export const updateUserProfile = createAsyncThunk(
+  "users/updateUserProfile",
+  async (updatedUser) => {
+    const response = await axios.patch(`/api/v1/users/${updatedUser.id}`, {
+      user: updatedUser,
+    });
+    return response.data;
+  }
+);
