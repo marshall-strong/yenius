@@ -49,25 +49,35 @@ const PageFooter = () => {
     <footer className="page_footer PageFooter">
       <div className="footer">
         <div>
-          <a href="https://github.com/marstrong/yenius--rails6-api">
+          <a
+            href="https://github.com/marstrong/yenius--rails6-api"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             About Yenius
           </a>
-          {/* <a href="/">Contributor Guidelines</a> */}
-          {/* <a href="/">Press</a> */}
-          {/* <a href="/">Advertise</a> */}
-          {/* <a href="/">Event Space</a> */}
+          {/* <Link to="/">Contributor Guidelines</Link> */}
+          {/* <Link to="/">Press</Link> */}
+          {/* <Link to="/">Advertise</Link> */}
+          {/* <Link to="/">Event Space</Link> */}
         </div>
         <div>
-          {/* <a href="/">Privacy Policy</a> */}
-          {/* <a href="/">Delete Account</a> */}
-          {/* <a href="/">Licensing</a> */}
-          {/* <a href="/">Jobs</a> */}
-          {/* <a href="/">Developers</a> */}
-          {/* <a href="/">Terms of Use</a> */}
-          {/* <a href="/">Copyright Policy</a> */}
-          <a href="https://www.linkedin.com/in/marshall-strong/">Contact us</a>
-          {/* <a href="/">Do Not Sell My Personal Information</a> */}
-          {/* <a href="/">Sign out</a> */}
+          {/* <Link to="/">Privacy Policy</Link> */}
+          {/* <Link to="/">Delete Account</Link> */}
+          {/* <Link to="/">Licensing</Link> */}
+          {/* <Link to="/">Jobs</Link> */}
+          {/* <Link to="/">Developers</Link> */}
+          {/* <Link to="/">Terms of Use</Link> */}
+          {/* <Link to="/">Copyright Policy</Link> */}
+          <a
+            href="https://www.linkedin.com/in/marshall-strong/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contact us
+          </a>
+          {/* <Link to="/">Do Not Sell My Personal Information</Link> */}
+          {/* <Link to="/">Sign out</Link> */}
           {sessionLinks}
         </div>
         <div>
