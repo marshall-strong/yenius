@@ -6331,6 +6331,16 @@ end
 
 # Comments
   comment_hashes = []
+  comment_hashes.push( Hash["username" => "demo", "body" => "Am I hashtagging?"] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Wow!"] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Cool!!"] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Oh Kanye..."] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Mathematical!!"] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "OK Boomer..."] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "uh huh..."] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Go on..."] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "What are you REALLY trying to say?"] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "I saved a BUNCH of money on my car insurance!"] )
   comment_hashes.push( Hash["username" => "MaxB", "body" => "Yeezy, Yeezy, what's good? It's your boy Max B, what's going on? Just checking in on you..."] )
   comment_hashes.push( Hash["username" => "MaxB", "body" => "owww WAVEY, baby, YEAH"] )
   comment_hashes.push( Hash["username" => "FrenchMontana", "body" => "Siiiiiiiiilver Surffffeeeeer -- Silver Surfer in the flesh"] )

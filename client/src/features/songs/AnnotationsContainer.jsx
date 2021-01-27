@@ -17,9 +17,7 @@ const AnnotationsContainer = ({ verseId }) => {
       <h3>Yenius Annotations</h3>
       <div dangerouslySetInnerHTML={markup} />
       <VerseComments verseId={verseId} />
-      <Link to={`/songs/${verse.songId}`} className="button muted-button">
-        Back to SongPage
-      </Link>
+      <Link to={`/songs/${verse.songId}`}> Close Annotations </Link>
     </section>
   );
 };

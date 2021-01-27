@@ -39,12 +39,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.footer a {
+.footer a,
+.footer Link,
+.footer .logout {
   color: #ffff64;
   padding: 0.5rem;
   text-decoration: none;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
+}
+
+.logout:hover {
+  cursor: pointer;
 }
 
 .footer--secondary {

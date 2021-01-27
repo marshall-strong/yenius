@@ -14,7 +14,11 @@ import {
   fetchSongComments,
   fetchVerseComments,
 } from "../comments/commentsAsyncThunks";
-import { fetchTopScholars, fetchUserProfile } from "../users/usersAsyncThunks";
+import {
+  fetchTopScholars,
+  fetchUserProfile,
+  updateUserProfile,
+} from "../users/usersAsyncThunks";
 
 const usersAdapter = createEntityAdapter({
   selectId: (user) => user.id,
@@ -25,6 +29,7 @@ const initialState = usersAdapter.getInitialState({
   status: {
     fetchTopScholars: null,
     fetchUserProfile: null,
+    updateUserProfile: null,
   },
 });
 
@@ -60,6 +65,20 @@ const usersSlice = createSlice({
     },
     [fetchUserProfile.rejected]: (state, action) => {
       state.status.fetchUserProfile = "rejected";
+    },
+
+    // updateUserProfile
+    [updateUserProfile.pending]: (state) => {
+      state.status.updateUserProfile = "pending";
+    },
+    [updateUserProfile.fulfilled]: (state, action) => {
+      state.status.updateUserProfile = "fulfilled";
+      if (action.payload.users) {
+        usersAdapter.setAll(state.action.payload.users);
+      }
+    },
+    [updateUserProfile.rejected]: (state, action) => {
+      state.status.updateUserProfile = "rejected";
     },
 
     // other asyncThunks

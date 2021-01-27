@@ -4,11 +4,11 @@ import Charts from "./Charts";
 import Community from "./Community";
 import TopNews from "./TopNews";
 
-import ".././stylesheets/HomeLayout.scss";
+import ".././stylesheets/HomeContainer.scss";
 
-const HomeLayout = () => {
+const HomeContainer = () => {
   return (
-    <div className="HomeLayout">
+    <div className="HomeContainer">
       <TopNews />
       <br />
       <br />
@@ -20,4 +20,4 @@ const HomeLayout = () => {
   );
 };
 
-export default HomeLayout;
+export default HomeContainer;

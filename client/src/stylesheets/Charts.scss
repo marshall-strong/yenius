@@ -17,11 +17,9 @@
   grid-column: grid-start / grid-end;
 }
 
-h2 {
+.SectionTitle__Title h2 {
   display: block;
   font-size: 1.5em;
-  // margin-block-start: 0.83em;
-  // margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
@@ -43,17 +41,19 @@ h2 {
   text-align: center;
 }
 
-h3 {
-  display: block;
-  font-size: 1.17em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
+// .SectionTitle__Subtitle .h3 {
+//   display: block;
+//   font-size: 1.17em;
+//   margin-block-start: 1em;
+//   margin-block-end: 1em;
+//   margin-inline-start: 0px;
+//   margin-inline-end: 0px;
+//   font-weight: bold;
+// }
+
 .SectionTitle__Subtitle h3 {
   line-height: 1.45;
+  margin-block-end: 1em;
 }
 
 .TextLabel__TopChartsTitle {

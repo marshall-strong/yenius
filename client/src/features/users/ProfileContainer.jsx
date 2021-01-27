@@ -9,7 +9,7 @@ import ProfileEdit from "./ProfileEdit";
 import Profile from "./Profile";
 import NotFound from "../../NotFound";
 
-import "../.././stylesheets/UserProfile.scss";
+import "../.././stylesheets/ProfileContainer.scss";
 
 const ProfileContainer = ({ match }) => {
   const userId = parseInt(match.params.userId);
@@ -49,7 +49,7 @@ const ProfileContainer = ({ match }) => {
     }
   }, [userId, lastUserFetched, dispatch]);
 
-  return <section>{content}</section>;
+  return <section className="ProfileContainer">{content}</section>;
 };
 
 export default ProfileContainer;

@@ -99,9 +99,15 @@ export const AlbumName = ({ songId }) => {
 
 export const ReleaseDate = ({ songId }) => {
   const album = useSelector((state) => selectAlbumBySongId(state, songId));
-  if (!album || !album.releaseDate) {
+
+  if (
+    !album ||
+    !album.releaseDate ||
+    album.name === "Samples & Interpolations"
+  ) {
     return null;
   }
+
   return (
     <div className="metadata_unit metadata_unit--table_row">
       <span className="metadata_unit-label">Release Date</span>

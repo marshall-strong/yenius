@@ -311,12 +311,9 @@ input {
   font-size: 13px;
 }
 
-p {
+.callout {
   line-height: 1.5em;
   margin-bottom: 1em;
-}
-
-p {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -371,13 +368,6 @@ input[type="submit"] {
 .sign_up_unit .callout {
   margin-top: 1rem;
   text-align: center;
-}
-p {
-  line-height: 1.5em;
-  margin-bottom: 1em;
-}
-p:last-child {
-  margin-bottom: 0;
 }
 
 .callout .link {

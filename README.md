@@ -170,7 +170,7 @@ Run migrations (development)
 `heroku local:run rails db:migrate`
 
 
-User Colors
+# User Colors
 https://colorswall.com/palette/73/
 Color		HEX			RGB
 msYellow	#fff100		rgb(255, 241, 0)
@@ -183,3 +183,50 @@ msCyan		#00bcf2		rgb(0, 188, 242)
 msTeal		#00b294		rgb(0, 178, 148)
 msGreen		#009e49		rgb(0, 158, 73)
 msLime		#bad80a		rgb(186, 216, 10)
+
+
+# ToDo STILL
+
+Lyrics shows "Lyrics not available, sorry" while still loading
+
+VerseComments ("Annotations") currently display at the top of the page -- would be nice if they showed up next to the Verse in Lyrics
+
+Style Links WITHIN Artist/Album Descriptions
+
+Need more content on ArtistPages
+
+ArtistIndex, SongIndex -- remove Rank numbers from Suggestions
+
+AlbumsIndex -- do not show Samples & Interpolations
+
+Style User Profile.
+
+Add links to all usernames so that clicking on a user's username will redirect to the user's Profile Page.
+
+When adding a comment, show an "avatar" square filled with user.my_color (currently just a gray circle).
+
+If Lyrics are unavailable for a song, provide a link to the relevent Kanye song
+
+Add Login with Google, Facebook, Twitter
+
+
+# ToDo COMPLETED
+[DONE (1/27)] - Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
+[DONE (1/27)] - Authenticated users can update their color from the user profile page
+
+[DONE (1/26)] - Do not include ReleaseDate in Song TrackInfo if song.album.name === 'Samples & Interpolations'
+[DONE (1/26)] - Style Album Description -- label, showMore/Less button
+[DONE (1/26)] - Style Artist Description -- label, showMore/Less button
+[DONE (1/26)] - Get rid of dummy links in PageFooter.
+[DONE (1/26)] - Fix broken styling on AlbumsIndex
+[DONE (1/26)] - Center all page content
+
+[DONE (1/25)] - CommentsList responds immediately if a comment is added/edited/deleted
+[DONE (1/25)] - Authenticated Users can edit/update their own comments
+[DONE (1/25)] - Authenticated Users can delete their own comments
+
+[DONE (1/24)] - Add Community widget to HomeContainer
+[DONE (1/24)] - Add Charts widget to HomeContainer
+
+[DONE (1/23)] - Add 'Suggested Artists/Songs' to Artists/Songs index page
+[DONE (1/23)] - All flavors of UserAuth work (Signup new user, Login existing user, Login as demo user)
