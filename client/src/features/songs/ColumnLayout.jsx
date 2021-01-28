@@ -1,8 +1,5 @@
 import React from "react";
 
-// import ColumnPrimary from "./ColumnPrimary";
-// import ColumnSecondary from "./ColumnSecondary";
-
 import AnnotationsContainer from "./AnnotationsContainer";
 import Description from "./Description";
 import Lyrics from "./Lyrics";
