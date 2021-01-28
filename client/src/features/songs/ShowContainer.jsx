@@ -18,11 +18,26 @@ import {
 
 import { selectSongById } from "./songsSlice";
 
-import SongShowLayout from "./ShowLayout";
+import Banner from "./Banner";
+import Breadcrumbs from "../../app/Breadcrumbs";
+import ColumnLayout from "./ColumnLayout";
 import NotFound from "../../NotFound";
 
 import "../../stylesheets/ShowContainer.scss";
 import "../../stylesheets/SongPage.scss";
+
+const ShowLayout = ({ match }) => {
+  const songId = parseInt(match.params.songId);
+  return (
+    <section className="PageLayout">
+      <div>
+        <Banner songId={songId} />
+        <ColumnLayout match={match} />
+        <Breadcrumbs match={match} />
+      </div>
+    </section>
+  );
+};
 
 const ShowContainer = ({ match }) => {
   const songId = parseInt(match.params.songId);
@@ -46,7 +61,7 @@ const ShowContainer = ({ match }) => {
     );
   }
   if (song && fetchSongStatus === "fulfilled") {
-    content = <SongShowLayout match={match} />;
+    content = <ShowLayout match={match} />;
   }
 
   const dispatch = useDispatch();
