@@ -14,7 +14,7 @@ import NotFound from "../../NotFound";
 import "../../stylesheets/show.scss";
 import "../../stylesheets/ShowContainer.scss";
 
-const ArtistShowLayout = ({ artistId, match }) => {
+const ShowLayout = ({ artistId, match }) => {
   return (
     <section className="PageLayout">
       <div>
@@ -47,7 +47,7 @@ const ArtistShowContainer = ({ match }) => {
     );
   }
   if (artist && fetchArtistPageStatus === "fulfilled") {
-    content = <ArtistShowLayout match={match} artistId={artistId} />;
+    content = <ShowLayout match={match} artistId={artistId} />;
   }
 
   const dispatch = useDispatch();

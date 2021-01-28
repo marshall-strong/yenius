@@ -5,11 +5,37 @@ import { fetchAlbumPage } from "./albumsAsyncThunks";
 import { fetchAlbumComments } from "../comments/commentsAsyncThunks";
 import { selectAlbumById } from "./albumsSlice";
 
-import AlbumShowLayout from "./ShowLayout";
+import Banner from "./Banner";
+import Breadcrumbs from "../../app/Breadcrumbs";
+import ColumnLayout from "./ColumnLayout";
 import NotFound from "../../NotFound";
 
 import "../../stylesheets/show.scss";
 import "../../stylesheets/ShowContainer.scss";
+
+const ShowLayout = ({ albumId, match }) => {
+  const isFulfilled = (request) => request === "fulfilled";
+
+  const fetchAlbumPageStatus = useSelector(
+    (state) => state.albums.status.fetchAlbumPage
+  );
+  const bannerRequests = [fetchAlbumPageStatus];
+  const banner = bannerRequests.every(isFulfilled) ? (
+    <Banner albumId={albumId} />
+  ) : (
+    <div className="loader" />
+  );
+
+  return (
+    <section className="PageLayout">
+      <div>
+        {banner}
+        <ColumnLayout albumId={albumId} />
+        <Breadcrumbs match={match} />
+      </div>
+    </section>
+  );
+};
 
 const AlbumPage = ({ match }) => {
   const albumId = parseInt(match.params.albumId);
@@ -30,7 +56,7 @@ const AlbumPage = ({ match }) => {
       </div>
     );
   } else if (album && fetchAlbumPageStatus === "fulfilled") {
-    content = <AlbumShowLayout match={match} albumId={albumId} />;
+    content = <ShowLayout match={match} albumId={albumId} />;
   }
 
   const dispatch = useDispatch();
