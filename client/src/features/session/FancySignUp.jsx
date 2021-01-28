@@ -154,10 +154,9 @@ const FancySignUp = () => {
               <p className="message">
                 By clicking “Create Account”, you are indicating that you have
                 read and agree to the{" "}
-                <a href="/static/terms" target="_blank">
-                  Terms of Service
-                </a>
-                .
+                {/* <a href="/static/terms" target="_blank"> */}
+                Terms of Service
+                {/* </a> */}.
               </p>
 
               <input

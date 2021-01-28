@@ -209,8 +209,24 @@ If Lyrics are unavailable for a song, provide a link to the relevent Kanye song
 
 Add Login with Google, Facebook, Twitter
 
+# About Links!
+Internal links should use a <Link> tag.
+External links should use an <a> tag:
+  <a
+    href="https://github.com/marstrong/yenius--rails6-api"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    About Yenius
+  </a>
+
+The href attribute set to the URL of the page you want to link to
+The target attribute set to _blank, which tells the browser to open the link in a new tab/window, depending on the browser's settings
+The rel attribute set to noreferrer noopener to prevent possible malicious attacks from the pages you link to
 
 # ToDo COMPLETED
+[DONE (1/27)] - External links use <a> tags and open in new tabs, Internal links use <Link>
+[DONE (1/27)] - Replace <a> with <Link> in SongAlbum component -- clicking on a track was breaking app in Production
 [DONE (1/27)] - Seed a bunch of Demo user comments so that users have something they can delete and edit if they wish.
 [DONE (1/27)] - Authenticated users can update their color from the user profile page
 

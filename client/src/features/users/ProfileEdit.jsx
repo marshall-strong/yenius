@@ -11,6 +11,106 @@ const svgChevron = (
   </svg>
 );
 
+// const optionsParams = {
+//   yellow: "#fff100",
+//   orange: "#ff8c00",
+//   red: "#e81123",
+//   magenta: "#ec008c",
+//   purple: "#68217a",
+//   blue: "#00188f",
+//   cyan: "#00bcf2",
+//   teal: "#00b294",
+//   green: "#009e49",
+//   lime: "#bad80a",
+// };
+
+const colorsParams = [
+  { name: "yellow", value: "#fff100" },
+  { name: "orange", value: "#ff8c00" },
+  { name: "red", value: "#e81123" },
+  { name: "magenta", value: "#ec008c" },
+  { name: "purple", value: "#68217a" },
+  { name: "blue", value: "#00188f" },
+  { name: "cyan", value: "#00bcf2" },
+  { name: "teal", value: "#00b294" },
+  { name: "green", value: "#009e49" },
+  { name: "lime", value: "#bad80a" },
+];
+
+const RefactoredDropdown = ({ setContainerState, optionsParams }) => {
+  const currentUser = useSelector((state) => state.session.currentUser);
+  const [display, setDisplay] = useState(currentUser.myColor);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const openDropdown = (e) => {
+    e.preventDefault();
+    setShowDropdown(true);
+  };
+
+  const closeDropdown = (e) => {
+    e.preventDefault();
+    setShowDropdown(false);
+    document.removeEventListener("click", closeDropdown);
+  };
+
+  useEffect(() => {
+    if (showDropdown) {
+      document.addEventListener("click", closeDropdown);
+    }
+  }, [showDropdown]);
+
+  const generateOption = (optionObj) => (
+    <div className="SquareManySelects__Option">
+      <div className="SquareSelectOption__Container">
+        <div
+          onClick={(e) => {
+            e.preventDefault();
+            setDisplay(optionObj.name);
+            setContainerState(optionObj.value);
+            closeDropdown(e);
+          }}
+        >
+          {optionObj.name}
+        </div>
+      </div>
+    </div>
+  );
+
+  const options = optionsParams.map((optionObj) => generateOption(optionObj));
+
+  const arrowStyle = showDropdown
+    ? "SquareSelectTitle__Arrow arrow_up"
+    : "SquareSelectTitle__Arrow arrow_down";
+
+  const dropdownContainerStyle = showDropdown
+    ? "SquareManySelects__Container isOpen"
+    : "SquareManySelects__Container isClosed";
+
+  const dropdownExpandedContent = showDropdown ? (
+    <div className="DropdownExpansionContainer">
+      <div className="DropdownOptionsContainer">{options}</div>
+    </div>
+  ) : (
+    <div className="DropdownExpansionContainer">
+      <div className="DropdownOptionsContainer"></div>
+    </div>
+  );
+
+  return (
+    <div className="Dropdown">
+      <div className="SquareManySelects__Wrapper" onClick={openDropdown}>
+        <div className={dropdownContainerStyle}>
+          <div className="SquareSelectTitle__Container">
+            {display}
+            <div className={arrowStyle}>{svgChevron}</div>
+          </div>
+        </div>
+      </div>
+      {dropdownExpandedContent}
+    </div>
+  );
+};
+
 const Dropdown = ({ setContainerState }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
   const [display, setDisplay] = useState(currentUser.myColor);
@@ -256,7 +356,10 @@ const ProfileEdit = ({ match }) => {
         <p>email: {currentUser.email}</p>
         <p>authored_comments_count: {authoredComments}</p>
         {showSelectedColor}
-        <Dropdown setContainerState={setSelectedColor} />
+        <RefactoredDropdown
+          setContainerState={setSelectedColor}
+          optionsParams={colorsParams}
+        />
         <button onClick={handleUpdateColor}>Save Changes</button>
       </section>
     );

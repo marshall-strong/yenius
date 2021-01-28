@@ -41,11 +41,15 @@ const HeroStory = ({ article }) => {
             </div>
             <div className="Title">
               <h2>
-                <a href={article.url}>{article.name}</a>
+                <a href={article.url} target="_blank" rel="noopener noreferrer">
+                  {article.name}
+                </a>
               </h2>
             </div>
             <div className="Body">
-              <a href={article.url}>{article.description}</a>{" "}
+              <a href={article.url} target="_blank" rel="noopener noreferrer">
+                {article.description}
+              </a>{" "}
             </div>
           </div>
           <div className="Byline">
