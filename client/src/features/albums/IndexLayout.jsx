@@ -2,7 +2,16 @@ import React from "react";
 
 import Breadcrumbs from "../../app/Breadcrumbs";
 import IndexList from "./IndexList";
-import Suggestions from "./Suggestions";
+import TopAlbums from "./TopAlbums";
+
+const Suggestions = () => {
+  return (
+    <div>
+      <h1>Kanye West Albums</h1>
+      <TopAlbums />
+    </div>
+  );
+};
 
 const IndexLayout = ({ match }) => {
   return (
