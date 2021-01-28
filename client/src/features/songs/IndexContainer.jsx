@@ -3,10 +3,36 @@ import { useDispatch } from "react-redux";
 
 import { fetchSongsIndex } from "./songsAsyncThunks";
 
-import SongsIndexLayout from "./IndexLayout";
+import Breadcrumbs from "../../app/Breadcrumbs";
+import IndexChars from "./IndexChars";
+import IndexList from "./IndexList";
+import TopSongs from "./TopSongs";
 
 import "../../stylesheets/IndexContainer.scss";
 import "../../stylesheets/SongsIndex.scss";
+
+const Suggestions = () => {
+  return (
+    <div>
+      <h1>Suggestions</h1>
+      How about these songs?
+      <TopSongs />
+    </div>
+  );
+};
+
+const IndexLayout = ({ char, match }) => {
+  const content = char ? <IndexList char={char} /> : <Suggestions />;
+  return (
+    <section className="IndexLayout">
+      <div>
+        <IndexChars />
+        {content}
+        <Breadcrumbs match={match} />
+      </div>
+    </section>
+  );
+};
 
 const IndexContainer = ({ match }) => {
   const [lastCharFetched, setLastCharFetched] = useState(null);
@@ -22,7 +48,7 @@ const IndexContainer = ({ match }) => {
 
   return (
     <div className="IndexContainer">
-      <SongsIndexLayout char={selectedChar} match={match} />
+      <IndexLayout char={selectedChar} match={match} />
     </div>
   );
 };
