@@ -5,21 +5,38 @@ import { Link } from "react-router-dom";
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 
-const SelectedVerse = () => {};
+const SelectedVerse = ({ verse }) => {
+  return (
+    <p id="SelectedVerse">
+      <Link
+        to={`/songs/${verse.songId}/verses/${verse.id}`}
+        className="referent referent--yellow referent--highlighted"
+      >
+        <span
+          className="SongVerse"
+          dangerouslySetInnerHTML={{ __html: verse.body }}
+        />
+      </Link>
+    </p>
+  );
+};
 
 const LyricsVerse = ({ selectedVerseId, verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));
-  const markup = { __html: verse.body };
   const isSelectedVerse = selectedVerseId === verseId;
 
-  const style = isSelectedVerse
-    ? "referent referent--yellow referent--highlighted"
-    : "referent referent--yellow";
-
-  const lyricsVerse = (
+  const lyricsVerse = isSelectedVerse ? (
+    <SelectedVerse verse={verse} />
+  ) : (
     <p>
-      <Link to={`/songs/${verse.songId}/verses/${verseId}`} className={style}>
-        <span className="SongVerse" dangerouslySetInnerHTML={markup} />
+      <Link
+        to={`/songs/${verse.songId}/verses/${verseId}`}
+        className="referent referent--yellow"
+      >
+        <span
+          className="SongVerse"
+          dangerouslySetInnerHTML={{ __html: verse.body }}
+        />
       </Link>
     </p>
   );
