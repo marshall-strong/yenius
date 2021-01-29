@@ -1,61 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import AnnotationsContainer from "./AnnotationsContainer";
 import Description from "./Description";
-// import Lyrics from "./Lyrics";
 import SongAlbum from "./SongAlbum";
-// import SongComments from "./SongComments";
 import TrackInfo from "./TrackInfo";
 
-// import "../.././stylesheets/ColumnLayout.scss";
+const SongLayout = ({ songId }) => {
+  return (
+    <div className="column_layout-column_span-initial_content">
+      <Description songId={songId} />
+      <TrackInfo songId={songId} />
+      <SongAlbum songId={songId} />
+    </div>
+  );
+};
 
-// const ColumnPrimary = ({ songId }) => {
-//   return (
-//     <div className="column_layout-column_span column_layout-column_span--primary">
-//       <Lyrics songId={songId} />
-//       <SongComments songId={songId} />
-//     </div>
-//   );
-// };
+const VerseLayout = ({ verseId }) => {
+  return (
+    <div className="column_layout-flex_column-fill_column">
+      <AnnotationsContainer verseId={verseId} />
+    </div>
+  );
+};
 
-const ColumnSecondary = ({ match }) => {
+const ColumnLayoutFlex = ({ match }) => {
+  const songLayoutKlass = "ColumnSecondaryShowSong";
+  const [songDisplayKlass, setSongDisplayKlass] = useState("");
+  const songKlass = songLayoutKlass.concat(songDisplayKlass);
+
+  const verseLayoutKlass = "ColumnSecondaryShowVerse";
+  const [verseDisplayKlass, setVerseDisplayKlass] = useState(" display-none");
+  const verseKlass = verseLayoutKlass.concat(verseDisplayKlass);
+
+  useEffect(() => {
+    if (match.params.verseId) {
+      setSongDisplayKlass(" display-none");
+      setVerseDisplayKlass("");
+    } else {
+      setSongDisplayKlass("");
+      setVerseDisplayKlass(" display-none");
+    }
+  }, [match]);
+
   const songId = parseInt(match.params.songId);
   const verseId = parseInt(match.params.verseId);
-
-  const songKlass = match.params.verseId
-    ? "ColumnSecondaryShowSong display-none"
-    : "ColumnSecondaryShowSong";
-  const verseKlass = match.params.verseId
-    ? "ColumnSecondaryShowVerse"
-    : "ColumnSecondaryShowVerse display-none";
 
   return (
     <div className="column_layout-column_span column_layout-column_span--secondary u-top_margin column_layout-flex_column">
       <div className={songKlass}>
-        <div className="column_layout-column_span-initial_content">
-          <Description songId={songId} />
-          <TrackInfo songId={songId} />
-          <SongAlbum songId={songId} />
-        </div>
+        <SongLayout songId={songId} />
       </div>
       <div className={verseKlass}>
-        <div className="column_layout-flex_column-fill_column">
-          <AnnotationsContainer verseId={verseId} />
-        </div>
+        <VerseLayout verseId={verseId} />
       </div>
     </div>
   );
 };
 
-// const ColumnLayout = ({ match }) => {
-//   const songId = parseInt(match.params.songId);
-//   return (
-//     <div className="song_body column_layout">
-//       <ColumnPrimary songId={songId} />
-//       <ColumnSecondary match={match} />
-//     </div>
-//   );
-// };
-
-// export default ColumnLayout;
-export default ColumnSecondary;
+export default ColumnLayoutFlex;
