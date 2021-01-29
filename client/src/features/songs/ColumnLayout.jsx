@@ -17,7 +17,11 @@ const ColumnPrimary = ({ match, selectedVerseId }) => {
 };
 
 const ColumnSecondary = ({ match }) => {
-  return <ColumnLayoutFlex match={match} />;
+  return (
+    <div className="column_layout-column_span column_layout-column_span--secondary">
+      <ColumnLayoutFlex match={match} />
+    </div>
+  );
 };
 
 const ColumnLayout = ({ match, selectedVerseId }) => {

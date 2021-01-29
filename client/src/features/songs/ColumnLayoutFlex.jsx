@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import AnnotationsContainer from "./AnnotationsContainer";
+import AnnotationSidebar from "./AnnotationSidebar";
 import Description from "./Description";
 import SongAlbum from "./SongAlbum";
 import TrackInfo from "./TrackInfo";
@@ -18,7 +19,8 @@ const SongLayout = ({ songId }) => {
 const VerseLayout = ({ verseId }) => {
   return (
     <div className="column_layout-flex_column-fill_column">
-      <AnnotationsContainer verseId={verseId} />
+      {/* <AnnotationsContainer verseId={verseId} /> */}
+      <AnnotationSidebar />
     </div>
   );
 };
@@ -46,7 +48,7 @@ const ColumnLayoutFlex = ({ match }) => {
   const verseId = parseInt(match.params.verseId);
 
   return (
-    <div className="column_layout-column_span column_layout-column_span--secondary u-top_margin column_layout-flex_column">
+    <div className="u-top_margin column_layout-flex_column">
       <div className={songKlass}>
         <SongLayout songId={songId} />
       </div>
