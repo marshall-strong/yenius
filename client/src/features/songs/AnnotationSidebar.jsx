@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../stylesheets/AnnotationSidebar.scss";
+
 const AnnotationSidebar = () => (
   <div className="AnnotationSidebar" referent="current_referent">
     <div
