@@ -5,14 +5,19 @@ import { Link } from "react-router-dom";
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 
-const LyricsVerse = ({ verseId }) => {
+const LyricsVerse = ({ selectedVerseId, verseId }) => {
+  let klassName = "referent referent--yellow";
+  if (selectedVerseId === verseId) {
+    klassName = "referent referent--yellow referent--highlighted";
+  }
+
   const verse = useSelector((state) => selectVerseById(state, verseId));
   const markup = { __html: verse.body };
   return (
     <p>
       <Link
         to={`/songs/${verse.songId}/verses/${verseId}`}
-        className="referent referent--yellow"
+        className={klassName}
       >
         <span className="SongVerse" dangerouslySetInnerHTML={markup} />
       </Link>
@@ -20,7 +25,7 @@ const LyricsVerse = ({ verseId }) => {
   );
 };
 
-const Lyrics = ({ songId }) => {
+const Lyrics = ({ selectedVerseId, songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
   if (!song) {
     return null;
@@ -37,7 +42,11 @@ const Lyrics = ({ songId }) => {
   }
 
   const lyrics = song.verses.map((verseId) => (
-    <LyricsVerse key={verseId} verseId={verseId} />
+    <LyricsVerse
+      key={verseId}
+      selectedVerseId={selectedVerseId}
+      verseId={verseId}
+    />
   ));
   return (
     <div className="song_body-lyrics">
@@ -51,13 +60,13 @@ const Lyrics = ({ songId }) => {
   );
 };
 
-const Loader = ({ songId }) => {
+const Loader = ({ selectedVerseId, songId }) => {
   const fetchSongLyrics = useSelector(
     (state) => state.songs.status.fetchSongLyrics
   );
   const asyncRequests = [fetchSongLyrics];
   if (asyncRequests.every((status) => status === "fulfilled")) {
-    return <Lyrics songId={songId} />;
+    return <Lyrics selectedVerseId={selectedVerseId} songId={songId} />;
   } else {
     return <div className="loader" />;
   }

@@ -6,10 +6,11 @@ import SongComments from "./SongComments";
 
 import "../.././stylesheets/ColumnLayout.scss";
 
-const ColumnPrimary = ({ songId }) => {
+const ColumnPrimary = ({ match, selectedVerseId }) => {
+  const songId = parseInt(match.params.songId);
   return (
     <div className="column_layout-column_span column_layout-column_span--primary">
-      <Lyrics songId={songId} />
+      <Lyrics selectedVerseId={selectedVerseId} songId={songId} />
       <SongComments songId={songId} />
     </div>
   );
@@ -19,12 +20,11 @@ const ColumnSecondary = ({ match }) => {
   return <ColumnLayoutFlex match={match} />;
 };
 
-const ColumnLayout = ({ match }) => {
-  const songId = parseInt(match.params.songId);
+const ColumnLayout = ({ match, selectedVerseId }) => {
   return (
     <div className="song_body column_layout">
-      <ColumnPrimary songId={songId} />
-      <ColumnSecondary match={match} />
+      <ColumnPrimary match={match} selectedVerseId={selectedVerseId} />
+      <ColumnSecondary match={match} selectedVerseId={selectedVerseId} />
     </div>
   );
 };
