@@ -5,9 +5,36 @@ import { Link } from "react-router-dom";
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 
-const SelectedVerse = ({ verse }) => {
+const SelectedVerse = ({ setClientRect, verse }) => {
   return (
-    <p id="SelectedVerse">
+    <p
+      id="SelectedVerse"
+      ref={(element) => {
+        if (!element) return;
+        console.log("initial width: ", element.getBoundingClientRect().width);
+        let prevValue = JSON.stringify(element.getBoundingClientRect());
+        const start = Date.now();
+        const handle = setInterval(() => {
+          let nextValue = JSON.stringify(element.getBoundingClientRect());
+          if (nextValue === prevValue) {
+            clearInterval(handle);
+            console.log(`width stopped changin in ${Date.now() - start} ms.`);
+            console.log("final width: ", element.getBoundingClientRect().width);
+            console.log("");
+            const domRect = element.getBoundingClientRect();
+            console.log("domRect = element.getBoundingClientRect();");
+            console.log(`domRect.left: ${domRect.x}`);
+            console.log(`domRect.width: ${domRect.width}`);
+            console.log(`domRect.right: ${domRect.right}`);
+            console.log(`domRect.top: ${domRect.y}`);
+            console.log(`domRect.height: ${domRect.height}`);
+            console.log(`domRect.bottom: ${domRect.bottom}`);
+          } else {
+            prevValue = nextValue;
+          }
+        }, 100);
+      }}
+    >
       <Link
         to={`/songs/${verse.songId}/verses/${verse.id}`}
         className="referent referent--yellow referent--highlighted"
@@ -21,12 +48,12 @@ const SelectedVerse = ({ verse }) => {
   );
 };
 
-const LyricsVerse = ({ selectedVerseId, verseId }) => {
+const LyricsVerse = ({ selectedVerseId, setClientRect, verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));
   const isSelectedVerse = selectedVerseId === verseId;
 
   const lyricsVerse = isSelectedVerse ? (
-    <SelectedVerse verse={verse} />
+    <SelectedVerse verse={verse} setClientRect={setClientRect} />
   ) : (
     <p>
       <Link

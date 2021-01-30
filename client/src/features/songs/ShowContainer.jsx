@@ -26,13 +26,13 @@ import NotFound from "../../NotFound";
 import "../../stylesheets/ShowContainer.scss";
 import "../../stylesheets/SongPage.scss";
 
-const ShowLayout = ({ match, selectedVerseId }) => {
+const ShowLayout = ({ match }) => {
   const songId = parseInt(match.params.songId);
   return (
     <section className="PageLayout">
       <div>
         <Banner songId={songId} />
-        <ColumnLayout match={match} selectedVerseId={selectedVerseId} />
+        <ColumnLayout match={match} />
         <Breadcrumbs match={match} />
       </div>
     </section>
@@ -61,7 +61,7 @@ const ShowContainer = ({ match }) => {
     );
   }
   if (song && fetchSongStatus === "fulfilled") {
-    content = <ShowLayout match={match} selectedVerseId={verseId} />;
+    content = <ShowLayout match={match} />;
   }
 
   const dispatch = useDispatch();
