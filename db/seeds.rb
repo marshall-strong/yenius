@@ -6466,7 +6466,12 @@ end
     end
   end
 
+  kanye_songs = Song.where("album_id != #{s_and_i.id}")
+  other_songs = Song.where("album_id = #{s_and_i.id}")
+
   seedComments(Artist.all, "Artist", comment_hashes, 2, 4)
   seedComments(Album.all, "Album", comment_hashes, 2, 4)
-  seedComments(Song.all, "Song", comment_hashes, 4, 6)
+  seedComments(kanye_songs, "Song", comment_hashes, 4, 6)
+  seedComments(other_songs, "Song", comment_hashes, 1, 3)
+  # seedComments(Song.all, "Song", comment_hashes, 4, 6)
   seedComments(Verse.all, "Verse", comment_hashes, 1, 2)
