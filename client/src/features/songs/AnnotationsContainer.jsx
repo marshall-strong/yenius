@@ -37,7 +37,7 @@ const AnnotationsContainer = ({ verseId, selectedVerseRef }) => {
           logCurrentDomRect(element);
         }}
       >
-        log SelectedVerse BoundingClientRect
+        log DOMRect of selected verse
       </button>
     </section>
   );
