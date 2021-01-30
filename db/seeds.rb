@@ -58,7 +58,8 @@ def attach_headshot(s3_client, artist, key)
   artist.headshot.attach(io: file, filename: filename)
 end
 
-# Top Charts (seeded below, included here for quick reference)
+
+# Top Charts (seeded below, listed here for reference)
 
 # Top Albums
 # 1 - The Life Of Pablo
@@ -105,7 +106,7 @@ end
   AdminUser.destroy_all
 
 
-
+# ACTIVE ADMIN seed
 # ActiveAdmin database administrative user
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
@@ -128,8 +129,10 @@ end
   User.create!(username: "TerryMoran", email: "terry.moran@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusTerryMoran")
   User.create!(username: "TiffanyHaddish", email: "tiffany.haddish@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusTiffanyHaddish")
   User.create!(username: "TysonBeckford", email: "tyson.beckford@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusTysonBeckford")
+
 # Demo user
   User.create!(username: "demo", email: "demo@yenius.com", my_color: MS_PALETTE.sample, password: "demo1234")
+
 # Kanye users
   User.create!(username: "ChristianGeniusBillionaire", email: "christian.genius@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
   User.create!(username: "Kanye", email: "kanye@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
@@ -140,7 +143,8 @@ end
   User.create!(username: "Ye", email: "ye@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
   User.create!(username: "Yeezus", email: "yeezus@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
   User.create!(username: "Yeezy", email: "yeezy@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
-# Musicians
+
+# Musician users
   User.create!(username: "BradleyNowell", email: "bradley.nowell@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusBradleyNowell")
   User.create!(username: "Charlie2na", email: "charlie2na@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusCharlie2na")
   User.create!(username: "DigitalUnderground", email: "digital.underground@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusDigitalUnderground")
@@ -150,7 +154,8 @@ end
   User.create!(username: "JeffTweedy", email: "jeff.tweedy@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusJeffTweedy")
   User.create!(username: "KendrickLamar", email: "kendrick.lamar@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKendrickLamar")
   User.create!(username: "KillerMike", email: "killer.mike@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKillerMike")
-# Phish
+
+# Phish users
   User.create!(username: "BobWeaver", email: "bob.weaver@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
   User.create!(username: "Cactus", email: "cactus@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
   User.create!(username: "Fish", email: "fish@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
@@ -158,32 +163,11 @@ end
   User.create!(username: "LittleBeastBoy", email: "little.beast.boy@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
   User.create!(username: "Page", email: "page@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
   User.create!(username: "Trey", email: "trey@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
-# Other
+
+# Other users
   User.create!(username: "BiddyChips", email: "jason.mccallum@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusBiddyChips")
   User.create!(username: "JAM", email: "julian.macrone@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusJAM")
   User.create!(username: "WrightStuff", email: "alex.wright@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusWrightStuff")
-
-# # Users
-#   User.create!(username: "demo", email: "demo@aa.io", my_color: MS_PALETTE.sample, password: "demo1234")
-#   User.create!(username: "WrightStuff", email: "wright.stuff@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusWrightStuff")
-#   User.create!(username: "BiddyChips", email: "jmccallum@aa.io", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "BernieMac", email: "bernie.mac@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "MaxB", email: "max.b@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "FrenchMontana", email: "french.montana@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "KanyeWest", email: "kanye.west@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "IsaacHayes", email: "isaac.hayes@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "El-P", email: "el.producto@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "KillerMike", email: "killer.mike@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "ZackDeLaRocha", email: "zack.delarocha@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "2Chainz", email: "2chainz@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "MavisStaples", email: "mavis.staples@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "RHCP", email: "rhcp@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "JeffTweedy", email: "jeff.tweedy@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "KendrickLamar", email: "kendrick.lamar@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "BradleyNowell", email: "bradley.nowell@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "Charlie2na", email: "charlie2na@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-#   User.create!(username: "Eminem", email: "marshall.mathers@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-
 
 
 # Albums
