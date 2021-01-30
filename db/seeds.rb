@@ -226,11 +226,12 @@ end
   attach_cover(s3_client, s_and_i, "seeds/covers/this_is_fine.png")
 
 
-# Artists
+# ARTIST seeds
   Artist.create!(name: "✰MAGZEN✰")
   Artist.create!(name: "2Pac")
   Artist.create!(name: "7 Aurelius")
-  x88_keys = Artist.create!(name: "88-Keys")
+  Artist.create!(name: "88-Keys")
+    x88_keys = Artist.last
   Artist.create!(name: "A Tribe Called Quest")
   Artist.create!(name: "A$AP Rocky")
   Artist.create!(name: "Aaro630")
@@ -238,16 +239,19 @@ end
   Artist.create!(name: "Ace Hashimoto")
   Artist.create!(name: "Acidhunk")
   Artist.create!(name: "Ackeejuice Rockers")
-  adam_levine = Artist.create!(name: "Adam Levine")
+  Artist.create!(name: "Adam Levine")
+    adam_levine = Artist.last
   Artist.create!(name: "Akbar")
-  al_be_back = Artist.create!(name: "Al Be Back")
+  Artist.create!(name: "Al Be Back")
+    al_be_back = Artist.last
   Artist.create!(name: "Alex Wiley")
   Artist.create!(name: "Allen Ritter")
   Artist.create!(name: "Álvaro Díaz")
   Artist.create!(name: "Anderson .Paak")
   Artist.create!(name: "Andrew Dawson")
   Artist.create!(name: "Angel López")
-  ant_clemons = Artist.create!(name: "Ant Clemons")
+  Artist.create!(name: "Ant Clemons")
+    ant_clemons = Artist.last
   Artist.create!(name: "Anthony Kilhoffer")
   Artist.create!(name: "Aphex Twin")
   Artist.create!(name: "Arca")
@@ -255,16 +259,19 @@ end
   Artist.create!(name: "Arthur Russell")
   Artist.create!(name: "Azure The Paradox")
   Artist.create!(name: "B.o.B")
-  beanie_sigel = Artist.create!(name: "Beanie Sigel")
+  Artist.create!(name: "Beanie Sigel")
+    beanie_sigel = Artist.last
   Artist.create!(name: "Beanie Sigel & Freeway")
   Artist.create!(name: "Beck")
   Artist.create!(name: "Beenie Man")
   Artist.create!(name: "Benji B")
   Artist.create!(name: "benny blanco")
-  beyonce = Artist.create!(name: "Beyoncé")
+  Artist.create!(name: "Beyoncé")
+    beyonce = Artist.last
   Artist.create!(name: "Big K.R.I.T.")
   Artist.create!(name: "Big Pun")
-  big_sean = Artist.create!(name: "Big Sean")
+  Artist.create!(name: "Big Sean")
+    big_sean = Artist.last
   Artist.create!(name: "Bill Withers")
   Artist.create!(name: "Bink!")
   Artist.create!(name: "Bizzle")
@@ -274,9 +281,11 @@ end
   Artist.create!(name: "Bobby Byrd")
   Artist.create!(name: "Bodega Bamz")
   Artist.create!(name: "Boi-1da")
-  bon_iver = Artist.create!(name: "Bon Iver")
+  Artist.create!(name: "Bon Iver")
+    bon_iver = Artist.last
   Artist.create!(name: "Boogz")
-  brandy = Artist.create!(name: "Brandy")
+  Artist.create!(name: "Brandy")
+    brandy = Artist.last
   Artist.create!(name: "Brenda Lee")
   Artist.create!(name: "Brian “All Day” Miller")
   Artist.create!(name: "BROCKHAMPTON")
@@ -287,7 +296,8 @@ end
   Artist.create!(name: "Busta Rhymes")
   Artist.create!(name: "C.L. Smooth")
   Artist.create!(name: "CabinCats")
-  camron = Artist.create!(name: "Cam'ron")
+  Artist.create!(name: "Cam'ron")
+    camron = Artist.last
   Artist.create!(name: "CAMEone")
   Artist.create!(name: "Can")
   Artist.create!(name: "Capcom")
@@ -299,36 +309,49 @@ end
   Artist.create!(name: "Chairmen of the Board")
   Artist.create!(name: "Chaka Khan")
   Artist.create!(name: "Chamillionaire")
-  chance_the_rapper = Artist.create!(name: "Chance the Rapper")
+  Artist.create!(name: "Chance the Rapper")
+    chance_the_rapper = Artist.last
   Artist.create!(name: "Charles Hamilton")
   Artist.create!(name: "Charlie Heat")
-  charlie_wilson = Artist.create!(name: "Charlie Wilson")
+  Artist.create!(name: "Charlie Wilson")
+    charlie_wilson = Artist.last
   Artist.create!(name: "Che Pope")
   Artist.create!(name: "Childish Gambino")
-  chris_brown = Artist.create!(name: "Chris Brown")
-  chris_martin = Artist.create!(name: "Chris Martin")
+  Artist.create!(name: "Chris Brown")
+    chris_brown = Artist.last
+  Artist.create!(name: "Chris Martin")
+    chris_martin = Artist.last
   Artist.create!(name: "Claude Leveillee")
-  clipse = Artist.create!(name: "Clipse")
-  common = Artist.create!(name: "Common")
-  consequence = Artist.create!(name: "Consequence")
+  Artist.create!(name: "Clipse")
+    clipse = Artist.last
+  Artist.create!(name: "Common")
+    common = Artist.last
+  Artist.create!(name: "Consequence")
+    consequence = Artist.last
   Artist.create!(name: "Conway the Machine")
   Artist.create!(name: "Crash Crew")
   Artist.create!(name: "CunninLynguists")
-  curtis_mayfield = Artist.create!(name: "Curtis Mayfield", rank: 8)
-  cyhi_the_prince = Artist.create!(name: "CyHi The Prynce")
-  daft_punk = Artist.create!(name: "Daft Punk")
+  Artist.create!(name: "Curtis Mayfield", rank: 8)
+    curtis_mayfield = Artist.last
+  Artist.create!(name: "CyHi The Prynce")
+    cyhi_the_prince = Artist.last
+  Artist.create!(name: "Daft Punk")
+    daft_punk = Artist.last
   Artist.create!(name: "Danilo Lorenzini")
   Artist.create!(name: "Darren King")
-  default_artist = Artist.create!(name: "default_artist")
+  Artist.create!(name: "default_artist")
+    default_artist = Artist.last
   Artist.create!(name: "Defunct Page")
-  desiigner = Artist.create!(name: "Desiigner")
+  Artist.create!(name: "Desiigner")
+    desiigner = Artist.last
   Artist.create!(name: "Devo Springsteen")
   Artist.create!(name: "Diddy")
   Artist.create!(name: "Die Orsons")
   Artist.create!(name: "Dirge")
   Artist.create!(name: "DJ Earworm")
   Artist.create!(name: "DJ Frank E")
-  dj_premier = Artist.create!(name: "DJ Premier")
+  Artist.create!(name: "DJ Premier")
+    dj_premier = Artist.last
   Artist.create!(name: "DJ Toomp")
   Artist.create!(name: "DJDS")
   Artist.create!(name: "Dom Solo")
@@ -338,7 +361,8 @@ end
   Artist.create!(name: "DRTWRK")
   Artist.create!(name: "Dutch E Germ")
   Artist.create!(name: "DVDA")
-  dwele = Artist.create!(name: "Dwele")
+  Artist.create!(name: "Dwele")
+    dwele = Artist.last
   Artist.create!(name: "E*Vax")
   Artist.create!(name: "Edward Elgar")
   Artist.create!(name: "Elton John")
@@ -346,7 +370,8 @@ end
   Artist.create!(name: "Eric Hudson")
   Artist.create!(name: "Etta James")
   Artist.create!(name: "Evian Christ")
-  evidence = Artist.create!(name: "Evidence")
+  Artist.create!(name: "Evidence")
+    evidence = Artist.last
   Artist.create!(name: "Fantastic Freaks")
   Artist.create!(name: "Father's Children")
   Artist.create!(name: "Federico Vindver")
@@ -355,15 +380,21 @@ end
   Artist.create!(name: "FnZ")
   Artist.create!(name: "Francis and the Lights")
   Artist.create!(name: "Frank Dukes")
-  frank_ocean = Artist.create!(name: "Frank Ocean")
-  fred_hammond = Artist.create!(name: "Fred Hammond")
-  freeway = Artist.create!(name: "Freeway")
+  Artist.create!(name: "Frank Ocean")
+    frank_ocean = Artist.last
+  Artist.create!(name: "Fred Hammond")
+    fred_hammond = Artist.last
+  Artist.create!(name: "Freeway")
+    freeway = Artist.last
   Artist.create!(name: "Future")
   Artist.create!(name: "Gesaffelstein")
   Artist.create!(name: "Ghostface Killah")
-  gil_scott_heron = Artist.create!(name: "Gil Scott-Heron", rank: 5)
-  glc = Artist.create!(name: "GLC")
-  god = Artist.create!(name: "God")
+  Artist.create!(name: "Gil Scott-Heron", rank: 5)
+    gil_scott_heron = Artist.last
+  Artist.create!(name: "GLC")
+    glc = Artist.last
+  Artist.create!(name: "God")
+    god = Artist.last
   Artist.create!(name: "Goldfrapp")
   Artist.create!(name: "Googoosh")
   Artist.create!(name: "Grupo Vocal Argentino")
@@ -389,47 +420,60 @@ end
   Artist.create!(name: "J-Definition")
   Artist.create!(name: "J-Hi")
   Artist.create!(name: "J. Cole")
-  j_ivy = Artist.create!(name: "J. Ivy")
+  Artist.create!(name: "J. Ivy")
+    j_ivy = Artist.last
   Artist.create!(name: "Jackie Moore")
   Artist.create!(name: "Jaden")
   Artist.create!(name: "Jake Hill")
   Artist.create!(name: "James Brown")
   Artist.create!(name: "James Cleveland & The Southern California Community Choir")
-  jaime_foxx = Artist.create!(name: "Jamie Foxx")
-  jay_z = Artist.create!(name: "JAY-Z", rank: 2)
-  jeezy = Artist.create!(name: "Jeezy")
+  Artist.create!(name: "Jamie Foxx")
+    jaime_foxx = Artist.last
+  Artist.create!(name: "JAY-Z", rank: 2)
+    jay_z = Artist.last
+  Artist.create!(name: "Jeezy")
+    jeezy = Artist.last
   Artist.create!(name: "Jeff Bhasker")
   Artist.create!(name: "Jimmy Fallon")
   Artist.create!(name: "Jireel")
   Artist.create!(name: "Joe $cott")
   Artist.create!(name: "Joey Bada$$")
-  john_legend = Artist.create!(name: "John Legend")
-  john_mayer = Artist.create!(name: "John Mayer")
+  Artist.create!(name: "John Legend")
+    john_legend = Artist.last
+  Artist.create!(name: "John Mayer")
+    john_mayer = Artist.last
   Artist.create!(name: "Johnny “Guitar” Watson")
-  jon_brion = Artist.create!(name: "Jon Brion")
+  Artist.create!(name: "Jon Brion")
+    jon_brion = Artist.last
   Artist.create!(name: "Jon Connor")
   Artist.create!(name: "Jordan Bunke")
   Artist.create!(name: "Jungle Brothers")
   Artist.create!(name: "Junie Morrison")
   Artist.create!(name: "Just Blaze")
   Artist.create!(name: "Justin Timberlake")
-  kanye_west = Artist.create!(name: "Kanye West", rank: 1)
+  Artist.create!(name: "Kanye West", rank: 1)
+    kanye_west = Artist.last
   Artist.create!(name: "Kareem Lotfy")
   Artist.create!(name: "Karriem Riggins")
-  kelly_price = Artist.create!(name: "Kelly Price")
-  kendrick_lamar = Artist.create!(name: "Kendrick Lamar")
-  kenny_g = Artist.create!(name: "Kenny G")
+  Artist.create!(name: "Kelly Price")
+    kelly_price = Artist.last
+  Artist.create!(name: "Kendrick Lamar")
+    kendrick_lamar = Artist.last
+  Artist.create!(name: "Kenny G")
+    kenny_g = Artist.create!(name: "Kenny G")
   Artist.create!(name: "Kenny Lattimore")
   Artist.create!(name: "Kevin Abstract")
   Artist.create!(name: "Keyon Christ")
   Artist.create!(name: "Khary")
-  kid_cudi = Artist.create!(name: "Kid Cudi", rank: 3)
+  Artist.create!(name: "Kid Cudi", rank: 3)
+    kid_cudi = Artist.last
   Artist.create!(name: "Kid Rohan")
   Artist.create!(name: "KIDS SEE GHOSTS")
   Artist.create!(name: "King Crimson")
   Artist.create!(name: "King Lil G")
   Artist.create!(name: "Kings of Tomorrow")
-  kirk_franklin = Artist.create!(name: "Kirk Franklin")
+  Artist.create!(name: "Kirk Franklin")
+    kirk_franklin = Artist.last
   Artist.create!(name: "Kuk Harrell")
   Artist.create!(name: "L.E.J")
   Artist.create!(name: "Labi Siffre")
@@ -442,12 +486,15 @@ end
   Artist.create!(name: "Lil Dicky")
   Artist.create!(name: "Lil Trap God")
   Artist.create!(name: "Lil Trogan")
-  lil_wayne = Artist.create!(name: "Lil Wayne")
+  Artist.create!(name: "Lil Wayne")
+    lil_wayne = Artist.last
   Artist.create!(name: "Logic")
   Artist.create!(name: "Lords of the Underground")
   Artist.create!(name: "Lou Donaldson")
-  ludacris = Artist.create!(name: "Ludacris")
-  lupe_fiasco = Artist.create!(name: "Lupe Fiasco")
+  Artist.create!(name: "Ludacris")
+    ludacris = Artist.create!(name: "Ludacris")
+  Artist.create!(name: "Lupe Fiasco")
+    lupe_fiasco = Artist.last
   Artist.create!(name: "Luther Vandross")
   Artist.create!(name: "Lyn Collins")
   Artist.create!(name: "M.I.M.S")
@@ -458,9 +505,11 @@ end
   Artist.create!(name: "Manu Dibango")
   Artist.create!(name: "Marius DC")
   Artist.create!(name: "Maroon 5")
-  marvin_gaye = Artist.create!(name: "Marvin Gaye")
+  Artist.create!(name: "Marvin Gaye")
+    marvin_gaye = Artist.last
   Artist.create!(name: "Mástein Bennett")
-  max_b = Artist.create!(name: "Max B")
+  Artist.create!(name: "Max B")
+    max_b = Artist.last
   Artist.create!(name: "Meek Mill")
   Artist.create!(name: "Members Only Group")
   Artist.create!(name: "Menace")
@@ -469,78 +518,98 @@ end
   Artist.create!(name: "Michael Viner's Incredible Bongo Band")
   Artist.create!(name: "Michele Fedrigotti")
   Artist.create!(name: "Mike Caren")
-  mike_dean = Artist.create!(name: "MIKE DEAN")
+  Artist.create!(name: "MIKE DEAN")
+    mike_dean = Artist.last
   Artist.create!(name: "Mike Oldfield")
   Artist.create!(name: "Mobb Deep")
   Artist.create!(name: "Monie Love")
   Artist.create!(name: "Mountain")
   Artist.create!(name: "Mr. Fingers")
-  mr_hudson = Artist.create!(name: "Mr. Hudson")
+  Artist.create!(name: "Mr. Hudson")
+    mr_hudson = Artist.last
   Artist.create!(name: "N.E.R.D")
-  nas = Artist.create!(name: "Nas", rank: 4)
+  Artist.create!(name: "Nas", rank: 4)
+    nas = Artist.last
   Artist.create!(name: "Natalie Cole")
   Artist.create!(name: "Natalie is Great")
   Artist.create!(name: "Naturally Trash")
   Artist.create!(name: "Nelly")
   Artist.create!(name: "Nick Carter Green")
-  nicki_minaj = Artist.create!(name: "Nicki Minaj")
+  Artist.create!(name: "Nicki Minaj")
+    nicki_minaj = Artist.last
   Artist.create!(name: "Nina Simone")
-  no_id = Artist.create!(name: "No I.D.")
+  Artist.create!(name: "No I.D.")
+    no_id = Artist.last
   Artist.create!(name: "Noah Goldstein")
   Artist.create!(name: "Nottz")
   Artist.create!(name: "Nujabes")
   Artist.create!(name: "Om'Mas Keith")
   Artist.create!(name: "Omega")
-  otis_redding = Artist.create!(name: "Otis Redding")
+  Artist.create!(name: "Otis Redding")
+    otis_redding = Artist.last
   Artist.create!(name: "OutKast")
   Artist.create!(name: "Parris Chariz")
-  partynextdoor = Artist.create!(name: "PARTYNEXTDOOR")
+  Artist.create!(name: "PARTYNEXTDOOR")
+    partynextdoor = Artist.last
   Artist.create!(name: "Pastor T.L. Barrett")
-  patti_labelle = Artist.create!(name: "Patti LaBelle")
-  paul_wall = Artist.create!(name: "Paul Wall")
+  Artist.create!(name: "Patti LaBelle")
+    patti_labelle = Artist.last
+  Artist.create!(name: "Paul Wall")
+    paul_wall = Artist.last
   Artist.create!(name: "Pete Rock")
   Artist.create!(name: "Pi'erre Bourne")
   Artist.create!(name: "Plain Pat")
   Artist.create!(name: "Plane Jaymes")
   Artist.create!(name: "PM")
-  post_malone = Artist.create!(name: "Post Malone")
+  Artist.create!(name: "Post Malone")
+    post_malone = Artist.last
   Artist.create!(name: "Prince")
   Artist.create!(name: "Pro Era")
   Artist.create!(name: "Public Enemy")
-  pusha_t = Artist.create!(name: "Pusha T")
-  q_tip = Artist.create!(name: "Q-Tip")
+  Artist.create!(name: "Pusha T")
+    pusha_t = Artist.last
+  Artist.create!(name: "Q-Tip")
+    q_tip = Artist.last
   Artist.create!(name: "RaDaLyricist")
-  raekwon = Artist.create!(name: "Raekwon")
+  Artist.create!(name: "Raekwon")
+    raekwon = Artist.last
   Artist.create!(name: "Rare Earth")
   Artist.create!(name: "Ray Charles")
   Artist.create!(name: "Ready Roc")
-  really_doe = Artist.create!(name: "Really Doe")
+  Artist.create!(name: "Really Doe")
+    really_doe = Artist.last
   Artist.create!(name: "Redman")
   Artist.create!(name: "Reezusfreecookies")
-  rhymefest = Artist.create!(name: "Rhymefest")
+  Artist.create!(name: "Rhymefest")
+    rhymefest = Artist.last
   Artist.create!(name: "Rick James")
-  rick_ross = Artist.create!(name: "Rick Ross")
+  Artist.create!(name: "Rick Ross")
+    rick_ross = Artist.last
   Artist.create!(name: "Rick Rubin")
-  rihanna = Artist.create!(name: "Rihanna", rank: 6)
+  Artist.create!(name: "Rihanna", rank: 6)
+    rihanna = Artist.last
   Artist.create!(name: "Rkomi")
   Artist.create!(name: "Robbie Jay")
   Artist.create!(name: "ROBOTSCOTT")
   Artist.create!(name: "Ronny J")
   Artist.create!(name: "Rosie Danvers")
   Artist.create!(name: "Royc")
-  rza = Artist.create!(name: "RZA")
+  Artist.create!(name: "RZA")
+    rza = Artist.last
   Artist.create!(name: "S1")
   Artist.create!(name: "SAK PASE")
   Artist.create!(name: "Sam Lachow")
   Artist.create!(name: "Sam's")
-  sampha = Artist.create!(name: "Sampha")
+  Artist.create!(name: "Sampha")
+    sampha = Artist.last
   Artist.create!(name: "Savant of RAREBREED")
   Artist.create!(name: "ScHoolboy Q")
   Artist.create!(name: "Scorpion Squad")
   Artist.create!(name: "Section 25")
   Artist.create!(name: "Shirley Ann Lee")
   Artist.create!(name: "Shirley Bassey")
-  sia = Artist.create!(name: "Sia")
+  Artist.create!(name: "Sia")
+    sia = Artist.last
   Artist.create!(name: "Sinjin Hawke")
   Artist.create!(name: "Sister Nancy")
   Artist.create!(name: "Skindred")
@@ -553,21 +622,28 @@ end
   Artist.create!(name: "Spooky Tooth")
   Artist.create!(name: "Spose")
   Artist.create!(name: "Steely Dan")
-  sunday_service_choir = Artist.create!(name: "Sunday Service Choir")
+  Artist.create!(name: "Sunday Service Choir")
+    sunday_service_choir = Artist.last
   Artist.create!(name: "svrite")
-  swizz_beatz = Artist.create!(name: "Swizz Beatz")
+  Artist.create!(name: "Swizz Beatz")
+    swizz_beatz = Artist.last
   Artist.create!(name: "Syl Johnson")
-  syleena_johnson = Artist.create!(name: "Syleena Johnson")
-  t_pain = Artist.create!(name: "T-Pain")
-  talib_kweli = Artist.create!(name: "Talib Kweli", rank: 7)
+  Artist.create!(name: "Syleena Johnson")
+    syleena_johnson = Artist.last
+  Artist.create!(name: "T-Pain")
+    t_pain = Artist.last
+  Artist.create!(name: "Talib Kweli", rank: 7)
+    talib_kweli = Artist.last
   Artist.create!(name: "Tears for Fears")
   Artist.create!(name: "Termanology")
   Artist.create!(name: "The Alan Parsons Project")
   Artist.create!(name: "The ARC Choir")
-  the_boys_choir_of_harlem = Artist.create!(name: "The Boys Choir of Harlem")
+  Artist.create!(name: "The Boys Choir of Harlem")
+    the_boys_choir_of_harlem = Artist.last
   Artist.create!(name: "The Dells")
   Artist.create!(name: "The Edwin Hawkins Singers")
-  the_game = Artist.create!(name: "The Game")
+  Artist.create!(name: "The Game")
+    the_game = Artist.last
   Artist.create!(name: "The Jimmy Castor Bunch")
   Artist.create!(name: "The Kay-Gees")
   Artist.create!(name: "The Mojo Men")
@@ -575,23 +651,29 @@ end
   Artist.create!(name: "The Notorious B.I.G.")
   Artist.create!(name: "The Turtles")
   Artist.create!(name: "The Underachievers")
-  the_weeknd = Artist.create!(name: "The Weeknd")
-  the_dream = Artist.create!(name: "The-Dream")
+  Artist.create!(name: "The Weeknd")
+    the_weeknd = Artist.last
+  Artist.create!(name: "The-Dream")
+    the_dream = Artist.last
   Artist.create!(name: "Timbaland")
   Artist.create!(name: "Tinashe")
   Artist.create!(name: "Tinie Tempah")
   Artist.create!(name: "TNGHT")
   Artist.create!(name: "Tony Joe White")
-  travis_scott = Artist.create!(name: "Travis Scott")
+  Artist.create!(name: "Travis Scott")
+    travis_scott = Artist.last
   Artist.create!(name: "Trevor Gureckis")
   Artist.create!(name: "TUAMIE")
-  twista = Artist.create!(name: "Twista")
+  Artist.create!(name: "Twista")
+    twista = Artist.last
   Artist.create!(name: "Two Door Cinema Club")
-  ty_dolla_sign = Artist.create!(name: "Ty Dolla $ign")
+  Artist.create!(name: "Ty Dolla $ign")
+    ty_dolla_sign = Artist.last
   Artist.create!(name: "Tyler, The Creator")
   Artist.create!(name: "Vanilla Fudge")
   Artist.create!(name: "Velous")
-  vic_mensa = Artist.create!(name: "Vic Mensa")
+  Artist.create!(name: "Vic Mensa")
+    vic_mensa = Artist.last
   Artist.create!(name: "Viracocha Mendoza")
   Artist.create!(name: "Waka Flocka Flame")
   Artist.create!(name: "Warryn Campbell")
@@ -602,19 +684,21 @@ end
   Artist.create!(name: "Will Smith")
   Artist.create!(name: "William Crooks")
   Artist.create!(name: "WOLFE de MÇHLS")
-  wolfgang_amadeus_mozart = Artist.create!(name: "Wolfgang Amadeus Mozart")
+  Artist.create!(name: "Wolfgang Amadeus Mozart")
+    wolfgang_amadeus_mozart = last
   Artist.create!(name: "Xcelence")
-  yasiin_bey = Artist.create!(name: "Yasiin Bey")
+  Artist.create!(name: "Yasiin Bey")
+    yasiin_bey = Artist.last
   Artist.create!(name: "YBN Cordae")
   Artist.create!(name: "YC")
   Artist.create!(name: "Yoko Ono")
   Artist.create!(name: "Yong Feezy")
   Artist.create!(name: "Young Jizzle")
-  young_thug = Artist.create!(name: "Young Thug")
+  Artist.create!(name: "Young Thug")
+    young_thug = Artist.last
   Artist.create!(name: "Yvonne Fair")
 
-
-
+# Attach headshots to artists
   attach_headshot(s3_client, adam_levine, "seeds/headshots/adam_levine.jpg")
   attach_headshot(s3_client, al_be_back, "seeds/headshots/al_be_back.jpg")
   attach_headshot(s3_client, ant_clemons, "seeds/headshots/ant_clemons.jpg")
@@ -692,7 +776,6 @@ end
   attach_headshot(s3_client, wolfgang_amadeus_mozart, "seeds/headshots/wolfgang_amadeus_mozart.jpg")
   attach_headshot(s3_client, yasiin_bey, "seeds/headshots/yasiin_bey.jpg")
   attach_headshot(s3_client, young_thug, "seeds/headshots/young_thug.jpg")
-
 
 
 # Songs
