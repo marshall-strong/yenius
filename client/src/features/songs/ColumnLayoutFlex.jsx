@@ -16,16 +16,19 @@ const SongLayout = ({ songId }) => {
   );
 };
 
-const VerseLayout = ({ verseId }) => {
+const VerseLayout = ({ verseId, selectedVerseRef }) => {
   return (
     <div className="column_layout-flex_column-fill_column">
-      <AnnotationsContainer verseId={verseId} />
+      <AnnotationsContainer
+        verseId={verseId}
+        selectedVerseRef={selectedVerseRef}
+      />
       {/* <AnnotationSidebar /> */}
     </div>
   );
 };
 
-const ColumnLayoutFlex = ({ match }) => {
+const ColumnLayoutFlex = ({ match, selectedVerseRef }) => {
   const songLayoutKlass = "ColumnSecondaryShowSong";
   const [songDisplayKlass, setSongDisplayKlass] = useState("");
   const songKlass = songLayoutKlass.concat(songDisplayKlass);
@@ -53,7 +56,7 @@ const ColumnLayoutFlex = ({ match }) => {
         <SongLayout songId={songId} />
       </div>
       <div className={verseKlass}>
-        <VerseLayout verseId={verseId} />
+        <VerseLayout verseId={verseId} selectedVerseRef={selectedVerseRef} />
       </div>
     </div>
   );

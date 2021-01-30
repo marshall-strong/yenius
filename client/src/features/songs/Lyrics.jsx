@@ -1,40 +1,13 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { selectSongById } from "./songsSlice";
 import { selectVerseById } from "../verses/versesSlice";
 
-const SelectedVerse = ({ setClientRect, verse }) => {
+const SelectedVerse = ({ selectedVerseRef, verse }) => {
   return (
-    <p
-      id="SelectedVerse"
-      ref={(element) => {
-        if (!element) return;
-        console.log("initial width: ", element.getBoundingClientRect().width);
-        let prevValue = JSON.stringify(element.getBoundingClientRect());
-        const start = Date.now();
-        const handle = setInterval(() => {
-          let nextValue = JSON.stringify(element.getBoundingClientRect());
-          if (nextValue === prevValue) {
-            clearInterval(handle);
-            console.log(`width stopped changin in ${Date.now() - start} ms.`);
-            console.log("final width: ", element.getBoundingClientRect().width);
-            console.log("");
-            const domRect = element.getBoundingClientRect();
-            console.log("domRect = element.getBoundingClientRect();");
-            console.log(`domRect.left: ${domRect.x}`);
-            console.log(`domRect.width: ${domRect.width}`);
-            console.log(`domRect.right: ${domRect.right}`);
-            console.log(`domRect.top: ${domRect.y}`);
-            console.log(`domRect.height: ${domRect.height}`);
-            console.log(`domRect.bottom: ${domRect.bottom}`);
-          } else {
-            prevValue = nextValue;
-          }
-        }, 100);
-      }}
-    >
+    <p id="SelectedVerse" ref={selectedVerseRef}>
       <Link
         to={`/songs/${verse.songId}/verses/${verse.id}`}
         className="referent referent--yellow referent--highlighted"
@@ -48,12 +21,12 @@ const SelectedVerse = ({ setClientRect, verse }) => {
   );
 };
 
-const LyricsVerse = ({ selectedVerseId, setClientRect, verseId }) => {
+const LyricsVerse = ({ selectedVerseId, selectedVerseRef, verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));
   const isSelectedVerse = selectedVerseId === verseId;
 
   const lyricsVerse = isSelectedVerse ? (
-    <SelectedVerse verse={verse} setClientRect={setClientRect} />
+    <SelectedVerse selectedVerseRef={selectedVerseRef} verse={verse} />
   ) : (
     <p>
       <Link
@@ -71,12 +44,15 @@ const LyricsVerse = ({ selectedVerseId, setClientRect, verseId }) => {
   return lyricsVerse;
 };
 
-const Lyrics = ({ selectedVerseId, songId }) => {
+const Lyrics = ({ match, selectedVerseRef }) => {
+  const songId = parseInt(match.params.songId);
   const song = useSelector((state) => selectSongById(state, songId));
   if (!song) {
     return null;
   }
 
+  const selectedVerseId = parseInt(match.params.verseId);
+  // Fix this...
   if (!(song.verses && song.verses.length > 0)) {
     return (
       <div className="song_body-lyrics">
@@ -87,32 +63,34 @@ const Lyrics = ({ selectedVerseId, songId }) => {
     );
   }
 
-  const lyrics = song.verses.map((verseId) => (
+  const songVerses = song.verses.map((verseId) => (
     <LyricsVerse
       key={verseId}
       selectedVerseId={selectedVerseId}
+      selectedVerseRef={selectedVerseRef}
       verseId={verseId}
     />
   ));
+
   return (
     <div className="song_body-lyrics">
       <h2 className="text_label text_label--gray text_label--x_small_text_size u-top_margin">
         {song.name} Lyrics
       </h2>
       <div className="lyrics">
-        <ul>{lyrics}</ul>
+        <ul>{songVerses}</ul>
       </div>
     </div>
   );
 };
 
-const Loader = ({ selectedVerseId, songId }) => {
+const Loader = (props) => {
   const fetchSongLyrics = useSelector(
     (state) => state.songs.status.fetchSongLyrics
   );
   const asyncRequests = [fetchSongLyrics];
   if (asyncRequests.every((status) => status === "fulfilled")) {
-    return <Lyrics selectedVerseId={selectedVerseId} songId={songId} />;
+    return <Lyrics {...props} />;
   } else {
     return <div className="loader" />;
   }
