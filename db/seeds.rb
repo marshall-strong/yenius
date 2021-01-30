@@ -6449,12 +6449,12 @@ end
   comment_hashes.push( Hash["username" => "Charlie2na", "body" => "Welcome to my hairbrain meeting, Packed like some economy airplane seating"] )
   comment_hashes.push( Hash["username" => "Charlie2na", "body" => "I watched hip hop escape from New York like Kurt Russel"] )
 
-  def seedComments(commentable_array, commentable_type, comment_hashes, max_count)
+  def seedComments(commentable_array, commentable_type, comment_hashes, min_count, max_count)
     Kernel.srand 1234
     i = 0
     while i < commentable_array.length
       entity = commentable_array[i]
-      count = 1 + rand(max_count)
+      count = min_count + rand(max_count)
       j = 0
       while j < count
         hash = comment_hashes.sample
@@ -6466,7 +6466,7 @@ end
     end
   end
 
-  seedComments(Artist.all, "Artist", comment_hashes, 3)
-  seedComments(Album.all, "Album", comment_hashes, 3)
-  seedComments(Song.all, "Song", comment_hashes, 3)
-  seedComments(Verse.all, "Verse", comment_hashes, 2)
+  seedComments(Artist.all, "Artist", comment_hashes, 2, 4)
+  seedComments(Album.all, "Album", comment_hashes, 2, 4)
+  seedComments(Song.all, "Song", comment_hashes, 4, 6)
+  seedComments(Verse.all, "Verse", comment_hashes, 1, 2)
