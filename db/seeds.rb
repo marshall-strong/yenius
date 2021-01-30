@@ -170,21 +170,36 @@ end
   User.create!(username: "WrightStuff", email: "alex.wright@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusWrightStuff")
 
 
-# Albums
-  the_college_dropout = Album.create!(name: "The College Dropout", release_date: Date.new(2004, 2, 10), rank: 2)
-  late_registration = Album.create!(name: "Late Registration", release_date: Date.new(2005, 8, 30), rank: 5)
-  graduation = Album.create!(name: "Graduation", release_date: Date.new(2007, 9, 11), rank: 7)
-  x808s_and_heartbreak = Album.create!(name: "808s & Heartbreak", release_date: Date.new(2008, 11, 24), rank: 8)
-  my_beautiful_dark_twisted_fantasy = Album.create!(name: "My Beautiful Dark Twisted Fantasy", release_date: Date.new(2010, 11, 22), rank: 3)
-  yeezus = Album.create!(name: "Yeezus", release_date: Date.new(2013, 6, 18), rank: 6)
-  the_life_of_pablo = Album.create!(name: "The Life of Pablo", release_date: Date.new(2016, 2, 14), rank: 1)
-  ye = Album.create!(name: "Ye", release_date: Date.new(2018, 6, 1))
-  jesus_is_king = Album.create!(name: "Jesus Is King", release_date: Date.new(2019, 10, 25))
-  watch_the_throne = Album.create!(name: "Watch the Throne", release_date: Date.new(2011, 8, 8), rank: 4)
-  s_and_i = Album.create!(name: "Samples & Interpolations", release_date: Date.new(1000, 1, 1))
+# ALBUM seeds
+# Kanye albums
+  Album.create!(name: "The College Dropout", release_date: Date.new(2004, 2, 10), rank: 2)
+    the_college_dropout = Album.last
+  Album.create!(name: "Late Registration", release_date: Date.new(2005, 8, 30), rank: 5)
+    late_registration = Album.last
+  Album.create!(name: "Graduation", release_date: Date.new(2007, 9, 11), rank: 7)
+    graduation = Album.last
+  Album.create!(name: "808s & Heartbreak", release_date: Date.new(2008, 11, 24), rank: 8)
+    x808s_and_heartbreak = Album.last
+  Album.create!(name: "My Beautiful Dark Twisted Fantasy", release_date: Date.new(2010, 11, 22), rank: 3)
+    my_beautiful_dark_twisted_fantasy = Album.last
+  Album.create!(name: "Yeezus", release_date: Date.new(2013, 6, 18), rank: 6)
+    yeezus = Album.last
+  Album.create!(name: "The Life of Pablo", release_date: Date.new(2016, 2, 14), rank: 1)
+    the_life_of_pablo = Album.last
+  Album.create!(name: "Ye", release_date: Date.new(2018, 6, 1))
+    ye = Album.last
+  Album.create!(name: "Jesus Is King", release_date: Date.new(2019, 10, 25))
+    jesus_is_king = Album.last
 
+# Kanye and Jay-Z albums
+  Album.create!(name: "Watch the Throne", release_date: Date.new(2011, 8, 8), rank: 4)
+    watch_the_throne = Album.last
 
+# Other albums
+  Album.create!(name: "Samples & Interpolations", release_date: Date.new(1000, 1, 1))
+    s_and_i = Album.last
 
+# Attach banners to albums
   attach_banner(s3_client, the_college_dropout, "seeds/banners/2004-the_college_dropout.jpg")
   attach_banner(s3_client, late_registration, "seeds/banners/2005-late_registration.jpg")
   attach_banner(s3_client, graduation, "seeds/banners/2007-graduation.jpg")
@@ -197,8 +212,7 @@ end
   attach_banner(s3_client, jesus_is_king, "seeds/banners/2019-jesus_is_king.jpg")
   attach_banner(s3_client, s_and_i, "seeds/banners/s_and_i.jpg")
 
-
-
+# Attach covers to albums
   attach_cover(s3_client, the_college_dropout, "seeds/covers/2004-the_college_dropout.jpg")
   attach_cover(s3_client, late_registration, "seeds/covers/2005-late_registration.jpg")
   attach_cover(s3_client, graduation, "seeds/covers/2007-graduation.jpg")
@@ -210,7 +224,6 @@ end
   attach_cover(s3_client, ye, "seeds/covers/2018-ye.jpg")
   attach_cover(s3_client, jesus_is_king, "seeds/covers/2019-jesus_is_king.jpg")
   attach_cover(s3_client, s_and_i, "seeds/covers/this_is_fine.png")
-
 
 
 # Artists
