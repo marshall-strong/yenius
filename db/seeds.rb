@@ -143,7 +143,8 @@ end
 # Musicians
   User.create!(username: "BradleyNowell", email: "bradley.nowell@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusBradleyNowell")
   User.create!(username: "Charlie2na", email: "charlie2na@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusCharlie2na")
-  User.create!(username: "DigitalUnderground", email: "digital.underground@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusDigitalUnderground")User.create!(username: "DrDre", email: "dr.dre@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusDrDre")
+  User.create!(username: "DigitalUnderground", email: "digital.underground@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusDigitalUnderground")
+  User.create!(username: "DrDre", email: "dr.dre@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusDrDre")
   User.create!(username: "El-P", email: "el.p@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusEl-P")
   User.create!(username: "Eminem", email: "eminem@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusEminem")
   User.create!(username: "JeffTweedy", email: "jeff.tweedy@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusJeffTweedy")
