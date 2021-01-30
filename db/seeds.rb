@@ -6466,7 +6466,7 @@ end
 # Other
   comment_hashes.push( Hash["username" => "BiddyChips", "body" => "gucci."] )
   comment_hashes.push( Hash["username" => "JAM", "body" => "and how did that make you feel?"] )
-  comment_hashes.push( Hash["username" => "WrightStuff", "'sup baby?" => ""] )
+  comment_hashes.push( Hash["username" => "WrightStuff", "body" => "'sup baby?"] )
 
 
   def seedComments(commentable_array, commentable_type, comment_hashes, min_count, max_count)
