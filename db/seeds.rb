@@ -492,7 +492,7 @@ end
   Artist.create!(name: "Lords of the Underground")
   Artist.create!(name: "Lou Donaldson")
   Artist.create!(name: "Ludacris")
-    ludacris = Artist.create!(name: "Ludacris")
+    ludacris = Artist.last
   Artist.create!(name: "Lupe Fiasco")
     lupe_fiasco = Artist.last
   Artist.create!(name: "Luther Vandross")
