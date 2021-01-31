@@ -935,7 +935,7 @@ end
 
 # Watch the Throne (2011)
   no_church_in_the_wild = Song.create!(album_id: watch_the_throne.id, name: "No Church in the Wild", track_number: 1, rank: 2)
-  lift_off = .create!(album_id: watch_the_throne.id, name: "Lift Off", track_number: 2)
+  lift_off = Song.create!(album_id: watch_the_throne.id, name: "Lift Off", track_number: 2)
   niggas_in_paris = Song.create!(album_id: watch_the_throne.id, name: "Niggas in Paris", track_number: 3)
   otis = Song.create!(album_id: watch_the_throne.id, name: "Otis", track_number: 4)
   gotta_have_it = Song.create!(album_id: watch_the_throne.id, name: "Gotta Have It", track_number: 5)
