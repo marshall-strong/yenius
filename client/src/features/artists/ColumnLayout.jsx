@@ -1,9 +1,28 @@
 import React from "react";
 
-import ColumnPrimary from "./ColumnPrimary";
-import ColumnSecondary from "./ColumnSecondary";
+import ArtistComments from "./ArtistComments";
+import Description from "./Description";
 
 import "../.././stylesheets/ColumnLayout.scss";
+
+const ColumnPrimary = ({ artistId }) => {
+  return (
+    <div className="column_layout-column_span column_layout-column_span--primary">
+      <ArtistComments artistId={artistId} />
+    </div>
+  );
+};
+
+const ColumnSecondary = ({ artistId }) => {
+  return (
+    <div className="column_layout-column_span column_layout-column_span--secondary u-top_margin column_layout-flex_column">
+      <div className="column_layout-column_span-initial_content">
+        <Description artistId={artistId} />
+      </div>
+      <div className="column_layout-flex_column-fill_column"></div>
+    </div>
+  );
+};
 
 const ColumnLayout = ({ artistId }) => {
   return (

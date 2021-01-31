@@ -56,6 +56,10 @@ import UserProfile from "./features/users/ProfileContainer";
 
 import PageFooter from "./app/PageFooter";
 
+import ClassPollForWidth from "./sandbox/ClassPollForWidth";
+import FunctionalPollForWidth from "./sandbox/FunctionalPollForWidth";
+import TooltipContainer from "./sandbox/TooltipContainer";
+
 const App = () => (
   <main className="App">
     <Router>
@@ -63,6 +67,14 @@ const App = () => (
 
       <Switch>
         <Route exact path="/" component={HomeContainer} />
+
+        <Route exact path="/class_poll" component={ClassPollForWidth} />
+        <Route
+          exact
+          path="/functional_poll"
+          component={FunctionalPollForWidth}
+        />
+        <Route exact path="/tooltip" component={TooltipContainer} />
 
         <Route exact path="/albums" component={AlbumsIndex} />
         <Route exact path="/albums/:albumId" component={AlbumShow} />

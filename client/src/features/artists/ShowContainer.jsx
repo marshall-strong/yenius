@@ -6,11 +6,25 @@ import { fetchArtistComments } from "../comments/commentsAsyncThunks";
 
 import { selectArtistById } from "./artistsSlice";
 
-import ArtistShowLayout from "./ShowLayout";
+import Banner from "./Banner";
+import Breadcrumbs from "../../app/Breadcrumbs";
+import ColumnLayout from "./ColumnLayout";
 import NotFound from "../../NotFound";
 
 import "../../stylesheets/show.scss";
 import "../../stylesheets/ShowContainer.scss";
+
+const ShowLayout = ({ artistId, match }) => {
+  return (
+    <section className="PageLayout">
+      <div>
+        <Banner artistId={artistId} />
+        <ColumnLayout artistId={artistId} />
+        <Breadcrumbs match={match} />
+      </div>
+    </section>
+  );
+};
 
 const ArtistShowContainer = ({ match }) => {
   const artistId = parseInt(match.params.artistId);
@@ -33,7 +47,7 @@ const ArtistShowContainer = ({ match }) => {
     );
   }
   if (artist && fetchArtistPageStatus === "fulfilled") {
-    content = <ArtistShowLayout match={match} artistId={artistId} />;
+    content = <ShowLayout match={match} artistId={artistId} />;
   }
 
   const dispatch = useDispatch();
