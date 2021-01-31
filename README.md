@@ -1,4 +1,166 @@
-# yenius--rails-api--create-react-app
+![](./client/src/images/logo-yenius-1482-207.png)
+
+# Description
+
+headcase is a single page web app clone of the meditation website <a href="https://www.headspace.com/" target="_blank">headspace</a> that allows users to stream guided meditations. Check out the live site <a href="https://headcase-aa.herokuapp.com/#/" target="_blank">here</a>!
+
+![](./app/assets/images/headcase-gif2.gif)
+
+# A Rock Solid, Modern Web Stack
+Create React App
+All the power of a highly-tuned Webpack config without the hassle.
+
+Rails in API-only mode
+Just the best bits, leaving React to handle the UI.
+
+ActiveAdmin
+An instant CMS backend.
+
+Seamless deployment on Heroku
+Same-origin (so no CORS complications) with build steps to manage both Node and Ruby.
+
+Single page app support with React Router
+So you can have lightning fast rendering on the front end.
+
+# Technologies
+
+Frontend:
+
+* React
+* Redux
+* SCSS
+* Bing News Search API
+
+Backend:
+
+* Ruby on Rails
+* PostgreSQL
+
+Hosting:
+* AWS S3
+* Heroku
+
+# Features
+
+* User Authentication, including error handling and "Demo User" login
+* Custom audio player built with the HTMLAudioElement API and DOM Event Listeners
+* CRUD (Create, Read, Update, Delete) functionalities for a user's "User Packs"
+* => Authenticated Users can create, update, and delete comments/annotations
+* "Meditation Completions" to track the meditations the user has listened to in each "User Pack"
+* Media management and hosting with Rails Active Storage and AWS S3
+
+![](./app/assets/images/headcase-gif1.gif)
+
+# Project Highlights
+
+One major challenge of this project was creating an audio player from scratch. I chose to utilize the HTMLAudioElement API, which gave me access to the properties and methods of ```<audio>``` elements while also giving me the flexibility of custom styling. These event listeners are applied in the ```componentDidMount``` function.
+
+```js
+  componentDidMount() {
+    this.handleTimeUpdate();
+    this.audio.addEventListener('loadedmetadata', this.handleMetadata);
+    this.audio.addEventListener('ended', this.handleCompletion);
+    this.audio.addEventListener('timeupdate', this.handleTimeUpdate);
+  }
+```
+
+The ```handleTimeUpdate``` function accesses the ```currentTime``` and ```duration``` properties on the ```Audio``` instance. It formats the current time and duration to be displayed beneath the player as well as calling the ```positionTime``` function which updates the position of the handle on the progress bar.
+
+```js
+  handleTimeUpdate() {
+    if (this.audio) {
+      let curMins = Math.floor(this.audio.currentTime / 60);
+      let curSecs = Math.floor(this.audio.currentTime - curMins * 60);
+      let durMins = Math.floor(this.audio.duration / 60);
+      let durSecs = Math.floor(this.audio.duration - durMins * 60);
+      if (curSecs < 10) {
+        curSecs = "0" + curSecs;
+      }
+      if (durSecs < 10) {
+        durSecs = "0" + durSecs;
+      }
+      if (curMins < 10) {
+        curMins = "0" + curMins;
+      }
+      this.setState({ durMins })
+      if (durMins < 10) {
+        durMins = "0" + durMins;
+      }
+      this.setState({
+        currentTime: curMins + ":" + curSecs,
+        durTime: durMins + ":" + durSecs,
+        currentTimeUnMod: this.audio.currentTime
+      })
+      let ratio = this.audio.currentTime / this.audio.duration;
+      if (this.outer) {
+        let position = (this.outer.offsetWidth * ratio) + this.outer.offsetLeft;
+        this.positionTime(position);
+      }
+    }
+  }
+
+  positionTime(position) {
+    let outerBarWidth = this.outer.offsetWidth - this.range.offsetWidth;
+    let rangeLeft = position - this.outer.offsetLeft;
+
+    if (rangeLeft >= 0 && rangeLeft <= outerBarWidth) {
+      this.range.style.marginLeft = rangeLeft + "px";
+    }
+    if (rangeLeft < 0) {
+      this.range.style.marginLeft = "0px";
+    }
+    if (rangeLeft > outerBarWidth) {
+      this.range.style.marginLeft = outerBarWidth + "px";
+    }
+  }
+  ```
+
+The audio player features an animated button that toggles between play and pause, a progress bar that shows the current position of the audio track based on the current time vs the track duration, and the ability for the user to click the progress bar to seek. These features are created by utilizing local react state inside of the ```PlayPage``` component as well as handling a user's interactions with the progress bar.
+
+```js
+  togglePlay() {
+    this.setState({ play: !this.state.play }, () => {
+      this.state.play ? this.audio.play() : this.audio.pause();
+    });
+  }
+
+  handleMouseMove(e) {
+    this.positionTime(e.pageX)
+    this.audio.currentTime = (e.pageX - this.outer.offsetLeft) / this.outer.offsetWidth * this.audio.duration;
+  }
+
+  handleMouseDown(e) {
+    window.addEventListener('mousemove', this.handleMouseMove);
+    window.addEventListener('mouseup', this.handleMouseUp);
+  }
+
+  handleMouseUp(e) {
+    window.removeEventListener('mousemove', this.handleMouseMove);
+    window.removeEventListener('mouseup', this.handleMouseUp);
+  }
+
+```
+
+Additionaly, an ```onEnded``` event listener is applied to the audio track, which allows for a "Meditation Completion" to be created when the user finishes listening to a meditation.
+
+```js
+  handleCompletion() {
+    this.setState({ play: false })
+    let meditationCompletion = {
+      userPackId: this.props.currentUp.id,
+      meditationId: this.props.currentMed.id
+    }
+    this.props.action(meditationCompletion);
+  }
+```
+
+# To Do
+
+* Edit audio player to function more closely to the headspace audio player
+* Implement meditation completion timeline on the user's profile page
+
+
+# SCRATCH
 
 Production: https://yenius--rails6-api.herokuapp.com/
 
@@ -32,113 +194,6 @@ Use _[pre-commit](https://pre-commit.com/)_ framework for managing and maintaini
 UPDATE: pre-commit should now only run Prettier the /client directory
 /client directory uses Prettier and ESLint to format code as a pre-commit hook
 
-## AWS S3 configuration
-[AWS Management Console](https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2#)
-_[AWS: Installing the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-install.html)_
-_[AWS: Configuring the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-config.html)_
-_[Heroku: Using AWS S3 to Store Static Assets and File Uploads](https://devcenter.heroku.com/articles/s3)_
-_[Heroku: Directo to S3 Image Uploads in Rails](https://devcenter.heroku.com/articles/direct-to-s3-image-uploads-in-rails)_
-Possible improvement? (https://www.mmbyte.com/article/40111.html)
-DEV.bucket_name: yenius--rails6-api--s3-bucket-dev
-DEV.region: us-east-2
-DEV.access: Objects can be public
-DEV.bucket_policy: {
-    "Version": "2012-10-17",
-    "Id": "DevBucketAdminPolicy",
-    "Statement": [
-        {
-            "Sid": "DevAdminStatement",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::157703510654:user/yenius--rails6-api--s3-admin-user"
-            },
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::yenius--rails6-api--s3-bucket-dev/*",
-                "arn:aws:s3:::yenius--rails6-api--s3-bucket-dev"
-            ]
-        }
-    ]
-}
-DEV.bucket_CORS:[
-    {
-        "AllowedHeaders": [
-            "Authorization"
-        ],
-        "AllowedMethods": [
-            "GET",
-            "POST",
-            "PUT"
-        ],
-        "AllowedOrigins": [
-            "*"
-        ],
-        "ExposeHeaders": [],
-        "MaxAgeSeconds": 3000
-    }
-]
-
-PROD.bucket_name: yenius--rails6-api--s3-bucket-prod
-PROD.region: us-east-2
-PROD.access: Bucket and objects not public
-PROD.bucket_policy: {
-    "Version": "2012-10-17",
-    "Id": "ProdBucketAdminPolicy",
-    "Statement": [
-        {
-            "Sid": "ProdAdminStatement",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::157703510654:user/yenius--rails6-api--s3-admin-user"
-            },
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::yenius--rails6-api--s3-bucket-prod/*",
-                "arn:aws:s3:::yenius--rails6-api--s3-bucket-prod"
-            ]
-        }
-    ]
-}
-PROD.bucket_CORS:[
-    {
-        "AllowedHeaders": [
-            "Authorization"
-        ],
-        "AllowedMethods": [
-            "GET",
-            "POST",
-            "PUT"
-        ],
-        "AllowedOrigins": [
-            "*"
-        ],
-        "ExposeHeaders": [],
-        "MaxAgeSeconds": 3000
-    }
-]
-
-
-IAM User Name: yenius--rails6-api--s3-admin-user
-IAM Group Name: yenius--rails6-api--s3-admin-group
-IAM Policy Name: yenius--rails6-api--s3-admin-group-policy
-(the managed policy is attached to the group, and the user is a member of the group)
-IAM Policy:
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "YeniusRails6ApiS3AdminGroupPolicy",
-      "Effect": "Allow",
-      "Action": "s3:*",
-      "Resource": [
-        "arn:aws:s3:::yenius--rails6-api--s3-bucket-dev",
-        "arn:aws:s3:::yenius--rails6-api--s3-bucket-dev/*",
-        "arn:aws:s3:::yenius--rails6-api--s3-bucket-prod",
-        "arn:aws:s3:::yenius--rails6-api--s3-bucket-prod/*"
-      ]
-    }
-  ]
-}
 
 
 
@@ -251,3 +306,34 @@ The rel attribute set to noreferrer noopener to prevent possible malicious attac
 
 [DONE (1/23)] - Add 'Suggested Artists/Songs' to Artists/Songs index page
 [DONE (1/23)] - All flavors of UserAuth work (Signup new user, Login existing user, Login as demo user)
+
+
+
+list of all icons, things I could use icons for
+GitHub
+LinkedIn
+Portfolio
+
+
+
+X to close Annotations
+Submit
+Save
+Delete
+Update
+Edit
+Login
+Log out
+sign up
+upvote
+downvote
+IQ?
+Profile square
+Profile icon??
+Search icon
+
+Pyongs?
+
+Refresh news?
+
+https://iconmonstr.com/iconicfont/
