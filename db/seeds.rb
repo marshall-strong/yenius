@@ -58,7 +58,8 @@ def attach_headshot(s3_client, artist, key)
   artist.headshot.attach(io: file, filename: filename)
 end
 
-# Top Charts (seeded below, included here for quick reference)
+
+# Top Charts (seeded below, listed here for reference)
 
 # Top Albums
 # 1 - The Life Of Pablo
@@ -105,50 +106,100 @@ end
   AdminUser.destroy_all
 
 
-
+# ACTIVE ADMIN seed
 # ActiveAdmin database administrative user
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 
+# USER seeds
+# Celebrity users
+  User.create!(username: "50Cent", email: "50cent@yenius.com", my_color: MS_PALETTE.sample, password: "yenius50Cent")
+  User.create!(username: "AnthonyAnderson", email: "anthony.anderson@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusAnthonyAnderson")
+  User.create!(username: "BobSaget", email: "bob.saget@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusBobSaget")
+  User.create!(username: "ChrisBrown", email: "chris.brown@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusChrisBrown")
+  User.create!(username: "ChrisEvans", email: "chris.evans@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusChrisEvans")
+  User.create!(username: "Falcon", email: "falcon@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusFalcon")
+  User.create!(username: "KatyPerry", email: "katy.perry@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKatyPerry")
+  User.create!(username: "MeghanMcCain", email: "meghan.mccain@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusMeghanMcCain")
+  User.create!(username: "ParisHilton", email: "paris.hilton@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusParisHilton")
+  User.create!(username: "PiersMorgan", email: "piers.morgan@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPiersMorgan")
+  User.create!(username: "RoseMcGowan", email: "rose.mcgowan@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusRoseMcGowan")
+  User.create!(username: "RussellBrand", email: "russell.brand@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusRussellBrand")
+  User.create!(username: "SnoopDogg", email: "snoop.dogg@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusSnoopDogg")
+  User.create!(username: "TerryMoran", email: "terry.moran@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusTerryMoran")
+  User.create!(username: "TiffanyHaddish", email: "tiffany.haddish@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusTiffanyHaddish")
+  User.create!(username: "TysonBeckford", email: "tyson.beckford@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusTysonBeckford")
 
-# Users
-  User.create!(username: "demo", email: "demo@aa.io", my_color: MS_PALETTE.sample, password: "demo1234")
-  User.create!(username: "WrightStuff", email: "awright@aa.io", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "BiddyChips", email: "jmccallum@aa.io", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "BernieMac", email: "bernie.mac@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "MaxB", email: "max.b@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "FrenchMontana", email: "french.montana@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "KanyeWest", email: "kanye.west@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "IsaacHayes", email: "isaac.hayes@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "El-P", email: "el.producto@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "KillerMike", email: "killer.mike@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "ZackDeLaRocha", email: "zack.delarocha@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "2Chainz", email: "2chainz@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "MavisStaples", email: "mavis.staples@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "RHCP", email: "rhcp@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "JeffTweedy", email: "jeff.tweedy@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "KendrickLamar", email: "kendrick.lamar@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "BradleyNowell", email: "bradley.nowell@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "Charlie2na", email: "charlie2na@yenius.com", my_color: MS_PALETTE.sample, password: "password")
-  User.create!(username: "Eminem", email: "marshall.mathers@yenius.com", my_color: MS_PALETTE.sample, password: "password")
+# Demo user
+  User.create!(username: "demo", email: "demo@yenius.com", my_color: MS_PALETTE.sample, password: "demo1234")
+
+# Kanye users
+  User.create!(username: "ChristianGeniusBillionaire", email: "christian.genius@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "Kanye", email: "kanye@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "KanyeOmariWest", email: "kaney.omari.west@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "KanyeWest", email: "kaney.west@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "MisterWest", email: "mister.west@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "Yandhi", email: "yandhi@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "Ye", email: "ye@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "Yeezus", email: "yeezus@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+  User.create!(username: "Yeezy", email: "yeezy@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKanye")
+
+# Musician users
+  User.create!(username: "BradleyNowell", email: "bradley.nowell@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusBradleyNowell")
+  User.create!(username: "Charlie2na", email: "charlie2na@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusCharlie2na")
+  User.create!(username: "DigitalUnderground", email: "digital.underground@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusDigitalUnderground")
+  User.create!(username: "DrDre", email: "dr.dre@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusDrDre")
+  User.create!(username: "El-P", email: "el.p@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusEl-P")
+  User.create!(username: "Eminem", email: "eminem@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusEminem")
+  User.create!(username: "JeffTweedy", email: "jeff.tweedy@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusJeffTweedy")
+  User.create!(username: "KendrickLamar", email: "kendrick.lamar@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKendrickLamar")
+  User.create!(username: "KillerMike", email: "killer.mike@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusKillerMike")
+
+# Phish users
+  User.create!(username: "BobWeaver", email: "bob.weaver@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
+  User.create!(username: "Cactus", email: "cactus@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
+  User.create!(username: "Fish", email: "fish@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
+  User.create!(username: "Henrietta", email: "henrietta@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
+  User.create!(username: "LittleBeastBoy", email: "little.beast.boy@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
+  User.create!(username: "Page", email: "page@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
+  User.create!(username: "Trey", email: "trey@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusPhish")
+
+# Other users
+  User.create!(username: "BiddyChips", email: "jason.mccallum@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusBiddyChips")
+  User.create!(username: "JAM", email: "julian.macrone@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusJAM")
+  User.create!(username: "WrightStuff", email: "alex.wright@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusWrightStuff")
 
 
+# ALBUM seeds
+# Kanye albums
+  Album.create!(name: "The College Dropout", release_date: Date.new(2004, 2, 10), rank: 2)
+    the_college_dropout = Album.last
+  Album.create!(name: "Late Registration", release_date: Date.new(2005, 8, 30), rank: 5)
+    late_registration = Album.last
+  Album.create!(name: "Graduation", release_date: Date.new(2007, 9, 11), rank: 7)
+    graduation = Album.last
+  Album.create!(name: "808s & Heartbreak", release_date: Date.new(2008, 11, 24), rank: 8)
+    x808s_and_heartbreak = Album.last
+  Album.create!(name: "My Beautiful Dark Twisted Fantasy", release_date: Date.new(2010, 11, 22), rank: 3)
+    my_beautiful_dark_twisted_fantasy = Album.last
+  Album.create!(name: "Yeezus", release_date: Date.new(2013, 6, 18), rank: 6)
+    yeezus = Album.last
+  Album.create!(name: "The Life of Pablo", release_date: Date.new(2016, 2, 14), rank: 1)
+    the_life_of_pablo = Album.last
+  Album.create!(name: "Ye", release_date: Date.new(2018, 6, 1))
+    ye = Album.last
+  Album.create!(name: "Jesus Is King", release_date: Date.new(2019, 10, 25))
+    jesus_is_king = Album.last
 
-# Albums
-  the_college_dropout = Album.create!(name: "The College Dropout", release_date: Date.new(2004, 2, 10), rank: 2)
-  late_registration = Album.create!(name: "Late Registration", release_date: Date.new(2005, 8, 30), rank: 5)
-  graduation = Album.create!(name: "Graduation", release_date: Date.new(2007, 9, 11), rank: 7)
-  x808s_and_heartbreak = Album.create!(name: "808s & Heartbreak", release_date: Date.new(2008, 11, 24), rank: 8)
-  my_beautiful_dark_twisted_fantasy = Album.create!(name: "My Beautiful Dark Twisted Fantasy", release_date: Date.new(2010, 11, 22), rank: 3)
-  yeezus = Album.create!(name: "Yeezus", release_date: Date.new(2013, 6, 18), rank: 6)
-  the_life_of_pablo = Album.create!(name: "The Life of Pablo", release_date: Date.new(2016, 2, 14), rank: 1)
-  ye = Album.create!(name: "Ye", release_date: Date.new(2018, 6, 1))
-  jesus_is_king = Album.create!(name: "Jesus Is King", release_date: Date.new(2019, 10, 25))
-  watch_the_throne = Album.create!(name: "Watch the Throne", release_date: Date.new(2011, 8, 8), rank: 4)
-  s_and_i = Album.create!(name: "Samples & Interpolations", release_date: Date.new(1000, 1, 1))
+# Kanye and Jay-Z albums
+  Album.create!(name: "Watch the Throne", release_date: Date.new(2011, 8, 8), rank: 4)
+    watch_the_throne = Album.last
 
+# Other albums
+  Album.create!(name: "Samples & Interpolations", release_date: Date.new(1000, 1, 1))
+    s_and_i = Album.last
 
-
+# Attach banners to albums
   attach_banner(s3_client, the_college_dropout, "seeds/banners/2004-the_college_dropout.jpg")
   attach_banner(s3_client, late_registration, "seeds/banners/2005-late_registration.jpg")
   attach_banner(s3_client, graduation, "seeds/banners/2007-graduation.jpg")
@@ -161,8 +212,7 @@ end
   attach_banner(s3_client, jesus_is_king, "seeds/banners/2019-jesus_is_king.jpg")
   attach_banner(s3_client, s_and_i, "seeds/banners/s_and_i.jpg")
 
-
-
+# Attach covers to albums
   attach_cover(s3_client, the_college_dropout, "seeds/covers/2004-the_college_dropout.jpg")
   attach_cover(s3_client, late_registration, "seeds/covers/2005-late_registration.jpg")
   attach_cover(s3_client, graduation, "seeds/covers/2007-graduation.jpg")
@@ -176,396 +226,779 @@ end
   attach_cover(s3_client, s_and_i, "seeds/covers/this_is_fine.png")
 
 
-
-# Artists
+# ARTIST seeds
   Artist.create!(name: "✰MAGZEN✰")
+    magzen = Artist.last
   Artist.create!(name: "2Pac")
+    x2pac = Artist.last
   Artist.create!(name: "7 Aurelius")
-  x88_keys = Artist.create!(name: "88-Keys")
+    x7_aurelius = Artist.last
+  Artist.create!(name: "88-Keys")
+    x88_keys = Artist.last
   Artist.create!(name: "A Tribe Called Quest")
+    a_tribe_called_quest = Artist.last
   Artist.create!(name: "A$AP Rocky")
+    asap_rocky = Artist.last
   Artist.create!(name: "Aaro630")
+    aaro630 = Artist.last
   Artist.create!(name: "Ab-Soul")
+    ab_soul = Artist.last
   Artist.create!(name: "Ace Hashimoto")
+    ace_hashimoto = Artist.last
   Artist.create!(name: "Acidhunk")
+    acidhunk = Artist.last
   Artist.create!(name: "Ackeejuice Rockers")
-  adam_levine = Artist.create!(name: "Adam Levine")
+    ackeejuice_rockers = Artist.last
+  Artist.create!(name: "Adam Levine")
+    adam_levine = Artist.last
   Artist.create!(name: "Akbar")
-  al_be_back = Artist.create!(name: "Al Be Back")
+    akbar = Artist.last
+  Artist.create!(name: "Al Be Back")
+    al_be_back = Artist.last
   Artist.create!(name: "Alex Wiley")
+    alex_wiley = Artist.last
   Artist.create!(name: "Allen Ritter")
+    allen_ritter = Artist.last
   Artist.create!(name: "Álvaro Díaz")
+    alvaro_diaz = Artist.last
   Artist.create!(name: "Anderson .Paak")
+    anderson_paak = Artist.last
   Artist.create!(name: "Andrew Dawson")
+    andrew_dawson = Artist.last
   Artist.create!(name: "Angel López")
-  ant_clemons = Artist.create!(name: "Ant Clemons")
+    angel_lopez = Artist.last
+  Artist.create!(name: "Ant Clemons")
+    ant_clemons = Artist.last
   Artist.create!(name: "Anthony Kilhoffer")
+    anthony_kilhoffer = Artist.last
   Artist.create!(name: "Aphex Twin")
+    aphex_twin = Artist.last
   Artist.create!(name: "Arca")
+    arca = Artist.last
   Artist.create!(name: "Aretha Franklin")
+    aretha_franklin = Artist.last
   Artist.create!(name: "Arthur Russell")
+    arthur_russell = Artist.last
   Artist.create!(name: "Azure The Paradox")
+    azure_the_paradox = Artist.last
   Artist.create!(name: "B.o.B")
-  beanie_sigel = Artist.create!(name: "Beanie Sigel")
+    bob = Artist.last
+  Artist.create!(name: "Beanie Sigel")
+    beanie_sigel = Artist.last
   Artist.create!(name: "Beanie Sigel & Freeway")
+    beanie_sigel_and_freeway = Artist.last
   Artist.create!(name: "Beck")
+    beck = Artist.last
   Artist.create!(name: "Beenie Man")
+    beenie_man = Artist.last
   Artist.create!(name: "Benji B")
+    benji_b = Artist.last
   Artist.create!(name: "benny blanco")
-  beyonce = Artist.create!(name: "Beyoncé")
+    benny_blanco = Artist.last
+  Artist.create!(name: "Beyoncé")
+    beyonce = Artist.last
   Artist.create!(name: "Big K.R.I.T.")
+    big_krit = Artist.last
   Artist.create!(name: "Big Pun")
-  big_sean = Artist.create!(name: "Big Sean")
+    big_pun = Artist.last
+  Artist.create!(name: "Big Sean")
+    big_sean = Artist.last
   Artist.create!(name: "Bill Withers")
+    bill_withers = Artist.last
   Artist.create!(name: "Bink!")
+    bink = Artist.last
   Artist.create!(name: "Bizzle")
+    bizzle = Artist.last
   Artist.create!(name: "Black Sabbath")
+    black_sabbath = Artist.last
   Artist.create!(name: "Black Savage")
+    black_savage = Artist.last
   Artist.create!(name: "Blackjack")
+    blackjack = Artist.last
   Artist.create!(name: "Bobby Byrd")
+    bobby_byrd = Artist.last
   Artist.create!(name: "Bodega Bamz")
+    bodega_bamz = Artist.last
   Artist.create!(name: "Boi-1da")
-  bon_iver = Artist.create!(name: "Bon Iver")
+    boi_1da = Artist.last
+  Artist.create!(name: "Bon Iver")
+    bon_iver = Artist.last
   Artist.create!(name: "Boogz")
-  brandy = Artist.create!(name: "Brandy")
+    boogz = Artist.last
+  Artist.create!(name: "Brandy")
+    brandy = Artist.last
   Artist.create!(name: "Brenda Lee")
+    brenda_lee = Artist.last
   Artist.create!(name: "Brian “All Day” Miller")
+    brian_miller = Artist.last
   Artist.create!(name: "BROCKHAMPTON")
+    brockhampton = Artist.last
   Artist.create!(name: "Brodinski")
+    brodinski = Artist.last
   Artist.create!(name: "Bruce Haack")
+    bruce_haack = Artist.last
   Artist.create!(name: "Bryson Tiller")
+    bryson_tiller = Artist.last
   Artist.create!(name: "Budgie Beats")
+    budgie_beats = Artist.last
   Artist.create!(name: "Busta Rhymes")
+    busta_rhymes = Artist.last
   Artist.create!(name: "C.L. Smooth")
+    cl_smooth = Artist.last
   Artist.create!(name: "CabinCats")
-  camron = Artist.create!(name: "Cam'ron")
+    cabincats = Artist.last
+  Artist.create!(name: "Cam'ron")
+    camron = Artist.last
   Artist.create!(name: "CAMEone")
+    cameone = Artist.last
   Artist.create!(name: "Can")
+    can = Artist.last
   Artist.create!(name: "Capcom")
+    capcom = Artist.last
   Artist.create!(name: "Carlos “6 July” Broady")
+    carlos_broady = Artist.last
   Artist.create!(name: "Caroline Shaw")
+    caroline_shaw = Artist.last
   Artist.create!(name: "Cashmere Cat")
+    cashmere_cat = Artist.last
   Artist.create!(name: "Cassius")
+    cassius = Artist.last
   Artist.create!(name: "CdXx")
+    cdxx = Artist.last
   Artist.create!(name: "Chairmen of the Board")
+    chairmen_of_the_board = Artist.last
   Artist.create!(name: "Chaka Khan")
+    chaka_khan = Artist.last
   Artist.create!(name: "Chamillionaire")
-  chance_the_rapper = Artist.create!(name: "Chance the Rapper")
+    chamillionaire = Artist.last
+  Artist.create!(name: "Chance the Rapper")
+    chance_the_rapper = Artist.last
   Artist.create!(name: "Charles Hamilton")
+    charles_hamilton = Artist.last
   Artist.create!(name: "Charlie Heat")
-  charlie_wilson = Artist.create!(name: "Charlie Wilson")
+    charlie_heat = Artist.last
+  Artist.create!(name: "Charlie Wilson")
+    charlie_wilson = Artist.last
   Artist.create!(name: "Che Pope")
+    che_pope = Artist.last
   Artist.create!(name: "Childish Gambino")
-  chris_brown = Artist.create!(name: "Chris Brown")
-  chris_martin = Artist.create!(name: "Chris Martin")
+    childish_gambino = Artist.last
+  Artist.create!(name: "Chris Brown")
+    chris_brown = Artist.last
+  Artist.create!(name: "Chris Martin")
+    chris_martin = Artist.last
   Artist.create!(name: "Claude Leveillee")
-  clipse = Artist.create!(name: "Clipse")
-  common = Artist.create!(name: "Common")
-  consequence = Artist.create!(name: "Consequence")
+    claude_leveillee = Artist.last
+  Artist.create!(name: "Clipse")
+    clipse = Artist.last
+  Artist.create!(name: "Common")
+    common = Artist.last
+  Artist.create!(name: "Consequence")
+    consequence = Artist.last
   Artist.create!(name: "Conway the Machine")
+    conway_the_machine = Artist.last
   Artist.create!(name: "Crash Crew")
+    crash_crew = Artist.last
   Artist.create!(name: "CunninLynguists")
-  curtis_mayfield = Artist.create!(name: "Curtis Mayfield", rank: 8)
-  cyhi_the_prince = Artist.create!(name: "CyHi The Prynce")
-  daft_punk = Artist.create!(name: "Daft Punk")
+    cunninlynguists = Artist.last
+  Artist.create!(name: "Curtis Mayfield", rank: 8)
+    curtis_mayfield = Artist.last
+  Artist.create!(name: "CyHi The Prynce")
+    cyhi_the_prince = Artist.last
+  Artist.create!(name: "Daft Punk")
+    daft_punk = Artist.last
   Artist.create!(name: "Danilo Lorenzini")
+    danilo_lorenzini = Artist.last
   Artist.create!(name: "Darren King")
-  default_artist = Artist.create!(name: "default_artist")
+    darren_king = Artist.last
+  Artist.create!(name: "default_artist")
+    default_artist = Artist.last
   Artist.create!(name: "Defunct Page")
-  desiigner = Artist.create!(name: "Desiigner")
+    defunct_page = Artist.last
+  Artist.create!(name: "Desiigner")
+    desiigner = Artist.last
   Artist.create!(name: "Devo Springsteen")
+    devo_springsteen = Artist.last
   Artist.create!(name: "Diddy")
+    diddy = Artist.last
   Artist.create!(name: "Die Orsons")
+    die_orsons = Artist.last
   Artist.create!(name: "Dirge")
+    dirge = Artist.last
   Artist.create!(name: "DJ Earworm")
+    dj_earworm = Artist.last
   Artist.create!(name: "DJ Frank E")
-  dj_premier = Artist.create!(name: "DJ Premier")
+    dj_frank_e = Artist.last
+  Artist.create!(name: "DJ Premier")
+    dj_premier = Artist.last
   Artist.create!(name: "DJ Toomp")
+    dj_toomp = Artist.last
   Artist.create!(name: "DJDS")
+    djds = Artist.last
   Artist.create!(name: "Dom Solo")
+    dom_solo = Artist.last
   Artist.create!(name: "Don Jazzy")
+    don_jazzy = Artist.last
   Artist.create!(name: "Donell Jones")
+    donell_jones = Artist.last
   Artist.create!(name: "Doug E. Fresh & The Get Fresh Crew")
+    doug_e_fresh = Artist.last
   Artist.create!(name: "DRTWRK")
+    drtwrk = Artist.last
   Artist.create!(name: "Dutch E Germ")
+    dutch_e_germ = Artist.last
   Artist.create!(name: "DVDA")
-  dwele = Artist.create!(name: "Dwele")
+    dvda = Artist.last
+  Artist.create!(name: "Dwele")
+    dwele = Artist.last
   Artist.create!(name: "E*Vax")
+    e_vax = Artist.last
   Artist.create!(name: "Edward Elgar")
+    edward_elgar = Artist.last
   Artist.create!(name: "Elton John")
+    elton_john = Artist.last
   Artist.create!(name: "Eric Danchild")
+    eric_danchild = Artist.last
   Artist.create!(name: "Eric Hudson")
+    eric_hudson = Artist.last
   Artist.create!(name: "Etta James")
+    etta_james = Artist.last
   Artist.create!(name: "Evian Christ")
-  evidence = Artist.create!(name: "Evidence")
+    evian_christ = Artist.last
+  Artist.create!(name: "Evidence")
+    evidence = Artist.last
   Artist.create!(name: "Fantastic Freaks")
+    fantastic_freaks = Artist.last
   Artist.create!(name: "Father's Children")
+    fathers_children = Artist.last
   Artist.create!(name: "Federico Vindver")
+    federico_vindver = Artist.last
   Artist.create!(name: "Flatbush Zombies")
+    flatbush_zombies = Artist.last
   Artist.create!(name: "Flux Pavilion")
+    flux_pavilion = Artist.last
   Artist.create!(name: "FnZ")
+    fnz = Artist.last
   Artist.create!(name: "Francis and the Lights")
+    francis_and_the_lights = Artist.last
   Artist.create!(name: "Frank Dukes")
-  frank_ocean = Artist.create!(name: "Frank Ocean")
-  fred_hammond = Artist.create!(name: "Fred Hammond")
-  freeway = Artist.create!(name: "Freeway")
+    frank_dukes = Artist.last
+  Artist.create!(name: "Frank Ocean")
+    frank_ocean = Artist.last
+  Artist.create!(name: "Fred Hammond")
+    fred_hammond = Artist.last
+  Artist.create!(name: "Freeway")
+    freeway = Artist.last
   Artist.create!(name: "Future")
+    future = Artist.last
   Artist.create!(name: "Gesaffelstein")
+    gesaffelstein = Artist.last
   Artist.create!(name: "Ghostface Killah")
-  gil_scott_heron = Artist.create!(name: "Gil Scott-Heron", rank: 5)
-  glc = Artist.create!(name: "GLC")
-  god = Artist.create!(name: "God")
+    ghostface_killah = Artist.last
+  Artist.create!(name: "Gil Scott-Heron", rank: 5)
+    gil_scott_heron = Artist.last
+  Artist.create!(name: "GLC")
+    glc = Artist.last
+  Artist.create!(name: "God")
+    god = Artist.last
   Artist.create!(name: "Goldfrapp")
+    goldfrapp = Artist.last
   Artist.create!(name: "Googoosh")
+    googoosh = Artist.last
   Artist.create!(name: "Grupo Vocal Argentino")
+    grupo_vocal_argentino = Artist.last
   Artist.create!(name: "Hamza")
+    hamza = Artist.last
   Artist.create!(name: "Hank Crawford")
+    hank_crawford = Artist.last
   Artist.create!(name: "Hardrive")
+    hardrive = Artist.last
   Artist.create!(name: "Havoc")
+    havoc = Artist.last
   Artist.create!(name: "Heath McNease")
+    heath_mcnease = Artist.last
   Artist.create!(name: "Henry C")
+    henry_c = Artist.last
   Artist.create!(name: "Hildur Guðnadóttir")
+    hildur_gudnadottir = Artist.last
   Artist.create!(name: "Hit-Boy")
+    hit_boy = Artist.last
   Artist.create!(name: "Hollywood Undead")
+    hollywood_undead = Artist.last
   Artist.create!(name: "Holy Name of Mary Choral Family")
+    holy_name_of_mary = Artist.last
   Artist.create!(name: "Hudson Mohawke")
+    hudson_mohawke = Artist.last
   Artist.create!(name: "IDK")
+    idk = Artist.last
   Artist.create!(name: "Il Rovescio Della Medaglia")
+   il_rovescio_della_medaglia = Artist.last
   Artist.create!(name: "IllKittyDog")
+    illkittydog = Artist.last
   Artist.create!(name: "Indiggo Twins")
+    indiggo_twins = Artist.last
   Artist.create!(name: "Irv Gotti")
+    irv_gotti = Artist.last
   Artist.create!(name: "Isaac Hayes")
+    isaac_hayes = Artist.last
   Artist.create!(name: "Isosine")
+    isosine = Artist.last
   Artist.create!(name: "IZI")
+    izi = Artist.last
   Artist.create!(name: "J-Definition")
+    j_definition = Artist.last
   Artist.create!(name: "J-Hi")
+    j_hi = Artist.last
   Artist.create!(name: "J. Cole")
-  j_ivy = Artist.create!(name: "J. Ivy")
+    j_cole = Artist.last
+  Artist.create!(name: "J. Ivy")
+    j_ivy = Artist.last
   Artist.create!(name: "Jackie Moore")
+    jackie_moore = Artist.last
   Artist.create!(name: "Jaden")
+    jaden = Artist.last
   Artist.create!(name: "Jake Hill")
+    jake_hill = Artist.last
   Artist.create!(name: "James Brown")
+    james_brown = Artist.last
   Artist.create!(name: "James Cleveland & The Southern California Community Choir")
-  jaime_foxx = Artist.create!(name: "Jamie Foxx")
-  jay_z = Artist.create!(name: "JAY-Z", rank: 2)
-  jeezy = Artist.create!(name: "Jeezy")
+    james_cleveland = Artist.last
+  Artist.create!(name: "Jamie Foxx")
+    jaime_foxx = Artist.last
+  Artist.create!(name: "JAY-Z", rank: 2)
+    jay_z = Artist.last
+  Artist.create!(name: "Jeezy")
+    jeezy = Artist.last
   Artist.create!(name: "Jeff Bhasker")
+    jeff_bhasker = Artist.last
   Artist.create!(name: "Jimmy Fallon")
+    jimmy_fallon = Artist.last
   Artist.create!(name: "Jireel")
+    jireel = Artist.last
   Artist.create!(name: "Joe $cott")
+    joe_scott = Artist.last
   Artist.create!(name: "Joey Bada$$")
-  john_legend = Artist.create!(name: "John Legend")
-  john_mayer = Artist.create!(name: "John Mayer")
+    joey_badass = Artist.last
+  Artist.create!(name: "John Legend")
+    john_legend = Artist.last
+  Artist.create!(name: "John Mayer")
+    john_mayer = Artist.last
   Artist.create!(name: "Johnny “Guitar” Watson")
-  jon_brion = Artist.create!(name: "Jon Brion")
+    johnny_watson = Artist.last
+  Artist.create!(name: "Jon Brion")
+    jon_brion = Artist.last
   Artist.create!(name: "Jon Connor")
+    jon_connor = Artist.last
   Artist.create!(name: "Jordan Bunke")
+    jordan_bunke = Artist.last
   Artist.create!(name: "Jungle Brothers")
+    jungle_brothers = Artist.last
   Artist.create!(name: "Junie Morrison")
+    junie_morrison = Artist.last
   Artist.create!(name: "Just Blaze")
+    just_blaze = Artist.last
   Artist.create!(name: "Justin Timberlake")
-  kanye_west = Artist.create!(name: "Kanye West", rank: 1)
+    justin_timberlake = Artist.last
+  Artist.create!(name: "Kanye West", rank: 1)
+    kanye_west = Artist.last
   Artist.create!(name: "Kareem Lotfy")
+    kareem_lotfy = Artist.last
   Artist.create!(name: "Karriem Riggins")
-  kelly_price = Artist.create!(name: "Kelly Price")
-  kendrick_lamar = Artist.create!(name: "Kendrick Lamar")
-  kenny_g = Artist.create!(name: "Kenny G")
+    karriem_riggins = Artist.last
+  Artist.create!(name: "Kelly Price")
+    kelly_price = Artist.last
+  Artist.create!(name: "Kendrick Lamar")
+    kendrick_lamar = Artist.last
+  Artist.create!(name: "Kenny G")
+    kenny_g = Artist.last
   Artist.create!(name: "Kenny Lattimore")
+    kenny_lattimore = Artist.last
   Artist.create!(name: "Kevin Abstract")
+    kevin_abstract = Artist.last
   Artist.create!(name: "Keyon Christ")
+    kenyon_christ = Artist.last
   Artist.create!(name: "Khary")
-  kid_cudi = Artist.create!(name: "Kid Cudi", rank: 3)
+    khary = Artist.last
+  Artist.create!(name: "Kid Cudi", rank: 3)
+    kid_cudi = Artist.last
   Artist.create!(name: "Kid Rohan")
+    kid_rohan = Artist.last
   Artist.create!(name: "KIDS SEE GHOSTS")
+    kids_see_ghosts = Artist.last
   Artist.create!(name: "King Crimson")
+    king_crimson = Artist.last
   Artist.create!(name: "King Lil G")
+    king_lil_g = Artist.last
   Artist.create!(name: "Kings of Tomorrow")
-  kirk_franklin = Artist.create!(name: "Kirk Franklin")
+    kings_of_tomorrow = Artist.last
+  Artist.create!(name: "Kirk Franklin")
+    kirk_franklin = Artist.last
   Artist.create!(name: "Kuk Harrell")
+    kuk_harrell = Artist.last
   Artist.create!(name: "L.E.J")
+    lej = Artist.last
   Artist.create!(name: "Labi Siffre")
+    labi_siffre = Artist.last
   Artist.create!(name: "Labrinth")
+    labrinth = Artist.last
   Artist.create!(name: "Larry Graham")
+    larry_graham = Artist.last
   Artist.create!(name: "Laura Nyro")
+    laura_nyro = Artist.last
   Artist.create!(name: "Lauryn Hill")
+    lauryn_hill = Artist.last
   Artist.create!(name: "Lex Luger")
+    lex_luger = Artist.last
   Artist.create!(name: "Lido")
+    lido = Artist.last
   Artist.create!(name: "Lil Dicky")
+    lil_dicky = Artist.last
   Artist.create!(name: "Lil Trap God")
+    lil_trap_god = Artist.last
   Artist.create!(name: "Lil Trogan")
-  lil_wayne = Artist.create!(name: "Lil Wayne")
+    lil_trogan = Artist.last
+  Artist.create!(name: "Lil Wayne")
+    lil_wayne = Artist.last
   Artist.create!(name: "Logic")
+    logic = Artist.last
   Artist.create!(name: "Lords of the Underground")
+    lords_of_the_underground = Artist.last
   Artist.create!(name: "Lou Donaldson")
-  ludacris = Artist.create!(name: "Ludacris")
-  lupe_fiasco = Artist.create!(name: "Lupe Fiasco")
+    lou_donaldson = Artist.last
+  Artist.create!(name: "Ludacris")
+    ludacris = Artist.last
+  Artist.create!(name: "Lupe Fiasco")
+    lupe_fiasco = Artist.last
   Artist.create!(name: "Luther Vandross")
+    luther_vandross = Artist.last
   Artist.create!(name: "Lyn Collins")
+    lyn_collins = Artist.last
   Artist.create!(name: "M.I.M.S")
+    mims = Artist.last
   Artist.create!(name: "Madlib")
+    madlib = Artist.last
   Artist.create!(name: "Mandrill")
+    mandrill = Artist.last
   Artist.create!(name: "Manfred Mann's Earth Band")
+    manfred_mann = Artist.last
   Artist.create!(name: "Mano")
+    mano = Artist.last
   Artist.create!(name: "Manu Dibango")
+    manu_dibango = Artist.last
   Artist.create!(name: "Marius DC")
+    marius_dc = Artist.last
   Artist.create!(name: "Maroon 5")
-  marvin_gaye = Artist.create!(name: "Marvin Gaye")
+    maroon_5 = Artist.last
+  Artist.create!(name: "Marvin Gaye")
+    marvin_gaye = Artist.last
   Artist.create!(name: "Mástein Bennett")
-  max_b = Artist.create!(name: "Max B")
+    mastein_bennett = Artist.last
+  Artist.create!(name: "Max B")
+    max_b = Artist.last
   Artist.create!(name: "Meek Mill")
+    meek_mill = Artist.last
   Artist.create!(name: "Members Only Group")
+    members_only_group = Artist.last
   Artist.create!(name: "Menace")
+    menace = Artist.last
   Artist.create!(name: "Metro Boomin")
+    metro_boomin = Artist.last
   Artist.create!(name: "Michael Jackson")
+    michael_jackson = Artist.last
   Artist.create!(name: "Michael Viner's Incredible Bongo Band")
+    michael_viner = Artist.last
   Artist.create!(name: "Michele Fedrigotti")
+    michele_fedrigotti = Artist.last
   Artist.create!(name: "Mike Caren")
-  mike_dean = Artist.create!(name: "MIKE DEAN")
+    mike_caren = Artist.last
+  Artist.create!(name: "MIKE DEAN")
+    mike_dean = Artist.last
   Artist.create!(name: "Mike Oldfield")
+    mike_oldfield = Artist.last
   Artist.create!(name: "Mobb Deep")
+    mobb_depp = Artist.last
   Artist.create!(name: "Monie Love")
+    monie_love = Artist.last
   Artist.create!(name: "Mountain")
+    mountain = Artist.last
   Artist.create!(name: "Mr. Fingers")
-  mr_hudson = Artist.create!(name: "Mr. Hudson")
+    mr_fingers = Artist.last
+  Artist.create!(name: "Mr. Hudson")
+    mr_hudson = Artist.last
   Artist.create!(name: "N.E.R.D")
-  nas = Artist.create!(name: "Nas", rank: 4)
+    nerd = Artist.last
+  Artist.create!(name: "Nas", rank: 4)
+    nas = Artist.last
   Artist.create!(name: "Natalie Cole")
+    natalie_cole = Artist.last
   Artist.create!(name: "Natalie is Great")
+    natalie_is_great = Artist.last
   Artist.create!(name: "Naturally Trash")
+    naturally_trash = Artist.last
   Artist.create!(name: "Nelly")
+    nelly = Artist.last
   Artist.create!(name: "Nick Carter Green")
-  nicki_minaj = Artist.create!(name: "Nicki Minaj")
+    nick_carter_green = Artist.last
+  Artist.create!(name: "Nicki Minaj")
+    nicki_minaj = Artist.last
   Artist.create!(name: "Nina Simone")
-  no_id = Artist.create!(name: "No I.D.")
+    nina_simone = Artist.last
+  Artist.create!(name: "No I.D.")
+    no_id = Artist.last
   Artist.create!(name: "Noah Goldstein")
+    noah_goldstein = Artist.last
   Artist.create!(name: "Nottz")
+    nottz = Artist.last
   Artist.create!(name: "Nujabes")
+    nujabes = Artist.last
   Artist.create!(name: "Om'Mas Keith")
+    ommas_keith = Artist.last
   Artist.create!(name: "Omega")
-  otis_redding = Artist.create!(name: "Otis Redding")
+    omega = Artist.last
+  Artist.create!(name: "Otis Redding")
+    otis_redding = Artist.last
   Artist.create!(name: "OutKast")
+    outkast = Artist.last
   Artist.create!(name: "Parris Chariz")
-  partynextdoor = Artist.create!(name: "PARTYNEXTDOOR")
+    parris_chariz = Artist.last
+  Artist.create!(name: "PARTYNEXTDOOR")
+    partynextdoor = Artist.last
   Artist.create!(name: "Pastor T.L. Barrett")
-  patti_labelle = Artist.create!(name: "Patti LaBelle")
-  paul_wall = Artist.create!(name: "Paul Wall")
+    pastor_tl_barrett = Artist.last
+  Artist.create!(name: "Patti LaBelle")
+    patti_labelle = Artist.last
+  Artist.create!(name: "Paul Wall")
+    paul_wall = Artist.last
   Artist.create!(name: "Pete Rock")
+    pete_rock = Artist.last
   Artist.create!(name: "Pi'erre Bourne")
+    pierre_bourne = Artist.last
   Artist.create!(name: "Plain Pat")
+    plain_pat = Artist.last
   Artist.create!(name: "Plane Jaymes")
+    plane_jaymes = Artist.last
   Artist.create!(name: "PM")
-  post_malone = Artist.create!(name: "Post Malone")
+    pm = Artist.last
+  Artist.create!(name: "Post Malone")
+    post_malone = Artist.last
   Artist.create!(name: "Prince")
+    prince = Artist.last
   Artist.create!(name: "Pro Era")
+    pro_era = Artist.last
   Artist.create!(name: "Public Enemy")
-  pusha_t = Artist.create!(name: "Pusha T")
-  q_tip = Artist.create!(name: "Q-Tip")
+    public_enemy = Artist.last
+  Artist.create!(name: "Pusha T")
+    pusha_t = Artist.last
+  Artist.create!(name: "Q-Tip")
+    q_tip = Artist.last
   Artist.create!(name: "RaDaLyricist")
-  raekwon = Artist.create!(name: "Raekwon")
+    radalyricist = Artist.last
+  Artist.create!(name: "Raekwon")
+    raekwon = Artist.last
   Artist.create!(name: "Rare Earth")
+    rare_earth = Artist.last
   Artist.create!(name: "Ray Charles")
+    ray_charles = Artist.last
   Artist.create!(name: "Ready Roc")
-  really_doe = Artist.create!(name: "Really Doe")
+    ready_roc = Artist.last
+  Artist.create!(name: "Really Doe")
+    really_doe = Artist.last
   Artist.create!(name: "Redman")
+    redman = Artist.last
   Artist.create!(name: "Reezusfreecookies")
-  rhymefest = Artist.create!(name: "Rhymefest")
+    reezusfreecookies = Artist.last
+  Artist.create!(name: "Rhymefest")
+    rhymefest = Artist.last
   Artist.create!(name: "Rick James")
-  rick_ross = Artist.create!(name: "Rick Ross")
+    rick_james = Artist.last
+  Artist.create!(name: "Rick Ross")
+    rick_ross = Artist.last
   Artist.create!(name: "Rick Rubin")
-  rihanna = Artist.create!(name: "Rihanna", rank: 6)
+    rick_rubin = Artist.last
+  Artist.create!(name: "Rihanna", rank: 6)
+    rihanna = Artist.last
   Artist.create!(name: "Rkomi")
+    rkomi = Artist.last
   Artist.create!(name: "Robbie Jay")
+    robbie_jay = Artist.last
   Artist.create!(name: "ROBOTSCOTT")
+    robotscott = Artist.last
   Artist.create!(name: "Ronny J")
+    ronny_j = Artist.last
   Artist.create!(name: "Rosie Danvers")
+    rosie_danvers = Artist.last
   Artist.create!(name: "Royc")
-  rza = Artist.create!(name: "RZA")
+    royc = Artist.last
+  Artist.create!(name: "RZA")
+    rza = Artist.last
   Artist.create!(name: "S1")
+    s1 = Artist.last
   Artist.create!(name: "SAK PASE")
+    sak_pase = Artist.last
   Artist.create!(name: "Sam Lachow")
+    sam_lachow = Artist.last
   Artist.create!(name: "Sam's")
-  sampha = Artist.create!(name: "Sampha")
+    sams = Artist.last
+  Artist.create!(name: "Sampha")
+    sampha = Artist.last
   Artist.create!(name: "Savant of RAREBREED")
+    savant_of_rarebreed = Artist.last
   Artist.create!(name: "ScHoolboy Q")
+    schoolboy_q = Artist.last
   Artist.create!(name: "Scorpion Squad")
+    scorpion_squad = Artist.last
   Artist.create!(name: "Section 25")
+    section_25 = Artist.last
   Artist.create!(name: "Shirley Ann Lee")
+    shirley_ann_lee = Artist.last
   Artist.create!(name: "Shirley Bassey")
-  sia = Artist.create!(name: "Sia")
+    shirley_bassey = Artist.last
+  Artist.create!(name: "Sia")
+    sia = Artist.last
   Artist.create!(name: "Sinjin Hawke")
+    sinjin_hawke = Artist.last
   Artist.create!(name: "Sister Nancy")
+    sister_nancy = Artist.last
   Artist.create!(name: "Skindred")
+    skindred = Artist.last
   Artist.create!(name: "Slick Rick")
+    slick_rick = Artist.last
   Artist.create!(name: "Smokey Robinson")
+    smokey_robinson = Artist.last
   Artist.create!(name: "Snoop Dogg")
+    snoop_dogg = Artist.last
   Artist.create!(name: "Solange")
+    solange = Artist.last
   Artist.create!(name: "South Park")
+    south_park = Artist.last
   Artist.create!(name: "Southside")
+    southside = Artist.last
   Artist.create!(name: "Spooky Tooth")
+    spooky_tooth = Artist.last
   Artist.create!(name: "Spose")
+    spose = Artist.last
   Artist.create!(name: "Steely Dan")
-  sunday_service_choir = Artist.create!(name: "Sunday Service Choir")
+    steely_dan = Artist.last
+  Artist.create!(name: "Sunday Service Choir")
+    sunday_service_choir = Artist.last
   Artist.create!(name: "svrite")
-  swizz_beatz = Artist.create!(name: "Swizz Beatz")
+    svrite = Artist.last
+  Artist.create!(name: "Swizz Beatz")
+    swizz_beatz = Artist.last
   Artist.create!(name: "Syl Johnson")
-  syleena_johnson = Artist.create!(name: "Syleena Johnson")
-  t_pain = Artist.create!(name: "T-Pain")
-  talib_kweli = Artist.create!(name: "Talib Kweli", rank: 7)
+    syl_johnson = Artist.last
+  Artist.create!(name: "Syleena Johnson")
+    syleena_johnson = Artist.last
+  Artist.create!(name: "T-Pain")
+    t_pain = Artist.last
+  Artist.create!(name: "Talib Kweli", rank: 7)
+    talib_kweli = Artist.last
   Artist.create!(name: "Tears for Fears")
+    tears_for_fears = Artist.last
   Artist.create!(name: "Termanology")
+    termanology = Artist.last
   Artist.create!(name: "The Alan Parsons Project")
+    the_alan_parsons_project = Artist.last
   Artist.create!(name: "The ARC Choir")
-  the_boys_choir_of_harlem = Artist.create!(name: "The Boys Choir of Harlem")
+    the_arc_choir = Artist.last
+  Artist.create!(name: "The Boys Choir of Harlem")
+    the_boys_choir_of_harlem = Artist.last
   Artist.create!(name: "The Dells")
+    the_dells = Artist.last
   Artist.create!(name: "The Edwin Hawkins Singers")
-  the_game = Artist.create!(name: "The Game")
+    the_edwin_hawkins_singers = Artist.last
+  Artist.create!(name: "The Game")
+    the_game = Artist.last
   Artist.create!(name: "The Jimmy Castor Bunch")
+    the_jimmy_castor_bunch = Artist.last
   Artist.create!(name: "The Kay-Gees")
+    the_kay_gees = Artist.last
   Artist.create!(name: "The Mojo Men")
+    the_mojo_men = Artist.last
   Artist.create!(name: "The Neptunes")
+    the_neptunes = Artist.last
   Artist.create!(name: "The Notorious B.I.G.")
+    the_notorious_big = Artist.last
   Artist.create!(name: "The Turtles")
+    the_turtles = Artist.last
   Artist.create!(name: "The Underachievers")
-  the_weeknd = Artist.create!(name: "The Weeknd")
-  the_dream = Artist.create!(name: "The-Dream")
+    the_underachievers = Artist.last
+  Artist.create!(name: "The Weeknd")
+    the_weeknd = Artist.last
+  Artist.create!(name: "The-Dream")
+    the_dream = Artist.last
   Artist.create!(name: "Timbaland")
+    timbaland = Artist.last
   Artist.create!(name: "Tinashe")
+    tinashe = Artist.last
   Artist.create!(name: "Tinie Tempah")
+    tinie_tempah = Artist.last
   Artist.create!(name: "TNGHT")
+    tnght = Artist.last
   Artist.create!(name: "Tony Joe White")
-  travis_scott = Artist.create!(name: "Travis Scott")
+    tony_joe_white = Artist.last
+  Artist.create!(name: "Travis Scott")
+    travis_scott = Artist.last
   Artist.create!(name: "Trevor Gureckis")
+    trevor_gureckis = Artist.last
   Artist.create!(name: "TUAMIE")
-  twista = Artist.create!(name: "Twista")
+    tuamie = Artist.last
+  Artist.create!(name: "Twista")
+    twista = Artist.last
   Artist.create!(name: "Two Door Cinema Club")
-  ty_dolla_sign = Artist.create!(name: "Ty Dolla $ign")
+    two_door_cinema_club = Artist.last
+  Artist.create!(name: "Ty Dolla $ign")
+    ty_dolla_sign = Artist.last
   Artist.create!(name: "Tyler, The Creator")
+    tyler_the_creator = Artist.last
   Artist.create!(name: "Vanilla Fudge")
+    vanilla_fudge = Artist.last
   Artist.create!(name: "Velous")
-  vic_mensa = Artist.create!(name: "Vic Mensa")
+    velous = Artist.last
+  Artist.create!(name: "Vic Mensa")
+    vic_mensa = Artist.last
   Artist.create!(name: "Viracocha Mendoza")
+    viracocha_mendoza = Artist.last
   Artist.create!(name: "Waka Flocka Flame")
+    waka_flocka_flame = Artist.last
   Artist.create!(name: "Warryn Campbell")
+    warryn_campbell = Artist.last
   Artist.create!(name: "Weird Al Yankovic")
+    weird_al_yankovic = Artist.last
   Artist.create!(name: "Whatnauts")
+    whatnauts = Artist.last
   Artist.create!(name: "Whodini")
+    whodini = Artist.last
   Artist.create!(name: "Whole Truth")
+    whole_truth = Artist.last
   Artist.create!(name: "Will Smith")
+    will_smith = Artist.last
   Artist.create!(name: "William Crooks")
+    william_crooks = Artist.last
   Artist.create!(name: "WOLFE de MÇHLS")
-  wolfgang_amadeus_mozart = Artist.create!(name: "Wolfgang Amadeus Mozart")
+    wolfe_de_mchls = Artist.last
+  Artist.create!(name: "Wolfgang Amadeus Mozart")
+    wolfgang_amadeus_mozart = Artist.last
   Artist.create!(name: "Xcelence")
-  yasiin_bey = Artist.create!(name: "Yasiin Bey")
+    xcelence = Artist.last
+  Artist.create!(name: "Yasiin Bey")
+    yasiin_bey = Artist.last
   Artist.create!(name: "YBN Cordae")
+    ybn_cordae = Artist.last
   Artist.create!(name: "YC")
+    yc = Artist.last
   Artist.create!(name: "Yoko Ono")
+    yoko_ono = Artist.last
   Artist.create!(name: "Yong Feezy")
+    yong_feezy = Artist.last
   Artist.create!(name: "Young Jizzle")
-  young_thug = Artist.create!(name: "Young Thug")
+    young_jizzle = Artist.last
+  Artist.create!(name: "Young Thug")
+    young_thug = Artist.last
   Artist.create!(name: "Yvonne Fair")
+    yvonne_fair = Artist.last
 
-
-
+# Attach headshots to artists
   attach_headshot(s3_client, adam_levine, "seeds/headshots/adam_levine.jpg")
   attach_headshot(s3_client, al_be_back, "seeds/headshots/al_be_back.jpg")
   attach_headshot(s3_client, ant_clemons, "seeds/headshots/ant_clemons.jpg")
@@ -645,594 +1078,765 @@ end
   attach_headshot(s3_client, young_thug, "seeds/headshots/young_thug.jpg")
 
 
-
-# Songs
-  # NOTE!!!  Songs assigned to a variable if they are linked in the bio of an album or another artist.
+# SONG seeds
+  # UPDATE: All Kanye songs are assigned to a variable.
+# Kanye West songs
+# The College Dropout (2004)
   Song.create!(album_id: the_college_dropout.id, name: "Intro (Skit)", track_number: 1)
+	intro_skit = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "We Don't Care", track_number: 2)
+    we_dont_care = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Graduation Day", track_number: 3)
+    graduation_day = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "All Falls Down", track_number: 4)
+    all_falls_down = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "I'll Fly Away", track_number: 5)
+    ill_fly_away = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Spaceship", track_number: 6)
-  jesus_walks = Song.create!(album_id: the_college_dropout.id, name: "Jesus Walks", track_number: 7)
+    spaceship = Song.last
+  Song.create!(album_id: the_college_dropout.id, name: "Jesus Walks", track_number: 7)
+    jesus_walks = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Never Let Me Down", track_number: 8)
+    never_let_me_down = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Get Em High", track_number: 9)
+    get_em_high = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Workout Plan (Skit)", track_number: 10)
-  the_new_workout_plan = Song.create!(album_id: the_college_dropout.id, name: "The New Workout Plan", track_number: 11, rank: 5)
-  slow_jamz = Song.create!(album_id: the_college_dropout.id, name: "Slow Jamz", track_number: 12)
+    workout_plan_skit = Song.last
+  Song.create!(album_id: the_college_dropout.id, name: "The New Workout Plan", track_number: 11, rank: 5)
+    the_new_workout_plan = Song.last
+  Song.create!(album_id: the_college_dropout.id, name: "Slow Jamz", track_number: 12)
+    slow_jamz = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Breathe In Breath Out", track_number: 13)
+    breathe_in_breathe_out = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "School Spirit (Skit 1)", track_number: 14)
+    school_spirit_skit_1 = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "School Spirit", track_number: 15)
+    school_spirit = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "School Spirit (Skit 2)", track_number: 16)
+    school_spirit_skit_2 = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Lil Jimmy (Skit)", track_number: 17)
+    lil_jimmy_skit = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Two Words", track_number: 18)
-  through_the_wire = Song.create!(album_id: the_college_dropout.id, name: "Through the Wire", track_number: 19)
+    two_words = Song.last
+  Song.create!(album_id: the_college_dropout.id, name: "Through the Wire", track_number: 19)
+    through_the_wire = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Family Business", track_number: 20)
+    family_business = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "Last Call", track_number: 21)
+    last_call = Song.last
 
+# Late Registration (2005)
   Song.create!(album_id: late_registration.id, name: "Wake Up Mr. West", track_number: 1)
+    wake_up_mr_west = Song.last
   Song.create!(album_id: late_registration.id, name: "Heard 'Em Say", track_number: 2)
-  touch_the_sky = Song.create!(album_id: late_registration.id, name: "Touch the Sky", track_number: 3)
-  gold_digger = Song.create!(album_id: late_registration.id, name: "Gold Digger", track_number: 4, rank: 8)
+    heard_em_say = Song.last
+  Song.create!(album_id: late_registration.id, name: "Touch the Sky", track_number: 3)
+    touch_the_sky = Song.last
+  Song.create!(album_id: late_registration.id, name: "Gold Digger", track_number: 4, rank: 8)
+    gold_digger = Song.last
   Song.create!(album_id: late_registration.id, name: "Skit #1", track_number: 5)
+    skit_1 = Song.last
   Song.create!(album_id: late_registration.id, name: "Drive Slow", track_number: 6)
+    drive_slow = Song.last
   Song.create!(album_id: late_registration.id, name: "My Way Home", track_number: 7)
-  crack_music = Song.create!(album_id: late_registration.id, name: "Crack Music", track_number: 8)
-  roses = Song.create!(album_id: late_registration.id, name: "Roses", track_number: 9)
+    my_way_home = Song.last
+  Song.create!(album_id: late_registration.id, name: "Crack Music", track_number: 8)
+    crack_music = Song.last
+  Song.create!(album_id: late_registration.id, name: "Roses", track_number: 9)
+    roses = Song.last
   Song.create!(album_id: late_registration.id, name: "Bring Me Down", track_number: 10)
+    bring_me_down = Song.last
   Song.create!(album_id: late_registration.id, name: "Addiction", track_number: 11)
+    addiction = Song.last
   Song.create!(album_id: late_registration.id, name: "Skit #2", track_number: 12)
-  diamonds_from_sierra_leone_remix = Song.create!(album_id: late_registration.id, name: "Diamonds From Sierra Leone (Remix)", track_number: 13)
+    skit_2 = Song.last
+  Song.create!(album_id: late_registration.id, name: "Diamonds From Sierra Leone (Remix)", track_number: 13)
+    diamonds_from_sierra_leone_remix = Song.last
   Song.create!(album_id: late_registration.id, name: "We Major", track_number: 14)
+    we_major = Song.last
   Song.create!(album_id: late_registration.id, name: "Skit #3", track_number: 15)
-  hey_mama = Song.create!(album_id: late_registration.id, name: "Hey Mama", track_number: 16)
+    skit_3 = Song.last
+  Song.create!(album_id: late_registration.id, name: "Hey Mama", track_number: 16)
+    hey_mama = Song.last
   Song.create!(album_id: late_registration.id, name: "Celebration", track_number: 17)
+    celebration = Song.last
   Song.create!(album_id: late_registration.id, name: "Skit #4", track_number: 18)
+    skit_4 = Song.last
   Song.create!(album_id: late_registration.id, name: "Gone", track_number: 19)
+    gone = Song.last
   Song.create!(album_id: late_registration.id, name: "Diamonds from Sierra Leone", track_number: 20)
-  late = Song.create!(album_id: late_registration.id, name: "Late", track_number: 21)
+    diamonds_from_sierra_leone = Song.last
+  Song.create!(album_id: late_registration.id, name: "Late", track_number: 21)
+    late = Song.last
   Song.create!(album_id: late_registration.id, name: "Back to Basics", track_number: 22)
+    back_to_basics = Song.last
   Song.create!(album_id: late_registration.id, name: "We Can Make It Better", track_number: 23)
+    we_can_make_it_better = Song.last
 
+# Graduation (2007)
   Song.create!(album_id: graduation.id, name: "Good Morning", track_number: 1)
+    good_morning = Song.last
   Song.create!(album_id: graduation.id, name: "Champion", track_number: 2, rank: 6)
-  stronger = Song.create!(album_id: graduation.id, name: "Stronger", track_number: 3)
+    champion = Song.last
+  Song.create!(album_id: graduation.id, name: "Stronger", track_number: 3)
+    stronger = Song.last
   Song.create!(album_id: graduation.id, name: "I Wonder", track_number: 4)
+    i_wonder = Song.last
   Song.create!(album_id: graduation.id, name: "Good Life", track_number: 5)
-  cant_tell_me_nothing = Song.create!(album_id: graduation.id, name: "Can't Tell Me Nothing", track_number: 6)
+    good_life = Song.last
+  Song.create!(album_id: graduation.id, name: "Can't Tell Me Nothing", track_number: 6)
+    cant_tell_me_nothing = Song.last
   Song.create!(album_id: graduation.id, name: "Barry Bonds", track_number: 7)
+    barry_bonds = Song.last
   Song.create!(album_id: graduation.id, name: "Drunk and Hot Girls", track_number: 8)
+    drunk_and_hot_girls = Song.last
   Song.create!(album_id: graduation.id, name: "Flashing Lights", track_number: 9)
+    flashing_lights = Song.last
   Song.create!(album_id: graduation.id, name: "Everything I Am", track_number: 10)
+    everything_i_am = Song.last
   Song.create!(album_id: graduation.id, name: "The Glory", track_number: 11)
+    the_glory = Song.last
   Song.create!(album_id: graduation.id, name: "Homecoming", track_number: 12)
+    homecoming = Song.last
   Song.create!(album_id: graduation.id, name: "Big Brother", track_number: 13)
+    big_brother = Song.last
   Song.create!(album_id: graduation.id, name: "Good Night", track_number: 14)
+    good_night = Song.last
   Song.create!(album_id: graduation.id, name: "Bittersweet Poetry", track_number: 15)
+    bittersweet_poetry = Song.last
 
+# 808s & Heartbreak (2008)
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Say You Will", track_number: 1)
-  welcome_to_heartbreak = Song.create!(album_id: x808s_and_heartbreak.id, name: "Welcome To Heartbreak", track_number: 2)
-  heartless = Song.create!(album_id: x808s_and_heartbreak.id, name: "Heartless", track_number: 3)
+    say_you_will = Song.last
+  Song.create!(album_id: x808s_and_heartbreak.id, name: "Welcome To Heartbreak", track_number: 2)
+    welcome_to_heartbreak = Song.last
+  Song.create!(album_id: x808s_and_heartbreak.id, name: "Heartless", track_number: 3)
+    heartless = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Amazing", track_number: 4)
-  love_lockdown = Song.create!(album_id: x808s_and_heartbreak.id, name: "Love Lockdown", track_number: 5)
+    amazing = Song.last
+  Song.create!(album_id: x808s_and_heartbreak.id, name: "Love Lockdown", track_number: 5)
+    love_lockdown = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Paranoid", track_number: 6)
+    paranoid = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "RoboCop", track_number: 7)
+    robocop = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Street Lights", track_number: 8)
+    street_lights = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Bad News", track_number: 9)
+    bad_news = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "See You in My Nightmares", track_number: 10)
-  coldest_winter = Song.create!(album_id: x808s_and_heartbreak.id, name: "Coldest Winter", track_number: 11)
+    see_you_in_my_nightmares = Song.last
+  Song.create!(album_id: x808s_and_heartbreak.id, name: "Coldest Winter", track_number: 11)
+    coldest_winter = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Pinocchio Story", track_number: 12)
+    pinocchio_story = Song.last
 
+# My Beautiful Dark Twisted Fantasy (2010)
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Dark Fantasy", track_number: 1)
+    dark_fantasy = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Gorgeous", track_number: 2)
+    gorgeous = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "POWER", track_number: 3)
+    power = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "All of the Lights (Interlude)", track_number: 4)
+    all_of_the_lights_interlude = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "All of the Lights", track_number: 5)
+    all_of_the_lights = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Monster", track_number: 6, rank: 3)
+    monster = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "So Appalled", track_number: 7)
+    so_appalled = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Devil in a New Dress", track_number: 8)
+    devil_in_a_new_dress = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Runaway", track_number: 9)
+    runaway = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Hell of a Life", track_number: 10)
+    hell_of_a_life = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Blame Game", track_number: 11)
+    blame_game = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Lost in the World", track_number: 12)
+    lost_in_the_world = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Who Will Survive in America", track_number: 13)
+    who_will_survive_in_america = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "See Me Now", track_number: 14)
+    see_me_now = Song.last
 
+# Yeezus (2013)
   Song.create!(album_id: yeezus.id, name: "On Sight", track_number: 1)
+    on_sight = Song.last
   Song.create!(album_id: yeezus.id, name: "Black Skinhead", track_number: 2)
+    black_skinhead = Song.last
   Song.create!(album_id: yeezus.id, name: "I Am a God", track_number: 3)
+    i_am_a_god = Song.last
   Song.create!(album_id: yeezus.id, name: "New Slaves", track_number: 4)
+    new_slaves = Song.last
   Song.create!(album_id: yeezus.id, name: "Hold My Liquor", track_number: 5)
+    hold_my_liquor = Song.last
   Song.create!(album_id: yeezus.id, name: "I'm In It", track_number: 6)
+    im_in_it = Song.last
   Song.create!(album_id: yeezus.id, name: "Blood on the Leaves", track_number: 7)
+    blood_on_the_leaves = Song.last
   Song.create!(album_id: yeezus.id, name: "Guilt Trip", track_number: 8)
+    guilt_trip = Song.last
   Song.create!(album_id: yeezus.id, name: "Send It Up", track_number: 9)
+    send_it_up = Song.last
   Song.create!(album_id: yeezus.id, name: "Bound 2", track_number: 10, rank: 4)
+    bound_2 = Song.last
 
+# The Life of Pablo (2016)
   Song.create!(album_id: the_life_of_pablo.id, name: "Ultralight Beam", track_number: 1)
+    ultralight_beam = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Father Stretch My Hands, Pt. 1", track_number: 2)
+    father_stretch_my_hands_pt_1 = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Pt. 2", track_number: 3)
+    pt_2 = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Famous", track_number: 4, rank: 1)
+    famous = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Feedback", track_number: 5)
+    feedback = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Low Lights", track_number: 6)
+    low_lights = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Highlights", track_number: 7)
+    highlights = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Freestyle 4", track_number: 8)
+    freestyle_4 = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "I Love Kanye", track_number: 9)
+    i_love_kanye = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Waves", track_number: 10)
+    waves = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "FML", track_number: 11)
+    fml = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Real Friends", track_number: 12)
+    real_friends = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Wolves", track_number: 13)
+    wolves = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Frank's Track", track_number: 14)
+    franks_track = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Siiiiiiiiilver Surffffeeeeer Intermission", track_number: 15)
+    s_s_i = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "30 Hours", track_number: 16)
-  no_more_parties_in_la = Song.create!(album_id: the_life_of_pablo.id, name: "No More Parties in LA", track_number: 17, rank: 7)
+    x30_hours = Song.last
+  Song.create!(album_id: the_life_of_pablo.id, name: "No More Parties in LA", track_number: 17, rank: 7)
+    no_more_parties_in_la = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Facts (Charlie Heat Version)", track_number: 18)
+    facts_charlie_heat_version = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Fade", track_number: 19)
-  saint_pablo = Song.create!(album_id: the_life_of_pablo.id, name: "Saint Pablo", track_number: 20)
+    fade = Song.last
+  Song.create!(album_id: the_life_of_pablo.id, name: "Saint Pablo", track_number: 20)
+    saint_pablo = Song.last
 
+# Ye (2018)
   Song.create!(album_id: ye.id, name: "I Thought About Killing You", track_number: 1)
+    i_thought_about_killing_you = Song.last
   Song.create!(album_id: ye.id, name: "Yikes", track_number: 2)
+    yikes = Song.last
   Song.create!(album_id: ye.id, name: "All Mine", track_number: 3)
-  wouldnt_leave = Song.create!(album_id: ye.id, name: "Wouldn't Leave", track_number: 4)
+    all_mine = Song.last
+  Song.create!(album_id: ye.id, name: "Wouldn't Leave", track_number: 4)
+    wouldnt_leave = Song.last
   Song.create!(album_id: ye.id, name: "No Mistakes", track_number: 5)
-  ghost_town = Song.create!(album_id: ye.id, name: "Ghost Town", track_number: 6)
+    no_mistakes = Song.last
+  Song.create!(album_id: ye.id, name: "Ghost Town", track_number: 6)
+    ghost_town = Song.last
   Song.create!(album_id: ye.id, name: "Violent Crimes", track_number: 7)
+    violent_crimes = Song.last
 
+# Jesus Is King (2019)
   Song.create!(album_id: jesus_is_king.id, name: "Every Hour", track_number: 1)
+    every_hour = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Selah", track_number: 2)
+    selah = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Follow God", track_number: 3)
+    follow_god = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Closed on Sunday", track_number: 4)
+    closed_on_sunday = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "On God", track_number: 5)
+    on_god = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Everything We Need", track_number: 6)
-  water = Song.create!(album_id: jesus_is_king.id, name: "Water", track_number: 7)
+    everything_we_need = Song.last
+  Song.create!(album_id: jesus_is_king.id, name: "Water", track_number: 7)
+    water = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "God Is", track_number: 8)
+    god_is = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Hands On", track_number: 9)
+    hands_on = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Use This Gospel", track_number: 10)
+    use_this_gospel = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Jesus Is Lord", track_number: 11)
+    jesus_is_lord = Song.last
 
+# Watch the Throne (2011)
   Song.create!(album_id: watch_the_throne.id, name: "No Church in the Wild", track_number: 1, rank: 2)
+    no_church_in_the_wild = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Lift Off", track_number: 2)
+    lift_off = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Niggas in Paris", track_number: 3)
-  otis = Song.create!(album_id: watch_the_throne.id, name: "Otis", track_number: 4)
+    niggas_in_paris = Song.last
+  Song.create!(album_id: watch_the_throne.id, name: "Otis", track_number: 4)
+    otis = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Gotta Have It", track_number: 5)
+    gotta_have_it = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "New Day", track_number: 6)
+    new_day = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "That's My Bitch", track_number: 7)
+    thats_my_bitch = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Welcome to the Jungle", track_number: 8)
+    welcome_to_the_jungle = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Who Gon Stop Me", track_number: 9)
+    who_gon_stop_me = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Murder to Excellence", track_number: 10)
+    murder_to_excellence = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Made in America", track_number: 11)
+    made_in_america = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Why I Love You", track_number: 12)
+    why_i_love_you = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Illest Motherfucker Alive", track_number: 13)
+    illest_motherfucker_alive = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "H·A·M", track_number: 14)
+    ham = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Primetime", track_number: 15)
+    primetime = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "The Joy", track_number: 16)
+    the_joy = Song.last
 
-  Song.create!(album_id: s_and_i.id, name: "God Is", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Gold Digger", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Homecoming", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Last Call", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Never Let Me Down", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Niggas In Paris", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Paranoid", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "So Appalled", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Spaceship", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "90210", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "(Don't Worry) If There's a Hell Below, We're All Going to Go", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "(I Know) I'm Losing You", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "100 Proof Absolut Rocka", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "1Train", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "21st Century Schizoid Man", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "300 Bars & Runnin'", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "4 (Freestyle)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "5% TINT", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "64 BAR$", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "80 Bars Part 2", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "99 Problems", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "A House is Not a Home", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "A Milli", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Abcd", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Ambidextrous", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Ambitionz Az a Ridah", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Ammonia Avenue", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Answers Me", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Apache", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Avril 14th", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Bad Idea", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Bam Bam", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Baptized", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Bathroom Dance", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Beast Mode", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Beware Pt.1", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Big Brother (Freestyle)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Birds & The Beez", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Bittersweet", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Biwinning (Charlie Sheen Monster Mash)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Blocka", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Blow Job", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Bounce", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Bound 1*", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Bring the Noise", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Brother's Keeper", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Can You Lose", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Can't Knock the Hustle", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Caved In", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Chakras", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Chamillionaire Speaks 2", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Chief Rocka", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Children Get Together", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Cleopatra", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Closed On Sunday Remix", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Comment #1", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Contact", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Costume Party", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Crack Music (remix)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "D.O.A. (Death of Auto-Tune)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Da Art of Storytellin' (Pt. 1)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Dear Non Believers, Pt. 2", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Deep Inside", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Deezus", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Diamonds Are Forever", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Different Strokes", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Dirt and Grime", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Disease", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Distant Lover", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Do What You Gotta Do", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Do You Have the Stamina?", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Don't Know", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Don't Tell a Lie About Me and I Won't Tell the Truth on You", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Down 4 My Niggaz", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Dr. Carter", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Everything We Need (Remix)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Famous (Original Version)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Fantastic Freaks At The Dixie", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Father Stretch My Hands", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Father Stretch My Hands (Demo)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Feeling Good", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Feminine", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Figg Get Da Money", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Fiori Mistici", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Fonky Thang, Diamond' Rang", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Fr3sh", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Freeee (Ghost Town, Pt. 2)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Friends", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Fuck Me Good (Remix)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Fuck the Industry", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Funky President (People It's Bad)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Gay Fish", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Get Up, Get Into It, Get Involved", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Give Me My Love", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "GOOD Music BET Cypher", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Gossip Files", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Got Nowhere", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Green Lights", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Growing Pains II", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Gyöngyhajú lány", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Harder, Better, Faster, Stronger", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hater Family", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "HBA War", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "He'll Give Us What We Really Need", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Headstone", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Heavenly Dream", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hell of a Night", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hey Young World", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "High Power Rap", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Highlights (Madonna Demo)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "History Lesson (Interlude)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "History of Rap 6", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hit", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hold My Liquor Freestyle", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Home Is Where the Hatred Is (Pieces of a Man Version)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Homicide Music", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hoodmorning", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hot in Herre", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Hot Ya Hot", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Human", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Can't Stop", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Got a Woman", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Got Money", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Just Wanna Stop", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Love Kanye (T.L.O.Preemix)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Love You So", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Miss the Old Ethan", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I Need To Know", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "I'll Erase Away Your Pain", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Illest You've Never Heard (Could We Go)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "In High Places", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Incarcerated Scarfaces", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Inga mer fester i Gullmarsplan", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Insomnio", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Iron Man", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "It", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "It's Gonna Be Lonely", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "It's So Hard", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "It's Too Late", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "IV. Sweatpants", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Jiggy", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Jimbrowski", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Joy", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Keep the Receipt", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Kid Charlemagne", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Kill the Power", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "King Kunta", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "King Push", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Knowiknowiknowiknowiknow", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Kothbiro", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "La La La", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lacrimosa", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Last", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lately", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Law of Attraction", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lawns", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Let Your Hair Down", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lightning Fire Magic Prayer", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Little Child Runnin' Wild", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lone Walker", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Long Red", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Look Out For Detox", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Loser", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lost", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lost Boy", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lost in the World (Remix)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Lost Ones", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Luce Fioca", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Luv(sic) Part 1", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Martín Fierro", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Marvin & Chardonnay", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mary Jane", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mary Jane (Live in Long Beach, July 1981)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Maryland Ass Nigga", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Maybe It's The Power Of Love", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "McNasty!", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Memories", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Memories Fade", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mercy", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mercy Mercy Me (The Ecology)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mi Sono Svegliato E...Ho Chiuso Gli Occhi", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mighty Healthy", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Miserable America", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Money Dance", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Monie in the Middle", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "MOOD 4 EVA", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mortal Yet", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Move On Up", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Ms. Jackson", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "My Bitch Ain't No Hobbit", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "My Funny Valentine", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "My Heart Crys", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "My Song", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "My Wonderful Pink Polo", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Mystery of Love", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Nasty", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Natalie praying and she's only 4 years old!", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "New Age Rev", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "New God Flow.1", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "New Slaves (Demo)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Niggas In Compton", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Night of the Living Junkies", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "No Shoes On the Rug, Leave Them At the Door", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Nonstop Pop 2018", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Nothing Lasts Forever", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Nothing Without You", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Nothing's Something", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "O Let's Do It", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Ode To Billie Joe", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Oh My God", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "On Dreaming and Success", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "On Saint Paul and Personal Debt", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "On Taylor Swift and Artistry", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Outro", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "P.Y.T. (Pretty Young Thing)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Panda", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Papa Willi und der Zeitgeist", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "PARANOIA", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Peace And Love (Amani Na Mapenzi) Movement IV (Encounter)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Player's Ball (Remix Version)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Polkarama!", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Pomp and Circumstance March No. 1 in D major", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Precious, Precious", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Pudong", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Queen Bitch (WWMD Demo)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "R U Ready", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Racks", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Rent Boy (OG)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Revelations 19:1", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Ride Slow", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Roc Boys (And the Winner Is)...", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Rosie", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Sans fin", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Save the Country", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Scenario", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Screw Jams", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Scrub Shot Down", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "See-Line Woman", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Self Conscious (A.K.A. Yeah)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "She's My Baby", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Sing Swan Song", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Single", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Sky High", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "So Alive", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "So Devilish", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Solar Hydrogen", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Someday", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Someone Saved My Life Tonight", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Someone That I Used To Love", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "SOPA", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Soul Makossa", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Sourdeezal", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "SPEED DOWN", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Spirit In The Dark", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Stand Up and Shout About Love", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Strange Fruit", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Street Fighter II: The World Warrior", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Streets Is Talking", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Stud-Spider", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Suicide", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "SUMMER", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Summer 2017", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Sunshine Help Me", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Survival of the Fittest", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Suzie Thundertussy", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Sweet Nothin's", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Take Me for a Little While", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Take Me To The Light (Demo)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Take One for the Team", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Talgh", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Tamale", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The Cure", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "​the ends", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The Life of Peder, Pt. 1", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The Makings of You", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The Mystery of Iniquity", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The Ruler's Back", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The Show", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The Spotlight", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "The struggle", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "There It Is, Pts. 1 & 2", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "They All Laughed", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "They Reminisce Over You (T.R.O.Y.)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Think (About It)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "This Is Why I'm Hot", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Through the Fire", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "To the Clique", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Trap Door", track_number: nil)
-  try_a_little_tenderness = Song.create!(album_id: s_and_i.id, name: "Try a Little Tenderness", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Ultralight Beam (Demo)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Un homme dans la nuit", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "United State of Pop 2009 (Blame It On the Pop)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Vi Make Bernie Famous", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Victory", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Vrais potes", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Vulnerable", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Wack Niggaz, Pt. 2", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Walk With Me", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Warning", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Waves (Demo)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "We're All Water", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Welcome to the Jungle (Freestyle)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "What More Can I Say", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "What's Beef?", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "When We're Dancing Close and Slow", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Where I'm From", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Who You Were (I Need You Now)", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Wildflower", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Will You Love Me Tomorrow?", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Wonderman", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Woods", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Work Out", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Workout Plan", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Wow", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "You Are – I Am", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "You Don't Love Me (No, No, No) [Homecoming Live]", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "You Showed Me", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "YOUNG KANYE WEST", track_number: nil)
-  Song.create!(album_id: s_and_i.id, name: "Young OG", track_number: nil)
+# Samples and Interpolations
+  Song.create!(album_id: s_and_i.id, name: "God Is")
+  Song.create!(album_id: s_and_i.id, name: "Gold Digger")
+  Song.create!(album_id: s_and_i.id, name: "Homecoming")
+  Song.create!(album_id: s_and_i.id, name: "Last Call")
+  Song.create!(album_id: s_and_i.id, name: "Never Let Me Down")
+  Song.create!(album_id: s_and_i.id, name: "Niggas In Paris")
+  Song.create!(album_id: s_and_i.id, name: "Paranoid")
+  Song.create!(album_id: s_and_i.id, name: "So Appalled")
+  Song.create!(album_id: s_and_i.id, name: "Spaceship")
+  Song.create!(album_id: s_and_i.id, name: "90210")
+  Song.create!(album_id: s_and_i.id, name: "(Don't Worry) If There's a Hell Below, We're All Going to Go")
+  Song.create!(album_id: s_and_i.id, name: "(I Know) I'm Losing You")
+  Song.create!(album_id: s_and_i.id, name: "100 Proof Absolut Rocka")
+  Song.create!(album_id: s_and_i.id, name: "1Train")
+  Song.create!(album_id: s_and_i.id, name: "21st Century Schizoid Man")
+  Song.create!(album_id: s_and_i.id, name: "300 Bars & Runnin'")
+  Song.create!(album_id: s_and_i.id, name: "4 (Freestyle)")
+  Song.create!(album_id: s_and_i.id, name: "5% TINT")
+  Song.create!(album_id: s_and_i.id, name: "64 BAR$")
+  Song.create!(album_id: s_and_i.id, name: "80 Bars Part 2")
+  Song.create!(album_id: s_and_i.id, name: "99 Problems")
+  Song.create!(album_id: s_and_i.id, name: "A House is Not a Home")
+  Song.create!(album_id: s_and_i.id, name: "A Milli")
+  Song.create!(album_id: s_and_i.id, name: "Abcd")
+  Song.create!(album_id: s_and_i.id, name: "Ambidextrous")
+  Song.create!(album_id: s_and_i.id, name: "Ambitionz Az a Ridah")
+  Song.create!(album_id: s_and_i.id, name: "Ammonia Avenue")
+  Song.create!(album_id: s_and_i.id, name: "Answers Me")
+  Song.create!(album_id: s_and_i.id, name: "Apache")
+  Song.create!(album_id: s_and_i.id, name: "Avril 14th")
+  Song.create!(album_id: s_and_i.id, name: "Bad Idea")
+  Song.create!(album_id: s_and_i.id, name: "Bam Bam")
+  Song.create!(album_id: s_and_i.id, name: "Baptized")
+  Song.create!(album_id: s_and_i.id, name: "Bathroom Dance")
+  Song.create!(album_id: s_and_i.id, name: "Beast Mode")
+  Song.create!(album_id: s_and_i.id, name: "Beware Pt.1")
+  Song.create!(album_id: s_and_i.id, name: "Big Brother (Freestyle)")
+  Song.create!(album_id: s_and_i.id, name: "Birds & The Beez")
+  Song.create!(album_id: s_and_i.id, name: "Bittersweet")
+  Song.create!(album_id: s_and_i.id, name: "Biwinning (Charlie Sheen Monster Mash)")
+  Song.create!(album_id: s_and_i.id, name: "Blocka")
+  Song.create!(album_id: s_and_i.id, name: "Blow Job")
+  Song.create!(album_id: s_and_i.id, name: "Bounce")
+  Song.create!(album_id: s_and_i.id, name: "Bound 1*")
+  Song.create!(album_id: s_and_i.id, name: "Bring the Noise")
+  Song.create!(album_id: s_and_i.id, name: "Brother's Keeper")
+  Song.create!(album_id: s_and_i.id, name: "Can You Lose")
+  Song.create!(album_id: s_and_i.id, name: "Can't Knock the Hustle")
+  Song.create!(album_id: s_and_i.id, name: "Caved In")
+  Song.create!(album_id: s_and_i.id, name: "Chakras")
+  Song.create!(album_id: s_and_i.id, name: "Chamillionaire Speaks 2")
+  Song.create!(album_id: s_and_i.id, name: "Chief Rocka")
+  Song.create!(album_id: s_and_i.id, name: "Children Get Together")
+  Song.create!(album_id: s_and_i.id, name: "Cleopatra")
+  Song.create!(album_id: s_and_i.id, name: "Closed On Sunday Remix")
+  Song.create!(album_id: s_and_i.id, name: "Comment #1")
+  Song.create!(album_id: s_and_i.id, name: "Contact")
+  Song.create!(album_id: s_and_i.id, name: "Costume Party")
+  Song.create!(album_id: s_and_i.id, name: "Crack Music (remix)")
+  Song.create!(album_id: s_and_i.id, name: "D.O.A. (Death of Auto-Tune)")
+  Song.create!(album_id: s_and_i.id, name: "Da Art of Storytellin' (Pt. 1)")
+  Song.create!(album_id: s_and_i.id, name: "Dear Non Believers, Pt. 2")
+  Song.create!(album_id: s_and_i.id, name: "Deep Inside")
+  Song.create!(album_id: s_and_i.id, name: "Deezus")
+  Song.create!(album_id: s_and_i.id, name: "Diamonds Are Forever")
+  Song.create!(album_id: s_and_i.id, name: "Different Strokes")
+  Song.create!(album_id: s_and_i.id, name: "Dirt and Grime")
+  Song.create!(album_id: s_and_i.id, name: "Disease")
+  Song.create!(album_id: s_and_i.id, name: "Distant Lover")
+  Song.create!(album_id: s_and_i.id, name: "Do What You Gotta Do")
+  Song.create!(album_id: s_and_i.id, name: "Do You Have the Stamina?")
+  Song.create!(album_id: s_and_i.id, name: "Don't Know")
+  Song.create!(album_id: s_and_i.id, name: "Don't Tell a Lie About Me and I Won't Tell the Truth on You")
+  Song.create!(album_id: s_and_i.id, name: "Down 4 My Niggaz")
+  Song.create!(album_id: s_and_i.id, name: "Dr. Carter")
+  Song.create!(album_id: s_and_i.id, name: "Everything We Need (Remix)")
+  Song.create!(album_id: s_and_i.id, name: "Famous (Original Version)")
+  Song.create!(album_id: s_and_i.id, name: "Fantastic Freaks At The Dixie")
+  Song.create!(album_id: s_and_i.id, name: "Father Stretch My Hands")
+  Song.create!(album_id: s_and_i.id, name: "Father Stretch My Hands (Demo)")
+  Song.create!(album_id: s_and_i.id, name: "Feeling Good")
+  Song.create!(album_id: s_and_i.id, name: "Feminine")
+  Song.create!(album_id: s_and_i.id, name: "Figg Get Da Money")
+  Song.create!(album_id: s_and_i.id, name: "Fiori Mistici")
+  Song.create!(album_id: s_and_i.id, name: "Fonky Thang, Diamond' Rang")
+  Song.create!(album_id: s_and_i.id, name: "Fr3sh")
+  Song.create!(album_id: s_and_i.id, name: "Freeee (Ghost Town, Pt. 2)")
+  Song.create!(album_id: s_and_i.id, name: "Friends")
+  Song.create!(album_id: s_and_i.id, name: "Fuck Me Good (Remix)")
+  Song.create!(album_id: s_and_i.id, name: "Fuck the Industry")
+  Song.create!(album_id: s_and_i.id, name: "Funky President (People It's Bad)")
+  Song.create!(album_id: s_and_i.id, name: "Gay Fish")
+  Song.create!(album_id: s_and_i.id, name: "Get Up, Get Into It, Get Involved")
+  Song.create!(album_id: s_and_i.id, name: "Give Me My Love")
+  Song.create!(album_id: s_and_i.id, name: "GOOD Music BET Cypher")
+  Song.create!(album_id: s_and_i.id, name: "Gossip Files")
+  Song.create!(album_id: s_and_i.id, name: "Got Nowhere")
+  Song.create!(album_id: s_and_i.id, name: "Green Lights")
+  Song.create!(album_id: s_and_i.id, name: "Growing Pains II")
+  Song.create!(album_id: s_and_i.id, name: "Gyöngyhajú lány")
+  Song.create!(album_id: s_and_i.id, name: "Harder, Better, Faster, Stronger")
+  Song.create!(album_id: s_and_i.id, name: "Hater Family")
+  Song.create!(album_id: s_and_i.id, name: "HBA War")
+  Song.create!(album_id: s_and_i.id, name: "He'll Give Us What We Really Need")
+  Song.create!(album_id: s_and_i.id, name: "Headstone")
+  Song.create!(album_id: s_and_i.id, name: "Heavenly Dream")
+  Song.create!(album_id: s_and_i.id, name: "Hell of a Night")
+  Song.create!(album_id: s_and_i.id, name: "Hey Young World")
+  Song.create!(album_id: s_and_i.id, name: "High Power Rap")
+  Song.create!(album_id: s_and_i.id, name: "Highlights (Madonna Demo)")
+  Song.create!(album_id: s_and_i.id, name: "History Lesson (Interlude)")
+  Song.create!(album_id: s_and_i.id, name: "History of Rap 6")
+  Song.create!(album_id: s_and_i.id, name: "Hit")
+  Song.create!(album_id: s_and_i.id, name: "Hold My Liquor Freestyle")
+  Song.create!(album_id: s_and_i.id, name: "Home Is Where the Hatred Is (Pieces of a Man Version)")
+  Song.create!(album_id: s_and_i.id, name: "Homicide Music")
+  Song.create!(album_id: s_and_i.id, name: "Hoodmorning")
+  Song.create!(album_id: s_and_i.id, name: "Hot in Herre")
+  Song.create!(album_id: s_and_i.id, name: "Hot Ya Hot")
+  Song.create!(album_id: s_and_i.id, name: "Human")
+  Song.create!(album_id: s_and_i.id, name: "I Can't Stop")
+  Song.create!(album_id: s_and_i.id, name: "I Got a Woman")
+  Song.create!(album_id: s_and_i.id, name: "I Got Money")
+  Song.create!(album_id: s_and_i.id, name: "I Just Wanna Stop")
+  Song.create!(album_id: s_and_i.id, name: "I Love Kanye (T.L.O.Preemix)")
+  Song.create!(album_id: s_and_i.id, name: "I Love You So")
+  Song.create!(album_id: s_and_i.id, name: "I Miss the Old Ethan")
+  Song.create!(album_id: s_and_i.id, name: "I Need To Know")
+  Song.create!(album_id: s_and_i.id, name: "I'll Erase Away Your Pain")
+  Song.create!(album_id: s_and_i.id, name: "Illest You've Never Heard (Could We Go)")
+  Song.create!(album_id: s_and_i.id, name: "In High Places")
+  Song.create!(album_id: s_and_i.id, name: "Incarcerated Scarfaces")
+  Song.create!(album_id: s_and_i.id, name: "Inga mer fester i Gullmarsplan")
+  Song.create!(album_id: s_and_i.id, name: "Insomnio")
+  Song.create!(album_id: s_and_i.id, name: "Iron Man")
+  Song.create!(album_id: s_and_i.id, name: "It")
+  Song.create!(album_id: s_and_i.id, name: "It's Gonna Be Lonely")
+  Song.create!(album_id: s_and_i.id, name: "It's So Hard")
+  Song.create!(album_id: s_and_i.id, name: "It's Too Late")
+  Song.create!(album_id: s_and_i.id, name: "IV. Sweatpants")
+  Song.create!(album_id: s_and_i.id, name: "Jiggy")
+  Song.create!(album_id: s_and_i.id, name: "Jimbrowski")
+  Song.create!(album_id: s_and_i.id, name: "Joy")
+  Song.create!(album_id: s_and_i.id, name: "Keep the Receipt")
+  Song.create!(album_id: s_and_i.id, name: "Kid Charlemagne")
+  Song.create!(album_id: s_and_i.id, name: "Kill the Power")
+  Song.create!(album_id: s_and_i.id, name: "King Kunta")
+  Song.create!(album_id: s_and_i.id, name: "King Push")
+  Song.create!(album_id: s_and_i.id, name: "Knowiknowiknowiknowiknow")
+  Song.create!(album_id: s_and_i.id, name: "Kothbiro")
+  Song.create!(album_id: s_and_i.id, name: "La La La")
+  Song.create!(album_id: s_and_i.id, name: "Lacrimosa")
+  Song.create!(album_id: s_and_i.id, name: "Last")
+  Song.create!(album_id: s_and_i.id, name: "Lately")
+  Song.create!(album_id: s_and_i.id, name: "Law of Attraction")
+  Song.create!(album_id: s_and_i.id, name: "Lawns")
+  Song.create!(album_id: s_and_i.id, name: "Let Your Hair Down")
+  Song.create!(album_id: s_and_i.id, name: "Lightning Fire Magic Prayer")
+  Song.create!(album_id: s_and_i.id, name: "Little Child Runnin' Wild")
+  Song.create!(album_id: s_and_i.id, name: "Lone Walker")
+  Song.create!(album_id: s_and_i.id, name: "Long Red")
+  Song.create!(album_id: s_and_i.id, name: "Look Out For Detox")
+  Song.create!(album_id: s_and_i.id, name: "Loser")
+  Song.create!(album_id: s_and_i.id, name: "Lost")
+  Song.create!(album_id: s_and_i.id, name: "Lost Boy")
+  Song.create!(album_id: s_and_i.id, name: "Lost in the World (Remix)")
+  Song.create!(album_id: s_and_i.id, name: "Lost Ones")
+  Song.create!(album_id: s_and_i.id, name: "Luce Fioca")
+  Song.create!(album_id: s_and_i.id, name: "Luv(sic) Part 1")
+  Song.create!(album_id: s_and_i.id, name: "Martín Fierro")
+  Song.create!(album_id: s_and_i.id, name: "Marvin & Chardonnay")
+  Song.create!(album_id: s_and_i.id, name: "Mary Jane")
+  Song.create!(album_id: s_and_i.id, name: "Mary Jane (Live in Long Beach, July 1981)")
+  Song.create!(album_id: s_and_i.id, name: "Maryland Ass Nigga")
+  Song.create!(album_id: s_and_i.id, name: "Maybe It's The Power Of Love")
+  Song.create!(album_id: s_and_i.id, name: "McNasty!")
+  Song.create!(album_id: s_and_i.id, name: "Memories")
+  Song.create!(album_id: s_and_i.id, name: "Memories Fade")
+  Song.create!(album_id: s_and_i.id, name: "Mercy")
+  Song.create!(album_id: s_and_i.id, name: "Mercy Mercy Me (The Ecology)")
+  Song.create!(album_id: s_and_i.id, name: "Mi Sono Svegliato E...Ho Chiuso Gli Occhi")
+  Song.create!(album_id: s_and_i.id, name: "Mighty Healthy")
+  Song.create!(album_id: s_and_i.id, name: "Miserable America")
+  Song.create!(album_id: s_and_i.id, name: "Money Dance")
+  Song.create!(album_id: s_and_i.id, name: "Monie in the Middle")
+  Song.create!(album_id: s_and_i.id, name: "MOOD 4 EVA")
+  Song.create!(album_id: s_and_i.id, name: "Mortal Yet")
+  Song.create!(album_id: s_and_i.id, name: "Move On Up")
+  Song.create!(album_id: s_and_i.id, name: "Ms. Jackson")
+  Song.create!(album_id: s_and_i.id, name: "My Bitch Ain't No Hobbit")
+  Song.create!(album_id: s_and_i.id, name: "My Funny Valentine")
+  Song.create!(album_id: s_and_i.id, name: "My Heart Crys")
+  Song.create!(album_id: s_and_i.id, name: "My Song")
+  Song.create!(album_id: s_and_i.id, name: "My Wonderful Pink Polo")
+  Song.create!(album_id: s_and_i.id, name: "Mystery of Love")
+  Song.create!(album_id: s_and_i.id, name: "Nasty")
+  Song.create!(album_id: s_and_i.id, name: "Natalie praying and she's only 4 years old!")
+  Song.create!(album_id: s_and_i.id, name: "New Age Rev")
+  Song.create!(album_id: s_and_i.id, name: "New God Flow.1")
+  Song.create!(album_id: s_and_i.id, name: "New Slaves (Demo)")
+  Song.create!(album_id: s_and_i.id, name: "Niggas In Compton")
+  Song.create!(album_id: s_and_i.id, name: "Night of the Living Junkies")
+  Song.create!(album_id: s_and_i.id, name: "No Shoes On the Rug, Leave Them At the Door")
+  Song.create!(album_id: s_and_i.id, name: "Nonstop Pop 2018")
+  Song.create!(album_id: s_and_i.id, name: "Nothing Lasts Forever")
+  Song.create!(album_id: s_and_i.id, name: "Nothing Without You")
+  Song.create!(album_id: s_and_i.id, name: "Nothing's Something")
+  Song.create!(album_id: s_and_i.id, name: "O Let's Do It")
+  Song.create!(album_id: s_and_i.id, name: "Ode To Billie Joe")
+  Song.create!(album_id: s_and_i.id, name: "Oh My God")
+  Song.create!(album_id: s_and_i.id, name: "On Dreaming and Success")
+  Song.create!(album_id: s_and_i.id, name: "On Saint Paul and Personal Debt")
+  Song.create!(album_id: s_and_i.id, name: "On Taylor Swift and Artistry")
+  Song.create!(album_id: s_and_i.id, name: "Outro")
+  Song.create!(album_id: s_and_i.id, name: "P.Y.T. (Pretty Young Thing)")
+  Song.create!(album_id: s_and_i.id, name: "Panda")
+  Song.create!(album_id: s_and_i.id, name: "Papa Willi und der Zeitgeist")
+  Song.create!(album_id: s_and_i.id, name: "PARANOIA")
+  Song.create!(album_id: s_and_i.id, name: "Peace And Love (Amani Na Mapenzi) Movement IV (Encounter)")
+  Song.create!(album_id: s_and_i.id, name: "Player's Ball (Remix Version)")
+  Song.create!(album_id: s_and_i.id, name: "Polkarama!")
+  Song.create!(album_id: s_and_i.id, name: "Pomp and Circumstance March No. 1 in D major")
+  Song.create!(album_id: s_and_i.id, name: "Precious, Precious")
+  Song.create!(album_id: s_and_i.id, name: "Pudong")
+  Song.create!(album_id: s_and_i.id, name: "Queen Bitch (WWMD Demo)")
+  Song.create!(album_id: s_and_i.id, name: "R U Ready")
+  Song.create!(album_id: s_and_i.id, name: "Racks")
+  Song.create!(album_id: s_and_i.id, name: "Rent Boy (OG)")
+  Song.create!(album_id: s_and_i.id, name: "Revelations 19:1")
+  Song.create!(album_id: s_and_i.id, name: "Ride Slow")
+  Song.create!(album_id: s_and_i.id, name: "Roc Boys (And the Winner Is)...")
+  Song.create!(album_id: s_and_i.id, name: "Rosie")
+  Song.create!(album_id: s_and_i.id, name: "Sans fin")
+  Song.create!(album_id: s_and_i.id, name: "Save the Country")
+  Song.create!(album_id: s_and_i.id, name: "Scenario")
+  Song.create!(album_id: s_and_i.id, name: "Screw Jams")
+  Song.create!(album_id: s_and_i.id, name: "Scrub Shot Down")
+  Song.create!(album_id: s_and_i.id, name: "See-Line Woman")
+  Song.create!(album_id: s_and_i.id, name: "Self Conscious (A.K.A. Yeah)")
+  Song.create!(album_id: s_and_i.id, name: "She's My Baby")
+  Song.create!(album_id: s_and_i.id, name: "Sing Swan Song")
+  Song.create!(album_id: s_and_i.id, name: "Single")
+  Song.create!(album_id: s_and_i.id, name: "Sky High")
+  Song.create!(album_id: s_and_i.id, name: "So Alive")
+  Song.create!(album_id: s_and_i.id, name: "So Devilish")
+  Song.create!(album_id: s_and_i.id, name: "Solar Hydrogen")
+  Song.create!(album_id: s_and_i.id, name: "Someday")
+  Song.create!(album_id: s_and_i.id, name: "Someone Saved My Life Tonight")
+  Song.create!(album_id: s_and_i.id, name: "Someone That I Used To Love")
+  Song.create!(album_id: s_and_i.id, name: "SOPA")
+  Song.create!(album_id: s_and_i.id, name: "Soul Makossa")
+  Song.create!(album_id: s_and_i.id, name: "Sourdeezal")
+  Song.create!(album_id: s_and_i.id, name: "SPEED DOWN")
+  Song.create!(album_id: s_and_i.id, name: "Spirit In The Dark")
+  Song.create!(album_id: s_and_i.id, name: "Stand Up and Shout About Love")
+  Song.create!(album_id: s_and_i.id, name: "Strange Fruit")
+  Song.create!(album_id: s_and_i.id, name: "Street Fighter II: The World Warrior")
+  Song.create!(album_id: s_and_i.id, name: "Streets Is Talking")
+  Song.create!(album_id: s_and_i.id, name: "Stud-Spider")
+  Song.create!(album_id: s_and_i.id, name: "Suicide")
+  Song.create!(album_id: s_and_i.id, name: "SUMMER")
+  Song.create!(album_id: s_and_i.id, name: "Summer 2017")
+  Song.create!(album_id: s_and_i.id, name: "Sunshine Help Me")
+  Song.create!(album_id: s_and_i.id, name: "Survival of the Fittest")
+  Song.create!(album_id: s_and_i.id, name: "Suzie Thundertussy")
+  Song.create!(album_id: s_and_i.id, name: "Sweet Nothin's")
+  Song.create!(album_id: s_and_i.id, name: "Take Me for a Little While")
+  Song.create!(album_id: s_and_i.id, name: "Take Me To The Light (Demo)")
+  Song.create!(album_id: s_and_i.id, name: "Take One for the Team")
+  Song.create!(album_id: s_and_i.id, name: "Talgh")
+  Song.create!(album_id: s_and_i.id, name: "Tamale")
+  Song.create!(album_id: s_and_i.id, name: "The Cure")
+  Song.create!(album_id: s_and_i.id, name: "​the ends")
+  Song.create!(album_id: s_and_i.id, name: "The Life of Peder, Pt. 1")
+  Song.create!(album_id: s_and_i.id, name: "The Makings of You")
+  Song.create!(album_id: s_and_i.id, name: "The Mystery of Iniquity")
+  Song.create!(album_id: s_and_i.id, name: "The Ruler's Back")
+  Song.create!(album_id: s_and_i.id, name: "The Show")
+  Song.create!(album_id: s_and_i.id, name: "The Spotlight")
+  Song.create!(album_id: s_and_i.id, name: "The struggle")
+  Song.create!(album_id: s_and_i.id, name: "There It Is, Pts. 1 & 2")
+  Song.create!(album_id: s_and_i.id, name: "They All Laughed")
+  Song.create!(album_id: s_and_i.id, name: "They Reminisce Over You (T.R.O.Y.)")
+  Song.create!(album_id: s_and_i.id, name: "Think (About It)")
+  Song.create!(album_id: s_and_i.id, name: "This Is Why I'm Hot")
+  Song.create!(album_id: s_and_i.id, name: "Through the Fire")
+  Song.create!(album_id: s_and_i.id, name: "To the Clique")
+  Song.create!(album_id: s_and_i.id, name: "Trap Door")
+  Song.create!(album_id: s_and_i.id, name: "Try a Little Tenderness")
+    try_a_little_tenderness = Song.last
+  Song.create!(album_id: s_and_i.id, name: "Ultralight Beam (Demo)")
+  Song.create!(album_id: s_and_i.id, name: "Un homme dans la nuit")
+  Song.create!(album_id: s_and_i.id, name: "United State of Pop 2009 (Blame It On the Pop)")
+  Song.create!(album_id: s_and_i.id, name: "Vi Make Bernie Famous")
+  Song.create!(album_id: s_and_i.id, name: "Victory")
+  Song.create!(album_id: s_and_i.id, name: "Vrais potes")
+  Song.create!(album_id: s_and_i.id, name: "Vulnerable")
+  Song.create!(album_id: s_and_i.id, name: "Wack Niggaz, Pt. 2")
+  Song.create!(album_id: s_and_i.id, name: "Walk With Me")
+  Song.create!(album_id: s_and_i.id, name: "Warning")
+  Song.create!(album_id: s_and_i.id, name: "Waves (Demo)")
+  Song.create!(album_id: s_and_i.id, name: "We're All Water")
+  Song.create!(album_id: s_and_i.id, name: "Welcome to the Jungle (Freestyle)")
+  Song.create!(album_id: s_and_i.id, name: "What More Can I Say")
+  Song.create!(album_id: s_and_i.id, name: "What's Beef?")
+  Song.create!(album_id: s_and_i.id, name: "When We're Dancing Close and Slow")
+  Song.create!(album_id: s_and_i.id, name: "Where I'm From")
+  Song.create!(album_id: s_and_i.id, name: "Who You Were (I Need You Now)")
+  Song.create!(album_id: s_and_i.id, name: "Wildflower")
+  Song.create!(album_id: s_and_i.id, name: "Will You Love Me Tomorrow?")
+  Song.create!(album_id: s_and_i.id, name: "Wonderman")
+  Song.create!(album_id: s_and_i.id, name: "Woods")
+  Song.create!(album_id: s_and_i.id, name: "Work Out")
+  Song.create!(album_id: s_and_i.id, name: "Workout Plan")
+  Song.create!(album_id: s_and_i.id, name: "Wow")
+  Song.create!(album_id: s_and_i.id, name: "You Are – I Am")
+  Song.create!(album_id: s_and_i.id, name: "You Don't Love Me (No, No, No) [Homecoming Live]")
+  Song.create!(album_id: s_and_i.id, name: "You Showed Me")
+  Song.create!(album_id: s_and_i.id, name: "YOUNG KANYE WEST")
+  Song.create!(album_id: s_and_i.id, name: "Young OG")
 
 
-
-# Album bios
-  the_college_dropout.bio = "<p>Following success producing for numerous contemporaries including <a href='/#{talib_kweli.id}'>Talib Kweli</a>, <a href='/artists/#{beanie_sigel.id}'>Beanie Sigel</a> and most notably <a href='/artists/#{jay_z.id}'>Jay-Z</a>, Kanye West released his debut studio album, <em>The College Dropout</em>, on February 10, 2004.</p><p>The album features string arrangements, choirs and his signature soul sampling, frequently branded as chipmunk-esque for its sped-up and high pitched nature. Contrary to the popular gangster-persona lyrics that were so popular in hip-hop at the time, his lyrics mostly revolved around themes of family, materialism, religion and racism. Kanye <a href='http://www.mtv.com/news/1459071/kanye-west-raps-through-his-broken-jaw-lays-beats-for-scarface-ludacris/'>explained the title in an interview with MTV</a>:</p><blockquote><p>The name of my album is called <em>The College Dropout</em>. All that’s saying is make your own decisions. Don’t let society tell you, ‘This is what you have to do.’ Society told me, ‘Man, don’t move from Chicago.’ People told me to stay in school, this music is this, this music is that. I listen to John Mayer, and his song ‘No Such Thing’ is exactly what my [philosophy] is about, but in different words.</p></blockquote><p>Kanye himself happens to be a college dropout: he initially attended the American Academy of Art in Chicago and then transferred to Chicago State University, where his mother was a professor. He dropped out of Chicago State at age 20, as <a href='http://www.telegraph.co.uk/education/3344002/Arrogant-Not-me.-I-just-knew-I-was-going-to-win.html'>he already had a production deal on the table</a> from Columbia Records. His mother later <a href='https://books.google.com/books?id=bXy2wTEsbCsC&amp;pg=PA558'>commented on him dropping out</a>, saying:</p><blockquote><p>It was drummed into my head that college is the ticket to a good life … but some career goals don’t require college. For Kanye to make an album called <em>College Dropout</em>, it was more about having the guts to embrace who you are, rather than following the path society has carved out for you.</p></blockquote><p>The inspiration for finally making his own music came when he was involved in a <a href='https://www.wsws.org/en/articles/2005/09/kany-s30.html'>near-fatal car crash</a>. With his jaw wired shut, he recorded the album’s lead single, <a href='/songs/#{through_the_wire.id}'>“Through the Wire,”</a> which was released on September 30, 2003.  On December 2, 2003, Kanye released the album’s second single, <a href='/songs/#{slow_jamz.id}'>“Slow Jamz.”</a></p>"
+# ALBUM seeds -- add 'bio'
+# The College Dropout (2004)
+  the_college_dropout.bio = "<p>Following success producing for numerous contemporaries including <Link to='/artists/#{talib_kweli.id}'>Talib Kweli</Link>, <Link to='/artists/#{beanie_sigel.id}'>Beanie Sigel</Link> and most notably <Link to='/artists/#{jay_z.id}'>Jay-Z</Link>, Kanye West released his debut studio album, <em>The College Dropout</em>, on February 10, 2004.</p><p>The album features string arrangements, choirs and his signature soul sampling, frequently branded as chipmunk-esque for its sped-up and high pitched nature. Contrary to the popular gangster-persona lyrics that were so popular in hip-hop at the time, his lyrics mostly revolved around themes of family, materialism, religion and racism. Kanye <a href='http://www.mtv.com/news/1459071/kanye-west-raps-through-his-broken-jaw-lays-beats-for-scarface-ludacris/' target='_blank' rel='noopener noreferrer'>explained the title in an interview with MTV</a>:</p><blockquote><p>The name of my album is called <em>The College Dropout</em>. All that’s saying is make your own decisions. Don’t let society tell you, ‘This is what you have to do.’ Society told me, ‘Man, don’t move from Chicago.’ People told me to stay in school, this music is this, this music is that. I listen to John Mayer, and his song ‘No Such Thing’ is exactly what my [philosophy] is about, but in different words.</p></blockquote><p>Kanye himself happens to be a college dropout: he initially attended the American Academy of Art in Chicago and then transferred to Chicago State University, where his mother was a professor. He dropped out of Chicago State at age 20, as <a href='http://www.telegraph.co.uk/education/3344002/Arrogant-Not-me.-I-just-knew-I-was-going-to-win.html' target='_blank' rel='noopener noreferrer'>he already had a production deal on the table</a> from Columbia Records. His mother later <a href='https://books.google.com/books?id=bXy2wTEsbCsC&amp;pg=PA558' target='_blank' rel='noopener noreferrer'>commented on him dropping out</a>, saying:</p><blockquote><p>It was drummed into my head that college is the ticket to a good life … but some career goals don’t require college. For Kanye to make an album called <em>College Dropout</em>, it was more about having the guts to embrace who you are, rather than following the path society has carved out for you.</p></blockquote><p>The inspiration for finally making his own music came when he was involved in a <a href='https://www.wsws.org/en/articles/2005/09/kany-s30.html' target='_blank' rel='noopener noreferrer'>near-fatal car crash</a>. With his jaw wired shut, he recorded the album’s lead single, <Link to='/songs/#{through_the_wire.id}'>“Through the Wire,”</Link> which was released on September 30, 2003.  On December 2, 2003, Kanye released the album’s second single, <Link to='/songs/#{slow_jamz.id}'>“Slow Jamz.”</Link></p>"
   the_college_dropout.save!
 
-  late_registration.bio = "<p>The second studio album from <a href='/artists/#{kanye_west.id}'>Kanye West</a>, <em>Late Registration</em> is noted for its continued exploration of the social themes introduced in <em>The College Dropout</em> as well as the orchestral production influenced by album co-producer <a href='/artists/#{jon_brion.id}'>Jon Brion.</a> The album spawned Kanye classics such as <a href='/songs/#{touch_the_sky.id}'>“Touch the Sky,”</a> <a href='/songs/#{hey_mama.id}'>“Hey Mama,”</a> <a href='/songs/#{diamonds_from_sierra_leone_remix.id}'>“Diamonds from Sierra Leone,”</a> and his best-selling song to date, <a href='/songs/#{gold_digger.id}' >“Gold Digger.”</a> <em>Late Registration</em> debuted at number 1 on the <em>Billboard 200</em> and has sold <a href='http://www.billboard.com/articles/columns/the-juice/1566931/kanye-west-how-the-rapper-grew-from-dropout-to-yeezus'>3.1 million in the US.</a></p><p>Kanye’s new found success after his breakout album <a href='/albums/#{the_college_dropout.id}'><em>The College Dropout</em></a> allowed him to expand his ambitions from a single violinist he used in the <a href='/albums/#{the_college_dropout.id}'><em>The College Dropout</em></a> (see <a href='/songs/#{the_new_workout_plan.id}'>“The New Workout Plan”</a>) to an entire string orchestra in the song <a href='/songs/#{late.id}'>“Late”</a> with <a href='http://www.newyorker.com/magazine/2005/08/22/overdrive'>ten violins, four violas, and four cellos.</a></p><p>Lyrically, the album features a mix of more socially charged songs such as <a href='/songs/#{crack_music.id}' >“Crack Music”</a> and <a href='/songs/#{diamonds_from_sierra_leone_remix.id}'>“Diamonds from Sierra Leone”</a> to more personal cuts like <a href='/songs/#{hey_mama.id}'>“Hey Mama”</a> and <a href='/songs/#{roses.id}'>“Roses.”</a></p><p>Since the album’s release it has been critically acclaimed: listed as <a href='http://www.rollingstone.com/music/lists/500-greatest-albums-of-all-time-20120531/kanye-west-late-registration-20120524'>number 118 in Rolling Stone’s 500 Greatest Albums of All Time,</a> <a href='http://www.metacritic.com/music/late-registration'>holding a score of 85 on Metacritic,</a> and brandishing a <a href='http://pitchfork.com/reviews/albums/8768-late-registration/'>9.5 rating on Pitchfork.</a></p>"
+# Late Registration (2005)
+  late_registration.bio = "<p>The second studio album from <Link to='/artists/#{kanye_west.id}'>Kanye West</Link>, <em>Late Registration</em> is noted for its continued exploration of the social themes introduced in <em>The College Dropout</em> as well as the orchestral production influenced by album co-producer <Link to='/artists/#{jon_brion.id}'>Jon Brion.</Link> The album spawned Kanye classics such as <Link to='/songs/#{touch_the_sky.id}'>“Touch the Sky,”</Link> <Link to='/songs/#{hey_mama.id}'>“Hey Mama,”</Link> <Link to='/songs/#{diamonds_from_sierra_leone_remix.id}'>“Diamonds from Sierra Leone,”</Link> and his best-selling song to date, <Link to='/songs/#{gold_digger.id}' >“Gold Digger.”</Link> <em>Late Registration</em> debuted at number 1 on the <em>Billboard 200</em> and has sold <a href='http://www.billboard.com/articles/columns/the-juice/1566931/kanye-west-how-the-rapper-grew-from-dropout-to-yeezus' target='_blank' rel='noopener noreferrer'>3.1 million in the US.</a></p><p>Kanye’s new found success after his breakout album <Link to='/albums/#{the_college_dropout.id}'><em>The College Dropout</em></Link> allowed him to expand his ambitions from a single violinist he used in the <Link to='/albums/#{the_college_dropout.id}'><em>The College Dropout</em></Link> (see <Link to='/songs/#{the_new_workout_plan.id}'>“The New Workout Plan”</Link>) to an entire string orchestra in the song <Link to='/songs/#{late.id}'>“Late”</Link> with <a href='http://www.newyorker.com/magazine/2005/08/22/overdrive' target='_blank' rel='noopener noreferrer'>ten violins, four violas, and four cellos.</a></p><p>Lyrically, the album features a mix of more socially charged songs such as <Link to='/songs/#{crack_music.id}' >“Crack Music”</Link> and <Link to='/songs/#{diamonds_from_sierra_leone_remix.id}'>“Diamonds from Sierra Leone”</Link> to more personal cuts like <Link to='/songs/#{hey_mama.id}'>“Hey Mama”</Link> and <Link to='/songs/#{roses.id}'>“Roses.”</Link></p><p>Since the album’s release it has been critically acclaimed: listed as <a href='http://www.rollingstone.com/music/lists/500-greatest-albums-of-all-time-20120531/kanye-west-late-registration-20120524' target='_blank' rel='noopener noreferrer'>number 118 in Rolling Stone’s 500 Greatest Albums of All Time,</a> <a href='http://www.metacritic.com/music/late-registration' target='_blank' rel='noopener noreferrer'>holding a score of 85 on Metacritic,</a> and brandishing a <a href='http://pitchfork.com/reviews/albums/8768-late-registration/' target='_blank' rel='noopener noreferrer'>9.5 rating on Pitchfork.</a></p>"
   late_registration.save!
 
-  graduation.bio = "<p><em>Graduation</em> is the third studio album from Chicago rapper Kanye West. The album was inspired by stadium tours, indie rock and house-music and was a huge departure from the sound Ye had used on his first two studio albums <a href='/albums/#{the_college_dropout.id}'><em>The College Dropout</em></a> and <a href='/albums/#{late_registration.id}'><em>Late Registration</em></a> which featured samples and inspirations from soul and orchestral music. This album, on the other hand, included a much more electronic sound, featuring the use of layering synthesizers. Lyrically, Kanye analyzes himself and talks about his life after becoming famous and how he is criticized from the media.</p><p>The album famously faced off against 50 Cent’s <em>Curtis</em></a> in a <a href='http://www.villagevoice.com/music/the-fall-of-curtis-how-september-11-2007-changed-everything-for-50-cent-6656492'>sales war</a> which Kanye won with <a href='http://www.billboard.com/articles/news/1049182/kanye-crushes-50-cent-in-huge-album-sales-week'>957,000 copies sold in the first week.</a><br>Some critics argue this is the day <a href='http://uk.complex.com/music/2015/09/the-day-kanye-west-killed-gangsta-rap'>gangsta rap was finally defeated.</a></p><p><img src='https://images.genius.com/496e01619e74e9747f062d975696f42f.550x349x1.jpg' alt='' width='550' height='349' data-animated='false'></p><p>The album is credited with inspiring <a href='http://www.mtv.com/news/1606622/u2-take-cues-from-kanye-west-jay-z/'>U2</a> as well as pushing <a href='/artists/#{daft_punk.id}'>Daft Punk</a> <a href='http://www.rollingstone.com/music/pictures/readers-poll-the-ten-best-kanye-west-songs-20130626/8-stronger-0486998'>into the mainstream.</a></p><p>On May 15th, 2007, Kanye released the album’s lead single <a href='/songs/#{cant_tell_me_nothing.id}'>“Can’t Tell Me Nothing.”</a></p><p>On July 31st, 2007, he released the album’s second single and biggest hit, <a href='/songs/#{stronger.id}'>“Stronger.”</a></p>"
+# Graduation (2007)
+  graduation.bio = "<p><em>Graduation</em> is the third studio album from Chicago rapper Kanye West. The album was inspired by stadium tours, indie rock and house-music and was a huge departure from the sound Ye had used on his first two studio albums <Link to='/albums/#{the_college_dropout.id}'><em>The College Dropout</em></Link> and <Link to='/albums/#{late_registration.id}'><em>Late Registration</em></Link> which featured samples and inspirations from soul and orchestral music. This album, on the other hand, included a much more electronic sound, featuring the use of layering synthesizers. Lyrically, Kanye analyzes himself and talks about his life after becoming famous and how he is criticized from the media.</p><p>The album famously faced off against 50 Cent’s <em>Curtis</em> in a <a href='http://www.villagevoice.com/music/the-fall-of-curtis-how-september-11-2007-changed-everything-for-50-cent-6656492' target='_blank' rel='noopener noreferrer'>sales war</a> which Kanye won with <a href='http://www.billboard.com/articles/news/1049182/kanye-crushes-50-cent-in-huge-album-sales-week' target='_blank' rel='noopener noreferrer'>957,000 copies sold in the first week.</a><br>Some critics argue this is the day <a href='http://uk.complex.com/music/2015/09/the-day-kanye-west-killed-gangsta-rap' target='_blank' rel='noopener noreferrer'>gangsta rap was finally defeated.</a></p><p><img src='https://images.genius.com/496e01619e74e9747f062d975696f42f.550x349x1.jpg' alt='' width='550' height='349' data-animated='false' target='_blank' rel='noopener noreferrer'></p><p>The album is credited with inspiring <a href='http://www.mtv.com/news/1606622/u2-take-cues-from-kanye-west-jay-z/' target='_blank' rel='noopener noreferrer'>U2</a> as well as pushing <Link to='/artists/#{daft_punk.id}'>Daft Punk</Link> <a href='http://www.rollingstone.com/music/pictures/readers-poll-the-ten-best-kanye-west-songs-20130626/8-stronger-0486998' target='_blank' rel='noopener noreferrer'>into the mainstream.</a></p><p>On May 15th, 2007, Kanye released the album’s lead single <Link to='/songs/#{cant_tell_me_nothing.id}'>“Can’t Tell Me Nothing.”</Link></p><p>On July 31st, 2007, he released the album’s second single and biggest hit, <Link to='/songs/#{stronger.id}'>“Stronger.”</Link></p>"
   graduation.save!
 
-  x808s_and_heartbreak.bio = "<p><em>808s &amp; Heartbreak</em> is Kanye West’s fourth studio album, released on November 24th, 2008, and it was a base breaker as far as fans were concerned.</p><p>The album was formed off the back of an extremely difficult time for West; <a href='https://notices.californiatimes.com/gdpr/latimes.com/'>his mother died due to complications after cosmetic surgery</a>, his relationship with on-and-off again girlfriend/fiancé Alexis Phifer <a href='https://people.com/celebrity/kanye-wests-fiance-sad-over-breakup/'>finally ended for good</a>, and Kanye was struggling to adapt to his celebrity status, often being criticized from the media. Emotionally drained and feeling somewhat lost, Kanye dealt with his pain by channeling it into a sonically stripped-down album, one dominated by his use of the titular <a href='https://www.roland.com/global/products/tr-08/'>Roland TR-808</a> drum machine and Auto-Tune. Kanye <a href='https://web.archive.org/web/20081204032313/http://www.mtv.com/news/articles/1599993/20081121/west_kanye.jhtml'>said</a>:</p><blockquote><p>It was just what was in my heart. The type of ideas that it was coming up with, the melodies that were in me — what was in me I couldn’t stop.</p></blockquote><p>The album is heavily influenced by 1980s synthpop and electropop. Kanye used the “808” sound and altered its pitch to create the unique distorted and electronic sound you hear throughout the album. He called this effect the “heartbreak,” and said that it was <a href='https://www.theguardian.com/music/2008/nov/30/kanye-west-new-album-heartbreak'>‘representative of his state of mind’</a>.</p><p>Kanye had previously used auto-tune, for example on his 2004 hit <a href='/songs/#{jesus_walks.id}'>“Jesus Walks”</a>, but it was never a focal point of the music. Kanye <a href='http://www.mtv.com/news/1596829/t-pain-describes-his-involvement-on-new-kanye-west-lp-fat-joe-salutes-lil-waynes-carter-iv-rock-edge-mixtape-monday/'>was taught</a> how to use auto-tune by <a href='/artists/#{t_pain.id}'>T-Pain</a>.</p><p>Kanye also credited up and coming rapper <a href='/artists/#{kid_cudi.id}'>Kid Cudi</a> who had recently signed with his label, <a href='https://good-music.com/'>G.O.O.D. Music</a>. He became a fan after receiving a copy of his 2008 mixtape <em>A Kid Named Cudi</em>. Kanye flew Cudi out to Hawaii to work on the album. He was eventually featured on the album’s second track, <a href='/songs/#{welcome_to_heartbreak.id}'>“Welcome To Heartbreak.”</a></p><p>On September 18th, 2008, Kanye released the album’s lead single, <a href='/songs/#{love_lockdown.id}'>“Love Lockdown.”</a></p><p>Kanye first <a href='http://www.mtv.com/news/1595519/kanye-west-moves-up-release-date-of-808s-and-heartbreak-to-november-something/'>announced</a> the album’s release date on September 24th, 2008, saying:</p><blockquote><p>I changed my album to November something cause I finished the album and I felt like it..I want y'all to hear it as soon as possible.</p></blockquote><p>On October 16th, 2008, Kanye <a href='http://www.canada.com/vancouversun/news/arts/story.html'>teased</a> a portion of <a href='/songs/#{coldest_winter.id}'>“Coldest Winter.”</a></p><p>On November 4th, 2008, he released the album’s second single, <a href='/songs/#{heartless.id}'>“Heartless.”</a></p><p>The album <a href='https://web.archive.org/web/20111229125050/http://www.theawl.com/2011/09/kanye%E2%80%99s-808s-how-a-machine-brought-heartbreak-to-hip-hop'>had a major influence on modern hip-hop music</a>, having influenced most notably Drake, <a href='/artists/#{frank_ocean.id}'>Frank Ocean</a> and <a href='/artists/#{travis_scott.id}'>Travis Scott</a>.</p>"
+# 808s & Heartbreak (2008)
+  x808s_and_heartbreak.bio = "<p><em>808s &amp; Heartbreak</em> is Kanye West’s fourth studio album, released on November 24th, 2008, and it was a base breaker as far as fans were concerned.</p><p>The album was formed off the back of an extremely difficult time for West; <a href='https://notices.californiatimes.com/gdpr/latimes.com/' target='_blank' rel='noopener noreferrer'>his mother died due to complications after cosmetic surgery</a>, his relationship with on-and-off again girlfriend/fiancé Alexis Phifer <a href='https://people.com/celebrity/kanye-wests-fiance-sad-over-breakup/' target='_blank' rel='noopener noreferrer'>finally ended for good</a>, and Kanye was struggling to adapt to his celebrity status, often being criticized from the media. Emotionally drained and feeling somewhat lost, Kanye dealt with his pain by channeling it into a sonically stripped-down album, one dominated by his use of the titular <a href='https://www.roland.com/global/products/tr-08/' target='_blank' rel='noopener noreferrer'>Roland TR-808</a> drum machine and Auto-Tune. Kanye <a href='https://web.archive.org/web/20081204032313/http://www.mtv.com/news/articles/1599993/20081121/west_kanye.jhtml' target='_blank' rel='noopener noreferrer'>said</a>:</p><blockquote><p>It was just what was in my heart. The type of ideas that it was coming up with, the melodies that were in me — what was in me I couldn’t stop.</p></blockquote><p>The album is heavily influenced by 1980s synthpop and electropop. Kanye used the “808” sound and altered its pitch to create the unique distorted and electronic sound you hear throughout the album. He called this effect the “heartbreak,” and said that it was <a href='https://www.theguardian.com/music/2008/nov/30/kanye-west-new-album-heartbreak' target='_blank' rel='noopener noreferrer'>‘representative of his state of mind’</a>.</p><p>Kanye had previously used auto-tune, for example on his 2004 hit <Link to='/songs/#{jesus_walks.id}'>“Jesus Walks”</Link>, but it was never a focal point of the music. Kanye <a href='http://www.mtv.com/news/1596829/t-pain-describes-his-involvement-on-new-kanye-west-lp-fat-joe-salutes-lil-waynes-carter-iv-rock-edge-mixtape-monday/' target='_blank' rel='noopener noreferrer'>was taught</a> how to use auto-tune by <Link to='/artists/#{t_pain.id}'>T-Pain</Link>.</p><p>Kanye also credited up and coming rapper <Link to='/artists/#{kid_cudi.id}'>Kid Cudi</Link> who had recently signed with his label, <a href='https://good-music.com/' target='_blank' rel='noopener noreferrer'>G.O.O.D. Music</a>. He became a fan after receiving a copy of his 2008 mixtape <em>A Kid Named Cudi</em>. Kanye flew Cudi out to Hawaii to work on the album. He was eventually featured on the album’s second track, <Link to='/songs/#{welcome_to_heartbreak.id}'>“Welcome To Heartbreak.”</Link></p><p>On September 18th, 2008, Kanye released the album’s lead single, <Link to='/songs/#{love_lockdown.id}'>“Love Lockdown.”</Link></p><p>Kanye first <a href='http://www.mtv.com/news/1595519/kanye-west-moves-up-release-date-of-808s-and-heartbreak-to-november-something/' target='_blank' rel='noopener noreferrer'>announced</a> the album’s release date on September 24th, 2008, saying:</p><blockquote><p>I changed my album to November something cause I finished the album and I felt like it..I want y'all to hear it as soon as possible.</p></blockquote><p>On October 16th, 2008, Kanye <a href='http://www.canada.com/vancouversun/news/arts/story.html' target='_blank' rel='noopener noreferrer'>teased</a> a portion of <Link to='/songs/#{coldest_winter.id}'>“Coldest Winter.”</Link></p><p>On November 4th, 2008, he released the album’s second single, <Link to='/songs/#{heartless.id}'>“Heartless.”</Link></p><p>The album <a href='https://web.archive.org/web/20111229125050/http://www.theawl.com/2011/09/kanye%E2%80%99s-808s-how-a-machine-brought-heartbreak-to-hip-hop' target='_blank' rel='noopener noreferrer'>had a major influence on modern hip-hop music</a>, having influenced most notably Drake, <Link to='/artists/#{frank_ocean.id}'>Frank Ocean</Link> and <Link to='/artists/#{travis_scott.id}'>Travis Scott</Link>.</p>"
   x808s_and_heartbreak.save!
 
-  my_beautiful_dark_twisted_fantasy.bio = "<p>Conceived during West’s self-imposed exile following the <a href='http://en.wikipedia.org/wiki/2009_MTV_Video_Music_Awards#Kanye_West_controversy_and_debated_incidents'>2009 VMA incident</a> and further influenced by his deteriorating relationship with model Amber Rose, <em>My Beautiful Dark Twisted Fantasy</em> is a genre-bending masterpiece that explores the darker sides of celebrity, fame, and love. The album was widely acclaimed by both fans and critics; it received a near impossible 10/10 rating from Pitchfork Media and several of its songs (along with the record itself) appeared on numerous “best of 2010” lists, and the album won the 2012 Grammy for Best Rap Album.</p><p>It received a 94/100 score on Metacritic and later appeared on numerous <em>greatest albums ever made</em> lists.</p><p>The homie <a href='http://bigghostlimited.com/throwback-friday-my-beautiful-dark-twisted-fantasy-revisted/'>Big Ghost</a> puts it best:</p><blockquote><p>Vulnerable enough to let you see inside his soul yet still in control enough to tell yall to eat a dick if you aint like what you seen. Thats whats up.</p></blockquote><p><strong>Note:</strong> The album’s original cover (drawn by <a href='http://en.wikipedia.org/wiki/George_Condo'>George Condo</a>) depicts Kanye West being straddled by an armless phoenix. Both characters are shown nude. George later revealed that Kanye wanted a cover image that would be banned. Four other original artworks (along with the phoenix one) were sold with the album.</p><p><img src='https://images.rapgenius.com/6c208957e0ae349de7a704139f83ce71.697x481x1.png' alt='' width='697' height='481' data-animated='false'></p>"
+# My Beautiful Dark Twisted Fantasy (2010)
+  my_beautiful_dark_twisted_fantasy.bio = "<p>Conceived during West’s self-imposed exile following the <a href='http://en.wikipedia.org/wiki/2009_MTV_Video_Music_Awards#Kanye_West_controversy_and_debated_incidents' target='_blank' rel='noopener noreferrer'>2009 VMA incident</a> and further influenced by his deteriorating relationship with model Amber Rose, <em>My Beautiful Dark Twisted Fantasy</em> is a genre-bending masterpiece that explores the darker sides of celebrity, fame, and love. The album was widely acclaimed by both fans and critics; it received a near impossible 10/10 rating from Pitchfork Media and several of its songs (along with the record itself) appeared on numerous “best of 2010” lists, and the album won the 2012 Grammy for Best Rap Album.</p><p>It received a 94/100 score on Metacritic and later appeared on numerous <em>greatest albums ever made</em> lists.</p><p>The homie <a href='http://bigghostlimited.com/throwback-friday-my-beautiful-dark-twisted-fantasy-revisted/' target='_blank' rel='noopener noreferrer'>Big Ghost</a> puts it best:</p><blockquote><p>Vulnerable enough to let you see inside his soul yet still in control enough to tell yall to eat a dick if you aint like what you seen. Thats whats up.</p></blockquote><p><strong>Note:</strong> The album’s original cover (drawn by <a href='http://en.wikipedia.org/wiki/George_Condo' target='_blank' rel='noopener noreferrer'>George Condo</a>) depicts Kanye West being straddled by an armless phoenix. Both characters are shown nude. George later revealed that Kanye wanted a cover image that would be banned. Four other original artworks (along with the phoenix one) were sold with the album.</p><p><img src='https://images.rapgenius.com/6c208957e0ae349de7a704139f83ce71.697x481x1.png' alt='' width='697' height='481' data-animated='false' target='_blank' rel='noopener noreferrer'></p>"
   my_beautiful_dark_twisted_fantasy.save!
 
-  yeezus.bio = "<p>Kanye West’s sixth studio album, <em>Yeezus</em>, marked a complete reverse from the bombastic production he accomplished on <em><a href='/albums/#{my_beautiful_dark_twisted_fantasy.id}'>My Beautiful Dark Twisted Fantasy</a></em>, swapping lush soul and anthemic hooks for splintering electro, acid house, and industrial force while packaging some of his most lewd and heart-crushing tales.</p><p>In April 2016, Kanye West reportedly began <a href='http://hypebeast.com/2016/4/kanye-west-updates-yeezus-album'>updating <em>Yeezus</em>,</a> like he did with <a href='/albums/#{the_life_of_pablo.id}'><em>The Life of Pablo</em></a>.</p>"
+# Yeezus (2013)
+  yeezus.bio = "<p>Kanye West’s sixth studio album, <em>Yeezus</em>, marked a complete reverse from the bombastic production he accomplished on <em><Link to='/albums/#{my_beautiful_dark_twisted_fantasy.id}'>My Beautiful Dark Twisted Fantasy</Link></em>, swapping lush soul and anthemic hooks for splintering electro, acid house, and industrial force while packaging some of his most lewd and heart-crushing tales.</p><p>In April 2016, Kanye West reportedly began <a href='http://hypebeast.com/2016/4/kanye-west-updates-yeezus-album' target='_blank' rel='noopener noreferrer'>updating <em>Yeezus</em>,</a> like he did with <Link to='/albums/#{the_life_of_pablo.id}'><em>The Life of Pablo</em></Link>.</p>"
   yeezus.save!
 
-  the_life_of_pablo.bio = "<p><em>The Life of Pablo</em> is Kanye West’s 7th studio album. It was originally titled <em>So Help Me God</em>, then <em>SWISH</em>, and briefly <em>WAVES</em>. On February 9, 2016, Kanye announced that the title could be acronymized as <em>T.L.O.P.</em>, later revealed to stand for <em>The Life of Pablo</em>.</p><p>The album premiered on February 11, 2016, at Madison Square Garden and was live-streamed at hundreds of theaters across the world and <a href='http://tidal.com/us/yeezyseason3'>on TIDAL’s streaming service</a>. It was released for download and streaming exclusively <a href='http://listen.tidal.com/album/57273408'>on TIDAL</a> on February 14, 2016, with Kanye announcing it wouldn’t be sold for a week after, <a href='https://twitter.com/kanyewest/status/698972107166892032'>via Twitter</a>. However, Kanye later said the album would be a TIDAL exclusive in a <a href='https://twitter.com/kanyewest/status/699376240709402624'>since-deleted Tweet</a>, and that it would never be sold. This move pushed TIDAL to #1 on the App Store.</p><p>During an <a href='/The-breakfast-club-power-1051-kanye-west-interview-at-the-breakfast-club-2-20-15-lyrics'>interview with <em>The Breakfast Club</em></a>, West described the album:</p><blockquote><p>[…] This album’s just embracing the music, embracing joy, and being of service to the people. I just hope that people like it and enjoy it, you know? That’s it.</p></blockquote><p>The title, which was derived from a lyric on <a href='/songs/#{no_more_parties_in_la.id}'>“No More Parties In L.A.,”</a> takes on many personas, referring to Pablo Picasso, an artist, Pablo Escobar, a notorious drug dealer, and <a href='https://www.britannica.com/biography/Saint-Paul-the-Apostle'>Paul the Apostle</a>, whose name is Pablo in Spanish.</p><p>The tracklist was initially revealed on January 25, 2016, in its incomplete form; with updated versions being periodically sent out via various social media accounts. Kanye <a href='https://www.cbcmusic.ca/posts/11512/how-kanye-west-s-living-breathing-changing-creativ'>called the album</a> a “living breathing changing creative expression.” On April 1, 2016, the album was finally made available to stream on other streaming sites, such as Spotify and Apple Music. He also made it available to purchase directly from his website. On June 14, 2016, the twentieth and final track, <a href='/songs/#{saint_pablo.id}'>“Saint Pablo,”</a> was added.</p>"
+# The Life of Pablo (2016)
+  the_life_of_pablo.bio = "<p><em>The Life of Pablo</em> is Kanye West’s 7th studio album. It was originally titled <em>So Help Me God</em>, then <em>SWISH</em>, and briefly <em>WAVES</em>. On February 9, 2016, Kanye announced that the title could be acronymized as <em>T.L.O.P.</em>, later revealed to stand for <em>The Life of Pablo</em>.</p><p>The album premiered on February 11, 2016, at Madison Square Garden and was live-streamed at hundreds of theaters across the world and <a href='http://tidal.com/us/yeezyseason3' target='_blank' rel='noopener noreferrer'>on TIDAL’s streaming service</a>. It was released for download and streaming exclusively <a href='http://listen.tidal.com/album/57273408' target='_blank' rel='noopener noreferrer'>on TIDAL</a> on February 14, 2016, with Kanye announcing it wouldn’t be sold for a week after, <a href='https://twitter.com/kanyewest/status/698972107166892032' target='_blank' rel='noopener noreferrer'>via Twitter</a>. However, Kanye later said the album would be a TIDAL exclusive in a <a href='https://twitter.com/kanyewest/status/699376240709402624' target='_blank' rel='noopener noreferrer'>since-deleted Tweet</a>, and that it would never be sold. This move pushed TIDAL to #1 on the App Store.</p><p>During an <a href='/The-breakfast-club-power-1051-kanye-west-interview-at-the-breakfast-club-2-20-15-lyrics' target='_blank' rel='noopener noreferrer'>interview with <em>The Breakfast Club</em></a>, West described the album:</p><blockquote><p>[…] This album’s just embracing the music, embracing joy, and being of service to the people. I just hope that people like it and enjoy it, you know? That’s it.</p></blockquote><p>The title, which was derived from a lyric on <Link to='/songs/#{no_more_parties_in_la.id}'>“No More Parties In L.A.,”</Link> takes on many personas, referring to Pablo Picasso, an artist, Pablo Escobar, a notorious drug dealer, and <a href='https://www.britannica.com/biography/Saint-Paul-the-Apostle' target='_blank' rel='noopener noreferrer'>Paul the Apostle</a>, whose name is Pablo in Spanish.</p><p>The tracklist was initially revealed on January 25, 2016, in its incomplete form; with updated versions being periodically sent out via various social media accounts. Kanye <a href='https://www.cbcmusic.ca/posts/11512/how-kanye-west-s-living-breathing-changing-creativ' target='_blank' rel='noopener noreferrer'>called the album</a> a “living breathing changing creative expression.” On April 1, 2016, the album was finally made available to stream on other streaming sites, such as Spotify and Apple Music. He also made it available to purchase directly from his website. On June 14, 2016, the twentieth and final track, <Link to='/songs/#{saint_pablo.id}'>“Saint Pablo,”</Link> was added.</p>"
   the_life_of_pablo.save!
 
-  ye.bio = "<p><em>ye</em> is Kanye West’s eighth solo studio album. The album discusses topics in Kanye’s life, including mental health, family, and addiction. He also explicitly announces his diagnosis with bipolar disorder through the album’s artwork and a proclamation within the album.</p><p>The seven-song project was premiered on June 1, 2018, at an exclusive listening party hosted in Jackson Hole, Wyoming, where the album was primarily created. This listening party was also <a href='https://twitter.com/kanyewest/status/1002352319239839744'>live-streamed</a> on <a href='http://www.wav.media/'>WAV Media</a>. At the listening party, comedian Chris Rock announced that the album was simply titled <em>ye</em>, although the title had initially been teased as <a href='https://twitter.com/kanyewest/status/990263790368256000'><em>LOVE EVERYONE</em></a>. Unbeknownst to fans, <a href='https://www.instagram.com/kimkardashian/?hl=en'>Kim Kardashian</a>, Kanye’s wife, had <a href='https://twitter.com/KimKardashian/status/1002363943417856005'>teased the title</a> hours prior to the announcement.</p><p>In <a href='https://www.youtube.com/watch?v=qPpUaeChv'>an interview with Big Boy</a> conducted during the Wyoming festivities, Kanye explained his decision to name the album <em>ye</em>:</p><blockquote><p>I believe ‘ye’ is the most commonly used word in the Bible, and, in the Bible, it means ‘you,’ so it’s [saying] “I’m you, I’m us, it’s us.” It went from being <em>Kanye</em>, which means the only one, to just <em>ye</em> – just being a reflection of our good, our bad, our confused, everything, that I’m just more of a reflection of who we are, just as beings.</p></blockquote><p>Kanye also revealed in this interview that after his <a href='http://www.tmz.com/2018/05/02/tmz-live-kanye/'>infamous TMZ interview</a> (in which he stated that he believes slavery was a choice), he completely re-did his album with an entirely new theme. The fate of the original songs is currently unknown.</p><p><em>ye</em> is the second album in a <a href='/a/kanye-west-is-producing-a-nas-album-dropping-in-june'>five-album series of releases</a> that are entirely <a href='https://twitter.com/kanyewest/status/988199097554296832'>produced by Kanye</a>. It was preceded by <a href='/artists/#{pusha_t.id}'>Pusha-T</a>’s <em>DAYTONA</em>, and succeeded by <em>KIDS SEE GHOSTS</em> (his collaborative album with <a href='/artists/#{kid_cudi.id}'>Kid Cudi</a>), <a href='/artists/#{nas.id}'>Nas</a>’s <em>NASIR</em>, and Teyana Taylor</a>’s <em>K.T.S.E.</em></a></p><p>The existence of the album was initially made public on April 19, 2018, when Kanye <a href='https://twitter.com/kanyewest/status/987049937434112000'>tweeted the expected release date</a>.</p><p>On May 15, 2018, Kanye <a href='https://twitter.com/kanyewest/status/996463788231610368'>tweeted a video</a> displaying the working tracklists for his upcoming projects, his labeled “Ye.” At the time the video was shot, only two songs had been added to Ye’s album: <a href='/songs/#{wouldnt_leave.id}'>“Wouldn’t Leave”</a> and “Extacy” (which was later retitled “XTCY” and released on August 11, 2018). The video also displayed <a href='/songs/#{ghost_town.id}'>“Ghost Town”</a> as a track on Ye and <a href='/artists/#{kid_cudi.id}'>Kid Cudi</a>’s collaborative album <em>KIDS SEE GHOSTS</em>, but it now appears as track 6 on <em>ye</em>.</p><p>On June 10, 2018, <em>ye</em> became Kanye’s <a href='https://www.billboard.com/articles/columns/chart-beat/8460189/kanye-west-eighth-no-1-album-billboard-200-ye'>8th consecutive No. 1 album</a> on the Billboard 200.</p>"
+# Ye (2018)
+  ye.bio = "<p><em>ye</em> is Kanye West’s eighth solo studio album. The album discusses topics in Kanye’s life, including mental health, family, and addiction. He also explicitly announces his diagnosis with bipolar disorder through the album’s artwork and a proclamation within the album.</p><p>The seven-song project was premiered on June 1, 2018, at an exclusive listening party hosted in Jackson Hole, Wyoming, where the album was primarily created. This listening party was also <a href='https://twitter.com/kanyewest/status/1002352319239839744' target='_blank' rel='noopener noreferrer'>live-streamed</a> on <a href='http://www.wav.media/' target='_blank' rel='noopener noreferrer'>WAV Media</a>. At the listening party, comedian Chris Rock announced that the album was simply titled <em>ye</em>, although the title had initially been teased as <a href='https://twitter.com/kanyewest/status/990263790368256000' target='_blank' rel='noopener noreferrer'><em>LOVE EVERYONE</em></a>. Unbeknownst to fans, <a href='https://www.instagram.com/kimkardashian/?hl=en' target='_blank' rel='noopener noreferrer'>Kim Kardashian</a>, Kanye’s wife, had <a href='https://twitter.com/KimKardashian/status/1002363943417856005' target='_blank' rel='noopener noreferrer'>teased the title</a> hours prior to the announcement.</p><p>In <a href='https://www.youtube.com/watch?v=qPpUaeChv' target='_blank' rel='noopener noreferrer'>an interview with Big Boy</a> conducted during the Wyoming festivities, Kanye explained his decision to name the album <em>ye</em>:</p><blockquote><p>I believe ‘ye’ is the most commonly used word in the Bible, and, in the Bible, it means ‘you,’ so it’s [saying] “I’m you, I’m us, it’s us.” It went from being <em>Kanye</em>, which means the only one, to just <em>ye</em> – just being a reflection of our good, our bad, our confused, everything, that I’m just more of a reflection of who we are, just as beings.</p></blockquote><p>Kanye also revealed in this interview that after his <a href='http://www.tmz.com/2018/05/02/tmz-live-kanye/' target='_blank' rel='noopener noreferrer'>infamous TMZ interview</a> (in which he stated that he believes slavery was a choice), he completely re-did his album with an entirely new theme. The fate of the original songs is currently unknown.</p><p><em>ye</em> is the second album in a <a href='/a/kanye-west-is-producing-a-nas-album-dropping-in-june' target='_blank' rel='noopener noreferrer'>five-album series of releases</a> that are entirely <a href='https://twitter.com/kanyewest/status/988199097554296832' target='_blank' rel='noopener noreferrer'>produced by Kanye</a>. It was preceded by <Link to='/artists/#{pusha_t.id}'>Pusha-T</Link>’s <em>DAYTONA</em>, and succeeded by <em>KIDS SEE GHOSTS</em> (his collaborative album with <Link to='/artists/#{kid_cudi.id}'>Kid Cudi</Link>), <Link to='/artists/#{nas.id}'>Nas</Link>’s <em>NASIR</em>, and Teyana Taylor’s <em>K.T.S.E.</em></p><p>The existence of the album was initially made public on April 19, 2018, when Kanye <a href='https://twitter.com/kanyewest/status/987049937434112000' target='_blank' rel='noopener noreferrer'>tweeted the expected release date</a>.</p><p>On May 15, 2018, Kanye <a href='https://twitter.com/kanyewest/status/996463788231610368' target='_blank' rel='noopener noreferrer'>tweeted a video</a> displaying the working tracklists for his upcoming projects, his labeled “Ye.” At the time the video was shot, only two songs had been added to Ye’s album: <Link to='/songs/#{wouldnt_leave.id}'>“Wouldn’t Leave”</Link> and “Extacy” (which was later retitled “XTCY” and released on August 11, 2018). The video also displayed <Link to='/songs/#{ghost_town.id}'>“Ghost Town”</Link> as a track on Ye and <Link to='/artists/#{kid_cudi.id}'>Kid Cudi</Link>’s collaborative album <em>KIDS SEE GHOSTS</em>, but it now appears as track 6 on <em>ye</em>.</p><p>On June 10, 2018, <em>ye</em> became Kanye’s <a href='https://www.billboard.com/articles/columns/chart-beat/8460189/kanye-west-eighth-no-1-album-billboard-200-ye' target='_blank' rel='noopener noreferrer'>8th consecutive No. 1 album</a> on the Billboard 200.</p>"
   ye.save!
 
-  jesus_is_king.bio = "<p><em>JESUS IS KING</em> is Kanye West’s ninth studio album and the follow-up to his June 2018 release, <a href='/albums/#{ye.id}'><em>ye</em></a>. The project debuted on October 25, 2019, a little over a year after the <a href='https://twitter.com/kanyewest/status/1043555842006499328'>initial release date</a> for <em>Yandhi</em>, which was scrapped and reworked into a gospel album.</p><p>To the surprise of many, his wife Kim Kardashian <a href='https://twitter.com/KimKardashian/status/1167154538643513344'>took to Twitter</a> on August 29, 2019, to announce Ye’s newest solo effort on his behalf—along with its title, tracklist, and release date. On the same day, producer Teddy Walton<a href='https://twitter.com/teddywalton/status/1167166570616868864'>tweeted</a> about his involvement with the project:</p><blockquote><p>Been editing these @kanyewest vocals to make it sound like some graduation shit. The year ain’t done.</p></blockquote><p>Throughout 2019, Kanye began hosting <a href='https://consequenceofsound.net/2019/01/kanye-west-sunday-service-gospel-video/'>“Sunday Service”</a> worship events, where he performs gospel-inspired versions of his classic songs with a choir and special guests. On the morning of Easter 2019, he debuted the album’s seventh track, <a href='/songs/#{water.id}'>“Water,”</a> at <a href='https://coachella.com/sunday-service/'>Coachella’s Sunday Service</a>.</p><p>On September 27, 2019, fans speculated that Kanye would release the album after his <a href='https://youtu.be/ezeFKIiZaa0'>Detroit Sunday Service</a>. Instead, Detroit’s Fox Theatre announced a free show <a href='https://twitter.com/foxtheatredet/status/1177661662272348161'>via Twitter</a>, called ‘Jesus Is King: A Kanye West Experience,’ where Kanye played the album privately. An hour before the show’s start, Kim <a href='https://twitter.com/KimKardashian/status/1177721870503817216/photo/1'>tweeted</a> once again, sharing an updated tracklist. After the show, Kim uploaded an <a href='https://www.instagram.com/p/B28JQuBBTfa/'>Instagram story</a> announcing that the album would release on Sunday, September 29, following listening parties in Chicago and New York. This release date, however, went unmet and there were no subsequent announcements for almost a month.</p><p>On October 20, 2019, Kanye made a sudden reappearance on <a href='https://twitter.com/kanyewest/status/1186149413846052864'>Twitter</a> to announce that the new release date was set for October 25, 2019. He also revealed the cover art, featuring blue vinyl.</p>"
+# Jesus Is King (2019)
+  jesus_is_king.bio = "<p><em>JESUS IS KING</em> is Kanye West’s ninth studio album and the follow-up to his June 2018 release, <Link to='/albums/#{ye.id}'><em>ye</em></Link>. The project debuted on October 25, 2019, a little over a year after the <a href='https://twitter.com/kanyewest/status/1043555842006499328' target='_blank' rel='noopener noreferrer'>initial release date</a> for <em>Yandhi</em>, which was scrapped and reworked into a gospel album.</p><p>To the surprise of many, his wife Kim Kardashian <a href='https://twitter.com/KimKardashian/status/1167154538643513344' target='_blank' rel='noopener noreferrer'>took to Twitter</a> on August 29, 2019, to announce Ye’s newest solo effort on his behalf—along with its title, tracklist, and release date. On the same day, producer Teddy Walton<a href='https://twitter.com/teddywalton/status/1167166570616868864' target='_blank' rel='noopener noreferrer'>tweeted</a> about his involvement with the project:</p><blockquote><p>Been editing these @kanyewest vocals to make it sound like some graduation shit. The year ain’t done.</p></blockquote><p>Throughout 2019, Kanye began hosting <a href='https://consequenceofsound.net/2019/01/kanye-west-sunday-service-gospel-video/' target='_blank' rel='noopener noreferrer'>“Sunday Service”</a> worship events, where he performs gospel-inspired versions of his classic songs with a choir and special guests. On the morning of Easter 2019, he debuted the album’s seventh track, <Link to='/songs/#{water.id}'>“Water,”</Link> at <a href='https://coachella.com/sunday-service/' target='_blank' rel='noopener noreferrer'>Coachella’s Sunday Service</a>.</p><p>On September 27, 2019, fans speculated that Kanye would release the album after his <a href='https://youtu.be/ezeFKIiZaa0' target='_blank' rel='noopener noreferrer'>Detroit Sunday Service</a>. Instead, Detroit’s Fox Theatre announced a free show <a href='https://twitter.com/foxtheatredet/status/1177661662272348161' target='_blank' rel='noopener noreferrer'>via Twitter</a>, called ‘Jesus Is King: A Kanye West Experience,’ where Kanye played the album privately. An hour before the show’s start, Kim <a href='https://twitter.com/KimKardashian/status/1177721870503817216/photo/1' target='_blank' rel='noopener noreferrer'>tweeted</a> once again, sharing an updated tracklist. After the show, Kim uploaded an <a href='https://www.instagram.com/p/B28JQuBBTfa/' target='_blank' rel='noopener noreferrer'>Instagram story</a> announcing that the album would release on Sunday, September 29, following listening parties in Chicago and New York. This release date, however, went unmet and there were no subsequent announcements for almost a month.</p><p>On October 20, 2019, Kanye made a sudden reappearance on <a href='https://twitter.com/kanyewest/status/1186149413846052864' target='_blank' rel='noopener noreferrer'>Twitter</a> to announce that the new release date was set for October 25, 2019. He also revealed the cover art, featuring blue vinyl.</p>"
   jesus_is_king.save!
 
-  watch_the_throne.bio = "<p><em>Watch The Throne</em> is the debut studio album by longtime partners/friends and label-mates, <a href='/artists/#{jay_z.id}'>JAY Z</a> &amp; <a href='/2'>Kanye West</a>, also known and commonly referred to as The Throne.</p><p>The album initially began as a 5-song EP, but it eventually morphed into a full-length project. The <em>Watch The Throne</em> tour became the most lucrative hip-hop tour in history.</p><p>Production credits included <a href='/artists/#{swizz_beatz.id}'>Swizz Beatz</a>, <a href='/artists/#{x88_keys.id}'>88-Keys</a>, <a href='/artists/#{rza.id}'>RZA</a>, <a href='/artists/#{mike_dean.id}'>Mike Dean</a>, <a href='/artists/#{no_id.id}'>No I.D.</a> and more. <a href='/songs/#{otis.id}'>“Otis,”</a> one of the album’s biggest tracks, was produced after No I.D. challenged Kanye to produce a song on the spot. Said No I.D. in <a href='http://www.xxlmag.com/xxl-magazine/2012/02/no-i-d-challenged-kanye-west-to-make-otis-on-the-spot'>an interview with <em>XXL</em></a>:</p><blockquote><p>I get the co-productions, but how you gon do an album and you don’t go to the machine and do one beat by yourself?</p></blockquote><p>Yeezy accepted the challenge and chopped up <a href='/artists/#{otis_redding.id}'>Otis Redding</a>’s <a href='/songs/#{try_a_little_tenderness.id}'>“Try A Little Tenderness”</a> on the spot. <a href='/songs/#{otis.id}'>“Otis”</a> was added at the last minute and went on to win the Grammy for <a href='https://en.wikipedia.org/wiki/Grammy_Award_for_Best_Rap_Performance'>Best Rap Performance.</a></p>"
+# Watch the Throne (2011)
+  watch_the_throne.bio = "<p><em>Watch The Throne</em> is the debut studio album by longtime partners/friends and label-mates, <Link to='/artists/#{jay_z.id}'>JAY Z</Link> &amp; <Link to='/artists/#{kanye_west.id}'>Kanye West</Link>, also known and commonly referred to as The Throne.</p><p>The album initially began as a 5-song EP, but it eventually morphed into a full-length project. The <em>Watch The Throne</em> tour became the most lucrative hip-hop tour in history.</p><p>Production credits included <Link to='/artists/#{swizz_beatz.id}'>Swizz Beatz</Link>, <Link to='/artists/#{x88_keys.id}'>88-Keys</Link>, <Link to='/artists/#{rza.id}'>RZA</Link>, <Link to='/artists/#{mike_dean.id}'>Mike Dean</Link>, <Link to='/artists/#{no_id.id}'>No I.D.</Link> and more. <Link to='/songs/#{otis.id}'>“Otis,”</Link> one of the album’s biggest tracks, was produced after No I.D. challenged Kanye to produce a song on the spot. Said No I.D. in <a href='http://www.xxlmag.com/xxl-magazine/2012/02/no-i-d-challenged-kanye-west-to-make-otis-on-the-spot' target='_blank' rel='noopener noreferrer'>an interview with <em>XXL</em></a>:</p><blockquote><p>I get the co-productions, but how you gon do an album and you don’t go to the machine and do one beat by yourself?</p></blockquote><p>Yeezy accepted the challenge and chopped up <Link to='/artists/#{otis_redding.id}'>Otis Redding</Link>’s <Link to='/songs/#{try_a_little_tenderness.id}'>“Try A Little Tenderness”</Link> on the spot. <Link to='/songs/#{otis.id}'>“Otis”</Link> was added at the last minute and went on to win the Grammy for <a href='https://en.wikipedia.org/wiki/Grammy_Award_for_Best_Rap_Performance' target='_blank' rel='noopener noreferrer'>Best Rap Performance.</a></p>"
   watch_the_throne.save!
 
 
-  # Artist bios
-  kanye_west.bio = "<p>The ubiquitous <a href='https://www.kanyewest.com/'>Kanye West</a>—from his famous quip, <a href='http://www.youtube.com/watch?v=zIUzLpO1kxI'>“George Bush doesn’t care about black people,”</a> to <a href='http://www.youtube.com/watch?v=1z8gCZ7zpsQ#t=43'>“I'ma let you finish,”</a> to marrying Kim Kardashian, to announcing that he’s <a href='http://www.cnn.com/2015/08/31/politics/kanye-west-2020-running-for-president-vma/'>running for President</a>, and admitting his <a href='https://twitter.com/kanyewest/status/989179757651574784'>love for President Trump</a>—you can see that he’s a staple of the tabloids and the entertainment world, industry-wide.</p><p>That certainly doesn’t take anything away from his music; as a matter of fact, it only seems to add to his fortuitous career. For instance, his 2010 album, <a href='/albums/#{my_beautiful_dark_twisted_fantasy.id}'><em>My Beautiful Dark Twisted Fantasy</em></a>, was universally praised by fans and critics alike; it was recorded during the backlash he received from the Swift interruption and during his break-up with then-girlfriend Amber Rose.</p><p>He has scored other well-known hits, as well, from each of his previous studio albums—such as <a href='/songs/#{stronger.id}'>“Stronger,”</a> <a href='/songs/#{heartless.id}'>“Heartless,”</a> and <a href='/songs/#{gold_digger.id}'>“Gold Digger.”</a> Each of his albums has been massive critical and commercial successes, including his collaboration album with <a href='/artists/#{jay_z.id}'>JAY-Z</a>, <a href='/albums/#{watch_the_throne.id}'><em>Watch the Throne</em></a>. As of 2020, West has won an astounding <a href='https://www.grammy.com/grammys/artists/kanye-west'>21 Grammys</a>, tied with JAY-Z as the most decorated hip-hop artist in Grammy history.</p><p>Kanye’s sixth solo album, <a href='albums/#{yeezus.id}'><em>Yeezus</em></a>, polarized his fan base and the general public but was heaped with rave reviews by music critics. In 2016, West released his seventh and most delayed body of work, <a href='albums/#{the_life_of_pablo.id}'><em>The Life of Pablo</em></a>, which was <a href='http://www.independent.co.uk/arts-entertainment/music/news/kanye-west-life-of-pablo-illegally-downloaded-500,000-times-already-a6878741.html'>illegally downloaded over 500,000 times,</a> frustrating fans after its TIDAL-exclusive release. West notably updated the album multiple times on TIDAL after its release.</p><p>Quite possibly West’s most surprising contribution to the music industry was his production streak during the summer of 2018, in which he produced five albums. Among these was a collaborative project with <a href='/artists/#{kid_cudi.id}'>Kid Cudi</a>, titled <em>KIDS SEE GHOSTS</em>; along with his eighth studio album, <a href='albums/#{ye.id}'><em>ye</em></a>, which tied Eminem and The Beatles for <a href='https://www.nytimes.com/2018/06/11/arts/music/kanye-west-ye-billboard-no-1-chart.html'>eight consecutive chart-topping releases</a>.</p><p>The public’s love for Kanye West has been apparent from the get-go, and each of his solo albums, barring his 2004 debut, <a href='albums/#{the_college_dropout.id}'><em>The College Dropout</em></a>, has peaked at #1 on the U.S. <a href='https://www.billboard.com/music/kanye-west/chart-history/billboard-200'><em>Billboard</em> 200</a> Album Chart. Another major standout, 2008’s <a href='albums/#{x808s_and_heartbreak.id}'><em>808s &amp; Heartbreak</em></a>, is largely credited with influencing the next generation of rappers; from the emphasis on heavy beats and melodic instrumentals to the use of auto-tune.</p><p>His ninth studio album, <em>Yandhi</em>, was originally scheduled to be released on September 29, 2018, and then again on November 26, 2018. However, West rescheduled the album release, because he felt it wasn’t finished yet. On August 29, 2019, Kim Kardashian-West teased a new Kanye album tracklist <a href='https://twitter.com/KimKardashian/status/1167154538643513344?s=19'>via Twitter</a>, with the title <a href='/albums/#{jesus_is_king.id}'><em>Jesus is King</em>. </a></p><p>Kanye seemed to confirm this by clearing his official website and posting the same image of the tracklist with the expected drop date at the bottom, September 27, 2019; almost a year after <em>Yandhi</em> was supposed to be released. However, the release was delayed to October 25th, to release along with his accompanying documentary.</p><p>Furthermore, after years of claiming he would run for President, finally <a href='https://twitter.com/kanyewest/status/1279575273365594112?s=20'>announced so on Twitter</a> which was met with much controversy, many claiming it was a publicity stunt for his forthcoming album, <em>God’s Country</em>.</p>"
+# ARTIST seeds -- add 'bio'
+# Kanye West
+  kanye_west.bio = "<p>The ubiquitous <a href='https://www.kanyewest.com/' target='_blank' rel='noopener noreferrer'>Kanye West</a>—from his famous quip, <a href='http://www.youtube.com/watch?v=zIUzLpO1kxI' target='_blank' rel='noopener noreferrer'>“George Bush doesn’t care about black people,”</a> to <a href='http://www.youtube.com/watch?v=1z8gCZ7zpsQ#t=43' target='_blank' rel='noopener noreferrer'>“I'ma let you finish,”</a> to marrying Kim Kardashian, to announcing that he’s <a href='http://www.cnn.com/2015/08/31/politics/kanye-west-2020-running-for-president-vma/' target='_blank' rel='noopener noreferrer'>running for President</a>, and admitting his <a href='https://twitter.com/kanyewest/status/989179757651574784' target='_blank' rel='noopener noreferrer'>love for President Trump</a>—you can see that he’s a staple of the tabloids and the entertainment world, industry-wide.</p><p>That certainly doesn’t take anything away from his music; as a matter of fact, it only seems to add to his fortuitous career. For instance, his 2010 album, <Link to='/albums/#{my_beautiful_dark_twisted_fantasy.id}'><em>My Beautiful Dark Twisted Fantasy</em></Link>, was universally praised by fans and critics alike; it was recorded during the backlash he received from the Swift interruption and during his break-up with then-girlfriend Amber Rose.</p><p>He has scored other well-known hits, as well, from each of his previous studio albums—such as <Link to='/songs/#{stronger.id}'>“Stronger,”</Link> <Link to='/songs/#{heartless.id}'>“Heartless,”</Link> and <Link to='/songs/#{gold_digger.id}'>“Gold Digger.”</Link> Each of his albums has been massive critical and commercial successes, including his collaboration album with <Link to='/artists/#{jay_z.id}'>JAY-Z</Link>, <Link to='/albums/#{watch_the_throne.id}'><em>Watch the Throne</em></Link>. As of 2020, West has won an astounding <a href='https://www.grammy.com/grammys/artists/kanye-west' target='_blank' rel='noopener noreferrer'>21 Grammys</a>, tied with JAY-Z as the most decorated hip-hop artist in Grammy history.</p><p>Kanye’s sixth solo album, <Link to='albums/#{yeezus.id}'><em>Yeezus</em></Link>, polarized his fan base and the general public but was heaped with rave reviews by music critics. In 2016, West released his seventh and most delayed body of work, <Link to='albums/#{the_life_of_pablo.id}'><em>The Life of Pablo</em></Link>, which was <a href='http://www.independent.co.uk/arts-entertainment/music/news/kanye-west-life-of-pablo-illegally-downloaded-500,000-times-already-a6878741.html' target='_blank' rel='noopener noreferrer'>illegally downloaded over 500,000 times,</a> frustrating fans after its TIDAL-exclusive release. West notably updated the album multiple times on TIDAL after its release.</p><p>Quite possibly West’s most surprising contribution to the music industry was his production streak during the summer of 2018, in which he produced five albums. Among these was a collaborative project with <Link to='/artists/#{kid_cudi.id}'>Kid Cudi</Link>, titled <em>KIDS SEE GHOSTS</em>; along with his eighth studio album, <Link to='albums/#{ye.id}'><em>ye</em></Link>, which tied Eminem and The Beatles for <a href='https://www.nytimes.com/2018/06/11/arts/music/kanye-west-ye-billboard-no-1-chart.html' target='_blank' rel='noopener noreferrer'>eight consecutive chart-topping releases</a>.</p><p>The public’s love for Kanye West has been apparent from the get-go, and each of his solo albums, barring his 2004 debut, <Link to='albums/#{the_college_dropout.id}'><em>The College Dropout</em></Link>, has peaked at #1 on the U.S. <a href='https://www.billboard.com/music/kanye-west/chart-history/billboard-200' target='_blank' rel='noopener noreferrer'><em>Billboard</em> 200</a> Album Chart. Another major standout, 2008’s <Link to='albums/#{x808s_and_heartbreak.id}'><em>808s &amp; Heartbreak</em></Link>, is largely credited with influencing the next generation of rappers; from the emphasis on heavy beats and melodic instrumentals to the use of auto-tune.</p><p>His ninth studio album, <em>Yandhi</em>, was originally scheduled to be released on September 29, 2018, and then again on November 26, 2018. However, West rescheduled the album release, because he felt it wasn’t finished yet. On August 29, 2019, Kim Kardashian-West teased a new Kanye album tracklist <a href='https://twitter.com/KimKardashian/status/1167154538643513344?s=19' target='_blank' rel='noopener noreferrer'>via Twitter</a>, with the title <Link to='/albums/#{jesus_is_king.id}'><em>Jesus is King</em>. </Link></p><p>Kanye seemed to confirm this by clearing his official website and posting the same image of the tracklist with the expected drop date at the bottom, September 27, 2019; almost a year after <em>Yandhi</em> was supposed to be released. However, the release was delayed to October 25th, to release along with his accompanying documentary.</p><p>Furthermore, after years of claiming he would run for President, finally <a href='https://twitter.com/kanyewest/status/1279575273365594112?s=20' target='_blank' rel='noopener noreferrer'>announced so on Twitter</a> which was met with much controversy, many claiming it was a publicity stunt for his forthcoming album, <em>God’s Country</em>.</p>"
   kanye_west.save!
 
+# JAY-Z
   jay_z.bio = "<p>Having sold over 100 million records worldwide, and holding the solo artist record of 14 Billboard 200 #1 albums, Shawn “<strong>JAY-Z</strong>” Carter is possibly the most talented, accomplished and respected rapper of all-time. He has released 13 studio albums and five collaborative albums over his 30-year career.</p>"
   jay_z.save!
 
 
-# Artist Credit Types
+# ARTIST CREDIT TYPE seeds
   primary_artist = ArtistCreditType.create!( credit_type:"PRIMARY_ARTIST" )
   featured_artist = ArtistCreditType.create!( credit_type:"FEATURED_ARTIST" )
   producer = ArtistCreditType.create!( credit_type:"PRODUCER" )
   writer = ArtistCreditType.create!( credit_type:"WRITER" )
 
 
-
-# Artist Credits
+# ARTIST CREDIT seeds
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"GOOD Music BET Cypher").id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Mr. Hudson" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:( Album.find_by! name:"808s & Heartbreak" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:( Album.find_by! name:"808s & Heartbreak" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Chris Martin" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:( Album.find_by! name:"Graduation" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:( Album.find_by! name:"Graduation" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Warryn Campbell" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:( Album.find_by! name:"Graduation" ).id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Mr. Hudson" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:x808s_and_heartbreak.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:x808s_and_heartbreak.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Chris Martin" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:graduation.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:graduation.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Warryn Campbell" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:graduation.id ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Labrinth" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"God Is", album_id:( Album.find_by! name:"Jesus Is King").id ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Warryn Campbell" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"God Is", album_id:( Album.find_by! name:"Jesus Is King").id ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"God Is", album_id:( Album.find_by! name:"Jesus Is King").id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Jamie Foxx" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:( Album.find_by! name:"Late Registration" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:( Album.find_by! name:"Late Registration" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: jon_brion.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:( Album.find_by! name:"Late Registration" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: jay_z.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: pusha_t.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: swizz_beatz.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: rza.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"CyHi The Prynce" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: no_id.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"James Cleveland & The Southern California Community Choir" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"God Is", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Young Jizzle" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"J. Cole" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"J. Cole" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Last Call", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Joe $cott" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Meek Mill" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas In Paris", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Bryson Tiller" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Conway the Machine" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Alex Wiley" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id:( Album.find_by! name:"Samples & Interpolations" ).id ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Consequence" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"GLC" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"J. Ivy" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: jay_z.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: featured_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Last Call", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Evidence" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Last Call", album_id:( Album.find_by! name:"The College Dropout" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Anthony Kilhoffer" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:( Album.find_by! name:"Watch the Throne" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Hit-Boy" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:( Album.find_by! name:"Watch the Throne" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: mike_dean.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:( Album.find_by! name:"Watch the Throne" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:( Album.find_by! name:"Watch the Throne" ).id ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"The College Dropout" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"Late Registration" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"Graduation" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"808s & Heartbreak" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"My Beautiful Dark Twisted Fantasy" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"Yeezus" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"The Life of Pablo" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"Ye" ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Jamie Foxx" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:late_registration.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:late_registration.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: jon_brion.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:late_registration.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: jay_z.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:my_beautiful_dark_twisted_fantasy.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: pusha_t.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:my_beautiful_dark_twisted_fantasy.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: swizz_beatz.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:my_beautiful_dark_twisted_fantasy.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: rza.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:my_beautiful_dark_twisted_fantasy.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"CyHi The Prynce" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:my_beautiful_dark_twisted_fantasy.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: no_id.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:my_beautiful_dark_twisted_fantasy.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:my_beautiful_dark_twisted_fantasy.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"James Cleveland & The Southern California Community Choir" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"God Is", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Young Jizzle" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Gold Digger", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"J. Cole" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Homecoming", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"J. Cole" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Last Call", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Joe $cott" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Meek Mill" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas In Paris", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Bryson Tiller" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Conway the Machine" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"So Appalled", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Alex Wiley" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id:s_and_i.id ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Consequence" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id: the_college_dropout.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"GLC" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id: the_college_dropout.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"J. Ivy" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id: the_college_dropout.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: jay_z.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id: the_college_dropout.id ).id, artist_credit_type_id: featured_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Spaceship", album_id: the_college_dropout.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Never Let Me Down", album_id: the_college_dropout.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Last Call", album_id: the_college_dropout.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Evidence" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Last Call", album_id: the_college_dropout.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Anthony Kilhoffer" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:watch_the_throne.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:( Artist.find_by! name:"Hit-Boy" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:watch_the_throne.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: mike_dean.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:watch_the_throne.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Niggas in Paris", album_id:watch_the_throne.id ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:the_college_dropout.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:late_registration.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:graduation.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:x808s_and_heartbreak.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:my_beautiful_dark_twisted_fantasy.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:yeezus.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:the_life_of_pablo.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:ye.id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"Jesus Is King").id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"Watch the Throne" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id: jay_z.id, creditable_type:"Album", creditable_id:( Album.find_by! name:"Watch the Throne" ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Album", creditable_id:watch_the_throne.id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id: jay_z.id, creditable_type:"Album", creditable_id:watch_the_throne.id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Aaro630" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Abcd" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Luther Vandross" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"A House is Not a Home" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Khary" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Ambidextrous" ).id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"2Pac" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Ambitionz Az a Ridah" ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:x2pac.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Ambitionz Az a Ridah" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Lil Wayne" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"A Milli" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"The Alan Parsons Project" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Ammonia Avenue" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Arthur Russell" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Answers Me" ).id, artist_credit_type_id: primary_artist.id )
@@ -1298,7 +1902,7 @@ end
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Danilo Lorenzini" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Fiori Mistici" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id: travis_scott.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"5% TINT" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"The Dells" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Fonky Thang, Diamond' Rang").id, artist_credit_type_id: primary_artist.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"✰MAGZEN✰" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"4 (Freestyle)" ).id, artist_credit_type_id: primary_artist.id )
+  ArtistCredit.create!( artist_id:magzen.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"4 (Freestyle)" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Kareem Lotfy" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Fr3sh" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"KIDS SEE GHOSTS" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Freeee (Ghost Town, Pt. 2)" ).id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Whodini" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Friends" ).id, artist_credit_type_id: primary_artist.id )
@@ -1894,7 +2498,7 @@ end
   ArtistCredit.create!( artist_id: mike_dean.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Ghost Town" ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Ghost Town" ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Irv Gotti" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Violent Crimes" ).id, artist_credit_type_id: producer.id )
-  ArtistCredit.create!( artist_id:( Artist.find_by! name:"7 Aurelius" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Violent Crimes" ).id, artist_credit_type_id: producer.id )
+  ArtistCredit.create!( artist_id:x7_aurelius.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Violent Crimes" ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Violent Crimes" ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Budgie Beats" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Every Hour" ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Federico Vindver" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Every Hour" ).id, artist_credit_type_id: producer.id )
@@ -6329,132 +6933,100 @@ end
   Verse.create!( song_id: (Song.find_by! name:"The Joy", album: watch_the_throne).id, verse_number:34, body:"They said, \"You raised that boy too fast\"<br>But you was raising a warrior (<i>One-two, okay</i>)" )
 
 
-# Comments
+# COMMENT seeds (Celebrities & Reactions, Demo comments, Kanye Names & Quotes, Musicians & Lyrics, Phish & Tube lyrics)
   comment_hashes = []
+
+# Celebrities & Reactions
+  comment_hashes.push( Hash["username" => "50Cent", "body" => "Remember the last president called you a jackass. Maybe that's why you embrace this one?"] )
+  comment_hashes.push( Hash["username" => "AnthonyAnderson", "body" => "It should be pointed out that Kanye still has to register with the Federal Election Commission, collect enough signatures to get on the ballot, create a campaign platform and he's already missed the deadline to file as an independent candidate in a bunch of states. But other than that, he good."] )
+  comment_hashes.push( Hash["username" => "AnthonyAnderson", "body" => "Yeezy wants to be Preezy! Laugh all you want, but this would be historic because, while this country has had a Black president, we've never had a CRAZY Black president."] )
+  comment_hashes.push( Hash["username" => "BobSaget", "body" => "Should I run for President too? I don't much about anything."] )
+  comment_hashes.push( Hash["username" => "ChrisBrown", "body" => "This guy KANYE CRAZY, talented, but crazy 😭😭😭🏆"] )
+  comment_hashes.push( Hash["username" => "ChrisEvans", "body" => "There's nothing more maddening than debating someone who doesn't know history, doesn't read books, and frames their myopia as virtue. The level of unapologetic conjecture I've encountered lately isn't just frustrating, it's retrogressive, unprecedented, and absolutely terrifying."] )
+  comment_hashes.push( Hash["username" => "Falcon", "body" => "Everyone: 2020 can't get any worse. Kanye: hold my beer."] )
+  comment_hashes.push( Hash["username" => "KatyPerry", "body" => "I think, you know, what we've learned looking back is that the presidential job is best suited for someone with experience and that is a pro in their field. ...I love Kanye. He is amazing. I just, you know, I love him as an artist."] )
+  comment_hashes.push( Hash["username" => "MeghanMcCain", "body" => "There is no woman on planet earth, celebrity or private who could behave as unhinged and erratic as Kanye has the past few years & be taken seriously as a presidential candidate."] )
+  comment_hashes.push( Hash["username" => "ParisHilton", "body" => "PARIS FOR PRESIDENT"] )
+  comment_hashes.push( Hash["username" => "PiersMorgan", "body" => "Not now, Kanye. Seriously."] )
+  comment_hashes.push( Hash["username" => "RoseMcGowan", "body" => "Do you think Kanye's doing this to split votes, or just to be an anarchist?"] )
+  comment_hashes.push( Hash["username" => "RussellBrand", "body" => "I know Kanye, and I know he's a nice bloke. We all make mistakes in life. Even so, you can't make a pretty girl cry..."] )
+  comment_hashes.push( Hash["username" => "SnoopDogg", "body" => "Make ya music great again"] )
+  comment_hashes.push( Hash["username" => "TerryMoran", "body" => "Pres Obama just called Kanye West a 'jackass' for his outburst at VMAs when Taylor Swift won. Now THAT'S presidential."] )
+  comment_hashes.push( Hash["username" => "TiffanyHaddish", "body" => "I too am running for president of the United States! #2020VISION. Dave Chappelle will be my running mate. So #HaddishChappelle2020."] )
+  comment_hashes.push( Hash["username" => "TysonBeckford", "body" => "Kanye is really getting himself in a pot of tea that's not ready for him."] )
+
+# Demo comments
   comment_hashes.push( Hash["username" => "demo", "body" => "Am I hashtagging?"] )
-  comment_hashes.push( Hash["username" => "demo", "body" => "Wow!"] )
   comment_hashes.push( Hash["username" => "demo", "body" => "Cool!!"] )
-  comment_hashes.push( Hash["username" => "demo", "body" => "Oh Kanye..."] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Go on..."] )
   comment_hashes.push( Hash["username" => "demo", "body" => "Mathematical!!"] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Oh Kanye..."] )
   comment_hashes.push( Hash["username" => "demo", "body" => "OK Boomer..."] )
   comment_hashes.push( Hash["username" => "demo", "body" => "uh huh..."] )
-  comment_hashes.push( Hash["username" => "demo", "body" => "Go on..."] )
   comment_hashes.push( Hash["username" => "demo", "body" => "What are you REALLY trying to say?"] )
-  comment_hashes.push( Hash["username" => "demo", "body" => "I saved a BUNCH of money on my car insurance!"] )
-  comment_hashes.push( Hash["username" => "MaxB", "body" => "Yeezy, Yeezy, what's good? It's your boy Max B, what's going on? Just checking in on you..."] )
-  comment_hashes.push( Hash["username" => "MaxB", "body" => "owww WAVEY, baby, YEAH"] )
-  comment_hashes.push( Hash["username" => "FrenchMontana", "body" => "Siiiiiiiiilver Surffffeeeeer -- Silver Surfer in the flesh"] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "People say I have a bad reputation. I think I've got the best reputation in the building."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "For me, you know, I'm a creative genius and there's no other way to word it."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "50 is Eminem's favourite rapper… I'm my favourite rapper."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I will go down as the voice of this generation, of this decade, I will be the loudest voice."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "My greatest pain in life is that I'll never be able to see myself perform live."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I am a God, so hurry up with my damn massage"] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "hurry up with my damn croissants"] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I am flawed as a human. I am flawed as a person. As a man I am flawed... but my music is perfect."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "You basically can say anything to someone on an email or text as long as you put LOL at the end"] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "When I think of competition it's like I try to create agains the past. I think about Michelangelo and Picasso, you know, the Pyramids."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I just think that when my confidence meets other people's insecurity, that equals 'Kanye's arrogant'"] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I feel like I'm too busy writing history to read it."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I am not a fan of books. I would never want a book’s autograph. I am a proud non-reader of books."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I hate when I’m on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "One of the problems with being a bubbling source of creativity – it’s like I’m bubbling in a laboratory, and if you don’t put a cap on it, at one point it will, like, break the glass. If I can hone that… then I have, like, nuclear power, like a superhero, like Cyclops when he puts his glasses on."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I don’t even listen to rap. My apartment is too nice to listen to rap in."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I rock a bespoke suit and I go to Harold’s for fried chicken."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "Just imagine if I woke up one day and I was whack. What would I do then?"] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "The Bible had 20, 30, 40, 50 characters in it. You don’t think that I would be one of the characters of today’s modern Bible?"] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I’m the closest that hip-hop is getting to God. In some situations I’m like a ghetto Pope."] )
-  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I like T-shirts and women in yoga pants"] )
-  comment_hashes.push( Hash["username" => "IsaacHayes", "body" => "Who's the black private dick that's a sex machine to all the chicks?"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I'm fuckin' magic in fact I'm a warlock of talk -- I got a unicorn horn for a *STOP*"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "You're gonna need a bigger boat, boys, you're in trouble"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I'm high, man, I'm a cosmonaut"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "Smoke kush, transport to the airport \n Customs found a joint in my passport \n Pulled cash and I gave him what he asked for \n Goddammit, it's a motherfucking miracle \n Small bribe, made it back into America \n Hit Uber and maneuvered out the area \n "] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "You think baby Jesus killed Hitler just so I'd whisper?"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Every new record's my dick in a box"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "We are the no-gooders do-gooders known to the dancers and dealers and doers of dust"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I got half an hour, I'll burn half a pound and I have to run"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I lived half my life to give half my cash to these half-man imps"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Run down yellow brick roads toward riches, Just be sure to not trust no wizards"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I hold the door for old ladies, run into fires and save babies; I went to school in the eighties, taking the train with the crazies"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I'm a goddamn savage -- eat with no hands I don't even use napkins"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Oompa-loompas -- I'll shoot a tool atcha medullas"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Set the phaser to face-plate-incinerate -- Run the Jewels run with the Borg, baby, assimilate"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "An eye for an eye and a tooth for a tooth will leave us all mumbling and blind"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I drink like a Vlucan losing all faith in the logical"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "Choose the lesser of the evil people and the devil still gon' win"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "I maneuver through manure like a slumdog millionaire"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "I disabuse these foolish fools of they foolish views -- I heard the revolution coming, you should spread the news"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "This life'll stress you like Orson Welles on the radio -- War after war of the worlds'll make all your saneness go"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "These invaders from Earth're twerkin' on graves you know -- Can't wait to load up the silos and make your babies glow"] )
-  comment_hashes.push( Hash["username" => "ZackDeLaRocha", "body" => "Killer children of men on the throne, roving with no atonement got me feeling like I'm Clive Owen rowing through a future frozen"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "You can all run naked backwards through a field of dicks"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Done worse for less, don't make my day"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I'm not from Earth, from far away -- I bust through chests like baby grays"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I'd rather have and not need you than watch your rotten demise, and you still owe me for them Nikes, you do not get to just die. "] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "I'm chubby, husky, thighs scrubbin', fuckin' up my Levis"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Yankee and the Brave are here -- everybody hit the deck. We don't mean no harm but we truly mean all the disrespect"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "Yankee and the Brave are here -- everybody hit the deck. We don't mean no harm but we truly mean all the disrespect"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "You want maximum stupid, I am the guy"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "I used to love Bruce, but livin' my vida loca Helped me understand I'm probably more of a Joker"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "When we user in chaos, just know that we did it smiling -- Cannibals on this island, inmates run the asylum"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "I'm afraid of nothin' but nothingness, ain't it something?"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Out of sight, out of mind, out of touch, out of time, man I'll smoke a bogie backwards with a thumb up like it's fine"] )
-  comment_hashes.push( Hash["username" => "2Chainz", "body" => "I buy a hot dog stand if I'm tryna be frank"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "Fuck that weak shit you be bantering -- you're a common cold and my flows are cancerous"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Ayo one for mayhem, two for mischief, now aim for the drones in your zoning district"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Fuck y'all got, another planet on stash? Far from the fact of the flames of our trash?"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "Life's a disguise, the truth is butt naked"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Hungry for truth but you got screwed and drank the Kool-Aid, there's a line -- it end directly at the edge of a mass grave, that's their design"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Funny fact about a cage: they're never built for just one group. So when that cage is done with them and you still poor, it come for you"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "They promise education, but really they give you tests and scores, and they predictin' prison population by who scoring the lowest"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "Never forget in the story of Jesus, the hero was killed by the state"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Got a Vonnegut punch for your Atlas shrug"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Brain bounce off walls like a senient Roomba just found out his creator's stupid"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Hello void, long time watcher, first time callin' in"] )
-  comment_hashes.push( Hash["username" => "MavisStaples", "body" => "There's a grenade in my heart, and the pin is in their palm"] )
-  comment_hashes.push( Hash["username" => "RHCP", "body" => "Psychic spies from China try to steal your mind's elation"] )
-  comment_hashes.push( Hash["username" => "RHCP", "body" => "The sun may rise in the east at least it settled in a final location"] )
-  comment_hashes.push( Hash["username" => "RHCP", "body" => "Space may be the final frontier, but it's made in a Hollywood basement"] )
-  comment_hashes.push( Hash["username" => "RHCP", "body" => "Lonely as I am, together we cry"] )
-  comment_hashes.push( Hash["username" => "RHCP", "body" => "Come to believe that I better not leave before I get my chance to ride"] )
-  comment_hashes.push( Hash["username" => "RHCP", "body" => "The more I see, the less I know, the more I like to let it go"] )
-  comment_hashes.push( Hash["username" => "RHCP", "body" => "You don't know my mind, you don't know my kind -- Dark necessities are part of my design"] )
-  comment_hashes.push( Hash["username" => "KillerMike", "body" => "Friends tell her 'He could be another Malcolm, he could be another Martin' -- She told her partner 'I need a husband more than the world need another martyr'"] )
-  comment_hashes.push( Hash["username" => "El-P", "body" => "Put the pistol and the fist up in the air, we are there, swear to God"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "I am an American aquarium drinker"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "I assassin down the avenue"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "I'm hiding out in the big city blinking"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "What was I thinking when I let go of you?"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "Let's forget about the tongue-tied lighting"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "Let's undress just like cross-eyed strangers"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "This is not a joke, so please stop smiling"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "What was I thinking when I said it didn't hurt?"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "My mind is filled with silvery stars, Honey, kisses, clouds of fluff"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "My mind is filled with radio cures -- Electronic, surgical words"] )
-  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "Distance has no way of making love understandable"] )
-  comment_hashes.push( Hash["username" => "KendrickLamar", "body" => "Step inside of my mind and you'll find curiosity, animosity, high philosophy, hyper prophesied meditation"] )
-  comment_hashes.push( Hash["username" => "KendrickLamar", "body" => "Analyze my demise, I say I'm super anxious"] )
-  comment_hashes.push( Hash["username" => "KendrickLamar", "body" => "Conversations won't contemplate to my dark thoughts"] )
-  comment_hashes.push( Hash["username" => "KendrickLamar", "body" => "This that out-of-body experience, no coincidence you been died -- Bitch, you're dead!"] )
-  comment_hashes.push( Hash["username" => "BradleyNowell", "body" => "Funny how things look the same, now that my friend Ebin's changed"] )
-  comment_hashes.push( Hash["username" => "BradleyNowell", "body" => "We got covert operations in Vietnam -- Played a hitman, assassin, like the law's long arm"] )
-  comment_hashes.push( Hash["username" => "BradleyNowell", "body" => "He went down to protect his country, eat Mexican food and make lots of money -- Come back up north, drive a big white car, and take himself a plane down to Nicaragua"] )
-  comment_hashes.push( Hash["username" => "BradleyNowell", "body" => "A 40 oz to freedom is the only chance I have to feel good even though I feel bad"] )
-  comment_hashes.push( Hash["username" => "BradleyNowell", "body" => "I step into the great unknown On a ball and chain I call my own"] )
-  comment_hashes.push( Hash["username" => "Charlie2na", "body" => "I need to face it man: I'm addicted to the sound of the ball when I shake the can"] )
-  comment_hashes.push( Hash["username" => "Charlie2na", "body" => "I perpetrated my plans with ink and pain on my hands"] )
-  comment_hashes.push( Hash["username" => "Charlie2na", "body" => "Celebrated by fans of the vandal squadron Who march in the dark so the dark start chargin'"] )
-  comment_hashes.push( Hash["username" => "Charlie2na", "body" => "Everybody gather closer Welcome to the Fish Outta Water"] )
-  comment_hashes.push( Hash["username" => "Charlie2na", "body" => "Welcome to my hairbrain meeting, Packed like some economy airplane seating"] )
-  comment_hashes.push( Hash["username" => "Charlie2na", "body" => "I watched hip hop escape from New York like Kurt Russel"] )
+  comment_hashes.push( Hash["username" => "demo", "body" => "Wow!"] )
 
-  def seedComments(commentable_array, commentable_type, comment_hashes, max_count)
+# Kanye Names & Quotes
+  comment_hashes.push( Hash["username" => "ChristianGeniusBillionaire", "body" => "I’m the closest that hip-hop is getting to God. In some situations I’m like a ghetto Pope."] )
+  comment_hashes.push( Hash["username" => "ChristianGeniusBillionaire", "body" => "The Bible had 20, 30, 40, 50 characters in it. You don’t think that I would be one of the characters of today’s modern Bible?"] )
+  comment_hashes.push( Hash["username" => "ChristianGeniusBillionaire", "body" => "We must now realize the promise of America by trusting God, unifying our vision and building our future. I am running for president of the United States! #2020VISION."] )
+  comment_hashes.push( Hash["username" => "Kanye", "body" => "50 Cent is Eminem's favourite rapper… I'm my favourite rapper."] )
+  comment_hashes.push( Hash["username" => "Kanye", "body" => "I rock a bespoke suit and I go to Harold’s for fried chicken."] )
+  comment_hashes.push( Hash["username" => "Kanye", "body" => "I'm soooooo sorry to Taylor Swift. I like the lyrics about being a cheerleader and she's in the bleachers! I'm in the wrong for going on stage and taking away from her moment! Beyoncé's video was the best of this decade."] )
+  comment_hashes.push( Hash["username" => "KanyeOmariWest", "body" => "I feel like Ben Stiller in Meet the Parents when he messed up everything and Robert De Niro asked him to leave. That was Taylor's moment and I had no right in any way to take it from her. I am truly sorry."] )
+  comment_hashes.push( Hash["username" => "KanyeOmariWest", "body" => "People say I have a bad reputation. I think I've got the best reputation in the building."] )
+  comment_hashes.push( Hash["username" => "KanyeOmariWest", "body" => "You basically can say anything to someone on an email or text as long as you put LOL at the end"] )
+  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "For me, you know, I'm a creative genius and there's no other way to word it."] )
+  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I don’t even listen to rap. My apartment is too nice to listen to rap in."] )
+  comment_hashes.push( Hash["username" => "KanyeWest", "body" => "I hate when I’m on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle."] )
+  comment_hashes.push( Hash["username" => "MisterWest", "body" => "I like T-shirts and women in yoga pants"] )
+  comment_hashes.push( Hash["username" => "MisterWest", "body" => "Just imagine if I woke up one day and I was whack. What would I do then?"] )
+  comment_hashes.push( Hash["username" => "MisterWest", "body" => "Yo, Taylor, I'm really happy for you, I'mma let you finish. But Beyoncé had one of the best videos of all time! One of the best videos of all time!"] )
+  comment_hashes.push( Hash["username" => "Yandhi", "body" => "I feel like I'm too busy writing history to read it."] )
+  comment_hashes.push( Hash["username" => "Yandhi", "body" => "There's so many times when I talk to, like, a white person about this and they say, 'How could you like Trump? He's racist.' Well, if I was concerned about racism, I would've moved out of America a long time ago."] )
+  comment_hashes.push( Hash["username" => "Yandhi", "body" => "When I think of competition it's like I try to create agains the past. I think about Michelangelo and Picasso, you know, the Pyramids."] )
+  comment_hashes.push( Hash["username" => "Ye", "body" => "I am flawed as a human. I am flawed as a person. As a man I am flawed... but my music is perfect."] )
+  comment_hashes.push( Hash["username" => "Ye", "body" => "I am not a fan of books. I would never want a book’s autograph. I am a proud non-reader of books."] )
+  comment_hashes.push( Hash["username" => "Ye", "body" => "I'm definitely voting this time. And we know who I'm voting on..."] )
+  comment_hashes.push( Hash["username" => "Yeezus", "body" => "hurry up with my damn croissants"] )
+  comment_hashes.push( Hash["username" => "Yeezus", "body" => "I just think that when my confidence meets other people's insecurity, that equals 'Kanye's arrogant'"] )
+  comment_hashes.push( Hash["username" => "Yeezus", "body" => "I will go down as the voice of this generation, of this decade, I will be the loudest voice."] )
+  comment_hashes.push( Hash["username" => "Yeezy", "body" => "Man, I'm just trying to stay positive. I'm engaged. My marriage is all messed up 'cause of craziness. I'm not part of nothing crazy. I walk down a good path. My fiancée tripping. It's all bad in my world, and that ain't cool."] )
+  comment_hashes.push( Hash["username" => "Yeezy", "body" => "My greatest pain in life is that I'll never be able to see myself perform live."] )
+  comment_hashes.push( Hash["username" => "Yeezy", "body" => "One of the problems with being a bubbling source of creativity – it’s like I’m bubbling in a laboratory, and if you don’t put a cap on it, at one point it will, like, break the glass. If I can hone that… then I have, like, nuclear power, like a superhero, like Cyclops when he puts his glasses on."] )
+
+# Musicians & Lyrics
+  comment_hashes.push( Hash["username" => "BradleyNowell", "body" => "A 40 oz to freedom is the only chance I have to feel good even though I feel bad"] )
+  comment_hashes.push( Hash["username" => "Charlie2na", "body" => "I need to face it man: I'm addicted to the sound of the ball when I shake the can"] )
+  comment_hashes.push( Hash["username" => "DigitalUnderground", "body" => "Well they say that birds do it, bees do it\nTime to freak, Money B gets to it"] )
+  comment_hashes.push( Hash["username" => "DrDre", "body" => "Things just ain't the same for gangstas"] )
+  comment_hashes.push( Hash["username" => "El-P", "body" => "Run the Jewels run with the Borg, baby, ASSIMILATE"] )
+  comment_hashes.push( Hash["username" => "Eminem", "body" => "Jumped out of the second floor of a record store with a Treacherous Four cassette and a cassette recorder in Ecuador with Edward Norton"] )
+  comment_hashes.push( Hash["username" => "JeffTweedy", "body" => "I am a cherry ghost."] )
+  comment_hashes.push( Hash["username" => "KendrickLamar", "body" => "This that out-of-body experience, no coincidence you been died -- Bitch, you're dead!"] )
+  comment_hashes.push( Hash["username" => "KillerMike", "body" => "We are the no-gooders do-gooders known to the dancers and dealers and doers of dust"] )
+
+# Phish & Tube lyrics
+  comment_hashes.push( Hash["username" => "BobWeaver", "body" => "an asteroid crashed and nothing burned -- it made me wonder"] )
+  comment_hashes.push( Hash["username" => "Cactus", "body" => "do tigers sleep in lily patches?"] )
+  comment_hashes.push( Hash["username" => "Fish", "body" => "do rhinos run from thunder?"] )
+  comment_hashes.push( Hash["username" => "Henrietta", "body" => "you're a portrait of your past"] )
+  comment_hashes.push( Hash["username" => "LittleBeastBoy", "body" => "there's a mummy in the cabinet"] )
+  comment_hashes.push( Hash["username" => "Page", "body" => "are there no more arrows left?"] )
+  comment_hashes.push( Hash["username" => "Trey", "body" => "so stupendous, living in this tube"] )
+
+# Other
+  comment_hashes.push( Hash["username" => "BiddyChips", "body" => "gucci."] )
+  comment_hashes.push( Hash["username" => "JAM", "body" => "and how did that make you feel?"] )
+  comment_hashes.push( Hash["username" => "WrightStuff", "body" => "'sup baby?"] )
+
+
+  def seedComments(commentable_array, commentable_type, comment_hashes, min_count, max_count)
     Kernel.srand 1234
     i = 0
     while i < commentable_array.length
       entity = commentable_array[i]
-      count = 1 + rand(max_count)
+      count = min_count + rand(max_count)
       j = 0
       while j < count
         hash = comment_hashes.sample
@@ -6466,7 +7038,11 @@ end
     end
   end
 
-  seedComments(Artist.all, "Artist", comment_hashes, 3)
-  seedComments(Album.all, "Album", comment_hashes, 3)
-  seedComments(Song.all, "Song", comment_hashes, 3)
-  seedComments(Verse.all, "Verse", comment_hashes, 2)
+  kanye_songs = Song.where("album_id != #{s_and_i.id}")
+  other_songs = Song.where("album_id = #{s_and_i.id}")
+
+  seedComments(Artist.all, "Artist", comment_hashes, 2, 4)
+  seedComments(Album.all, "Album", comment_hashes, 2, 4)
+  seedComments(kanye_songs, "Song", comment_hashes, 4, 6)
+  seedComments(other_songs, "Song", comment_hashes, 1, 3)
+  seedComments(Verse.all, "Verse", comment_hashes, 1, 2)

@@ -145,16 +145,20 @@ IAM Policy:
 Since this app will ultimately be deployed to Heroku, we should use [Heroku local](https://devcenter.heroku.com/articles/heroku-local) for development so that our dev environment more closely resembles our production environment.
 
 # credentials
-PROD: Heroku stores environmental variables in the config vars. For reference, these values have been locally exported to .env.prod
 DEV: Heroku local reads environmental variables from .env
+PROD: Heroku stores environmental variables in the config vars. For reference, these values have been locally exported to .env.prod
 
-# seed database
-PROD: `heroku run rake db:migrate db:seed`
+# seeding database
 DEV: `heroku local:run rails db:seed`
+PROD: `heroku run rake db:migrate db:seed`
+
+# resetting database
+DEV: `heroku local:run rails db:drop && heroku local:run rails db:create && heroku local:run rails db:migrate && heroku local:run rails db:seed`
+PROD: `heroku restart && heroku pg:reset DATABASE --confirm yenius--rails6-api && heroku run rake db:migrate && heroku run rake db:seed`
 
 # deploying
-PROD: `git push heroku main`, `heroku run rake db:migrate`, `heroku run rails db:seed`
 DEV: `heroku local -f Procfile.dev -e .env`
+PROD: `git push heroku main`, `heroku run rake db:migrate`, `heroku run rails db:seed`
 
 
 # Counter Cache
