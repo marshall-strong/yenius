@@ -19,14 +19,14 @@ const SongLayout = ({ songId }) => {
 const VerseLayout = ({ verseId, selectedVerseRef }) => {
   return (
     <div className="column_layout-flex_column-fill_column">
-      {/* <AnnotationsContainer
-        selectedVerseRef={selectedVerseRef}
-        verseId={verseId}
-      /> */}
-      <AnnotationSidebar
+      <AnnotationsContainer
         selectedVerseRef={selectedVerseRef}
         verseId={verseId}
       />
+      {/* <AnnotationSidebar
+        selectedVerseRef={selectedVerseRef}
+        verseId={verseId}
+      /> */}
     </div>
   );
 };
