@@ -1,10 +1,32 @@
 import React, { useEffect, useState } from "react";
 
+import { getBoundingRectangle } from "../../lib";
+
+// import { getDocumentPosition } from "../../lib"
+
 import AnnotationsContainer from "./AnnotationsContainer";
 import AnnotationSidebar from "./AnnotationSidebar";
 import Description from "./Description";
 import SongAlbum from "./SongAlbum";
 import TrackInfo from "./TrackInfo";
+
+// export const getDocumentPosition = (element) => {
+//   if (!element) {
+//     return null;
+//   }
+//   const viewportPosition = element.getBoundingRectangle();
+
+//   const viewportTop = viewportPosition.top;
+//   const viewportLeft = viewportPosition.left;
+
+//   const viewportYOffset = document.documentElement.scrollTop;
+//   const viewportXOffset = document.documentElement.scrollLeft;
+
+//   const documentTop = viewportTop + viewportYOffset;
+//   const documentLeft = viewportLeft + viewportXOffset;
+
+//   return { top: Math.round(documentTop), left: Math.round(documentLeft) };
+// };
 
 const SongLayout = ({ songId }) => {
   return (
@@ -16,9 +38,13 @@ const SongLayout = ({ songId }) => {
   );
 };
 
-const VerseLayout = ({ verseId, selectedVerseRef }) => {
+const VerseLayout = ({ verseId, selectedVerseRef, scrollTop }) => {
+  const styleAnnotations = { paddingTop: scrollTop };
   return (
-    <div className="column_layout-flex_column-fill_column">
+    <div
+      className="column_layout-flex_column-fill_column"
+      style={styleAnnotations}
+    >
       <AnnotationsContainer
         selectedVerseRef={selectedVerseRef}
         verseId={verseId}
@@ -50,8 +76,30 @@ const ColumnLayoutFlex = ({ match, selectedVerseRef }) => {
     }
   }, [match]);
 
+  const [scrollTop, setScrollTop] = useState(0);
+  useEffect(() => {
+    if (document.documentElement.scrollTop !== scrollTop) {
+      setScrollTop(document.documentElement.scrollTop);
+    }
+  }, [document.documentElement.scrollTop]);
+
   const songId = parseInt(match.params.songId);
   const verseId = parseInt(match.params.verseId);
+
+  const getElementTop = (element) => {
+    // debugger
+    if (!element) {
+      return null;
+    } else {
+      const viewportPosition = element.getBoundingClientRect();
+      const viewportTop = viewportPosition.top;
+      const viewportYOffset = document.documentElement.scrollTop;
+      const documentTop = viewportTop + viewportYOffset;
+      return documentTop;
+    }
+  };
+
+  const verseTop = getElementTop(selectedVerseRef.current);
 
   return (
     <div className="u-top_margin column_layout-flex_column">
@@ -59,7 +107,11 @@ const ColumnLayoutFlex = ({ match, selectedVerseRef }) => {
         <SongLayout songId={songId} />
       </div>
       <div className={verseKlass}>
-        <VerseLayout verseId={verseId} selectedVerseRef={selectedVerseRef} />
+        <VerseLayout
+          verseId={verseId}
+          selectedVerseRef={selectedVerseRef}
+          scrollTop={scrollTop}
+        />
       </div>
     </div>
   );
