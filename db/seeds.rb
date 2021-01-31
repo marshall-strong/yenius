@@ -460,7 +460,7 @@ end
   Artist.create!(name: "Kendrick Lamar")
     kendrick_lamar = Artist.last
   Artist.create!(name: "Kenny G")
-    kenny_g = Artist.create!(name: "Kenny G")
+    kenny_g = Artist.last
   Artist.create!(name: "Kenny Lattimore")
   Artist.create!(name: "Kevin Abstract")
   Artist.create!(name: "Keyon Christ")
