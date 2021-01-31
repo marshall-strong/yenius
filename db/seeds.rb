@@ -288,7 +288,7 @@ end
   Artist.create!(name: "Beanie Sigel & Freeway")
     beanie_sigel_and_freeway = Artist.last
   Artist.create!(name: "Beck")
-    beck = Artist.last = Artist.last
+    beck = Artist.last
   Artist.create!(name: "Beenie Man")
     beenie_man = Artist.last
   Artist.create!(name: "Benji B")
