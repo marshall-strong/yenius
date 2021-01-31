@@ -18,7 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # AWS software development kit
 # gem 'aws-sdk'
-gem 'aws-sdk-s3' # https://github.com/aws/aws-sdk-ruby
+gem 'aws-sdk-s3', '~> 1'# https://github.com/aws/aws-sdk-ruby
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
