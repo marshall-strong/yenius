@@ -685,7 +685,7 @@ end
   Artist.create!(name: "William Crooks")
   Artist.create!(name: "WOLFE de MÇHLS")
   Artist.create!(name: "Wolfgang Amadeus Mozart")
-    wolfgang_amadeus_mozart = last
+    wolfgang_amadeus_mozart = Artist.last
   Artist.create!(name: "Xcelence")
   Artist.create!(name: "Yasiin Bey")
     yasiin_bey = Artist.last
