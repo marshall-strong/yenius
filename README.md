@@ -155,6 +155,7 @@ PROD: `heroku run rake db:migrate db:seed`
 # resetting database
 DEV: `heroku local:run rails db:drop && heroku local:run rails db:create && heroku local:run rails db:migrate && heroku local:run rails db:seed`
 PROD: `heroku restart && heroku pg:reset DATABASE --confirm yenius--rails6-api && heroku run rake db:migrate && heroku run rake db:seed`
+https://devcenter.heroku.com/articles/heroku-postgresql
 
 # deploying
 DEV: `heroku local -f Procfile.dev -e .env`
