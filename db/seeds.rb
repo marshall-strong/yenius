@@ -498,9 +498,9 @@ end
   Artist.create!(name: "Gil Scott-Heron", rank: 5)
     gil_scott_heron = Artist.last
   Artist.create!(name: "GLC")
-    glc = Artist.last = Artist.last
+    glc = Artist.last
   Artist.create!(name: "God")
-    god = Artist.last = Artist.last
+    god = Artist.last
   Artist.create!(name: "Goldfrapp")
     goldfrapp = Artist.last
   Artist.create!(name: "Googoosh")
