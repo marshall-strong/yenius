@@ -1388,7 +1388,8 @@ end
   Song.create!(album_id: s_and_i.id, name: "Through the Fire", track_number: nil)
   Song.create!(album_id: s_and_i.id, name: "To the Clique", track_number: nil)
   Song.create!(album_id: s_and_i.id, name: "Trap Door", track_number: nil)
-  try_a_little_tenderness = Song.create!(album_id: s_and_i.id, name: "Try a Little Tenderness", track_number: nil)
+  Song.create!(album_id: s_and_i.id, name: "Try a Little Tenderness", track_number: nil)
+    try_a_little_tenderness = Song.last
   Song.create!(album_id: s_and_i.id, name: "Ultralight Beam (Demo)", track_number: nil)
   Song.create!(album_id: s_and_i.id, name: "Un homme dans la nuit", track_number: nil)
   Song.create!(album_id: s_and_i.id, name: "United State of Pop 2009 (Blame It On the Pop)", track_number: nil)
