@@ -6,17 +6,7 @@ import { selectVerseById } from "../verses/versesSlice";
 
 import VerseComments from "../verses/VerseComments";
 
-const logCurrentDomRect = (element) => {
-  const domRect = element.getBoundingClientRect();
-  console.log(`verseRef.current: `, element);
-  console.log(`domRect: `, domRect);
-  console.log(`domRect.left: ${domRect.x}`);
-  console.log(`domRect.width: ${domRect.width}`);
-  console.log(`domRect.right: ${domRect.right}`);
-  console.log(`domRect.top: ${domRect.y}`);
-  console.log(`domRect.height: ${domRect.height}`);
-  console.log(`domRect.bottom: ${domRect.bottom}`);
-};
+import { logCurrentDomRect } from "../../lib";
 
 const AnnotationsContainer = ({ verseId, selectedVerseRef }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));

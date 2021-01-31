@@ -1,23 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import "../../stylesheets/AnnotationSidebar.scss";
+import { logCurrentDomRect } from "../../lib";
 
-const logCurrentDomRect = (element) => {
-  if (!element) {
-    return null;
-  } else {
-    // console.log(`verseRef.current: `, element);
-    const domRect = element.getBoundingClientRect();
-    console.log(domRect);
-    // console.log(`domRect.left: ${domRect.x}`);
-    // console.log(`domRect.width: ${domRect.width}`);
-    // console.log(`domRect.right: ${domRect.right}`);
-    console.log(`domRect.top: ${domRect.y}`);
-    console.log(`domRect.height: ${domRect.height}`);
-    console.log(`domRect.bottom: ${domRect.bottom}`);
-    return true;
-  }
-};
+import "../../stylesheets/AnnotationSidebar.scss";
 
 const getTargetDOMRect = (ref) =>
   ref.current ? ref.current.getBoundingClientRect() : null;

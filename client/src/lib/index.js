@@ -41,3 +41,15 @@ export const printDate = (dateString) => {
   const year = date.getFullYear();
   return `${month} ${day}, ${year}`;
 };
+
+export const logCurrentDomRect = (element) => {
+  const domRect = element.getBoundingClientRect();
+  console.log(`verseRef.current: `, element);
+  console.log(`domRect: `, domRect);
+  console.log(`domRect.left: ${domRect.x}`);
+  console.log(`domRect.width: ${domRect.width}`);
+  console.log(`domRect.right: ${domRect.right}`);
+  console.log(`domRect.top: ${domRect.y}`);
+  console.log(`domRect.height: ${domRect.height}`);
+  console.log(`domRect.bottom: ${domRect.bottom}`);
+};
