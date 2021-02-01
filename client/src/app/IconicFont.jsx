@@ -193,6 +193,18 @@ export const tools = (
   </svg>
 );
 
+// https://iconmonstr.com/trash-can-23-svg/
+export const trashCan = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M3 6v18h18v-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.731 2 1.631 2h5.712z" />
+  </svg>
+);
+
 // https://iconmonstr.com/id-card-1-svg/
 export const userSettings = (
   <svg
