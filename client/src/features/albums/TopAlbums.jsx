@@ -6,7 +6,7 @@ import { fetchTopAlbums } from "./albumsAsyncThunks";
 
 import { selectTopAlbums } from "./albumsSlice";
 
-import NotFound from "../../NotFound";
+import NotFound from "../../app/NotFound";
 import TopAlbumsRow from "./TopAlbumsRow";
 
 const TopAlbumsContent = () => {

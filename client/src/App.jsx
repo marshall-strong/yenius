@@ -29,7 +29,7 @@ import "./stylesheets/Loader.scss";
 
 import Counter from "./features/counter/Counter";
 
-import NotFound from "./NotFound";
+import NotFound from "./app/NotFound";
 
 import AuthorizedRoute from "./app/AuthorizedRoute";
 // import ProtectedRoute from "./app/ProtectedRoute";

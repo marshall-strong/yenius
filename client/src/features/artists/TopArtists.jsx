@@ -6,7 +6,7 @@ import { fetchTopArtists } from "./artistsAsyncThunks";
 
 import { selectTopArtists } from "./artistsSlice";
 
-import NotFound from "../../NotFound";
+import NotFound from "../../app/NotFound";
 import TopArtistsRow from "./TopArtistsRow";
 
 const TopArtistsContent = () => {
