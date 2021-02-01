@@ -1,3 +1,15 @@
+# Current seed inventory:
+# Album.all.length              #=> 11
+# ArtistCreditType.all.length   #=> 4
+# ArtistCredit.all.length       #=> 791
+# Artist.all.length             #=> 385
+# Comment.all.length            #=> 9048
+# SampleCreditType.all.length   #=> 2
+# SampleCredit.all.length       #=> 361
+# Song.all.length               #=> 468
+# User.all.length               #=> 46
+# Verse.all.length              #=> 3979
+
 require 'aws-sdk-s3'
 require 'open-uri'
 require 'ms_palette'
