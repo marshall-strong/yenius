@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import AnnotationsContainer from "./AnnotationsContainer";
-import AnnotationSidebar from "./AnnotationSidebar";
 import Description from "./Description";
 import SongAlbum from "./SongAlbum";
 import TrackInfo from "./TrackInfo";
@@ -52,10 +51,6 @@ const VerseLayout = ({ match, selectedVerseRef }) => {
         selectedVerseRef={selectedVerseRef}
         verseId={verseId}
       />
-      {/* <AnnotationSidebar
-        selectedVerseRef={selectedVerseRef}
-        verseId={verseId}
-      /> */}
     </div>
   );
 };
