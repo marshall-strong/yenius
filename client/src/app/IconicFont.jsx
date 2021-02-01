@@ -4,10 +4,12 @@
 // circleInfo,
 // circleMinus,
 // circlePlus,
+// circleUser,
 // circleWarning,
 // controlPanel,
 // crown,
 // edit,
+// filter,
 // flag,
 // floppyDisk,
 // forbidden,
@@ -15,11 +17,13 @@
 // github,
 // heart,
 // home,
+// idCard,
 // link,
 // linkedin,
 // loading,
 // lock,
 // magnifier,
+// megaphone
 // menuDotsHorizontal,
 // menuDotsVertical,
 // menuDropdown,
@@ -30,19 +34,28 @@
 // plus,
 // quoteLeft,
 // quoteRight,
+// radioButtonCircle,
+// radioButtonCircleO,
 // random,
+// refresh,
 // signInArrow,
 // signOutArrow,
 // smileyFrown,
 // smileySmile,
 // speechBubble,
+// squareNoFill,
+// squareSquare,
+// squareStop,
+// squareUser,
 // stackoverflow,
 // starFilled,
 // starNoFill,
+// support,
 // thumbDown,
 // thumbUp,
 // tools,
 // trashCan,
+// users,
 // userSettings,
 // wrench,
 // xMark,
@@ -109,6 +122,18 @@ export const circlePlus = (
   </svg>
 );
 
+// https://iconmonstr.com/user-20-svg/
+export const circleUser = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7.753 18.305c-.261-.586-.789-.991-1.871-1.241-2.293-.529-4.428-.993-3.393-2.945 3.145-5.942.833-9.119-2.489-9.119-3.388 0-5.644 3.299-2.489 9.119 1.066 1.964-1.148 2.427-3.393 2.945-1.084.25-1.608.658-1.867 1.246-1.405-1.723-2.251-3.919-2.251-6.31 0-5.514 4.486-10 10-10s10 4.486 10 10c0 2.389-.845 4.583-2.247 6.305z" />
+  </svg>
+);
+
 // https://iconmonstr.com/warning-1-svg/
 export const circleWarning = (
   <svg
@@ -154,6 +179,18 @@ export const edit = (
     viewBox="0 0 24 24"
   >
     <path d="M8.424 12.282l4.402 4.399-5.826 1.319 1.424-5.718zm15.576-6.748l-9.689 9.804-4.536-4.536 9.689-9.802 4.536 4.534zm-6 8.916v6.55h-16v-12h6.743l1.978-2h-10.721v16h20v-10.573l-2 2.023z" />
+  </svg>
+);
+
+// https://iconmonstr.com/filter-8-svg/
+export const filter = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M1 0h22l-9 14.094v9.906l-4-2v-7.906z" />
   </svg>
 );
 
@@ -218,7 +255,7 @@ export const github = (
 );
 
 // https://iconmonstr.com/favorite-3-svg/
-export const favorite = (
+export const heart = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -238,6 +275,18 @@ export const home = (
     viewBox="0 0 24 24"
   >
     <path d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z" />
+  </svg>
+);
+
+// https://iconmonstr.com/id-card-25-svg/
+export const idCard = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M0 2v20h24v-20h-24zm13 15h-10v-.417c-.004-1.112.044-1.747 1.324-2.043 1.403-.324 2.787-.613 2.122-1.841-1.973-3.637-.563-5.699 1.554-5.699 2.077 0 3.521 1.985 1.556 5.699-.647 1.22.688 1.51 2.121 1.841 1.284.297 1.328.936 1.323 2.057v.403zm8 0h-6v-2h6v2zm0-4h-6v-2h6v2zm0-4h-6v-2h6v2z" />
   </svg>
 );
 
@@ -298,6 +347,19 @@ export const magnifier = (
     viewBox="0 0 24 24"
   >
     <path d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z" />
+  </svg>
+);
+
+// https://iconmonstr.com/megaphone-13-svg/
+export const megaphone = (
+  <svg
+    width="24"
+    height="24"
+    xmlns="http://www.w3.org/2000/svg"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  >
+    <path d="M12.399 2.276c-.208-.63.264-1.276.919-1.276.405 0 .783.257.918.664l5.691 14.286c.169.509-.106 1.057-.613 1.226-.507.169-1.055-.106-1.224-.614 0 0-3.593-1.203-7.854.211l2.801 4.354c.291.428.088 1.013-.396 1.173l-1.904.634c-.131.044-.267.066-.401.066-.357 0-.705-.152-.951-.429l-3.85-4.247c-2.096.661-4.468-.102-5.26-2.076-.182-.453-.275-.936-.275-1.421 0-1.407.786-2.842 2.492-3.68 8.541-4.194 9.907-8.871 9.907-8.871m6.067.913c1.518.641 2.789 1.865 3.459 3.516.669 1.651.607 3.42-.034 4.94l1.474.626c.415-.985.635-2.053.635-3.141 0-3.167-1.873-6.133-4.911-7.419l-.623 1.478zm-1.064 2.523c.874.368 1.608 1.073 1.992 2.024.386.951.351 1.968-.017 2.843l1.436.61c.524-1.246.576-2.691.028-4.042-.547-1.352-1.588-2.352-2.831-2.877l-.608 1.442z" />
   </svg>
 );
 
@@ -421,6 +483,30 @@ export const quoteRight = (
   </svg>
 );
 
+// https://iconmonstr.com/checkbox-27-svg/
+export const radioButtonCircle = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 18c-3.313 0-6-2.687-6-6s2.687-6 6-6c3.314 0 6 2.687 6 6s-2.686 6-6 6z" />
+  </svg>
+);
+
+// https://iconmonstr.com/checkbox-28-svg/
+export const radioButtonCircleO = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.687-6 6s2.687 6 6 6c3.314 0 6-2.687 6-6s-2.686-6-6-6z" />
+  </svg>
+);
+
 // https://iconmonstr.com/media-control-55-svg/
 export const random = (
   <svg
@@ -430,6 +516,19 @@ export const random = (
     viewBox="0 0 24 24"
   >
     <path d="M18 9v-3c-1 0-3.308-.188-4.506 2.216l-4.218 8.461c-1.015 2.036-3.094 3.323-5.37 3.323h-3.906v-2h3.906c1.517 0 2.903-.858 3.58-2.216l4.218-8.461c1.356-2.721 3.674-3.323 6.296-3.323v-3l6 4-6 4zm-9.463 1.324l1.117-2.242c-1.235-2.479-2.899-4.082-5.748-4.082h-3.906v2h3.906c2.872 0 3.644 2.343 4.631 4.324zm15.463 8.676l-6-4v3c-3.78 0-4.019-1.238-5.556-4.322l-1.118 2.241c1.021 2.049 2.1 4.081 6.674 4.081v3l6-4z" />
+  </svg>
+);
+
+// https://iconmonstr.com/refresh-8-svg/
+export const refresh = (
+  <svg
+    width="24"
+    height="24"
+    xmlns="http://www.w3.org/2000/svg"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  >
+    <path d="M8 6.012h-6.58l1.935-6.012 1.718 2.223c1.958-1.389 4.346-2.211 6.927-2.211 6.623 0 12 5.377 12 12s-5.377 11.988-12 11.988-12-5.365-12-11.988c0-1.036.132-2.041.379-3h2.079c-.297.947-.458 1.955-.458 3 0 5.52 4.481 10 10 10 5.52 0 10-4.48 10-10 0-5.519-4.48-10-10-10-2.121 0-4.083.668-5.703 1.796l1.703 2.204zm4 1.988c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z" />
   </svg>
 );
 
@@ -493,6 +592,55 @@ export const speechBubble = (
   </svg>
 );
 
+// https://iconmonstr.com/checkbox-6-svg/
+export const squareNoFill = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M22 2v20h-20v-20h20zm2-2h-24v24h24v-24z" />
+  </svg>
+);
+
+// https://iconmonstr.com/checkbox-17-svg/
+export const squareSquare = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M22 2v20h-20v-20h20zm2-2h-24v24h24v-24zm-6 6h-12v12h12v-12z" />
+  </svg>
+);
+
+// https://iconmonstr.com/media-control-50-svg/
+export const squareStop = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M2 2h20v20h-20z" />
+  </svg>
+);
+
+// https://iconmonstr.com/user-33-svg/
+export const squareUser = (
+  <svg
+    width="24"
+    height="24"
+    xmlns="http://www.w3.org/2000/svg"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  >
+    <path d="M24 24h-24v-24h24v24zm-2-22h-20v20h20v-20zm-4.118 14.064c-2.293-.529-4.427-.993-3.394-2.945 3.146-5.942.834-9.119-2.488-9.119-3.388 0-5.643 3.299-2.488 9.119 1.064 1.963-1.15 2.427-3.394 2.945-2.048.473-2.124 1.49-2.118 3.269l.004.667h15.993l.003-.646c.007-1.792-.062-2.815-2.118-3.29z" />
+  </svg>
+);
+
 // https://iconmonstr.com/stackoverflow-1-svg/
 export const stackoverflow = (
   <svg
@@ -526,6 +674,19 @@ export const starNoFill = (
     viewBox="0 0 24 24"
   >
     <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" />
+  </svg>
+);
+
+// https://iconmonstr.com/delivery-8-svg/
+export const support = (
+  <svg
+    width="24"
+    height="24"
+    xmlns="http://www.w3.org/2000/svg"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+  >
+    <path d="M3.848 19h-.848c-.796 0-1.559-.316-2.121-.879-.563-.562-.879-1.325-.879-2.121v-3c0-7.175 5.377-13 12-13s12 5.825 12 13v3c0 .796-.316 1.559-.879 2.121-.562.563-1.325.879-2.121.879h-.848c-2.69 4.633-6.904 5-8.152 5-1.248 0-5.462-.367-8.152-5zm16.152-5.876c-.601.236-1.269-.18-1.269-.797 0-.304-.022-.61-.053-.915-1.761-.254-3.618-1.926-3.699-3.723-1.315 2.005-4.525 4.17-7.044 4.17 1.086-.699 1.839-2.773 1.903-3.508-.581 1.092-2.898 3.136-4.551 3.487l-.018.489c0 .619-.669 1.032-1.269.797v3.771c.287.256.632.464 1.041.594.225.072.412.224.521.424 2.206 4.046 5.426 4.087 6.438 4.087.929 0 3.719-.035 5.877-3.169-1.071.433-2.265.604-3.759.653-.37.6-1.18 1.016-2.118 1.016-1.288 0-2.333-.784-2.333-1.75s1.045-1.75 2.333-1.75c.933 0 1.738.411 2.112 1.005 1.9-.026 4.336-.334 5.888-2.645v-2.236zm-11-.624c.686 0 1.243.672 1.243 1.5s-.557 1.5-1.243 1.5-1.243-.672-1.243-1.5.557-1.5 1.243-1.5zm6 0c.686 0 1.243.672 1.243 1.5s-.557 1.5-1.243 1.5-1.243-.672-1.243-1.5.557-1.5 1.243-1.5zm5.478-1.5h1.357c-.856-5.118-4.937-9-9.835-9-4.898 0-8.979 3.882-9.835 9h1.357c.52-4.023 3.411-7.722 8.478-7.722s7.958 3.699 8.478 7.722z" />
   </svg>
 );
 
@@ -574,6 +735,18 @@ export const trashCan = (
     viewBox="0 0 24 24"
   >
     <path d="M3 6v18h18v-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.731 2 1.631 2h5.712z" />
+  </svg>
+);
+
+// https://iconmonstr.com/user-31-svg/
+export const users = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M10.644 17.08c2.866-.662 4.539-1.241 3.246-3.682-3.932-7.427-1.042-11.398 3.111-11.398 4.235 0 7.054 4.124 3.11 11.398-1.332 2.455.437 3.034 3.242 3.682 2.483.574 2.647 1.787 2.647 3.889v1.031h-18c0-2.745-.22-4.258 2.644-4.92zm-12.644 4.92h7.809c-.035-8.177 3.436-5.313 3.436-11.127 0-2.511-1.639-3.873-3.748-3.873-3.115 0-5.282 2.979-2.333 8.549.969 1.83-1.031 2.265-3.181 2.761-1.862.43-1.983 1.34-1.983 2.917v.773z" />
   </svg>
 );
 
