@@ -1,7 +1,7 @@
 // https://iconmonstr.com/iconicfont/
 
 // iconmonstr-flag-3.svg
-export const iconFlag = (
+export const flag = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -13,7 +13,7 @@ export const iconFlag = (
 );
 
 // iconmonstr-gear-1.svg
-export const iconGear = (
+export const gear = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -25,7 +25,7 @@ export const iconGear = (
 );
 
 // iconmonstr-github-1.svg
-export const iconGithub = (
+export const github = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -37,7 +37,7 @@ export const iconGithub = (
 );
 
 // iconmonstr-favorite-3.svg
-export const iconHeart = (
+export const heart = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -49,7 +49,7 @@ export const iconHeart = (
 );
 
 // iconmonstr-linkedin-1.svg
-export const iconLinkedin = (
+export const linkedin = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -61,7 +61,7 @@ export const iconLinkedin = (
 );
 
 // iconmonstr-loading-10.svg
-export const iconLoading = (
+export const loading = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -73,7 +73,7 @@ export const iconLoading = (
 );
 
 // iconmonstr-magnifier-6.svg
-export const iconMagnifier = (
+export const magnifier = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -85,7 +85,7 @@ export const iconMagnifier = (
 );
 
 // iconmonstr-thumb-11.svg
-export const iconThumbDown = (
+export const thumbDown = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -97,7 +97,7 @@ export const iconThumbDown = (
 );
 
 // iconmonstr-thumb-9.svg
-export const iconThumbUp = (
+export const thumbUp = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
