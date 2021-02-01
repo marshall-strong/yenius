@@ -58,7 +58,7 @@ const AnnotationSidebar = ({ selectedVerseRef, verseId }) => {
               <div className="annotation_label" ng-hide="noLabel">
                 Genius Annotation
               </div>
-              <button
+              {/* <button
                 onClick={(e) => {
                   e.preventDefault();
                   const element = selectedVerseRef.current;
@@ -66,7 +66,7 @@ const AnnotationSidebar = ({ selectedVerseRef, verseId }) => {
                 }}
               >
                 log DOMRect of selected verse
-              </button>
+              </button> */}
               <div className="rich_text_formatting placeholder-pulsing_content u-top_margin">
                 <placeholder-text>
                   <p className="placeholder-text"></p>

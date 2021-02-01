@@ -20,7 +20,7 @@ const AnnotationsContainer = ({ verseId, selectedVerseRef }) => {
       <div dangerouslySetInnerHTML={markup} />
       <VerseComments verseId={verseId} />
       <Link to={`/songs/${verse.songId}`}> Close Annotations </Link>
-      <button
+      {/* <button
         onClick={(e) => {
           e.preventDefault();
           const element = selectedVerseRef.current;
@@ -28,7 +28,7 @@ const AnnotationsContainer = ({ verseId, selectedVerseRef }) => {
         }}
       >
         log DOMRect of selected verse
-      </button>
+      </button> */}
     </section>
   );
 };
