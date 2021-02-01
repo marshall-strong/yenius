@@ -301,6 +301,18 @@ export const menuHamburger = (
   </svg>
 );
 
+// https://iconmonstr.com/minus-2-svg/
+export const minus = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M0 10h24v4h-24z" />
+  </svg>
+);
+
 // https://iconmonstr.com/paintbrush-1-svg/
 export const paintbrush = (
   <svg
@@ -310,6 +322,18 @@ export const paintbrush = (
     viewBox="0 0 24 24"
   >
     <path d="M0 21.398c5.504.456 3.533-5.392 8.626-5.445l2.206 1.841c.549 6.645-7.579 8.127-10.832 3.604zm16.878-8.538c1.713-2.687 7.016-11.698 7.016-11.698.423-.747-.515-1.528-1.17-.976 0 0-7.887 6.857-10.213 9.03-1.838 1.719-1.846 2.504-2.441 5.336l2.016 1.681c2.67-1.098 3.439-1.248 4.792-3.373z" />
+  </svg>
+);
+
+// https://iconmonstr.com/plus-2-svg/
+export const plus = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
   </svg>
 );
 
