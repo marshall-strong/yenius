@@ -337,3 +337,6 @@ Pyongs?
 Refresh news?
 
 https://iconmonstr.com/iconicfont/
+
+
+The album cover images in the SongAlbum component are not displaying in Development -- it may have something to do with permissions on the variant folder in the development bucket. To try and solve, I deleted everything in the development bucket except for the seeds folder. Now attempting to reseed.
