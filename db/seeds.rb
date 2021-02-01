@@ -7034,6 +7034,8 @@ end
 
 
   def seedComments(commentable_array, commentable_type, comment_hashes, min_count, max_count)
+    now = Time.now
+    six_months_ago = now - 60 * 60 * 24 * 30 * 6
     Kernel.srand 1234
     i = 0
     while i < commentable_array.length
@@ -7043,8 +7045,6 @@ end
       while j < count
         hash = comment_hashes.sample
         author = User.find_by! username: hash["username"]
-        now = Time.now
-        six_months_ago = now - 60 * 60 * 24 * 30 * 6
         random_datetime = rand(six_months_ago..now)
         Comment.create!( commenting_user_id: author.id, commentable_type: commentable_type, commentable_id: entity.id, body: hash["body"], created_at: random_datetime )
         j = j + 1
@@ -7056,8 +7056,8 @@ end
   kanye_songs = Song.where("album_id != #{s_and_i.id}")
   other_songs = Song.where("album_id = #{s_and_i.id}")
 
-  seedComments(Artist.all, "Artist", comment_hashes, 2, 4)
+  seedComments(Artist.all, "Artist", comment_hashes, 1, 1)
   seedComments(Album.all, "Album", comment_hashes, 2, 4)
-  seedComments(kanye_songs, "Song", comment_hashes, 4, 6)
-  seedComments(other_songs, "Song", comment_hashes, 1, 3)
-  seedComments(Verse.all, "Verse", comment_hashes, 1, 2)
+  seedComments(kanye_songs, "Song", comment_hashes, 2, 4)
+  seedComments(other_songs, "Song", comment_hashes, 1, 1)
+  seedComments(Verse.all, "Verse", comment_hashes, 0, 1)
