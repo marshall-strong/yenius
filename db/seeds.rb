@@ -7043,7 +7043,10 @@ end
       while j < count
         hash = comment_hashes.sample
         author = User.find_by! username: hash["username"]
-        Comment.create!( commenting_user_id: author.id, commentable_type: commentable_type, commentable_id: entity.id, body: hash["body"] )
+        now = Time.now
+        six_months_ago = now - 60 * 60 * 24 * 30 * 6
+        random_datetime = rand(six_months_ago..now)
+        Comment.create!( commenting_user_id: author.id, commentable_type: commentable_type, commentable_id: entity.id, body: hash["body"], created_at: random_datetime )
         j = j + 1
       end
       i = i + 1
