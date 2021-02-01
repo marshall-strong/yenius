@@ -1,6 +1,18 @@
 // https://iconmonstr.com/iconicfont/
 
-// iconmonstr-flag-3.svg
+// https://iconmonstr.com/favorite-3-svg/
+export const favorite = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+  </svg>
+);
+
+// https://iconmonstr.com/flag-3-svg/
 export const flag = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +24,7 @@ export const flag = (
   </svg>
 );
 
-// iconmonstr-gear-1.svg
+// https://iconmonstr.com/gear-1-svg/
 export const gear = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +36,7 @@ export const gear = (
   </svg>
 );
 
-// iconmonstr-github-1.svg
+// https://iconmonstr.com/github-1-svg/
 export const github = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -36,19 +48,7 @@ export const github = (
   </svg>
 );
 
-// iconmonstr-favorite-3.svg
-export const heart = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-  >
-    <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-  </svg>
-);
-
-// iconmonstr-linkedin-1.svg
+// https://iconmonstr.com/linkedin-1-svg/
 export const linkedin = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ export const linkedin = (
   </svg>
 );
 
-// iconmonstr-loading-10.svg
+// https://iconmonstr.com/loading-10-svg/
 export const loading = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ export const loading = (
   </svg>
 );
 
-// iconmonstr-magnifier-6.svg
+// https://iconmonstr.com/magnifier-6-svg/
 export const magnifier = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -84,19 +84,7 @@ export const magnifier = (
   </svg>
 );
 
-// iconmonstr-thumb-11.svg
-export const thumbDown = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-  >
-    <path d="M5 14h-5v-12h5v12zm18.875-4.809c0-.646-.555-1.32-1.688-1.41-.695-.055-.868-.623-.031-.812.701-.159 1.098-.652 1.098-1.181 0-.629-.559-1.309-1.826-1.543-.766-.141-.842-.891-.031-.953.688-.053.96-.291.96-.626-.001-.931-1.654-2.666-4.852-2.666-4.16 0-6.123 2.067-10.505 2.768v10.878c2.375.869 4.466 2.644 5.688 6.886.478 1.661.781 3.468 2.374 3.468 2.375 0 2.594-5.125 1.688-8.781 1.312-.688 3.751-.936 4.979-.885 1.771.072 2.271-.818 2.271-1.49 0-1.011-.833-1.35-1.354-1.51-.609-.188-.889-.807-.031-.922.836-.112 1.26-.656 1.26-1.221z" />
-  </svg>
-);
-
-// iconmonstr-thumb-9.svg
+// https://iconmonstr.com/thumb-9-svg/
 export const thumbUp = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -105,5 +93,17 @@ export const thumbUp = (
     viewBox="0 0 24 24"
   >
     <path d="M5 22h-5v-12h5v12zm17.615-8.412c-.857-.115-.578-.734.031-.922.521-.16 1.354-.5 1.354-1.51 0-.672-.5-1.562-2.271-1.49-1.228.05-3.666-.198-4.979-.885.906-3.656.688-8.781-1.688-8.781-1.594 0-1.896 1.807-2.375 3.469-1.221 4.242-3.312 6.017-5.687 6.885v10.878c4.382.701 6.345 2.768 10.505 2.768 3.198 0 4.852-1.735 4.852-2.666 0-.335-.272-.573-.96-.626-.811-.062-.734-.812.031-.953 1.268-.234 1.826-.914 1.826-1.543 0-.529-.396-1.022-1.098-1.181-.837-.189-.664-.757.031-.812 1.133-.09 1.688-.764 1.688-1.41 0-.565-.424-1.109-1.26-1.221z" />
+  </svg>
+);
+
+// https://iconmonstr.com/thumb-11-svg/
+export const thumbDown = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M5 14h-5v-12h5v12zm18.875-4.809c0-.646-.555-1.32-1.688-1.41-.695-.055-.868-.623-.031-.812.701-.159 1.098-.652 1.098-1.181 0-.629-.559-1.309-1.826-1.543-.766-.141-.842-.891-.031-.953.688-.053.96-.291.96-.626-.001-.931-1.654-2.666-4.852-2.666-4.16 0-6.123 2.067-10.505 2.768v10.878c2.375.869 4.466 2.644 5.688 6.886.478 1.661.781 3.468 2.374 3.468 2.375 0 2.594-5.125 1.688-8.781 1.312-.688 3.751-.936 4.979-.885 1.771.072 2.271-.818 2.271-1.49 0-1.011-.833-1.35-1.354-1.51-.609-.188-.889-.807-.031-.922.836-.112 1.26-.656 1.26-1.221z" />
   </svg>
 );
