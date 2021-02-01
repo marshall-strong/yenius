@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { logoutUser } from "../features/session/sessionAsyncThunks";
 
+import { github, linkedin } from "./IconicFont";
 import GithubLogo from "../images/logo-github-512-512.png";
 import LinkedInLogo from "../images/logo-linkedin-512-512.png";
 import YeniusLogo from "../images/logo-yenius-1482-207.png";
@@ -96,7 +97,9 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img height="14px" src={GithubLogo} alt="GitHub repository" />
+              <div className="iconmonstr" style={{ fill: "#FFFFFF" }}>
+                {github}
+              </div>
             </a>
           </li>
           <li>
@@ -105,7 +108,9 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img height="14px" src={LinkedInLogo} alt="LinkedIn Profile" />
+              <div className="iconmonstr" style={{ fill: "#FFFFFF" }}>
+                {linkedin}
+              </div>
             </a>
           </li>
         </ul>
