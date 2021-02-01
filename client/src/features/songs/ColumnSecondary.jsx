@@ -34,18 +34,19 @@ const VerseLayout = ({ match, selectedVerseRef }) => {
     }
   }, [match, scrollTop]);
 
-  let padding = 0;
-  if (verseDOMRect) {
-    const verseTop = scrollTop + verseDOMRect.top;
-    const bannerHeight = 430;
-    padding = verseTop - bannerHeight;
-  }
-  const styleAnnotations = { paddingTop: padding };
+  const [padding, setPadding] = useState(null);
+  useEffect(() => {
+    if (verseDOMRect) {
+      const verseTop = scrollTop + verseDOMRect.top;
+      const bannerHeight = 430;
+      setPadding(verseTop - bannerHeight);
+    }
+  }, [verseDOMRect]);
 
   return (
     <div
       className="column_layout-flex_column-fill_column"
-      style={styleAnnotations}
+      style={{ paddingTop: padding }}
     >
       <AnnotationsContainer
         selectedVerseRef={selectedVerseRef}
@@ -59,7 +60,7 @@ const VerseLayout = ({ match, selectedVerseRef }) => {
   );
 };
 
-const ColumnLayoutFlex = ({ match, selectedVerseRef }) => {
+const ColumnSecondary = ({ match, selectedVerseRef }) => {
   const songLayoutKlass = "ColumnSecondaryShowSong";
   const [songDisplayKlass, setSongDisplayKlass] = useState("");
   const songKlass = songLayoutKlass.concat(songDisplayKlass);
@@ -90,4 +91,4 @@ const ColumnLayoutFlex = ({ match, selectedVerseRef }) => {
   );
 };
 
-export default ColumnLayoutFlex;
+export default ColumnSecondary;

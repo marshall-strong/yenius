@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-import ColumnLayoutFlex from "./ColumnLayoutFlex";
+import ColumnSecondary from "./ColumnSecondary";
 import Lyrics from "./Lyrics";
 import SongComments from "./SongComments";
 
@@ -24,7 +24,7 @@ import "../.././stylesheets/ColumnLayout.scss";
 // const ColumnSecondary = ({ match, selectedVerseRef}) => {
 //   return (
 //     <div className="column_layout-column_span column_layout-column_span--secondary">
-//       <ColumnLayoutFlex match={match} selectedVerseRef={selectedVerseRef} />
+//       <ColumnSecondary match={match} selectedVerseRef={selectedVerseRef} />
 //     </div>
 //   );
 // };
@@ -42,7 +42,7 @@ const ColumnLayout = ({ match }) => {
 
   const columnSecondary = (
     <div className="column_layout-column_span column_layout-column_span--secondary">
-      <ColumnLayoutFlex match={match} selectedVerseRef={selectedVerseRef} />
+      <ColumnSecondary match={match} selectedVerseRef={selectedVerseRef} />
     </div>
   );
 
