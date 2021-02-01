@@ -6,7 +6,7 @@ import { fetchTopScholars } from "./usersAsyncThunks";
 
 import { selectTopScholars } from "./usersSlice";
 
-import NotFound from "../../NotFound";
+import NotFound from "../../app/NotFound";
 import TopScholarsRow from "./TopScholarsRow";
 
 import "../.././stylesheets/TopScholars.scss";

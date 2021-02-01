@@ -5,7 +5,7 @@ import { fetchTopSongs } from "./songsAsyncThunks";
 
 import { selectTopSongs } from "./songsSlice";
 
-import NotFound from "../../NotFound";
+import NotFound from "../../app/NotFound";
 import TopSongsRow from "./TopSongsRow";
 
 const TopSongsContent = () => {
