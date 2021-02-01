@@ -1,25 +1,25 @@
 ![](./client/src/images/logo-yenius-1482-207.png)
 
 # Description
-
+[pre-commit](https://pre-commit.com/)
 headcase is a single page web app clone of the meditation website <a href="https://www.headspace.com/" target="_blank">headspace</a> that allows users to stream guided meditations. Check out the live site <a href="https://headcase-aa.herokuapp.com/#/" target="_blank">here</a>!
 
 ![](./app/assets/images/headcase-gif2.gif)
 
 # A Rock Solid, Modern Web Stack
-Create React App
+[Create React App](https://github.com/facebook/create-react-app)
 All the power of a highly-tuned Webpack config without the hassle.
 
-Rails in API-only mode
+[Rails in API-only mode](https://edgeguides.rubyonrails.org/api_app.html)
 Just the best bits, leaving React to handle the UI.
 
-ActiveAdmin
+[ActiveAdmin](https://github.com/activeadmin/activeadmin)
 An instant CMS backend.
 
-Seamless deployment on Heroku
+Seamless deployment on [Heroku](https://heroku.com)
 Same-origin (so no CORS complications) with build steps to manage both Node and Ruby.
 
-Single page app support with React Router
+Single page app support with [React Router](https://github.com/ReactTraining/react-router)
 So you can have lightning fast rendering on the front end.
 
 # Technologies
@@ -33,7 +33,7 @@ Frontend:
 
 Backend:
 
-* Ruby on Rails
+* Rails 6
 * PostgreSQL
 
 Hosting:
