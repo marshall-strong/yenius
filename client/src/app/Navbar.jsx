@@ -92,7 +92,7 @@ const Navbar = () => {
           <li> | </li>
           <li>
             <a
-              href="https://github.com/marstrong/yenius--rails6-api"
+              href="https://github.com/marstrong/yenius"
               target="_blank"
               rel="noopener noreferrer"
             >
