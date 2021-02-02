@@ -26,35 +26,40 @@ const AnnotationsContainer = ({ verseId }) => {
   const markup = { __html: verse.body };
   return (
     <section>
-      <h3>Yenius Annotations</h3>
-
       <div className="AnnotationSidebar">
         <div className="u-relative nganimate-fade_slide_from_left">
           <div className="annotation_sidebar_unit">
             <annotation-placeholder>
               <div className="placeholder annotation_placeholder annotation_placeholder--hide">
-                <div className="annotation_label" ng-hide="noLabel">
+                <div className="annotation_label">
+                  <span>Yenius Annotations</span>
                   <span>
                     <Link to={`/songs/${verse.songId}`}>{xMark}</Link>
                   </span>
                 </div>
                 <div className="rich_text_formatting placeholder-pulsing_content u-top_margin">
-                  <placeholder-text>
-                    <p className="placeholder-text"></p>
+                  {/* <div>
                     {quoteLeft}
                     <div dangerouslySetInnerHTML={markup} />
                     {quoteRight}
-                  </placeholder-text>
+                  </div> */}
+
+                  <div>
+                    <span>
+                      <div>{quoteLeft}</div>
+                    </span>
+                    <span>
+                      <div dangerouslySetInnerHTML={markup} />
+                    </span>
+                    <span>
+                      <div>{quoteRight}</div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </annotation-placeholder>
           </div>
-          <div
-            className="annotation_sidebar_arrow"
-            position-beside="$ctrl.lyrics_positioning_target"
-            apply-annotation-arrow-className=""
-            ng-show="referent &amp;&amp; !referent.stub"
-          >
+          <div className="annotation_sidebar_arrow">
             <svg
               src="left_arrow.svg"
               xmlns="http://www.w3.org/2000/svg"
