@@ -49,8 +49,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.logout:hover {
+.footer a:hover,
+.footer Link:hover,
+.footer .logout:hover {
   cursor: pointer;
+  font-weight: bold;
 }
 
 .footer--secondary {
