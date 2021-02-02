@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { selectUserById } from "../users/usersSlice";
 
 import TimeAgo from "./TimeAgo";
+import { squareStop } from "../../app/iconmonstr";
 
 import "../../stylesheets/UserBadgeAndTimestamp.scss";
 
@@ -19,10 +20,15 @@ const UserBadgeAndTimestamp = ({ userId, createdAt }) => {
       <div className="user_badge_and_timestamp-badge">
         <user-badge>
           <Link className="user_badge" to={`/users/${userId}`}>
-            <div className="user_avatar user_avatar--x_small clipped_background_image"></div>
+            <div className="iconmonstr" style={{ fill: userColor }}>
+              {squareStop}
+            </div>
             <div className="user_badge-text">
               <div className="user_badge-login_and_iq">
-                <span className="user_badge-login">{username}</span>
+                <span className="user_badge-login">
+                  {username}
+                  {"    "}
+                </span>
                 <role-icon>
                   <span className="user_badge-role_icon user_badge-role_icon--contributor">
                     <svg
