@@ -3,7 +3,8 @@ import React from "react";
 import AddCommentContainer from "./AddCommentContainer";
 import CommentsList from "./CommentsList";
 
-import "../.././stylesheets/Comments.scss";
+import "../../stylesheets/AnnotationSidebar.scss";
+import "../../stylesheets/Comments.scss";
 
 const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
   return (

@@ -4,6 +4,8 @@ import { unwrapResult } from "@reduxjs/toolkit";
 
 import { editComment } from "./commentsAsyncThunks";
 
+import { squareStop } from "../../app/iconmonstr";
+
 const EditCommentForm = ({ comment, setShowEditForm }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
   const authorId = currentUser ? currentUser.id : null;
@@ -50,8 +52,9 @@ const EditCommentForm = ({ comment, setShowEditForm }) => {
     <section className="CommentForm">
       <form>
         <div className="avatarBoxWithInputBox">
-          <div className="avatarBox">
-            <div className="avatar"></div>
+          <div className="iconmonstr" style={{ fill: currentUser.myColor }}>
+            {squareStop}
+            {` .`}
           </div>
           <div className="inputBox">
             <textarea

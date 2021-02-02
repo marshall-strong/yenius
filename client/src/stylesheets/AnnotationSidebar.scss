@@ -650,7 +650,7 @@ button {
 //     background-image: url(https://assets.genius.com/images/default_avatar_32.png?1611700455);
 // }
 .user_badge {
-  background-image: url(https://assets.genius.com/images/default_avatar_32.png?1611700455);
+  // background-image: url(https://assets.genius.com/images/default_avatar_32.png?1611700455);
 }
 .user_avatar--x_small {
   height: 16px;
@@ -670,8 +670,7 @@ button {
   overflow: hidden;
 }
 
-.user_badge-login_and_iq,
-.user_badge-subhead {
+.user_badge-login_and_iq {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -682,8 +681,7 @@ button {
   color: inherit;
 }
 
-.user_badge-iq--one_line,
-.user_badge-subhead {
+.user_badge-iq--one_line {
   font-size: 0.7em;
   letter-spacing: 0.05em;
 }
