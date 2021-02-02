@@ -46,9 +46,6 @@ import AlbumShow from "./features/albums/ShowContainer";
 import SongsIndex from "./features/songs/IndexContainer";
 import SongShow from "./features/songs/ShowContainer";
 
-// import UsersList from "./features/users/UsersList";
-// import UserPage from "./features/users/UserPage";
-
 import SignupForm from "./features/session/FancySignUp";
 import LoginForm from "./features/session/FancyLogin";
 
@@ -94,9 +91,6 @@ const App = () => (
           path="/songs/:songId/verses/:verseId"
           component={SongShow}
         />
-
-        {/* <Route exact path="/users" component={UsersList} />
-        <Route exact path="/users/:userId" component={UserPage} /> */}
 
         <Route exact path="/counter" component={Counter} />
 
