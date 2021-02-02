@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
-
-import { logCurrentDomRect } from "../../lib";
+import React from "react";
 
 import "../../stylesheets/AnnotationSidebar.scss";
 
-const getTargetDOMRect = (ref) =>
-  ref.current ? ref.current.getBoundingClientRect() : null;
-
-const AnnotationSidebar = ({ selectedVerseRef, verseId }) => {
-  const styleTop = () => {
-    const domRect = getTargetDOMRect(selectedVerseRef);
-    if (domRect) {
-      return { top: domRect.top };
-    } else {
-      return { display: "none" };
-    }
-  };
-
+const AnnotationSidebar = () => {
   return (
     <div className="AnnotationSidebar" referent="current_referent">
       <div
@@ -24,8 +10,6 @@ const AnnotationSidebar = ({ selectedVerseRef, verseId }) => {
         position-beside="$ctrl.lyrics_positioning_target"
         apply-annotation-arrow-className=""
         ng-show="referent &amp;&amp; !referent.stub"
-        style={styleTop()}
-        // style={{ top: "1002.8px" }}
       >
         <svg
           src="left_arrow.svg"
@@ -43,8 +27,6 @@ const AnnotationSidebar = ({ selectedVerseRef, verseId }) => {
         position-for-maximum-visibility=":: true"
         click-outside="ctrl.close()"
         suppress-click-outside-if-handled=""
-        style={styleTop()}
-        // style={{ top: "502.188px" }}
       >
         <div
           className="annotation_sidebar_unit ng-hide"
@@ -58,15 +40,6 @@ const AnnotationSidebar = ({ selectedVerseRef, verseId }) => {
               <div className="annotation_label" ng-hide="noLabel">
                 Genius Annotation
               </div>
-              {/* <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = selectedVerseRef.current;
-                  logCurrentDomRect(element);
-                }}
-              >
-                log DOMRect of selected verse
-              </button> */}
               <div className="rich_text_formatting placeholder-pulsing_content u-top_margin">
                 <placeholder-text>
                   <p className="placeholder-text"></p>

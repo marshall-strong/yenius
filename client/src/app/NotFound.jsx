@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { home, warning } from "./IconicFont";
+import { home, warning } from "./iconmonstr";
 
 import "../stylesheets/NotFound.scss";
 
