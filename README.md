@@ -1,5 +1,9 @@
 ![](./client/src/images/logo-yenius-1482-207.png)
 
+Yenius v2 has separate subdirectories for the frontend and backend.
+The frontend is a React/Redux app that uses the Redux Hooks API. It was created using [cra-template-redux](https://github.com/reduxjs/cra-template-redux), the official Redux+JS template for [Create React App](https://github.com/facebook/create-react-app).
+The backend is an API-only Ruby on Rails app, and uses a postgreSQL database.
+
 # Description
 Yenius is a Kanye-centric fullstack clone of the music encyclopedia [Genius](https://genius.com/).
 Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
@@ -11,13 +15,13 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 ## [Create React App](https://github.com/facebook/create-react-app)
 > Because life is too short to configure Webpack manually
 
-## [Redux]
-> Manage app state while minimizing boilerplate code
+## [cra-template-redux](https://github.com/reduxjs/cra-template-redux)
+> Maximize state management and minimize boilerplate with the Hooks API
 
 ## [React Router](https://github.com/ReactTraining/react-router)
 > Single page app support for lightning fast rendering on the front end
 
-## [Rails in API-only mode](https://edgeguides.rubyonrails.org/api_app.html)
+## [API-only Ruby on Rails 6](https://edgeguides.rubyonrails.org/api_app.html)
 > Just the best bits, leaving React to handle the UI.
 
 ## [PostgreSQL database](https://devcenter.heroku.com/articles/heroku-postgresql)
