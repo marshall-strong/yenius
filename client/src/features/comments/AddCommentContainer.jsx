@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
 import CommunityButtons from "../../app/CommunityButtons";
+import { squareStop } from "../../app/iconmonstr";
 
 const AddCommentInitial = ({ handleClick }) => {
   return (
@@ -87,8 +88,9 @@ const AddCommentForm = ({ addComment, commentableType, commentableId }) => {
     <section className="CommentForm">
       <form>
         <div className="avatarBoxWithInputBox">
-          <div className="avatarBox">
-            <div className="avatar"></div>
+          <div className="iconmonstr" style={{ fill: currentUser.myColor }}>
+            {squareStop}
+            {` .`}
           </div>
           <div className="inputBox">
             <textarea

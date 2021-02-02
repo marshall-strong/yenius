@@ -22,7 +22,7 @@ const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
         <div className="ShowMore"></div>
       </div>
       {/*  */}
-      <comments>
+      {/* <comments>
         <div
           ng-hide="$ctrl.prevent_compose &amp;&amp; !$ctrl.visible_comments().length"
           className="comments u-vertical_margins gray_container"
@@ -272,7 +272,7 @@ const CommentsContainer = ({ addComment, commentableId, commentableType }) => {
             </div>
           </comment-list>
         </div>
-      </comments>
+      </comments> */}
     </div>
   );
 };

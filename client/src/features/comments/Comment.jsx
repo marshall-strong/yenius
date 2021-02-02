@@ -1,3 +1,5 @@
+import { parseISO, formatDistanceToNow } from "date-fns";
+
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,22 +11,7 @@ import { selectUserById } from "../users/usersSlice";
 import EditCommentForm from "./EditCommentForm";
 import UserBadgeAndTimestamp from "./UserBadgeAndTimestamp";
 
-import { parseISO, formatDistanceToNow } from "date-fns";
-
-const TimeAgo = ({ timestamp }) => {
-  let timeAgo = "";
-  if (timestamp) {
-    const date = parseISO(timestamp);
-    const timePeriod = formatDistanceToNow(date);
-    timeAgo = `${timePeriod} ago`;
-  }
-
-  return (
-    <span className="TimeAgo" title={timestamp}>
-      &nbsp; <i>{timeAgo}</i>
-    </span>
-  );
-};
+import { edit, thumbDown, thumbUp, trashCan } from "../../app/iconmonstr";
 
 const voting = (
   <voting
@@ -96,25 +83,59 @@ const Comment = ({ commentId }) => {
   }
 
   const dispatch = useDispatch();
-  const handleDeleteComment = (e) => {
+
+  const handleUpvote = (e) => {
     e.preventDefault();
-    dispatch(deleteComment(commentId));
   };
+  const upvoteButton = (
+    <span
+      className="iconmonstr"
+      onClick={handleUpvote}
+      style={{ fill: "#9A9A9A" }}
+    >
+      {thumbUp}
+    </span>
+  );
+
+  const handleDownvote = (e) => {
+    e.preventDefault();
+  };
+  const downvoteButton = (
+    <span
+      className="iconmonstr"
+      onClick={handleDownvote}
+      style={{ fill: "#9A9A9A" }}
+    >
+      {thumbDown}
+    </span>
+  );
+
   const handleEditComment = (e) => {
     e.preventDefault();
     setShowEditForm(true);
   };
-
-  const deleteButton = isAuthor ? (
-    <button className="deleteCommentButton" onClick={handleDeleteComment}>
-      delete
-    </button>
+  const editButton = isAuthor ? (
+    <span
+      className="iconmonstr"
+      onClick={handleEditComment}
+      style={{ fill: "#9A9A9A" }}
+    >
+      {edit}
+    </span>
   ) : null;
 
-  const editButton = isAuthor ? (
-    <button className="editCommentButton" onClick={handleEditComment}>
-      edit
-    </button>
+  const handleDeleteComment = (e) => {
+    e.preventDefault();
+    dispatch(deleteComment(commentId));
+  };
+  const deleteButton = isAuthor ? (
+    <span
+      className="iconmonstr"
+      onClick={handleDeleteComment}
+      style={{ fill: "#9A9A9A" }}
+    >
+      {trashCan}
+    </span>
   ) : null;
 
   return (
@@ -126,6 +147,8 @@ const Comment = ({ commentId }) => {
       </div> */}
       <div className="standard-rich-content">{comment.body}</div>
       {voting}
+      {upvoteButton}
+      {downvoteButton}
       {deleteButton}
       {editButton}
       {editForm}
