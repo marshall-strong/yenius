@@ -225,7 +225,7 @@ const AnnotationsContainer = ({ verseId }) => {
                                         </span>
 
                                         <span
-                                          className="user_badge-iq user_badge-iq--one_line"
+                                          className="user_badge-iq--one_line"
                                           ng-className=":: {
           'tag_label tag_label--yellow_background': is_two_lines,
           'user_badge-iq--one_line': !is_two_lines

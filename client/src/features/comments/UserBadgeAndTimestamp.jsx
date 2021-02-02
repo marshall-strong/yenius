@@ -18,13 +18,10 @@ const UserBadgeAndTimestamp = ({ userId, createdAt }) => {
     <div className="user_badge_and_timestamp">
       <div className="user_badge_and_timestamp-badge">
         <user-badge>
-          <Link
-            className="user_badge drop-target drop-element-attached-middle drop-target-attached-middle drop-element-attached-left drop-target-attached-right"
-            to={`/users/${userId}`}
-          >
+          <Link className="user_badge" to={`/users/${userId}`}>
             <div className="user_avatar user_avatar--x_small clipped_background_image"></div>
             <div className="user_badge-text">
-              <div className="user_badge-login_and_iq user_badge-login_and_iq--one_line">
+              <div className="user_badge-login_and_iq">
                 <span className="user_badge-login">{username}</span>
                 <role-icon>
                   <span className="user_badge-role_icon user_badge-role_icon--contributor">
@@ -37,9 +34,7 @@ const UserBadgeAndTimestamp = ({ userId, createdAt }) => {
                     </svg>
                   </span>
                 </role-icon>
-                <span className="user_badge-iq user_badge-iq--one_line">
-                  {userIQ}
-                </span>
+                <span className="user_badge-iq--one_line">{userIQ}</span>
               </div>
             </div>
           </Link>
