@@ -60,7 +60,7 @@ const lime = {
   hexCode: "#bad80a",
 };
 
-const userColors = [
+const userColors = {
   yellow,
   orange,
   red,
@@ -71,6 +71,19 @@ const userColors = [
   teal,
   green,
   lime,
-];
+};
+
+// const userColors = [
+//   yellow,
+//   orange,
+//   red,
+//   magenta,
+//   purple,
+//   blue,
+//   cyan,
+//   teal,
+//   green,
+//   lime,
+// ];
 
 export default userColors;

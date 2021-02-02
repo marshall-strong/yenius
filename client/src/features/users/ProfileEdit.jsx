@@ -100,214 +100,6 @@ const RefactoredDropdown = ({ setContainerState, optionsParams }) => {
   );
 };
 
-// const Dropdown = ({ setContainerState }) => {
-//   const currentUser = useSelector((state) => state.session.currentUser);
-//   const [display, setDisplay] = useState(currentUser.myColor);
-//   const [showDropdown, setShowDropdown] = useState(false);
-
-//   const openDropdown = (e) => {
-//     e.preventDefault();
-//     setShowDropdown(true);
-//   };
-
-//   const closeDropdown = (e) => {
-//     e.preventDefault();
-//     setShowDropdown(false);
-//     document.removeEventListener("click", closeDropdown);
-//   };
-
-//   useEffect(() => {
-//     if (showDropdown) {
-//       document.addEventListener("click", closeDropdown);
-//     }
-//   }, [showDropdown]);
-
-//   const handleYellow = (e) => {
-//     e.preventDefault();
-//     setDisplay("Yeezy Yellow");
-//     setContainerState("#fff100");
-//     closeDropdown(e);
-//   };
-//   const handleOrange = (e) => {
-//     e.preventDefault();
-//     setDisplay("Omari Orange");
-//     setContainerState("#ff8c00");
-//     closeDropdown(e);
-//   };
-//   const handleRed = (e) => {
-//     e.preventDefault();
-//     setDisplay("Runway Red");
-//     setContainerState("#e81123");
-//     closeDropdown(e);
-//   };
-//   const handleMagenta = (e) => {
-//     e.preventDefault();
-//     setDisplay("MAGA Magenta");
-//     setContainerState("#ec008c");
-//     closeDropdown(e);
-//   };
-//   const handlePurple = (e) => {
-//     e.preventDefault();
-//     setDisplay("Presidential Purple");
-//     setContainerState("#68217a");
-//     closeDropdown(e);
-//   };
-//   const handleBlue = (e) => {
-//     e.preventDefault();
-//     setDisplay("Bipolar Blue");
-//     setContainerState("#00188f");
-//     closeDropdown(e);
-//   };
-//   const handleCyan = (e) => {
-//     e.preventDefault();
-//     setDisplay("Chi-Town Cyan");
-//     setContainerState("#00bcf2");
-//     closeDropdown(e);
-//   };
-//   const handleTeal = (e) => {
-//     e.preventDefault();
-//     setDisplay("Tabloid Teal");
-//     setContainerState("#00b294");
-//     closeDropdown(e);
-//   };
-//   const handleGreen = (e) => {
-//     e.preventDefault();
-//     setDisplay("Graduation Green");
-//     setContainerState("#009e49");
-//     closeDropdown(e);
-//   };
-//   const handleLime = (e) => {
-//     e.preventDefault();
-//     setDisplay("Let-You-Finish Lime");
-//     setContainerState("#bad80a");
-//     closeDropdown(e);
-//   };
-
-//   //
-
-//   const arrowStyle = showDropdown
-//     ? "SquareSelectTitle__Arrow arrow_up"
-//     : "SquareSelectTitle__Arrow arrow_down";
-
-//   const dropdownContainerStyle = showDropdown
-//     ? "SquareManySelects__Container isOpen"
-//     : "SquareManySelects__Container isClosed";
-
-//   const dropdownExpandedContent = showDropdown ? (
-//     <div className="DropdownExpansionContainer">
-//       <div className="DropdownOptionsContainer">
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleYellow}>
-//               {"Yellow"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleOrange}>
-//               {"Orange"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleRed}>
-//               {"Red"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleMagenta}>
-//               {"Magenta"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handlePurple}>
-//               {"Purple"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleBlue}>
-//               {"Blue"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleCyan}>
-//               {"Cyan"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleTeal}>
-//               {"Teal"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleGreen}>
-//               {"Green"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="SquareManySelects__Option">
-//           <div className="SquareSelectOption__Container">
-//             <div onClick={handleLime}>
-//               {"Lime"}
-//               {/* {icon} */}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   ) : (
-//     <div className="DropdownExpansionContainer">
-//       <div className="DropdownOptionsContainer"></div>
-//     </div>
-//   );
-
-//   return (
-//     <div className="Dropdown">
-//       <div className="SquareManySelects__Wrapper" onClick={openDropdown}>
-//         <div className={dropdownContainerStyle}>
-//           <div className="SquareSelectTitle__Container">
-//             {display}
-//             <div className={arrowStyle}>{svgChevron}</div>
-//           </div>
-//         </div>
-//       </div>
-//       {dropdownExpandedContent}
-//     </div>
-//   );
-// };
-
 const ProfileEdit = ({ match }) => {
   const { userId } = match.params;
   const user = useSelector((state) => selectUserById(state, userId));
@@ -324,6 +116,14 @@ const ProfileEdit = ({ match }) => {
     );
   };
 
+  const showCurrentColor = (
+    <div style={{ backgroundColor: `${currentUser.myColor}` }}>
+      <br />
+      <p>currentUser's saved color</p>
+      <br />
+    </div>
+  );
+
   const [selectedColor, setSelectedColor] = useState(currentUser.myColor);
 
   const showSelectedColor = (
@@ -339,6 +139,7 @@ const ProfileEdit = ({ match }) => {
     const authoredComments = user.authoredCommentsCount || "0";
     profile = (
       <section>
+        {showCurrentColor}
         <h1>Your Profile Page</h1>
         <p>id: {user.id}</p>
         <p>username: {user.username}</p>
@@ -347,7 +148,7 @@ const ProfileEdit = ({ match }) => {
         {showSelectedColor}
         <RefactoredDropdown
           setContainerState={setSelectedColor}
-          optionsParams={userColors}
+          optionsParams={Object.values(userColors)}
         />
         <button onClick={handleUpdateColor}>Save Changes</button>
       </section>
