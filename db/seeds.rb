@@ -7033,7 +7033,7 @@ end
   comment_hashes.push( Hash["username" => "WrightStuff", "body" => "'sup baby?"] )
 
 
-  def seedComments(commentable_array, commentable_type, comment_hashes, min_count, max_count)
+  def seed_comments(commentable_array, commentable_type, comment_hashes, min_count, max_count)
     now = Time.now
     six_months_ago = now - 60 * 60 * 24 * 30 * 6
     Kernel.srand 1234
@@ -7056,8 +7056,8 @@ end
   kanye_songs = Song.where("album_id != #{s_and_i.id}")
   other_songs = Song.where("album_id = #{s_and_i.id}")
 
-  seedComments(Artist.all, "Artist", comment_hashes, 1, 1)
-  seedComments(Album.all, "Album", comment_hashes, 2, 4)
-  seedComments(kanye_songs, "Song", comment_hashes, 2, 4)
-  seedComments(other_songs, "Song", comment_hashes, 1, 1)
-  seedComments(Verse.all, "Verse", comment_hashes, 0, 1)
+  seed_comments(Artist.all, "Artist", comment_hashes, 1, 1)
+  seed_comments(Album.all, "Album", comment_hashes, 2, 4)
+  seed_comments(kanye_songs, "Song", comment_hashes, 2, 4)
+  seed_comments(other_songs, "Song", comment_hashes, 1, 1)
+  seed_comments(Verse.all, "Verse", comment_hashes, 1, 3)
