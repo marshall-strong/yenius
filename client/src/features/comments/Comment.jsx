@@ -141,16 +141,9 @@ const Comment = ({ commentId }) => {
   return (
     <article className="Comment" key={comment.id}>
       <UserBadgeAndTimestamp userId={user.id} createdAt={comment.createdAt} />
-      {/* <div className="userBadgeAndTimestamp">
-        <div className="userBadge">{user.username}</div>
-        <TimeAgo timestamp={comment.createdAt} />
-      </div> */}
       <div className="standard-rich-content">{comment.body}</div>
-      {voting}
-      {upvoteButton}
-      {downvoteButton}
-      {deleteButton}
       {editButton}
+      {deleteButton}
       {editForm}
     </article>
   );
