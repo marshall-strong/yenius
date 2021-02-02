@@ -33,7 +33,7 @@ const AnnotationsContainer = ({ verseId }) => {
               <div className="placeholder annotation_placeholder annotation_placeholder--hide">
                 <div className="annotation_label">
                   <span>Yenius Annotations</span>
-                  <span>
+                  <span className=".topRight">
                     <Link to={`/songs/${verse.songId}`}>{xMark}</Link>
                   </span>
                 </div>
