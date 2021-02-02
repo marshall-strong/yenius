@@ -2,7 +2,7 @@ json.albums do
   json.set! @song.album.id do
     json.id @song.album.id
     json.name @song.album.name
-    json.urlAlbumCover64px url_for(@song.album.cover.variant(resize_to_fit: [64, 64], quality: 80))
+    json.urlAlbumCover url_for(@song.album.cover)
     json.releaseDate @song.album.release_date
     json.year @song.album.str_release_year
     json.songs do
