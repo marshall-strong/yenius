@@ -61,6 +61,9 @@
 .footer--secondary a {
   color: #99a7ee;
 }
+.footer--secondary a:hover {
+  color: #ffff64;
+}
 
 .footer-artist_links_label {
   display: inline-block;
@@ -81,4 +84,7 @@
 
 .character_index_list-link {
   color: #99a7ee;
+}
+.character_index_list-link a:hover {
+  color: #ffff64;
 }
