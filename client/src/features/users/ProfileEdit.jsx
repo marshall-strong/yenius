@@ -5,6 +5,8 @@ import { updateUserProfile } from "./usersAsyncThunks";
 
 import { selectUserById } from "./usersSlice";
 
+import RefactoredDropdown from "../../app/Dropdown";
+
 import userColors from "./userColors";
 
 const svgChevron = (
@@ -23,83 +25,6 @@ const squareStop = (
     <path d="M2 2h20v20h-20z" />
   </svg>
 );
-
-const RefactoredDropdown = ({ setContainerState, optionsParams }) => {
-  const currentUser = useSelector((state) => state.session.currentUser);
-  const [display, setDisplay] = useState(currentUser.myColor);
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const openDropdown = (e) => {
-    e.preventDefault();
-    setShowDropdown(true);
-  };
-
-  const closeDropdown = (e) => {
-    e.preventDefault();
-    setShowDropdown(false);
-    document.removeEventListener("click", closeDropdown);
-  };
-
-  useEffect(() => {
-    if (showDropdown) {
-      document.addEventListener("click", closeDropdown);
-    }
-  }, [showDropdown]);
-
-  const generateOption = (optionObj) => (
-    <div className="SquareManySelects__Option">
-      <div className="SquareSelectOption__Container">
-        <div
-          onClick={(e) => {
-            e.preventDefault();
-            setDisplay(optionObj.funName);
-            setContainerState(optionObj.hexCode);
-            closeDropdown(e);
-          }}
-        >
-          {optionObj.funName}
-          <div className="iconmonstr" style={{ fill: optionObj.hexCode }}>
-            {squareStop}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const options = optionsParams.map((optionObj) => generateOption(optionObj));
-
-  const arrowStyle = showDropdown
-    ? "SquareSelectTitle__Arrow arrow_up"
-    : "SquareSelectTitle__Arrow arrow_down";
-
-  const dropdownContainerStyle = showDropdown
-    ? "SquareManySelects__Container isOpen"
-    : "SquareManySelects__Container isClosed";
-
-  const dropdownExpandedContent = showDropdown ? (
-    <div className="DropdownExpansionContainer">
-      <div className="DropdownOptionsContainer">{options}</div>
-    </div>
-  ) : (
-    <div className="DropdownExpansionContainer">
-      <div className="DropdownOptionsContainer"></div>
-    </div>
-  );
-
-  return (
-    <div className="Dropdown">
-      <div className="SquareManySelects__Wrapper" onClick={openDropdown}>
-        <div className={dropdownContainerStyle}>
-          <div className="SquareSelectTitle__Container">
-            {display}
-            <div className={arrowStyle}>{svgChevron}</div>
-          </div>
-        </div>
-      </div>
-      {dropdownExpandedContent}
-    </div>
-  );
-};
 
 const ProfileEdit = ({ match }) => {
   const { userId } = match.params;
