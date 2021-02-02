@@ -13,18 +13,16 @@ const svgChevron = (
   </svg>
 );
 
-// const colorsParams = [
-//   { name: "yellow", value: "#fff100" },
-//   { name: "orange", value: "#ff8c00" },
-//   { name: "red", value: "#e81123" },
-//   { name: "magenta", value: "#ec008c" },
-//   { name: "purple", value: "#68217a" },
-//   { name: "blue", value: "#00188f" },
-//   { name: "cyan", value: "#00bcf2" },
-//   { name: "teal", value: "#00b294" },
-//   { name: "green", value: "#009e49" },
-//   { name: "lime", value: "#bad80a" },
-// ];
+const squareStop = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M2 2h20v20h-20z" />
+  </svg>
+);
 
 const RefactoredDropdown = ({ setContainerState, optionsParams }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
@@ -60,6 +58,9 @@ const RefactoredDropdown = ({ setContainerState, optionsParams }) => {
           }}
         >
           {optionObj.funName}
+          <div className="iconmonstr" style={{ fill: optionObj.hexCode }}>
+            {squareStop}
+          </div>
         </div>
       </div>
     </div>
