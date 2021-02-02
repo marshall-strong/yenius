@@ -93,7 +93,9 @@ const AnnotationsContainer = ({ verseId }) => {
                 ng-if="ctrl.show_annotation_label() &amp;&amp; annotation.state !== 'pending'"
                 ng-click="toggle_contributors()"
               >
-                <span ng-if="!variants.isDescription">Genius Annotation</span>
+                <span ng-if="!variants.isDescription">
+                  ________________________________________________
+                </span>
               </div>
 
               <VerseComments verseId={verseId} />
