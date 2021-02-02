@@ -18,6 +18,7 @@ json.users do
       json.id comment.author.id
       json.username comment.author.username
       json.myColor comment.author.my_color
+      json.authoredCommentsCount comment.author.authored_comments_count
     end
   end
 end
