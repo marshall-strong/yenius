@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { updateUserProfile } from "./usersAsyncThunks";
@@ -8,23 +8,6 @@ import { selectUserById } from "./usersSlice";
 import RefactoredDropdown from "../../app/Dropdown";
 
 import userColors from "./userColors";
-
-const svgChevron = (
-  <svg viewBox="0 0 21.32 10.91">
-    <path d="M10.66 10.91L0 1.5 1.32 0l9.34 8.24L20 0l1.32 1.5-10.66 9.41"></path>
-  </svg>
-);
-
-const squareStop = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-  >
-    <path d="M2 2h20v20h-20z" />
-  </svg>
-);
 
 const ProfileEdit = ({ match }) => {
   const { userId } = match.params;
