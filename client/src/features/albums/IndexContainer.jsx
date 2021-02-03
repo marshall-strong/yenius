@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { fetchAlbumsList } from "./albumsAsyncThunks";
+import { fetchAlbumsList } from "./albumsSliceThunks";
 
 import Breadcrumbs from "../../app/Breadcrumbs";
 import IndexList from "./IndexList";

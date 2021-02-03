@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { loginUser, logoutUser, signupUser } from "./sessionAsyncThunks";
-import { updateUserProfile } from "../users/usersAsyncThunks";
+import { loginUser, logoutUser, signupUser } from "./sessionSliceThunks";
+import { updateUserProfile } from "../users/usersSliceThunks";
 
 export const sessionSlice = createSlice({
   name: "session",

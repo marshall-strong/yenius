@@ -57,7 +57,7 @@ const AlbumInfo = ({ songId }) => {
   if (album.name === "Samples & Interpolations") {
     return (
       <div className="song_album u-bottom_margin">
-        <img src={album.urlAlbumCover64px} alt={album.name} />
+        <img src={`${album.urlAlbumCover}`} alt={album.name} />
         <div className="song_album-info">
           {album.name}
           <br />
@@ -71,7 +71,7 @@ const AlbumInfo = ({ songId }) => {
   return (
     <div className="song_album u-bottom_margin">
       <Link to={`/albums/${album.id}`} className="song_album-album_art">
-        <img src={album.urlAlbumCover64px} alt={album.name} />
+        <img src={album.urlAlbumCover} alt={album.name} />
       </Link>
       <div className="song_album-info">
         <Link to={`/albums/${album.id}`} className="song_album-info-title">

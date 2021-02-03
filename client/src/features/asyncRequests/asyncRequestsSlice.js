@@ -1,27 +1,27 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
-import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsAsyncThunks";
+import { fetchAlbumPage, fetchAlbumsList } from "../albums/albumsSliceThunks";
 import {
   fetchArtistPage,
   fetchArtistsList,
   fetchArtistsIndex,
-} from "../artists/artistsAsyncThunks";
+} from "../artists/artistsSliceThunks";
 import {
   fetchAlbumComments,
   fetchArtistComments,
   fetchSongComments,
   fetchVerseComments,
-} from "../comments/commentsAsyncThunks";
+} from "../comments/commentsSliceThunks";
 import {
   // fetchSongPage,
   fetchSongsList,
   fetchSongsIndex,
-} from "../songs/songsAsyncThunks";
+} from "../songs/songsSliceThunks";
 import {
   signupUser,
   loginUser,
   logoutUser,
-} from "../session/sessionAsyncThunks";
+} from "../session/sessionSliceThunks";
 
 const asyncRequestsAdapter = createEntityAdapter({
   // selectId is only necessary if entity's unique key is NOT entity.id

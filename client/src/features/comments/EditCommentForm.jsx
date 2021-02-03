@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
-import { editComment } from "./commentsAsyncThunks";
+import { editComment } from "./commentsSliceThunks";
 
 import { squareStop } from "../../app/iconmonstr";
 

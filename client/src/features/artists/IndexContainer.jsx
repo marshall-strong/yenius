@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchArtistsIndex } from "./artistsAsyncThunks";
+import { fetchArtistsIndex } from "./artistsSliceThunks";
 
 import NotFound from "../../app/NotFound";
 

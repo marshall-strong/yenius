@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchUserProfile } from "./usersAsyncThunks";
+import { fetchUserProfile } from "./usersSliceThunks";
 
 import { selectUserById } from "./usersSlice";
 

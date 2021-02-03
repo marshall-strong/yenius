@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { addArtistComment } from "../comments/commentsAsyncThunks";
+import { addArtistComment } from "../comments/commentsSliceThunks";
 
 import { selectArtistById } from "./artistsSlice";
 

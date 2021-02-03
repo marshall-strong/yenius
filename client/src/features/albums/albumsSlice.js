@@ -8,19 +8,18 @@ import {
   fetchAlbumPage,
   fetchAlbumsList,
   fetchTopAlbums,
-} from "../albums/albumsAsyncThunks";
-import { fetchArtistPage } from "../artists/artistsAsyncThunks";
+} from "../albums/albumsSliceThunks";
+import { fetchArtistPage } from "../artists/artistsSliceThunks";
+import { selectSongById } from "../songs/songsSlice";
 import {
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
-} from "../songs/songsAsyncThunks";
+} from "../songs/songsSliceThunks";
 import {
   addAlbumComment,
   fetchAlbumComments,
-} from "../comments/commentsAsyncThunks";
-
-import { selectSongById } from "../songs/songsSlice";
+} from "../comments/commentsSliceThunks";
 
 const albumsAdapter = createEntityAdapter({
   selectId: (album) => album.id,

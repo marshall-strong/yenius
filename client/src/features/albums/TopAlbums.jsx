@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { fetchTopAlbums } from "./albumsAsyncThunks";
-
 import { selectTopAlbums } from "./albumsSlice";
+import { fetchTopAlbums } from "./albumsSliceThunks";
 
 import NotFound from "../../app/NotFound";
 import TopAlbumsRow from "./TopAlbumsRow";

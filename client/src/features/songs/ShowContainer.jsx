@@ -9,12 +9,12 @@ import {
   fetchSongDescription,
   fetchSongLyrics,
   fetchSongSampleCredits,
-} from "./songsAsyncThunks";
+} from "./songsSliceThunks";
 
 import {
   fetchSongComments,
   fetchVerseComments,
-} from "../comments/commentsAsyncThunks";
+} from "../comments/commentsSliceThunks";
 
 import { selectSongById } from "./songsSlice";
 

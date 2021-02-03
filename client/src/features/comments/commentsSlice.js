@@ -15,7 +15,7 @@ import {
   fetchArtistComments,
   fetchSongComments,
   fetchVerseComments,
-} from "./commentsAsyncThunks";
+} from "./commentsSliceThunks";
 
 const commentsAdapter = createEntityAdapter({
   selectId: (comment) => comment.id,

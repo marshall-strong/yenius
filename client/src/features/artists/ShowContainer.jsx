@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchArtistPage } from "./artistsAsyncThunks";
-import { fetchArtistComments } from "../comments/commentsAsyncThunks";
+import { fetchArtistPage } from "./artistsSliceThunks";
+import { fetchArtistComments } from "../comments/commentsSliceThunks";
 
 import { selectArtistById } from "./artistsSlice";
 

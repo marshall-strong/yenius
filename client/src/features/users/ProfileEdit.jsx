@@ -1,323 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { updateUserProfile } from "./usersAsyncThunks";
+import { updateUserProfile } from "./usersSliceThunks";
 
 import { selectUserById } from "./usersSlice";
 
-const svgChevron = (
-  <svg viewBox="0 0 21.32 10.91">
-    <path d="M10.66 10.91L0 1.5 1.32 0l9.34 8.24L20 0l1.32 1.5-10.66 9.41"></path>
-  </svg>
-);
+import RefactoredDropdown from "../../app/Dropdown";
 
-// const optionsParams = {
-//   yellow: "#fff100",
-//   orange: "#ff8c00",
-//   red: "#e81123",
-//   magenta: "#ec008c",
-//   purple: "#68217a",
-//   blue: "#00188f",
-//   cyan: "#00bcf2",
-//   teal: "#00b294",
-//   green: "#009e49",
-//   lime: "#bad80a",
-// };
-
-const colorsParams = [
-  { name: "yellow", value: "#fff100" },
-  { name: "orange", value: "#ff8c00" },
-  { name: "red", value: "#e81123" },
-  { name: "magenta", value: "#ec008c" },
-  { name: "purple", value: "#68217a" },
-  { name: "blue", value: "#00188f" },
-  { name: "cyan", value: "#00bcf2" },
-  { name: "teal", value: "#00b294" },
-  { name: "green", value: "#009e49" },
-  { name: "lime", value: "#bad80a" },
-];
-
-const RefactoredDropdown = ({ setContainerState, optionsParams }) => {
-  const currentUser = useSelector((state) => state.session.currentUser);
-  const [display, setDisplay] = useState(currentUser.myColor);
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const openDropdown = (e) => {
-    e.preventDefault();
-    setShowDropdown(true);
-  };
-
-  const closeDropdown = (e) => {
-    e.preventDefault();
-    setShowDropdown(false);
-    document.removeEventListener("click", closeDropdown);
-  };
-
-  useEffect(() => {
-    if (showDropdown) {
-      document.addEventListener("click", closeDropdown);
-    }
-  }, [showDropdown]);
-
-  const generateOption = (optionObj) => (
-    <div className="SquareManySelects__Option">
-      <div className="SquareSelectOption__Container">
-        <div
-          onClick={(e) => {
-            e.preventDefault();
-            setDisplay(optionObj.name);
-            setContainerState(optionObj.value);
-            closeDropdown(e);
-          }}
-        >
-          {optionObj.name}
-        </div>
-      </div>
-    </div>
-  );
-
-  const options = optionsParams.map((optionObj) => generateOption(optionObj));
-
-  const arrowStyle = showDropdown
-    ? "SquareSelectTitle__Arrow arrow_up"
-    : "SquareSelectTitle__Arrow arrow_down";
-
-  const dropdownContainerStyle = showDropdown
-    ? "SquareManySelects__Container isOpen"
-    : "SquareManySelects__Container isClosed";
-
-  const dropdownExpandedContent = showDropdown ? (
-    <div className="DropdownExpansionContainer">
-      <div className="DropdownOptionsContainer">{options}</div>
-    </div>
-  ) : (
-    <div className="DropdownExpansionContainer">
-      <div className="DropdownOptionsContainer"></div>
-    </div>
-  );
-
-  return (
-    <div className="Dropdown">
-      <div className="SquareManySelects__Wrapper" onClick={openDropdown}>
-        <div className={dropdownContainerStyle}>
-          <div className="SquareSelectTitle__Container">
-            {display}
-            <div className={arrowStyle}>{svgChevron}</div>
-          </div>
-        </div>
-      </div>
-      {dropdownExpandedContent}
-    </div>
-  );
-};
-
-const Dropdown = ({ setContainerState }) => {
-  const currentUser = useSelector((state) => state.session.currentUser);
-  const [display, setDisplay] = useState(currentUser.myColor);
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const openDropdown = (e) => {
-    e.preventDefault();
-    setShowDropdown(true);
-  };
-
-  const closeDropdown = (e) => {
-    e.preventDefault();
-    setShowDropdown(false);
-    document.removeEventListener("click", closeDropdown);
-  };
-
-  useEffect(() => {
-    if (showDropdown) {
-      document.addEventListener("click", closeDropdown);
-    }
-  }, [showDropdown]);
-
-  const handleYellow = (e) => {
-    e.preventDefault();
-    setDisplay("Yellow");
-    setContainerState("#fff100");
-    closeDropdown(e);
-  };
-  const handleOrange = (e) => {
-    e.preventDefault();
-    setDisplay("Orange");
-    setContainerState("#ff8c00");
-    closeDropdown(e);
-  };
-  const handleRed = (e) => {
-    e.preventDefault();
-    setDisplay("Red");
-    setContainerState("#e81123");
-    closeDropdown(e);
-  };
-  const handleMagenta = (e) => {
-    e.preventDefault();
-    setDisplay("Magenta");
-    setContainerState("#ec008c");
-    closeDropdown(e);
-  };
-  const handlePurple = (e) => {
-    e.preventDefault();
-    setDisplay("Purple");
-    setContainerState("#68217a");
-    closeDropdown(e);
-  };
-  const handleBlue = (e) => {
-    e.preventDefault();
-    setDisplay("Blue");
-    setContainerState("#00188f");
-    closeDropdown(e);
-  };
-  const handleCyan = (e) => {
-    e.preventDefault();
-    setDisplay("Cyan");
-    setContainerState("#00bcf2");
-    closeDropdown(e);
-  };
-  const handleTeal = (e) => {
-    e.preventDefault();
-    setDisplay("Teal");
-    setContainerState("#00b294");
-    closeDropdown(e);
-  };
-  const handleGreen = (e) => {
-    e.preventDefault();
-    setDisplay("Green");
-    setContainerState("#009e49");
-    closeDropdown(e);
-  };
-  const handleLime = (e) => {
-    e.preventDefault();
-    setDisplay("Lime");
-    setContainerState("#bad80a");
-    closeDropdown(e);
-  };
-
-  //
-
-  const arrowStyle = showDropdown
-    ? "SquareSelectTitle__Arrow arrow_up"
-    : "SquareSelectTitle__Arrow arrow_down";
-
-  const dropdownContainerStyle = showDropdown
-    ? "SquareManySelects__Container isOpen"
-    : "SquareManySelects__Container isClosed";
-
-  const dropdownExpandedContent = showDropdown ? (
-    <div className="DropdownExpansionContainer">
-      <div className="DropdownOptionsContainer">
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleYellow}>
-              {"Yellow"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleOrange}>
-              {"Orange"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleRed}>
-              {"Red"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleMagenta}>
-              {"Magenta"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handlePurple}>
-              {"Purple"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleBlue}>
-              {"Blue"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleCyan}>
-              {"Cyan"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleTeal}>
-              {"Teal"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleGreen}>
-              {"Green"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-
-        <div className="SquareManySelects__Option">
-          <div className="SquareSelectOption__Container">
-            <div onClick={handleLime}>
-              {"Lime"}
-              {/* {icon} */}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div className="DropdownExpansionContainer">
-      <div className="DropdownOptionsContainer"></div>
-    </div>
-  );
-
-  return (
-    <div className="Dropdown">
-      <div className="SquareManySelects__Wrapper" onClick={openDropdown}>
-        <div className={dropdownContainerStyle}>
-          <div className="SquareSelectTitle__Container">
-            {display}
-            <div className={arrowStyle}>{svgChevron}</div>
-          </div>
-        </div>
-      </div>
-      {dropdownExpandedContent}
-    </div>
-  );
-};
+import userColors from "./userColors";
 
 const ProfileEdit = ({ match }) => {
   const { userId } = match.params;
@@ -335,6 +25,14 @@ const ProfileEdit = ({ match }) => {
     );
   };
 
+  const showCurrentColor = (
+    <div style={{ backgroundColor: `${currentUser.myColor}` }}>
+      <br />
+      <p>currentUser's saved color</p>
+      <br />
+    </div>
+  );
+
   const [selectedColor, setSelectedColor] = useState(currentUser.myColor);
 
   const showSelectedColor = (
@@ -350,6 +48,7 @@ const ProfileEdit = ({ match }) => {
     const authoredComments = user.authoredCommentsCount || "0";
     profile = (
       <section>
+        {showCurrentColor}
         <h1>Your Profile Page</h1>
         <p>id: {user.id}</p>
         <p>username: {user.username}</p>
@@ -358,7 +57,7 @@ const ProfileEdit = ({ match }) => {
         {showSelectedColor}
         <RefactoredDropdown
           setContainerState={setSelectedColor}
-          optionsParams={colorsParams}
+          optionsParams={Object.values(userColors)}
         />
         <button onClick={handleUpdateColor}>Save Changes</button>
       </section>

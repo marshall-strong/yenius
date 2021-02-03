@@ -49,8 +49,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.logout:hover {
+.footer a:hover,
+.footer Link:hover,
+.footer .logout:hover {
   cursor: pointer;
+  font-weight: bold;
 }
 
 .footer--secondary {
@@ -60,6 +63,9 @@
 
 .footer--secondary a {
   color: #99a7ee;
+}
+.footer--secondary a:hover {
+  color: #ffff64;
 }
 
 .footer-artist_links_label {
@@ -81,4 +87,7 @@
 
 .character_index_list-link {
   color: #99a7ee;
+}
+.character_index_list-link a:hover {
+  color: #ffff64;
 }
