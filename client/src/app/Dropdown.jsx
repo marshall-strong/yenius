@@ -52,9 +52,12 @@ const Dropdown = ({ setContainerState, optionsParams }) => {
           }}
         >
           {optionObj.funName}
-          <div className="iconmonstr" style={{ fill: optionObj.hexCode }}>
+          <span
+            className="iconmonstr userColor"
+            style={{ fill: optionObj.hexCode }}
+          >
             {squareStop}
-          </div>
+          </span>
         </div>
       </div>
     </div>
