@@ -19,6 +19,7 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 
 ## [cra-template-redux](https://github.com/reduxjs/cra-template-redux)
 > Maximize state management and minimize boilerplate with the Hooks API
+> Redux store maintains single source of truth on frontend, allowing easy access to complex and interconnected song metadata
 
 ## [React Router](https://github.com/ReactTraining/react-router)
 > Single page app support for lightning fast rendering on the front end
@@ -27,7 +28,8 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 > Just the best bits, leaving React to handle the UI.
 
 ## [PostgreSQL database](https://devcenter.heroku.com/articles/heroku-postgresql)
-> The classic
+> Single source of truth in PostgreSQL backend (join tables)
+> Flexible backend allows addition of new artist credits and relationships without changes to database schema
 
 ## Production Deployment on [Heroku](https://heroku.com)
 > Avoid CORS complications by managing both Node and Ruby from the same origin
@@ -35,17 +37,18 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 ## Image Hosting on [AWS S3]()
 > AWS description
 
-## [Bing News Search API]()
+## [Bing News Search API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
 > API description
 
 
 # Features
 
-* User Authentication, including error handling and "Demo User" login
-* Authenticated Users can create, update, and delete comments/annotations
-* Artist Credits
-* Song Interpretations
-* User metrics
+- User Authentication, including error handling and "Demo User" login
+  - BCrypt gem salts, hashes, and retrieves passwords, maintaining secure user authentication from front-end to back-end
+- Authenticated Users can create, update, and delete comments/annotations
+- Artist Credits
+- Song Interpretations
+- User metrics
 
 # Project Highlights
 
@@ -82,6 +85,11 @@ The file structure of this project changed multiple times over the course of dev
  2) Rails Webpacker
  3) 2 repositories: CreateReactApp frontend, Rails 6 API backend
  4) Current setup
+
+# About Heroku, Procfiles
+[Process Types and the Procfile | DEIS](https://pythonhosted.org/deis/using_deis/process-types/)
+[The Procfile | Heroku Dev Center](https://devcenter.heroku.com/articles/procfile)
+[The Process Model | Heroku Dev Center](https://devcenter.heroku.com/articles/process-model)
 
 # Deployment to Heroku
 
