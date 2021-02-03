@@ -10,6 +10,7 @@ import {
   fetchTopAlbums,
 } from "../albums/albumsSliceThunks";
 import { fetchArtistPage } from "../artists/artistsSliceThunks";
+import { selectSongById } from "../songs/songsSlice";
 import {
   fetchSongAlbum,
   fetchSongArtistCredits,
@@ -19,8 +20,6 @@ import {
   addAlbumComment,
   fetchAlbumComments,
 } from "../comments/commentsSliceThunks";
-
-import { selectSongById } from "../songs/songsSlice";
 
 const albumsAdapter = createEntityAdapter({
   selectId: (album) => album.id,

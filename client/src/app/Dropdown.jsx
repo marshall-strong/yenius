@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import { updateUserProfile } from "../features/users/usersSliceThunks";
-
-import { selectUserById } from "../features/users/usersSlice";
-
-import userColors from "../features/users/userColors";
+import { useSelector } from "react-redux";
 
 const svgChevron = (
   <svg viewBox="0 0 21.32 10.91">
