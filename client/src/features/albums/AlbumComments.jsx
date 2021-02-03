@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { selectAlbumById } from "./albumsSlice";
-import { addAlbumComment } from "../comments/commentsAsyncThunks";
+import { addAlbumComment } from "../comments/commentsSliceThunks";
 
 import CommentsContainer from "../comments/CommentsContainer";
 

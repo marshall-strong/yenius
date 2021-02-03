@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectVerseById } from "./versesSlice";
-import { addVerseComment } from "../comments/commentsAsyncThunks";
+import { addVerseComment } from "../comments/commentsSliceThunks";
 import CommentsContainer from "../comments/CommentsContainer";
 
 const VerseComments = ({ verseId }) => {

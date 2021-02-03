@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchTopSongs } from "./songsAsyncThunks";
+import { fetchTopSongs } from "./songsSliceThunks";
 
 import { selectTopSongs } from "./songsSlice";
 

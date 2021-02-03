@@ -3,8 +3,8 @@ import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import {
   addVerseComment,
   fetchVerseComments,
-} from "../comments/commentsAsyncThunks";
-import { fetchSongLyrics, fetchSongVerse } from "../songs/songsAsyncThunks";
+} from "../comments/commentsSliceThunks";
+import { fetchSongLyrics, fetchSongVerse } from "../songs/songsSliceThunks";
 
 const versesAdapter = createEntityAdapter({
   // selectId is only necessary if entity's unique key is NOT entity.id

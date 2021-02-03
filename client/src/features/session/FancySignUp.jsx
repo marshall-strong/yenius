@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { signupUser, loginUser } from "./sessionAsyncThunks";
+import { signupUser, loginUser } from "./sessionSliceThunks";
 
 import "../.././stylesheets/FancySignUp.scss";
 import "../../stylesheets/SessionContainer.scss";

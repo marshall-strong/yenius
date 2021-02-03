@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { loginUser } from "./sessionAsyncThunks";
+import { loginUser } from "./sessionSliceThunks";
 
 import "../../stylesheets/FancySignUp.scss";
 import "../../stylesheets/SessionContainer.scss";

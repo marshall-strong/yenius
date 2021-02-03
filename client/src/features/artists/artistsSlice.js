@@ -4,23 +4,23 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 
-import { fetchAlbumPage } from "../albums/albumsAsyncThunks";
+import { fetchAlbumPage } from "../albums/albumsSliceThunks";
 import {
   fetchArtistPage,
   fetchArtistsIndex,
   fetchArtistsList,
   fetchTopArtists,
-} from "../artists/artistsAsyncThunks";
+} from "../artists/artistsSliceThunks";
 import {
   addArtistComment,
   fetchArtistComments,
-} from "../comments/commentsAsyncThunks";
+} from "../comments/commentsSliceThunks";
 import {
   fetchSongAlbum,
   fetchSongArtistCredits,
   fetchSongBanner,
   fetchSongSampleCredits,
-} from "../songs/songsAsyncThunks";
+} from "../songs/songsSliceThunks";
 
 import { selectAlbumById, selectAlbumBySongId } from "../albums/albumsSlice";
 import { selectSongById } from "../songs/songsSlice";

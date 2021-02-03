@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
-import { fetchTopArtists } from "./artistsAsyncThunks";
+import { fetchTopArtists } from "./artistsSliceThunks";
 
 import { selectTopArtists } from "./artistsSlice";
 

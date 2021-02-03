@@ -1,9 +1,7 @@
-import { parseISO, formatDistanceToNow } from "date-fns";
-
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { deleteComment } from "../comments/commentsAsyncThunks";
+import { deleteComment } from "../comments/commentsSliceThunks";
 
 import { selectCommentById } from "../comments/commentsSlice";
 import { selectUserById } from "../users/usersSlice";

@@ -13,12 +13,12 @@ import {
   fetchArtistComments,
   fetchSongComments,
   fetchVerseComments,
-} from "../comments/commentsAsyncThunks";
+} from "../comments/commentsSliceThunks";
 import {
   fetchTopScholars,
   fetchUserProfile,
   updateUserProfile,
-} from "../users/usersAsyncThunks";
+} from "./usersSliceThunks";
 
 const usersAdapter = createEntityAdapter({
   selectId: (user) => user.id,
