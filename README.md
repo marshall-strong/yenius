@@ -13,9 +13,21 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 # Technologies / Stack
 
 > Inspired by the Heroku blog post [A Rock Solid, Modern Web Stack](https://blog.heroku.com/a-rock-solid-modern-web-stack)
-
+- [Guide on creating an API-only Rails project](https://medium.com/@oliver.seq/creating-a-rest-api-with-rails-2a07f548e5dc)
 ## [Create React App](https://github.com/facebook/create-react-app)
 > Because life is too short to configure Webpack manually
+- Configure yenius-client server to proxy any unknown API requests to the yenius-api server.
+
+  node foreman starts yenius-client and yenius-api from Procfile
+  yenius-client: webpack-dev-server returns index.html with React app, uses react-router-dom to update Components in response to changes in frontend routes
+  yenius-api: rails server returns JSON data in response to RESTful API calls (Procfile specifies the port to use)
+
+  Users access the application via yenius-client
+  Adding \"proxy\": \"http://localhost:3001/\" in package.json tells webpack-dev-server to proxy any unknown requests to yenius-api at localhost:3001.
+
+  This setup allows the application to avoid CORS issues like \"No 'Access-Control-Allow-Origin' header is present on the requested resource.\"
+
+  https://create-react-app.dev/docs/proxying-api-requests-in-development/
 
 ## [cra-template-redux](https://github.com/reduxjs/cra-template-redux)
 > Maximize state management and minimize boilerplate with the Hooks API
