@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 import { selectVerseById } from "../verses/versesSlice";
 
-import AnnotationSidebar from "./AnnotationSidebar";
 import VerseComments from "../verses/VerseComments";
 
 import { quoteLeft, quoteRight, xMark } from "../../app/iconmonstr";
