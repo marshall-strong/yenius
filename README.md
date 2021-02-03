@@ -1,14 +1,16 @@
 ![](./client/src/images/logo-yenius-1482-207.png)
 
-Yenius v2 has separate subdirectories for the frontend and backend.
+# Description
+
+Yenius is a Kanye-centric fullstack clone of the music encyclopedia [Genius](https://genius.com/).
+
 The frontend is a React/Redux app that uses the Redux Hooks API. It was created using [cra-template-redux](https://github.com/reduxjs/cra-template-redux), the official Redux+JS template for [Create React App](https://github.com/facebook/create-react-app).
 The backend is an API-only Ruby on Rails app, and uses a postgreSQL database.
 
-# Description
-Yenius is a Kanye-centric fullstack clone of the music encyclopedia [Genius](https://genius.com/).
 Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 
-# Built with a Rock Solid, Modern Web Stack
+
+# Technologies / Stack
 
 > Inspired by the Heroku blog post [A Rock Solid, Modern Web Stack](https://blog.heroku.com/a-rock-solid-modern-web-stack)
 
@@ -36,6 +38,7 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 ## [Bing News Search API]()
 > API description
 
+
 # Features
 
 * User Authentication, including error handling and "Demo User" login
@@ -44,81 +47,9 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 * Song Interpretations
 * User metrics
 
-
-
 # Project Highlights
 
-Project Highlight number one, followed by Code Snippet number one
-
-```js
-  const code = (snippet) => `#1`;
-```
-
-Project Highlight number two, followed by Code Snippet number two
-
-```js
-  const code = (snippet) => `#2`;
-```
-
-Project Highlight number three, followed by Code Snippet number three
-
-```js
-  const code = (snippet) => `#3`;
-```
-
-# To Do
- - add CMS with [ActiveAdmin](https://activeadmin.info/0-installation.html#setting-up-active-admin)
-
-# Development Environment
-[pre-commit](https://pre-commit.com/)
-
-seed development database:
-`heroku local:run rails db:seed`
-
-run:
-`rails start`
-
-The `rails start` command is configured in `lib/tasks/start.rake`.
-`heroku` commands are executed by the Heroku Command Line Interface (CLI).
-heroku reads `Procfile.dev` and starts the tasks:
-
-- `web: PORT=3000 yarn --cwd client start`
-  Runs the frontend on a local Node server on port 3000
-  Access the client at http://localhost:3000 in your browser
-- `api: PORT=3001 bundle exec rails s`
-  Run the backend on a local Rails server on port 3001
-  Access ActiveAdmin via the API, at http://localhost:3001/admin
-
-## Style
-
-Use _[pre-commit](https://pre-commit.com/)_ framework for managing and maintaining multi-language pre-commit hooks (Requires _[python](https://docs.python-guide.org/starting/install3/linux/)_)
-UPDATE: pre-commit should now only run Prettier the /client directory
-/client directory uses Prettier and ESLint to format code as a pre-commit hook
-
-
-
-
-Since this app will ultimately be deployed to Heroku, we should use [Heroku local](https://devcenter.heroku.com/articles/heroku-local) for development so that our dev environment more closely resembles our production environment.
-
-# credentials
-DEV: Heroku local reads environmental variables from .env
-PROD: Heroku stores environmental variables in the config vars. For reference, these values have been locally exported to .env.prod
-
-# seeding database
-DEV: `heroku local:run rails db:seed`
-PROD: `heroku run rake db:migrate db:seed`
-
-# resetting database
-DEV: `heroku local:run rails db:drop && heroku local:run rails db:create && heroku local:run rails db:migrate && heroku local:run rails db:seed`
-PROD: `heroku restart && heroku pg:reset DATABASE --confirm yenius--rails6-api && heroku run rake db:migrate && heroku run rake db:seed`
-https://devcenter.heroku.com/articles/heroku-postgresql
-
-# deploying
-DEV: `heroku local -f Procfile.dev -e .env`
-PROD: `git push heroku main`, `heroku run rake db:migrate`, `heroku run rails db:seed`
-
-
-# Counter Cache
+## Counter Cache
 The Rails API uses a counter cache to store each User's authored comments.
 https://blog.appsignal.com/2018/06/19/activerecords-counter-cache.html
 The counter_cache: option is specified on the belongs_to side of the association (Comment), and the symbol passed (:authored_comments_count) is the name of the field that will be added to the has_many model (User).
@@ -130,3 +61,111 @@ Generate migration to update the existing records (avoids having to re-seed the 
 Run migrations (development)
 `heroku local:run rails db:migrate`
 
+## Project Highlight number two, followed by Code Snippet number two
+
+```js
+  const code = (snippet) => `#2`;
+```
+
+## Project Highlight number three, followed by Code Snippet number three
+
+```js
+  const code = (snippet) => `#3`;
+```
+
+# Project Structure
+
+Staying organized is one of the foremost challenges in creating a fullstack web application.
+
+The file structure of this project changed multiple times over the course of development:
+ 1) AppAcademy structure
+ 2) Rails Webpacker
+ 3) 2 repositories: CreateReactApp frontend, Rails 6 API backend
+ 4) Current setup
+
+# Deployment to Heroku
+
+> "Nothing we do is difficult, it's all just very complicated" - Scott Myers
+
+It's a tale as old as time: everything is running smoothly in development, then you push to production and nothing works. The more our development environment resembles our production environment, the merrier you'll be when it comes time to deploy. If you're using Heroku for your production deployment, make the transition as painless as possible and use [Heroku local](https://devcenter.heroku.com/articles/heroku-local).
+
+## credentials
+
+In production, Heroku stores environmental variables in the config vars.
+(these values have been locally exported for reference and can be found at .env.prod)
+
+In development, Heroku local reads environmental variables from a `.env` file.
+
+
+## start development server
+> `rails start`
+
+```rb
+# lib/tasks/start.rake
+namespace :start do
+  task :development do
+    exec 'heroku local -f Procfile.dev'
+  end
+end
+desc 'Start development server'
+task :start => 'start:development'
+```
+
+`heroku` commands are executed by the Heroku Command Line Interface (CLI).
+Heroku (and by extension Heroku local) uses a Procfile to specify the commands to be executed by the app on startup
+
+```sh
+# heroku local -f Procfile.dev -e .env
+web: PORT=3000 yarn --cwd client start
+api: PORT=3001 bundle exec rails s
+```
+Heroku CLI reads `Procfile.dev` and starts the tasks:
+
+- `web: PORT=3000 yarn --cwd client start`
+Runs the frontend on a local Node server on port 3000
+Access the client at http://localhost:3000 in your browser
+
+- `api: PORT=3001 bundle exec rails s`
+  Runs the backend on a local Rails server on port 3001
+  Access ActiveAdmin via the API, at http://localhost:3001/admin
+
+## seed development database
+> `heroku local:run rails db:seed`
+
+## reset development database
+> `heroku local:run rails db:drop && heroku local:run rails db:create && heroku local:run rails db:migrate && heroku local:run rails db:seed`
+
+## deploy to production
+> `git push heroku main`
+
+## setup production database
+> `heroku run rake db:migrate db:seed`
+
+## reset production database
+> `heroku restart && heroku pg:reset DATABASE --confirm yenius--rails6-api && heroku run rake db:migrate && heroku run rake db:seed`
+
+
+# Project Style
+
+ - [pre-commit](https://pre-commit.com/)
+ - Prettier
+ - ESLint
+
+[pre-commit](https://pre-commit.com/) is a framework for managing and maintaining multi-language pre-commit hooks
+It requires [python](https://docs.python-guide.org/starting/install3/linux/) to run
+
+UPDATE: pre-commit should now only run Prettier on the /client directory
+/client directory uses Prettier and ESLint to format code as a pre-commit hook
+
+
+# Future Development
+  - add CMS access with [ActiveAdmin](https://activeadmin.info/0-installation.html#setting-up-active-admin)
+
+  - multiple user roles:
+    - moderators can edit, delete all Comments
+    - admins can add, edit ArtistCreditTypes, SampleCreditTypes
+    - users can add, edit Albums, Artists, Songs, Lyrics, ArtistCredits, SampleCredits
+
+  - show headshot on hover
+    - mousing over an artist link should display the artist's headshot
+    - the headshot should disappear when the user mouses away
