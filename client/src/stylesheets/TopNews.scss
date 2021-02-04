@@ -37,12 +37,12 @@ body {
 }
 
 .HeroStory .Container .Link {
-  color: black;
   display: flex;
   flex-direction: column;
   height: 100%;
   min-height: inherit;
   a {
+    color: black;
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
