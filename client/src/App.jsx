@@ -14,7 +14,7 @@ import AuthorizedRoute from "./app/AuthorizedRoute";
 import Counter from "./features/counter/Counter";
 import HomeContainer from "./app/HomeContainer";
 import LoginForm from "./features/session/FancyLogin";
-import Navbar from "./app/Navbar";
+import Navbar from "./app/layout/Navbar";
 import NotFound from "./app/pages/NotFound";
 import PageFooter from "./app/PageFooter";
 import SignupForm from "./features/session/FancySignUp";
