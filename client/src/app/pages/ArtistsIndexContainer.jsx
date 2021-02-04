@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchArtistsIndex } from "./artistsSliceThunks";
+import { fetchArtistsIndex } from "../../features/artists/artistsSliceThunks";
 
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "./NotFound";
 
 // import "../.././stylesheets/ArtistsIndex.scss";
 // import "../../stylesheets/IndexContainer.scss";
 
-import Breadcrumbs from "../../app/layout/Breadcrumbs";
-import IndexChars from "./IndexChars";
-import IndexList from "./IndexList";
-import TopArtists from "./TopArtists";
+import Breadcrumbs from "../layout/Breadcrumbs";
+import IndexChars from "../../features/artists/IndexChars";
+import IndexList from "../../features/artists/IndexList";
+import TopArtists from "../../features/artists/TopArtists";
 
 const Suggestions = () => {
   return (

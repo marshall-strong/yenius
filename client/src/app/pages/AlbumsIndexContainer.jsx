@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { fetchAlbumsList } from "./albumsSliceThunks";
+import { fetchAlbumsList } from "../../features/albums/albumsSliceThunks";
 
-import Breadcrumbs from "../../app/layout/Breadcrumbs";
-import IndexList from "./IndexList";
-import TopAlbums from "./TopAlbums";
+import Breadcrumbs from "../layout/Breadcrumbs";
+import IndexList from "../../features/albums/IndexList";
+import TopAlbums from "../../features/albums/TopAlbums";
 
 // import "../../stylesheets/IndexContainer.scss";
 

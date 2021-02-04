@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { selectAlbumById } from "./albumsSlice";
-import { fetchAlbumPage } from "./albumsSliceThunks";
-import { fetchAlbumComments } from "../comments/commentsSliceThunks";
+import { selectAlbumById } from "../../features/albums/albumsSlice";
+import { fetchAlbumPage } from "../../features/albums/albumsSliceThunks";
+import { fetchAlbumComments } from "../../features/comments/commentsSliceThunks";
 
-import Banner from "./Banner";
-import Breadcrumbs from "../../app/layout/Breadcrumbs";
-import ColumnLayout from "./ColumnLayout";
-import NotFound from "../../app/pages/NotFound";
+import Banner from "../../features/albums/Banner";
+import Breadcrumbs from "../layout/Breadcrumbs";
+import ColumnLayout from "../../features/albums/ColumnLayout";
+import NotFound from "./NotFound";
 
 // import "../../stylesheets/show.scss";
 // import "../../stylesheets/ShowContainer.scss";

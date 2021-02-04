@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchArtistPage } from "./artistsSliceThunks";
-import { fetchArtistComments } from "../comments/commentsSliceThunks";
+import { fetchArtistPage } from "../../features/artists/artistsSliceThunks";
+import { fetchArtistComments } from "../../features/comments/commentsSliceThunks";
 
-import { selectArtistById } from "./artistsSlice";
+import { selectArtistById } from "../../features/artists/artistsSlice";
 
-import Banner from "./Banner";
-import Breadcrumbs from "../../app/layout/Breadcrumbs";
-import ColumnLayout from "./ColumnLayout";
-import NotFound from "../../app/pages/NotFound";
+import Banner from "../../features/artists/Banner";
+import Breadcrumbs from "../layout/Breadcrumbs";
+import ColumnLayout from "../../features/artists/ColumnLayout";
+import NotFound from "./NotFound";
 
 // import "../../stylesheets/show.scss";
 // import "../../stylesheets/ShowContainer.scss";
