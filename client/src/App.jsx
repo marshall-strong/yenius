@@ -12,7 +12,7 @@ import ArtistShow from "./features/artists/ShowContainer";
 import ArtistsIndex from "./features/artists/IndexContainer";
 import AuthorizedRoute from "./app/AuthorizedRoute";
 import Counter from "./features/counter/Counter";
-import HomeContainer from "./app/HomeContainer";
+import HomeContainer from "./app/pages/HomeContainer";
 import LoginForm from "./features/session/FancyLogin";
 import Navbar from "./app/layout/Navbar";
 import NotFound from "./app/pages/NotFound";
