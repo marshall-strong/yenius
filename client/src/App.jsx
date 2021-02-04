@@ -27,24 +27,6 @@ import "./stylesheets/Loader.scss";
 
 import "./font-faces.scss";
 
-import "./fonts/Programme-Regular/Programme-Regular.eot";
-import "./fonts/Programme-Regular/Programme-Regular.svg";
-import "./fonts/Programme-Regular/Programme-Regular.ttf";
-import "./fonts/Programme-Regular/Programme-Regular.woff";
-import "./fonts/Programme-Regular/Programme-Regular.woff2";
-
-import "./fonts/Programme-Bold/Programme-Bold.eot";
-import "./fonts/Programme-Bold/Programme-Bold.svg";
-import "./fonts/Programme-Bold/Programme-Bold.ttf";
-import "./fonts/Programme-Bold/Programme-Bold.woff";
-import "./fonts/Programme-Bold/Programme-Bold.woff2";
-
-import "./fonts/Programme-Light/Programme-Light.eot";
-import "./fonts/Programme-Light/Programme-Light.svg";
-import "./fonts/Programme-Light/Programme-Light.ttf";
-import "./fonts/Programme-Light/Programme-Light.woff";
-import "./fonts/Programme-Light/Programme-Light.woff2";
-
 const App = () => (
   <main className="App">
     <Router>
