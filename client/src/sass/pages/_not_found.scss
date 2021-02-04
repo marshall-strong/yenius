@@ -1,0 +1,14 @@
+.NotFound {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+}
+
+.NotFound h1,
+.NotFound h2 {
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 10px;
+  padding-top: 1px;
+}
