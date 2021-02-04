@@ -8,7 +8,7 @@ import { fetchAlbumComments } from "../../features/comments/commentsSliceThunks"
 import Banner from "../components/AlbumBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
 import ColumnLayout from "../components/AlbumColumnLayout";
-import NotFound from "./NotFound";
+import PageNotFound from "./PageNotFound";
 
 // import "../../stylesheets/show.scss";
 // import "../../stylesheets/ShowContainer.scss";
@@ -52,7 +52,7 @@ const AlbumPage = ({ match }) => {
     content = (
       <div>
         <h2>Album not found!</h2>
-        <NotFound />
+        <PageNotFound />
       </div>
     );
   } else if (album && fetchAlbumPageStatus === "fulfilled") {

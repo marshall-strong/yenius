@@ -6,7 +6,7 @@ import { fetchTopArtists } from "../../features/artists/artistsSliceThunks";
 
 import { selectTopArtists } from "../../features/artists/artistsSlice";
 
-import NotFound from "../pages/NotFound";
+import PageNotFound from "../pages/PageNotFound";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 
@@ -139,7 +139,7 @@ const TopArtistsContainer = () => {
       <div>
         fetchTopArtists was rejected!
         <br />
-        <NotFound />
+        <PageNotFound />
       </div>
     );
   } else {

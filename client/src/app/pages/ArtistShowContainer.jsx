@@ -9,7 +9,7 @@ import { selectArtistById } from "../../features/artists/artistsSlice";
 import Banner from "../components/ArtistBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
 import ColumnLayout from "../components/ArtistColumnLayout";
-import NotFound from "./NotFound";
+import PageNotFound from "./PageNotFound";
 
 // import "../../stylesheets/show.scss";
 // import "../../stylesheets/ShowContainer.scss";
@@ -42,7 +42,7 @@ const ArtistShowContainer = ({ match }) => {
     content = (
       <div>
         <h2>Artist not found!</h2>
-        <NotFound />
+        <PageNotFound />
       </div>
     );
   }

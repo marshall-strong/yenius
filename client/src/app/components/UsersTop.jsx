@@ -6,7 +6,7 @@ import { fetchTopScholars } from "../../features/users/usersSliceThunks";
 
 import { selectTopScholars } from "../../features/users/usersSlice";
 
-import NotFound from "../pages/NotFound";
+import PageNotFound from "../pages/PageNotFound";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 
@@ -144,7 +144,7 @@ const TopScholarsContainer = () => {
       <div>
         fetchTopScholars was rejected!
         <br />
-        <NotFound />
+        <PageNotFound />
       </div>
     );
   } else {

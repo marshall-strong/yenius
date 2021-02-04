@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { selectTopAlbums } from "../../features/albums/albumsSlice";
 import { fetchTopAlbums } from "../../features/albums/albumsSliceThunks";
 
-import NotFound from "../pages/NotFound";
+import PageNotFound from "../pages/PageNotFound";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 
@@ -161,7 +161,7 @@ const TopAlbumsContainer = () => {
       <div>
         fetchTopAlbums was rejected!
         <br />
-        <NotFound />
+        <PageNotFound />
       </div>
     );
   } else {

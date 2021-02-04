@@ -7,7 +7,7 @@ import { selectUserById } from "../../features/users/usersSlice";
 
 import ProfileEdit from "../components/UserProfileEdit";
 import Profile from "../components/UserProfile";
-import NotFound from "./NotFound";
+import PageNotFound from "./PageNotFound";
 
 // import "../.././stylesheets/ProfileContainer.scss";
 
@@ -29,7 +29,7 @@ const ProfileContainer = ({ match }) => {
     content = (
       <div>
         <h2>User not found!</h2>
-        <NotFound />
+        <PageNotFound />
       </div>
     );
   }

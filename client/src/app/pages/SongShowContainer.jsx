@@ -21,7 +21,7 @@ import { selectSongById } from "../../features/songs/songsSlice";
 import Banner from "../components/SongBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
 import ColumnLayout from "../components/SongColumnLayout";
-import NotFound from "./NotFound";
+import PageNotFound from "./PageNotFound";
 
 // import "../../stylesheets/ShowContainer.scss";
 // import "../../stylesheets/SongPage.scss";
@@ -55,7 +55,7 @@ const ShowContainer = ({ match }) => {
   if (!song && fetchSongStatus === "rejected") {
     content = (
       <div>
-        <NotFound message={"No Song Found"} />
+        <PageNotFound message={"No Song Found"} />
       </div>
     );
   }

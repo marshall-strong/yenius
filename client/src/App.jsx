@@ -12,12 +12,12 @@ import ArtistShow from "./app/pages/ArtistShowContainer";
 import ArtistsIndex from "./app/pages/ArtistsIndexContainer";
 import AuthorizedRoute from "./app/AuthorizedRoute";
 import Counter from "./features/counter/Counter";
-import HomeContainer from "./app/pages/HomeContainer";
-import LoginForm from "./app/pages/SessionLoginContainer";
+import Home from "./app/pages/HomeContainer";
+import SessionLogin from "./app/pages/SessionLoginContainer";
 import Navbar from "./app/layout/Navbar";
-import NotFound from "./app/pages/NotFound";
+import PageNotFound from "./app/pages/PageNotFound";
 import Footer from "./app/layout/Footer";
-import SignupForm from "./app/pages/SessionSignupContainer";
+import SessionSignup from "./app/pages/SessionSignupContainer";
 import SongShow from "./app/pages/SongShowContainer";
 import SongsIndex from "./app/pages/SongsIndexContainer";
 import UserProfile from "./app/pages/UserProfileContainer";
@@ -30,7 +30,7 @@ const App = () => (
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={HomeContainer} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/albums" component={AlbumsIndex} />
         <Route exact path="/albums/:albumId" component={AlbumShow} />
         <Route exact path="/artists" component={ArtistsIndex} />
@@ -49,9 +49,9 @@ const App = () => (
         />
         <Route exact path="/counter" component={Counter} />
         <Route exact path="/users/:userId" component={UserProfile} />
-        <AuthorizedRoute exact path="/signup" component={SignupForm} />
-        <AuthorizedRoute exact path="/login" component={LoginForm} />
-        <Route component={NotFound} />
+        <AuthorizedRoute exact path="/login" component={SessionLogin} />
+        <AuthorizedRoute exact path="/signup" component={SessionSignup} />
+        <Route component={PageNotFound} />
         <Redirect to="/" />
       </Switch>
       <Footer />
