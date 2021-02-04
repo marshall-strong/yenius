@@ -5,7 +5,7 @@ import { fetchTopArtists } from "./artistsSliceThunks";
 
 import { selectTopArtists } from "./artistsSlice";
 
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../../app/components/NotFound";
 import TopArtistsRow from "./TopArtistsRow";
 
 const TopArtistsContent = () => {

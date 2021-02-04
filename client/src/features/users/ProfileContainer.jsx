@@ -7,7 +7,7 @@ import { selectUserById } from "./usersSlice";
 
 import ProfileEdit from "./ProfileEdit";
 import Profile from "./Profile";
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../../app/components/NotFound";
 
 // import "../.././stylesheets/ProfileContainer.scss";
 

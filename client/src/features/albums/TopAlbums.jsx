@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { selectTopAlbums } from "./albumsSlice";
 import { fetchTopAlbums } from "./albumsSliceThunks";
 
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../../app/components/NotFound";
 import TopAlbumsRow from "./TopAlbumsRow";
 
 const TopAlbumsContent = () => {

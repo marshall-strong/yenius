@@ -15,7 +15,7 @@ import Counter from "./features/counter/Counter";
 import HomeContainer from "./app/pages/HomeContainer";
 import LoginForm from "./features/session/FancyLogin";
 import Navbar from "./app/layout/Navbar";
-import NotFound from "./app/pages/NotFound";
+import NotFound from "./app/components/NotFound";
 import Footer from "./app/layout/Footer";
 import SignupForm from "./features/session/FancySignUp";
 import SongShow from "./features/songs/ShowContainer";

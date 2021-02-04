@@ -21,7 +21,7 @@ import { selectSongById } from "./songsSlice";
 import Banner from "./Banner";
 import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import ColumnLayout from "./ColumnLayout";
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../../app/components/NotFound";
 
 // import "../../stylesheets/ShowContainer.scss";
 // import "../../stylesheets/SongPage.scss";

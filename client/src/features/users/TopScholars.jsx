@@ -5,7 +5,7 @@ import { fetchTopScholars } from "./usersSliceThunks";
 
 import { selectTopScholars } from "./usersSlice";
 
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../../app/components/NotFound";
 import TopScholarsRow from "./TopScholarsRow";
 
 // import "../.././stylesheets/TopScholars.scss";

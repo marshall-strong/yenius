@@ -9,7 +9,7 @@ import { selectArtistById } from "./artistsSlice";
 import Banner from "./Banner";
 import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import ColumnLayout from "./ColumnLayout";
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../../app/components/NotFound";
 
 // import "../../stylesheets/show.scss";
 // import "../../stylesheets/ShowContainer.scss";

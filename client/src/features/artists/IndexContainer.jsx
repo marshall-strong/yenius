@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { fetchArtistsIndex } from "./artistsSliceThunks";
 
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../../app/components/NotFound";
 
 // import "../.././stylesheets/ArtistsIndex.scss";
 // import "../../stylesheets/IndexContainer.scss";
