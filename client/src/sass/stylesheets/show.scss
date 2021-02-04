@@ -1,0 +1,160 @@
+// ShowPage.scss
+.grid {
+  background-color: rgba(255, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.column {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  font-family: "Output Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+// albums_show.scss
+.ShowPage {
+  background-color: #f7f7f7;
+  width: 100%;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.LayoutContainer {
+  box-sizing: border-box;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  max-width: 970px;
+  position: relative;
+  width: 100%;
+}
+
+.Layout {
+  box-sizing: border-box;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  max-width: 970px;
+  position: relative;
+  width: 100%;
+}
+
+.LeftColumn {
+  box-sizing: border-box;
+  border-color: magenta;
+  border-style: dotted;
+  border-width: 2px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 58%;
+}
+
+.RightColumn {
+  box-sizing: border-box;
+  border-color: orangered;
+  border-style: dotted;
+  border-width: 2px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  width: 42%;
+  z-index: 1;
+}
+
+.tracklist-header {
+  color: #9a9a9a;
+  font-family: Programme-Regular, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  margin-right: 0.1em;
+  text-transform: uppercase;
+}
+
+.TracklistRow {
+  align-items: baseline;
+  border-bottom-color: #e9e9e9;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  box-sizing: border-box;
+  color: #222;
+  display: flex;
+  padding: 1rem 1rem 1rem 0;
+  position: relative;
+}
+
+.track-container {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-family: Programme-Bold, sans-serif;
+  font-size: 1.125em;
+  justify-content: space-between;
+  line-height: 1.45;
+  width: 100%;
+}
+
+.track-align-left {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.track-track_number {
+  color: #9a9a9a;
+  display: flex;
+  font-weight: 700;
+  justify-content: flex-start;
+  margin-right: 0.5rem;
+  min-width: 2em;
+}
+
+.track-content_ft {
+  color: #222;
+  display: block;
+  font-family: Programme-Bold, sans-serif;
+  font-size: 1.125em;
+  font-weight: 700;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.track-text-gray {
+  color: #9a9a9a;
+  display: inline;
+  font-family: Programme-Bold, sans-serif;
+  font-weight: 400;
+}
+
+.track-expand_arrow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.track-details .track-expanded-true {
+  display: block;
+}
+
+.track-details .track-expanded-false {
+  display: none;
+}
+
+.track-credits a:-webkit-any-link {
+  color: #7d8fe8;
+}

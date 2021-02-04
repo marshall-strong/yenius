@@ -1,0 +1,88 @@
+.PageFooter {
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: Programme-Regular, sans-serif;
+  justify-content: space-between;
+  min-height: 38px;
+  position: static;
+  width: 100%;
+}
+
+.page_footer {
+  background: #121212;
+  border: 0;
+  box-sizing: border-box;
+  color: #222;
+  display: block;
+  font-family: Programme-Regular, sans-serif;
+  line-height: 1.45;
+  margin: 0;
+  padding: 0;
+
+  div: {
+    display: block;
+  }
+}
+
+.footer {
+  background: #121212;
+  color: #ccc;
+  font-family: Programme-Regular, sans-serif;
+  line-height: 1.65;
+  padding: 2.25rem 0.75rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footer a,
+.footer Link,
+.footer .logout {
+  color: #ffff64;
+  padding: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.footer--secondary {
+  margin-top: -1rem;
+  padding-top: 0;
+  a {
+    color: #99a7ee;
+    &:hover {
+      color: #ffff64;
+    }
+  }
+}
+
+.footer-artist_links_label {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.characters_index_list {
+  display: inline-block;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.character_index_list-element {
+  display: inline-block;
+}
+
+.character_index_list-link {
+  color: #99a7ee;
+  a:hover {
+    color: #ffff64;
+  }
+}
