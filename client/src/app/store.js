@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counterSlice";
-import asyncRequestsReducer from "../features/asyncRequests/asyncRequestsSlice";
 import usersReducer from "../features/users/usersSlice";
 import artistsReducer from "../features/artists/artistsSlice";
 import albumsReducer from "../features/albums/albumsSlice";
@@ -12,7 +11,6 @@ import sessionReducer from "../features/session/sessionSlice";
 export default configureStore({
   reducer: {
     counter: counterReducer,
-    asyncRequests: asyncRequestsReducer,
     users: usersReducer,
     artists: artistsReducer,
     albums: albumsReducer,
