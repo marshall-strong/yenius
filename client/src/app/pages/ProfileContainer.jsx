@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchUserProfile } from "./usersSliceThunks";
+import { fetchUserProfile } from "../../features/users/usersSliceThunks";
 
-import { selectUserById } from "./usersSlice";
+import { selectUserById } from "../../features/users/usersSlice";
 
-import ProfileEdit from "./ProfileEdit";
-import Profile from "./Profile";
-import NotFound from "../../app/components/NotFound";
+import ProfileEdit from "../../features/users/ProfileEdit";
+import Profile from "../../features/users/Profile";
+import NotFound from "../components/NotFound";
 
 // import "../.././stylesheets/ProfileContainer.scss";
 

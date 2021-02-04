@@ -20,7 +20,7 @@ import Footer from "./app/layout/Footer";
 import SignupForm from "./features/session/FancySignUp";
 import SongShow from "./features/songs/ShowContainer";
 import SongsIndex from "./features/songs/IndexContainer";
-import UserProfile from "./features/users/ProfileContainer";
+import UserProfile from "./app/pages/ProfileContainer";
 
 // import "./stylesheets/App.scss";
 // import "./stylesheets/Loader.scss";
