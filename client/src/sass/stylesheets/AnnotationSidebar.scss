@@ -7,7 +7,6 @@
   position: absolute;
   right: 100%;
   width: 22px;
-  // top: 1002.8px;
 }
 
 .annotation_sidebar_arrow:before {
@@ -34,8 +33,6 @@ svg:not(:root) {
 
 .u-relative {
   position: relative;
-
-  // top: 502.188px;
 }
 
 hide:not(.ng-hide-animate) {
@@ -246,10 +243,6 @@ button {
   -webkit-appearance: none;
 }
 .square_button {
-  // -webkit-touch-callout: none;
-  // -webkit-user-select: none;
-  // -moz-user-select: none;
-  // -ms-user-select: none;
   user-select: none;
 }
 .square_button:hover {
@@ -330,7 +323,6 @@ button {
 }
 
 .square_button--purple {
-  // border-color: #99a7ee;
   color: #99a7ee;
 }
 .square_button--purple .inline_icon {
@@ -338,7 +330,6 @@ button {
 }
 
 .square_button--gray {
-  // border-color: #9a9a9a;
   color: #9a9a9a;
 }
 .square_button--gray .inline_icon {
@@ -400,7 +391,6 @@ hide:not(.ng-hide-animate) {
 }
 .square_button {
   -webkit-touch-callout: none;
-  /* -webkit-user-select: none; */
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -503,9 +493,6 @@ hide:not(.ng-hide-animate) {
   padding-right: 0.75rem;
 }
 
-// element.style {
-//     background-image: url(https://assets.genius.com/images/default_avatar_100.png?1611700455);
-// }
 .user_avatar--small {
   height: 24px;
   width: 24px;
@@ -646,12 +633,6 @@ button {
   text-decoration: none;
 }
 
-// element.style {
-//     background-image: url(https://assets.genius.com/images/default_avatar_32.png?1611700455);
-// }
-.user_badge {
-  // background-image: url(https://assets.genius.com/images/default_avatar_32.png?1611700455);
-}
 .user_avatar--x_small {
   height: 16px;
   width: 16px;

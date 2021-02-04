@@ -41,16 +41,6 @@
   text-align: center;
 }
 
-// .SectionTitle__Subtitle .h3 {
-//   display: block;
-//   font-size: 1.17em;
-//   margin-block-start: 1em;
-//   margin-block-end: 1em;
-//   margin-inline-start: 0px;
-//   margin-inline-end: 0px;
-//   font-weight: bold;
-// }
-
 .SectionTitle__Subtitle h3 {
   line-height: 1.45;
   margin-block-end: 1em;
@@ -90,7 +80,6 @@
 }
 .isOpen {
   width: 300px;
-
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
 }
 .isClosed {
@@ -102,13 +91,9 @@
 .isOpenDropdown-Charts {
   height: 200px;
 }
-.isClosedDropdown-Charts {
-}
 
 .isOpenDropdown-ProfileEdit {
   height: 600px;
-}
-.isClosedDropdown-ProfileEdit {
 }
 
 .SquareSelectTitle__Container {
@@ -127,9 +112,6 @@
   color: rgb(0, 0, 0);
 }
 
-// element.style {
-//     transform: rotateX(0deg);
-// }
 .SquareSelectTitle__Arrow {
   position: absolute;
   top: 0.75rem;
@@ -149,20 +131,14 @@
   height: 0.875rem;
 }
 
-// not renamed yet
 .DropdownExpansionContainer {
   display: flex;
-  // border-top: 2px solid rgb(233, 233, 233);
   position: relative;
   z-index: 2;
 }
 
 .DropdownOptionsContainer {
   flex: 1 1 0%;
-}
-
-.SquareManySelects__Option {
-  // border-bottom: 2px solid rgb(233, 233, 233);
 }
 
 .SquareSelectOption__Container {

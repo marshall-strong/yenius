@@ -59,7 +59,6 @@
   border-color: magenta;
   border-style: dotted;
   border-width: 2px;
-  // display: block;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 58%;
@@ -70,16 +69,11 @@
   border-color: orangered;
   border-style: dotted;
   border-width: 2px;
-  // display: inline-flex;
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;
   width: 42%;
   z-index: 1;
-}
-
-.Tracklist {
-  // background: red;
 }
 
 .tracklist-header {
@@ -100,13 +94,8 @@
   border-bottom-width: 1px;
   box-sizing: border-box;
   color: #222;
-  // display: block;
   display: flex;
   padding: 1rem 1rem 1rem 0;
-  // padding-top: 1rem;
-  // padding-right: 1rem;
-  // padding-bottom: 1rem;
-  // padding-left: 0px;
   position: relative;
 }
 
@@ -168,29 +157,4 @@
 
 .track-credits a:-webkit-any-link {
   color: #7d8fe8;
-}
-
-.track-credits-feature {
-}
-
-.track-credits-production {
-}
-
-.track-description {
-}
-
-.TempComments {
-  background: blue;
-}
-
-.TempAbout {
-  background-color: maroon;
-}
-
-.TempAlbum {
-  background-color: olivedrab;
-}
-
-.TempSong {
-  background-color: purple;
 }

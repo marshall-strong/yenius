@@ -1,7 +1,3 @@
-.Comments {
-  // background: #f7f7f7;
-}
-
 .Comments .grayContainer {
   background-color: rgba(204, 204, 204, 0.35);
   margin-bottom: 1rem;
@@ -21,7 +17,6 @@
 
 .Comments .grayContainer .CommentForm .avatarBoxWithInputBox .avatarBox {
   align-items: center;
-  // background: green;
   display: flex;
   padding-right: 0.75rem;
 }
@@ -65,9 +60,6 @@
   font-family: Programme-Regular, Arial, sans-serif;
 }
 
-.Comments .grayContainer .CommentsList {
-}
-
 .Comments .grayContainer .Comment {
   border-top: 1px solid #99a7ee;
   display: block;
@@ -100,9 +92,6 @@
   font-size: 0.75em;
   min-width: 5em;
   text-align: right;
-}
-
-.Comment .standard-rich-content {
 }
 
 .submitButton {

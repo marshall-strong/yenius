@@ -89,9 +89,6 @@ body {
   margin-top: 0.5rem;
 }
 
-.HeroStory .Container .Link .Byline {
-}
-
 .HeroStory .Container .Link .Byline .Author {
   font-size: 0.75rem;
 }
@@ -114,8 +111,6 @@ body {
 .HeroImageLink .SizedImageContainer {
   background: center center / auto calc(100% + 1px) repeat-x rgb(255, 255, 255);
   position: relative;
-  // background-image: url(https://t2.genius.com/unsafe/338x338/https%3A%2F%2Fimages.genius.com%2F8e81582….1000x1000x1.jpg);
-  // padding-bottom: 56.25%;
 }
 
 .NewsStory {
@@ -178,9 +173,6 @@ body {
   display: inline;
   font-size: 100%;
   font-weight: inherit;
-}
-
-.NewsStory .Container .Link .Byline {
 }
 
 .NewsStory .Container .Link .Byline .Author {

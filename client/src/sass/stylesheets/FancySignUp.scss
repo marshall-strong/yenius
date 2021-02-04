@@ -19,9 +19,6 @@
   text-align: center;
 }
 
-.show_sign_up_form {
-}
-
 .sign-up-header {
   margin-bottom: 25px;
   padding: 0;
@@ -173,24 +170,6 @@ a:link {
   display: none;
 }
 
-// #facebox .edit_user, .new_user, .new_user_session, .post_comment_message .new_user {
-//     -webkit-border-radius: 2px;
-//     -moz-border-radius: 2px;
-//     -ms-border-radius: 2px;
-//     -o-border-radius: 2px;
-//     border-radius: 2px;
-//     -moz-box-sizing: border-box;
-//     -webkit-box-sizing: border-box;
-//     box-sizing: border-box;
-//     color: #ede8e9;
-//     background-color: rgba(153,153,153,.09);
-//     padding: 10px;
-//     margin: 10px auto;
-//     max-width: 370px;
-//     font-family: Programme-Regular,Arial,sans-serif;
-//     border-top: 1px solid rgba(153,153,153,.18);
-// }
-
 .new_user {
   background-color: rgba(153, 153, 153, 0.09);
   border-radius: 2px;
@@ -201,15 +180,8 @@ a:link {
   margin: 10px auto;
   max-width: 370px;
   padding: 10px;
-  // -moz-border-radius: 2px;
-  // -moz-box-sizing: border-box;
-  // -ms-border-radius: 2px;
-  // -o-border-radius: 2px;
-  // -webkit-border-radius: 2px;
-  // -webkit-box-sizing: border-box;
 }
 
-// #facebox .edit_user label, .new_user label, .new_user_session label, .post_comment_message .new_user label
 .new_user label {
   font-size: 14px;
   font-weight: 400;
@@ -295,9 +267,6 @@ input {
 
 #user_email {
   word-break: break-word;
-  // -webkit-hyphens: auto;
-  // -moz-hyphens: auto;
-  // hyphens: auto;
 }
 
 #facebox .edit_user .message,
