@@ -1,3 +1,19 @@
 @import "stylesheets/index";
 
 @import "abstracts/fonts";
+
+@import "layout/breadcrumbs";
+@import "layout/footer";
+@import "layout/navbar";
+
+@import "pages/album_show";
+@import "pages/albums_index";
+@import "pages/artist_show";
+@import "pages/artists_index";
+@import "pages/home";
+@import "pages/not_found";
+@import "pages/session_login";
+@import "pages/session_signup";
+@import "pages/song_show";
+@import "pages/songs_index";
+@import "pages/user_profile";
