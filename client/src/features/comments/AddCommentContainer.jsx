@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
 import CommunityButtons from "../../app/CommunityButtons";
-import { squareStop } from "../../app/iconmonstr";
+import { squareStop } from "../../app/modules/iconmonstr";
 
 const AddCommentInitial = ({ handleClick }) => {
   return (

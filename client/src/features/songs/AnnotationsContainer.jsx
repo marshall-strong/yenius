@@ -6,7 +6,7 @@ import { selectVerseById } from "../verses/versesSlice";
 
 import VerseComments from "../verses/VerseComments";
 
-import { quoteLeft, quoteRight, xMark } from "../../app/iconmonstr";
+import { quoteLeft, quoteRight, xMark } from "../../app/modules/iconmonstr";
 
 import "../../stylesheets/AnnotationSidebar.scss";
 
