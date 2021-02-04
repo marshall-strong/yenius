@@ -11,7 +11,6 @@ import AlbumsIndex from "./app/pages/AlbumsIndexContainer";
 import ArtistShow from "./app/pages/ArtistShowContainer";
 import ArtistsIndex from "./app/pages/ArtistsIndexContainer";
 import AuthorizedRoute from "./app/AuthorizedRoute";
-import Counter from "./features/counter/Counter";
 import Home from "./app/pages/HomeContainer";
 import SessionLogin from "./app/pages/SessionLoginContainer";
 import Navbar from "./app/layout/Navbar";
@@ -47,7 +46,6 @@ const App = () => (
           path="/songs/:songId/verses/:verseId"
           component={SongShow}
         />
-        <Route exact path="/counter" component={Counter} />
         <Route exact path="/users/:userId" component={UserProfile} />
         <AuthorizedRoute exact path="/login" component={SessionLogin} />
         <AuthorizedRoute exact path="/signup" component={SessionSignup} />
