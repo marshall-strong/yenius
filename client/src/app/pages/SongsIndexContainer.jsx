@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { fetchSongsIndex } from "./songsSliceThunks";
+import { fetchSongsIndex } from "../../features/songs/songsSliceThunks";
 
-import Breadcrumbs from "../../app/layout/Breadcrumbs";
-import IndexChars from "./IndexChars";
-import IndexList from "./IndexList";
-import TopSongs from "./TopSongs";
+import Breadcrumbs from "../layout/Breadcrumbs";
+import IndexChars from "../../features/songs/IndexChars";
+import IndexList from "../../features/songs/IndexList";
+import TopSongs from "../../features/songs/TopSongs";
 
 // import "../../stylesheets/IndexContainer.scss";
 // import "../../stylesheets/SongsIndex.scss";

@@ -15,11 +15,11 @@ import Counter from "./features/counter/Counter";
 import HomeContainer from "./app/pages/HomeContainer";
 import LoginForm from "./features/session/FancyLogin";
 import Navbar from "./app/layout/Navbar";
-import NotFound from "./app/components/NotFound";
+import NotFound from "./app/pages/NotFound";
 import Footer from "./app/layout/Footer";
 import SignupForm from "./features/session/FancySignUp";
-import SongShow from "./features/songs/ShowContainer";
-import SongsIndex from "./features/songs/IndexContainer";
+import SongShow from "./app/pages/SongShowContainer";
+import SongsIndex from "./app/pages/SongsIndexContainer";
 import UserProfile from "./app/pages/ProfileContainer";
 
 // import "./stylesheets/App.scss";

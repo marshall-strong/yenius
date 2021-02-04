@@ -5,7 +5,7 @@ import { fetchTopSongs } from "./songsSliceThunks";
 
 import { selectTopSongs } from "./songsSlice";
 
-import NotFound from "../../app/components/NotFound";
+import NotFound from "../../app/pages/NotFound";
 import TopSongsRow from "./TopSongsRow";
 
 const TopSongsContent = () => {

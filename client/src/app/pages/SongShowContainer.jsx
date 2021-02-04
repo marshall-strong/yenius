@@ -9,19 +9,19 @@ import {
   fetchSongDescription,
   fetchSongLyrics,
   fetchSongSampleCredits,
-} from "./songsSliceThunks";
+} from "../../features/songs/songsSliceThunks";
 
 import {
   fetchSongComments,
   fetchVerseComments,
-} from "../comments/commentsSliceThunks";
+} from "../../features/comments/commentsSliceThunks";
 
-import { selectSongById } from "./songsSlice";
+import { selectSongById } from "../../features/songs/songsSlice";
 
-import Banner from "./Banner";
-import Breadcrumbs from "../../app/layout/Breadcrumbs";
-import ColumnLayout from "./ColumnLayout";
-import NotFound from "../../app/components/NotFound";
+import Banner from "../../features/songs/Banner";
+import Breadcrumbs from "../layout/Breadcrumbs";
+import ColumnLayout from "../../features/songs/ColumnLayout";
+import NotFound from "./NotFound";
 
 // import "../../stylesheets/ShowContainer.scss";
 // import "../../stylesheets/SongPage.scss";
