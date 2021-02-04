@@ -1,0 +1,89 @@
+.ArtistsIndex {
+  // background-color: black;
+  font-family: Programme-Regular, sans-serif;
+}
+
+.artists_index-breadcrumbs,
+.artists_index-header,
+.artists_index_list,
+.characters_index_list {
+  margin-left: 20px;
+}
+
+.ArtistsIndex h1,
+.ArtistsIndex h2 {
+  // color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 10px;
+  padding-top: 1px;
+}
+
+.ArtistsIndex h1,
+.ArtistsIndex h3,
+.ArtistsIndex .IndexCharsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ArtistsIndex .breadcrumbs {
+  list-style-type: none;
+}
+
+.ArtistsIndex .breadcrumbs li {
+  display: inline;
+  margin: 0 5px 0 0;
+}
+
+.ArtistsIndex a {
+  color: #5ba7c2;
+  text-decoration: none;
+}
+.ArtistsIndex a:hover {
+  color: #000000;
+  font-weight: bold;
+}
+
+.ArtistsIndex .artists_index_list {
+  list-style-type: none;
+}
+
+.ArtistsIndex .artists_index_list li {
+  margin: 0;
+}
+
+.ArtistsIndex .characters_index_list {
+  list-style-type: none;
+}
+
+.ArtistsIndex .characters_index_list li {
+  margin: 0;
+}
+
+.ArtistsIndex ul {
+  list-style: disc outside;
+  margin: 1em;
+  margin-top: 0;
+}
+
+.AristsIndex .artists_index_list-artist_name {
+  font-size: 1.2em;
+}
+
+.ArtistsIndex .artists_index_characters_list {
+  font-size: 1.5em;
+  line-height: 1.1em;
+  margin-left: 20px;
+}
+
+.ArtistsIndex .characters_index_list {
+  font-size: 1.5em;
+  line-height: 1.1em;
+  margin-left: 20px;
+}
+
+.ArtistsIndex .character_index_list-link {
+  padding: 0.3rem;
+}
