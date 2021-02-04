@@ -9,7 +9,12 @@ import { selectUserById } from "../users/usersSlice";
 import EditCommentForm from "./EditCommentForm";
 import UserBadgeAndTimestamp from "./UserBadgeAndTimestamp";
 
-import { edit, thumbDown, thumbUp, trashCan } from "../../app/iconmonstr";
+import {
+  edit,
+  thumbDown,
+  thumbUp,
+  trashCan,
+} from "../../app/modules/iconmonstr";
 
 const voting = (
   <voting

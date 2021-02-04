@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import TopAlbums from "../features/albums/TopAlbums";
-import TopArtists from "../features/artists/TopArtists";
-import TopSongs from "../features/songs/TopSongs";
+import TopAlbums from "../../features/albums/TopAlbums";
+import TopArtists from "../../features/artists/TopArtists";
+import TopSongs from "../../features/songs/TopSongs";
 
-import "../stylesheets/Charts.scss";
+import "../../stylesheets/Charts.scss";
 
 const svgChevron = (
   <svg viewBox="0 0 21.32 10.91">
@@ -87,8 +87,8 @@ const Dropdown = ({ setContainerState }) => {
     : "SquareSelectTitle__Arrow arrow_down";
 
   const dropdownContainerStyle = showDropdown
-    ? "SquareManySelects__Container isOpen"
-    : "SquareManySelects__Container isClosed";
+    ? "SquareManySelects__Container isOpen isOpenDropdown-Charts"
+    : "SquareManySelects__Container isClosed isClosedDropdown-Charts";
 
   const dropdownExpandedContent = showDropdown ? (
     <div className="DropdownExpansionContainer">

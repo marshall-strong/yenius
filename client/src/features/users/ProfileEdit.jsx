@@ -5,7 +5,7 @@ import { updateUserProfile } from "./usersSliceThunks";
 
 import { selectUserById } from "./usersSlice";
 
-import RefactoredDropdown from "../../app/Dropdown";
+import RefactoredDropdown from "../../app/modules/Dropdown";
 
 import userColors from "./userColors";
 
@@ -26,19 +26,25 @@ const ProfileEdit = ({ match }) => {
   };
 
   const showCurrentColor = (
-    <div style={{ backgroundColor: `${currentUser.myColor}` }}>
+    <div
+      style={{ backgroundColor: `${currentUser.myColor}`, textAlign: "center" }}
+    >
       <br />
       <p>currentUser's saved color</p>
       <br />
     </div>
   );
 
-  const [selectedColor, setSelectedColor] = useState(currentUser.myColor);
+  const [selectedColor, setSelectedColor] = useState(
+    userColors[currentUser.myColor]
+  );
 
   const showSelectedColor = (
-    <div style={{ backgroundColor: `${selectedColor}` }}>
+    <div style={{ backgroundColor: `${selectedColor.hexCode}` }}>
       <br />
-      <p>myColor: {selectedColor}</p>
+      <div className="colorFunName" style={{ textAlign: "center" }}>
+        {selectedColor.funName}
+      </div>
       <br />
     </div>
   );

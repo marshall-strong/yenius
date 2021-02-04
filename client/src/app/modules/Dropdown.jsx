@@ -20,7 +20,7 @@ const squareStop = (
 
 const Dropdown = ({ setContainerState, optionsParams }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
-  const [display, setDisplay] = useState(currentUser.myColor);
+  const [display, setDisplay] = useState("select a color");
   const [showDropdown, setShowDropdown] = useState(false);
 
   const openDropdown = (e) => {
@@ -40,14 +40,14 @@ const Dropdown = ({ setContainerState, optionsParams }) => {
     }
   }, [showDropdown]);
 
-  const generateOption = (optionObj) => (
-    <div className="SquareManySelects__Option">
+  const generateOption = (optionObj, idx) => (
+    <div className="SquareManySelects__Option" key={idx}>
       <div className="SquareSelectOption__Container">
         <div
           onClick={(e) => {
             e.preventDefault();
             setDisplay(optionObj.funName);
-            setContainerState(optionObj.hexCode);
+            setContainerState(optionObj);
             closeDropdown(e);
           }}
         >
@@ -63,15 +63,17 @@ const Dropdown = ({ setContainerState, optionsParams }) => {
     </div>
   );
 
-  const options = optionsParams.map((optionObj) => generateOption(optionObj));
+  const options = optionsParams.map((optionObj, idx) =>
+    generateOption(optionObj, idx)
+  );
 
   const arrowStyle = showDropdown
     ? "SquareSelectTitle__Arrow arrow_up"
     : "SquareSelectTitle__Arrow arrow_down";
 
   const dropdownContainerStyle = showDropdown
-    ? "SquareManySelects__Container isOpen"
-    : "SquareManySelects__Container isClosed";
+    ? "SquareManySelects__Container isOpen isOpenDropdown-ProfileEdit"
+    : "SquareManySelects__Container isClosed isClosedDropdown-ProfileEdit";
 
   const dropdownExpandedContent = showDropdown ? (
     <div className="DropdownExpansionContainer">

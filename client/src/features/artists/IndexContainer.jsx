@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { fetchArtistsIndex } from "./artistsSliceThunks";
 
-import NotFound from "../../app/NotFound";
+import NotFound from "../../app/pages/NotFound";
 
 import "../.././stylesheets/ArtistsIndex.scss";
 import "../../stylesheets/IndexContainer.scss";
 
-import Breadcrumbs from "../../app/Breadcrumbs";
+import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import IndexChars from "./IndexChars";
 import IndexList from "./IndexList";
 import TopArtists from "./TopArtists";

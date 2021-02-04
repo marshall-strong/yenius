@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { logoutUser } from "../features/session/sessionSliceThunks";
+import { logoutUser } from "../../features/session/sessionSliceThunks";
 
-import { github, linkedin } from "./iconmonstr";
-import YeniusLogo from "../images/logo-yenius-1482-207.png";
+import { github, linkedin } from "../modules/iconmonstr";
+import YeniusLogo from "../../images/logo-yenius-1482-207.png";
 
-import ".././stylesheets/Navbar.scss";
+import "../../stylesheets/Navbar.scss";
 
 const Navbar = () => {
   const dispatch = useDispatch();

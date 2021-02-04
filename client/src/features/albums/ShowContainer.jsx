@@ -6,9 +6,9 @@ import { fetchAlbumPage } from "./albumsSliceThunks";
 import { fetchAlbumComments } from "../comments/commentsSliceThunks";
 
 import Banner from "./Banner";
-import Breadcrumbs from "../../app/Breadcrumbs";
+import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import ColumnLayout from "./ColumnLayout";
-import NotFound from "../../app/NotFound";
+import NotFound from "../../app/pages/NotFound";
 
 import "../../stylesheets/show.scss";
 import "../../stylesheets/ShowContainer.scss";

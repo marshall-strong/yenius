@@ -2,9 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { logoutUser } from "../features/session/sessionSliceThunks";
+import { logoutUser } from "../../features/session/sessionSliceThunks";
 
-import ".././stylesheets/PageFooter.scss";
+import "../../stylesheets/PageFooter.scss";
 
 const CharacterIndexListElements = () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -28,7 +28,7 @@ export const ArtistIndexFooter = () => {
   );
 };
 
-const PageFooter = () => {
+const Footer = () => {
   const currentUser = useSelector((state) => state.session.currentUser);
   const dispatch = useDispatch();
   const handleLogoutClick = (e) => {
@@ -91,4 +91,4 @@ const PageFooter = () => {
   );
 };
 
-export default PageFooter;
+export default Footer;

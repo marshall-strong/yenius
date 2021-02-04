@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { selectUserById } from "../users/usersSlice";
 
 import TimeAgo from "./TimeAgo";
-import { squareStop } from "../../app/iconmonstr";
+import { squareStop } from "../../app/modules/iconmonstr";
 
 import "../../stylesheets/UserBadgeAndTimestamp.scss";
 

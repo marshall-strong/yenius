@@ -4,7 +4,7 @@ import { unwrapResult } from "@reduxjs/toolkit";
 
 import { editComment } from "./commentsSliceThunks";
 
-import { squareStop } from "../../app/iconmonstr";
+import { squareStop } from "../../app/modules/iconmonstr";
 
 const EditCommentForm = ({ comment, setShowEditForm }) => {
   const currentUser = useSelector((state) => state.session.currentUser);

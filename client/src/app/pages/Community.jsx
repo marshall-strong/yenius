@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-import CommunityButtons from "./CommunityButtons";
-import TopScholars from "../features/users/TopScholars";
+import TopScholars from "../../features/users/TopScholars";
 
-import "../stylesheets/Charts.scss";
-import "../stylesheets/Community.scss";
-import "../stylesheets/TopSongsRow.scss";
+import "../../stylesheets/Charts.scss";
+import "../../stylesheets/Community.scss";
+import "../../stylesheets/CommunityButtons.scss";
+import "../../stylesheets/TopSongsRow.scss";
 
 const CommunityTitle = () => (
   <div className="SectionTitle__Container">
@@ -19,7 +21,22 @@ const CommunityTitle = () => (
   </div>
 );
 
-// const JoinButton = () => ();
+const CommunityButtons = () => {
+  const currentUser = useSelector((state) => state.session.currentUser);
+  const url = currentUser ? `/users/${currentUser.id}` : "/signup";
+  const text = currentUser ? "Update Your Profile" : "Join Our Community";
+  return (
+    <div className="PageGridFull-idpot7-0 PageGridFull">
+      <div className="Communitydesktop__Buttons-x5mxcf-0 Communitydesktop__Buttons">
+        <span className="Communitydesktop__Join-x5mxcf-1 Communitydesktop__Join">
+          <Link to={url} className="SquareButton-sc-109lda7-0 SquareButton">
+            {text}
+          </Link>
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const TopScholarsHeader = () => (
   <div className="TopSongRow">

@@ -6,7 +6,7 @@ import { selectVerseById } from "../verses/versesSlice";
 
 import VerseComments from "../verses/VerseComments";
 
-import { quoteLeft, quoteRight, xMark } from "../../app/iconmonstr";
+import { quoteLeft, quoteRight, xMark } from "../../app/modules/iconmonstr";
 
 import "../../stylesheets/AnnotationSidebar.scss";
 
@@ -28,11 +28,11 @@ const AnnotationsContainer = ({ verseId }) => {
       <div className="AnnotationSidebar">
         <div className="u-relative nganimate-fade_slide_from_left">
           <div className="annotation_sidebar_unit">
-            <annotation-placeholder>
+            <div>
               <div className="placeholder annotation_placeholder annotation_placeholder--hide">
                 <div className="annotation_label">
                   <span>Yenius Annotations</span>
-                  <span className=".topRight">
+                  <span style={{ paddingLeft: 210 }}>
                     <Link to={`/songs/${verse.songId}`}>{xMark}</Link>
                   </span>
                 </div>
@@ -56,7 +56,7 @@ const AnnotationsContainer = ({ verseId }) => {
                   </div>
                 </div>
               </div>
-            </annotation-placeholder>
+            </div>
           </div>
           <div className="annotation_sidebar_arrow">
             <svg
@@ -68,13 +68,13 @@ const AnnotationsContainer = ({ verseId }) => {
             </svg>
           </div>
           <div className="annotation_sidebar_unit" show-arrow-at-offset="">
-            <annotation object="annotation">
+            <div object="annotation">
               <div className="annotation_label u-clickable">
                 <span>________________________________________________</span>
               </div>
 
               <VerseComments verseId={verseId} />
-            </annotation>
+            </div>
           </div>
         </div>
       </div>
