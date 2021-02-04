@@ -47,25 +47,20 @@
   text-decoration: none;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
-}
-
-.footer a:hover,
-.footer Link:hover,
-.footer .logout:hover {
-  cursor: pointer;
-  font-weight: bold;
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .footer--secondary {
   margin-top: -1rem;
   padding-top: 0;
-}
-
-.footer--secondary a {
-  color: #99a7ee;
-}
-.footer--secondary a:hover {
-  color: #ffff64;
+  a {
+    color: #99a7ee;
+    &:hover {
+      color: #ffff64;
+    }
+  }
 }
 
 .footer-artist_links_label {
@@ -87,7 +82,7 @@
 
 .character_index_list-link {
   color: #99a7ee;
-}
-.character_index_list-link a:hover {
-  color: #ffff64;
+  a:hover {
+    color: #ffff64;
+  }
 }
