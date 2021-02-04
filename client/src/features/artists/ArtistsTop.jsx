@@ -1,5 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
+import { fetchTopArtists } from "./artistsSliceThunks";
+
+import { selectTopArtists } from "./artistsSlice";
+
+import NotFound from "../../app/pages/NotFound";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 
@@ -18,39 +25,38 @@ const svgEye = (
   </svg>
 );
 
-const TopSongsRow = ({ song }) => {
-  const songId = song.id;
-  const songName = song.name;
-  const songArtist = song.artist; // song.list_artistsPrimary
-  const songRank = song.rank;
-  const songCoverUrl = song.urlAlbumCover;
+const TopArtistsRow = ({ artist }) => {
+  const artistId = artist.id;
+  const artistName = artist.name;
+  const artistRank = artist.rank;
+  const artistHeadshotUrl = artist.urlHeadshot;
 
-  const styleCoverImage = {
-    backgroundImage: `url(${songCoverUrl})`,
+  const styleHeadshotImage = {
+    backgroundImage: `url(${artistHeadshotUrl})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
   let content;
-  if (song) {
+  if (artist) {
     content = (
       <div className="TopSongRow">
-        <Link to={`/songs/${songId}`} className="ChartItem__Row">
-          <div className="ChartItem__Rank">{songRank}</div>
+        <Link to={`/artists/${artistId}`} className="ChartItem__Row">
+          <div className="ChartItem__Rank">{artistRank}</div>
           <div className="ChartSong__CoverAndTitle">
             <div className="ChartSong__Cover">
-              <div className="SizedImage__Container" style={styleCoverImage}>
+              <div className="SizedImage__Container" style={styleHeadshotImage}>
                 <noscript>
                   <img
-                    src={`url(${songCoverUrl})`}
+                    src={`url(${artistHeadshotUrl})`}
                     className="SizedImage__NoScript"
                   />
                 </noscript>
               </div>
             </div>
             <h3 className="ChartSong__TitleAndLyrics">
-              <div className="ChartSong__Title">{songName}</div>
-              <div className="ChartSong__Lyrics">
+              <div className="ChartSong__Title">{artistName}</div>
+              {/* <div className="ChartSong__Lyrics">
                 <span
                   color="background.onVariant"
                   fontWeight="normal"
@@ -58,10 +64,10 @@ const TopSongsRow = ({ song }) => {
                 >
                   Lyrics
                 </span>
-              </div>
+              </div> */}
             </h3>
           </div>
-          <h4 className="ChartSong__Artist">{songArtist}</h4>
+          <h4 className="ChartSong__Artist">{/* {"other metadata"} */}</h4>
           <div className="ChartSong__Metadata">
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">
@@ -100,4 +106,47 @@ const TopSongsRow = ({ song }) => {
   return content;
 };
 
-export default TopSongsRow;
+const TopArtistsContent = () => {
+  const artists = useSelector((state) => selectTopArtists(state));
+  const rows = artists.map((artist) => (
+    <TopArtistsRow artist={artist} key={artist.rank} />
+  ));
+  return <div>{rows}</div>;
+};
+
+const TopArtistsContainer = () => {
+  const [requestSent, setRequestSent] = useState(false);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!requestSent) {
+      dispatch(fetchTopArtists());
+      setRequestSent(true);
+    }
+  }, [requestSent, dispatch]);
+
+  const fetchTopArtistsStatus = useSelector(
+    (state) => state.artists.status.fetchTopArtists
+  );
+
+  let content;
+  if (!fetchTopArtistsStatus || fetchTopArtistsStatus === "pending") {
+    content = <div className="loader" />;
+  } else if (fetchTopArtistsStatus === "fulfilled") {
+    content = <TopArtistsContent />;
+  } else if (fetchTopArtistsStatus === "rejected") {
+    content = (
+      <div>
+        fetchTopArtists was rejected!
+        <br />
+        <NotFound />
+      </div>
+    );
+  } else {
+    content = <div>Something unexpected happened in TopArtists...</div>;
+  }
+
+  return <div className="TopArtists">{content}</div>;
+};
+
+export default TopArtistsContainer;
