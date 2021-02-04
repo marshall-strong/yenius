@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectVerseById } from "../../features/verses/versesSlice";
+
 import { addVerseComment } from "../../features/comments/commentsSliceThunks";
+import { selectVerseById } from "../../features/verses/versesSlice";
+
 import CommentsContainer from "./CommentsContainer";
 
 const VerseComments = ({ verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));
-
   if (!verse || !verse.comments) {
     return null;
   } else {
@@ -19,8 +20,6 @@ const VerseComments = ({ verseId }) => {
     );
   }
 };
-
-// export default VerseComments;
 
 const Loader = ({ verseId }) => {
   const fetchVerseComments = useSelector(

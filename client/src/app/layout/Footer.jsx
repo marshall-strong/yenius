@@ -56,19 +56,8 @@ const Footer = () => {
           >
             About Yenius
           </a>
-          {/* <Link to="/">Contributor Guidelines</Link> */}
-          {/* <Link to="/">Press</Link> */}
-          {/* <Link to="/">Advertise</Link> */}
-          {/* <Link to="/">Event Space</Link> */}
         </div>
         <div>
-          {/* <Link to="/">Privacy Policy</Link> */}
-          {/* <Link to="/">Delete Account</Link> */}
-          {/* <Link to="/">Licensing</Link> */}
-          {/* <Link to="/">Jobs</Link> */}
-          {/* <Link to="/">Developers</Link> */}
-          {/* <Link to="/">Terms of Use</Link> */}
-          {/* <Link to="/">Copyright Policy</Link> */}
           <a
             href="https://www.linkedin.com/in/marshall-strong/"
             target="_blank"
@@ -76,8 +65,6 @@ const Footer = () => {
           >
             Contact us
           </a>
-          {/* <Link to="/">Do Not Sell My Personal Information</Link> */}
-          {/* <Link to="/">Sign out</Link> */}
           {sessionLinks}
         </div>
         <div>
