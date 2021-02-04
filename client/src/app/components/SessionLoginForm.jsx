@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { signupUser, loginUser } from "./sessionSliceThunks";
+import { loginUser } from "../../features/session/sessionSliceThunks";
 
 // import ".././stylesheets/SessionForms.scss";
 
-const SignupForm = () => {
+const LoginForm = () => {
   const [username, setUsername] = useState("");
   const onUsernameChanged = (e) => setUsername(e.target.value);
-
-  const [email, setEmail] = useState("");
-  const onEmailChanged = (e) => setEmail(e.target.value);
 
   const [password, setPassword] = useState("");
   const onPasswordChanged = (e) => setPassword(e.target.value);
@@ -19,7 +16,6 @@ const SignupForm = () => {
 
   const userCredentials = {
     username: username,
-    email: email,
     password: password,
   };
 
@@ -29,14 +25,15 @@ const SignupForm = () => {
   };
 
   const dispatch = useDispatch();
-  const handleSignup = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(signupUser(userCredentials));
+    dispatch(loginUser(userCredentials));
   };
   const handleDemoLogin = (e) => {
     e.preventDefault();
     dispatch(loginUser(demoUserCredentials));
   };
+
   const displayErrors = (
     <ul className="session-errors">
       {sessionErrors.map((error, idx) => (
@@ -56,17 +53,6 @@ const SignupForm = () => {
     />
   );
 
-  const emailInput = (
-    <input
-      type="email"
-      value={email}
-      className="session-input"
-      onChange={onEmailChanged}
-      placeholder="Email"
-      required
-    />
-  );
-
   const passwordInput = (
     <input
       type="password"
@@ -78,19 +64,19 @@ const SignupForm = () => {
     />
   );
 
-  const signupForm = (
-    <form id="from-header" onSubmit={handleSignup}>
+  const loginForm = (
+    <form id="from-header" onSubmit={handleLogin}>
       <div className="session-heading">
-        <span>SignupForm</span>
+        <span>LoginForm</span>
       </div>
       <br />
       {displayErrors}
       {usernameInput}
-      {emailInput}
+      <br />
       {passwordInput}
       <br />
       <div className="finger">
-        <button type="submit">SIGN UP</button>
+        <button type="submit">LOG IN</button>
       </div>
       <div className="sess-links finger">
         <button onClick={handleDemoLogin}>Login as Demo user</button>
@@ -98,7 +84,7 @@ const SignupForm = () => {
     </form>
   );
 
-  return <div className="SessionForm">{signupForm}</div>;
+  return <div className="SessionForm">{loginForm}</div>;
 };
 
-export default SignupForm;
+export default LoginForm;
