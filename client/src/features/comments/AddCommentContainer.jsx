@@ -3,7 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { Link } from "react-router-dom";
 
-import { squareStop } from "../../app/modules/iconmonstr";
+// https://iconmonstr.com/media-control-50-svg/
+const squareStop = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M2 2h20v20h-20z" />
+  </svg>
+);
 
 const SignupButton = () => {
   return (

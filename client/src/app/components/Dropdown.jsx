@@ -7,7 +7,7 @@ const svgChevron = (
   </svg>
 );
 
-const squareStop = (
+const svgSquareStop = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -56,7 +56,7 @@ const Dropdown = ({ setContainerState, optionsParams }) => {
             className="iconmonstr userColor"
             style={{ fill: optionObj.hexCode }}
           >
-            {squareStop}
+            {svgSquareStop}
           </span>
         </div>
       </div>

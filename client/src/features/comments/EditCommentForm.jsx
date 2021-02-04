@@ -4,7 +4,17 @@ import { unwrapResult } from "@reduxjs/toolkit";
 
 import { editComment } from "./commentsSliceThunks";
 
-import { squareStop } from "../../app/modules/iconmonstr";
+// https://iconmonstr.com/media-control-50-svg/
+const svgSquareStop = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M2 2h20v20h-20z" />
+  </svg>
+);
 
 const EditCommentForm = ({ comment, setShowEditForm }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
@@ -53,7 +63,7 @@ const EditCommentForm = ({ comment, setShowEditForm }) => {
       <form>
         <div className="avatarBoxWithInputBox">
           <div className="iconmonstr" style={{ fill: currentUser.myColor }}>
-            {squareStop}
+            {svgSquareStop}
             {` .`}
           </div>
           <div className="inputBox">

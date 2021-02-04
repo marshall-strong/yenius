@@ -5,9 +5,20 @@ import { Link } from "react-router-dom";
 import { selectUserById } from "../users/usersSlice";
 
 import TimeAgo from "./TimeAgo";
-import { squareStop } from "../../app/modules/iconmonstr";
 
 // import "../../stylesheets/UserBadgeAndTimestamp.scss";
+
+// https://iconmonstr.com/media-control-50-svg/
+export const svgSquareStop = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M2 2h20v20h-20z" />
+  </svg>
+);
 
 const UserBadgeAndTimestamp = ({ userId, createdAt }) => {
   const user = useSelector((state) => selectUserById(state, userId));
@@ -21,7 +32,7 @@ const UserBadgeAndTimestamp = ({ userId, createdAt }) => {
         <user-badge>
           <Link className="user_badge" to={`/users/${userId}`}>
             <div className="iconmonstr" style={{ fill: userColor }}>
-              {squareStop}
+              {svgSquareStop}
             </div>
             <div className="user_badge-text">
               <div className="user_badge-login_and_iq">

@@ -6,8 +6,6 @@ import { selectVerseById } from "../verses/versesSlice";
 
 import VerseComments from "../verses/VerseComments";
 
-import { quoteLeft, quoteRight, xMark } from "../../app/modules/iconmonstr";
-
 // import "../../stylesheets/AnnotationSidebar.scss";
 
 // future improvements to "Sidebar":
@@ -16,6 +14,42 @@ import { quoteLeft, quoteRight, xMark } from "../../app/modules/iconmonstr";
 //  - animation: fade slide from left of referent
 //  - position-beside="$ctrl.lyrics_positioning_target"
 //  - position for maximum visibility
+
+// https://iconmonstr.com/quote-1-svg/
+const svgQuoteLeft = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+  </svg>
+);
+
+// https://iconmonstr.com/quote-3-svg/
+const svgQuoteRight = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+  </svg>
+);
+
+// https://iconmonstr.com/x-mark-9-svg/
+const svgXMark = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z" />
+  </svg>
+);
 
 const AnnotationsContainer = ({ verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));
@@ -33,19 +67,19 @@ const AnnotationsContainer = ({ verseId }) => {
                 <div className="annotation_label">
                   <span>Yenius Annotations</span>
                   <span style={{ paddingLeft: 210 }}>
-                    <Link to={`/songs/${verse.songId}`}>{xMark}</Link>
+                    <Link to={`/songs/${verse.songId}`}>{svgXMark}</Link>
                   </span>
                 </div>
                 <div className="rich_text_formatting placeholder-pulsing_content u-top_margin">
                   <div>
                     <span>
-                      <div>{quoteLeft}</div>
+                      <div>{svgQuoteLeft}</div>
                     </span>
                     <span>
                       <div dangerouslySetInnerHTML={markup} />
                     </span>
                     <span>
-                      <div style={{ paddingLeft: 320 }}>{quoteRight}</div>
+                      <div style={{ paddingLeft: 320 }}>{svgQuoteRight}</div>
                     </span>
                   </div>
                 </div>
