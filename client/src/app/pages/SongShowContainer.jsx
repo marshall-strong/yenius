@@ -18,7 +18,7 @@ import {
 
 import { selectSongById } from "../../features/songs/songsSlice";
 
-import Banner from "../../features/songs/Banner";
+import Banner from "../components/SongBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
 import ColumnLayout from "../../features/songs/ColumnLayout";
 import NotFound from "./NotFound";

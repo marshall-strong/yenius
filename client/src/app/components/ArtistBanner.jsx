@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectArtistById } from "./artistsSlice";
+import { selectArtistById } from "../../features/artists/artistsSlice";
 
 import ThisIsFine from "../../images/this_is_fine.png";
 // import "../.././stylesheets/Banner.scss";

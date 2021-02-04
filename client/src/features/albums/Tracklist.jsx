@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { selectAlbumById } from "./albumsSlice";
 import { selectSongById } from "../songs/songsSlice";
 
-import ArtistLinks from "../artists/ArtistLinks";
+import ArtistLinks from "../../app/components/ArtistLinks";
 
 import DownChevron from "../../images/icon-chevron_down.png";
 import UpChevron from "../../images/icon-chevron_up.png";

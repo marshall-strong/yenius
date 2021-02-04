@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { selectAlbumBySongId } from "../albums/albumsSlice";
 import { selectSongById } from "./songsSlice";
 
-import ArtistLinks from "../artists/ArtistLinks";
+import ArtistLinks from "../../app/components/ArtistLinks";
 
 const TrackListing = ({ trackId, songId }) => {
   const track = useSelector((state) => selectSongById(state, trackId));

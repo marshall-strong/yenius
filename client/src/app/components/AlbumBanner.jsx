@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectAlbumById } from "./albumsSlice";
-import ArtistLinks from "../artists/ArtistLinks";
+import { selectAlbumById } from "../../features/albums/albumsSlice";
+import ArtistLinks from "./ArtistLinks";
 import { printDate } from "../../lib";
 
 // import "../.././stylesheets/Banner.scss";

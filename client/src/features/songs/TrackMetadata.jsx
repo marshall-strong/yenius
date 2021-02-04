@@ -7,7 +7,7 @@ import { selectSongById } from "./songsSlice";
 
 import { mergeArrays, printDate } from "../../lib";
 
-import ArtistLinks from "../artists/ArtistLinks";
+import ArtistLinks from "../../app/components/ArtistLinks";
 
 const SongLink = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

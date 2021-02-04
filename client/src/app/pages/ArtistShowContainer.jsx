@@ -6,7 +6,7 @@ import { fetchArtistComments } from "../../features/comments/commentsSliceThunks
 
 import { selectArtistById } from "../../features/artists/artistsSlice";
 
-import Banner from "../../features/artists/Banner";
+import Banner from "../components/ArtistBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
 import ColumnLayout from "../../features/artists/ColumnLayout";
 import NotFound from "./NotFound";

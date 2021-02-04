@@ -5,7 +5,7 @@ import { selectAlbumById } from "../../features/albums/albumsSlice";
 import { fetchAlbumPage } from "../../features/albums/albumsSliceThunks";
 import { fetchAlbumComments } from "../../features/comments/commentsSliceThunks";
 
-import Banner from "../../features/albums/Banner";
+import Banner from "../components/AlbumBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
 import ColumnLayout from "../../features/albums/ColumnLayout";
 import NotFound from "./NotFound";

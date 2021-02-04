@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectArtistById } from "./artistsSlice";
+import { selectArtistById } from "../../features/artists/artistsSlice";
 import { intersperse } from "../../lib";
 
 const ArtistLink = ({ artistId }) => {
