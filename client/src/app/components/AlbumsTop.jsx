@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { selectTopAlbums } from "../../features/albums/albumsSlice";
 import { fetchTopAlbums } from "../../features/albums/albumsSliceThunks";
 
-import PageNotFound from "../pages/PageNotFound";
+import PageNotFound from "../pages/NotFoundPage";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 

@@ -8,7 +8,7 @@ import { fetchAlbumComments } from "../../features/comments/commentsSliceThunks"
 import Banner from "../components/AlbumBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
 import ColumnLayout from "../components/AlbumColumnLayout";
-import PageNotFound from "./PageNotFound";
+import PageNotFound from "./NotFoundPage";
 
 // import "../../stylesheets/show.scss";
 // import "../../stylesheets/ShowContainer.scss";

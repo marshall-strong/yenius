@@ -6,7 +6,7 @@ import { fetchTopSongs } from "../../features/songs/songsSliceThunks";
 
 import { selectTopSongs } from "../../features/songs/songsSlice";
 
-import PageNotFound from "../pages/PageNotFound";
+import PageNotFound from "../pages/NotFoundPage";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 

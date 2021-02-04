@@ -6,7 +6,7 @@ import { fetchTopArtists } from "../../features/artists/artistsSliceThunks";
 
 import { selectTopArtists } from "../../features/artists/artistsSlice";
 
-import PageNotFound from "../pages/PageNotFound";
+import PageNotFound from "../pages/NotFoundPage";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 
