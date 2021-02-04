@@ -5,8 +5,8 @@ import { fetchUserProfile } from "../../features/users/usersSliceThunks";
 
 import { selectUserById } from "../../features/users/usersSlice";
 
-import ProfileEdit from "../../features/users/ProfileEdit";
-import Profile from "../../features/users/Profile";
+import ProfileEdit from "../components/UserProfileEdit";
+import Profile from "../components/UserProfile";
 import NotFound from "./NotFound";
 
 // import "../.././stylesheets/ProfileContainer.scss";

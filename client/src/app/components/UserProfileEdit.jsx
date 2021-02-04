@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { updateUserProfile } from "./usersSliceThunks";
+import { updateUserProfile } from "../../features/users/usersSliceThunks";
 
-import { selectUserById } from "./usersSlice";
+import { selectUserById } from "../../features/users/usersSlice";
 
-import RefactoredDropdown from "../../app/components/Dropdown";
+import RefactoredDropdown from "./Dropdown";
 
-import userColors from "./userColors";
+import userColors from "../../features/users/userColors";
 
 const ProfileEdit = ({ match }) => {
   const { userId } = match.params;

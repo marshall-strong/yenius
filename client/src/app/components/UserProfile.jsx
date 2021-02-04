@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectUserById } from "./usersSlice";
+import { selectUserById } from "../../features/users/usersSlice";
 
 const UserProfile = ({ match }) => {
   const { userId } = match.params;

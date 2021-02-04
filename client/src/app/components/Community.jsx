@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import TopScholars from "../../features/users/TopScholars";
+import TopScholars from "./UsersTop";
 
 // import "../../stylesheets/Charts.scss";
 // import "../../stylesheets/Community.scss";
