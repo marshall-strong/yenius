@@ -6,15 +6,7 @@ import {
 } from "../comments/commentsSliceThunks";
 import { fetchSongLyrics, fetchSongVerse } from "../songs/songsSliceThunks";
 
-const versesAdapter = createEntityAdapter({
-  // selectId is only necessary if entity's unique key is NOT entity.id
-  //  selectId: (user) => user.id,
-  // sortComparer is necessary if you want state.ids to be sorted
-  // if sortComparer(foo, bar) returns -1, sort foo to lower index than bar (state.ids = [foo, bar])
-  // if sortComparer(foo, bar) returns  0, don't sort foo with respect to bar
-  // if sortComparer(foo, bar) returns +1, sort foo to higher index than bar (state.ids = [bar, foo])
-  //  sortComparer: (a, b) => a.username.localeCompare(b.username),
-});
+const versesAdapter = createEntityAdapter({});
 const initialState = versesAdapter.getInitialState({});
 
 const versesSlice = createSlice({
