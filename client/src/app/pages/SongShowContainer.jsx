@@ -20,7 +20,7 @@ import { selectSongById } from "../../features/songs/songsSlice";
 
 import Banner from "../components/SongBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
-import ColumnLayout from "../../features/songs/ColumnLayout";
+import ColumnLayout from "../../features/songs/SongColumnLayout";
 import NotFound from "./NotFound";
 
 // import "../../stylesheets/ShowContainer.scss";

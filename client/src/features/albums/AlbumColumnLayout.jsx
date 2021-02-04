@@ -2,7 +2,7 @@ import React from "react";
 
 import AlbumComments from "../../app/components/AlbumComments";
 import Description from "../../app/components/AlbumDescription";
-import Tracklist from "./Tracklist";
+import Tracklist from "./AlbumTracklist";
 
 // import "../.././stylesheets/ColumnLayout.scss";
 

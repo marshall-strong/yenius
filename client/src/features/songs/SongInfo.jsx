@@ -13,7 +13,7 @@ import {
   SampleChildren,
   InterpolationParents,
   InterpolationChildren,
-} from "./TrackMetadata";
+} from "./SongMetadataRows";
 
 const TrackInfo = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

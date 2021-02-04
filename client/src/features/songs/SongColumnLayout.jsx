@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
-import ColumnSecondary from "./ColumnSecondary";
-import Lyrics from "./Lyrics";
+import ColumnSecondary from "./SongColumnSecondary";
+import Lyrics from "./SongLyrics";
 import SongComments from "../../app/components/SongComments";
 
 // import "../.././stylesheets/ColumnLayout.scss";

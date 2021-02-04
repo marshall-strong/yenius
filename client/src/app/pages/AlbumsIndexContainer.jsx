@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { fetchAlbumsList } from "../../features/albums/albumsSliceThunks";
 
 import Breadcrumbs from "../layout/Breadcrumbs";
-import IndexList from "../../features/albums/IndexList";
-import TopAlbums from "../../features/albums/TopAlbums";
+import IndexList from "../../features/albums/AlbumsIndexList";
+import TopAlbums from "../../features/albums/AlbumsTop";
 
 // import "../../stylesheets/IndexContainer.scss";
 
