@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchArtistPage } from "../../features/artists/artistsSliceThunks";
 import { fetchArtistComments } from "../../features/comments/commentsSliceThunks";
-
+import { fetchArtistPage } from "../../features/artists/artistsSliceThunks";
 import { selectArtistById } from "../../features/artists/artistsSlice";
 
 import Banner from "../components/ArtistBanner";

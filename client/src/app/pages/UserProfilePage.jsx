@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchUserProfile } from "../../features/users/usersSliceThunks";
-
 import { selectUserById } from "../../features/users/usersSlice";
 
-import ProfileEdit from "../components/UserProfileEdit";
 import Profile from "../components/UserProfile";
-import PageNotFound from "./NotFoundPage";
+import ProfileEdit from "../components/UserProfileEdit";
+import NotFoundPage from "./NotFoundPage";
 
 // import "../.././stylesheets/ProfileContainer.scss";
 
@@ -29,7 +28,7 @@ const UserProfilePage = ({ match }) => {
     content = (
       <div>
         <h2>User not found!</h2>
-        <PageNotFound />
+        <NotFoundPage />
       </div>
     );
   }

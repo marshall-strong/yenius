@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { selectAlbumById } from "../../features/albums/albumsSlice";
-import { fetchAlbumPage } from "../../features/albums/albumsSliceThunks";
 import { fetchAlbumComments } from "../../features/comments/commentsSliceThunks";
+import { fetchAlbumPage } from "../../features/albums/albumsSliceThunks";
+import { selectAlbumById } from "../../features/albums/albumsSlice";
 
 import Banner from "../components/AlbumBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";

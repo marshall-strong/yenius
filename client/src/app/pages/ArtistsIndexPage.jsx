@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { fetchArtistsIndex } from "../../features/artists/artistsSliceThunks";
-
-import PageNotFound from "./NotFoundPage";
 
 // import "../.././stylesheets/ArtistsIndex.scss";
 // import "../../stylesheets/IndexContainer.scss";
