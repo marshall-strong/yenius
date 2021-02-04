@@ -37,12 +37,6 @@ const AnnotationsContainer = ({ verseId }) => {
                   </span>
                 </div>
                 <div className="rich_text_formatting placeholder-pulsing_content u-top_margin">
-                  {/* <div>
-                    {quoteLeft}
-                    <div dangerouslySetInnerHTML={markup} />
-                    {quoteRight}
-                  </div> */}
-
                   <div>
                     <span>
                       <div>{quoteLeft}</div>
@@ -51,7 +45,7 @@ const AnnotationsContainer = ({ verseId }) => {
                       <div dangerouslySetInnerHTML={markup} />
                     </span>
                     <span>
-                      <div>{quoteRight}</div>
+                      <div style={{ paddingLeft: 320 }}>{quoteRight}</div>
                     </span>
                   </div>
                 </div>
