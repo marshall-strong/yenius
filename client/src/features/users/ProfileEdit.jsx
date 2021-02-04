@@ -26,7 +26,9 @@ const ProfileEdit = ({ match }) => {
   };
 
   const showCurrentColor = (
-    <div style={{ backgroundColor: `${currentUser.myColor}` }}>
+    <div
+      style={{ backgroundColor: `${currentUser.myColor}`, textAlign: "center" }}
+    >
       <br />
       <p>currentUser's saved color</p>
       <br />
@@ -40,7 +42,7 @@ const ProfileEdit = ({ match }) => {
   const showSelectedColor = (
     <div style={{ backgroundColor: `${selectedColor.hexCode}` }}>
       <br />
-      <div className="colorFunName" style={{ justifyContent: "center" }}>
+      <div className="colorFunName" style={{ textAlign: "center" }}>
         {selectedColor.funName}
       </div>
       <br />
