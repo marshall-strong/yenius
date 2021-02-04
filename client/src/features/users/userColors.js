@@ -70,17 +70,17 @@ const lime = {
   rgb: "rgb(186, 216, 10)",
 };
 
-const userColors = {
-  yellow,
-  orange,
-  red,
-  magenta,
-  purple,
-  blue,
-  cyan,
-  teal,
-  green,
-  lime,
+const userColorsHexLookup = {
+  "#fff100": yellow,
+  "#ff8c00": orange,
+  "#e81123": red,
+  "#ec008c": magenta,
+  "#68217a": purple,
+  "#00188f": blue,
+  "#00bcf2": cyan,
+  "#00b294": teal,
+  "#009e49": green,
+  "#bad80a": lime,
 };
 
-export default userColors;
+export default userColorsHexLookup;

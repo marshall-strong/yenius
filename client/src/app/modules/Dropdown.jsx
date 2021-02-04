@@ -20,7 +20,7 @@ const squareStop = (
 
 const Dropdown = ({ setContainerState, optionsParams }) => {
   const currentUser = useSelector((state) => state.session.currentUser);
-  const [display, setDisplay] = useState(currentUser.myColor);
+  const [display, setDisplay] = useState("select a color");
   const [showDropdown, setShowDropdown] = useState(false);
 
   const openDropdown = (e) => {
@@ -47,7 +47,7 @@ const Dropdown = ({ setContainerState, optionsParams }) => {
           onClick={(e) => {
             e.preventDefault();
             setDisplay(optionObj.funName);
-            setContainerState(optionObj.hexCode);
+            setContainerState(optionObj);
             closeDropdown(e);
           }}
         >
