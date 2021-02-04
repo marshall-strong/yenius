@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { loginUser } from "./sessionSliceThunks";
+import { loginUser } from "../../features/session/sessionSliceThunks";
 
 // import "../../stylesheets/FancySignUp.scss";
 // import "../../stylesheets/SessionContainer.scss";
 
-const FancyLogin = () => {
+const FancyLoginContainer = () => {
   // const [showForm, setShowForm] = useState(false);
   // const toggleShowForm = () =>
   //   showForm ? setShowForm(false) : setShowForm(true);
@@ -195,4 +195,4 @@ const FancyLogin = () => {
   );
 };
 
-export default FancyLogin;
+export default FancyLoginContainer;

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { signupUser, loginUser } from "./sessionSliceThunks";
+import {
+  signupUser,
+  loginUser,
+} from "../../features/session/sessionSliceThunks";
 
 // import "../.././stylesheets/FancySignUp.scss";
 // import "../../stylesheets/SessionContainer.scss";
 
-const FancySignUp = () => {
+const FancySignUpContainer = () => {
   const [showForm, setShowForm] = useState(false);
   const toggleShowForm = () =>
     showForm ? setShowForm(false) : setShowForm(true);
@@ -193,4 +196,4 @@ const FancySignUp = () => {
   );
 };
 
-export default FancySignUp;
+export default FancySignUpContainer;
