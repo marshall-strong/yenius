@@ -1,9 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
+import { Link } from "react-router-dom";
 
-import CommunityButtons from "../../app/CommunityButtons";
 import { squareStop } from "../../app/modules/iconmonstr";
+
+const SignupButton = () => {
+  return (
+    <div className="PageGridFull-idpot7-0 PageGridFull">
+      <div className="Communitydesktop__Buttons-x5mxcf-0 Communitydesktop__Buttons">
+        <span className="Communitydesktop__Join-x5mxcf-1 Communitydesktop__Join">
+          <Link to="/signup" className="SquareButton-sc-109lda7-0 SquareButton">
+            Join Our Community
+          </Link>
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const AddCommentInitial = ({ handleClick }) => {
   return (
@@ -38,7 +52,7 @@ const NotSignedIn = () => (
         </div>
       </div>
       <br />
-      <CommunityButtons />
+      <SignupButton />
     </form>
   </section>
 );
