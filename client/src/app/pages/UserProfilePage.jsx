@@ -11,7 +11,7 @@ import PageNotFound from "./NotFoundPage";
 
 // import "../.././stylesheets/ProfileContainer.scss";
 
-const ProfileContainer = ({ match }) => {
+const UserProfilePage = ({ match }) => {
   const userId = parseInt(match.params.userId);
   const [lastUserFetched, setLastUserFetched] = useState(null);
 
@@ -52,4 +52,4 @@ const ProfileContainer = ({ match }) => {
   return <section className="ProfileContainer">{content}</section>;
 };
 
-export default ProfileContainer;
+export default UserProfilePage;

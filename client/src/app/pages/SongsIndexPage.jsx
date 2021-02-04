@@ -34,7 +34,7 @@ const IndexLayout = ({ char, match }) => {
   );
 };
 
-const IndexContainer = ({ match }) => {
+const SongsIndexPage = ({ match }) => {
   const [lastCharFetched, setLastCharFetched] = useState(null);
   const selectedChar = match.params.char;
 
@@ -53,4 +53,4 @@ const IndexContainer = ({ match }) => {
   );
 };
 
-export default IndexContainer;
+export default SongsIndexPage;

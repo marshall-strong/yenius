@@ -37,7 +37,7 @@ const ShowLayout = ({ albumId, match }) => {
   );
 };
 
-const AlbumPage = ({ match }) => {
+const AlbumShowPage = ({ match }) => {
   const albumId = parseInt(match.params.albumId);
   const album = useSelector((state) => selectAlbumById(state, albumId));
   const fetchAlbumPageStatus = useSelector(
@@ -71,4 +71,4 @@ const AlbumPage = ({ match }) => {
   return <section className="ShowContainer">{content}</section>;
 };
 
-export default AlbumPage;
+export default AlbumShowPage;

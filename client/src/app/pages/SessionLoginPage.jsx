@@ -7,7 +7,7 @@ import { loginUser } from "../../features/session/sessionSliceThunks";
 // import "../../stylesheets/FancySignUp.scss";
 // import "../../stylesheets/SessionContainer.scss";
 
-const FancyLoginContainer = () => {
+const SessionLoginPage = () => {
   // const [showForm, setShowForm] = useState(false);
   // const toggleShowForm = () =>
   //   showForm ? setShowForm(false) : setShowForm(true);
@@ -195,4 +195,4 @@ const FancyLoginContainer = () => {
   );
 };
 
-export default FancyLoginContainer;
+export default SessionLoginPage;

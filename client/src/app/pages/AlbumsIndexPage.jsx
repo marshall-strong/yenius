@@ -30,7 +30,7 @@ const IndexLayout = ({ match }) => {
   );
 };
 
-const IndexContainer = ({ match }) => {
+const AlbumsIndexPage = ({ match }) => {
   const [asyncRequestSent, setAsyncRequestSent] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -47,4 +47,4 @@ const IndexContainer = ({ match }) => {
   );
 };
 
-export default IndexContainer;
+export default AlbumsIndexPage;

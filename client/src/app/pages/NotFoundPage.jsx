@@ -25,7 +25,7 @@ const svgWarning = (
   </svg>
 );
 
-const NotFound = ({ message, redirectURL, redirectName }) => {
+const NotFoundPage = ({ message, redirectURL, redirectName }) => {
   const displayMessage = message || "404: Not Found";
   const linkURL = redirectURL || "/";
   const linkName = redirectName || "homepage";
@@ -47,4 +47,4 @@ const NotFound = ({ message, redirectURL, redirectName }) => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;

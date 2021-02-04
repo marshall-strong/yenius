@@ -39,7 +39,7 @@ const ShowLayout = ({ match }) => {
   );
 };
 
-const ShowContainer = ({ match }) => {
+const SongShowContainer = ({ match }) => {
   const songId = parseInt(match.params.songId);
   const song = useSelector((state) => selectSongById(state, songId));
   const [lastSongFetched, setLastSongFetched] = useState(null);
@@ -88,4 +88,4 @@ const ShowContainer = ({ match }) => {
   return <section className="ShowContainer">{content}</section>;
 };
 
-export default ShowContainer;
+export default SongShowContainer;

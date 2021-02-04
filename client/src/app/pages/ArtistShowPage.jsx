@@ -26,7 +26,7 @@ const ShowLayout = ({ artistId, match }) => {
   );
 };
 
-const ArtistShowContainer = ({ match }) => {
+const ArtistShowPage = ({ match }) => {
   const artistId = parseInt(match.params.artistId);
   const artist = useSelector((state) => selectArtistById(state, artistId));
   const [lastArtistFetched, setLastArtistFetched] = useState(null);
@@ -62,4 +62,4 @@ const ArtistShowContainer = ({ match }) => {
   return <section className="ShowContainer">{content}</section>;
 };
 
-export default ArtistShowContainer;
+export default ArtistShowPage;

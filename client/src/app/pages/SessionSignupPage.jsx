@@ -9,7 +9,7 @@ import {
 // import "../.././stylesheets/FancySignUp.scss";
 // import "../../stylesheets/SessionContainer.scss";
 
-const FancySignUpContainer = () => {
+const SessionSignupPage = () => {
   const [showForm, setShowForm] = useState(false);
   const toggleShowForm = () =>
     showForm ? setShowForm(false) : setShowForm(true);
@@ -196,4 +196,4 @@ const FancySignUpContainer = () => {
   );
 };
 
-export default FancySignUpContainer;
+export default SessionSignupPage;

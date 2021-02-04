@@ -6,7 +6,7 @@ import TopNews from "../components/News";
 
 // import "../../stylesheets/HomeContainer.scss";
 
-const HomeContainer = () => {
+const HomePage = () => {
   return (
     <div className="HomeContainer">
       <TopNews />
@@ -20,4 +20,4 @@ const HomeContainer = () => {
   );
 };
 
-export default HomeContainer;
+export default HomePage;
