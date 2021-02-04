@@ -87,8 +87,8 @@ const Dropdown = ({ setContainerState }) => {
     : "SquareSelectTitle__Arrow arrow_down";
 
   const dropdownContainerStyle = showDropdown
-    ? "SquareManySelects__Container isOpen"
-    : "SquareManySelects__Container isClosed";
+    ? "SquareManySelects__Container isOpen isOpenDropdown-Charts"
+    : "SquareManySelects__Container isClosed isClosedDropdown-Charts";
 
   const dropdownExpandedContent = showDropdown ? (
     <div className="DropdownExpansionContainer">
