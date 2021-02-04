@@ -20,7 +20,9 @@ const TrackListing = ({ trackId, songId }) => {
   const trackName = isCurrentSong ? (
     <span>{track.name}</span>
   ) : (
-    <Link to={`/songs/${track.id}`}>{track.name}</Link>
+    <Link to={`/songs/${track.id}`} style={{ color: "#000000" }}>
+      {track.name}
+    </Link>
   );
 
   return (
