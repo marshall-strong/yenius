@@ -28,7 +28,6 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
-
   &:hover {
     cursor: pointer;
   }
@@ -64,8 +63,9 @@
   line-height: 140%;
   overflow: hidden;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
+  padding-right: 10;
 }
 
 .userButtons .header-action {
