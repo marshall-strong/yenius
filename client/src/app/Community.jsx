@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import CommunityButtons from "./CommunityButtons";
 import TopScholars from "../features/users/TopScholars";
 
 import "../stylesheets/Charts.scss";
 import "../stylesheets/Community.scss";
+import "../stylesheets/CommunityButtons.scss";
 import "../stylesheets/TopSongsRow.scss";
 
 const CommunityTitle = () => (
@@ -19,7 +20,19 @@ const CommunityTitle = () => (
   </div>
 );
 
-// const JoinButton = () => ();
+const CommunityButtons = () => {
+  return (
+    <div className="PageGridFull-idpot7-0 PageGridFull">
+      <div className="Communitydesktop__Buttons-x5mxcf-0 Communitydesktop__Buttons">
+        <span className="Communitydesktop__Join-x5mxcf-1 Communitydesktop__Join">
+          <Link to="/signup" className="SquareButton-sc-109lda7-0 SquareButton">
+            Join Our Community
+          </Link>
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const TopScholarsHeader = () => (
   <div className="TopSongRow">
