@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import TopScholars from "../features/users/TopScholars";
+import TopScholars from "../../features/users/TopScholars";
 
-import "../stylesheets/Charts.scss";
-import "../stylesheets/Community.scss";
-import "../stylesheets/CommunityButtons.scss";
-import "../stylesheets/TopSongsRow.scss";
+import "../../stylesheets/Charts.scss";
+import "../../stylesheets/Community.scss";
+import "../../stylesheets/CommunityButtons.scss";
+import "../../stylesheets/TopSongsRow.scss";
 
 const CommunityTitle = () => (
   <div className="SectionTitle__Container">

@@ -16,7 +16,7 @@ import HomeContainer from "./app/pages/HomeContainer";
 import LoginForm from "./features/session/FancyLogin";
 import Navbar from "./app/layout/Navbar";
 import NotFound from "./app/pages/NotFound";
-import PageFooter from "./app/PageFooter";
+import Footer from "./app/layout/Footer";
 import SignupForm from "./features/session/FancySignUp";
 import SongShow from "./features/songs/ShowContainer";
 import SongsIndex from "./features/songs/IndexContainer";
@@ -74,7 +74,7 @@ const App = () => (
         <Route component={NotFound} />
         <Redirect to="/" />
       </Switch>
-      <PageFooter />
+      <Footer />
     </Router>
   </main>
 );
