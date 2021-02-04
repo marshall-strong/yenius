@@ -6,10 +6,10 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import AlbumShow from "./features/albums/ShowContainer";
-import AlbumsIndex from "./features/albums/IndexContainer";
-import ArtistShow from "./features/artists/ShowContainer";
-import ArtistsIndex from "./features/artists/IndexContainer";
+import AlbumShow from "./features/albums/AlbumShowContainer";
+import AlbumsIndex from "./features/albums/AlbumsIndexContainer";
+import ArtistShow from "./features/artists/ArtistShowContainer";
+import ArtistsIndex from "./features/artists/ArtistsIndexContainer";
 import AuthorizedRoute from "./app/AuthorizedRoute";
 import Counter from "./features/counter/Counter";
 import HomeContainer from "./app/pages/HomeContainer";
