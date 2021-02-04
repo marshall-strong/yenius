@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ".././stylesheets/TopNews.scss";
+import "../../stylesheets/TopNews.scss";
 
 const fetchNews = async (query) => {
   const url = `https://bing-news-search1.p.rapidapi.com/news/search?freshness=Day&textFormat=Raw&safeSearch=Strict&q=${encodeURIComponent(
