@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectAlbumById } from "./albumsSlice";
-import { addAlbumComment } from "../comments/commentsSliceThunks";
+import { selectAlbumById } from "../../features/albums/albumsSlice";
+import { addAlbumComment } from "../../features/comments/commentsSliceThunks";
 
-import CommentsContainer from "../comments/CommentsContainer";
+import CommentsContainer from "../../features/comments/CommentsContainer";
 
 const AlbumComments = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));

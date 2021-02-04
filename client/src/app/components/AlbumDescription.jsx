@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectAlbumById } from "./albumsSlice";
+import { selectAlbumById } from "../../features/albums/albumsSlice";
 
 // import "../../stylesheets/Description.scss";
 

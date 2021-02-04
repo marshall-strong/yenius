@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { addSongComment } from "../comments/commentsSliceThunks";
+import { addSongComment } from "../../features/comments/commentsSliceThunks";
 
-import { selectSongById } from "./songsSlice";
+import { selectSongById } from "../../features/songs/songsSlice";
 
-import CommentsContainer from "../comments/CommentsContainer";
+import CommentsContainer from "../../features/comments/CommentsContainer";
 
 const SongComments = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

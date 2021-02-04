@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { addArtistComment } from "../comments/commentsSliceThunks";
+import { addArtistComment } from "../../features/comments/commentsSliceThunks";
 
-import { selectArtistById } from "./artistsSlice";
+import { selectArtistById } from "../../features/artists/artistsSlice";
 
-import CommentsContainer from "../comments/CommentsContainer";
+import CommentsContainer from "../../features/comments/CommentsContainer";
 
 const ArtistComments = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));

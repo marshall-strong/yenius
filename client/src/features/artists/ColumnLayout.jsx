@@ -1,7 +1,7 @@
 import React from "react";
 
-import ArtistComments from "./ArtistComments";
-import Description from "./ArtistDescription";
+import ArtistComments from "../../app/components/ArtistComments";
+import Description from "../../app/components/ArtistDescription";
 
 // import "../.././stylesheets/ColumnLayout.scss";
 

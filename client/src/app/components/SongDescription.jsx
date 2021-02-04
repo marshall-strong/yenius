@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectSongById } from "./songsSlice";
+import { selectSongById } from "../../features/songs/songsSlice";
 
 const Description = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));
