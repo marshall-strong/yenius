@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { fetchSongsIndex } from "./songsSliceThunks";
 
-import Breadcrumbs from "../../app/Breadcrumbs";
+import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import IndexChars from "./IndexChars";
 import IndexList from "./IndexList";
 import TopSongs from "./TopSongs";
