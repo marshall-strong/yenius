@@ -5,7 +5,7 @@ import { updateUserProfile } from "./usersSliceThunks";
 
 import { selectUserById } from "./usersSlice";
 
-import RefactoredDropdown from "../../app/Dropdown";
+import RefactoredDropdown from "../../app/modules/Dropdown";
 
 import userColors from "./userColors";
 
