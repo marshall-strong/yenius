@@ -25,8 +25,6 @@ import UserProfile from "./features/users/ProfileContainer";
 import "./stylesheets/App.scss";
 import "./stylesheets/Loader.scss";
 
-import "./font-faces.scss";
-
 const App = () => (
   <main className="App">
     <Router>
