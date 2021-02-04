@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectUserById } from "../users/usersSlice";
+import { selectUserById } from "../../features/users/usersSlice";
 
 import TimeAgo from "./TimeAgo";
 

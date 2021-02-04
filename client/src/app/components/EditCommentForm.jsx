@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
-import { editComment } from "./commentsSliceThunks";
+import { editComment } from "../../features/comments/commentsSliceThunks";
 
 // https://iconmonstr.com/media-control-50-svg/
 const svgSquareStop = (

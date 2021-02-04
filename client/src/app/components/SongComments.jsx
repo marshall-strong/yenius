@@ -5,7 +5,7 @@ import { addSongComment } from "../../features/comments/commentsSliceThunks";
 
 import { selectSongById } from "../../features/songs/songsSlice";
 
-import CommentsContainer from "../../features/comments/CommentsContainer";
+import CommentsContainer from "./CommentsContainer";
 
 const SongComments = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

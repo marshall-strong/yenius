@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { selectCommentIdsByCommentable } from "../comments/commentsSlice";
+import { selectCommentIdsByCommentable } from "../../features/comments/commentsSlice";
 
 import Comment from "./Comment";
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { deleteComment } from "../comments/commentsSliceThunks";
+import { deleteComment } from "../../features/comments/commentsSliceThunks";
 
-import { selectCommentById } from "../comments/commentsSlice";
-import { selectUserById } from "../users/usersSlice";
+import { selectCommentById } from "../../features/comments/commentsSlice";
+import { selectUserById } from "../../features/users/usersSlice";
 
 import EditCommentForm from "./EditCommentForm";
 import UserBadgeAndTimestamp from "./UserBadgeAndTimestamp";

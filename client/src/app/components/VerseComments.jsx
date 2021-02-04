@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectVerseById } from "../../features/verses/versesSlice";
 import { addVerseComment } from "../../features/comments/commentsSliceThunks";
-import CommentsContainer from "../../features/comments/CommentsContainer";
+import CommentsContainer from "./CommentsContainer";
 
 const VerseComments = ({ verseId }) => {
   const verse = useSelector((state) => selectVerseById(state, verseId));
