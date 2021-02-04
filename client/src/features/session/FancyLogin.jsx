@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 import { loginUser } from "./sessionSliceThunks";
 
-import "../../stylesheets/FancySignUp.scss";
-import "../../stylesheets/SessionContainer.scss";
+// import "../../stylesheets/FancySignUp.scss";
+// import "../../stylesheets/SessionContainer.scss";
 
 const FancyLogin = () => {
   // const [showForm, setShowForm] = useState(false);

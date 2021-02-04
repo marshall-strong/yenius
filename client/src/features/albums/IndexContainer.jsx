@@ -7,7 +7,7 @@ import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import IndexList from "./IndexList";
 import TopAlbums from "./TopAlbums";
 
-import "../../stylesheets/IndexContainer.scss";
+// import "../../stylesheets/IndexContainer.scss";
 
 const Suggestions = () => {
   return (

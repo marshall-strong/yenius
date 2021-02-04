@@ -4,7 +4,7 @@ import ColumnSecondary from "./ColumnSecondary";
 import Lyrics from "./Lyrics";
 import SongComments from "./SongComments";
 
-import "../.././stylesheets/ColumnLayout.scss";
+// import "../.././stylesheets/ColumnLayout.scss";
 
 const ColumnLayout = ({ match }) => {
   const selectedVerseRef = useRef();

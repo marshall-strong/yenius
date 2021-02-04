@@ -7,7 +7,7 @@ import { logoutUser } from "../../features/session/sessionSliceThunks";
 import { github, linkedin } from "../modules/iconmonstr";
 import YeniusLogo from "../../images/logo-yenius-1482-207.png";
 
-import "../../stylesheets/Navbar.scss";
+// import "../../stylesheets/Navbar.scss";
 
 const Navbar = () => {
   const dispatch = useDispatch();

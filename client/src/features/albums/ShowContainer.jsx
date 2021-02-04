@@ -10,8 +10,8 @@ import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import ColumnLayout from "./ColumnLayout";
 import NotFound from "../../app/pages/NotFound";
 
-import "../../stylesheets/show.scss";
-import "../../stylesheets/ShowContainer.scss";
+// import "../../stylesheets/show.scss";
+// import "../../stylesheets/ShowContainer.scss";
 
 const ShowLayout = ({ albumId, match }) => {
   const isFulfilled = (request) => request === "fulfilled";

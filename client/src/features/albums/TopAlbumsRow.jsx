@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../.././stylesheets/TopSongsRow.scss";
+// import "../.././stylesheets/TopSongsRow.scss";
 
 const svgFlame = (
   <svg viewBox="0 0 17 26">

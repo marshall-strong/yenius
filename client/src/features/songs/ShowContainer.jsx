@@ -23,8 +23,8 @@ import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import ColumnLayout from "./ColumnLayout";
 import NotFound from "../../app/pages/NotFound";
 
-import "../../stylesheets/ShowContainer.scss";
-import "../../stylesheets/SongPage.scss";
+// import "../../stylesheets/ShowContainer.scss";
+// import "../../stylesheets/SongPage.scss";
 
 const ShowLayout = ({ match }) => {
   const songId = parseInt(match.params.songId);

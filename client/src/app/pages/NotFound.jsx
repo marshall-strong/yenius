@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { home, warning } from "../modules/iconmonstr";
 
-import "../../stylesheets/NotFound.scss";
+// import "../../stylesheets/NotFound.scss";
 
 const svgHome = (
   <svg

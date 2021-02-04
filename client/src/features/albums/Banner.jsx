@@ -5,7 +5,7 @@ import { selectAlbumById } from "./albumsSlice";
 import ArtistLinks from "../artists/ArtistLinks";
 import { printDate } from "../../lib";
 
-import "../.././stylesheets/Banner.scss";
+// import "../.././stylesheets/Banner.scss";
 
 const Banner = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));

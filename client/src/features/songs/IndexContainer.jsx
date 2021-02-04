@@ -8,8 +8,8 @@ import IndexChars from "./IndexChars";
 import IndexList from "./IndexList";
 import TopSongs from "./TopSongs";
 
-import "../../stylesheets/IndexContainer.scss";
-import "../../stylesheets/SongsIndex.scss";
+// import "../../stylesheets/IndexContainer.scss";
+// import "../../stylesheets/SongsIndex.scss";
 
 const Suggestions = () => {
   return (

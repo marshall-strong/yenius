@@ -3,7 +3,7 @@ import React from "react";
 import ArtistComments from "./ArtistComments";
 import Description from "./Description";
 
-import "../.././stylesheets/ColumnLayout.scss";
+// import "../.././stylesheets/ColumnLayout.scss";
 
 const ColumnPrimary = ({ artistId }) => {
   return (

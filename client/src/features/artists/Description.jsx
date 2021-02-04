@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { selectArtistById } from "./artistsSlice";
 
-import "../../stylesheets/Description.scss";
+// import "../../stylesheets/Description.scss";
 
 const Description = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { logoutUser } from "../../features/session/sessionSliceThunks";
 
-import "../../stylesheets/PageFooter.scss";
+// import "../../stylesheets/PageFooter.scss";
 
 const CharacterIndexListElements = () => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";

@@ -7,7 +7,7 @@ import { selectUserById } from "../users/usersSlice";
 import TimeAgo from "./TimeAgo";
 import { squareStop } from "../../app/modules/iconmonstr";
 
-import "../../stylesheets/UserBadgeAndTimestamp.scss";
+// import "../../stylesheets/UserBadgeAndTimestamp.scss";
 
 const UserBadgeAndTimestamp = ({ userId, createdAt }) => {
   const user = useSelector((state) => selectUserById(state, userId));

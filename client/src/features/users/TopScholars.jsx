@@ -8,7 +8,7 @@ import { selectTopScholars } from "./usersSlice";
 import NotFound from "../../app/pages/NotFound";
 import TopScholarsRow from "./TopScholarsRow";
 
-import "../.././stylesheets/TopScholars.scss";
+// import "../.././stylesheets/TopScholars.scss";
 
 const TopScholarsContent = () => {
   const users = useSelector((state) => selectTopScholars(state));

@@ -4,7 +4,7 @@ import AlbumComments from "./AlbumComments";
 import Description from "./Description";
 import Tracklist from "./Tracklist";
 
-import "../.././stylesheets/ColumnLayout.scss";
+// import "../.././stylesheets/ColumnLayout.scss";
 
 const ColumnPrimary = ({ albumId }) => {
   return (

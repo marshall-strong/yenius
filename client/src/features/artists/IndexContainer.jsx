@@ -5,8 +5,8 @@ import { fetchArtistsIndex } from "./artistsSliceThunks";
 
 import NotFound from "../../app/pages/NotFound";
 
-import "../.././stylesheets/ArtistsIndex.scss";
-import "../../stylesheets/IndexContainer.scss";
+// import "../.././stylesheets/ArtistsIndex.scss";
+// import "../../stylesheets/IndexContainer.scss";
 
 import Breadcrumbs from "../../app/layout/Breadcrumbs";
 import IndexChars from "./IndexChars";

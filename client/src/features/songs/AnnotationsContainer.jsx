@@ -8,7 +8,7 @@ import VerseComments from "../verses/VerseComments";
 
 import { quoteLeft, quoteRight, xMark } from "../../app/modules/iconmonstr";
 
-import "../../stylesheets/AnnotationSidebar.scss";
+// import "../../stylesheets/AnnotationSidebar.scss";
 
 // future improvements to "Sidebar":
 //  - click-outside="ctrl.close()"

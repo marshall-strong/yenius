@@ -22,8 +22,8 @@ import SongShow from "./features/songs/ShowContainer";
 import SongsIndex from "./features/songs/IndexContainer";
 import UserProfile from "./features/users/ProfileContainer";
 
-import "./stylesheets/App.scss";
-import "./stylesheets/Loader.scss";
+// import "./stylesheets/App.scss";
+// import "./stylesheets/Loader.scss";
 
 const App = () => (
   <main className="App">
