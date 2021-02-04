@@ -2,7 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectAlbumIds, selectAlbumById } from "./albumsSlice";
+import {
+  selectAlbumIds,
+  selectAlbumById,
+} from "../../features/albums/albumsSlice";
 
 const AlbumsListItem = ({ albumId }) => {
   const album = useSelector((state) => selectAlbumById(state, albumId));

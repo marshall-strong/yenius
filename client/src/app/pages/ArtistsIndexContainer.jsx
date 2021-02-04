@@ -9,9 +9,9 @@ import NotFound from "./NotFound";
 // import "../../stylesheets/IndexContainer.scss";
 
 import Breadcrumbs from "../layout/Breadcrumbs";
-import IndexChars from "../../features/artists/ArtistsIndexChars";
-import IndexList from "../../features/artists/ArtistsIndexList";
-import TopArtists from "../../features/artists/ArtistsTop";
+import IndexChars from "../components/ArtistsIndexChars";
+import IndexList from "../components/ArtistsIndexList";
+import TopArtists from "../components/ArtistsTop";
 
 const Suggestions = () => {
   return (

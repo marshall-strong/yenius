@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectSongById } from "./songsSlice";
-import { selectVerseById } from "../verses/versesSlice";
+import { selectSongById } from "../../features/songs/songsSlice";
+import { selectVerseById } from "../../features/verses/versesSlice";
 
 const SelectedVerse = ({ selectedVerseRef, verse }) => {
   return (

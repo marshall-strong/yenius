@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import TopAlbums from "../../features/albums/AlbumsTop";
-import TopArtists from "../../features/artists/ArtistsTop";
-import TopSongs from "../../features/songs/SongsTop";
+import TopAlbums from "./AlbumsTop";
+import TopArtists from "./ArtistsTop";
+import TopSongs from "./SongsTop";
 
 // import "../../stylesheets/Charts.scss";
 

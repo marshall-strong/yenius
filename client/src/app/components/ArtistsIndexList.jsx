@@ -2,7 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectArtistIds, selectArtistById } from "./artistsSlice";
+import {
+  selectArtistIds,
+  selectArtistById,
+} from "../../features/artists/artistsSlice";
 
 const IndexListItem = ({ artistId }) => {
   const artist = useSelector((state) => selectArtistById(state, artistId));

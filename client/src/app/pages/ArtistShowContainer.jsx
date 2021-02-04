@@ -8,7 +8,7 @@ import { selectArtistById } from "../../features/artists/artistsSlice";
 
 import Banner from "../components/ArtistBanner";
 import Breadcrumbs from "../layout/Breadcrumbs";
-import ColumnLayout from "../../features/artists/ArtistColumnLayout";
+import ColumnLayout from "../components/ArtistColumnLayout";
 import NotFound from "./NotFound";
 
 // import "../../stylesheets/show.scss";

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { fetchTopArtists } from "./artistsSliceThunks";
+import { fetchTopSongs } from "../../features/songs/songsSliceThunks";
 
-import { selectTopArtists } from "./artistsSlice";
+import { selectTopSongs } from "../../features/songs/songsSlice";
 
-import NotFound from "../../app/pages/NotFound";
+import NotFound from "../pages/NotFound";
 
 // import "../.././stylesheets/TopSongsRow.scss";
 
@@ -25,38 +25,39 @@ const svgEye = (
   </svg>
 );
 
-const TopArtistsRow = ({ artist }) => {
-  const artistId = artist.id;
-  const artistName = artist.name;
-  const artistRank = artist.rank;
-  const artistHeadshotUrl = artist.urlHeadshot;
+const TopSongsRow = ({ song }) => {
+  const songId = song.id;
+  const songName = song.name;
+  const songArtist = song.artist; // song.list_artistsPrimary
+  const songRank = song.rank;
+  const songCoverUrl = song.urlAlbumCover;
 
-  const styleHeadshotImage = {
-    backgroundImage: `url(${artistHeadshotUrl})`,
+  const styleCoverImage = {
+    backgroundImage: `url(${songCoverUrl})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
   let content;
-  if (artist) {
+  if (song) {
     content = (
       <div className="TopSongRow">
-        <Link to={`/artists/${artistId}`} className="ChartItem__Row">
-          <div className="ChartItem__Rank">{artistRank}</div>
+        <Link to={`/songs/${songId}`} className="ChartItem__Row">
+          <div className="ChartItem__Rank">{songRank}</div>
           <div className="ChartSong__CoverAndTitle">
             <div className="ChartSong__Cover">
-              <div className="SizedImage__Container" style={styleHeadshotImage}>
+              <div className="SizedImage__Container" style={styleCoverImage}>
                 <noscript>
                   <img
-                    src={`url(${artistHeadshotUrl})`}
+                    src={`url(${songCoverUrl})`}
                     className="SizedImage__NoScript"
                   />
                 </noscript>
               </div>
             </div>
             <h3 className="ChartSong__TitleAndLyrics">
-              <div className="ChartSong__Title">{artistName}</div>
-              {/* <div className="ChartSong__Lyrics">
+              <div className="ChartSong__Title">{songName}</div>
+              <div className="ChartSong__Lyrics">
                 <span
                   color="background.onVariant"
                   fontWeight="normal"
@@ -64,10 +65,10 @@ const TopArtistsRow = ({ artist }) => {
                 >
                   Lyrics
                 </span>
-              </div> */}
+              </div>
             </h3>
           </div>
-          <h4 className="ChartSong__Artist">{/* {"other metadata"} */}</h4>
+          <h4 className="ChartSong__Artist">{songArtist}</h4>
           <div className="ChartSong__Metadata">
             <div className="ChartSong__Metadatum">
               <div className="IconWithLabel__Container">
@@ -106,47 +107,45 @@ const TopArtistsRow = ({ artist }) => {
   return content;
 };
 
-const TopArtistsContent = () => {
-  const artists = useSelector((state) => selectTopArtists(state));
-  const rows = artists.map((artist) => (
-    <TopArtistsRow artist={artist} key={artist.rank} />
-  ));
+const TopSongsContent = () => {
+  const songs = useSelector((state) => selectTopSongs(state));
+  const rows = songs.map((song) => <TopSongsRow song={song} key={song.rank} />);
   return <div>{rows}</div>;
 };
 
-const TopArtistsContainer = () => {
+const TopSongsContainer = () => {
   const [requestSent, setRequestSent] = useState(false);
 
   const dispatch = useDispatch();
   useEffect(() => {
     if (!requestSent) {
-      dispatch(fetchTopArtists());
+      dispatch(fetchTopSongs());
       setRequestSent(true);
     }
   }, [requestSent, dispatch]);
 
-  const fetchTopArtistsStatus = useSelector(
-    (state) => state.artists.status.fetchTopArtists
+  const fetchTopSongsStatus = useSelector(
+    (state) => state.songs.status.fetchTopSongs
   );
 
   let content;
-  if (!fetchTopArtistsStatus || fetchTopArtistsStatus === "pending") {
+  if (!fetchTopSongsStatus || fetchTopSongsStatus === "pending") {
     content = <div className="loader" />;
-  } else if (fetchTopArtistsStatus === "fulfilled") {
-    content = <TopArtistsContent />;
-  } else if (fetchTopArtistsStatus === "rejected") {
+  } else if (fetchTopSongsStatus === "fulfilled") {
+    content = <TopSongsContent />;
+  } else if (fetchTopSongsStatus === "rejected") {
     content = (
       <div>
-        fetchTopArtists was rejected!
+        fetchTopSongs was rejected!
         <br />
         <NotFound />
       </div>
     );
   } else {
-    content = <div>Something unexpected happened in TopArtists...</div>;
+    content = <div>Something unexpected happened in TopSongs...</div>;
   }
 
-  return <div className="TopArtists">{content}</div>;
+  return <div className="TopSongs">{content}</div>;
 };
 
-export default TopArtistsContainer;
+export default TopSongsContainer;

@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import { fetchSongsIndex } from "../../features/songs/songsSliceThunks";
 
 import Breadcrumbs from "../layout/Breadcrumbs";
-import IndexChars from "../../features/songs/SongIndexChars";
-import IndexList from "../../features/songs/SongIndexList";
-import TopSongs from "../../features/songs/SongsTop";
+import IndexChars from "../components/SongIndexChars";
+import IndexList from "../components/SongIndexList";
+import TopSongs from "../components/SongsTop";
 
 // import "../../stylesheets/IndexContainer.scss";
 // import "../../stylesheets/SongsIndex.scss";

@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectAlbumBySongId } from "../albums/albumsSlice";
-import { selectSongById } from "./songsSlice";
+import { selectAlbumBySongId } from "../../features/albums/albumsSlice";
+import { selectSongById } from "../../features/songs/songsSlice";
 
 import { mergeArrays, printDate } from "../../lib";
 
-import ArtistLinks from "../../app/components/ArtistLinks";
+import ArtistLinks from "./ArtistLinks";
 
 const SongLink = ({ songId }) => {
   const song = useSelector((state) => selectSongById(state, songId));

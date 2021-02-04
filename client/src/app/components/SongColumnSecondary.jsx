@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import AnnotationsContainer from "./SongAnnotationsContainer";
 import Description from "../../app/components/SongDescription";
-import SongAlbum from "./SongAlbum";
+import SongAlbum from "../../app/components/SongAlbum";
 import TrackInfo from "./SongInfo";
 
 const SongLayout = ({ songId }) => {

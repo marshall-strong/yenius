@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { selectAlbumById } from "./albumsSlice";
-import { selectSongById } from "../songs/songsSlice";
+import { selectAlbumById } from "../../features/albums/albumsSlice";
+import { selectSongById } from "../../features/songs/songsSlice";
 
 import ArtistLinks from "../../app/components/ArtistLinks";
 
