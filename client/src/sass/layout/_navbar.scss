@@ -2,6 +2,18 @@
   width: 100%;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.spacer {
+  position: relative;
+  height: 79px;
+}
+
 .yellowNavbar {
   align-items: center;
   background-color: #ffff64;

@@ -142,8 +142,11 @@ const Navbar = () => {
 
   return (
     <header className="Navbar">
-      {yellowNavbar}
-      {blackNavbar}
+      <div className="sticky">
+        {yellowNavbar}
+        {blackNavbar}
+      </div>
+      <div className="spacer" />
     </header>
   );
 };
