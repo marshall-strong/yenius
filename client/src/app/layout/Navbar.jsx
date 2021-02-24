@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { logoutUser } from "../../features/session/sessionSliceThunks";
 
 import YeniusLogo from "../../images/logo-yenius-1482-207.png";
+import headshotIcon from "../../images/headshot-512.png";
+import githubIcon from "../../images/github-512.png";
+import linkedinIcon from "../../images/linkedin-512.png";
 
 // import "../../stylesheets/Navbar.scss";
 
@@ -79,6 +82,52 @@ const Navbar = () => {
     );
   }
 
+  const marshall = (
+    <div className="marshall">
+      <div className="marshall_icon_container">
+        <a
+          href="http://www.marshallstrong.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={headshotIcon}
+            className="marshall_icon"
+            alt="marshallstrong.com"
+          />
+        </a>
+      </div>
+      <div className="marshall_icon_container">
+        <a
+          href="https://github.com/marstrong/yenius"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={githubIcon}
+            className="marshall_icon"
+            alt="GitHub repository"
+          />
+        </a>
+      </div>
+      <div className="marshall_icon_container">
+        <a
+          href="https://www.linkedin.com/in/marshall-strong/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={linkedinIcon}
+            className="marshall_icon"
+            alt="LinkedIn profile"
+          />
+        </a>
+      </div>
+    </div>
+  );
+
+  const siteDescription = <span>a Genius.com clone by Marshall Strong</span>;
+
   const logo = (
     <div className="logo_container">
       <Link to="/" className="logo-link">
@@ -89,8 +138,9 @@ const Navbar = () => {
 
   const yellowNavbar = (
     <div className="yellowNavbar">
-      {logo}
-      {userButtons}
+      <span className="columns-thirds left-third">{marshall}</span>
+      <span className="columns-thirds center-third">{logo}</span>
+      <span className="columns-thirds right-third">{userButtons}</span>
     </div>
   );
 
@@ -112,7 +162,7 @@ const Navbar = () => {
           <li>
             <Link to="/songs"> SONGS </Link>
           </li>
-          <li> | </li>
+          {/* <li> | </li>
           <li>
             <a
               href="https://github.com/marstrong/yenius"
@@ -134,7 +184,7 @@ const Navbar = () => {
                 {linkedin}
               </div>
             </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>
