@@ -99,7 +99,7 @@ const Navbar = () => {
       </div>
       <div className="marshall_icon_container">
         <a
-          href="https://github.com/marstrong/yenius"
+          href="https://github.com/marshall-strong/yenius"
           target="_blank"
           rel="noopener noreferrer"
         >
