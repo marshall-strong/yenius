@@ -1,5 +1,5 @@
 {
-  "name": "yenius--rails6-api",
+  "name": "yenius",
   "license": "MIT",
   "engines": {
     "node": "15.2.0",

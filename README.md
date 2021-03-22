@@ -14,6 +14,7 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 
 > Inspired by the Heroku blog post [A Rock Solid, Modern Web Stack](https://blog.heroku.com/a-rock-solid-modern-web-stack)
 - [Guide on creating an API-only Rails project](https://medium.com/@oliver.seq/creating-a-rest-api-with-rails-2a07f548e5dc)
+
 ## [Create React App](https://github.com/facebook/create-react-app)
 > Because life is too short to configure Webpack manually
 - Configure yenius-client server to proxy any unknown API requests to the yenius-api server.
@@ -59,7 +60,7 @@ Live site at [yenius.herokuapp.com](https://yenius.herokuapp.com/#/)
 # Features
 
 - User Authentication, including error handling and "Demo User" login
-  - BCrypt gem salts, hashes, and retrieves passwords, maintaining secure user authentication from front-end to back-end
+- BCrypt gem salts, hashes, and retrieves passwords, maintaining secure user authentication from front-end to back-end
 - Authenticated Users can create, update, and delete comments/annotations
 - Artist Credits
 - Song Interpretations
@@ -192,3 +193,8 @@ UPDATE: pre-commit should now only run Prettier on the /client directory
   - show headshot on hover
     - mousing over an artist link should display the artist's headshot
     - the headshot should disappear when the user mouses away
+
+
+# License
+
+[MIT License](LICENSE.md)
