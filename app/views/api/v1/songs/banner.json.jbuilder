@@ -11,7 +11,7 @@ json.songs do
     json.id @song.id
     json.name @song.name
     json.albumId @song.album_id
-    json.urlAlbumCover url_for(@song.album.cover)
-    json.urlAlbumBanner url_for(@song.album.banner)
+    json.urlAlbumCover @song.album.cover.attached? ? url_for(@song.album.cover) : nil
+    json.urlAlbumBanner @song.album.banner.attached? url_for(@song.album.banner) : nil
   end
 end

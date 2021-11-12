@@ -4,7 +4,7 @@ json.albums do
       json.id album.id
       json.name album.name
       json.releaseDate album.release_date
-      json.urlAlbumCover url_for(album.cover)
+      json.urlAlbumCover album.cover.attached? ? url_for(album.cover) : nil
     end
   end
 end

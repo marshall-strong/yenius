@@ -4,7 +4,7 @@ json.artists do
     json.extract! @artist, :name
     json.extract! @artist, :bio
     json.urlArtist @artist.headshot.attached? ? url_for(@artist.headshot) : nil
-    json.urlAlbumBanner url_for(@artist.banner)
+    json.urlAlbumBanner @artist.banner.attached? ? url_for(@artist.banner) : nil
     json.description @artist.description
     json.albums do
       json.array! @artist.albums.ids
@@ -25,7 +25,7 @@ json.albums do
       json.extract! album, :name
       json.extract! album, :release_date
       json.releaseDate album.release_date
-      json.urlArtist url_for(album.cover)
+      json.urlArtist album.cover.attached? ? url_for(album.cover) : nil
     end
   end
 end
