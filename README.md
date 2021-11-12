@@ -133,6 +133,7 @@ In development, Heroku local reads environmental variables from a `.env` file.
 
 ## start development server
 
+- `bundle install`
 - `rails start`
 
 ```rb
