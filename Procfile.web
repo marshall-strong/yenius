@@ -1,0 +1,2 @@
+# heroku local -f Procfile.web -e .env
+web: PORT=3000 yarn --cwd client start
