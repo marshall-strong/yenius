@@ -33,7 +33,7 @@ def list_bucket_objects(s3_client, bucket_name, max_objects = 500)
   ).contents
 
   if objects.count.zero?
-    puts "No objects in bucket '#{bucket_name}'."
+    puts "No objects in bucket '#{bucket_name}"
     return []
   else
     keys = []
@@ -52,6 +52,44 @@ def list_bucket_objects(s3_client, bucket_name, max_objects = 500)
 rescue StandardError => e
   puts "Error accessing bucket '#{bucket_name}' " \
     "or listing its objects: #{e.message}"
+end
+
+# Deletes an object with the specified key from the specified bucket
+def delete_object(s3_client, bucket_name, object_key)
+  response = s3_client.delete_object({
+    bucket: bucket_name,
+    key: object_key
+  })
+end
+
+# Deletes ALL objects from the specified bucket
+def delete_all_objects(s3_client, bucket_name)
+  objects = s3_client.list_objects_v2(
+    bucket: bucket_name,
+    max_keys: 1000
+  ).contents
+  
+  if objects.count.zero?
+    puts "No objects in bucket '#{bucket_name}'."
+    return []
+  elsif objects.count > 1000
+    puts "Deleting first 1000 objects from bucket '#{bucket_name}':"
+  else
+    puts "Deleting all #{objects.count} objects from bucket '#{bucket_name}':"
+  end
+    
+  keys = []
+  objects.each do |object|
+    keys.push(object.key)
+  end
+  keys.each do |object_key|
+    delete_object(s3_client, bucket_name, object_key)
+    puts "Deleted object '#{object_key}'"
+  end
+  puts "Deleted #{keys.count} total objects."
+rescue StandardError => e
+  puts "Error accessing bucket '#{bucket_name}' " \
+    "or deleting its objects: #{e.message}"
 end
 
 
@@ -84,6 +122,6 @@ s3_client = Aws::S3::Client.new(
 
 if $PROGRAM_NAME == __FILE__
   if bucket_exists?(s3_client, S3_BUCKET)
-    list_bucket_objects(s3_client, S3_BUCKET)
+    delete_all_objects(s3_client, S3_BUCKET)
   end
 end
