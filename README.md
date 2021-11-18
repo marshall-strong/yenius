@@ -140,7 +140,7 @@ In development, Heroku local reads environmental variables from a `.env` file.
 # lib/tasks/start.rake
 namespace :start do
   task :development do
-    exec 'heroku local -f Procfile.dev'
+    exec 'heroku local -f Procfile.dev -e .env.dev'
   end
 end
 desc 'Start development server'
@@ -151,7 +151,7 @@ task :start =- 'start:development'
 Heroku (and by extension Heroku local) uses a Procfile to specify the commands to be executed by the app on startup
 
 ```sh
-# heroku local -f Procfile.dev -e .env
+# heroku local -f Procfile.dev -e .env.dev
 web: PORT=3000 yarn --cwd client start
 api: PORT=3001 bundle exec rails s
 ```

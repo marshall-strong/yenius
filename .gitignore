@@ -6,6 +6,7 @@
 
 # Ignore environmental variables
 .env
+.env.dev
 .env.prod
 .env.old
 

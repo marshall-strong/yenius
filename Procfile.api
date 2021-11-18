@@ -1,2 +1,2 @@
-# heroku local -f Procfile.api -e .env
+# heroku local -f Procfile.api -e .env.dev
 api: PORT=3001 bundle exec rails s
