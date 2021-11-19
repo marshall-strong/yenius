@@ -1,3 +1,6 @@
+# AWS is currently configured in every file -- the code below is repeated in each of them (should be refactored)
+# This file is not currently read by anything. 
+
 require 'aws-sdk-s3'
 
 # Get AWS region and S3 bucket from an .env file in development (`.env.dev`) and from Heroku's Config Vars in production.
@@ -32,29 +35,3 @@ s3_client = Aws::S3::Client.new(
 s3_resource = Aws::S3::Resource.new(client: s3_client)
 
 ### END AWS CONFIGURATION ###
-
-
-# Checks if a bucket with a specified name exists
-def bucket_exists?(s3_client, bucket_name)
-  response = s3_client.list_buckets
-  if response.buckets.count.zero?
-    puts 'No buckets exist.'
-    return false
-  else
-    response.buckets.each do |bucket|
-      if bucket.name == bucket_name
-        puts "#{bucket_name} exists!"
-        return true
-      end
-    end
-  end
-  puts "#{bucket_name} does not exist..."
-  return false  
-rescue StandardError => e
-  puts "Error checking for bucket existence: #{e.message}"
-end
-
-
-if $PROGRAM_NAME == __FILE__
-  bucket_exists?(s3_client, S3_BUCKET)
-end
