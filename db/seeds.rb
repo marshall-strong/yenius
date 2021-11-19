@@ -14,61 +14,61 @@ require 'aws-sdk-s3'
 require 'open-uri'
 require 'ms_palette'
 
-AWS_ACCESS_KEY_ID = ENV['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = ENV['AWS_SECRET_ACCESS_KEY']
-S3_BUCKET = ENV['S3_BUCKET']
+# AWS_ACCESS_KEY_ID = ENV['AWS_ACCESS_KEY_ID']
+# AWS_SECRET_ACCESS_KEY = ENV['AWS_SECRET_ACCESS_KEY']
+# S3_BUCKET = ENV['S3_BUCKET']
 
-# The directory 'db/seeds' has been uploaded to the s3 bucket as 'seeds'.
-# All objects have been made publicly accessible.
-puts "S3_BUCKET:\t#{S3_BUCKET}"
+# # The directory 'db/seeds' has been uploaded to the s3 bucket as 'seeds'.
+# # All objects have been made publicly accessible.
+# puts "S3_BUCKET:\t#{S3_BUCKET}"
 
-# Aws.config hash
-Aws.config.update({
-  region: 'us-east-2',
-  credentials: Aws::Credentials.new(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
-})
+# # Aws.config hash
+# Aws.config.update({
+#   region: 'us-east-2',
+#   credentials: Aws::Credentials.new(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
+# })
 
-# construct an API Client (https://docs.aws.amazon.com/sdk-for-ruby/v3/api/)
-s3_client = Aws::S3::Client.new
+# # construct an API Client (https://docs.aws.amazon.com/sdk-for-ruby/v3/api/)
+# s3_client = Aws::S3::Client.new
 
-def attach_banner(s3_client, album, key)
-  # resp = s3_client.get_object({
-  #   bucket: S3_BUCKET,
-  #   key: key
-  # })
-  # album.banner.attach(io: resp.body.read, filename: key)
-  public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
-  url = URI.parse(public_url)
-  filename = File.basename(url.path)
-  file = URI.open(url)
-  album.banner.attach(io: file, filename: key)
-end
+# def attach_banner(s3_client, album, key)
+#   # resp = s3_client.get_object({
+#   #   bucket: S3_BUCKET,
+#   #   key: key
+#   # })
+#   # album.banner.attach(io: resp.body.read, filename: key)
+#   public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
+#   url = URI.parse(public_url)
+#   filename = File.basename(url.path)
+#   file = URI.open(url)
+#   album.banner.attach(io: file, filename: key)
+# end
 
-def attach_cover(s3_client, album, key)
-  # resp = s3_client.get_object({
-  #   bucket: S3_BUCKET,
-  #   key: key
-  # })
-  # album.cover.attach(io: resp.body.read, filename: key)
-  public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
-  url = URI.parse(public_url)
-  filename = File.basename(url.path)
-  file = URI.open(url)
-  album.cover.attach(io: file, filename: filename)
-end
+# def attach_cover(s3_client, album, key)
+#   # resp = s3_client.get_object({
+#   #   bucket: S3_BUCKET,
+#   #   key: key
+#   # })
+#   # album.cover.attach(io: resp.body.read, filename: key)
+#   public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
+#   url = URI.parse(public_url)
+#   filename = File.basename(url.path)
+#   file = URI.open(url)
+#   album.cover.attach(io: file, filename: filename)
+# end
 
-def attach_headshot(s3_client, artist, key)
-  # resp = s3_client.get_object({
-  #   bucket: S3_BUCKET,
-  #   key: key
-  # })
-  # artist.headshot.attach(io: resp.body.read, filename: key)
-  public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
-  url = URI.parse(public_url)
-  filename = File.basename(url.path)
-  file = URI.open(url)
-  artist.headshot.attach(io: file, filename: filename)
-end
+# def attach_headshot(s3_client, artist, key)
+#   # resp = s3_client.get_object({
+#   #   bucket: S3_BUCKET,
+#   #   key: key
+#   # })
+#   # artist.headshot.attach(io: resp.body.read, filename: key)
+#   public_url = "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com/#{key}"
+#   url = URI.parse(public_url)
+#   filename = File.basename(url.path)
+#   file = URI.open(url)
+#   artist.headshot.attach(io: file, filename: filename)
+# end
 
 
 # Top Charts (seeded below, listed here for reference)
