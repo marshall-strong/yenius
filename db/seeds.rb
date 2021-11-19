@@ -211,6 +211,33 @@ end
   Album.create!(name: "Samples & Interpolations", release_date: Date.new(1000, 1, 1))
     s_and_i = Album.last
 
+# Add banner_s3_key to all albums
+  the_college_dropout.banner_s3_key = '/banners/_2004-the_college_dropout.jpg'
+  late_registration.banner_s3_key = '/banners/_2005-late_registration.jpg'
+  graduation.banner_s3_key = '/banners/_2007-graduation.jpg'
+  x808s_and_heartbreak.banner_s3_key = '/banners/_2008-808s_and_heartbreak.jpg'
+  my_beautiful_dark_twisted_fantasy.banner_s3_key = '/banners/_2010-my_beautiful_dark_twisted_fantasy.jpg'
+  watch_the_throne.banner_s3_key = '/banners/_2011-watch_the_throne.jpg'
+  yeezus.banner_s3_key = '/banners/_2013-yeezus.png'
+  the_life_of_pablo.banner_s3_key = '/banners/_2016-the_life_of_pablo.jpg'
+  ye.banner_s3_key = '/banners/_2018-ye.png'
+  jesus_is_king.banner_s3_key = '/banners/_2019-jesus_is_king.jpg'
+  s_and_i.banner_s3_key = '/banners/_s_and_i.jpg'
+
+# Add cover_s3_key to all albums
+  the_college_dropout.cover_s3_key = '/banners/_2004-the_college_dropout.jpg'
+  late_registration.cover_s3_key = '/banners/_2005-late_registration.jpg'
+  graduation.cover_s3_key = '/banners/_2007-graduation.jpg'
+  x808s_and_heartbreak.cover_s3_key = '/banners/_2008-808s_and_heartbreak.jpg'
+  my_beautiful_dark_twisted_fantasy.cover_s3_key = '/banners/_2010-my_beautiful_dark_twisted_fantasy.jpg'
+  watch_the_throne.cover_s3_key = '/banners/_2011-watch_the_throne.jpg'
+  yeezus.cover_s3_key = '/banners/_2013-yeezus.jpg'
+  the_life_of_pablo.cover_s3_key = '/banners/_2016-the_life_of_pablo.jpg'
+  ye.cover_s3_key = '/banners/_2018-ye.jpg'
+  jesus_is_king.cover_s3_key = '/banners/_2019-jesus_is_king.jpg'
+  s_and_i.cover_s3_key = '/banners/_this_is_fine.png'
+
+
 # # Attach banners to albums
 #   attach_banner(s3_client, the_college_dropout, "seeds/banners/2004-the_college_dropout.jpg")
 #   attach_banner(s3_client, late_registration, "seeds/banners/2005-late_registration.jpg")
@@ -236,7 +263,6 @@ end
 #   attach_cover(s3_client, ye, "seeds/covers/2018-ye.jpg")
 #   attach_cover(s3_client, jesus_is_king, "seeds/covers/2019-jesus_is_king.jpg")
 #   attach_cover(s3_client, s_and_i, "seeds/covers/this_is_fine.png")
-
 
 # ARTIST seeds
   Artist.create!(name: "✰MAGZEN✰")
@@ -1009,6 +1035,85 @@ end
     young_thug = Artist.last
   Artist.create!(name: "Yvonne Fair")
     yvonne_fair = Artist.last
+
+# Add headshot_s3_key to artists
+  adam_levine.headshot_s3_key = 'headshots/_adam_levine.jpg'
+  al_be_back.headshot_s3_key = 'headshots/_al_be_back.jpg'
+  ant_clemons.headshot_s3_key = 'headshots/_ant_clemons.jpg'
+  beyonce.headshot_s3_key = 'headshots/_beyonce.jpg'
+  big_sean.headshot_s3_key = 'headshots/_big_sean.jpg'
+  bon_iver.headshot_s3_key = 'headshots/_bon_iver.jpg'
+  brandy.headshot_s3_key = 'headshots/_brandy.jpg'
+  camron.headshot_s3_key = 'headshots/_camron.jpg'
+  chance_the_rapper.headshot_s3_key = 'headshots/_chance_the_rapper.jpg'
+  charlie_wilson.headshot_s3_key = 'headshots/_charlie_wilson.jpg'
+  chris_brown.headshot_s3_key = 'headshots/_chris_brown.png'
+  chris_martin.headshot_s3_key = 'headshots/_chris_martin.jpg'
+  clipse.headshot_s3_key = 'headshots/_clipse.jpg'
+  common.headshot_s3_key = 'headshots/_common.jpg'
+  consequence.headshot_s3_key = 'headshots/_consequence.png'
+  curtis_mayfield.headshot_s3_key = 'headshots/_curtis_mayfield.jpg'
+  cyhi_the_prince.headshot_s3_key = 'headshots/_cyhi_the_prince.jpg'
+  desiigner.headshot_s3_key = 'headshots/_desiigner.jpg'
+  dj_premier.headshot_s3_key = 'headshots/_dj_premier.jpg'
+  dwele.headshot_s3_key = 'headshots/_dwele.jpg'
+  evidence.headshot_s3_key = 'headshots/_evidence.jpg'
+  frank_ocean.headshot_s3_key = 'headshots/_frank_ocean.jpg'
+  fred_hammond.headshot_s3_key = 'headshots/_fred_hammond.jpg'
+  freeway.headshot_s3_key = 'headshots/_freeway.jpg'
+  gil_scott_heron.headshot_s3_key = 'headshots/_gil_scott_heron.jpg'
+  glc.headshot_s3_key = 'headshots/_glc.jpg'
+  god.headshot_s3_key = 'headshots/_god.jpg'
+  j_ivy.headshot_s3_key = 'headshots/_j_ivy.jpg'
+  jaime_foxx.headshot_s3_key = 'headshots/_jaime_foxx.jpg'
+  jay_z.headshot_s3_key = 'headshots/_jay_z.jpg'
+  jeezy.headshot_s3_key = 'headshots/_jeezy.jpg'
+  john_legend.headshot_s3_key = 'headshots/_john_legend.jpg'
+  john_mayer.headshot_s3_key = 'headshots/_john_mayer.jpg'
+  kanye_west.headshot_s3_key = 'headshots/_kanye_west.jpg'
+  kelly_price.headshot_s3_key = 'headshots/_kelly_price.jpg'
+  kendrick_lamar.headshot_s3_key = 'headshots/_kendrick_lamar.jpg'
+  kenny_g.headshot_s3_key = 'headshots/_kenny_g.jpg'
+  kid_cudi.headshot_s3_key = 'headshots/_kid_cudi.jpg'
+  kirk_franklin.headshot_s3_key = 'headshots/_kirk_franklin.jpg'
+  lil_wayne.headshot_s3_key = 'headshots/_lil_wayne.jpg'
+  ludacris.headshot_s3_key = 'headshots/_ludacris.jpg'
+  lupe_fiasco.headshot_s3_key = 'headshots/_lupe_fiasco.jpg'
+  marvin_gaye.headshot_s3_key = 'headshots/_marvin_gaye.png'
+  max_b.headshot_s3_key = 'headshots/_max_b.jpg'
+  mr_hudson.headshot_s3_key = 'headshots/_mr_hudson.png'
+  nas.headshot_s3_key = 'headshots/_nas.jpg'
+  nicki_minaj.headshot_s3_key = 'headshots/_nicki_minaj.jpg'
+  otis_redding.headshot_s3_key = 'headshots/_otis_redding.png'
+  partynextdoor.headshot_s3_key = 'headshots/_partynextdoor.jpg'
+  patti_labelle.headshot_s3_key = 'headshots/_patti_labelle.jpg'
+  paul_wall.headshot_s3_key = 'headshots/_paul_wall.jpg'
+  post_malone.headshot_s3_key = 'headshots/_post_malone.jpg'
+  pusha_t.headshot_s3_key = 'headshots/_pusha_t.jpg'
+  q_tip.headshot_s3_key = 'headshots/_q_tip.jpg'
+  raekwon.headshot_s3_key = 'headshots/_raekwon.jpg'
+  really_doe.headshot_s3_key = 'headshots/_really_doe.jpg'
+  rhymefest.headshot_s3_key = 'headshots/_rhymefest.jpg'
+  rick_ross.headshot_s3_key = 'headshots/_rick_ross.jpg'
+  rihanna.headshot_s3_key = 'headshots/_rihanna.jpg'
+  rza.headshot_s3_key = 'headshots/_rza.jpg'
+  sampha.headshot_s3_key = 'headshots/_sampha.jpg'
+  sia.headshot_s3_key = 'headshots/_sia.jpg'
+  sunday_service_choir.headshot_s3_key = 'headshots/_sunday_service_choir.jpg'
+  swizz_beatz.headshot_s3_key = 'headshots/_swizz_beatz.jpg'
+  syleena_johnson.headshot_s3_key = 'headshots/_syleena_johnson.jpg'
+  t_pain.headshot_s3_key = 'headshots/_t_pain.jpg'
+  talib_kweli.headshot_s3_key = 'headshots/_talib_kweli.png'
+  the_boys_choir_of_harlem.headshot_s3_key = 'headshots/_the_boys_choir_of_harlem.png'
+  the_dream.headshot_s3_key = 'headshots/_the_dream.png'
+  the_game.headshot_s3_key = 'headshots/_the_game.png'
+  the_weeknd.headshot_s3_key = 'headshots/_the_weeknd.jpg'
+  twista.headshot_s3_key = 'headshots/_twista.jpg'
+  ty_dolla_sign.headshot_s3_key = 'headshots/_ty_dolla_sign.jpg'
+  vic_mensa.headshot_s3_key = 'headshots/_vic_mensa.jpg'
+  wolfgang_amadeus_mozart.headshot_s3_key = 'headshots/_wolfgang_amadeus_mozart.jpg'
+  yasiin_bey.headshot_s3_key = 'headshots/_yasiin_bey.jpg'
+  young_thug.headshot_s3_key = 'headshots/_young_thug.jpg'
 
 # # Attach headshots to artists
 #   attach_headshot(s3_client, adam_levine, "seeds/headshots/adam_levine.jpg")
