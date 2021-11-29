@@ -290,6 +290,21 @@ puts "  adding cover images to Album seeds..."
 
 puts "  done adding cover images."
 
+puts "  saving updates to Album seeds..."
+# Save all updates to the Album seeds (banner_s3_key, banner_url, cover_s3_key, cover_url)
+  the_college_dropout.save!
+  late_registration.save!
+  graduation.save!
+  x808s_and_heartbreak.save!
+  my_beautiful_dark_twisted_fantasy.save!
+  watch_the_throne.save!
+  yeezus.save!
+  the_life_of_pablo.save!
+  ye.save!
+  jesus_is_king.save!
+  s_and_i.save!
+puts "  done saving Album updates."
+
 # # Attach banners to albums
 #   attach_banner(s3_client, the_college_dropout, "seeds/banners/2004-the_college_dropout.jpg")
 #   attach_banner(s3_client, late_registration, "seeds/banners/2005-late_registration.jpg")
@@ -1249,6 +1264,85 @@ puts "  adding headshot images to some Artist seeds..."
   wolfgang_amadeus_mozart.headshot_url = public_url('/headshots/_wolfgang_amadeus_mozart.jpg')
   yasiin_bey.headshot_url = public_url('/headshots/_yasiin_bey.jpg')
   young_thug.headshot_url = public_url('/headshots/_young_thug.jpg')
+
+# Save updates to Artist seeds
+  adam_levine.save!
+  al_be_back.save!
+  ant_clemons.save!
+  beyonce.save!
+  big_sean.save!
+  bon_iver.save!
+  brandy.save!
+  camron.save!
+  chance_the_rapper.save!
+  charlie_wilson.save!
+  chris_brown.save!
+  chris_martin.save!
+  clipse.save!
+  common.save!
+  consequence.save!
+  curtis_mayfield.save!
+  cyhi_the_prince.save!
+  desiigner.save!
+  dj_premier.save!
+  dwele.save!
+  evidence.save!
+  frank_ocean.save!
+  fred_hammond.save!
+  freeway.save!
+  gil_scott_heron.save!
+  glc.save!
+  god.save!
+  j_ivy.save!
+  jaime_foxx.save!
+  jay_z.save!
+  jeezy.save!
+  john_legend.save!
+  john_mayer.save!
+  kanye_west.save!
+  kelly_price.save!
+  kendrick_lamar.save!
+  kenny_g.save!
+  kid_cudi.save!
+  kirk_franklin.save!
+  lil_wayne.save!
+  ludacris.save!
+  lupe_fiasco.save!
+  marvin_gaye.save!
+  max_b.save!
+  mr_hudson.save!
+  nas.save!
+  nicki_minaj.save!
+  otis_redding.save!
+  partynextdoor.save!
+  patti_labelle.save!
+  paul_wall.save!
+  post_malone.save!
+  pusha_t.save!
+  q_tip.save!
+  raekwon.save!
+  really_doe.save!
+  rhymefest.save!
+  rick_ross.save!
+  rihanna.save!
+  rza.save!
+  sampha.save!
+  sia.save!
+  sunday_service_choir.save!
+  swizz_beatz.save!
+  syleena_johnson.save!
+  t_pain.save!
+  talib_kweli.save!
+  the_boys_choir_of_harlem.save!
+  the_dream.save!
+  the_game.save!
+  the_weeknd.save!
+  twista.save!
+  ty_dolla_sign.save!
+  vic_mensa.save!
+  wolfgang_amadeus_mozart.save!
+  yasiin_bey.save!
+  young_thug.save!
 
   puts "  done adding headshot images."
 
