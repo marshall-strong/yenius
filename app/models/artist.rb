@@ -28,7 +28,10 @@ class Artist < ApplicationRecord
   has_many :comments,
     as: :commentable
 
-  has_one_attached :headshot
+  # has_one_attached :headshot
+  def headshot
+    self.headshot_url ? self.headshot_url : nil
+  end
 
   def artist_credits_by_type(credit_type)
     artist_credit_type = ArtistCreditType.find_by credit_type: credit_type
