@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_03_165649) do
+ActiveRecord::Schema.define(version: 2021_11_19_015540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,10 @@ ActiveRecord::Schema.define(version: 2021_01_03_165649) do
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "banner_s3_key"
+    t.string "banner_url"
+    t.string "cover_s3_key"
+    t.string "cover_url"
     t.index ["name"], name: "index_albums_on_name", unique: true
   end
 
@@ -98,6 +102,8 @@ ActiveRecord::Schema.define(version: 2021_01_03_165649) do
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "headshot_s3_key"
+    t.string "headshot_url"
     t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
