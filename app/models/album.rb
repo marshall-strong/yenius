@@ -30,8 +30,15 @@ class Album < ApplicationRecord
   has_many :album_annotations,
     as: :annotatable
 
-  has_one_attached :cover
-  has_one_attached :banner
+  # has_one_attached :cover
+  def cover
+    self.cover_url ? self.cover_url : nil
+  end
+
+  # has_one_attached :banner
+  def banner
+    self.banner_url ? self.banner_url : nil
+  end
 
   def credited_artist_ids_by_artist_credit_type(credit_type)
     artist_credit_type = ArtistCreditType.find_by credit_type: credit_type
