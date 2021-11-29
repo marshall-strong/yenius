@@ -14,6 +14,16 @@ require 'aws-sdk-s3'
 require 'open-uri'
 require 'ms_palette'
 
+puts "rails db:seed"
+
+# S3_BUCKET = ENV['S3_BUCKET']
+S3_BUCKET = "yenius-dev"
+puts "Name of AWS S3 bucket containing images:\t#{S3_BUCKET}"
+
+def public_url(s3_key)
+  return "https://#{S3_BUCKET}.s3.us-east-2.amazonaws.com#{s3_key}"
+end
+
 # AWS_ACCESS_KEY_ID = ENV['AWS_ACCESS_KEY_ID']
 # AWS_SECRET_ACCESS_KEY = ENV['AWS_SECRET_ACCESS_KEY']
 # S3_BUCKET = ENV['S3_BUCKET']
@@ -105,6 +115,7 @@ require 'ms_palette'
 
 
 # DESTROY existing seeds
+  puts "Destroying existing seeds..."
   Comment.destroy_all
   Verse.destroy_all
   SampleCredit.destroy_all
@@ -116,14 +127,18 @@ require 'ms_palette'
   Artist.destroy_all
   User.destroy_all
   AdminUser.destroy_all
+  puts "Done destroying seeds.\n"
 
 
 # ACTIVE ADMIN seed
 # ActiveAdmin database administrative user
+  puts "Creating ActiveAdmin administrative user..."
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+  puts "Done seeding ActiveAdmin administrator.\n"  
 
 
 # USER seeds
+puts "Creating User seeds..."
 # Celebrity users
   User.create!(username: "50Cent", email: "50cent@yenius.com", my_color: MS_PALETTE.sample, password: "yenius50Cent")
   User.create!(username: "AnthonyAnderson", email: "anthony.anderson@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusAnthonyAnderson")
@@ -181,9 +196,13 @@ require 'ms_palette'
   User.create!(username: "JAM", email: "julian.macrone@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusJAM")
   User.create!(username: "WrightStuff", email: "alex.wright@yenius.com", my_color: MS_PALETTE.sample, password: "yeniusWrightStuff")
 
+puts "Done seeding Users.\n"
+
 
 # ALBUM seeds
+puts "Creating Album seeds..."
 # Kanye albums
+puts "  Kanye West albums..."
   Album.create!(name: "The College Dropout", release_date: Date.new(2004, 2, 10), rank: 2)
     the_college_dropout = Album.last
   Album.create!(name: "Late Registration", release_date: Date.new(2005, 8, 30), rank: 5)
@@ -204,13 +223,16 @@ require 'ms_palette'
     jesus_is_king = Album.last
 
 # Kanye and Jay-Z albums
+puts "  Kanye West and Jay-Z albums..."
   Album.create!(name: "Watch the Throne", release_date: Date.new(2011, 8, 8), rank: 4)
     watch_the_throne = Album.last
 
 # Other albums
+puts "  \"Samples & Interpolations\" album..."
   Album.create!(name: "Samples & Interpolations", release_date: Date.new(1000, 1, 1))
     s_and_i = Album.last
 
+puts "  adding banner images to Album seeds..."
 # Add banner_s3_key to all albums
   the_college_dropout.banner_s3_key = '/banners/_2004-the_college_dropout.jpg'
   late_registration.banner_s3_key = '/banners/_2005-late_registration.jpg'
@@ -224,19 +246,49 @@ require 'ms_palette'
   jesus_is_king.banner_s3_key = '/banners/_2019-jesus_is_king.jpg'
   s_and_i.banner_s3_key = '/banners/_s_and_i.jpg'
 
-# Add cover_s3_key to all albums
-  the_college_dropout.cover_s3_key = '/banners/_2004-the_college_dropout.jpg'
-  late_registration.cover_s3_key = '/banners/_2005-late_registration.jpg'
-  graduation.cover_s3_key = '/banners/_2007-graduation.jpg'
-  x808s_and_heartbreak.cover_s3_key = '/banners/_2008-808s_and_heartbreak.jpg'
-  my_beautiful_dark_twisted_fantasy.cover_s3_key = '/banners/_2010-my_beautiful_dark_twisted_fantasy.jpg'
-  watch_the_throne.cover_s3_key = '/banners/_2011-watch_the_throne.jpg'
-  yeezus.cover_s3_key = '/banners/_2013-yeezus.jpg'
-  the_life_of_pablo.cover_s3_key = '/banners/_2016-the_life_of_pablo.jpg'
-  ye.cover_s3_key = '/banners/_2018-ye.jpg'
-  jesus_is_king.cover_s3_key = '/banners/_2019-jesus_is_king.jpg'
-  s_and_i.cover_s3_key = '/banners/_this_is_fine.png'
+# Add banner_url to all albums
+  the_college_dropout.banner_url = public_url('/banners/_2004-the_college_dropout.jpg')
+  late_registration.banner_url = public_url('/banners/_2005-late_registration.jpg')
+  graduation.banner_url = public_url('/banners/_2007-graduation.jpg')
+  x808s_and_heartbreak.banner_url = public_url('/banners/_2008-808s_and_heartbreak.jpg')
+  my_beautiful_dark_twisted_fantasy.banner_url = public_url('/banners/_2010-my_beautiful_dark_twisted_fantasy.jpg')
+  watch_the_throne.banner_url = public_url('/banners/_2011-watch_the_throne.jpg')
+  yeezus.banner_url = public_url('/banners/_2013-yeezus.png')
+  the_life_of_pablo.banner_url = public_url('/banners/_2016-the_life_of_pablo.jpg')
+  ye.banner_url = public_url('/banners/_2018-ye.png')
+  jesus_is_king.banner_url = public_url('/banners/_2019-jesus_is_king.jpg')
+  s_and_i.banner_url = public_url('/banners/_s_and_i.jpg')
 
+puts "  done adding banner images."
+
+puts "  adding cover images to Album seeds..."
+# Add cover_s3_key to all albums
+  the_college_dropout.cover_s3_key = '/covers/_2004-the_college_dropout.jpg'
+  late_registration.cover_s3_key = '/covers/_2005-late_registration.jpg'
+  graduation.cover_s3_key = '/covers/_2007-graduation.jpg'
+  x808s_and_heartbreak.cover_s3_key = '/covers/_2008-808s_and_heartbreak.jpg'
+  my_beautiful_dark_twisted_fantasy.cover_s3_key = '/covers/_2010-my_beautiful_dark_twisted_fantasy.jpg'
+  watch_the_throne.cover_s3_key = '/covers/_2011-watch_the_throne.jpg'
+  yeezus.cover_s3_key = '/covers/_2013-yeezus.jpg'
+  the_life_of_pablo.cover_s3_key = '/covers/_2016-the_life_of_pablo.jpg'
+  ye.cover_s3_key = '/covers/_2018-ye.jpg'
+  jesus_is_king.cover_s3_key = '/covers/_2019-jesus_is_king.jpg'
+  s_and_i.cover_s3_key = '/covers/_this_is_fine.png'
+
+# Add cover_url to all albums
+  the_college_dropout.cover_url = public_url('/covers/_2004-the_college_dropout.jpg')
+  late_registration.cover_url = public_url('/covers/_2005-late_registration.jpg')
+  graduation.cover_url = public_url('/covers/_2007-graduation.jpg')
+  x808s_and_heartbreak.cover_url = public_url('/covers/_2008-808s_and_heartbreak.jpg')
+  my_beautiful_dark_twisted_fantasy.cover_url = public_url('/covers/_2010-my_beautiful_dark_twisted_fantasy.jpg')
+  watch_the_throne.cover_url = public_url('/covers/_2011-watch_the_throne.jpg')
+  yeezus.cover_url = public_url('/covers/_2013-yeezus.jpg')
+  the_life_of_pablo.cover_url = public_url('/covers/_2016-the_life_of_pablo.jpg')
+  ye.cover_url = public_url('/covers/_2018-ye.jpg')
+  jesus_is_king.cover_url = public_url('/covers/_2019-jesus_is_king.jpg')
+  s_and_i.cover_url = public_url('/covers/_this_is_fine.png')
+
+puts "  done adding cover images."
 
 # # Attach banners to albums
 #   attach_banner(s3_client, the_college_dropout, "seeds/banners/2004-the_college_dropout.jpg")
@@ -264,7 +316,10 @@ require 'ms_palette'
 #   attach_cover(s3_client, jesus_is_king, "seeds/covers/2019-jesus_is_king.jpg")
 #   attach_cover(s3_client, s_and_i, "seeds/covers/this_is_fine.png")
 
+puts "Done seeding Albums.\n"
+
 # ARTIST seeds
+puts "Creating Artist seeds..."
   Artist.create!(name: "✰MAGZEN✰")
     magzen = Artist.last
   Artist.create!(name: "2Pac")
@@ -570,7 +625,7 @@ require 'ms_palette'
   Artist.create!(name: "IDK")
     idk = Artist.last
   Artist.create!(name: "Il Rovescio Della Medaglia")
-   il_rovescio_della_medaglia = Artist.last
+        il_rovescio_della_medaglia = Artist.last
   Artist.create!(name: "IllKittyDog")
     illkittydog = Artist.last
   Artist.create!(name: "Indiggo Twins")
@@ -1036,6 +1091,7 @@ require 'ms_palette'
   Artist.create!(name: "Yvonne Fair")
     yvonne_fair = Artist.last
 
+puts "  adding headshot images to some Artist seeds..."
 # Add headshot_s3_key to artists
   adam_levine.headshot_s3_key = 'headshots/_adam_levine.jpg'
   al_be_back.headshot_s3_key = 'headshots/_al_be_back.jpg'
@@ -1114,6 +1170,87 @@ require 'ms_palette'
   wolfgang_amadeus_mozart.headshot_s3_key = 'headshots/_wolfgang_amadeus_mozart.jpg'
   yasiin_bey.headshot_s3_key = 'headshots/_yasiin_bey.jpg'
   young_thug.headshot_s3_key = 'headshots/_young_thug.jpg'
+
+# Add headshot_url to artists
+  adam_levine.headshot_url = public_url('headshots/_adam_levine.jpg')
+  al_be_back.headshot_url = public_url('headshots/_al_be_back.jpg')
+  ant_clemons.headshot_url = public_url('headshots/_ant_clemons.jpg')
+  beyonce.headshot_url = public_url('headshots/_beyonce.jpg')
+  big_sean.headshot_url = public_url('headshots/_big_sean.jpg')
+  bon_iver.headshot_url = public_url('headshots/_bon_iver.jpg')
+  brandy.headshot_url = public_url('headshots/_brandy.jpg')
+  camron.headshot_url = public_url('headshots/_camron.jpg')
+  chance_the_rapper.headshot_url = public_url('headshots/_chance_the_rapper.jpg')
+  charlie_wilson.headshot_url = public_url('headshots/_charlie_wilson.jpg')
+  chris_brown.headshot_url = public_url('headshots/_chris_brown.png')
+  chris_martin.headshot_url = public_url('headshots/_chris_martin.jpg')
+  clipse.headshot_url = public_url('headshots/_clipse.jpg')
+  common.headshot_url = public_url('headshots/_common.jpg')
+  consequence.headshot_url = public_url('headshots/_consequence.png')
+  curtis_mayfield.headshot_url = public_url('headshots/_curtis_mayfield.jpg')
+  cyhi_the_prince.headshot_url = public_url('headshots/_cyhi_the_prince.jpg')
+  desiigner.headshot_url = public_url('headshots/_desiigner.jpg')
+  dj_premier.headshot_url = public_url('headshots/_dj_premier.jpg')
+  dwele.headshot_url = public_url('headshots/_dwele.jpg')
+  evidence.headshot_url = public_url('headshots/_evidence.jpg')
+  frank_ocean.headshot_url = public_url('headshots/_frank_ocean.jpg')
+  fred_hammond.headshot_url = public_url('headshots/_fred_hammond.jpg')
+  freeway.headshot_url = public_url('headshots/_freeway.jpg')
+  gil_scott_heron.headshot_url = public_url('headshots/_gil_scott_heron.jpg')
+  glc.headshot_url = public_url('headshots/_glc.jpg')
+  god.headshot_url = public_url('headshots/_god.jpg')
+  j_ivy.headshot_url = public_url('headshots/_j_ivy.jpg')
+  jaime_foxx.headshot_url = public_url('headshots/_jaime_foxx.jpg')
+  jay_z.headshot_url = public_url('headshots/_jay_z.jpg')
+  jeezy.headshot_url = public_url('headshots/_jeezy.jpg')
+  john_legend.headshot_url = public_url('headshots/_john_legend.jpg')
+  john_mayer.headshot_url = public_url('headshots/_john_mayer.jpg')
+  kanye_west.headshot_url = public_url('headshots/_kanye_west.jpg')
+  kelly_price.headshot_url = public_url('headshots/_kelly_price.jpg')
+  kendrick_lamar.headshot_url = public_url('headshots/_kendrick_lamar.jpg')
+  kenny_g.headshot_url = public_url('headshots/_kenny_g.jpg')
+  kid_cudi.headshot_url = public_url('headshots/_kid_cudi.jpg')
+  kirk_franklin.headshot_url = public_url('headshots/_kirk_franklin.jpg')
+  lil_wayne.headshot_url = public_url('headshots/_lil_wayne.jpg')
+  ludacris.headshot_url = public_url('headshots/_ludacris.jpg')
+  lupe_fiasco.headshot_url = public_url('headshots/_lupe_fiasco.jpg')
+  marvin_gaye.headshot_url = public_url('headshots/_marvin_gaye.png')
+  max_b.headshot_url = public_url('headshots/_max_b.jpg')
+  mr_hudson.headshot_url = public_url('headshots/_mr_hudson.png')
+  nas.headshot_url = public_url('headshots/_nas.jpg')
+  nicki_minaj.headshot_url = public_url('headshots/_nicki_minaj.jpg')
+  otis_redding.headshot_url = public_url('headshots/_otis_redding.png')
+  partynextdoor.headshot_url = public_url('headshots/_partynextdoor.jpg')
+  patti_labelle.headshot_url = public_url('headshots/_patti_labelle.jpg')
+  paul_wall.headshot_url = public_url('headshots/_paul_wall.jpg')
+  post_malone.headshot_url = public_url('headshots/_post_malone.jpg')
+  pusha_t.headshot_url = public_url('headshots/_pusha_t.jpg')
+  q_tip.headshot_url = public_url('headshots/_q_tip.jpg')
+  raekwon.headshot_url = public_url('headshots/_raekwon.jpg')
+  really_doe.headshot_url = public_url('headshots/_really_doe.jpg')
+  rhymefest.headshot_url = public_url('headshots/_rhymefest.jpg')
+  rick_ross.headshot_url = public_url('headshots/_rick_ross.jpg')
+  rihanna.headshot_url = public_url('headshots/_rihanna.jpg')
+  rza.headshot_url = public_url('headshots/_rza.jpg')
+  sampha.headshot_url = public_url('headshots/_sampha.jpg')
+  sia.headshot_url = public_url('headshots/_sia.jpg')
+  sunday_service_choir.headshot_url = public_url('headshots/_sunday_service_choir.jpg')
+  swizz_beatz.headshot_url = public_url('headshots/_swizz_beatz.jpg')
+  syleena_johnson.headshot_url = public_url('headshots/_syleena_johnson.jpg')
+  t_pain.headshot_url = public_url('headshots/_t_pain.jpg')
+  talib_kweli.headshot_url = public_url('headshots/_talib_kweli.png')
+  the_boys_choir_of_harlem.headshot_url = public_url('headshots/_the_boys_choir_of_harlem.png')
+  the_dream.headshot_url = public_url('headshots/_the_dream.png')
+  the_game.headshot_url = public_url('headshots/_the_game.png')
+  the_weeknd.headshot_url = public_url('headshots/_the_weeknd.jpg')
+  twista.headshot_url = public_url('headshots/_twista.jpg')
+  ty_dolla_sign.headshot_url = public_url('headshots/_ty_dolla_sign.jpg')
+  vic_mensa.headshot_url = public_url('headshots/_vic_mensa.jpg')
+  wolfgang_amadeus_mozart.headshot_url = public_url('headshots/_wolfgang_amadeus_mozart.jpg')
+  yasiin_bey.headshot_url = public_url('headshots/_yasiin_bey.jpg')
+  young_thug.headshot_url = public_url('headshots/_young_thug.jpg')
+
+  puts "  done adding headshot images."
 
 # # Attach headshots to artists
 #   attach_headshot(s3_client, adam_levine, "seeds/headshots/adam_levine.jpg")
@@ -1194,11 +1331,15 @@ require 'ms_palette'
 #   attach_headshot(s3_client, yasiin_bey, "seeds/headshots/yasiin_bey.jpg")
 #   attach_headshot(s3_client, young_thug, "seeds/headshots/young_thug.jpg")
 
+puts "Done seeding Artists.\n"
+
 
 # SONG seeds
+puts "Creating Song seeds..."
   # UPDATE: All Kanye songs are assigned to a variable.
 # Kanye West songs
 # The College Dropout (2004)
+puts "  The College Dropout (2004)"
   Song.create!(album_id: the_college_dropout.id, name: "Intro (Skit)", track_number: 1)
 	intro_skit = Song.last
   Song.create!(album_id: the_college_dropout.id, name: "We Don't Care", track_number: 2)
@@ -1243,6 +1384,7 @@ require 'ms_palette'
     last_call = Song.last
 
 # Late Registration (2005)
+puts "  Late Registration (2005)"
   Song.create!(album_id: late_registration.id, name: "Wake Up Mr. West", track_number: 1)
     wake_up_mr_west = Song.last
   Song.create!(album_id: late_registration.id, name: "Heard 'Em Say", track_number: 2)
@@ -1291,6 +1433,7 @@ require 'ms_palette'
     we_can_make_it_better = Song.last
 
 # Graduation (2007)
+puts "  Graduation (2007)"
   Song.create!(album_id: graduation.id, name: "Good Morning", track_number: 1)
     good_morning = Song.last
   Song.create!(album_id: graduation.id, name: "Champion", track_number: 2, rank: 6)
@@ -1323,6 +1466,7 @@ require 'ms_palette'
     bittersweet_poetry = Song.last
 
 # 808s & Heartbreak (2008)
+puts "  808s & Heartbreak (2008)"
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Say You Will", track_number: 1)
     say_you_will = Song.last
   Song.create!(album_id: x808s_and_heartbreak.id, name: "Welcome To Heartbreak", track_number: 2)
@@ -1349,6 +1493,7 @@ require 'ms_palette'
     pinocchio_story = Song.last
 
 # My Beautiful Dark Twisted Fantasy (2010)
+puts "  My Beautiful Dark Twisted Fantasy (2010)"
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Dark Fantasy", track_number: 1)
     dark_fantasy = Song.last
   Song.create!(album_id: my_beautiful_dark_twisted_fantasy.id, name: "Gorgeous", track_number: 2)
@@ -1379,6 +1524,7 @@ require 'ms_palette'
     see_me_now = Song.last
 
 # Yeezus (2013)
+puts "  Yeezus (2013)"
   Song.create!(album_id: yeezus.id, name: "On Sight", track_number: 1)
     on_sight = Song.last
   Song.create!(album_id: yeezus.id, name: "Black Skinhead", track_number: 2)
@@ -1401,6 +1547,7 @@ require 'ms_palette'
     bound_2 = Song.last
 
 # The Life of Pablo (2016)
+puts "  The Life of Pablo (2016)"
   Song.create!(album_id: the_life_of_pablo.id, name: "Ultralight Beam", track_number: 1)
     ultralight_beam = Song.last
   Song.create!(album_id: the_life_of_pablo.id, name: "Father Stretch My Hands, Pt. 1", track_number: 2)
@@ -1443,6 +1590,7 @@ require 'ms_palette'
     saint_pablo = Song.last
 
 # Ye (2018)
+puts "  Ye (2018)"
   Song.create!(album_id: ye.id, name: "I Thought About Killing You", track_number: 1)
     i_thought_about_killing_you = Song.last
   Song.create!(album_id: ye.id, name: "Yikes", track_number: 2)
@@ -1459,6 +1607,7 @@ require 'ms_palette'
     violent_crimes = Song.last
 
 # Jesus Is King (2019)
+puts "  Jesus Is King (2019)"
   Song.create!(album_id: jesus_is_king.id, name: "Every Hour", track_number: 1)
     every_hour = Song.last
   Song.create!(album_id: jesus_is_king.id, name: "Selah", track_number: 2)
@@ -1483,6 +1632,7 @@ require 'ms_palette'
     jesus_is_lord = Song.last
 
 # Watch the Throne (2011)
+puts "  Watch the Throne (2011)"
   Song.create!(album_id: watch_the_throne.id, name: "No Church in the Wild", track_number: 1, rank: 2)
     no_church_in_the_wild = Song.last
   Song.create!(album_id: watch_the_throne.id, name: "Lift Off", track_number: 2)
@@ -1517,6 +1667,7 @@ require 'ms_palette'
     the_joy = Song.last
 
 # Samples and Interpolations
+puts "  Samples & Interpolations"
   Song.create!(album_id: s_and_i.id, name: "God Is")
   Song.create!(album_id: s_and_i.id, name: "Gold Digger")
   Song.create!(album_id: s_and_i.id, name: "Homecoming")
@@ -1838,6 +1989,9 @@ require 'ms_palette'
   Song.create!(album_id: s_and_i.id, name: "YOUNG KANYE WEST")
   Song.create!(album_id: s_and_i.id, name: "Young OG")
 
+  puts "Done seeding Songs\n."
+
+  puts "Adding album descriptions to Album seeds..."
 
 # ALBUM seeds -- add 'bio'
 # The College Dropout (2004)
@@ -1880,7 +2034,9 @@ require 'ms_palette'
   watch_the_throne.bio = "<p><em>Watch The Throne</em> is the debut studio album by longtime partners/friends and label-mates, <Link to='/artists/#{jay_z.id}'>JAY Z</Link> &amp; <Link to='/artists/#{kanye_west.id}'>Kanye West</Link>, also known and commonly referred to as The Throne.</p><p>The album initially began as a 5-song EP, but it eventually morphed into a full-length project. The <em>Watch The Throne</em> tour became the most lucrative hip-hop tour in history.</p><p>Production credits included <Link to='/artists/#{swizz_beatz.id}'>Swizz Beatz</Link>, <Link to='/artists/#{x88_keys.id}'>88-Keys</Link>, <Link to='/artists/#{rza.id}'>RZA</Link>, <Link to='/artists/#{mike_dean.id}'>Mike Dean</Link>, <Link to='/artists/#{no_id.id}'>No I.D.</Link> and more. <Link to='/songs/#{otis.id}'>“Otis,”</Link> one of the album’s biggest tracks, was produced after No I.D. challenged Kanye to produce a song on the spot. Said No I.D. in <a href='http://www.xxlmag.com/xxl-magazine/2012/02/no-i-d-challenged-kanye-west-to-make-otis-on-the-spot' target='_blank' rel='noopener noreferrer'>an interview with <em>XXL</em></a>:</p><blockquote><p>I get the co-productions, but how you gon do an album and you don’t go to the machine and do one beat by yourself?</p></blockquote><p>Yeezy accepted the challenge and chopped up <Link to='/artists/#{otis_redding.id}'>Otis Redding</Link>’s <Link to='/songs/#{try_a_little_tenderness.id}'>“Try A Little Tenderness”</Link> on the spot. <Link to='/songs/#{otis.id}'>“Otis”</Link> was added at the last minute and went on to win the Grammy for <a href='https://en.wikipedia.org/wiki/Grammy_Award_for_Best_Rap_Performance' target='_blank' rel='noopener noreferrer'>Best Rap Performance.</a></p>"
   watch_the_throne.save!
 
+  puts "Done updating Album seeds.\n"
 
+  puts "Adding artist bios to Artist seeds..."
 # ARTIST seeds -- add 'bio'
 # Kanye West
   kanye_west.bio = "<p>The ubiquitous <a href='https://www.kanyewest.com/' target='_blank' rel='noopener noreferrer'>Kanye West</a>—from his famous quip, <a href='http://www.youtube.com/watch?v=zIUzLpO1kxI' target='_blank' rel='noopener noreferrer'>“George Bush doesn’t care about black people,”</a> to <a href='http://www.youtube.com/watch?v=1z8gCZ7zpsQ#t=43' target='_blank' rel='noopener noreferrer'>“I'ma let you finish,”</a> to marrying Kim Kardashian, to announcing that he’s <a href='http://www.cnn.com/2015/08/31/politics/kanye-west-2020-running-for-president-vma/' target='_blank' rel='noopener noreferrer'>running for President</a>, and admitting his <a href='https://twitter.com/kanyewest/status/989179757651574784' target='_blank' rel='noopener noreferrer'>love for President Trump</a>—you can see that he’s a staple of the tabloids and the entertainment world, industry-wide.</p><p>That certainly doesn’t take anything away from his music; as a matter of fact, it only seems to add to his fortuitous career. For instance, his 2010 album, <Link to='/albums/#{my_beautiful_dark_twisted_fantasy.id}'><em>My Beautiful Dark Twisted Fantasy</em></Link>, was universally praised by fans and critics alike; it was recorded during the backlash he received from the Swift interruption and during his break-up with then-girlfriend Amber Rose.</p><p>He has scored other well-known hits, as well, from each of his previous studio albums—such as <Link to='/songs/#{stronger.id}'>“Stronger,”</Link> <Link to='/songs/#{heartless.id}'>“Heartless,”</Link> and <Link to='/songs/#{gold_digger.id}'>“Gold Digger.”</Link> Each of his albums has been massive critical and commercial successes, including his collaboration album with <Link to='/artists/#{jay_z.id}'>JAY-Z</Link>, <Link to='/albums/#{watch_the_throne.id}'><em>Watch the Throne</em></Link>. As of 2020, West has won an astounding <a href='https://www.grammy.com/grammys/artists/kanye-west' target='_blank' rel='noopener noreferrer'>21 Grammys</a>, tied with JAY-Z as the most decorated hip-hop artist in Grammy history.</p><p>Kanye’s sixth solo album, <Link to='albums/#{yeezus.id}'><em>Yeezus</em></Link>, polarized his fan base and the general public but was heaped with rave reviews by music critics. In 2016, West released his seventh and most delayed body of work, <Link to='albums/#{the_life_of_pablo.id}'><em>The Life of Pablo</em></Link>, which was <a href='http://www.independent.co.uk/arts-entertainment/music/news/kanye-west-life-of-pablo-illegally-downloaded-500,000-times-already-a6878741.html' target='_blank' rel='noopener noreferrer'>illegally downloaded over 500,000 times,</a> frustrating fans after its TIDAL-exclusive release. West notably updated the album multiple times on TIDAL after its release.</p><p>Quite possibly West’s most surprising contribution to the music industry was his production streak during the summer of 2018, in which he produced five albums. Among these was a collaborative project with <Link to='/artists/#{kid_cudi.id}'>Kid Cudi</Link>, titled <em>KIDS SEE GHOSTS</em>; along with his eighth studio album, <Link to='albums/#{ye.id}'><em>ye</em></Link>, which tied Eminem and The Beatles for <a href='https://www.nytimes.com/2018/06/11/arts/music/kanye-west-ye-billboard-no-1-chart.html' target='_blank' rel='noopener noreferrer'>eight consecutive chart-topping releases</a>.</p><p>The public’s love for Kanye West has been apparent from the get-go, and each of his solo albums, barring his 2004 debut, <Link to='albums/#{the_college_dropout.id}'><em>The College Dropout</em></Link>, has peaked at #1 on the U.S. <a href='https://www.billboard.com/music/kanye-west/chart-history/billboard-200' target='_blank' rel='noopener noreferrer'><em>Billboard</em> 200</a> Album Chart. Another major standout, 2008’s <Link to='albums/#{x808s_and_heartbreak.id}'><em>808s &amp; Heartbreak</em></Link>, is largely credited with influencing the next generation of rappers; from the emphasis on heavy beats and melodic instrumentals to the use of auto-tune.</p><p>His ninth studio album, <em>Yandhi</em>, was originally scheduled to be released on September 29, 2018, and then again on November 26, 2018. However, West rescheduled the album release, because he felt it wasn’t finished yet. On August 29, 2019, Kim Kardashian-West teased a new Kanye album tracklist <a href='https://twitter.com/KimKardashian/status/1167154538643513344?s=19' target='_blank' rel='noopener noreferrer'>via Twitter</a>, with the title <Link to='/albums/#{jesus_is_king.id}'><em>Jesus is King</em>. </Link></p><p>Kanye seemed to confirm this by clearing his official website and posting the same image of the tracklist with the expected drop date at the bottom, September 27, 2019; almost a year after <em>Yandhi</em> was supposed to be released. However, the release was delayed to October 25th, to release along with his accompanying documentary.</p><p>Furthermore, after years of claiming he would run for President, finally <a href='https://twitter.com/kanyewest/status/1279575273365594112?s=20' target='_blank' rel='noopener noreferrer'>announced so on Twitter</a> which was met with much controversy, many claiming it was a publicity stunt for his forthcoming album, <em>God’s Country</em>.</p>"
@@ -1890,15 +2046,20 @@ require 'ms_palette'
   jay_z.bio = "<p>Having sold over 100 million records worldwide, and holding the solo artist record of 14 Billboard 200 #1 albums, Shawn “<strong>JAY-Z</strong>” Carter is possibly the most talented, accomplished and respected rapper of all-time. He has released 13 studio albums and five collaborative albums over his 30-year career.</p>"
   jay_z.save!
 
+  puts "Done updating Album seeds.\n"
+
 
 # ARTIST CREDIT TYPE seeds
+puts "Creating ArtistCreditType seeds..."
   primary_artist = ArtistCreditType.create!( credit_type:"PRIMARY_ARTIST" )
   featured_artist = ArtistCreditType.create!( credit_type:"FEATURED_ARTIST" )
   producer = ArtistCreditType.create!( credit_type:"PRODUCER" )
   writer = ArtistCreditType.create!( credit_type:"WRITER" )
+puts "Done seeding ArtistCreditTypes.\n"
 
 
 # ARTIST CREDIT seeds
+puts "Creating ArtistCredit seeds..."
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"GOOD Music BET Cypher").id, artist_credit_type_id: primary_artist.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Mr. Hudson" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:x808s_and_heartbreak.id ).id, artist_credit_type_id: featured_artist.id )
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"Paranoid", album_id:x808s_and_heartbreak.id ).id, artist_credit_type_id: producer.id )
@@ -2694,15 +2855,18 @@ require 'ms_palette'
   ArtistCredit.create!( artist_id: kanye_west.id, creditable_type:"Song", creditable_id:( Song.find_by! name:"The Joy" ).id, artist_credit_type_id: producer.id )
   ArtistCredit.create!( artist_id:( Artist.find_by! name:"Pete Rock" ).id, creditable_type:"Song", creditable_id:( Song.find_by! name:"The Joy" ).id, artist_credit_type_id: producer.id )
 
+puts "Done seeding ArtistCredits.\n"
 
 
 # Sample Credit Types
+puts "Creating SampleCreditType seeds..."
   sample_credit = SampleCreditType.create!( credit_type:"SAMPLE" )
   interp_credit = SampleCreditType.create!( credit_type:"INTERPOLATION" )
-
+puts "Done seeding SampleCreditTypes.\n"
 
 
 # Sample Credits
+puts "Creating SampleCredit seeds..."
   SampleCredit.create!( parent_song_id:( Song.find_by! name:"Freestyle 4", album: the_life_of_pablo).id, child_song_id:( Song.find_by! name:"4 (Freestyle)", album: s_and_i).id, sample_credit_type_id: interp_credit.id )
   SampleCredit.create!( parent_song_id:( Song.find_by! name:"Two Words", album: the_college_dropout).id, child_song_id:( Song.find_by! name:"1Train", album: s_and_i).id, sample_credit_type_id: interp_credit.id )
   SampleCredit.create!( parent_song_id:( Song.find_by! name:"Addiction", album: late_registration).id, child_song_id:( Song.find_by! name:"Nothing's Something", album: s_and_i).id, sample_credit_type_id: interp_credit.id )
@@ -3066,9 +3230,10 @@ require 'ms_palette'
   SampleCredit.create!( parent_song_id:( Song.find_by! name:"Sunshine Help Me", album: s_and_i).id, child_song_id:( Song.find_by! name:"No Church in the Wild", album: watch_the_throne).id, sample_credit_type_id: sample_credit.id )
   SampleCredit.create!( parent_song_id:( Song.find_by! name:"Different Strokes", album: s_and_i).id, child_song_id:( Song.find_by! name:"The Joy", album: watch_the_throne).id, sample_credit_type_id: sample_credit.id )
 
-
+puts "Done seeding SampleCredits.\n"
 
   # Verses
+puts "Creating Verse seeds..."
   Verse.create!( song_id: (Song.find_by! name:"Intro (Skit)", album: the_college_dropout).id, verse_number:0, body:"" )
   Verse.create!( song_id: (Song.find_by! name:"Intro (Skit)", album: the_college_dropout).id, verse_number:1, body:"[Intro: DeRay Davis]" )
   Verse.create!( song_id: (Song.find_by! name:"Intro (Skit)", album: the_college_dropout).id, verse_number:2, body:"Kanye, can I talk to you for a minute?<br>Me and the other faculty members was wonderin'<br>Could you do a lil' som...<br>Somethin' beautiful, somethin' that the kids are gon' love when they hear it<br>That's gon' make them start jumpin' up and down, and sharin' candy and stuff<br>Think you could probably do somethin', for the kids, for graduation to sing?" )
@@ -7049,8 +7214,10 @@ require 'ms_palette'
   Verse.create!( song_id: (Song.find_by! name:"The Joy", album: watch_the_throne).id, verse_number:33, body:"Give all glory to Gloria (<i>One-two, okay</i>)" )
   Verse.create!( song_id: (Song.find_by! name:"The Joy", album: watch_the_throne).id, verse_number:34, body:"They said, \"You raised that boy too fast\"<br>But you was raising a warrior (<i>One-two, okay</i>)" )
 
+  puts "Done seeding Verses.\n"
 
 # COMMENT seeds (Celebrities & Reactions, Demo comments, Kanye Names & Quotes, Musicians & Lyrics, Phish & Tube lyrics)
+puts "Adding to an array of hashes to use when seeding Comments..."
   comment_hashes = []
 
 # Celebrities & Reactions
@@ -7137,6 +7304,7 @@ require 'ms_palette'
   comment_hashes.push( Hash["username" => "JAM", "body" => "and how did that make you feel?"] )
   comment_hashes.push( Hash["username" => "WrightStuff", "body" => "'sup baby?"] )
 
+puts "Done adding to array of comment hashes.\n"
 
   def seed_comments(commentable_array, commentable_type, comment_hashes, min_count, max_count)
     now = Time.now
@@ -7161,8 +7329,17 @@ require 'ms_palette'
   kanye_songs = Song.where("album_id != #{s_and_i.id}")
   other_songs = Song.where("album_id = #{s_and_i.id}")
 
+puts "Creating Comment seeds..."
+puts "  seeding Comments on all Artists..."
   seed_comments(Artist.all, "Artist", comment_hashes, 1, 1)
+puts "  seeding Comments on all Albums..."
   seed_comments(Album.all, "Album", comment_hashes, 2, 4)
+puts "  seeding Comments on all Kanye West Songs..."
   seed_comments(kanye_songs, "Song", comment_hashes, 2, 4)
+puts "  seeding Comments on all non-Kanye Songs..."
   seed_comments(other_songs, "Song", comment_hashes, 1, 1)
-  seed_comments(Verse.all, "Verse", comment_hashes, 1, 3)
+puts "  seeding Comments on all Verses..."
+  seed_comments(Verse.all, "Verse", comment_hashes, 1, 2)
+puts "Done seeding Comments.\n"
+
+puts "Done running `rails db:seed`.\n"
