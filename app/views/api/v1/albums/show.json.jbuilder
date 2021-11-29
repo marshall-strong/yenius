@@ -13,8 +13,10 @@ json.albums do
     json.name @album.name
     json.bio @album.bio
     json.releaseDate @album.release_date
-    json.urlAlbumCover @album.cover.attached? ? url_for(@album.cover) : nil
-    json.urlAlbumBanner @album.banner.attached? ? url_for(@album.banner) : nil
+    # json.urlAlbumCover @album.cover.attached? ? url_for(@album.cover) : nil
+    json.urlAlbumCover @album.cover
+    # json.urlAlbumBanner @album.banner.attached? ? url_for(@album.banner) : nil
+    json.urlAlbumBanner @album.banner
     json.artistsPrimary do
       json.array! @album.artistsPrimary.map { |artist| artist.id }
     end

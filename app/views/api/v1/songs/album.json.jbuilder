@@ -2,7 +2,8 @@ json.albums do
   json.set! @song.album.id do
     json.id @song.album.id
     json.name @song.album.name
-    json.urlAlbumCover @song.album.cover.attached? ? url_for(@song.album.cover) : nil
+    # json.urlAlbumCover @song.album.cover.attached? ? url_for(@song.album.cover) : nil
+    json.urlAlbumCover @song.album.cover
     json.releaseDate @song.album.release_date
     json.year @song.album.str_release_year
     json.songs do
