@@ -89,18 +89,6 @@ Generate migration to update the existing records (avoids having to re-seed the 
 Run migrations (development)
 `heroku local:run rails db:migrate`
 
-### Project Highlight number two, followed by Code Snippet number two
-
-```js
-  const code = (snippet) =- `#2`;
-```
-
-### Project Highlight number three, followed by Code Snippet number three
-
-```js
-  const code = (snippet) =- `#3`;
-```
-
 ## Project Structure
 
 Staying organized is one of the foremost challenges in creating a fullstack web application.
