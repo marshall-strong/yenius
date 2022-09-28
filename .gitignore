@@ -31,6 +31,8 @@
 # environmental variables
 .env
 .env.prod
+.env.dev
+.env.old
 
 # constants.rb is only used for testing in the rails console
 constants.rb
