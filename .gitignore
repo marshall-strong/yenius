@@ -24,6 +24,11 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignore additional keys as I re-figure out AWS configuration
+/config/credentials/
+/config/credentials/development.key
+/config/credentials/production.key
+
 # Ignore public, as it is built on deploy
 # Place files for /public in /client/public
 /public
