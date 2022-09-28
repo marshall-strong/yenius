@@ -15,7 +15,7 @@
   <h1 align="center">YENIUS</h1>
 
   <!-- project logo -->
-  <img src="./assets/logo-yenius-1482-207.png" alt="Yenius logo">
+  <img src="./assets/readme/logo-yenius-1482-207.png" alt="Yenius logo">
 
   <p align="center">
     a Kanye West-centric full-stack clone of Genius.com -- community sourced music lyrics, interpretations, and metadata.
@@ -575,7 +575,7 @@ At this point in time, the only Unit Tests for this project are basic smoke test
 **<http://yenius.herokuapp.com/>**
 
 This project is deployed to Production via Heroku.
-A live version of the site can be viewed [here]("http://yenius.herokuapp.com/).
+A live version of the site can be viewed [here](http://yenius.herokuapp.com/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -643,14 +643,6 @@ Thanks for reading!!!
 
 Resources and How-Tos
 
-- [How to Securely Access Secret API keys using Netlify Functions in a React App](https://www.freecodecamp.org/news/how-to-access-secret-api-keys-using-netlify-functions-in-a-react-app/)
-- [Netlify Blog: How to deploy React Apps in less than 30 Seconds](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/)
-- [Cool grayscale hover effect](https://codepen.io/AnthonyMoss/pen/RwwyQQ)
-- [Emoji Unicode Reference](https://www.w3schools.com/charsets/ref_emoji.asp)
-- [the position property](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_position2)
-- ["Cool and Fresh" color palette](https://visme.co/blog/website-color-schemes/#attachment_13239)
-- [CSS Pulse Effect](https://www.florin-pop.com/blog/2019/03/css-pulse-effect/)
-- [Adaptive Photo Layout with Flexbox](https://css-tricks.com/adaptive-photo-layout-with-flexbox/)
 - [Boxy SVG: A free, browser-based tool for editing SVG elements](https://boxy-svg.com/)
 - [The Difference Between ALT text and Title text](https://blog.spotibo.com/difference-between-alt-text-and-title-text/)
 
@@ -680,7 +672,7 @@ Resources and How-Tos
 <!-- TABLE OF CONTENTS -->
 <!-- ABOUT THE PROJECT -->
 
-[project-screenshot]: ./assets/uncropped-yenius-screenshot.png
+[project-screenshot]: ./assets/readme/uncropped-yenius-screenshot.png
 [project-production-url]: http://yenius.herokuapp.com/
 
 <!-- Built With -->
