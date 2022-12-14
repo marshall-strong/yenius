@@ -4,7 +4,7 @@
 
 ## Description
 
-Yenius is a Kanye-centric fullstack clone of the music encyclopedia [Genius](https://genius.com/).
+Yenius is a fullstack clone of the music encyclopedia [Genius](https://genius.com/).
 
 The frontend is a React/Redux app that uses the Redux Hooks API. It was created using [cra-template-redux](https://github.com/reduxjs/cra-template-redux), the official Redux+JS template for [Create React App](https://github.com/facebook/create-react-app).
 The backend is an API-only Ruby on Rails app, and uses a postgreSQL database.
